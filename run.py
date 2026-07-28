@@ -19,7 +19,7 @@ import bible as bible_mod
 import ideate as ideate_stage
 import ledger as ledger_mod
 import render as render_mod
-import select as select_stage
+import selection as select_stage
 import write as write_stage
 from dates import sample_future_dateline
 
@@ -59,7 +59,8 @@ def run_pipeline() -> dict:
     ac = settings["dates"]["anti_cluster"]
     eras = ledger_mod.recent_eras(ledger, ac["avoid_recent_days"])
     dateline = sample_future_dateline(today, settings["dates"], eras, rng)
-    domain = rng.choice(domains)
+    recent_doms = set(ledger_mod.recent_domains(ledger, ac["avoid_recent_days"]))
+    domain = rng.choice([d for d in domains if d not in recent_doms] or domains)
     print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / {domain}")
 
     print(">>> IDEATE")

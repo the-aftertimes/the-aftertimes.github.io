@@ -119,7 +119,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
                     '&rarr;</a></p>') if not is_permalink else (
                     '<p><a class="arc" href="../index.html">Today\'s dispatch '
                     '&rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>')
-    title = html.escape(f"{dispatch['headline']} - {meta['site_name']}")
+    title = html.escape(hyphenate(f"{dispatch['headline']} - {meta['site_name']}"))
     desc = html.escape("Fiction. A daily news dispatch from a random date in the future.")
     return f"""<!DOCTYPE html>
 <html lang="en">

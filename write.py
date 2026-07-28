@@ -17,6 +17,7 @@ Rules:
 - Invent a plausible future place for the dateline.
 - File it under an invented future newswire.
 - Coin 1 to 3 world-specific terms and define each in one line for the glossary.
+- Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
 
 Return JSON only:

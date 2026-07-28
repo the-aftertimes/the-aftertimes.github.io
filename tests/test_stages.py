@@ -3,7 +3,7 @@ import random
 
 import gemini
 import ideate
-import select as select_stage
+import selection as select_stage
 import write as write_stage
 
 
