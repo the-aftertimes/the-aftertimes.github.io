@@ -1,0 +1,34 @@
+name: daily-dispatch
+on:
+  schedule:
+    - cron: "0 20 * * *"   # 20:00 UTC daily (matches One Story)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-dispatch
+  cancel-in-progress: false
+
+jobs:
+  file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Generate today's dispatch
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python run.py
+      - name: Commit and push
+        run: |
+          git config user.name "aftertimes-bot"
+          git config user.email "bot@the-aftertimes.github.io"
+          git add index.html archive.html d/ data/
+          git commit -m "dispatch: $(date -u +%Y-%m-%d)" || echo "no changes"
+          git push
