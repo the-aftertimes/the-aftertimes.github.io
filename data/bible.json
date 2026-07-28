@@ -1,0 +1,7 @@
+{
+  "motifs": [
+    {"term": "Nordwire", "gloss": "pan-Baltic newswire, est. 2334", "kind": "wire", "first_seen": "seed"},
+    {"term": "Tide & Wren", "gloss": "first law firm to represent a non-human client", "kind": "org", "first_seen": "seed"},
+    {"term": "Solar Wire", "gloss": "pan-system newswire of record", "kind": "wire", "first_seen": "seed"}
+  ]
+}
