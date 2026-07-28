@@ -37,7 +37,7 @@ def test_render_escapes_html():
 
 def test_render_no_dashes_in_output():
     html = render_dispatch(DISPATCH, META)
-    assert "—" not in html and "–" not in html
+    assert "\u2014" not in html and "\u2013" not in html
 
 
 def test_stale_banner_toggles():
@@ -64,7 +64,7 @@ def test_archive_lists_dispatches_newest_first():
     html = render_archive(records, meta)
     assert html.index("Newer story") < html.index("Older story")
     assert "d/2026-07-28.html" in html
-    assert "—" not in html
+    assert "\u2014" not in html
 
 
 from email_render import build_email
