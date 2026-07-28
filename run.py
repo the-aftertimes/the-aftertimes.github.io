@@ -14,6 +14,7 @@ import traceback
 from datetime import date, datetime, timezone
 
 from common import load_settings, load_yaml, read_json, rel, write_json
+import archive as archive_mod
 import bible as bible_mod
 import ideate as ideate_stage
 import ledger as ledger_mod
@@ -101,6 +102,9 @@ def run_pipeline() -> dict:
         settings["dates"]["anti_cluster"]["era_bucket_years"]))
     bible_mod.save_bible(bible_mod.merge_glossary(bible, dispatch["glossary"], run_date))
     print(f"    archived {run_date}; ledger={len(ledger)}; motifs={len(bible['motifs'])}")
+
+    archive_mod.build()
+    print("    rebuilt archive.html")
     return record
 
 

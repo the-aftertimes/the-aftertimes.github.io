@@ -43,3 +43,25 @@ def test_render_no_dashes_in_output():
 def test_stale_banner_toggles():
     assert "Showing yesterday" not in render_dispatch(DISPATCH, META, stale=False)
     assert "Showing yesterday" in render_dispatch(DISPATCH, META, stale=True)
+
+
+from archive import render_archive
+
+
+def test_archive_lists_dispatches_newest_first():
+    records = [
+        {"run_date": "2026-07-27", "dispatch": {
+            "headline": "Older story", "domain": "sport",
+            "dateline": {"place": "Luna", "year": 2200, "month": 1, "day": 1,
+                         "years_from_now": 174}}},
+        {"run_date": "2026-07-28", "dispatch": {
+            "headline": "Newer story", "domain": "law",
+            "dateline": {"place": "Mars", "year": 2400, "month": 2, "day": 2,
+                         "years_from_now": 374}}},
+    ]
+    meta = {"site_name": "The Aftertimes",
+            "tagline": "Dispatches from years that have not yet happened"}
+    html = render_archive(records, meta)
+    assert html.index("Newer story") < html.index("Older story")
+    assert "d/2026-07-28.html" in html
+    assert "—" not in html
