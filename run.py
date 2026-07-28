@@ -109,7 +109,23 @@ def run_pipeline() -> dict:
     return record
 
 
+def _load_dotenv() -> None:
+    """Best-effort: load KEY=VALUE lines from a gitignored .env for local runs.
+    CI supplies GEMINI_API_KEY via the environment instead, so this is a no-op there."""
+    path = rel(".env")
+    if not os.path.exists(path):
+        return
+    with open(path, "r", encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, val = line.partition("=")
+            os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
+
+
 def main() -> int:
+    _load_dotenv()
     print("=" * 70)
     print("THE AFTERTIMES - daily dispatch")
     print("=" * 70)
