@@ -1,0 +1,37 @@
+site:
+  name: "The Aftertimes"
+  tagline: "Dispatches from years that have not yet happened"
+  base_url: "https://the-aftertimes.github.io"
+timezone: "Australia/Sydney"
+update_hour_utc: 20
+output_html: "index.html"
+signup_form_url: ""   # Brevo form action; filled in when the newsletter is activated
+
+dates:
+  min_years: 8
+  band_weights: [0.70, 0.25, 0.05]   # near, mid, deep
+  bands:
+    near: [8, 300]
+    mid: [300, 3000]
+    deep: [3000, 40000]
+  anti_cluster:
+    era_bucket_years: 50    # two dates in the same 50-year bucket count as the same era
+    avoid_recent_days: 5    # do not reuse an era used within the last N dispatches
+    max_attempts: 12        # resample attempts before giving up
+
+ideate:
+  n_premises: 8
+  bible_slice_size: 6       # how many bible motifs to offer the model as optional colour
+  recent_premise_window: 20 # how many recent headlines/premises to show as "avoid"
+
+novelty:
+  match_threshold: 0.45     # cosine >= this vs a recent dispatch = too similar, reject
+  recent_window: 30         # compare against the last N dispatches
+
+gemini:
+  model: "gemini-2.5-flash"
+  endpoint: "https://generativelanguage.googleapis.com/v1beta/models"
+  timeout_seconds: 60
+  max_retries: 2
+  temperature_ideate: 1.1
+  temperature_write: 0.9

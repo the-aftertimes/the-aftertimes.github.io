@@ -1,0 +1,15 @@
+# Few-shot examples that teach the ideate stage the house sense of humour:
+# straight-faced, absurd, satirical sci-fi. NOT a consumable queue.
+seed_premises:
+  - "A moon of Saturn votes to secede, citing irreconcilable time zones."
+  - "The last human accountant is legally declared a protected cultural site."
+  - "A floating capital city sues the sea for breach of contract."
+  - "Two artificial intelligences file for divorce; custody of a shared API is contested."
+  - "A man sues his own clone for defamation and loses the case to himself."
+  - "A nation abolishes money on a Tuesday and forgets to tell the vending machines."
+  - "A generation ship arrives to find its destination already settled by a later, faster ship."
+  - "Mars introduces daylight saving; three towns are lost to the paperwork."
+  - "A museum of extinct jobs opens, its star exhibit a live working dentist."
+  - "The heat death of the universe is postponed for budget reasons."
+  - "An ancient AI is found still running a loyalty-points scheme for a supermarket that closed centuries ago."
+  - "A city elects a river as mayor; it governs by flooding selectively."
