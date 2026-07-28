@@ -65,3 +65,22 @@ def test_archive_lists_dispatches_newest_first():
     assert html.index("Newer story") < html.index("Older story")
     assert "d/2026-07-28.html" in html
     assert "—" not in html
+
+
+from email_render import build_email
+
+
+def test_build_email_has_subject_and_body():
+    dispatch = {
+        "headline": "Floating Capital Sues the Sea",
+        "body": "One paragraph.\nAnother paragraph.",
+        "dateline": {"place": "Port Kobenhavn-2", "year": 2391, "month": 9, "day": 4,
+                     "years_from_now": 365},
+        "wire": {"name": "Nordwire", "gloss": ""}, "domain": "law", "glossary": [],
+    }
+    meta = {"site_name": "The Aftertimes", "base_url": "https://the-aftertimes.github.io"}
+    subject, body = build_email(dispatch, meta)
+    assert "Floating Capital" in subject
+    assert "2391" in body or "2,391" in body
+    assert "\u2014" not in body
+    assert "the-aftertimes.github.io" in body
