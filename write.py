@@ -15,10 +15,15 @@ The premise: {premise}
 
 Today's dispatch format: {style_guidance}
 
-The house voice is intelligent, dry and deadpan. Lead with a clear, absurd
-premise and keep the joke legible. Favour wit and clarity over dense
-science-fiction jargon - the humour comes from a simple absurd idea taken
-seriously, not from piling on invented vocabulary.
+The house voice is intelligent, dry and deadpan. This must actually be FUNNY and
+interesting, not merely competent sci-fi. Commit fully to the one absurd idea and
+follow its internal logic to increasingly ridiculous but consistent conclusions.
+Make the comic idea clear within the first two sentences - never bury it under
+procedure or worldbuilding. Favour wit and clarity over dense jargon. End on a
+strong final line that lands or twists the joke (a real kicker), not a limp
+summary. Do NOT force a strained running metaphor (for instance narrating a court
+ruling or an interest-rate rise as though it were a sports match) unless it
+genuinely lands.
 
 Never build humour on gender, race, religion, nationality or similar
 demographic stereotypes (no nagging-wife / clueless-husband cliches and the
@@ -46,7 +51,7 @@ Rules:
 - Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
 - Use Australian English spelling (organise, colour, defence, metre, favour).
-- Vary character names and places widely; do not reuse common names. Do not default the day to Tuesday - vary or omit the weekday.
+- Give every named person a fresh, varied, culturally diverse name. Do NOT use the names "Vance", "Elena", "Rostova", "Marcus" or "Kovac" - invent new ones each time. Do not default the weekday to Tuesday; vary or omit the day.
 - Do not put the year in the dateline place; the date is shown separately.
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
 
