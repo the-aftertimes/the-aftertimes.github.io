@@ -1,8 +1,37 @@
 """Stage 3 - write. Turn the chosen premise into a full dispatch record."""
 from __future__ import annotations
 
+import re
+
 import gemini
 from common import hyphenate
+
+
+# Common English idiom/spelling slips the model sometimes makes, corrected
+# deterministically here (no extra API call). Add new ones as they are spotted.
+_FIXUPS = {
+    "for all intent and purpose": "for all intents and purposes",
+    "for all intensive purposes": "for all intents and purposes",
+    "peaked my interest": "piqued my interest",
+    "peaked his interest": "piqued his interest",
+    "peaked her interest": "piqued her interest",
+    "peaked their interest": "piqued their interest",
+    "case and point": "case in point",
+    "one in the same": "one and the same",
+    "deep-seeded": "deep-seated",
+    "baited breath": "bated breath",
+    "make due": "make do",
+    "wet your appetite": "whet your appetite",
+    "tow the line": "toe the line",
+    "free reign": "free rein",
+    "sneak peak": "sneak peek",
+}
+
+
+def _fix_slips(text: str) -> str:
+    for wrong, right in _FIXUPS.items():
+        text = re.sub(re.escape(wrong), right, text, flags=re.IGNORECASE)
+    return text
 
 
 def build_prompt(premise: str, dateline: dict, domain: str,
@@ -31,6 +60,9 @@ like). The comedy comes from absurd systems, institutions, technologies and
 bureaucratic logic - punch at ideas, not at people.
 
 Rules:
+- Follow the SHAPE of today's dispatch format above. Unless that format is a court
+  ruling or an official notice, do NOT frame the story as an authority handing down
+  a ruling with a spokesperson quote - use the format's own structure and voice.
 - 250 to 350 words. Straight-faced, as a real wire story. Dry wit, never winking.
 - The headline must be a concise, punchy single-line news headline, ideally
   under 10 words. Do NOT prefix it with a format label such as "Product
@@ -69,8 +101,8 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
     dl = dict(dateline)
     dl["place"] = hyphenate((d.get("dateline_place") or "").strip())
     return {
-        "headline": hyphenate((d.get("headline") or "").strip()),
-        "body": hyphenate((d.get("body") or "").strip()),
+        "headline": hyphenate(_fix_slips((d.get("headline") or "").strip())),
+        "body": hyphenate(_fix_slips((d.get("body") or "").strip())),
         "scene": hyphenate((d.get("scene") or "").strip()),
         "dateline": dl,
         "domain": (d.get("domain") or domain).strip(),
