@@ -8,7 +8,7 @@ import gemini
 
 def build_prompt(dateline: dict, domain: str, bible_motifs: list[dict],
                  seed_premises: list[str], avoid_headlines: list[str],
-                 n: int) -> str:
+                 n: int, style_guidance: str) -> str:
     motif_lines = "\n".join(f"- {m['term']}: {m.get('gloss', '')}"
                             for m in bible_motifs) or "(none yet)"
     seed_lines = "\n".join(f"- {p}" for p in seed_premises) or "(none)"
@@ -17,6 +17,8 @@ def build_prompt(dateline: dict, domain: str, bible_motifs: list[dict],
 news dispatches from the future. The register is imaginative science fiction with
 a knowing satirical edge: strange, funny, but written completely straight-faced,
 as a real newswire would.
+
+Today's dispatch format: {style_guidance}
 
 Brainstorm {n} one-sentence story premises datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
@@ -38,9 +40,10 @@ Return JSON only: {{"premises": ["...", "...", ...]}} with exactly {n} items."""
 
 def ideate(dateline: dict, domain: str, bible_motifs: list[dict],
            seed_premises: list[str], avoid_headlines: list[str],
-           settings: dict) -> list[str]:
+           settings: dict, style_guidance: str) -> list[str]:
     prompt = build_prompt(dateline, domain, bible_motifs, seed_premises,
-                          avoid_headlines, settings["ideate"]["n_premises"])
+                          avoid_headlines, settings["ideate"]["n_premises"],
+                          style_guidance)
     raw = gemini.generate(prompt, settings,
                           settings["gemini"]["temperature_ideate"])
     data = gemini.extract_json(raw)

@@ -20,11 +20,12 @@ def test_ideate_prompt_mentions_date_domain_and_avoids(rng):
         dateline={"year": 2391, "years_from_now": 365, "month": 9, "day": 4},
         domain="crime", bible_motifs=[{"term": "Nordwire", "gloss": "wire"}],
         seed_premises=["a clone sues itself"], avoid_headlines=["old headline"],
-        n=8)
+        n=8, style_guidance="A straight wire report.")
     assert "2391" in prompt and "crime" in prompt
     assert "Nordwire" in prompt
     assert "old headline" in prompt
     assert "8" in prompt
+    assert "A straight wire report." in prompt
 
 
 def test_ideate_returns_premise_list(monkeypatch, rng):
@@ -33,7 +34,7 @@ def test_ideate_returns_premise_list(monkeypatch, rng):
     out = ideate.ideate(
         dateline={"year": 2391, "years_from_now": 365, "month": 9, "day": 4},
         domain="crime", bible_motifs=[], seed_premises=[], avoid_headlines=[],
-        settings=SETTINGS)
+        settings=SETTINGS, style_guidance="A straight wire report.")
     assert out == ["a", "b", "c"]
 
 
@@ -65,7 +66,7 @@ def test_write_parses_and_hyphenates(monkeypatch):
     dispatch = write_stage.write(
         premise="a city sues the sea",
         dateline={"place": "", "year": 2391, "years_from_now": 365, "month": 9, "day": 4},
-        domain="law", settings=SETTINGS)
+        domain="law", settings=SETTINGS, style_guidance="A straight wire report.")
     assert dispatch["dateline"]["place"] == "Port Kobenhavn-2"
     assert "\u2014" not in dispatch["body"]      # hyphenated
     assert dispatch["headline"] == "Floating Capital Sues the Sea"

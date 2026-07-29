@@ -48,6 +48,7 @@ def run_pipeline() -> dict:
     settings = load_settings()
     domains = load_yaml("config/domains.yaml")["domains"]
     seeds = load_yaml("config/seed_premises.yaml")["seed_premises"]
+    styles = load_yaml("config/styles.yaml")["styles"]
     ledger = ledger_mod.load_ledger()
     bible = bible_mod.load_bible()
     rng = random.Random()
@@ -61,12 +62,16 @@ def run_pipeline() -> dict:
     dateline = sample_future_dateline(today, settings["dates"], eras, rng)
     recent_doms = set(ledger_mod.recent_domains(ledger, ac["avoid_recent_days"]))
     domain = rng.choice([d for d in domains if d not in recent_doms] or domains)
-    print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / {domain}")
+    recent_styles = {e.get("style") for e in ledger[-ac["avoid_recent_days"]:]}
+    style = rng.choice([s for s in styles if s["key"] not in recent_styles] or styles)
+    print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / "
+          f"{domain} / {style['key']}")
 
     print(">>> IDEATE")
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
     avoid = ledger_mod.recent_headlines(ledger, settings["ideate"]["recent_premise_window"])
-    premises = ideate_stage.ideate(dateline, domain, motifs, seeds, avoid, settings)
+    premises = ideate_stage.ideate(dateline, domain, motifs, seeds, avoid, settings,
+                                    style["guidance"])
     print(f"    {len(premises)} premises")
 
     print(">>> SELECT")
@@ -74,7 +79,7 @@ def run_pipeline() -> dict:
     print(f"    chosen: {premise[:70]}")
 
     print(">>> WRITE")
-    dispatch = write_stage.write(premise, dateline, domain, settings)
+    dispatch = write_stage.write(premise, dateline, domain, settings, style["guidance"])
     print(f"    headline: {dispatch['headline'][:60]}")
 
     print(">>> RENDER")
@@ -85,6 +90,7 @@ def run_pipeline() -> dict:
         "site_name": settings["site"]["name"],
         "base_url": settings["site"]["base_url"],
         "signup_form_url": settings.get("signup_form_url", ""),
+        "edition": len(ledger) + 1,
     }
     with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
         fh.write(render_mod.render_dispatch(dispatch, meta, stale=False))
@@ -100,7 +106,7 @@ def run_pipeline() -> dict:
     write_json(f"data/dispatches/{run_date}.json", record)
     ledger_mod.save_ledger(ledger_mod.append_entry(
         ledger, run_date, dateline, domain, dispatch["headline"],
-        settings["dates"]["anti_cluster"]["era_bucket_years"]))
+        settings["dates"]["anti_cluster"]["era_bucket_years"], style["key"]))
     bible_mod.save_bible(bible_mod.merge_glossary(bible, dispatch["glossary"], run_date))
     print(f"    archived {run_date}; ledger={len(ledger)}; motifs={len(bible['motifs'])}")
 

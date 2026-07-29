@@ -5,12 +5,19 @@ import gemini
 from common import hyphenate
 
 
-def build_prompt(premise: str, dateline: dict, domain: str) -> str:
+def build_prompt(premise: str, dateline: dict, domain: str,
+                 style_guidance: str) -> str:
     return f"""You are a correspondent for The Aftertimes. Write a single news
 dispatch, datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
 
 The premise: {premise}
+
+Today's dispatch format: {style_guidance}
+
+The house voice is intelligent, dry and deadpan. The humour comes from rigorous
+worldbuilding and bureaucratic logic pushed to absurd conclusions - never from
+crude or broad jokes.
 
 Rules:
 - 250 to 350 words. Straight-faced, as a real wire story. Dry wit, never winking.
@@ -19,6 +26,9 @@ Rules:
 - Coin 1 to 3 world-specific terms and define each in one line for the glossary.
 - Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
+- Use Australian English spelling (organise, colour, defence, metre, favour).
+- Vary character names and places widely; do not reuse common names. Do not default the day to Tuesday - vary or omit the weekday.
+- Do not put the year in the dateline place; the date is shown separately.
 
 Return JSON only:
 {{"headline": "...", "dateline_place": "...", "body": "...",
@@ -26,8 +36,9 @@ Return JSON only:
   "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
 
 
-def write(premise: str, dateline: dict, domain: str, settings: dict) -> dict:
-    prompt = build_prompt(premise, dateline, domain)
+def write(premise: str, dateline: dict, domain: str, settings: dict,
+          style_guidance: str) -> dict:
+    prompt = build_prompt(premise, dateline, domain, style_guidance)
     raw = gemini.generate(prompt, settings,
                           settings["gemini"]["temperature_write"])
     d = gemini.extract_json(raw)

@@ -1,0 +1,39 @@
+{
+  "run_date": "2026-07-28",
+  "run_time": "2026-07-28T23:32:38.923471+00:00",
+  "dispatch": {
+    "headline": "Ganymede High Court Rejects Relativistic Time Dilation Defense in Alimony Dispute",
+    "body": "GILLS CRATER, GANYMEDE -- The High Court of Ganymede issued a landmark ruling on Tuesday, establishing that relativistic time dilation incurred during high-velocity commercial transit cannot be cited as a lawful defense for default on spousal support obligations.\n\nThe decision resolves the long-running case of Vance v. Vance-Kowalski, in which deep-space freight pilot Marcus Vance contested a 14-year accumulation of arrears totaling 420,000 Jovian Credits. Vance argued that because he spent eleven calendar years traveling at 0.4c aboard a torchship hauling volatiles to the Oort Cloud, his personal experience of time elapsed was only eight years. Consequently, his legal team contended that his monthly maintenance payments should be recalculated according to his vessel's onboard proper time.\n\nChief Justice Linnea Thorne rejected the defense in a unanimous opinion, noting that domestic relations orders are bound strictly to the judicial frame of reference in which the decree was registered. Thorne wrote that allowing payors to contract their financial duties through velocity selection would create an unworkable precedent, effectively incentivizing deliberate chronosking among wealthy litigants seeking to outrun court orders.\n\n\"A debt accrued in Ganymede local time does not shrink merely because the debtor chooses to view the universe through a high Lorentz factor,\" Thorne stated during the session. \"The bench declines to transform relativistic physics into a tax shelter.\"\n\nUnder the ruling, Vance must settle the full accrued balance, plus accrued interest calculated at the standard Jovian prime rate, within three standard lunar months or face the impoundment of his vessel's fusion drive. Legal analysts expect the ruling to solidify the enforcement of Proper-Time Covenants across the Jovian System, closing a loophole previously exploited by long-haul crews.",
+    "dateline": {
+      "place": "Gills Crater Civil Complex, Ganymede (2287)",
+      "year": 2287,
+      "month": 6,
+      "day": 8,
+      "years_from_now": 261
+    },
+    "wire": {
+      "name": "Solar Wire Network",
+      "gloss": "The primary automated newsfeed serving the Jovian Moons and Outer Belt."
+    },
+    "domain": "space law",
+    "glossary": [
+      {
+        "term": "Chronosking",
+        "gloss": "The practice of undertaking high-velocity transit to exploit time dilation differences for evading legal or financial debts."
+      },
+      {
+        "term": "Proper-Time Covenant",
+        "gloss": "A legal clause binding financial contracts strictly to the rest-frame clock of the decree's issuing jurisdiction."
+      }
+    ],
+    "premise": "The High Court of Ganymede rules that relativistic time dilation cannot be used as a valid legal defense to delay past-due alimony payments."
+  },
+  "meta": {
+    "run_time": "2026-07-28T23:32:38.923471+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from years that have not yet happened",
+    "site_name": "The Aftertimes",
+    "base_url": "https://the-aftertimes.github.io",
+    "signup_form_url": ""
+  }
+}

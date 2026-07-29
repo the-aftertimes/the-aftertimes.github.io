@@ -1,0 +1,18 @@
+# Rotating style/format modes; one is chosen per day (with light anti-repeat).
+# House voice for all: intelligent, dry, deadpan; humour from rigorous worldbuilding
+# and bureaucratic logic pushed to absurd conclusions, never crude or broad.
+styles:
+  - key: wire
+    guidance: "A straight, deadpan wire news report - the facts of the event reported plainly."
+  - key: court
+    guidance: "A court or legal report: a ruling or case, with judicial language and a quoted opinion from the bench."
+  - key: notice
+    guidance: "An official notice or regulatory bulletin: bureaucratic, procedural, citing directives and compliance deadlines."
+  - key: feature
+    guidance: "A longer-view investigative feature: context, cited analysts, and second-order consequences."
+  - key: obituary
+    guidance: "An obituary for a person, institution, technology, or concept that has died in this future - dignified and dryly funny."
+  - key: review
+    guidance: "A review from this future (product, cultural, or technological): evaluative, specific, with a verdict."
+  - key: sport
+    guidance: "A sport or competition results report from this future: standings or outcome, a quote, and a wry angle."

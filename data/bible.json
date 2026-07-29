@@ -1,7 +1,34 @@
 {
   "motifs": [
-    {"term": "Nordwire", "gloss": "pan-Baltic newswire, est. 2334", "kind": "wire", "first_seen": "seed"},
-    {"term": "Tide & Wren", "gloss": "first law firm to represent a non-human client", "kind": "org", "first_seen": "seed"},
-    {"term": "Solar Wire", "gloss": "pan-system newswire of record", "kind": "wire", "first_seen": "seed"}
+    {
+      "term": "Nordwire",
+      "gloss": "pan-Baltic newswire, est. 2334",
+      "kind": "wire",
+      "first_seen": "seed"
+    },
+    {
+      "term": "Tide & Wren",
+      "gloss": "first law firm to represent a non-human client",
+      "kind": "org",
+      "first_seen": "seed"
+    },
+    {
+      "term": "Solar Wire",
+      "gloss": "pan-system newswire of record",
+      "kind": "wire",
+      "first_seen": "seed"
+    },
+    {
+      "term": "Chronosking",
+      "gloss": "The practice of undertaking high-velocity transit to exploit time dilation differences for evading legal or financial debts.",
+      "kind": "term",
+      "first_seen": "2026-07-28"
+    },
+    {
+      "term": "Proper-Time Covenant",
+      "gloss": "A legal clause binding financial contracts strictly to the rest-frame clock of the decree's issuing jurisdiction.",
+      "kind": "term",
+      "first_seen": "2026-07-28"
+    }
   ]
 }

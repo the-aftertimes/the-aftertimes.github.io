@@ -35,6 +35,7 @@ def test_append_entry_shape():
     entry = append_entry([], run_date="2026-07-28",
                          dateline={"year": 2391, "years_from_now": 365},
                          domain="crime", headline="Someone sues their own clone",
-                         era_bucket_years=50)
+                         era_bucket_years=50, style="wire")
     assert entry[-1]["era_bucket"] == 365 // 50
     assert entry[-1]["domain"] == "crime"
+    assert entry[-1]["style"] == "wire"

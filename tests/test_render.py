@@ -13,7 +13,7 @@ DISPATCH = {
 }
 META = {"run_time": "2026-07-28T20:00:00+00:00", "timezone": "Australia/Sydney",
         "tagline": "Dispatches from years that have not yet happened",
-        "site_name": "The Aftertimes", "signup_form_url": "",
+        "site_name": "The Aftertimes", "signup_form_url": "", "edition": 1,
         "base_url": "https://the-aftertimes.github.io"}
 
 
@@ -26,6 +26,7 @@ def test_render_contains_core_elements():
     assert "Nordwire" in html
     assert "Tide &amp; Wren" in html or "Tide & Wren" in html
     assert "fiction" in html.lower()          # framing footer present
+    assert "VOL." in html and "No. 1" in html  # edition line renders
 
 
 def test_render_escapes_html():
@@ -43,6 +44,32 @@ def test_render_no_dashes_in_output():
 def test_stale_banner_toggles():
     assert "Showing yesterday" not in render_dispatch(DISPATCH, META, stale=False)
     assert "Showing yesterday" in render_dispatch(DISPATCH, META, stale=True)
+
+
+def test_font_path_relative_for_permalink():
+    home = render_dispatch(DISPATCH, META)
+    perma = render_dispatch(DISPATCH, META, is_permalink=True)
+    assert "url('assets/fonts/unifrakturcook-700.woff2')" in home
+    assert "url('../assets/fonts/unifrakturcook-700.woff2')" in perma
+
+
+def test_dateline_strips_trailing_year_parenthetical():
+    d = {**DISPATCH, "dateline": {**DISPATCH["dateline"],
+                                   "place": "Gills Crater, Ganymede (2287)"}}
+    html = render_dispatch(d, META)
+    assert "(2287)" not in html
+    assert "Gills Crater, Ganymede" in html
+    # input dict not mutated
+    assert d["dateline"]["place"] == "Gills Crater, Ganymede (2287)"
+
+
+def test_image_slot_optional():
+    assert "figure class=\"engraving\"" not in render_dispatch(DISPATCH, META)
+    d = {**DISPATCH, "image": "assets/engravings/x.png"}
+    home = render_dispatch(d, META)
+    assert 'figure class="engraving"' in home and "assets/engravings/x.png" in home
+    perma = render_dispatch(d, META, is_permalink=True)
+    assert "../assets/engravings/x.png" in perma
 
 
 from archive import render_archive

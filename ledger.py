@@ -43,12 +43,13 @@ def is_novel(candidate: str, ledger: list[dict], threshold: float,
 
 
 def append_entry(ledger: list[dict], run_date: str, dateline: dict, domain: str,
-                 headline: str, era_bucket_years: int) -> list[dict]:
+                 headline: str, era_bucket_years: int, style: str) -> list[dict]:
     ledger.append({
         "run_date": run_date,
         "year": dateline["year"],
         "era_bucket": dateline["years_from_now"] // era_bucket_years,
         "domain": domain,
         "headline": headline,
+        "style": style,
     })
     return ledger

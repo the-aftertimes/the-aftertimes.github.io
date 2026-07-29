@@ -3,6 +3,7 @@ All model/feed text is HTML-escaped and hyphenated. Pure function; run.py owns I
 from __future__ import annotations
 
 import html
+import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -15,17 +16,23 @@ _CSS = """
 body{margin:0;background:var(--bg);color:var(--fg);
   font-family:Georgia,'Times New Roman',serif;line-height:1.55;
   -webkit-font-smoothing:antialiased;}
-.wrap{max-width:44rem;margin:0 auto;padding:clamp(2rem,7vw,4.5rem) 1.5rem 4rem;
+.wrap{max-width:52rem;margin:0 auto;padding:clamp(2rem,7vw,4.5rem) 1.5rem 4rem;
   min-height:100vh;display:flex;flex-direction:column;}
 .masthead{text-align:center;border-bottom:3px double var(--fg);padding-bottom:0.9rem;
   margin-bottom:2rem;}
-.masthead .name{font-size:clamp(2.4rem,9vw,3.6rem);font-weight:700;line-height:1;
-  letter-spacing:0.01em;}
+.masthead .edition{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;}
+.masthead .name{font-family:'Aftertimes Flag','UnifrakturCook',serif;font-weight:700;
+  font-size:clamp(2.7rem,10vw,4.6rem);line-height:1;letter-spacing:0.01em;}
 .masthead .tag{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
   letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.7rem;}
-.dateline{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
-  font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);
+.dateline{font-family:-apple-system,system-ui,sans-serif;font-size:0.92rem;
+  font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);
   margin:0 0 0.8rem;}
+.engraving{margin:0 0 1.6rem;}
+.engraving img{width:100%;height:auto;filter:grayscale(1);border:1px solid var(--rule);}
+.engraving figcaption{font-family:-apple-system,system-ui,sans-serif;font-size:0.78rem;
+  font-style:italic;color:var(--muted);margin-top:0.4rem;}
 h1{font-size:clamp(1.9rem,6vw,2.9rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
@@ -67,6 +74,24 @@ def _fmt_local(iso: str, tzname: str) -> str:
     return f"{dt.strftime('%d/%m/%Y %H:%M')} {dt.tzname() or ''}".strip()
 
 
+def _fmt_publish(iso: str, tzname: str) -> str:
+    dt = datetime.fromisoformat(iso).astimezone(ZoneInfo(tzname))
+    return dt.strftime("%a %d %B %Y")
+
+
+def _roman(n: int) -> str:
+    if n <= 0 or n > 3999:
+        return str(n)  # roman is absurd for deep-future years; fall back to arabic
+    table = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"),
+             (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+    out = []
+    for v, s in table:
+        while n >= v:
+            out.append(s)
+            n -= v
+    return "".join(out)
+
+
 def _signup(form_url: str) -> str:
     if not form_url:
         return ""
@@ -95,7 +120,8 @@ def _signup(form_url: str) -> str:
 
 def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
                     is_permalink: bool = False) -> str:
-    dl = dispatch["dateline"]
+    dl = dict(dispatch["dateline"])
+    dl["place"] = re.sub(r"\s*\(\d{2,}\)\s*$", "", (dl.get("place") or ""))
     headline = html.escape(hyphenate(dispatch["headline"]))
     dateline_txt = html.escape(hyphenate(format_dateline(dl)))
     years_txt = html.escape(years_phrase(dl["years_from_now"]))
@@ -121,6 +147,21 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
                     '&rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>')
     title = html.escape(hyphenate(f"{dispatch['headline']} - {meta['site_name']}"))
     desc = html.escape("Fiction. A daily news dispatch from a random date in the future.")
+    asset_prefix = "../" if is_permalink else ""
+    font_face = (
+        f"<style>@font-face{{font-family:'Aftertimes Flag';"
+        f"src:url('{asset_prefix}assets/fonts/unifrakturcook-700.woff2') "
+        f"format('woff2');font-weight:700;font-display:swap;}}</style>")
+    edition = meta.get("edition", 1)
+    publish_date = html.escape(_fmt_publish(meta["run_time"], meta["timezone"]))
+    edition_line = (f'<div class="edition">VOL. {_roman(dl["year"])} &middot; '
+                    f'No. {html.escape(str(edition))} &middot; {publish_date}</div>')
+    image = dispatch.get("image")
+    figure = ""
+    if image:
+        img_src = f"{asset_prefix}{html.escape(str(image), quote=True)}"
+        figure = (f'<figure class="engraving"><img src="{img_src}" alt="{headline}" '
+                  f'loading="lazy"><figcaption>An imagined engraving.</figcaption></figure>')
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,16 +176,19 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary_large_image">
 <style>{_CSS}</style>
+{font_face}
 </head>
 <body>
   <div class="wrap">
     {stale_banner}
     <header class="masthead">
+      {edition_line}
       <div class="name">{html.escape(meta['site_name'])}</div>
       <div class="tag">{html.escape(hyphenate(meta['tagline']))}</div>
     </header>
     <p class="dateline">{dateline_txt} &middot; {years_txt}</p>
     <h1>{headline}</h1>
+    {figure}
     <div class="body">{body_paras}</div>
     <p class="filed">Filed by {filed}</p>
     <details class="meta">
