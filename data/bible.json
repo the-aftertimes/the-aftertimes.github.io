@@ -23,6 +23,12 @@
       "gloss": "The haptic vibration delivered to a wearer's finger when their partner silently disparages a host's culinary choices.",
       "kind": "term",
       "first_seen": "2026-07-29"
+    },
+    {
+      "term": "Solvency Standings",
+      "gloss": "The official league table ranking long-haul colony ships by their ability to maintain debt service payments during interstellar transit.",
+      "kind": "term",
+      "first_seen": "2026-07-29"
     }
   ]
 }
