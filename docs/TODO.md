@@ -1,19 +1,16 @@
 # The Aftertimes - launch checklist
 
-Open items, in rough order. Tick as done.
+## Done (launched 29/07/2026)
+- [x] **Deployed + live** at https://the-aftertimes.github.io/ (org `the-aftertimes`, Pages from main root, daily Actions cron 20:00 UTC). `.nojekyll` required and in place.
+- [x] Pictures - Cloudflare Workers AI engravings (greyscale, story-scene-derived, caption cropped, graceful fallback).
+- [x] Tagline "Tomorrow's headlines, a little early".
+- [x] Reset generated artefacts before launch (started at Edition No. 1).
+- [x] Actions secrets set: `GEMINI_API_KEY`, `CF_ACCOUNT_ID`, `CF_API_TOKEN`.
 
-## Deferred (do not forget - flagged by Charlie 29/07/2026)
-- [ ] **Push to GitHub.** Currently a local-only git repo (17+ commits) on branch `build/initial-implementation`. Needs the GitHub org `the-aftertimes` created, then push + merge. (Deploy step.)
-- [ ] **Website + link from personal site.** Deploy via GitHub org `the-aftertimes` -> Pages (`the-aftertimes.github.io`), then add a one-line card linking to it from `charlie-tren.github.io` (repo `charlie-tren/charlie-tren.github.io`).
-- [ ] **Subscribe box (Brevo).** The signup form is already built into `render.py`; it is dormant until `signup_form_url` is set in `config/settings.yaml`. Create a new Brevo list/form for The Aftertimes (Charlie already runs Brevo for One Story) and wire the form URL.
-
-## In flight
-- [ ] **Pictures** - Cloudflare Workers AI engraving per dispatch (CF creds now in `.env`); validating quality, then build `illustrate.py` + wire in with graceful fallback.
-- [ ] **Tagline** - replacing "Dispatches from years that have not yet happened"; Charlie choosing from options.
-
-## Before first live edition
-- [ ] **Reset generated artefacts** so day 1 starts clean: `data/ledger.json` -> `[]`, `data/bible.json` -> the 3 seed motifs, delete test `data/dispatches/*.json`, `d/*.html`, and the placeholder `index.html`/`archive.html`. (These got swept into git during local tone-testing.)
-- [ ] Set the `GEMINI_API_KEY` (and CF token) as GitHub Actions secrets for the daily cron.
+## Open
+- [ ] **Link card on the personal hub site** (`charlie-tren/charlie-tren.github.io`) pointing at the live URL, matching the existing One Story / Crowdwise / Chronoscape cards (ideally a real screenshot thumbnail).
+- [ ] **Subscribe box (Brevo).** The signup form is built into `render.py`; dormant until `signup_form_url` is set in `config/settings.yaml`. Create a new Brevo list/form for The Aftertimes, wire the URL. Later: add a daily send step to the workflow using `email_render.build_email`. See HTML-email gotchas.
+- [ ] Minor: the workflow uses `actions/checkout@v4` + `actions/setup-python@v5` (Node 20 deprecation warning) - bump when convenient.
 
 ## Later (v2 ideas)
 - [ ] **Locator map.** A small star-map / solar-system map on each dispatch showing where in the galaxy the story is set (the dateline location), the way One Story plots covering countries on a world map.
