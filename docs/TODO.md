@@ -1,14 +1,16 @@
 # The Aftertimes - launch checklist
 
 ## Open
-- [ ] **Daily newsletter SEND (fast-follow).** The signup box now collects subscribers into the Brevo "The Aftertimes" list, but nothing emails them yet. To wire the daily send: add `BREVO_API_KEY` as a GitHub Actions secret, add the Brevo list_id + verified sender to config, and add a send step to `.github/workflows/daily.yml` that calls Brevo's campaign/transactional API with `email_render.build_email(...)`. Mirror One Story's send job. Mind the HTML-email gotchas (real-send test, free-tier badge, Gmail rendering).
+- [ ] **Turn on the daily send:** add `BREVO_API_KEY` (reuse the One Story Brevo key) as a GitHub Actions secret on this repo. Until it's set the send safely dry-runs. Optional: add `BREVO_TEST_EMAIL` (your address) too.
+- [ ] **Test the email before the first live cron:** Actions -> daily-dispatch -> Run workflow -> tick "Send a one-off test email..." -> Run. Check your inbox renders well, then the daily cron sends live automatically.
 - [ ] Quick self-test: subscribe with your own email on the live site and confirm the contact lands in the Brevo "The Aftertimes" list.
 - [ ] Minor: the workflow uses `actions/checkout@v4` + `actions/setup-python@v5` (Node 20 deprecation warning) - bump when convenient.
 - [ ] The launch-day live edition was a near-duplicate; the daily cron should replace it with a fresh, non-duplicate edition on the next run (ledger remembers it). Sanity-check the next edition.
 
 ## Done
 - [x] **Deployed + live** at https://the-aftertimes.github.io/ (org `the-aftertimes`, Pages from main root, daily Actions cron 20:00 UTC). `.nojekyll` in place.
-- [x] **Subscribe box wired** - Brevo "The Aftertimes signup" form (single opt-in, no confirmation) -> "The Aftertimes" list; `signup_form_url` set in settings.yaml; box live at the bottom of every dispatch.
+- [x] **Subscribe box wired** - Brevo "The Aftertimes signup" form (single opt-in, no confirmation) -> "The Aftertimes" list (#3); `signup_form_url` set in settings.yaml; box live at the bottom of every dispatch.
+- [x] **Daily send built** - `send_email.py` (ported from One Story) + `newsletter` config (list_id 3, verified sender) + a send step in the workflow with a `test_send` toggle. Dry-runs until `BREVO_API_KEY` is set; per-day guard prevents double-sends.
 - [x] **Linked from the personal hub** (charlie-tren.github.io) with a screenshot thumbnail.
 - [x] Pictures - Cloudflare Workers AI engravings (greyscale, story-scene-derived, caption cropped, graceful fallback).
 - [x] Tagline "Tomorrow's headlines, a little early"; NYT-blackletter masthead; edition line; day-to-day style rotation; actual-date dateline; Title-Case domain; glossary removed from the page.
