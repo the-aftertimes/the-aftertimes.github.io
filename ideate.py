@@ -23,8 +23,15 @@ Today's dispatch format: {style_guidance}
 Brainstorm {n} one-sentence story premises datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
 
-Each premise must be surprising, specific, and self-contained. Vary them widely.
-Do NOT explain them. Straight-faced, never winking.
+Each premise needs a real comedic engine - not merely "a futuristic version of a
+present-day thing", but a genuine twist: an ironic reversal, petty bureaucracy or
+mundane human smallness colliding with something cosmic or profound, a category
+error taken completely seriously, or a strange consequence nobody would think to
+legislate for. A reader should smile at the premise alone. Avoid dry, generic
+finance/policy framings unless there is a real joke in them. Make each surprising,
+specific and self-contained, and vary them widely across genuinely different ideas.
+Do NOT explain them. Order them strongest first - put the sharpest, funniest, most
+surprising premise as item 1.
 
 Example premises for tone (do not reuse these):
 {seed_lines}
