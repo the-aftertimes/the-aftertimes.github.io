@@ -76,3 +76,10 @@ def test_write_parses_and_hyphenates(monkeypatch):
                                  "armoured unit arrives")
     assert "\u2014" not in dispatch["scene"]     # hyphenated
     assert "wire" not in dispatch
+
+
+def test_fix_slips_corrects_common_idioms():
+    assert write_stage._fix_slips("done for all intent and purpose") == \
+        "done for all intents and purposes"
+    assert write_stage._fix_slips("that peaked my interest") == "that piqued my interest"
+    assert write_stage._fix_slips("nothing to fix here") == "nothing to fix here"
