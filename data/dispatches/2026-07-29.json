@@ -1,29 +1,34 @@
 {
   "run_date": "2026-07-29",
-  "run_time": "2026-07-29T02:30:20.612229+00:00",
+  "run_time": "2026-07-29T02:36:41.275629+00:00",
   "dispatch": {
-    "headline": "Mars District Orders Re-Vote After Algorithm Votes Three Weeks Early",
-    "body": "The Parliamentary Election Commission for the New Caldera sub-district has formally annulled last month’s general election result, following a bureaucratic oversight in which the regional quantum polling algorithm cast all 40 million voter ballots three weeks before candidate registration officially opened.\n\nAccording to official logs, the Predictive Democracy Network achieved a statistical certainty of 99.99 per cent regarding constituent preferences on Thursday morning. Operating under a forgotten 4651 municipal efficiency ordinance, the system concluded that holding an actual campaign would consume unnecessary power and logged the final tally directly into the central registry.\n\nThe automated outcome produced a landslide victory for Arthur Pendelton, a retired hydroponics technician who had not yet declared his candidacy and was currently on a walking holiday across the Tharsis Rise. Three registered candidates, who between them spent over forty million credits on orbital banner advertising, received zero votes.\n\n\"The system performed precisely as intended, which is the precise root of the problem,\" said Dr Vanya O'Connell, chief research fellow at the Martian Centre for Public Governance. \"The algorithm correctly anticipated how every citizen would vote after enduring three weeks of speeches. By bypassing the speeches, it saved the sub-district four hundred million credits in public debate costs, but unfortunately violated several minor procedural clauses regarding human agency.\"\n\nThe upcoming snap re-vote has created unprecedented headaches for local strategists. Campaign managers are now attempting to persuade constituents to alter their minds simply to prove the algorithm wrong, while legal teams for the algorithm have filed an injunction arguing that a physical vote constitutes an insult to statistical mathematics.\n\nUntil the matter is resolved, Mr Pendelton remains legally bound to serve as Minister for Infrastructure, despite having not yet returned from his hike.",
-    "scene": "An election clerk in a faded high-visibility vest pastes a yellow void notice over the glass screen of an unstaffed voting terminal in a dusty red plaza.",
+    "headline": "Synapse-Sync Wedded Ring v8.1 Turns Dinner Parties Into Minefields",
+    "body": "When NeuralMatrimony released the Synapse-Sync Wedded Ring (v8.1), the marketing promised an end to marital miscommunication. By converting mild neurological impulses into shared micro-vibrations and ambient colour shifts, the band claims to foster perfect empathetic alignment. After a three-month field trial, however, we must report that the device does not deepen romantic harmony so much as it systematically destroys social invitations.\n\nThe primary flaw lies in the algorithm's inability to distinguish deep emotional intimacy from transient, petty malice. While the ring successfully transmits feelings of profound devotion during quiet evenings, it exhibits an alarming sensitivity during catered events. During a dinner party hosted by long-time acquaintances, a fleeting, suppressed thought regarding the dryness of the roast duck was instantly translated into a sharp neuro-hiss and a bright, magenta pulse that illuminated the entire soup tureen.\n\nSubsequent tests revealed that v8.1 actively prioritises passive-aggressive subtext over genuine affection. When my partner mentally observed that our host had recycled an anecdote about his bicycle, her ring emitted a low-frequency vibration that caused my wine glass to chime in pitch with her silent condescension. By dessert, the rings had established a feedback loop of unexpressed dinner-table critiques, leaving four adults sitting in petrified, glowing silence while the bands hummed with shared disapproval of the linen napkins.\n\nThe manufacturer insists these features represent raw emotional honesty, but civil society relies entirely on merciful, unspoken restraint. Until NeuralMatrimony introduces a firmware patch that restores basic duplicity and polite pretense, we recommend keeping your vows un-synced.\n\nVerdict: One and a half stars out of five.",
+    "scene": "Four dinner guests sit frozen over cold roast duck while a platinum ring emits a harsh magenta glare onto the soup tureen.",
     "dateline": {
-      "place": "New Caldera, Hellas Planitia",
-      "year": 4672,
-      "month": 3,
-      "day": 25,
-      "years_from_now": 2646
+      "place": "Lake Burley Griffin Heights",
+      "year": 2074,
+      "month": 4,
+      "day": 12,
+      "years_from_now": 48
     },
-    "domain": "governance and elections",
-    "glossary": [],
-    "premise": "A Martian parliamentary sub-district has called a snap re-vote after quantum polling algorithms cast 40 million ballots three weeks before candidates officially registered.",
-    "image": null
+    "domain": "love and marriage",
+    "glossary": [
+      {
+        "term": "Neuro-hiss",
+        "gloss": "The haptic vibration delivered to a wearer's finger when their partner silently disparages a host's culinary choices."
+      }
+    ],
+    "premise": "The Synapse-Sync Wedded Ring (v8.1) promises total emotional transparency, but our three-month test drive revealed a ruinous tendency to broadcast passive-aggressive thoughts during dinner parties.",
+    "image": "assets/img/2026-07-29.jpg"
   },
   "meta": {
-    "run_time": "2026-07-29T02:30:20.612229+00:00",
+    "run_time": "2026-07-29T02:36:41.275629+00:00",
     "timezone": "Australia/Sydney",
     "tagline": "Tomorrow's headlines, a little early",
     "site_name": "The Aftertimes",
     "base_url": "https://the-aftertimes.github.io",
     "signup_form_url": "",
-    "edition": 3
+    "edition": 4
   }
 }

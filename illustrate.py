@@ -51,7 +51,9 @@ def _cf_image(prompt: str, settings: dict) -> bytes | None:
 
 
 def _crop(raw: bytes, frac: list) -> bytes:
-    im = Image.open(io.BytesIO(raw)).convert("RGB")
+    # Convert to greyscale so the engraving is always monochrome ink, even if the
+    # model sneaks in colour (it sometimes does). The bone-paper blend is done in CSS.
+    im = Image.open(io.BytesIO(raw)).convert("L")
     w, h = im.size
     left, top, right, bottom = frac
     im = im.crop((int(w * left), int(h * top), int(w * right), int(h * bottom)))
