@@ -5,7 +5,7 @@ site:
 timezone: "Australia/Sydney"
 update_hour_utc: 20
 output_html: "index.html"
-signup_form_url: ""   # Brevo form action; filled in when the newsletter is activated
+signup_form_url: "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA=="   # Brevo "The Aftertimes signup" form (single opt-in, no confirmation)
 
 dates:
   min_years: 8

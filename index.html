@@ -84,7 +84,26 @@ a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--acc
         </div>
       </div>
     </section>
-    
+    <section class="signup">
+  <p class="signup-lead">Get one dispatch from the future in your inbox each morning.</p>
+  <form action="https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==" method="post" target="at-sink" class="signup-form"
+        onsubmit="return atSignup(this)">
+    <input type="email" name="EMAIL" placeholder="you@example.com"
+           aria-label="Email address" required>
+    <input type="text" name="email_address_check" value="" tabindex="-1"
+           autocomplete="off" aria-hidden="true" style="position:absolute;left:-5000px;">
+    <input type="hidden" name="locale" value="en">
+    <input type="hidden" name="html_type" value="simple">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="signup-note" id="at-note">One email a day. No tracking. Unsubscribe anytime.</p>
+  <iframe name="at-sink" title="subscription" aria-hidden="true" tabindex="-1"
+          style="position:absolute;width:0;height:0;border:0;"></iframe>
+  <script>function atSignup(f){setTimeout(function(){f.style.display='none';
+    var n=document.getElementById('at-note');if(n){n.textContent=
+    "Thanks - your first dispatch arrives tomorrow morning.";n.style.color='var(--accent)';}},150);
+    return true;}</script>
+</section>
     <p><a class="arc" href="archive.html">Browse the archive &rarr;</a></p>
     <footer>
       <p class="fiction">Every dispatch is fiction, written by a machine each

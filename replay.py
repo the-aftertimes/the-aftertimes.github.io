@@ -28,7 +28,14 @@ def main() -> int:
     if not record:
         print(f"No dispatch for {run_date}.")
         return 1
-    html = render_mod.render_dispatch(record["dispatch"], record["meta"], stale=False)
+    # Refresh the config-derived meta fields from current settings, so a replay
+    # reflects the live look/config (e.g. a newly-wired signup form URL, tagline).
+    meta = dict(record["meta"])
+    meta["signup_form_url"] = settings.get("signup_form_url", "")
+    meta["tagline"] = settings["site"]["tagline"]
+    meta["site_name"] = settings["site"]["name"]
+    meta["base_url"] = settings["site"]["base_url"]
+    html = render_mod.render_dispatch(record["dispatch"], meta, stale=False)
     with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
         fh.write(html)
     print(f"Replayed {run_date} -> {settings['output_html']}")
