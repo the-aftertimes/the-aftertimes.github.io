@@ -17,5 +17,6 @@
 - [x] Actions secrets set: `GEMINI_API_KEY`, `CF_ACCOUNT_ID`, `CF_API_TOKEN`.
 
 ## Later (v2 ideas)
+- [ ] **Try a Pro model for the write stage.** If prompt-tuning plateaus on story quality, switch the `write` stage from `gemini-3.6-flash` to a Gemini Pro model (e.g. `gemini-3-pro-preview`) for sharper prose. Pro's free-tier quota is tighter, so wire a graceful fallback to flash on 429/quota. Keep ideate on flash. Zero-cost constraint still applies.
 - [ ] **Locator map.** A small star-map / solar-system map on each dispatch showing where in the galaxy the story is set (the dateline location), the way One Story plots covering countries on a world map.
 - [ ] **Filter the archive by tag.** Let readers filter the archive/timeline by domain tag (e.g. show only "Space Law" dispatches).
