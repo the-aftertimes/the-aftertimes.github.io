@@ -17,3 +17,4 @@ Open items, in rough order. Tick as done.
 
 ## Later (v2 ideas)
 - [ ] **Locator map.** A small star-map / solar-system map on each dispatch showing where in the galaxy the story is set (the dateline location), the way One Story plots covering countries on a world map.
+- [ ] **Filter the archive by tag.** Let readers filter the archive/timeline by domain tag (e.g. show only "Space Law" dispatches).

@@ -10,6 +10,14 @@ import os
 from common import hyphenate, load_settings, read_json, rel
 from dates import format_dateline
 
+_MINOR = {"a", "an", "and", "the", "of", "to", "in", "on", "for", "at", "by", "or", "with"}
+
+
+def _title_case(s: str) -> str:
+    words = s.split()
+    return " ".join(w if (w.lower() in _MINOR and i) else w[:1].upper() + w[1:]
+                    for i, w in enumerate(words))
+
 _CSS = """
 :root{--bg:#f4efe3;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
 *{box-sizing:border-box;}
@@ -76,7 +84,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
         d = r["dispatch"]
         dl = html.escape(hyphenate(format_dateline(d["dateline"])))
         head = html.escape(hyphenate(d["headline"]))
-        dom = html.escape(hyphenate(d.get("domain", "")))
+        dom = html.escape(hyphenate(_title_case(d.get("domain", ""))))
         rows += (f'<li><div class="dl">{dl}</div>'
                  f'<a href="d/{r["run_date"]}.html">{head}</a>'
                  f'<div class="dom">{dom}</div></li>')
