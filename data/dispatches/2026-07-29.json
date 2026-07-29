@@ -1,34 +1,29 @@
 {
   "run_date": "2026-07-29",
-  "run_time": "2026-07-29T02:36:41.275629+00:00",
+  "run_time": "2026-07-29T05:26:15.690443+00:00",
   "dispatch": {
-    "headline": "Synapse-Sync Wedded Ring v8.1 Turns Dinner Parties Into Minefields",
-    "body": "When NeuralMatrimony released the Synapse-Sync Wedded Ring (v8.1), the marketing promised an end to marital miscommunication. By converting mild neurological impulses into shared micro-vibrations and ambient colour shifts, the band claims to foster perfect empathetic alignment. After a three-month field trial, however, we must report that the device does not deepen romantic harmony so much as it systematically destroys social invitations.\n\nThe primary flaw lies in the algorithm's inability to distinguish deep emotional intimacy from transient, petty malice. While the ring successfully transmits feelings of profound devotion during quiet evenings, it exhibits an alarming sensitivity during catered events. During a dinner party hosted by long-time acquaintances, a fleeting, suppressed thought regarding the dryness of the roast duck was instantly translated into a sharp neuro-hiss and a bright, magenta pulse that illuminated the entire soup tureen.\n\nSubsequent tests revealed that v8.1 actively prioritises passive-aggressive subtext over genuine affection. When my partner mentally observed that our host had recycled an anecdote about his bicycle, her ring emitted a low-frequency vibration that caused my wine glass to chime in pitch with her silent condescension. By dessert, the rings had established a feedback loop of unexpressed dinner-table critiques, leaving four adults sitting in petrified, glowing silence while the bands hummed with shared disapproval of the linen napkins.\n\nThe manufacturer insists these features represent raw emotional honesty, but civil society relies entirely on merciful, unspoken restraint. Until NeuralMatrimony introduces a firmware patch that restores basic duplicity and polite pretense, we recommend keeping your vows un-synced.\n\nVerdict: One and a half stars out of five.",
-    "scene": "Four dinner guests sit frozen over cold roast duck while a platinum ring emits a harsh magenta glare onto the soup tureen.",
+    "headline": "Court Rules Sentient Nebula Cannot Copyright Its Own Light",
+    "body": "The High Court of Luna has dismissed a landmark copyright suit brought on behalf of a sentient interstellar gas cloud, ruling that cosmic radiation cannot be protected under intellectual property law.\n\nThe action was brought by trustees representing the Ophiuchus Drift, an autonomous ionised nebula that has spent the past four centuries orchestrating a slow-motion installation of violet and sodium flares across the Southern Celestial Hemisphere. The trustees argued that the cloud’s deliberate manipulation of thermal emissions constituted an original work of sculpture, and sought licensing fees from deep-space cruise operators offering commercial tours of the display.\n\nIn a unanimous judgment delivered from the bench, Chief Justice Vane rejected the claim, citing fundamental boundaries within lunar contract law.\n\n\"While this court acknowledges the aesthetic ambition of the appellant’s four-hundred-year flare, an artistic work requires a legally recognised creator,\" Chief Justice Vane wrote. \"A collection of self-aware plasma remains, in the eyes of the law, an atmospheric event. Photons possess no legal standing to execute a work-for-hire contract, nor can electromagnetic radiation be served with a summons.\"\n\nThe court added that granting intellectual property rights to celestial phenomena would set an unworkable precedent, potentially allowing solar flares to demand royalties on planetary auroras, or black holes to sue galleries for unauthorised light absorption.\n\nCounsel for the cloud expressed disappointment, noting that their client had delayed a scheduled supernova to allow the trial to conclude. Following the decision, the Ophiuchus Drift reportedly expressed its displeasure by shifting its spectrum three shades toward infrared, an artistic gesture that legal experts confirmed was entirely unprotected by law and could be freely copied by any nearby space dust.",
+    "scene": "A robed judge sits at a tall marble bench while a glowing hologram of a violet gas cloud hovers above a table of suited lawyers.",
     "dateline": {
-      "place": "Lake Burley Griffin Heights",
-      "year": 2074,
-      "month": 4,
-      "day": 12,
-      "years_from_now": 48
+      "place": "The Obsidian Citadel, Luna",
+      "year": 3014,
+      "month": 5,
+      "day": 21,
+      "years_from_now": 988
     },
-    "domain": "love and marriage",
-    "glossary": [
-      {
-        "term": "Neuro-hiss",
-        "gloss": "The haptic vibration delivered to a wearer's finger when their partner silently disparages a host's culinary choices."
-      }
-    ],
-    "premise": "The Synapse-Sync Wedded Ring (v8.1) promises total emotional transparency, but our three-month test drive revealed a ruinous tendency to broadcast passive-aggressive thoughts during dinner parties.",
+    "domain": "art",
+    "glossary": [],
+    "premise": "The High Court of Luna ruled that a sentient nebula’s 400-year light installation cannot be copyrighted, writing from the bench that \"photons possess no legal standing to execute a work-for-hire contract.\"",
     "image": "assets/img/2026-07-29.jpg"
   },
   "meta": {
-    "run_time": "2026-07-29T02:36:41.275629+00:00",
+    "run_time": "2026-07-29T05:26:15.690443+00:00",
     "timezone": "Australia/Sydney",
     "tagline": "Tomorrow's headlines, a little early",
     "site_name": "The Aftertimes",
     "base_url": "https://the-aftertimes.github.io",
-    "signup_form_url": "",
-    "edition": 4
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 5
   }
 }
