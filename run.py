@@ -17,6 +17,7 @@ from common import load_settings, load_yaml, read_json, rel, write_json
 import archive as archive_mod
 import bible as bible_mod
 import ideate as ideate_stage
+import illustrate as illustrate_mod
 import ledger as ledger_mod
 import render as render_mod
 import selection as select_stage
@@ -81,6 +82,10 @@ def run_pipeline() -> dict:
     print(">>> WRITE")
     dispatch = write_stage.write(premise, dateline, domain, settings, style["guidance"])
     print(f"    headline: {dispatch['headline'][:60]}")
+
+    print(">>> ILLUSTRATE")
+    dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings)
+    print(f"    image: {dispatch['image'] or 'none (fallback)'}")
 
     print(">>> RENDER")
     meta = {

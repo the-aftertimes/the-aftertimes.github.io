@@ -1,6 +1,6 @@
 site:
   name: "The Aftertimes"
-  tagline: "Dispatches from years that have not yet happened"
+  tagline: "Tomorrow's headlines, a little early"
   base_url: "https://the-aftertimes.github.io"
 timezone: "Australia/Sydney"
 update_hour_utc: 20
@@ -35,3 +35,11 @@ gemini:
   max_retries: 2
   temperature_ideate: 1.1
   temperature_write: 0.9
+
+image:
+  enabled: true
+  model: "@cf/black-forest-labs/flux-1-schnell"
+  steps: 8
+  timeout: 120
+  crop: [0.03, 0.03, 0.97, 0.86]   # left, top, right, bottom fractions - drops the caption band
+  dir: "assets/img"

@@ -5,5 +5,13 @@
     "era_bucket": 5,
     "domain": "space law",
     "headline": "Ganymede High Court Rejects Relativistic Time Dilation Defense in Alimony Dispute"
+  },
+  {
+    "run_date": "2026-07-29",
+    "year": 2667,
+    "era_bucket": 12,
+    "domain": "entertainment",
+    "headline": "Deep-Space Speed-Chess Grand Final Forfeited Over Pawn-Sacrifice Ethics",
+    "style": "sport"
   }
 ]

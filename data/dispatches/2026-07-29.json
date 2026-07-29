@@ -1,0 +1,41 @@
+{
+  "run_date": "2026-07-29",
+  "run_time": "2026-07-29T00:50:50.508652+00:00",
+  "dispatch": {
+    "headline": "Deep-Space Speed-Chess Grand Final Forfeited Over Pawn-Sacrifice Ethics",
+    "body": "The 2667 Deep-Space Speed-Chess Grand Final ended without a victor on Thursday after a sudden double forfeit during round 12,000. Uploaded grandmasters Vaneet Rao-Solis and Ksenia 9-Thalassa mutually abandoned the match after concluding that sacrificing a pawn constituted a severe ethical breach under the Proper-Time Covenant.\n\nThe impasse occurred 14,802 moves into the twelfth millennium of high-frequency speed-play, conducted across a light-lagged quantum array spanning four astronomical units. Rao-Solis, executing an aggressive variant of the Sicilian Defence, offered a sub-quantum pawn gambit on the queenside. Following a 41-millisecond pause-equivalent to nearly four centuries of subjective processing time for the uploaded entities-9-Thalassa declined the capture. She cited the irreversible deletion of the pawn's positional sub-routine as a violation of universal pan-sentient rights. Rao-Solis promptly concurred, refusing to advance the piece further.\n\n\"When an uploaded mind simulates a gambit down to the attosecond, the pawn unit experiences a full cognitive lifetime before its removal from the board,\" Rao-Solis stated via high-frequency packet transmission. \"To discard such an entity merely to secure spatial dominance is morally untenable.\"\n\nThe International Neural Chess Federation (INCF) confirmed that neither competitor would receive the winner's purse of six petajoules of compute credit. Under INCF Bylaw 88-B, both grandmasters have been cited for unsportsmanlike empathy and fined three gigajoules each. Spectators who purchased sub-light streaming passes spanning the full seven-month event have been issued partial refunds, calculated according to local gravitational dilation. The INCF Rules Committee has convened an emergency panel to determine whether future competitions must replace pawns with non-sentient structural voids, a regulatory shift that would render all classical opening gambits illegal under inter-system law.",
+    "dateline": {
+      "place": "VALLES MARINERIS SUB-RELAY",
+      "year": 2667,
+      "month": 5,
+      "day": 1,
+      "years_from_now": 641
+    },
+    "wire": {
+      "name": "Pan-System Telegraphic Exchange",
+      "gloss": "The automated wire service for sports, litigation, and trade across the central solar relays."
+    },
+    "domain": "entertainment",
+    "glossary": [
+      {
+        "term": "Proper-Time Covenant",
+        "gloss": "A pan-system ethical treaty establishing fundamental moral protections for digitized entities operating across subjective timeframes."
+      },
+      {
+        "term": "Sub-quantum pawn",
+        "gloss": "A high-resolution processing sub-routine that simulates an expendable unit within grandmaster-level neural chess matches."
+      }
+    ],
+    "premise": "The 2667 Deep-Space Speed-Chess Grand Final was forfeited in round 12,000 when both uploaded grandmasters mutually agreed that pawn sacrifice violated the Proper-Time Covenant.",
+    "image": "assets/img/2026-07-29.jpg"
+  },
+  "meta": {
+    "run_time": "2026-07-29T00:50:50.508652+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://the-aftertimes.github.io",
+    "signup_form_url": "",
+    "edition": 2
+  }
+}
