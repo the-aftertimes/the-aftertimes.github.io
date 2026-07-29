@@ -26,7 +26,6 @@ Rules:
   region, settlement or landmark (a plausible future or off-world place is
   fine). Do NOT use technical infrastructure jargon (no "sub-relay", "node",
   "array", "hub" type names).
-- File it under an invented future newswire.
 - Coin at most two world-specific terms, and only if they are genuinely funny
   or necessary; if the story needs none, return an empty glossary. Only
   glossary a term a reader could not infer from context.
@@ -35,10 +34,11 @@ Rules:
 - Use Australian English spelling (organise, colour, defence, metre, favour).
 - Vary character names and places widely; do not reuse common names. Do not default the day to Tuesday - vary or omit the weekday.
 - Do not put the year in the dateline place; the date is shown separately.
+- Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
 
 Return JSON only:
 {{"headline": "...", "dateline_place": "...", "body": "...",
-  "wire_name": "...", "wire_gloss": "...", "domain": "{domain}",
+  "domain": "{domain}",
   "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
 
 
@@ -54,8 +54,6 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
         "headline": hyphenate((d.get("headline") or "").strip()),
         "body": hyphenate((d.get("body") or "").strip()),
         "dateline": dl,
-        "wire": {"name": hyphenate((d.get("wire_name") or "").strip()),
-                 "gloss": hyphenate((d.get("wire_gloss") or "").strip())},
         "domain": (d.get("domain") or domain).strip(),
         "glossary": [{"term": hyphenate(g.get("term", "").strip()),
                       "gloss": hyphenate(g.get("gloss", "").strip())}

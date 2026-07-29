@@ -14,3 +14,6 @@ Open items, in rough order. Tick as done.
 ## Before first live edition
 - [ ] **Reset generated artefacts** so day 1 starts clean: `data/ledger.json` -> `[]`, `data/bible.json` -> the 3 seed motifs, delete test `data/dispatches/*.json`, `d/*.html`, and the placeholder `index.html`/`archive.html`. (These got swept into git during local tone-testing.)
 - [ ] Set the `GEMINI_API_KEY` (and CF token) as GitHub Actions secrets for the daily cron.
+
+## Later (v2 ideas)
+- [ ] **Locator map.** A small star-map / solar-system map on each dispatch showing where in the galaxy the story is set (the dateline location), the way One Story plots covering countries on a world map.

@@ -6,7 +6,7 @@ from __future__ import annotations
 import html
 
 from common import hyphenate
-from dates import format_dateline, years_phrase
+from dates import format_date, format_dateline
 
 
 def build_email(dispatch: dict, meta: dict) -> tuple[str, str]:
@@ -14,12 +14,11 @@ def build_email(dispatch: dict, meta: dict) -> tuple[str, str]:
     subject = hyphenate(f"The Aftertimes: {dispatch['headline']}")
     headline = html.escape(hyphenate(dispatch["headline"]))
     dateline = html.escape(hyphenate(format_dateline(dl)))
-    years = html.escape(years_phrase(dl["years_from_now"]))
+    date_txt = html.escape(hyphenate(format_date(dl)))
     paras = "".join(
         f'<p style="margin:0 0 14px;font-size:16px;line-height:1.55;color:#1a1611;">'
         f'{html.escape(hyphenate(p.strip()))}</p>'
         for p in dispatch["body"].split("\n") if p.strip())
-    filed = html.escape(hyphenate(dispatch["wire"]["name"]))
     url = html.escape(meta["base_url"], quote=True)
     body = f"""<!DOCTYPE html>
 <html><head><meta charset="utf-8">
@@ -35,10 +34,10 @@ def build_email(dispatch: dict, meta: dict) -> tuple[str, str]:
     <div style="font-size:30px;font-weight:700;color:#1a1611;">The Aftertimes</div>
     <div style="font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#6b5f4d;margin-top:6px;font-family:Arial,sans-serif;">Dispatches from years that have not yet happened</div>
   </div>
-  <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7a2b2b;margin-bottom:10px;font-family:Arial,sans-serif;">{dateline} &middot; {years}</div>
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7a2b2b;margin-bottom:10px;font-family:Arial,sans-serif;">{dateline}</div>
   <h1 style="font-size:26px;line-height:1.15;color:#1a1611;margin:0 0 16px;">{headline}</h1>
   {paras}
-  <p style="font-size:13px;font-style:italic;color:#6b5f4d;margin:6px 0 20px;">Filed by {filed}</p>
+  <p style="font-size:13px;font-style:italic;color:#6b5f4d;margin:6px 0 20px;">{date_txt}</p>
   <p style="margin:0 0 20px;"><a href="{url}" style="color:#7a2b2b;font-weight:700;font-family:Arial,sans-serif;font-size:14px;">Read it on the site and browse the archive &rarr;</a></p>
   <p style="font-size:12px;font-style:italic;color:#6b5f4d;border-top:1px solid #cdc3ad;padding-top:14px;margin:0;font-family:Arial,sans-serif;">Every dispatch is fiction, written by a machine each morning. None of it has happened. Yet.</p>
 </td></tr></table>

@@ -8,7 +8,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from common import hyphenate
-from dates import format_dateline, years_phrase
+from dates import format_date, format_dateline
 
 _CSS = """
 :root{--bg:#f4efe3;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
@@ -34,8 +34,6 @@ body{margin:0;background:var(--bg);color:var(--fg);
 h1{font-size:clamp(1.9rem,6vw,2.9rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
-.filed{font-family:-apple-system,system-ui,sans-serif;font-size:0.82rem;
-  font-style:italic;color:var(--muted);margin:0.5rem 0 0;}
 .meta{font-family:-apple-system,system-ui,sans-serif;margin-top:1.8rem;}
 .meta-title{margin:0;color:var(--accent);font-weight:600;font-size:0.72rem;
   letter-spacing:0.16em;text-transform:uppercase;padding-top:0.6rem;
@@ -90,6 +88,17 @@ def _roman(n: int) -> str:
     return "".join(out)
 
 
+_MINOR = {"a", "an", "and", "the", "of", "to", "in", "on", "for", "at", "by", "or", "with"}
+
+
+def _headline_case(s: str) -> str:
+    words = s.split()
+    out = []
+    for i, w in enumerate(words):
+        out.append(w if (w.lower() in _MINOR and i != 0) else w[:1].upper() + w[1:])
+    return " ".join(out)
+
+
 def _signup(form_url: str) -> str:
     if not form_url:
         return ""
@@ -122,19 +131,15 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     dl["place"] = re.sub(r"\s*\(\d{2,}\)\s*$", "", (dl.get("place") or ""))
     headline = html.escape(hyphenate(dispatch["headline"]))
     dateline_txt = html.escape(hyphenate(format_dateline(dl)))
-    years_txt = html.escape(years_phrase(dl["years_from_now"]))
+    date_txt = html.escape(hyphenate(format_date(dl)))
     body_paras = "".join(
         f"<p>{html.escape(hyphenate(p.strip()))}</p>"
         for p in dispatch["body"].split("\n") if p.strip())
-    wire = dispatch["wire"]
-    filed = html.escape(hyphenate(wire["name"]))
-    domain = html.escape(hyphenate(dispatch["domain"].title()))
+    domain = html.escape(hyphenate(_headline_case(dispatch["domain"])))
     gloss_items = "".join(
         f"<li><b>{html.escape(hyphenate(g['term']))}</b> - "
         f"{html.escape(hyphenate(g['gloss']))}</li>"
         for g in dispatch.get("glossary", []))
-    wire_gloss = (f"<li><b>{filed}</b> - {html.escape(hyphenate(wire['gloss']))}</li>"
-                  if wire.get("gloss") else "")
     stamp = _fmt_local(meta["run_time"], meta["timezone"])
     stale_banner = ("<div class='stale'>Showing yesterday's dispatch - today's "
                     "edition did not file.</div>" if stale else "")
@@ -184,19 +189,18 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
       <div class="name">{html.escape(meta['site_name'])}</div>
       <div class="tag">{html.escape(hyphenate(meta['tagline']))}</div>
     </header>
-    <p class="dateline">{dateline_txt} &middot; {years_txt}</p>
+    <p class="dateline">{dateline_txt}</p>
     <h1>{headline}</h1>
     {figure}
     <div class="body">{body_paras}</div>
-    <p class="filed">Filed by {filed}</p>
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">
         <div class="meta-facts">
-          <span><b>{html.escape(str(dl['year']))}</b> &middot; {years_txt}</span>
+          <span><b>{date_txt}</b></span>
           <span>Domain: <b>{domain}</b></span>
         </div>
-        <ul class="gloss">{wire_gloss}{gloss_items}</ul>
+        <ul class="gloss">{gloss_items}</ul>
       </div>
     </section>
     {signup}

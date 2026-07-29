@@ -17,12 +17,12 @@ from common import rel
 
 def build_prompt(dispatch: dict) -> str:
     return (
-        "A wordless 19th-century newspaper wood-engraving illustration. Black ink on "
-        "aged bone-white paper, dense cross-hatching and fine parallel linework, high "
-        "contrast, soft vignette framing, no colour. It depicts the scene of this news "
-        f"story: \"{dispatch['headline']}\". Editorial broadsheet engraved plate, imagery "
-        "only. IMPORTANT: contains absolutely no text, no letters, no words, no captions, "
-        "no title, no numbers, no signature, no watermark - a purely pictorial illustration."
+        "A masterful wood engraving in the style of Gustave Dore. Fine black ink linework "
+        "and dense cross-hatching on aged paper, dramatic chiaroscuro lighting, a clear "
+        "central scene with figures in a believable environment, rich background detail. "
+        f"It depicts the scene of this news story: \"{dispatch['headline']}\". No colour. "
+        "Absolutely no text, no letters, no words, no captions, no titles, no numbers, no "
+        "signatures and no watermark anywhere in the image - purely pictorial."
     )
 
 

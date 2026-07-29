@@ -22,8 +22,9 @@ def test_render_contains_core_elements():
     assert "The Aftertimes" in html
     assert "Floating Capital Sues the Sea" in html
     assert "September" in html and "2,391".replace(",", "") in html.replace(",", "")
-    assert "365 years from today" in html
-    assert "Nordwire" in html
+    assert "4 September 2,391" in html or "4 September 2391" in html
+    assert "years from today" not in html
+    assert "Filed by" not in html
     assert "Tide &amp; Wren" in html or "Tide & Wren" in html
     assert "fiction" in html.lower()          # framing footer present
     assert "VOL." in html and "No. 1" in html  # edition line renders
@@ -130,5 +131,6 @@ def test_build_email_has_subject_and_body():
     subject, body = build_email(dispatch, meta)
     assert "Floating Capital" in subject
     assert "2391" in body or "2,391" in body
+    assert "Filed by" not in body
     assert "\u2014" not in body
     assert "the-aftertimes.github.io" in body

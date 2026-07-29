@@ -71,3 +71,4 @@ def test_write_parses_and_hyphenates(monkeypatch):
     assert "\u2014" not in dispatch["body"]      # hyphenated
     assert dispatch["headline"] == "Floating Capital Sues the Sea"
     assert dispatch["glossary"][0]["term"] == "Tide & Wren"
+    assert "wire" not in dispatch

@@ -55,3 +55,8 @@ def format_dateline(dl: dict) -> str:
 
 def years_phrase(years_from_now: int) -> str:
     return f"{years_from_now:,} years from today"
+
+
+def format_date(dl: dict) -> str:
+    """Just the date, no place: e.g. '4 September 2987'. Year comma-grouped."""
+    return f"{dl['day']} {_MONTHS[dl['month'] - 1]} {dl['year']:,}"

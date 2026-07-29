@@ -1,7 +1,7 @@
 from datetime import date
 import random
 
-from dates import sample_future_dateline, era_bucket, format_dateline
+from dates import sample_future_dateline, era_bucket, format_date, format_dateline
 
 
 def test_sample_is_in_the_future(rng, date_cfg):
@@ -36,4 +36,10 @@ def test_format_dateline_no_dashes_and_grouped_years():
                            "month": 9, "day": 4, "years_from_now": 38286})
     assert "September" in txt
     assert "40312" in txt or "40,312" in txt
+    assert "\u2014" not in txt and "\u2013" not in txt
+
+
+def test_format_date_no_place_grouped_year():
+    txt = format_date({"day": 4, "month": 9, "year": 2987})
+    assert txt == "4 September 2,987"
     assert "\u2014" not in txt and "\u2013" not in txt
