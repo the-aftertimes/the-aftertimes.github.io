@@ -24,6 +24,8 @@ jobs:
       - name: Generate today's dispatch
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: python run.py
       - name: Commit and push
         run: |
