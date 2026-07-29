@@ -41,9 +41,6 @@ h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
 .meta-body{color:var(--muted);font-size:0.9rem;padding-top:0.6rem;}
 .meta-facts{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:0.7rem;}
 .meta-facts b{color:var(--fg);}
-.gloss{list-style:none;margin:0;padding:0;}
-.gloss li{padding:0.35rem 0;border-top:1px solid var(--rule);}
-.gloss b{color:var(--fg);}
 .stale{font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;
   background:var(--accent);color:var(--bg);padding:0.6rem 1rem;border-radius:0.3rem;
   margin-bottom:1.8rem;}
@@ -136,10 +133,6 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
         f"<p>{html.escape(hyphenate(p.strip()))}</p>"
         for p in dispatch["body"].split("\n") if p.strip())
     domain = html.escape(hyphenate(_headline_case(dispatch["domain"])))
-    gloss_items = "".join(
-        f"<li><b>{html.escape(hyphenate(g['term']))}</b> - "
-        f"{html.escape(hyphenate(g['gloss']))}</li>"
-        for g in dispatch.get("glossary", []))
     stamp = _fmt_local(meta["run_time"], meta["timezone"])
     stale_banner = ("<div class='stale'>Showing yesterday's dispatch - today's "
                     "edition did not file.</div>" if stale else "")
@@ -200,7 +193,6 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
           <span><b>{date_txt}</b></span>
           <span>Domain: <b>{domain}</b></span>
         </div>
-        <ul class="gloss">{gloss_items}</ul>
       </div>
     </section>
     {signup}

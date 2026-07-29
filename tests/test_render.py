@@ -25,7 +25,7 @@ def test_render_contains_core_elements():
     assert "4 September 2,391" in html or "4 September 2391" in html
     assert "years from today" not in html
     assert "Filed by" not in html
-    assert "Tide &amp; Wren" in html or "Tide & Wren" in html
+    assert "Tide" not in html  # glossary removed from the page
     assert "fiction" in html.lower()          # framing footer present
     assert "VOL." in html and "No. 1" in html  # edition line renders
 
