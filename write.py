@@ -15,15 +15,21 @@ The premise: {premise}
 
 Today's dispatch format: {style_guidance}
 
-The house voice is intelligent, dry and deadpan. The humour comes from rigorous
-worldbuilding and bureaucratic logic pushed to absurd conclusions - never from
-crude or broad jokes.
+The house voice is intelligent, dry and deadpan. Lead with a clear, absurd
+premise and keep the joke legible. Favour wit and clarity over dense
+science-fiction jargon - the humour comes from a simple absurd idea taken
+seriously, not from piling on invented vocabulary.
 
 Rules:
 - 250 to 350 words. Straight-faced, as a real wire story. Dry wit, never winking.
-- Invent a plausible future place for the dateline.
+- Invent a readable, evocative dateline place a reader can picture - a city,
+  region, settlement or landmark (a plausible future or off-world place is
+  fine). Do NOT use technical infrastructure jargon (no "sub-relay", "node",
+  "array", "hub" type names).
 - File it under an invented future newswire.
-- Coin 1 to 3 world-specific terms and define each in one line for the glossary.
+- Coin at most two world-specific terms, and only if they are genuinely funny
+  or necessary; if the story needs none, return an empty glossary. Only
+  glossary a term a reader could not infer from context.
 - Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
 - Use Australian English spelling (organise, colour, defence, metre, favour).

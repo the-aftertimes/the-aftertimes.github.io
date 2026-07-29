@@ -29,18 +29,16 @@ body{margin:0;background:var(--bg);color:var(--fg);
 .dateline{font-family:-apple-system,system-ui,sans-serif;font-size:0.92rem;
   font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);
   margin:0 0 0.8rem;}
-.engraving{margin:0 0 1.6rem;}
-.engraving img{width:100%;height:auto;filter:grayscale(1);border:1px solid var(--rule);}
-.engraving figcaption{font-family:-apple-system,system-ui,sans-serif;font-size:0.78rem;
-  font-style:italic;color:var(--muted);margin-top:0.4rem;}
+.engraving{margin:1.2rem 0 1.8rem;}
+.engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
 h1{font-size:clamp(1.9rem,6vw,2.9rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
 .filed{font-family:-apple-system,system-ui,sans-serif;font-size:0.82rem;
   font-style:italic;color:var(--muted);margin:0.5rem 0 0;}
 .meta{font-family:-apple-system,system-ui,sans-serif;margin-top:1.8rem;}
-.meta summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:0.82rem;
-  letter-spacing:0.16em;text-transform:uppercase;padding:0.5rem 0;
+.meta-title{margin:0;color:var(--accent);font-weight:600;font-size:0.72rem;
+  letter-spacing:0.16em;text-transform:uppercase;padding-top:0.6rem;
   border-top:1px solid var(--rule);}
 .meta-body{color:var(--muted);font-size:0.9rem;padding-top:0.6rem;}
 .meta-facts{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:0.7rem;}
@@ -130,7 +128,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
         for p in dispatch["body"].split("\n") if p.strip())
     wire = dispatch["wire"]
     filed = html.escape(hyphenate(wire["name"]))
-    domain = html.escape(hyphenate(dispatch["domain"]))
+    domain = html.escape(hyphenate(dispatch["domain"].title()))
     gloss_items = "".join(
         f"<li><b>{html.escape(hyphenate(g['term']))}</b> - "
         f"{html.escape(hyphenate(g['gloss']))}</li>"
@@ -161,7 +159,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     if image:
         img_src = f"{asset_prefix}{html.escape(str(image), quote=True)}"
         figure = (f'<figure class="engraving"><img src="{img_src}" alt="{headline}" '
-                  f'loading="lazy"><figcaption>An imagined engraving.</figcaption></figure>')
+                  f'loading="lazy"></figure>')
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,8 +189,8 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     {figure}
     <div class="body">{body_paras}</div>
     <p class="filed">Filed by {filed}</p>
-    <details class="meta">
-      <summary>Dispatch metadata</summary>
+    <section class="meta">
+      <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">
         <div class="meta-facts">
           <span><b>{html.escape(str(dl['year']))}</b> &middot; {years_txt}</span>
@@ -200,7 +198,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
         </div>
         <ul class="gloss">{wire_gloss}{gloss_items}</ul>
       </div>
-    </details>
+    </section>
     {signup}
     {archive_link}
     <footer>

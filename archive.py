@@ -23,11 +23,18 @@ body{margin:0;background:var(--bg);color:var(--fg);
   letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.6rem;}
 h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:1.4rem 0 0.8rem;}
-.timeline{position:relative;height:52px;border-top:1px solid var(--rule);
-  border-bottom:1px solid var(--rule);margin:0 0 2rem;}
-.tick{position:absolute;top:8px;width:2px;height:22px;background:var(--accent);opacity:0.75;}
-.tlabel{position:absolute;bottom:2px;font-family:-apple-system,system-ui,sans-serif;
-  font-size:0.6rem;color:var(--muted);transform:translateX(-50%);}
+.timeline{position:relative;height:60px;margin:0 0 2rem;}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;
+  background:var(--rule);}
+.ttoday,.tmark{position:absolute;top:0;text-align:center;transform:translateX(-50%);}
+.ttoday-dot{display:block;width:9px;height:9px;margin:17.5px auto 0;box-sizing:border-box;
+  border:1.5px solid var(--muted);border-radius:50%;background:var(--bg);}
+.tdot{display:block;width:9px;height:9px;margin:17.5px auto 0;border-radius:50%;
+  background:var(--accent);opacity:0.85;}
+.ttoday-label,.tyear{display:block;margin-top:0.35rem;white-space:nowrap;
+  font-family:-apple-system,system-ui,sans-serif;font-size:0.6rem;letter-spacing:0.06em;
+  color:var(--muted);}
+.ttoday-label{text-transform:uppercase;}
 ul.disp{list-style:none;margin:0;padding:0;}
 ul.disp li{padding:0.9rem 0;border-top:1px solid var(--rule);}
 .disp .dl{font-family:-apple-system,system-ui,sans-serif;font-size:0.68rem;
@@ -44,19 +51,22 @@ footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
 
 
 def _timeline(records: list[dict]) -> str:
-    yrs = [max(1, r["dispatch"]["dateline"]["years_from_now"]) for r in records]
-    if not yrs:
+    if not records:
         return ""
-    lo, hi = math.log(min(yrs)), math.log(max(yrs) + 1)
-    span = (hi - lo) or 1.0
-    ticks = ""
+    yrs = [max(1, r["dispatch"]["dateline"]["years_from_now"]) for r in records]
+    log_max = math.log(max(yrs)) if max(yrs) > 1 else 1.0
+    marks = (f'<div class="ttoday"><span class="ttoday-dot"></span>'
+             f'<span class="ttoday-label">today</span></div>')
     for r in records:
-        y = max(1, r["dispatch"]["dateline"]["years_from_now"])
-        pct = 100 * (math.log(y) - lo) / span
-        ticks += f'<div class="tick" style="left:{pct:.1f}%"></div>'
-    ends = (f'<div class="tlabel" style="left:2%">{min(yrs):,} yrs</div>'
-            f'<div class="tlabel" style="left:98%">{max(yrs):,} yrs</div>')
-    return f'<div class="timeline">{ticks}{ends}</div>'
+        d = r["dispatch"]
+        y = max(1, d["dateline"]["years_from_now"])
+        logy = math.log(y) if y > 1 else 0.0
+        pct = max(4.0, 100 * logy / log_max) if log_max else 4.0
+        headline = html.escape(hyphenate(d["headline"]))
+        year = html.escape(str(d["dateline"]["year"]))
+        marks += (f'<div class="tmark" style="left:{pct:.1f}%" title="{headline}">'
+                  f'<span class="tdot"></span><span class="tyear">{year}</span></div>')
+    return f'<div class="timeline">{marks}</div>'
 
 
 def render_archive(records: list[dict], meta: dict) -> str:

@@ -63,6 +63,27 @@ def test_dateline_strips_trailing_year_parenthetical():
     assert d["dateline"]["place"] == "Gills Crater, Ganymede (2287)"
 
 
+def test_metadata_always_visible_no_details_toggle():
+    html = render_dispatch(DISPATCH, META)
+    assert "<details" not in html
+    assert "<summary" not in html
+    assert 'class="meta"' in html
+    assert "Dispatch metadata" in html
+
+
+def test_engraving_has_no_figcaption():
+    d = {**DISPATCH, "image": "assets/engravings/x.png"}
+    html = render_dispatch(d, META)
+    assert "figcaption" not in html
+    assert "An imagined engraving" not in html
+
+
+def test_domain_rendered_title_case():
+    html = render_dispatch(DISPATCH, META)  # DISPATCH domain is "law"
+    assert "Domain: <b>Law</b>" in html
+    assert "Domain: <b>law</b>" not in html
+
+
 def test_image_slot_optional():
     assert "figure class=\"engraving\"" not in render_dispatch(DISPATCH, META)
     d = {**DISPATCH, "image": "assets/engravings/x.png"}

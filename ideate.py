@@ -29,7 +29,8 @@ Do NOT explain them. Straight-faced, never winking.
 Example premises for tone (do not reuse these):
 {seed_lines}
 
-You may (optionally) reuse any of these established motifs for texture:
+You may reuse one of these established motifs ONLY if it fits the story
+naturally; otherwise ignore them entirely:
 {motif_lines}
 
 Avoid anything close to these recently-used stories:
