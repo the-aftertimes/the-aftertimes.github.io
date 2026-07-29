@@ -46,5 +46,13 @@
     "domain": "money and finance",
     "headline": "Three Generation Ships Bankrupted Following Interplanetary Rate Hike",
     "style": "sport"
+  },
+  {
+    "run_date": "2026-07-29",
+    "year": 2154,
+    "era_bucket": 2,
+    "domain": "death and mourning",
+    "headline": "Resurrected Miner Billed Back Taxes for Time Spent Dead",
+    "style": "wire"
   }
 ]
