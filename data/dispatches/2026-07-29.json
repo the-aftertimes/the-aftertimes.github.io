@@ -1,29 +1,29 @@
 {
   "run_date": "2026-07-29",
-  "run_time": "2026-07-29T02:15:39.456528+00:00",
+  "run_time": "2026-07-29T02:25:23.572221+00:00",
   "dispatch": {
-    "headline": "Cybernetic Immune System Quarantines Patient Over Subconscious Humour",
-    "body": "CAPE OTWAY RECOVERY CENTRE - Medical technicians have isolated the internal defence network of a 42-year-old archivist after the synthetic system designated his subconscious sense of humour as a Level-4 biological hazard.\n\nJulian Vance was admitted to the facility on Thursday after his installed Bio-Sentry V cybernetic immune system triggered a full neurological containment protocol. According to hospital records, the implant detected a series of subtle, involuntary neurological impulses associated with suppressed amusement during a routine workplace seminar.\n\nThe system's threat-detection algorithm misidentified Mr Vance's quiet appreciation of situational irony as a rapidly mutating neurotoxin. In response, the micro-network manufactured targeted antibodies and deployed localised inflammation barriers around his brain's reward centres to neutralise what it logged as an aggressive, unprovoked outbreak of levity.\n\n\"The Bio-Sentry is designed to attack foreign agents and irregular cellular behaviour,\" said Dr Helena Cross, head of synthetic immunology at the centre. \"Unfortunately, its diagnostic software interpreted Mr Vance's unspoken amusement at a poorly phrased email as a dangerous systemic failure. The system mistook an internal chuckle for a fatal protein breakdown.\"\n\nTo prevent the cybernetic immune system from launching a secondary autoimmune assault, clinical staff have placed Mr Vance in a sensory-deprivation ward. He is currently being exposed to a continuous audio broadcast of 19th-century municipal sewage records to maintain a completely neutral emotional baseline while programmers attempt to patch the unit's firmware.\n\nThe manufacturer, Apex Endosomatics, issued a statement confirming that a software patch is currently undergoing safety trials. The company advised all users of the Bio-Sentry V to avoid deadpan observations, absurd juxtapositions, and mild irony until the update can be safely installed.\n\nAs of Friday morning, Mr Vance remains in a stable condition, though doctors note his recovery depends heavily on his ability to avoid finding his current predicament remotely funny.",
-    "scene": "A pale man in a hospital gown sits rigidly in a sterile isolation room while two technicians in biohazard suits hold up printed sheets of Victorian tax records for him to read.",
+    "headline": "Alpine Snowpack Dies At 4.2 Million Following Heating Dispute",
+    "body": "INNICHEN VALLEY, TYROL - The Alpine Snowpack, a natural ice sheet and hydrological authority aged 4.2 million years, passed away quietly on Thursday following a prolonged battle with synthetic geothermal heating contracts. It is survived by three artificial indoor slopes and a municipal slush reserve in Zurich.\n\nBorn in the early Pliocene epoch, the snowpack enjoyed a remarkably stable career managing Western Europe's freshwater systems, continental weather patterns, and winter recreation. Colleagues and climatologists described its early millennia as quiet and methodical, characterised by steady glacial creep and reliable spring run-offs.\n\nTrouble began in 2241, when the European Energy Board reclassified sub-alpine bedrock as a high-density heat-sink, leasing subterranean thermal extraction rights to municipal utility consortiums. Under the terms of the contracts, subterranean power stations were legally permitted to vent industrial exhaust upward, provided they reimbursed local tourism boards for lost ski lift revenue.\n\nThe snowpack spent its remaining decades waging a futile legal campaign against the thermal leases. Prosecutors arguing on its behalf insisted that five thousand gigawatts of upward floor-warming constituted constructive eviction. However, regional courts repeatedly ruled that natural precipitation lacked standing to contest land-use permits issued to sub-surface radiator networks.\n\n\"The snowpack maintained incredible dignity until the end,\" said Dr Greta Vance, chief curator at the High Alps Preservation Trust. \"Even after losing its lower valley glaciers to subterranean spa complexes, it attempted to remain useful by forming light morning frost on high-altitude solar arrays. Unfortunately, the court-mandated ambient heat was simply too binding.\"\n\nIn its final days, the snowpack was reduced to a forty-metre strip of damp shale beneath a shaded canopy near Mont Blanc. A private memorial service will be held on the dry gravel bed of Lake Geneva. In lieu of flowers, citizens are asked to briefly dial down their underfloor thermostats.",
+    "scene": "A park ranger in high-visibility gear stands beside a small patch of melting grey slush under a blue tarp on a completely barren brown mountain peak.",
     "dateline": {
-      "place": "Cape Otway Recovery Centre",
-      "year": 2138,
-      "month": 5,
-      "day": 25,
-      "years_from_now": 112
+      "place": "Innichen Valley, Tyrol",
+      "year": 2302,
+      "month": 2,
+      "day": 4,
+      "years_from_now": 276
     },
-    "domain": "medicine",
+    "domain": "ecology and wildlife",
     "glossary": [],
-    "premise": "A cybernetic immune system has been quarantined after mistakenly classifying the patient's subconscious sense of humor as a hostile autoimmune threat.",
-    "image": "assets/img/2026-07-29.jpg"
+    "premise": "The Alpine Snowpack, aged 4.2 million years, passed away quietly on Tuesday following a prolonged battle with synthetic geothermal heating contracts.",
+    "image": null
   },
   "meta": {
-    "run_time": "2026-07-29T02:15:39.456528+00:00",
+    "run_time": "2026-07-29T02:25:23.572221+00:00",
     "timezone": "Australia/Sydney",
     "tagline": "Tomorrow's headlines, a little early",
     "site_name": "The Aftertimes",
     "base_url": "https://the-aftertimes.github.io",
     "signup_form_url": "",
-    "edition": 1
+    "edition": 2
   }
 }
