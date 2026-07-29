@@ -58,6 +58,7 @@ def test_write_parses_and_hyphenates(monkeypatch):
         "headline": "Floating Capital Sues the Sea",
         "dateline_place": "Port Kobenhavn-2",
         "body": "An em dash sneaks in \u2014 like this.",
+        "scene": "a couple hides under a dining table as an armoured unit arrives",
         "wire_name": "Nordwire", "wire_gloss": "pan-Baltic newswire",
         "domain": "law",
         "glossary": [{"term": "Tide & Wren", "gloss": "non-human law firm"}],
@@ -71,4 +72,7 @@ def test_write_parses_and_hyphenates(monkeypatch):
     assert "\u2014" not in dispatch["body"]      # hyphenated
     assert dispatch["headline"] == "Floating Capital Sues the Sea"
     assert dispatch["glossary"][0]["term"] == "Tide & Wren"
+    assert dispatch["scene"] == ("a couple hides under a dining table as an "
+                                 "armoured unit arrives")
+    assert "\u2014" not in dispatch["scene"]     # hyphenated
     assert "wire" not in dispatch

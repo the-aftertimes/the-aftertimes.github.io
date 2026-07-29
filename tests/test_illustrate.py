@@ -14,7 +14,16 @@ def _jpeg_bytes(w, h):
     out = io.BytesIO(); im.save(out, format="JPEG"); return out.getvalue()
 
 
-def test_build_prompt_has_headline_and_no_text_instruction():
+def test_build_prompt_uses_scene_when_present():
+    p = illustrate.build_prompt({
+        "headline": "Moon Court Rules on Time",
+        "scene": "a bailiff hammers a gavel shaped like a clock face",
+    })
+    assert "a bailiff hammers a gavel shaped like a clock face" in p
+    assert "no text" in p.lower()
+
+
+def test_build_prompt_falls_back_to_headline_when_no_scene():
     p = illustrate.build_prompt({"headline": "Moon Court Rules on Time"})
     assert "Moon Court Rules on Time" in p
     assert "no text" in p.lower()

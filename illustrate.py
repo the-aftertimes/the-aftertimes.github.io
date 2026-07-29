@@ -1,7 +1,8 @@
 """Generate a monochrome wood-engraving illustration for a dispatch via Cloudflare
-Workers AI (free tier). Story-specific (scene derived from the headline) and text-free
-(the model's caption band is cropped off). Best-effort: returns a repo-relative image
-path, or None on ANY failure - the page then simply renders with no illustration."""
+Workers AI (free tier). Story-specific (uses the dispatch's concrete scene, falling
+back to the headline) and text-free (the model's caption band is cropped off).
+Best-effort: returns a repo-relative image path, or None on ANY failure - the page
+then simply renders with no illustration."""
 from __future__ import annotations
 
 import base64
@@ -16,13 +17,14 @@ from common import rel
 
 
 def build_prompt(dispatch: dict) -> str:
+    subject = (dispatch.get("scene") or "").strip() or dispatch["headline"]
     return (
         "A masterful wood engraving in the style of Gustave Dore. Fine black ink linework "
-        "and dense cross-hatching on aged paper, dramatic chiaroscuro lighting, a clear "
-        "central scene with figures in a believable environment, rich background detail. "
-        f"It depicts the scene of this news story: \"{dispatch['headline']}\". No colour. "
-        "Absolutely no text, no letters, no words, no captions, no titles, no numbers, no "
-        "signatures and no watermark anywhere in the image - purely pictorial."
+        "and dense cross-hatching on aged paper, dramatic chiaroscuro lighting, a single "
+        "clear focal subject, figures in a believable environment, rich background detail. "
+        f"It depicts this scene: \"{subject}\". No colour. Absolutely no text, no letters, "
+        "no words, no captions, no titles, no numbers, no signatures and no watermark "
+        "anywhere in the image - purely pictorial."
     )
 
 

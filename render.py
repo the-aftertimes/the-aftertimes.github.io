@@ -31,7 +31,7 @@ body{margin:0;background:var(--bg);color:var(--fg);
   margin:0 0 0.8rem;}
 .engraving{margin:1.2rem 0 1.8rem;}
 .engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
-h1{font-size:clamp(1.9rem,6vw,2.9rem);line-height:1.12;font-weight:700;
+h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
 .meta{font-family:-apple-system,system-ui,sans-serif;margin-top:1.8rem;}

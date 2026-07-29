@@ -20,8 +20,17 @@ premise and keep the joke legible. Favour wit and clarity over dense
 science-fiction jargon - the humour comes from a simple absurd idea taken
 seriously, not from piling on invented vocabulary.
 
+Never build humour on gender, race, religion, nationality or similar
+demographic stereotypes (no nagging-wife / clueless-husband cliches and the
+like). The comedy comes from absurd systems, institutions, technologies and
+bureaucratic logic - punch at ideas, not at people.
+
 Rules:
 - 250 to 350 words. Straight-faced, as a real wire story. Dry wit, never winking.
+- The headline must be a concise, punchy single-line news headline, ideally
+  under 10 words. Do NOT prefix it with a format label such as "Product
+  Review:", "Obituary:", "Analysis:" or "Opinion:" - convey the format
+  through the writing itself, not a tag.
 - Invent a readable, evocative dateline place a reader can picture - a city,
   region, settlement or landmark (a plausible future or off-world place is
   fine). Do NOT use technical infrastructure jargon (no "sub-relay", "node",
@@ -29,6 +38,11 @@ Rules:
 - Coin at most two world-specific terms, and only if they are genuinely funny
   or necessary; if the story needs none, return an empty glossary. Only
   glossary a term a reader could not infer from context.
+- Also provide "scene": ONE vivid, concrete, physical sentence describing a
+  single visual moment from the story that an illustrator could draw -
+  specific people, objects and setting, not abstract concepts. Example: "an
+  armoured military unit pulls up to a suburban driveway while a couple hides
+  beneath a dining table".
 - Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
 - Use Australian English spelling (organise, colour, defence, metre, favour).
@@ -37,9 +51,8 @@ Rules:
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
 
 Return JSON only:
-{{"headline": "...", "dateline_place": "...", "body": "...",
-  "domain": "{domain}",
-  "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
+{{"headline": "...", "dateline_place": "...", "body": "...", "scene": "...",
+  "domain": "{domain}", "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
 
 
 def write(premise: str, dateline: dict, domain: str, settings: dict,
@@ -53,6 +66,7 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
     return {
         "headline": hyphenate((d.get("headline") or "").strip()),
         "body": hyphenate((d.get("body") or "").strip()),
+        "scene": hyphenate((d.get("scene") or "").strip()),
         "dateline": dl,
         "domain": (d.get("domain") or domain).strip(),
         "glossary": [{"term": hyphenate(g.get("term", "").strip()),

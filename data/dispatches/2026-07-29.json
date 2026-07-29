@@ -1,28 +1,29 @@
 {
   "run_date": "2026-07-29",
-  "run_time": "2026-07-29T01:22:27.744545+00:00",
+  "run_time": "2026-07-29T01:40:15.932931+00:00",
   "dispatch": {
-    "headline": "Product Review: The Symphony-2 Marital Implant Fixes Arguments But Deploys National Guard",
-    "body": "When NeuroSomatic Systems released the Symphony-2 emotional-sync marital implant last month, the headline promise was absolute domestic efficiency. By hardwiring two married nervous systems into a real-time bio-feedback loop, the device claims to eliminate emotional lag and render miscommunication obsolete.\n\nIn field testing across households in Gisborne Ridge, the consumer benefits were undeniably impressive. Dispute resolution times plummeted by 40 percent. Husbands registered their wives' unspoken irritation before a dishwasher was even incorrectly loaded. Wives instantly perceived the exact, pathetic nature of their partners' social anxiety, bypassing hours of passive-aggressive sulking in favour of immediate, efficient pity.\n\nThe trouble lies in the device's high-stress thresholds. When both spouses experience a simultaneous surge of terror, the Symphony-2's cross-coupled algorithm misinterprets the combined biological output as an imminent hostile invasion.\n\nDuring our test week with volunteers Malcolm and Clara Finch, a minor dispute regarding forgotten anniversary reservations created a rapid neuro-feedback loop of compounding dread. Within two minutes, the implant had auto-dialled emergency services, locked down three suburban residential streets, and prompted the regional defence force to dispatch an armoured response unit to their driveway.\n\nThe local council confirmed that sixteen married couples have accidentally triggered red-level civil defence warnings this month alone, briefly overwhelming municipal emergency response teams with reports of terrorised spouses hiding under dining tables.\n\nNeuroSomatic has promised a firmware update by November, noting that while accidental martial law is inconvenient, neither the Finches nor their neighbours could recall what the original argument was about, technically marking a successful resolution.\n\nVerdict: A triumph of modern biomechatronics for calm households, though users are advised to keep emergency civil defence contact cards laminated on the fridge.",
+    "headline": "Court Rules Corporate Ad Networks Cannot Own 'No Cap'",
+    "body": "The High Court of Geneva has dismissed an appeal by synth-marketing conglomerate Synthetica Global to register exclusive commercial rights over the 21st-century idiom \"no cap\", ending a three-year legal battle over the ownership of archaic youth vernacular.\n\nSynthetica Global had argued that its proprietary cognitive advertising streams, which broadcast targeted product assurances directly into consumer auditory pathways, had successfully resurrected the phrase from historical linguistic extinction. Lawyers for the firm contended that without intellectual property protections, competing networks would dilute the perceived authenticity of their synthetic street cred.\n\nIn a written ruling delivered on Thursday, Chief Justice Hannelore Voss rejected the claim, asserting that basic markers of emphatic truthfulness belong to the human commons, regardless of their vintage or synthetic deployment.\n\n\"Street-level veracity, however simulated, must remain in the public domain,\" Chief Justice Voss wrote. \"To grant a commercial monopoly over a phrase intended to denote absolute honesty would create an intolerable paradox wherein a citizen could be sued for breach of copyright simply by insisting they are not lying.\"\n\nThe court noted that while Synthetica Global had expended considerable capital excavating early millennium internet archives to train its subconscious ad-bots, historical idioms cannot be privatised merely because an algorithm found them first. The judges similarly dismissed a counter-suit by the Department of Vernacular Preservation, which sought to forcibly retire the term on the grounds of severe stylistic cringe.\n\nThe ruling sets a binding precedent for several pending cases, including an attempt by a freight cartel to patent the phrase \"for real for real\" as a guarantee of express cargo delivery.\n\nFollowing the verdict, counsel for Synthetica Global announced plans to appeal to the Pan-European Appellate Bench, though industry analysts suggest the firm may instead pivot toward trademarking mid-20th-century jazz terminology.",
+    "scene": "A robed Chief Justice sits behind an elevated mahogany bench, gesturing with a brass gavel toward three corporate lawyers clutching illuminated glass tablets.",
     "dateline": {
-      "place": "Gisborne Ridge",
-      "year": 2042,
-      "month": 5,
-      "day": 27,
-      "years_from_now": 16
+      "place": "Geneva, Canton of Léman",
+      "year": 2228,
+      "month": 1,
+      "day": 3,
+      "years_from_now": 202
     },
-    "domain": "love and marriage",
+    "domain": "language and slang",
     "glossary": [],
-    "premise": "A review of the newly launched Symphony-2 emotional-sync marital implant notes that while argument resolution speeds improved by 40 percent, mutual panic attacks now automatically trigger emergency civil defense protocols.",
+    "premise": "The High Court of Geneva has ruled that the revived 21st-century slang phrase 'no cap' cannot be trademarked by corporate neural-ad networks, with the Chief Justice declaring that 'street-level veracity, however simulated, must remain in the public domain.'",
     "image": "assets/img/2026-07-29.jpg"
   },
   "meta": {
-    "run_time": "2026-07-29T01:22:27.744545+00:00",
+    "run_time": "2026-07-29T01:40:15.932931+00:00",
     "timezone": "Australia/Sydney",
     "tagline": "Tomorrow's headlines, a little early",
     "site_name": "The Aftertimes",
     "base_url": "https://the-aftertimes.github.io",
     "signup_form_url": "",
-    "edition": 4
+    "edition": 5
   }
 }
