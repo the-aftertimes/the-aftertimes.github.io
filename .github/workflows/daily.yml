@@ -2,7 +2,12 @@ name: daily-dispatch
 on:
   schedule:
     - cron: "0 20 * * *"   # 20:00 UTC daily (matches One Story)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_send:
+        description: "Send a one-off test email to BREVO_TEST_EMAIL now (does not affect the daily send)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,6 +32,14 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: python run.py
+      # Emails the list if the newsletter is enabled AND BREVO_API_KEY is set;
+      # otherwise it dry-runs. A per-day guard prevents a double-send on re-runs.
+      - name: Send newsletter (if configured)
+        continue-on-error: true   # an email hiccup must never block publishing
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_TEST_EMAIL: ${{ secrets.BREVO_TEST_EMAIL }}   # only used by --test
+        run: python send_email.py ${{ github.event.inputs.test_send == 'true' && '--test' || '' }}
       - name: Commit and push
         run: |
           git config user.name "aftertimes-bot"
