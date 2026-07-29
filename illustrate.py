@@ -9,6 +9,7 @@ import base64
 import io
 import json
 import os
+import sys
 import urllib.request
 
 from PIL import Image
@@ -32,6 +33,8 @@ def _cf_image(prompt: str, settings: dict) -> bytes | None:
     acct = os.environ.get("CF_ACCOUNT_ID", "").strip()
     tok = os.environ.get("CF_API_TOKEN", "").strip()
     if not acct or not tok:
+        print(f"    illustrate: CF creds missing (acct set={bool(acct)}, "
+              f"token set={bool(tok)})", file=sys.stderr)
         return None
     cfg = settings["image"]
     url = f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/{cfg['model']}"
@@ -41,6 +44,8 @@ def _cf_image(prompt: str, settings: dict) -> bytes | None:
     with urllib.request.urlopen(req, timeout=cfg.get("timeout", 120)) as resp:
         data = json.load(resp)
     if not data.get("success") or "result" not in data:
+        print(f"    illustrate: CF returned no image ({str(data.get('errors'))[:200]})",
+              file=sys.stderr)
         return None
     return base64.b64decode(data["result"]["image"])
 
@@ -70,5 +75,6 @@ def generate(dispatch: dict, run_date: str, settings: dict) -> str | None:
         with open(path, "wb") as fh:
             fh.write(cropped)
         return relpath
-    except Exception:
+    except Exception as exc:
+        print(f"    illustrate failed: {type(exc).__name__}: {exc}", file=sys.stderr)
         return None

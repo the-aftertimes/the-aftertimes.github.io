@@ -31,6 +31,6 @@ jobs:
         run: |
           git config user.name "aftertimes-bot"
           git config user.email "bot@the-aftertimes.github.io"
-          git add index.html archive.html d/ data/
+          git add index.html archive.html d/ data/ assets/img/
           git commit -m "dispatch: $(date -u +%Y-%m-%d)" || echo "no changes"
           git push
