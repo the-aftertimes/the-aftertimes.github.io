@@ -47,9 +47,9 @@ def sample_future_dateline(today: date, cfg: dict, recent_eras: set[int],
 
 
 def format_dateline(dl: dict) -> str:
-    """e.g. 'Port Kobenhavn-2 . 4 September 40,312'. No dashes in the date."""
+    """e.g. 'Port Kobenhavn-2 . 4 September 40312'. No dashes, no comma in the year."""
     place = (dl.get("place") or "").strip()
-    ymd = f"{dl['day']} {_MONTHS[dl['month'] - 1]} {dl['year']:,}"
+    ymd = f"{dl['day']} {_MONTHS[dl['month'] - 1]} {dl['year']}"
     return f"{place} . {ymd}".strip(" .") if place else ymd
 
 
@@ -58,5 +58,5 @@ def years_phrase(years_from_now: int) -> str:
 
 
 def format_date(dl: dict) -> str:
-    """Just the date, no place: e.g. '4 September 2987'. Year comma-grouped."""
-    return f"{dl['day']} {_MONTHS[dl['month'] - 1]} {dl['year']:,}"
+    """Just the date, no place: e.g. '4 September 2987'. Year is not comma-grouped."""
+    return f"{dl['day']} {_MONTHS[dl['month'] - 1]} {dl['year']}"

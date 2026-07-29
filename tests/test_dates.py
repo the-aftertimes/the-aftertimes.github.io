@@ -39,7 +39,7 @@ def test_format_dateline_no_dashes_and_grouped_years():
     assert "\u2014" not in txt and "\u2013" not in txt
 
 
-def test_format_date_no_place_grouped_year():
+def test_format_date_no_place_plain_year():
     txt = format_date({"day": 4, "month": 9, "year": 2987})
-    assert txt == "4 September 2,987"
+    assert txt == "4 September 2987"
     assert "\u2014" not in txt and "\u2013" not in txt
