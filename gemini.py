@@ -45,18 +45,24 @@ def _api_key() -> str:
     return key
 
 
-def generate(prompt: str, settings: dict, temperature: float) -> str:
+def generate(prompt: str, settings: dict, temperature: float,
+             model: str | None = None, retries: int | None = None) -> str:
     """Call generateContent and return the model's raw text. Retries on
-    transient HTTP errors with linear backoff."""
+    transient HTTP errors with linear backoff. `model` overrides the default
+    settings model (used by the write stage to try a Pro model). `retries`
+    overrides the retry count - the Pro attempt passes 0 so a quota 429 falls
+    back to flash immediately instead of wasting the backoff window."""
     g = settings["gemini"]
-    url = f"{g['endpoint']}/{g['model']}:generateContent"
+    model = (model or g["model"]).strip()
+    limit = g["max_retries"] if retries is None else retries
+    url = f"{g['endpoint']}/{model}:generateContent"
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": temperature,
                              "responseMimeType": "application/json"},
     }
     last = None
-    for attempt in range(g["max_retries"] + 1):
+    for attempt in range(limit + 1):
         try:
             resp = requests.post(
                 url, params={"key": _api_key()}, json=payload,

@@ -10,8 +10,9 @@ import write as write_stage
 SETTINGS = {
     "ideate": {"n_premises": 8, "bible_slice_size": 2, "recent_premise_window": 20},
     "novelty": {"match_threshold": 0.45, "recent_window": 30},
-    "gemini": {"model": "gemini-2.5-flash", "endpoint": "x", "timeout_seconds": 1,
-               "max_retries": 0, "temperature_ideate": 1.1, "temperature_write": 0.9},
+    "gemini": {"model": "gemini-3.6-flash", "write_model": "gemini-3.1-pro-preview",
+               "endpoint": "x", "timeout_seconds": 1, "max_retries": 0,
+               "temperature_ideate": 1.1, "temperature_write": 0.9},
 }
 
 
@@ -76,6 +77,31 @@ def test_write_parses_and_hyphenates(monkeypatch):
                                  "armoured unit arrives")
     assert "\u2014" not in dispatch["scene"]     # hyphenated
     assert "wire" not in dispatch
+
+
+def test_write_falls_back_to_flash_when_pro_fails(monkeypatch):
+    # Pro model errors (a 404/429/bad-JSON stand-in); the write stage must
+    # retry on the flash default and still file a dispatch.
+    flash_payload = {"headline": "Filed On Flash", "dateline_place": "Backup Bay",
+                     "body": "text", "scene": "a scene", "domain": "law",
+                     "glossary": []}
+    calls = []
+
+    def fake_generate(prompt, settings, temperature, model=None, retries=None):
+        calls.append((model, retries))
+        if model == SETTINGS["gemini"]["write_model"]:
+            assert retries == 0            # Pro attempt fast-fails (no backoff)
+            raise gemini.GeminiError("HTTP 429: quota")
+        return json.dumps(flash_payload)
+
+    monkeypatch.setattr(gemini, "generate", fake_generate)
+    dispatch = write_stage.write(
+        premise="p", dateline={"place": "", "year": 3000, "years_from_now": 974,
+                               "month": 9, "day": 4},
+        domain="law", settings=SETTINGS, style_guidance="A straight wire report.")
+    assert dispatch["headline"] == "Filed On Flash"
+    assert [c[0] for c in calls] == [SETTINGS["gemini"]["write_model"],
+                                     SETTINGS["gemini"]["model"]]
 
 
 def test_fix_slips_corrects_common_idioms():
