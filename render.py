@@ -7,6 +7,7 @@ import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+import locator
 from common import hyphenate
 from dates import format_date, format_dateline
 
@@ -31,6 +32,8 @@ body{margin:0;background:var(--bg);color:var(--fg);
   margin:0 0 0.8rem;}
 .engraving{margin:1.2rem 0 1.8rem;}
 .engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
+.locator{margin:2.4rem auto 0.4rem;text-align:center;}
+.locator svg{max-width:210px;height:auto;mix-blend-mode:multiply;}
 h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
@@ -158,6 +161,16 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
         img_src = f"{asset_prefix}{html.escape(str(image), quote=True)}"
         figure = (f'<figure class="engraving"><img src="{img_src}" alt="{headline}" '
                   f'loading="lazy"></figure>')
+    # Locator chart: deterministic, inline SVG, keyed off the already-scrubbed
+    # place so label and seed agree. Guarded - a chart error must never blank
+    # the page.
+    locator_fig = ""
+    try:
+        svg = locator.render_locator_svg(
+            dl, int(meta.get("locator_deep_max", 40000)), "plate")
+        locator_fig = f'<figure class="locator">{svg}</figure>'
+    except Exception:  # noqa: BLE001 - decorative; never block the dispatch
+        locator_fig = ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,6 +199,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     <h1>{headline}</h1>
     {figure}
     <div class="body">{body_paras}</div>
+    {locator_fig}
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">

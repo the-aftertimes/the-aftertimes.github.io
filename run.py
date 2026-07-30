@@ -96,6 +96,7 @@ def run_pipeline() -> dict:
         "base_url": settings["site"]["base_url"],
         "signup_form_url": settings.get("signup_form_url", ""),
         "edition": len(ledger) + 1,
+        "locator_deep_max": settings["dates"]["bands"]["deep"][1],
     }
     with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
         fh.write(render_mod.render_dispatch(dispatch, meta, stale=False))
