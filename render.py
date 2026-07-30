@@ -32,10 +32,11 @@ body{margin:0;background:var(--bg);color:var(--fg);
   margin:0 0 0.8rem;}
 .engraving{margin:1.2rem 0 1.8rem;}
 .engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
-.locator{margin:0.8rem auto 0.6rem;text-align:center;}
-.locator svg{max-width:220px;height:auto;mix-blend-mode:multiply;}
-.meta-location{font-family:Georgia,'Times New Roman',serif;font-size:2rem;
-  font-weight:700;color:var(--fg);line-height:1.08;margin-bottom:0.2rem;}
+.locator{margin:1.4rem 0 0.4rem;text-align:center;}
+.locator svg{width:min(280px,82%);height:auto;mix-blend-mode:multiply;
+  transform:translateX(clamp(0.5rem,4vw,2.5rem));}
+.meta-location{font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;
+  font-weight:700;color:var(--fg);line-height:1.1;margin-bottom:0.2rem;}
 .meta-far{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--muted);margin-bottom:0.9rem;}
 h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
@@ -213,12 +214,12 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">
-        {locator_fig}
         {loc_meta}
         <div class="meta-facts">
           <span><b>{date_txt}</b></span>
           <span>Domain: <b>{domain}</b></span>
         </div>
+        {locator_fig}
       </div>
     </section>
     {signup}
