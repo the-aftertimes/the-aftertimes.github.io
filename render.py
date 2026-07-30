@@ -240,8 +240,8 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
       <p class="fiction">Every dispatch is fiction, written by a machine each
         morning. None of it has happened. Yet.</p>
       Filed {stamp}.
-      <p class="byline">A <a class="arc" href="https://charlie-tren.github.io/">Charlie
-        Trenorden</a> project.</p>
+      <p class="byline"><a class="arc" href="https://charlie-tren.github.io/">Other
+        projects &rarr;</a></p>
     </footer>
   </div>
 </body>

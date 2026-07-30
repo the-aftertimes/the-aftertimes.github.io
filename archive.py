@@ -172,8 +172,8 @@ def render_archive(records: list[dict], meta: dict) -> str:
     {chips}
     <ul class="disp">{rows}</ul>
     <footer>Every dispatch is fiction, written by a machine. None of it has happened. Yet.
-      <p class="byline">A <a class="home" href="https://charlie-tren.github.io/">Charlie
-        Trenorden</a> project.</p>
+      <p class="byline"><a class="home" href="https://charlie-tren.github.io/">Other
+        projects &rarr;</a></p>
     </footer>
   </div>
   <script>{_FILTER_JS}</script>
