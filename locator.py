@@ -139,12 +139,9 @@ def variant_plate(dl: dict, deep_max: int) -> str:
     for x, y, r, op in _bg_stars(rng, 46, 16, tx, ty):
         parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.2f}" '
                      f'fill="{_MUTED}" opacity="{op:.2f}"/>')
-    # centre "now"
+    # centre "now" marker (no label - the centre reads as the origin)
     parts.append(f'<circle cx="{_CX}" cy="{_CY}" r="2.6" fill="none" stroke="{_INK}" '
                  f'stroke-width="1"/>')
-    parts.append(f'<text x="{_CX}" y="{_CY + 12:.0f}" text-anchor="middle" '
-                 f'font-family="system-ui,sans-serif" font-size="7" fill="{_MUTED}" '
-                 f'letter-spacing="1.5">NOW</text>')
     # sight line + marked target
     parts.append(f'<line x1="{_CX}" y1="{_CY}" x2="{tx:.1f}" y2="{ty:.1f}" '
                  f'stroke="{_ACCENT}" stroke-width="0.8" stroke-dasharray="2 2"/>')
