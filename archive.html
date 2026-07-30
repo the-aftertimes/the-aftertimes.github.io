@@ -31,7 +31,15 @@ h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   font-family:-apple-system,system-ui,sans-serif;font-size:0.6rem;letter-spacing:0.06em;
   color:var(--muted);}
 .ttoday-label{text-transform:uppercase;}
+.chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.4rem;
+  font-family:-apple-system,system-ui,sans-serif;}
+.chip{cursor:pointer;font:inherit;font-size:0.68rem;letter-spacing:0.08em;
+  text-transform:uppercase;padding:0.32rem 0.7rem;border:1px solid var(--rule);
+  border-radius:1rem;background:transparent;color:var(--muted);}
+.chip:hover{border-color:var(--accent);color:var(--accent);}
+.chip.is-active{background:var(--accent);border-color:var(--accent);color:var(--bg);}
 ul.disp{list-style:none;margin:0;padding:0;}
+ul.disp li.is-hidden,.timeline .tmark.is-hidden{display:none;}
 ul.disp li{padding:0.9rem 0;border-top:1px solid var(--rule);}
 .disp .dl{font-family:-apple-system,system-ui,sans-serif;font-size:0.68rem;
   font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
@@ -53,10 +61,32 @@ footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
     </header>
     <p><a class="home" href="index.html">&larr; Today's dispatch</a></p>
     <h2>Futures visited</h2>
-    <div class="timeline"><div class="ttoday"><span class="ttoday-dot"></span><span class="ttoday-label">today</span></div><div class="tmark" style="left:100.0%" title="Resurrected Miner Billed Back Taxes for Time Spent Dead"><span class="tdot"></span><span class="tyear">2154</span></div></div>
+    <div class="timeline"><div class="ttoday"><span class="ttoday-dot"></span><span class="ttoday-label">today</span></div><div class="tmark" data-domain="death and mourning" style="left:100.0%" title="Resurrected Miner Billed Back Taxes for Time Spent Dead"><span class="tdot"></span><span class="tyear">2154</span></div></div>
     <h2>All dispatches</h2>
-    <ul class="disp"><li><div class="dl">Port Low-G, Vesta . 28 March 2154</div><a href="d/2026-07-29.html">Resurrected Miner Billed Back Taxes for Time Spent Dead</a><div class="dom">Death and Mourning</div></li></ul>
+    <div class="chips" role="group" aria-label="Filter by domain"><button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button><button type="button" class="chip" data-filter="death and mourning" aria-pressed="false">Death and Mourning</button></div>
+    <ul class="disp"><li data-domain="death and mourning"><div class="dl">Port Low-G, Vesta . 28 March 2154</div><a href="d/2026-07-29.html">Resurrected Miner Billed Back Taxes for Time Spent Dead</a><div class="dom">Death and Mourning</div></li></ul>
     <footer>Every dispatch is fiction, written by a machine. None of it has happened. Yet.</footer>
   </div>
+  <script>
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var items=document.querySelectorAll('ul.disp li, .timeline .tmark');
+  if(!chips.length)return;
+  function apply(key){
+    items.forEach(function(el){
+      var show=(key==='all'||el.getAttribute('data-domain')===key);
+      el.classList.toggle('is-hidden',!show);
+    });
+    chips.forEach(function(c){
+      var on=c.getAttribute('data-filter')===key;
+      c.classList.toggle('is-active',on);
+      c.setAttribute('aria-pressed',on?'true':'false');
+    });
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){apply(c.getAttribute('data-filter'));});
+  });
+})();
+</script>
 </body>
 </html>

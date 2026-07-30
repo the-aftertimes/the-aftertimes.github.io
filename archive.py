@@ -18,6 +18,31 @@ def _title_case(s: str) -> str:
     return " ".join(w if (w.lower() in _MINOR and i) else w[:1].upper() + w[1:]
                     for i, w in enumerate(words))
 
+
+def _dom_key(domain: str) -> str:
+    """Normalised filter key for a domain (casing/whitespace-insensitive)."""
+    return " ".join((domain or "").strip().lower().split())
+
+
+def _domain_chips(records: list[dict]) -> str:
+    """A row of filter chips: 'All' plus every distinct domain observed in the
+    records (label is first-seen title-case; key is the normalised form)."""
+    labels: dict[str, str] = {}
+    for r in records:
+        raw = r["dispatch"].get("domain", "")
+        key = _dom_key(raw)
+        if key and key not in labels:
+            labels[key] = _title_case(hyphenate(raw.strip()))
+    if not labels:
+        return ""
+    chips = ('<button type="button" class="chip is-active" '
+             'data-filter="all" aria-pressed="true">All</button>')
+    for key in sorted(labels, key=lambda k: labels[k].lower()):
+        chips += (f'<button type="button" class="chip" '
+                  f'data-filter="{html.escape(key, quote=True)}" '
+                  f'aria-pressed="false">{html.escape(labels[key])}</button>')
+    return f'<div class="chips" role="group" aria-label="Filter by domain">{chips}</div>'
+
 _CSS = """
 :root{--bg:#f4efe3;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
 *{box-sizing:border-box;}
@@ -43,7 +68,15 @@ h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   font-family:-apple-system,system-ui,sans-serif;font-size:0.6rem;letter-spacing:0.06em;
   color:var(--muted);}
 .ttoday-label{text-transform:uppercase;}
+.chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.4rem;
+  font-family:-apple-system,system-ui,sans-serif;}
+.chip{cursor:pointer;font:inherit;font-size:0.68rem;letter-spacing:0.08em;
+  text-transform:uppercase;padding:0.32rem 0.7rem;border:1px solid var(--rule);
+  border-radius:1rem;background:transparent;color:var(--muted);}
+.chip:hover{border-color:var(--accent);color:var(--accent);}
+.chip.is-active{background:var(--accent);border-color:var(--accent);color:var(--bg);}
 ul.disp{list-style:none;margin:0;padding:0;}
+ul.disp li.is-hidden,.timeline .tmark.is-hidden{display:none;}
 ul.disp li{padding:0.9rem 0;border-top:1px solid var(--rule);}
 .disp .dl{font-family:-apple-system,system-ui,sans-serif;font-size:0.68rem;
   font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
@@ -55,6 +88,29 @@ a.home{font-family:-apple-system,system-ui,sans-serif;color:var(--accent);
   text-decoration:none;border-bottom:1px solid var(--accent);font-size:0.85rem;}
 footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
   font-size:0.78rem;color:var(--muted);}
+"""
+
+
+_FILTER_JS = """
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var items=document.querySelectorAll('ul.disp li, .timeline .tmark');
+  if(!chips.length)return;
+  function apply(key){
+    items.forEach(function(el){
+      var show=(key==='all'||el.getAttribute('data-domain')===key);
+      el.classList.toggle('is-hidden',!show);
+    });
+    chips.forEach(function(c){
+      var on=c.getAttribute('data-filter')===key;
+      c.classList.toggle('is-active',on);
+      c.setAttribute('aria-pressed',on?'true':'false');
+    });
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){apply(c.getAttribute('data-filter'));});
+  });
+})();
 """
 
 
@@ -72,7 +128,9 @@ def _timeline(records: list[dict]) -> str:
         pct = max(4.0, 100 * logy / log_max) if log_max else 4.0
         headline = html.escape(hyphenate(d["headline"]))
         year = html.escape(str(d["dateline"]["year"]))
-        marks += (f'<div class="tmark" style="left:{pct:.1f}%" title="{headline}">'
+        dk = html.escape(_dom_key(d.get("domain", "")), quote=True)
+        marks += (f'<div class="tmark" data-domain="{dk}" style="left:{pct:.1f}%" '
+                  f'title="{headline}">'
                   f'<span class="tdot"></span><span class="tyear">{year}</span></div>')
     return f'<div class="timeline">{marks}</div>'
 
@@ -85,9 +143,11 @@ def render_archive(records: list[dict], meta: dict) -> str:
         dl = html.escape(hyphenate(format_dateline(d["dateline"])))
         head = html.escape(hyphenate(d["headline"]))
         dom = html.escape(hyphenate(_title_case(d.get("domain", ""))))
-        rows += (f'<li><div class="dl">{dl}</div>'
+        dk = html.escape(_dom_key(d.get("domain", "")), quote=True)
+        rows += (f'<li data-domain="{dk}"><div class="dl">{dl}</div>'
                  f'<a href="d/{r["run_date"]}.html">{head}</a>'
                  f'<div class="dom">{dom}</div></li>')
+    chips = _domain_chips(recs)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,9 +168,11 @@ def render_archive(records: list[dict], meta: dict) -> str:
     <h2>Futures visited</h2>
     {_timeline(recs)}
     <h2>All dispatches</h2>
+    {chips}
     <ul class="disp">{rows}</ul>
     <footer>Every dispatch is fiction, written by a machine. None of it has happened. Yet.</footer>
   </div>
+  <script>{_FILTER_JS}</script>
 </body>
 </html>
 """
