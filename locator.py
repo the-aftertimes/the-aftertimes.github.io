@@ -100,9 +100,10 @@ def _caption(place: str, years: int) -> str:
 
 
 def _svg_open(extra: str = "") -> str:
-    # The place label is rendered as an HTML figcaption by render.py (bigger,
-    # in the page serif), so the SVG itself is just the chart.
-    return (f'<svg viewBox="0 0 260 250" width="220" role="img" '
+    # The place label is rendered by render.py; the SVG is just the chart.
+    # viewBox is trimmed to the plate (which spans x=18..242) so the circle
+    # sits flush to the box edges - lets it hug the divider symmetrically.
+    return (f'<svg viewBox="14 6 232 244" width="220" role="img" '
             f'xmlns="http://www.w3.org/2000/svg" class="locator-svg" {extra}>')
 
 
