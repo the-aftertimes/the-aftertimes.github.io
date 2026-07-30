@@ -32,13 +32,21 @@ body{margin:0;background:var(--bg);color:var(--fg);
   margin:0 0 0.8rem;}
 .engraving{margin:1.2rem 0 1.8rem;}
 .engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
-.locator{margin:1.4rem 0 0.4rem;text-align:center;}
-.locator svg{width:min(280px,82%);height:auto;mix-blend-mode:multiply;
-  transform:translateX(clamp(0.5rem,4vw,2.5rem));}
+.meta-locrow{display:flex;align-items:stretch;margin-top:0.7rem;}
+.meta-loctext{flex:1 1 12rem;text-align:right;padding-right:1.5rem;
+  display:flex;flex-direction:column;justify-content:center;}
+figure.locator{flex:0 0 auto;margin:0;text-align:center;
+  border-left:1px solid var(--rule);padding-left:1.5rem;}
+figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multiply;}
 .meta-location{font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;
   font-weight:700;color:var(--fg);line-height:1.1;margin-bottom:0.2rem;}
-.meta-far{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
+.meta-far{font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--muted);margin-bottom:0.9rem;}
+@media (max-width:36rem){
+  .meta-locrow{flex-direction:column;}
+  .meta-loctext{text-align:center;padding-right:0;}
+  figure.locator{border-left:none;padding-left:0;margin-top:1.1rem;}
+}
 h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
@@ -47,7 +55,7 @@ h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   letter-spacing:0.16em;text-transform:uppercase;padding-top:0.6rem;
   border-top:1px solid var(--rule);}
 .meta-body{color:var(--muted);font-size:0.9rem;padding-top:0.6rem;}
-.meta-facts{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:0.7rem;}
+.meta-facts{line-height:1.6;}
 .meta-facts b{color:var(--fg);}
 .stale{font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;
   background:var(--accent);color:var(--bg);padding:0.6rem 1rem;border-radius:0.3rem;
@@ -214,12 +222,15 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">
-        {loc_meta}
-        <div class="meta-facts">
-          <span><b>{date_txt}</b></span>
-          <span>Domain: <b>{domain}</b></span>
+        <div class="meta-locrow">
+          <div class="meta-loctext">
+            {loc_meta}
+            <div class="meta-facts">
+              <b>{date_txt}</b><br>Domain: <b>{domain}</b>
+            </div>
+          </div>
+          {locator_fig}
         </div>
-        {locator_fig}
       </div>
     </section>
     {signup}
