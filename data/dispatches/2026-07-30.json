@@ -1,0 +1,35 @@
+{
+  "run_date": "2026-07-30",
+  "run_time": "2026-07-30T21:00:50.113407+00:00",
+  "dispatch": {
+    "headline": "Neighbor's 'Alpine Blizzard' Garden Package Dumps Snowdrifts Over Fence",
+    "body": "I am writing to register a formal council complaint against my neighbour, Haruki Sato at No. 14, whose newly installed AtmosScape 'Alpine Blizzard' garden package is completely ruining my yard. While I respect a ratepayer's right to localise their property climate, Mr Sato’s atmospheric containment field is utterly defective, resulting in two-metre snowdrifts spilling continuously over our shared boundary fence into my micro-zone.\n\nMy property is currently licensed for mild Mediterranean conditions, ideal for my heirloom figs and potted bougainvillea. Instead, I am forced to clear powder snow off my terracotta tiles every morning using a hand-held melt-rig. Last Thursday, a localized squall originating from Sato’s outdoor pergola flash-froze my hydro-hammock mid-swing, rendering it entirely rigid. The temperature differential along our property line is now so extreme that local sparrows are collapsing from thermal shock when flying from my lemon tree into his blizzard.\n\nWhen I attempted to address this amicably, Mr Sato emerged in full alpine mountaineering gear and claimed that the snow on my side was simply residual fallout caused by my own thermal updrafts drawing his frost across the divide. He refused to adjust his barometric pressure, arguing that his synthetic avalanche cycle is scheduled to run through July to maintain proper chalet ambiance for his fondue suppers.\n\nThis situation is unconscionable. My solar pavers are entombed in ice, and a family of wild emperor penguins has taken up residence inside my garden shed. If the Council does not order No. 14 to recalibrate his atmospheric boundary shields immediately, I will have no choice but to dial my own climate controller up to 'Sahara Sirocco' and let the resulting flash-thaw wash his entire ski deck down the street.",
+    "scene": "An angry man in shorts and a polo shirt uses a thermal torch to clear a massive snowdrift off his subtropical garden patio while his neighbour in a heavy down parka skis past on the other side of the wooden fence.",
+    "dateline": {
+      "place": "New Wollongong",
+      "year": 2914,
+      "month": 12,
+      "day": 22,
+      "years_from_now": 888
+    },
+    "domain": "weather and climate",
+    "glossary": [
+      {
+        "term": "melt-rig",
+        "gloss": "A high-intensity directional thermal blower used by suburban homeowners to dissolve runaway weather spillover."
+      }
+    ],
+    "premise": "A homeowner files a formal council complaint against his neighbor whose premium 'Alpine Blizzard' garden micro-climate package keeps dumping unwanted snowdrifts over their shared fence.",
+    "image": "assets/img/2026-07-30.jpg"
+  },
+  "meta": {
+    "run_time": "2026-07-30T21:00:50.113407+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://the-aftertimes.github.io",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 8,
+    "locator_deep_max": 40000
+  }
+}

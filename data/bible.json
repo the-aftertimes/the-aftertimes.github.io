@@ -29,6 +29,12 @@
       "gloss": "The official league table ranking long-haul colony ships by their ability to maintain debt service payments during interstellar transit.",
       "kind": "term",
       "first_seen": "2026-07-29"
+    },
+    {
+      "term": "melt-rig",
+      "gloss": "A high-intensity directional thermal blower used by suburban homeowners to dissolve runaway weather spillover.",
+      "kind": "term",
+      "first_seen": "2026-07-30"
     }
   ]
 }
