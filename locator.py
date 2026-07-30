@@ -100,8 +100,16 @@ def _caption(place: str, years: int) -> str:
 
 
 def _svg_open(extra: str = "") -> str:
-    return (f'<svg viewBox="0 0 260 300" width="220" role="img" '
+    # The place label is rendered as an HTML figcaption by render.py (bigger,
+    # in the page serif), so the SVG itself is just the chart.
+    return (f'<svg viewBox="0 0 260 250" width="220" role="img" '
             f'xmlns="http://www.w3.org/2000/svg" class="locator-svg" {extra}>')
+
+
+def caption_text(dl: dict):
+    """(place label, 'N years hence') for the HTML caption - scrubbed to match
+    the drawn chart's seed."""
+    return _caption(_scrub(dl.get("place") or ""), int(dl.get("years_from_now", 0)))
 
 
 # ---------------------------------------------------------------------------
@@ -147,8 +155,6 @@ def variant_plate(dl: dict, deep_max: int) -> str:
     parts.append(f'<line x1="{tx:.1f}" y1="{ty - 12:.1f}" x2="{tx:.1f}" y2="{ty + 12:.1f}" '
                  f'stroke="{_ACCENT}" stroke-width="0.7"/>')
     parts.append(f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="2.4" fill="{_ACCENT}"/>')
-    # caption
-    parts.append(_caption_block(label, far))
     parts.append("</svg>")
     return "".join(parts)
 
@@ -197,7 +203,6 @@ def variant_survey(dl: dict, deep_max: int) -> str:
     parts.append(f'<rect x="{tx - 7:.1f}" y="{ty - 7:.1f}" width="14" height="14" '
                  f'fill="none" stroke="{_ACCENT}" stroke-width="1"/>')
     parts.append(f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="2.4" fill="{_ACCENT}"/>')
-    parts.append(_caption_block(label, far))
     parts.append("</svg>")
     return "".join(parts)
 
@@ -233,22 +238,10 @@ def variant_rings(dl: dict, deep_max: int) -> str:
     parts.append(f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="3.4" fill="{_ACCENT}"/>')
     parts.append(f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="7" fill="none" '
                  f'stroke="{_ACCENT}" stroke-width="0.7"/>')
-    parts.append(_caption_block(label, far))
     parts.append("</svg>")
     return "".join(parts)
 
 
-def _caption_block(label: str, far: str) -> str:
-    import html as _html
-    lab = _html.escape(label)
-    return (f'<line x1="30" y1="260" x2="230" y2="260" stroke="{_RULE}" '
-            f'stroke-width="0.6"/>'
-            f'<text x="130" y="280" text-anchor="middle" '
-            f'font-family="system-ui,sans-serif" font-size="15" '
-            f'fill="{_INK}" font-weight="700">{lab}</text>'
-            f'<text x="130" y="294" text-anchor="middle" '
-            f'font-family="system-ui,sans-serif" font-size="9" '
-            f'fill="{_MUTED}" letter-spacing="1">{_html.escape(far).upper()}</text>')
 
 
 _VARIANTS = {"plate": variant_plate, "survey": variant_survey, "rings": variant_rings}

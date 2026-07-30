@@ -73,9 +73,13 @@ def test_metadata_always_visible_no_details_toggle():
 
 
 def test_engraving_has_no_figcaption():
+    import re
     d = {**DISPATCH, "image": "assets/engravings/x.png"}
     html = render_dispatch(d, META)
-    assert "figcaption" not in html
+    # The engraving figure itself carries no caption (flux can stamp garbled
+    # text); the locator figure legitimately has one, so scope the check.
+    engraving = re.search(r'<figure class="engraving">.*?</figure>', html, re.S).group(0)
+    assert "figcaption" not in engraving
     assert "An imagined engraving" not in html
 
 
