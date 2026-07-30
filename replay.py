@@ -35,10 +35,15 @@ def main() -> int:
     meta["tagline"] = settings["site"]["tagline"]
     meta["site_name"] = settings["site"]["name"]
     meta["base_url"] = settings["site"]["base_url"]
+    meta["locator_deep_max"] = settings["dates"]["bands"]["deep"][1]
     html = render_mod.render_dispatch(record["dispatch"], meta, stale=False)
     with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
         fh.write(html)
-    print(f"Replayed {run_date} -> {settings['output_html']}")
+    perma = f"d/{run_date}.html"
+    os.makedirs(rel("d"), exist_ok=True)
+    with open(rel(perma), "w", encoding="utf-8") as fh:
+        fh.write(render_mod.render_dispatch(record["dispatch"], meta, is_permalink=True))
+    print(f"Replayed {run_date} -> {settings['output_html']} + {perma}")
     return 0
 
 
