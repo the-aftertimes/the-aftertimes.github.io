@@ -167,7 +167,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
     </header>
     <p><a class="home" href="index.html">&larr; Today's dispatch</a></p>
     <p class="hublink"><a class="home" href="https://charlie-tren.github.io/">Other
-      projects &rarr;</a></p>
+      Projects &#8599;</a></p>
     <h2>Futures visited</h2>
     {_timeline(recs)}
     <h2>All dispatches</h2>
