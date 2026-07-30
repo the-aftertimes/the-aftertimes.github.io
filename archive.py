@@ -88,7 +88,7 @@ a.home{font-family:-apple-system,system-ui,sans-serif;color:var(--accent);
   text-decoration:none;border-bottom:1px solid var(--accent);font-size:0.85rem;}
 footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
   font-size:0.78rem;color:var(--muted);}
-footer .byline{margin:0.7rem 0 0;}
+.hublink{margin:0.45rem 0 0;}
 """
 
 
@@ -166,14 +166,14 @@ def render_archive(records: list[dict], meta: dict) -> str:
       <div class="tag">{html.escape(hyphenate(meta['tagline']))}</div>
     </header>
     <p><a class="home" href="index.html">&larr; Today's dispatch</a></p>
+    <p class="hublink"><a class="home" href="https://charlie-tren.github.io/">Other
+      projects &rarr;</a></p>
     <h2>Futures visited</h2>
     {_timeline(recs)}
     <h2>All dispatches</h2>
     {chips}
     <ul class="disp">{rows}</ul>
     <footer>Every dispatch is fiction, written by a machine. None of it has happened. Yet.
-      <p class="byline"><a class="home" href="https://charlie-tren.github.io/">Other
-        projects &rarr;</a></p>
     </footer>
   </div>
   <script>{_FILTER_JS}</script>
