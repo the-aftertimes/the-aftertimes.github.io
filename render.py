@@ -33,9 +33,9 @@ body{margin:0;background:var(--bg);color:var(--fg);
 .engraving{margin:1.2rem 0 1.8rem;}
 .engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
 .meta-locrow{display:flex;align-items:stretch;margin-top:0.7rem;}
-.meta-loctext{flex:1 1 12rem;text-align:right;padding-right:1.5rem;
+.meta-loctext{flex:1 1 0;text-align:right;padding-right:1.5rem;
   display:flex;flex-direction:column;justify-content:center;}
-figure.locator{flex:0 0 auto;margin:0;text-align:center;
+figure.locator{flex:1 1 0;margin:0;text-align:center;
   border-left:1px solid var(--rule);padding-left:1.5rem;}
 figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multiply;}
 .meta-location{font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;
