@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import sys
 
 import gemini
 from common import hyphenate
@@ -92,12 +93,37 @@ Return JSON only:
   "domain": "{domain}", "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
 
 
+def _generate_json(prompt: str, settings: dict, model: str | None,
+                   retries: int | None = None) -> dict:
+    """One generate + parse attempt on a given model; raises GeminiError on a
+    transport error OR unparseable JSON, so the caller can fall back cleanly."""
+    raw = gemini.generate(prompt, settings,
+                          settings["gemini"]["temperature_write"], model=model,
+                          retries=retries)
+    return gemini.extract_json(raw)
+
+
 def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str) -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance)
-    raw = gemini.generate(prompt, settings,
-                          settings["gemini"]["temperature_write"])
-    d = gemini.extract_json(raw)
+    g = settings["gemini"]
+    pro = (g.get("write_model") or "").strip()
+    d = None
+    served = g["model"]
+    # Try the sharper Pro model first; fall back to flash on ANY failure
+    # (a wrong/gated model name 404s, quota 429s, or Pro returns bad JSON) so
+    # the dispatch still files rather than crash-publishing a stale page.
+    if pro and pro != g["model"]:
+        try:
+            d = _generate_json(prompt, settings, pro, retries=0)
+            served = pro
+        except gemini.GeminiError as exc:
+            print(f"    write: {pro} failed ({exc}); falling back to {g['model']}",
+                  file=sys.stderr)
+    if d is None:
+        d = _generate_json(prompt, settings, g["model"])
+        served = g["model"]
+    print(f"    write: served by {served}", file=sys.stderr)
     dl = dict(dateline)
     dl["place"] = hyphenate((d.get("dateline_place") or "").strip())
     return {
