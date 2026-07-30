@@ -241,13 +241,13 @@ def variant_rings(dl: dict, deep_max: int) -> str:
 def _caption_block(label: str, far: str) -> str:
     import html as _html
     lab = _html.escape(label)
-    return (f'<line x1="30" y1="262" x2="230" y2="262" stroke="{_RULE}" '
+    return (f'<line x1="30" y1="260" x2="230" y2="260" stroke="{_RULE}" '
             f'stroke-width="0.6"/>'
-            f'<text x="130" y="278" text-anchor="middle" '
-            f'font-family="system-ui,sans-serif" font-size="10" '
-            f'fill="{_INK}" font-weight="600">{lab}</text>'
-            f'<text x="130" y="291" text-anchor="middle" '
-            f'font-family="system-ui,sans-serif" font-size="7.5" '
+            f'<text x="130" y="280" text-anchor="middle" '
+            f'font-family="system-ui,sans-serif" font-size="15" '
+            f'fill="{_INK}" font-weight="700">{lab}</text>'
+            f'<text x="130" y="294" text-anchor="middle" '
+            f'font-family="system-ui,sans-serif" font-size="9" '
             f'fill="{_MUTED}" letter-spacing="1">{_html.escape(far).upper()}</text>')
 
 
