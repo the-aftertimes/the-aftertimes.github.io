@@ -5,6 +5,12 @@
 # IMPORTANT: only "court" and "notice" are shaped as an authority handing down a
 # ruling or bulletin. Every OTHER style must take a genuinely different narrative
 # SHAPE - do not default to "[official body] rules X, and a spokesperson explains".
+#
+# EVERY style must still read as JOURNALISM - something a newspaper would print,
+# written by a correspondent about events involving OTHER people. The reader is
+# an outsider being told the news, never the recipient of someone's complaint.
+# ("letter" and "advice" styles were removed 31/07/2026 for exactly this reason:
+# a first-person council complaint is not a news dispatch.)
 styles:
   - key: wire
     guidance: "A straight breaking-news wire report of an EVENT as it unfolds - who, what, where, and eyewitnesses. Not a ruling or a verdict."
@@ -20,10 +26,6 @@ styles:
     guidance: "A profile built around a single interview - mostly one character's voice answering questions, revealing the absurd world through how utterly normal they find it."
   - key: firstperson
     guidance: "A correspondent's first-person, present-tense eyewitness dispatch - 'I' am there, describing what I see and the people I meet, wry and observational."
-  - key: letter
-    guidance: "A letter to the editor or a formal complaint from an ordinary citizen, in their own aggrieved voice - petty, specific and self-important about an absurd grievance."
-  - key: advice
-    guidance: "An advice column or practical how-to for living in this future - a reader's problem, answered with deadpan, confident and faintly unhelpful guidance."
   - key: court
     guidance: "A court or legal report: a ruling or case, with judicial language and a quoted opinion from the bench. (This one IS a ruling shape.)"
   - key: notice

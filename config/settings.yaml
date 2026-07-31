@@ -38,7 +38,15 @@ novelty:
 
 gemini:
   model: "gemini-3.6-flash"            # default for ideate + the write-stage fallback
-  write_model: "gemini-3.1-pro-preview"  # sharper prose for write; falls back to `model` on ANY failure. Blank this to disable Pro.
+  # write_model: a sharper model for the write stage, falling back to `model` on
+  # ANY failure. DISABLED (blank) 31/07/2026: verified that EVERY Pro-tier model
+  # (gemini-3.1-pro-preview, gemini-3-pro-preview, gemini-pro-latest,
+  # gemini-2.5-pro) returns HTTP 429 quota-exceeded on this free key - the free
+  # tier has ZERO Pro quota, exactly like image generation. Leaving it set only
+  # burned a wasted call + latency on every run and never once served. The
+  # fallback machinery stays in write.py; re-populate this only if the key gets
+  # paid/greater quota.
+  write_model: ""
   endpoint: "https://generativelanguage.googleapis.com/v1beta/models"
   timeout_seconds: 60
   max_retries: 2
