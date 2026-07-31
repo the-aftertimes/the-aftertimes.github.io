@@ -1,0 +1,33 @@
+# Rotating dateline SETTING; one is chosen per dispatch (with light anti-repeat),
+# the same way styles rotate. This exists because a prompt asking politely for an
+# "evocative future place" kept returning "New <Earth city>" - and, biased by the
+# Australian-spelling house rule, specifically Australian ones (New Wollongong,
+# Banksia Vale). Rotating the KIND of place structurally is what fixes that.
+#
+# Rules the write prompt enforces alongside these:
+#   - NEVER "New <existing Earth city>" (no New Wollongong, New Sydney, New Cairo)
+#   - no technical-infrastructure jargon names (sub-relay, node, array, hub)
+#   - the name must be readable and picturable, not a serial number
+#   - Australian SPELLING is a house rule; it is NOT a licence to use Australian
+#     place names. Vary the linguistic root: any Earth language, or invented.
+place_kinds:
+  - key: orbital
+    guidance: "an orbital habitat, ring station or elevator terminus in orbit around a planet"
+  - key: lunar
+    guidance: "a settlement on a moon (ours or another planet's) - craters, low gravity, domed districts"
+  - key: asteroid
+    guidance: "a mining or freeport town hollowed into an asteroid or minor planet"
+  - key: marsform
+    guidance: "a city on a partly terraformed Mars or Venus - young, raw, half-finished"
+  - key: exoplanet
+    guidance: "a colony on an exoplanet in another star system, generations after landfall"
+  - key: shipboard
+    guidance: "a district aboard a generation ship, long-haul freighter or migrant fleet in transit"
+  - key: deepspace
+    guidance: "a waystation, monastery or garrison far out in the dark between stars"
+  - key: drowned
+    guidance: "a rebuilt, raised or floating Earth city coping with a transformed climate - the Earth name may survive but should be transformed, not simply prefixed with New"
+  - key: subsurface
+    guidance: "an under-ice or subterranean settlement (an ocean moon, a hollowed mountain, a buried arcology)"
+  - key: gasgiant
+    guidance: "a floating platform or cloud city in the upper atmosphere of a gas giant"

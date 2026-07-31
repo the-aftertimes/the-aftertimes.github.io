@@ -50,6 +50,7 @@ def run_pipeline() -> dict:
     domains = load_yaml("config/domains.yaml")["domains"]
     seeds = load_yaml("config/seed_premises.yaml")["seed_premises"]
     styles = load_yaml("config/styles.yaml")["styles"]
+    place_kinds = load_yaml("config/places.yaml")["place_kinds"]
     ledger = ledger_mod.load_ledger()
     bible = bible_mod.load_bible()
     rng = random.Random()
@@ -65,8 +66,11 @@ def run_pipeline() -> dict:
     domain = rng.choice([d for d in domains if d not in recent_doms] or domains)
     recent_styles = {e.get("style") for e in ledger[-ac["avoid_recent_days"]:]}
     style = rng.choice([s for s in styles if s["key"] not in recent_styles] or styles)
+    recent_places = {e.get("place_kind") for e in ledger[-ac["avoid_recent_days"]:]}
+    place_kind = rng.choice(
+        [p for p in place_kinds if p["key"] not in recent_places] or place_kinds)
     print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / "
-          f"{domain} / {style['key']}")
+          f"{domain} / {style['key']} / {place_kind['key']}")
 
     print(">>> IDEATE")
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
@@ -80,7 +84,8 @@ def run_pipeline() -> dict:
     print(f"    chosen: {premise[:70]}")
 
     print(">>> WRITE")
-    dispatch = write_stage.write(premise, dateline, domain, settings, style["guidance"])
+    dispatch = write_stage.write(premise, dateline, domain, settings,
+                                 style["guidance"], place_kind["guidance"])
     print(f"    headline: {dispatch['headline'][:60]}")
 
     print(">>> ILLUSTRATE")
@@ -112,7 +117,8 @@ def run_pipeline() -> dict:
     write_json(f"data/dispatches/{run_date}.json", record)
     ledger_mod.save_ledger(ledger_mod.append_entry(
         ledger, run_date, dateline, domain, dispatch["headline"],
-        settings["dates"]["anti_cluster"]["era_bucket_years"], style["key"]))
+        settings["dates"]["anti_cluster"]["era_bucket_years"], style["key"],
+        place_kind["key"]))
     bible_mod.save_bible(bible_mod.merge_glossary(bible, dispatch["glossary"], run_date))
     print(f"    archived {run_date}; ledger={len(ledger)}; motifs={len(bible['motifs'])}")
 

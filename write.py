@@ -29,14 +29,69 @@ _FIXUPS = {
 }
 
 
+# US -> AU spellings. The prompt asks for Australian English but the model still
+# slips (31/07/2026 shipped a headline reading "Neighbor's"), so normalise
+# deterministically here. Case-preserving for capitalised words.
+_AU_SPELLING = {
+    "neighbor": "neighbour", "neighbors": "neighbours",
+    "neighborhood": "neighbourhood", "neighboring": "neighbouring",
+    "color": "colour", "colors": "colours", "colored": "coloured",
+    "favor": "favour", "favors": "favours", "favorite": "favourite",
+    "honor": "honour", "honors": "honours", "labor": "labour",
+    "harbor": "harbour", "harbors": "harbours", "odor": "odour",
+    "rumor": "rumour", "rumors": "rumours", "vapor": "vapour",
+    "behavior": "behaviour", "behaviors": "behaviours",
+    "center": "centre", "centers": "centres", "centered": "centred",
+    "meter": "metre", "meters": "metres", "liter": "litre", "liters": "litres",
+    "theater": "theatre", "theaters": "theatres", "fiber": "fibre",
+    # NOTE deliberately omitted as context-dependent: program (software vs
+    # programme), license/practice (noun vs verb differ in AU English).
+    "defense": "defence", "offense": "offence",
+    "organize": "organise", "organized": "organised",
+    "organization": "organisation", "organizations": "organisations",
+    "recognize": "recognise", "recognized": "recognised",
+    "realize": "realise", "realized": "realised",
+    "apologize": "apologise", "apologized": "apologised",
+    "authorize": "authorise", "authorized": "authorised",
+    "specialize": "specialise", "specialized": "specialised",
+    "analyze": "analyse", "analyzed": "analysed", "paralyzed": "paralysed",
+    "localized": "localised", "localize": "localise",
+    "traveled": "travelled", "traveling": "travelling", "traveler": "traveller",
+    "canceled": "cancelled", "canceling": "cancelling",
+    "modeling": "modelling", "labeled": "labelled", "labeling": "labelling",
+    "fueled": "fuelled", "signaled": "signalled",
+    "gray": "grey", "plow": "plough", "mold": "mould", "smolder": "smoulder",
+    "aluminum": "aluminium",
+}
+
+
+def _match_case(src: str, repl: str) -> str:
+    if src.isupper():
+        return repl.upper()
+    if src[:1].isupper():
+        return repl[:1].upper() + repl[1:]
+    return repl
+
+
+def _au_spelling(text: str) -> str:
+    """Rewrite US spellings to Australian, preserving the original casing.
+    Word-boundary matched so 'programmer' / 'kilometers' style stems are safe."""
+    def sub(m):
+        return _match_case(m.group(0), _AU_SPELLING[m.group(0).lower()])
+    pattern = r"\b(" + "|".join(sorted(_AU_SPELLING, key=len, reverse=True)) + r")\b"
+    return re.sub(pattern, sub, text, flags=re.IGNORECASE)
+
+
 def _fix_slips(text: str) -> str:
     for wrong, right in _FIXUPS.items():
         text = re.sub(re.escape(wrong), right, text, flags=re.IGNORECASE)
-    return text
+    return _au_spelling(text)
 
 
 def build_prompt(premise: str, dateline: dict, domain: str,
-                 style_guidance: str) -> str:
+                 style_guidance: str, place_guidance: str = "") -> str:
+    place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
+                  if place_guidance else "")
     return f"""You are a correspondent for The Aftertimes. Write a single news
 dispatch, datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
@@ -44,16 +99,31 @@ dispatch, datelined the year {dateline['year']}
 The premise: {premise}
 
 Today's dispatch format: {style_guidance}
+{place_rule}
 
 The house voice is intelligent, dry and deadpan. This must actually be FUNNY and
 interesting, not merely competent sci-fi. Commit fully to the one absurd idea and
 follow its internal logic to increasingly ridiculous but consistent conclusions.
 Make the comic idea clear within the first two sentences - never bury it under
-procedure or worldbuilding. Favour wit and clarity over dense jargon. End on a
-strong final line that lands or twists the joke (a real kicker), not a limp
-summary. Do NOT force a strained running metaphor (for instance narrating a court
-ruling or an interest-rate rise as though it were a sports match) unless it
-genuinely lands.
+procedure or worldbuilding. Favour wit and clarity over dense jargon. Do NOT force
+a strained running metaphor (for instance narrating a court ruling or an
+interest-rate rise as though it were a sports match) unless it genuinely lands.
+
+COMEDY IS STRUCTURE, NOT VOCABULARY. The single most common failure is a flat
+list of escalating consequences decorated with invented compound nouns
+("hydro-hammock", "melt-rig"). Funny coinages are garnish, not the joke. So:
+- Give the piece a TURN. Somewhere in the middle, the story must reveal something
+  that reframes what came before - a second party with an outrageous but
+  internally logical justification, an institution's absurd official position, a
+  detail that shows the whole system is insane. Not just "and then it got worse".
+- Let a named person say something revealing IN THEIR OWN WORDS, quoted directly,
+  and make the quote funnier than the narration around it. The best comedy comes
+  from someone treating the absurd as completely reasonable.
+- The last line must be a real KICKER: it should recontextualise, undercut, or
+  escalate to a punchline - a joke that only works because of everything before
+  it. A threat, a summary, or a restatement is not a kicker.
+- Cut anything that is merely world-building. If a sentence does not advance the
+  story or land a joke, delete it.
 
 Never build humour on gender, race, religion, nationality or similar
 demographic stereotypes (no nagging-wife / clueless-husband cliches and the
@@ -65,14 +135,24 @@ Rules:
   ruling or an official notice, do NOT frame the story as an authority handing down
   a ruling with a spokesperson quote - use the format's own structure and voice.
 - 250 to 350 words. Straight-faced, as a real wire story. Dry wit, never winking.
-- The headline must be a concise, punchy single-line news headline, ideally
-  under 10 words. Do NOT prefix it with a format label such as "Product
-  Review:", "Obituary:", "Analysis:" or "Opinion:" - convey the format
-  through the writing itself, not a tag.
-- Invent a readable, evocative dateline place a reader can picture - a city,
-  region, settlement or landmark (a plausible future or off-world place is
-  fine). Do NOT use technical infrastructure jargon (no "sub-relay", "node",
-  "array", "hub" type names).
+- THE HEADLINE MUST CARRY THE JOKE, in under 10 words. A newspaper-accurate but
+  purely descriptive label is a failure. Do NOT use the pattern
+  "'Branded Product' Does Literal Thing To Place" - that describes the premise
+  instead of being funny about it. The headline should make a reader smile before
+  they read a word of the body: find the absurd juxtaposition, the deadpan
+  understatement, or the institutional euphemism, and lead with THAT.
+  Weak: "Neighbour's 'Alpine Blizzard' Garden Package Dumps Snowdrifts Over Fence"
+  Strong: "Council Rules Snow Is Trespassing"
+  Do NOT prefix it with a format label such as "Product Review:", "Obituary:",
+  "Analysis:" or "Opinion:" - convey the format through the writing itself.
+- Invent a readable, evocative dateline place a reader can picture, matching
+  today's dateline setting above. It must feel genuinely FUTURE and off-world.
+  NEVER name it "New " plus an existing Earth city (no New Wollongong, no New
+  Sydney, no New Cairo) - that is lazy and it has happened too often. Do NOT use
+  technical infrastructure jargon (no "sub-relay", "node", "array", "hub" type
+  names). Vary the linguistic root widely - any Earth language or invented; the
+  Australian-spelling rule below is about SPELLING and is emphatically not a
+  reason to use Australian place names.
 - Coin at most two world-specific terms, and only if they are genuinely funny
   or necessary; if the story needs none, return an empty glossary. Only
   glossary a term a reader could not infer from context.
@@ -104,8 +184,9 @@ def _generate_json(prompt: str, settings: dict, model: str | None,
 
 
 def write(premise: str, dateline: dict, domain: str, settings: dict,
-          style_guidance: str) -> dict:
-    prompt = build_prompt(premise, dateline, domain, style_guidance)
+          style_guidance: str, place_guidance: str = "") -> dict:
+    prompt = build_prompt(premise, dateline, domain, style_guidance,
+                          place_guidance)
     g = settings["gemini"]
     pro = (g.get("write_model") or "").strip()
     d = None

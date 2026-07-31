@@ -173,7 +173,13 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     figure = ""
     if image:
         img_src = f"{asset_prefix}{html.escape(str(image), quote=True)}"
-        figure = (f'<figure class="engraving"><img src="{img_src}" alt="{headline}" '
+        # alt describes the PICTURE (the scene it was generated from), not the
+        # headline - a headline alt duplicates the h1 for screen readers and
+        # when the page is copied as text.
+        # No scene -> empty alt: the engraving is decorative, and an empty alt is
+        # correct a11y for that (a screen reader skips it rather than reading noise).
+        alt = html.escape(hyphenate(dispatch.get("scene") or ""), quote=True)
+        figure = (f'<figure class="engraving"><img src="{img_src}" alt="{alt}" '
                   f'loading="lazy"></figure>')
     # Locator chart: deterministic, inline SVG, keyed off the already-scrubbed
     # place so label and seed agree. Guarded - a chart error must never blank

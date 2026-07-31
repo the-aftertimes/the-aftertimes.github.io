@@ -33,6 +33,17 @@ specific and self-contained, and vary them widely across genuinely different ide
 Do NOT explain them. Order them strongest first - put the sharpest, funniest, most
 surprising premise as item 1.
 
+Every premise must be a NEWS EVENT that a correspondent could report on - something
+that HAPPENED, involving other people, that a newspaper would cover. Do NOT propose
+a premise whose form is a private document: no "a resident files a complaint",
+no "a reader writes in", no "someone submits a form". Those are not news stories.
+The bureaucratic absurdity should be reported ABOUT, not performed.
+
+Also: the joke must live in the SITUATION, not in the invented product name. A
+premise that is just "branded futuristic gadget malfunctions and annoys someone"
+has no engine. Ask what is genuinely, structurally ridiculous about the world it
+implies, and put THAT in the premise.
+
 Example premises for tone (do not reuse these):
 {seed_lines}
 

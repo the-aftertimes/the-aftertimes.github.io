@@ -104,6 +104,37 @@ def test_write_falls_back_to_flash_when_pro_fails(monkeypatch):
                                      SETTINGS["gemini"]["model"]]
 
 
+def test_au_spelling_normalised_preserving_case():
+    # 31/07/2026 shipped a headline reading "Neighbor's" despite the prompt.
+    f = write_stage._fix_slips
+    assert f("Neighbor's garden") == "Neighbour's garden"
+    assert f("the neighbors complained") == "the neighbours complained"
+    assert f("NEIGHBOR DISPUTE") == "NEIGHBOUR DISPUTE"
+    assert f("a localized squall") == "a localised squall"
+    assert f("two meters of gray snow") == "two metres of grey snow"
+    assert f("the defense center") == "the defence centre"
+
+
+def test_au_spelling_leaves_ambiguous_and_unrelated_words_alone():
+    f = write_stage._fix_slips
+    # deliberately not in the map (noun/verb or software/non-software split)
+    assert "program" in f("the program ran")
+    assert "license" in f("license the software")
+    # word-boundary safety: no mangling inside longer words
+    assert f("programmer") == "programmer"
+    assert f("colorectal") == "colorectal"
+
+
+def test_write_prompt_includes_place_guidance_and_bans_new_earth_cities():
+    prompt = write_stage.build_prompt(
+        premise="p", dateline={"year": 2914, "years_from_now": 888},
+        domain="weather", style_guidance="A wire report.",
+        place_guidance="a floating platform in a gas giant's atmosphere")
+    assert "gas giant's atmosphere" in prompt
+    assert "New Wollongong" in prompt      # named as a banned example
+    assert "HEADLINE MUST CARRY THE JOKE" in prompt
+
+
 def test_fix_slips_corrects_common_idioms():
     assert write_stage._fix_slips("done for all intent and purpose") == \
         "done for all intents and purposes"
