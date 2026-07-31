@@ -62,5 +62,15 @@
     "domain": "weather and climate",
     "headline": "Neighbor's 'Alpine Blizzard' Garden Package Dumps Snowdrifts Over Fence",
     "style": "letter"
+  },
+  {
+    "run_date": "2026-07-31",
+    "year": 2079,
+    "era_bucket": 1,
+    "domain": "sport",
+    "headline": "Goalkeeper Who Consecrated Penalty Box Dies Aged 88",
+    "style": "obituary",
+    "place_kind": "deepspace",
+    "engine": "ritual"
   }
 ]
