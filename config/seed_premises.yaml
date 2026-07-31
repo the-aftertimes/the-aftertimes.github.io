@@ -1,15 +1,42 @@
 # Few-shot examples that teach the ideate stage the house sense of humour:
 # straight-faced, absurd, satirical sci-fi. NOT a consumable queue.
+#
+# IMPORTANT - keep this list REGISTER-BALANCED. As of 31/07/2026, 8 of the 12
+# seeds here were sue/contract/money/paperwork premises, and because few-shot
+# examples steer a model far harder than instructions do, the paper collapsed
+# into one voice: back taxes, liens, injunctions, repossession. Charlie: "why is
+# it always unpaid debts". At most TWO legal/financial seeds are allowed. When
+# adding a seed, note which comic engine it uses (config/engines.yaml) and
+# prefer an engine that is under-represented here.
 seed_premises:
+  # scale - the cosmic handled with total mundanity
   - "A moon of Saturn votes to secede, citing irreconcilable time zones."
-  - "The last human accountant is legally declared a protected cultural site."
-  - "A floating capital city sues the sea for breach of contract."
-  - "Two artificial intelligences file for divorce; custody of a shared API is contested."
-  - "A man sues his own clone for defamation and loses the case to himself."
-  - "A nation abolishes money on a Tuesday and forgets to tell the vending machines."
-  - "A generation ship arrives to find its destination already settled by a later, faster ship."
-  - "Mars introduces daylight saving; three towns are lost to the paperwork."
-  - "A museum of extinct jobs opens, its star exhibit a live working dentist."
   - "The heat death of the universe is postponed for budget reasons."
-  - "An ancient AI is found still running a loyalty-points scheme for a supermarket that closed centuries ago."
+  # logistics - physical/practical absurdity
+  - "A city's weather is delivered by lorry after its climate subscription lapses; the drivers unionise."
+  - "Relocating a cathedral to another planet takes ninety years, and the congregation ages out of the pews mid-transit."
+  # category error
   - "A city elects a river as mayor; it governs by flooding selectively."
+  - "A man sues his own clone for defamation and loses the case to himself."
+  # obsolescence - the past still load-bearing
+  - "An ancient AI is found still running a loyalty-points scheme for a supermarket that closed centuries ago."
+  - "A museum of extinct jobs opens, its star exhibit a live working dentist."
+  # etiquette and status
+  - "Breathing unfiltered air becomes a status symbol; the wealthy cough performatively at parties."
+  - "It is now considered unforgivably rude to arrive at dinner in your original body."
+  # sentiment - disproportionate emotion
+  - "A generation ship holds a state funeral for its last surviving houseplant."
+  - "Colonists petition to keep a broken lift because they have grown fond of its voice."
+  # expertise and craft
+  - "The last hand-weaver of gravity nets refuses an automated loom on principle, and wins an award for it."
+  # nature, indifferent to us
+  - "Terraforming Mars succeeds, but only the pigeons thrive, and they are enormous."
+  # ritual
+  - "A colony's harvest festival outlives both its harvests and its seasons, and grows more elaborate each year."
+  # language drift
+  - "A mistranslated welcome banner commits a colony to a thousand-year war it must now politely observe."
+  # leisure taken far too seriously
+  - "An orbital cricket league refuses to adjust its rules for zero gravity; matches now last decades."
+  # love and family
+  - "Two artificial intelligences file for divorce; custody of a shared API is contested."
+  - "A woman finds her great-grandmother still on shift, never having been told the war ended."

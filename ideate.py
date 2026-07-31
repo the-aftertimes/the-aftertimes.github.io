@@ -8,7 +8,7 @@ import gemini
 
 def build_prompt(dateline: dict, domain: str, bible_motifs: list[dict],
                  seed_premises: list[str], avoid_headlines: list[str],
-                 n: int, style_guidance: str) -> str:
+                 n: int, style_guidance: str, engine_guidance: str = "") -> str:
     motif_lines = "\n".join(f"- {m['term']}: {m.get('gloss', '')}"
                             for m in bible_motifs) or "(none yet)"
     seed_lines = "\n".join(f"- {p}" for p in seed_premises) or "(none)"
@@ -23,12 +23,18 @@ Today's dispatch format: {style_guidance}
 Brainstorm {n} one-sentence story premises datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
 
+TODAY'S COMIC ENGINE - the source of the humour must be: {engine_guidance}
+
+Every premise must run on THAT engine. This constraint exists because the paper
+developed a bad habit of making every story about debt, tax, liens, lawsuits,
+injunctions, permits and repossession. Unless today's engine above is explicitly
+the bureaucratic one, do NOT reach for money, courts, contracts, fines, unpaid
+bills, licences or legal process as the source of the joke. They are a crutch.
+Find the comedy where today's engine says it lives.
+
 Each premise needs a real comedic engine - not merely "a futuristic version of a
-present-day thing", but a genuine twist: an ironic reversal, petty bureaucracy or
-mundane human smallness colliding with something cosmic or profound, a category
-error taken completely seriously, or a strange consequence nobody would think to
-legislate for. A reader should smile at the premise alone. Avoid dry, generic
-finance/policy framings unless there is a real joke in them. Make each surprising,
+present-day thing", but a genuine twist. A reader should smile at the premise
+alone. Make each surprising,
 specific and self-contained, and vary them widely across genuinely different ideas.
 Do NOT explain them. Order them strongest first - put the sharpest, funniest, most
 surprising premise as item 1.
@@ -59,10 +65,11 @@ Return JSON only: {{"premises": ["...", "...", ...]}} with exactly {n} items."""
 
 def ideate(dateline: dict, domain: str, bible_motifs: list[dict],
            seed_premises: list[str], avoid_headlines: list[str],
-           settings: dict, style_guidance: str) -> list[str]:
+           settings: dict, style_guidance: str,
+           engine_guidance: str = "") -> list[str]:
     prompt = build_prompt(dateline, domain, bible_motifs, seed_premises,
                           avoid_headlines, settings["ideate"]["n_premises"],
-                          style_guidance)
+                          style_guidance, engine_guidance)
     raw = gemini.generate(prompt, settings,
                           settings["gemini"]["temperature_ideate"])
     data = gemini.extract_json(raw)

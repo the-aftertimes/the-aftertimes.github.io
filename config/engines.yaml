@@ -1,0 +1,37 @@
+# Rotating COMIC ENGINE; one is chosen per dispatch (with light anti-repeat), the
+# same way styles and place kinds rotate.
+#
+# Why this exists: by 31/07/2026 the dispatches had collapsed into one register -
+# debt, tax, liens, injunctions, repossession ("Resurrected Miner Billed Back
+# Taxes", "Atmospheric Bailiffs Tow Repossessed Hurricane Over Unpaid Debts").
+# Charlie: "why is it always unpaid debts". Root cause was the few-shot seeds
+# (8 of 12 were sue/contract/money/paperwork) plus prompt language about "petty
+# bureaucracy" and things "nobody would think to legislate for". Rotating the
+# MECHANISM of the joke is what stops any single register dominating.
+#
+# The engine is the SOURCE of the comedy, deliberately independent of the domain.
+engines:
+  - key: bureaucratic
+    guidance: "institutional or legal logic applied with a straight face to something it was never meant to touch (permits, rulings, liabilities). Use sparingly - this is the register the paper over-used, so it must be genuinely fresh."
+  - key: logistics
+    guidance: "sheer physical or practical absurdity - the impossible engineering, transport, storage, queueing or cleaning-up that this future actually requires. The comedy is in the effort, not in any rule."
+  - key: etiquette
+    guidance: "social manners, status and awkwardness - what counts as rude, impressive or humiliating in this world, and someone getting it painfully wrong."
+  - key: sentiment
+    guidance: "misplaced or disproportionate emotion - people caring enormously about the wrong thing, or being unmoved by something enormous. Grief, pride, nostalgia, sentimentality about the absurd."
+  - key: category
+    guidance: "a category error taken completely seriously - something treated as a thing it plainly is not (a person, a pet, a citizen, a building, a relative) with everyone entirely comfortable about it."
+  - key: scale
+    guidance: "a mismatch of scale - the cosmic handled with total mundanity, or something trivial handled with vast ceremony and resources."
+  - key: obsolescence
+    guidance: "the past intruding on the present - a dead technology, defunct custom, forgotten system or stubborn traditionalist still running, still insisted upon, still weirdly load-bearing."
+  - key: expertise
+    guidance: "professional pride and craft - a specialist devoted to an absurd niche skill, defending its standards and its dignity with total seriousness."
+  - key: ritual
+    guidance: "ritual, religion, superstition or ceremony evolving to fit strange new circumstances, observed with complete sincerity."
+  - key: language
+    guidance: "words, naming, translation and drift - a term that has shifted meaning, a mistranslation with consequences, a name nobody can undo."
+  - key: nature
+    guidance: "animals, plants and ecosystems responding to this future entirely on their own terms, indifferent to human intentions and better adapted than expected."
+  - key: leisure
+    guidance: "fun, sport, hobbies, fandom and holidays - people at play, taking their entertainment far more seriously than the era's actual crises."

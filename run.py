@@ -51,6 +51,7 @@ def run_pipeline() -> dict:
     seeds = load_yaml("config/seed_premises.yaml")["seed_premises"]
     styles = load_yaml("config/styles.yaml")["styles"]
     place_kinds = load_yaml("config/places.yaml")["place_kinds"]
+    engines = load_yaml("config/engines.yaml")["engines"]
     ledger = ledger_mod.load_ledger()
     bible = bible_mod.load_bible()
     rng = random.Random()
@@ -69,14 +70,17 @@ def run_pipeline() -> dict:
     recent_places = {e.get("place_kind") for e in ledger[-ac["avoid_recent_days"]:]}
     place_kind = rng.choice(
         [p for p in place_kinds if p["key"] not in recent_places] or place_kinds)
+    recent_engines = {e.get("engine") for e in ledger[-ac["avoid_recent_days"]:]}
+    engine = rng.choice(
+        [e for e in engines if e["key"] not in recent_engines] or engines)
     print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / "
-          f"{domain} / {style['key']} / {place_kind['key']}")
+          f"{domain} / {style['key']} / {place_kind['key']} / {engine['key']}")
 
     print(">>> IDEATE")
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
     avoid = ledger_mod.recent_headlines(ledger, settings["ideate"]["recent_premise_window"])
     premises = ideate_stage.ideate(dateline, domain, motifs, seeds, avoid, settings,
-                                    style["guidance"])
+                                    style["guidance"], engine["guidance"])
     print(f"    {len(premises)} premises")
 
     print(">>> SELECT")
@@ -118,7 +122,7 @@ def run_pipeline() -> dict:
     ledger_mod.save_ledger(ledger_mod.append_entry(
         ledger, run_date, dateline, domain, dispatch["headline"],
         settings["dates"]["anti_cluster"]["era_bucket_years"], style["key"],
-        place_kind["key"]))
+        place_kind["key"], engine["key"]))
     bible_mod.save_bible(bible_mod.merge_glossary(bible, dispatch["glossary"], run_date))
     print(f"    archived {run_date}; ledger={len(ledger)}; motifs={len(bible['motifs'])}")
 

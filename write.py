@@ -113,9 +113,12 @@ COMEDY IS STRUCTURE, NOT VOCABULARY. The single most common failure is a flat
 list of escalating consequences decorated with invented compound nouns
 ("hydro-hammock", "melt-rig"). Funny coinages are garnish, not the joke. So:
 - Give the piece a TURN. Somewhere in the middle, the story must reveal something
-  that reframes what came before - a second party with an outrageous but
-  internally logical justification, an institution's absurd official position, a
-  detail that shows the whole system is insane. Not just "and then it got worse".
+  that reframes what came before - not just "and then it got worse". Vary WHERE
+  the turn comes from; do not default to a rival claimant or an official body.
+  It might be: someone's private and completely different motive, a physical
+  consequence nobody anticipated, a social custom that makes the situation
+  normal, a much older cause surfacing, an expert calmly explaining that this is
+  routine, or a detail revealing everyone involved has misunderstood the point.
 - Let a named person say something revealing IN THEIR OWN WORDS, quoted directly,
   and make the quote funnier than the narration around it. The best comedy comes
   from someone treating the absurd as completely reasonable.
@@ -124,6 +127,11 @@ list of escalating consequences decorated with invented compound nouns
   it. A threat, a summary, or a restatement is not a kicker.
 - Cut anything that is merely world-building. If a sentence does not advance the
   story or land a joke, delete it.
+- AVOID THE LEGAL/FINANCIAL CRUTCH. Unless the premise is genuinely about money or
+  law, do not resolve or escalate the story through debts, taxes, fines, liens,
+  injunctions, permits, lawsuits, insurance or repossession. The paper leaned on
+  that register far too heavily. Find the consequence somewhere else: physical,
+  social, emotional, practical, ecological or ceremonial.
 
 Never build humour on gender, race, religion, nationality or similar
 demographic stereotypes (no nagging-wife / clueless-husband cliches and the
