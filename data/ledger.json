@@ -72,5 +72,15 @@
     "style": "obituary",
     "place_kind": "deepspace",
     "engine": "ritual"
+  },
+  {
+    "run_date": "2026-08-01",
+    "year": 2356,
+    "era_bucket": 6,
+    "domain": "crime",
+    "headline": "Orbital Assault Authorised Over Mismatched Kitchenware",
+    "style": "firstperson",
+    "place_kind": "lunar",
+    "engine": "scale"
   }
 ]

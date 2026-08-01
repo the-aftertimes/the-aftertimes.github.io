@@ -1,0 +1,30 @@
+{
+  "run_date": "2026-08-01",
+  "run_time": "2026-08-01T20:42:50.698362+00:00",
+  "dispatch": {
+    "headline": "Orbital Assault Authorised Over Mismatched Kitchenware",
+    "body": "I am standing on the tactical bridge of the dreadnought Vengeance as three fleet admirals prepare to raze a four-by-three-metre garden shed. The objective below, magnified thirty thousand times on the primary Holo-Display, is a single teal Tupperware lid stolen from the officers' mess last month.\n\nFour marine divisions are currently descending into the low-gravity dust of the crater district. Orbital batteries hum as targeted plasma fire burns away a hedge of decorative cacti, clearing a drop zone for eighty thousand heavily armed troops. High Admiral Sunita Patel adjusts her white gloves, watching a tactical readout of a padlocked shed door and a rusted wheelbarrow.\n\nThe sheer scale of the assault seems absurd until Patel explains the crisis in the flagship galley.\n\n\"If we do not recover the seal for the 1.2-litre marinating tub, the leftover curry dries out in the communal fridge,\" Patel tells me, her voice completely flat. \"When the curry dries out, Admiral Chen accuses Admiral O'Hanlon of sabotage. We lost three battlecruisers in the asteroid belt last week because nobody would pass the salt.\"\n\nThis is not a counter-terrorism operation; it is naval domestic therapy conducted with orbital artillery. Down on the lunar floor, drop-pods smash into the potting soil. A squad of shock troops uses a thermite lance on the shed door while gunships circle a plastic compost bin.\n\nThe shed door collapses in a cloud of rust and peat moss. Over the fleet frequency, Commander Turei Broughton reports that the target has been secured, though preliminary scanning reveals a tragic error.\n\n\"Bridge, this is Strike Team One,\" Broughton's voice crackles over the speakers. \"The lid is red. Repeat, the lid is red. It belongs to a Pyrex dish.\"\n\nPatel does not flinch. She simply turns to the navigation officer and orders a full orbital bombardment of the neighbouring gazebo.",
+    "scene": "A massive military drop-pod smashes into a small suburban garden shed on a dusty moon surface while soldiers in heavy armour surround a plastic compost bin.",
+    "dateline": {
+      "place": "Mare Imbrium Basin, Luna",
+      "year": 2356,
+      "month": 1,
+      "day": 25,
+      "years_from_now": 330
+    },
+    "domain": "crime",
+    "glossary": [],
+    "premise": "I am standing on the flag bridge of the dreadnought Vengeance, where three fleet admirals and four marine divisions are executing a planetary assault on a garden shed to recover a stolen Tupperware lid.",
+    "image": "assets/img/2026-08-01.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-01T20:42:50.698362+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://the-aftertimes.github.io",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 10,
+    "locator_deep_max": 40000
+  }
+}
