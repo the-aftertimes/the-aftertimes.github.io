@@ -82,5 +82,15 @@
     "style": "firstperson",
     "place_kind": "lunar",
     "engine": "scale"
+  },
+  {
+    "run_date": "2026-08-02",
+    "year": 2311,
+    "era_bucket": 5,
+    "domain": "love and marriage",
+    "headline": "Matchmaker Argues Groom’s Agony Feed Added Romantic Depth",
+    "style": "interview",
+    "place_kind": "orbital",
+    "engine": "etiquette"
   }
 ]

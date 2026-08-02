@@ -1,0 +1,35 @@
+{
+  "run_date": "2026-08-02",
+  "run_time": "2026-08-02T20:45:50.341388+00:00",
+  "dispatch": {
+    "headline": "Matchmaker Argues Groom’s Agony Feed Added Romantic Depth",
+    "body": "THE AETHELGARD RING - Tamsin Oduya, premier marital architect for the Martian aristocracy, refuses to accept that last weekend’s ceremony was a disaster.\n\n\"People are calling it a professional scandal,\" Oduya says, calmly adjusting a floating bouquet of zero-gravity orchids in her studio. \"I call it raw authenticity. When Lord Soren Kyme recited his custom vows, his jaw was clenching so violently his collar studs fell out. That is not a failed wedding. That is a man displaying profound emotional effort.\"\n\nThe cause of the groom's distress was purely technical. Minutes before entering the chapel, Kyme forgot to mute his new mother-in-law’s neuro-hiss, a neural feed used by high-society matriarchs to broadcast sub-vocal feedback directly into a relative's auditory cortex. Throughout the thirty-minute service, every time Kyme hesitated over a high-family honorific, the feed delivered a burst of static judgment straight to his brainstem.\n\n\"The cadence was actually magnificent,\" Oduya says. \"When he reached the line about sharing his oxygen reserves, his right eye was twitching in perfect three-four time. The bride’s aunt told me she had never seen a groom look so utterly consumed by the gravity of the moment.\"\n\nThe scandal only erupted when the altar speakers accidentally picked up the signal, broadcasting the mother-in-law’s continuous, silent review of Kyme’s haircut to two hundred guests.\n\n\"The aristocracy is far too sensitive,\" Oduya says, shaking her head. \"I already have four elite grooms on the waiting list asking if we can stream neural static into their ears next spring. Apparently, looking like you are undergoing mild electrocution is the only way to prove you aren't marrying for orbital land rights.\"",
+    "scene": "A groom in a stiff velvet suit grimaces wildly at a floral altar while a calm matchmaker arranges floating orchids nearby.",
+    "dateline": {
+      "place": "THE AETHELGARD RING",
+      "year": 2311,
+      "month": 1,
+      "day": 6,
+      "years_from_now": 285
+    },
+    "domain": "love and marriage",
+    "glossary": [
+      {
+        "term": "neuro-hiss",
+        "gloss": "A continuous sub-auditory neural transmission used by high-society matriarchs to send non-verbal disapproval directly into a family member's nervous system."
+      }
+    ],
+    "premise": "A Martian matchmaker faces social ruin after an aristocratic groom forgot to mute his mother-in-law’s neuro-hiss feed, causing him to wince visibly through his entire custom vow recital.",
+    "image": "assets/img/2026-08-02.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-02T20:45:50.341388+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://the-aftertimes.github.io",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 11,
+    "locator_deep_max": 40000
+  }
+}
