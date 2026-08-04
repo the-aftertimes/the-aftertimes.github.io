@@ -102,5 +102,15 @@
     "style": "court",
     "place_kind": "drowned",
     "engine": "logistics"
+  },
+  {
+    "run_date": "2026-08-04",
+    "year": 2183,
+    "era_bucket": 3,
+    "domain": "death and mourning",
+    "headline": "HR Euphemism Drops Living Executive Into Jupiter",
+    "style": "wire",
+    "place_kind": "gasgiant",
+    "engine": "language"
   }
 ]

@@ -35,6 +35,18 @@
       "gloss": "A high-intensity directional thermal blower used by suburban homeowners to dissolve runaway weather spillover.",
       "kind": "term",
       "first_seen": "2026-07-30"
+    },
+    {
+      "term": "grief synthesis",
+      "gloss": "Synthetic audio streams generated during sky-cremations to simulate vocal mourning.",
+      "kind": "term",
+      "first_seen": "2026-08-04"
+    },
+    {
+      "term": "sky-cremation",
+      "gloss": "The ceremonial disposal of remains by atmospheric drop into gas giant mantles.",
+      "kind": "term",
+      "first_seen": "2026-08-04"
     }
   ]
 }
