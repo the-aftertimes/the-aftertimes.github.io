@@ -259,8 +259,9 @@ Rules:
   least two sentences of SIX WORDS OR FEWER, and no sentence over 35 words. VARY
   it: a run of uniformly long sentences is the clearest sign a machine wrote it,
   but a run of uniformly short ones reads like a telegram. Mostly medium
-  sentences, then land a short one hard. "She removed her receiver and walked
-  out." Then move on.
+  sentences, then land a short one hard, then carry on.
+  EVERY example in these instructions illustrates RHYTHM, SHAPE or a MISTAKE only.
+  Never copy an example's words, names or subject matter into the dispatch.
 - WRITE PLAINLY. Prefer the short Anglo-Saxon word to the Latinate one. Cut every
   adjective and adverb that is not doing real work - "supreme", "utterly",
   "entirely", "merely", "precise", "heart-wrenching", "deep". One adjective per
