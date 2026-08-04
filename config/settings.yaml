@@ -71,3 +71,27 @@ image:
   timeout: 120
   crop: [0.03, 0.03, 0.97, 0.86]   # left, top, right, bottom fractions - drops the caption band
   dir: "assets/img"
+
+# Multi-draft quality pipeline. Every threshold the critic uses lives here so
+# tuning never means editing code. `judge` and `revise` are independently
+# switchable so either half can be turned off if it proves unhelpful.
+quality:
+  n_drafts: 3
+  judge: true
+  revise: true
+  hard_reject: [machine_phrases, legal_register, dash_residue, us_spelling]
+  weights:
+    major: 0.25
+    minor: 0.08
+  rhythm:
+    mean_min: 14
+    mean_max: 20
+    mean_hard_min: 12
+    mean_hard_max: 24
+    longest_max: 35
+    min_short: 2
+  length:
+    min: 200
+    max: 280
+    hard_min: 160
+    hard_max: 340
