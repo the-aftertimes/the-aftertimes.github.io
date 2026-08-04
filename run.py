@@ -85,7 +85,8 @@ def run_pipeline() -> dict:
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
     avoid = ledger_mod.recent_headlines(ledger, settings["ideate"]["recent_premise_window"])
     premises = ideate_stage.ideate(dateline, domain, motifs, seeds, avoid, settings,
-                                    style["guidance"], engine["guidance"])
+                                    style["guidance"], engine["guidance"],
+                                    place_kind["guidance"])
     print(f"    {len(premises)} premises")
 
     print(">>> SELECT")
@@ -96,6 +97,16 @@ def run_pipeline() -> dict:
     dispatch = write_stage.write(premise, dateline, domain, settings,
                                  style["guidance"], place_kind["guidance"])
     print(f"    headline: {dispatch['headline'][:60]}")
+    pr = write_stage.prose_report(dispatch["body"])
+    print(f"    prose: {pr['words']}w / {pr['sentences']} sentences / "
+          f"mean {pr['mean_sentence']}w / longest {pr['longest']}w / "
+          f"{pr['short_sentences']} short")
+    if pr["mean_sentence"] > 22 or pr["short_sentences"] < 2:
+        print(f"    WARN prose reads long/uniform (machine-like): {pr}",
+              file=sys.stderr)
+    if pr["machine_phrases"]:
+        print(f"    WARN stock machine phrases present: {pr['machine_phrases']}",
+              file=sys.stderr)
 
     print(">>> ILLUSTRATE")
     dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings)

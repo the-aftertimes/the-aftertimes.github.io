@@ -8,7 +8,8 @@ import gemini
 
 def build_prompt(dateline: dict, domain: str, bible_motifs: list[dict],
                  seed_premises: list[str], avoid_headlines: list[str],
-                 n: int, style_guidance: str, engine_guidance: str = "") -> str:
+                 n: int, style_guidance: str, engine_guidance: str = "",
+                 place_guidance: str = "") -> str:
     motif_lines = "\n".join(f"- {m['term']}: {m.get('gloss', '')}"
                             for m in bible_motifs) or "(none yet)"
     seed_lines = "\n".join(f"- {p}" for p in seed_premises) or "(none)"
@@ -22,6 +23,10 @@ Today's dispatch format: {style_guidance}
 
 Brainstorm {n} one-sentence story premises datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
+
+The story is SET IN: {place_guidance or 'a plausible future off-world settlement'}
+Every premise must actually take place there, so the setting and the story agree.
+Do not invent a premise anchored to a different world or planet.
 
 TODAY'S COMIC ENGINE - the source of the humour must be: {engine_guidance}
 
@@ -78,10 +83,10 @@ Return JSON only: {{"premises": ["...", "...", ...]}} with exactly {n} items."""
 def ideate(dateline: dict, domain: str, bible_motifs: list[dict],
            seed_premises: list[str], avoid_headlines: list[str],
            settings: dict, style_guidance: str,
-           engine_guidance: str = "") -> list[str]:
+           engine_guidance: str = "", place_guidance: str = "") -> list[str]:
     prompt = build_prompt(dateline, domain, bible_motifs, seed_premises,
                           avoid_headlines, settings["ideate"]["n_premises"],
-                          style_guidance, engine_guidance)
+                          style_guidance, engine_guidance, place_guidance)
     raw = gemini.generate(prompt, settings,
                           settings["gemini"]["temperature_ideate"])
     data = gemini.extract_json(raw)

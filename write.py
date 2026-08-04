@@ -105,6 +105,31 @@ def _au_spelling(text: str) -> str:
     return _ise_suffix(text)
 
 
+_MACHINE_PHRASES = (
+    "took an unexpected turn", "the scandal deepened", "hit a crisis",
+    "raising questions about", "sparking debate", "serving as a reminder",
+    "underscoring", "highlighting the", "in a move that",
+    "one thing is certain", "only time will tell",
+)
+
+
+def prose_report(body: str) -> dict:
+    """Measure the tells that make a dispatch read machine-written: long uniform
+    sentences and stock connective phrases. Printed after each run so drift is
+    visible in the CI log instead of only being noticed by a reader."""
+    flat = re.sub(r"\s+", " ", body).strip()
+    sents = [s for s in re.split(r"(?<=[.!?])\s+", flat) if s.strip()]
+    lens = [len(s.split()) for s in sents] or [0]
+    return {
+        "words": len(flat.split()),
+        "sentences": len(sents),
+        "mean_sentence": round(sum(lens) / len(lens), 1),
+        "longest": max(lens),
+        "short_sentences": sum(1 for n in lens if n <= 6),
+        "machine_phrases": [p for p in _MACHINE_PHRASES if p in body.lower()],
+    }
+
+
 def _fix_slips(text: str) -> str:
     for wrong, right in _FIXUPS.items():
         text = re.sub(re.escape(wrong), right, text, flags=re.IGNORECASE)
@@ -184,7 +209,31 @@ Rules:
 - Follow the SHAPE of today's dispatch format above. Unless that format is a court
   ruling or an official notice, do NOT frame the story as an authority handing down
   a ruling with a spokesperson quote - use the format's own structure and voice.
-- 250 to 350 words. Straight-faced, as a real wire story. Dry wit, never winking.
+- 200 to 280 words. Straight-faced, as a real wire story. Dry wit, never winking.
+- RHYTHM, measured. Average sentence length between 14 and 20 words. Include at
+  least two sentences of SIX WORDS OR FEWER, and no sentence over 35 words. VARY
+  it: a run of uniformly long sentences is the clearest sign a machine wrote it,
+  but a run of uniformly short ones reads like a telegram. Mostly medium
+  sentences, then land a short one hard. "She removed her receiver and walked
+  out." Then move on.
+- WRITE PLAINLY. Prefer the short Anglo-Saxon word to the Latinate one. Cut every
+  adjective and adverb that is not doing real work - "supreme", "utterly",
+  "entirely", "merely", "precise", "heart-wrenching", "deep". One adjective per
+  sentence at most, usually none.
+- NAME A THING ONCE, THEN REUSE THE SAME WORDS. Do not elegantly vary: if it is a
+  "thought feed", it stays a "thought feed" - not "raw neural architecture", then
+  "the subconscious stream", then "the recorded link". Rotating synonyms for one
+  object is the loudest AI tell in the paper.
+- DO NOT EXPLAIN THE STORY'S SIGNIFICANCE. Never write a sentence that tells the
+  reader what the trend means, was intended as, or reveals. Report what happened
+  and what people said; let the point be obvious without being stated.
+- Only the central figure gets a descriptor. Do not label every name
+  ("bio-tech heiress", "eighty-nine-year-old matriarch", "senior crew chief").
+- BANNED PHRASES - these are machine connective tissue: "took an unexpected
+  turn", "the scandal deepened", "hit a crisis", "raising questions about",
+  "sparking debate", "serving as a reminder", "underscoring", "highlighting the",
+  "marking a", "in a move that", "one thing is certain", "only time will tell".
+  Also avoid the "Rather than X, Y" and "not out of X but Y" constructions.
 - THE HEADLINE MUST CARRY THE JOKE, in under 10 words. A newspaper-accurate but
   purely descriptive label is a failure. Do NOT use the pattern
   "'Branded Product' Does Literal Thing To Place" - that describes the premise
