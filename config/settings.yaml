@@ -16,12 +16,17 @@ newsletter:
   list_id: 3                                        # Brevo list "The Aftertimes" (#3)
 
 dates:
-  min_years: 8
-  band_weights: [0.70, 0.25, 0.05]   # near, mid, deep
+  # 04/08/2026: pushed further out. The old settings (min 8 years, 70% weight on
+  # an 8-300 band, log-uniform favouring the near end) kept landing in the 2030s-
+  # 2060s, and a 33-years-hence dispatch does not read as futuristic - Charlie:
+  # "this doesn't seem very futuristic at all / or spacey / almost like back in
+  # time". Nothing nearer than 60 years now, and the mid band carries equal weight.
+  min_years: 60
+  band_weights: [0.45, 0.40, 0.15]   # near, mid, deep
   bands:
-    near: [8, 300]
-    mid: [300, 3000]
-    deep: [3000, 40000]
+    near: [60, 400]
+    mid: [400, 4000]
+    deep: [4000, 40000]
   anti_cluster:
     era_bucket_years: 50    # two dates in the same 50-year bucket count as the same era
     avoid_recent_days: 5    # do not reuse an era used within the last N dispatches

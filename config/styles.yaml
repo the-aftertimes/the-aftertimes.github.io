@@ -2,15 +2,20 @@
 # House voice for all: intelligent, dry, deadpan; the comedy comes from one absurd
 # idea followed to its logical conclusions, never crude or broad.
 #
-# IMPORTANT: only "court" and "notice" are shaped as an authority handing down a
-# ruling or bulletin. Every OTHER style must take a genuinely different narrative
-# SHAPE - do not default to "[official body] rules X, and a spokesperson explains".
+# NO style may be shaped as an authority handing down a ruling. Do NOT write
+# "[official body] rules X, and a spokesperson explains" - that is banned outright.
 #
 # EVERY style must still read as JOURNALISM - something a newspaper would print,
 # written by a correspondent about events involving OTHER people. The reader is
 # an outsider being told the news, never the recipient of someone's complaint.
-# ("letter" and "advice" styles were removed 31/07/2026 for exactly this reason:
-# a first-person council complaint is not a news dispatch.)
+#
+# Removal history (both for the same reason - the shape itself was the problem):
+#   31/07/2026 "letter" + "advice" - a first-person council complaint is not news.
+#   04/08/2026 "court" + "notice" - these FORCED the legal/bureaucratic register
+#     that Charlie had already objected to twice. Worse, they overrode the
+#     comic-engine rotation: 03/08 drew engine=logistics but style=court and
+#     still produced "High Court Orders Street Greasing For Mobile Whale Liver".
+#     Replaced with investigation / trend / discovery.
 styles:
   - key: wire
     guidance: "A straight breaking-news wire report of an EVENT as it unfolds - who, what, where, and eyewitnesses. Not a ruling or a verdict."
@@ -26,7 +31,9 @@ styles:
     guidance: "A profile built around a single interview - mostly one character's voice answering questions, revealing the absurd world through how utterly normal they find it."
   - key: firstperson
     guidance: "A correspondent's first-person, present-tense eyewitness dispatch - 'I' am there, describing what I see and the people I meet, wry and observational."
-  - key: court
-    guidance: "A court or legal report: a ruling or case, with judicial language and a quoted opinion from the bench. (This one IS a ruling shape.)"
-  - key: notice
-    guidance: "An official notice or regulatory bulletin: bureaucratic and procedural, citing directives and deadlines. (This one IS a bulletin shape.)"
+  - key: investigation
+    guidance: "An investigative expose - the correspondent has found something being quietly concealed or ignored, laid out as evidence with a reluctant source and a denial."
+  - key: trend
+    guidance: "A social-trend piece on something ordinary people have started doing - what it is, who is doing it, what the disapproving older generation says about it."
+  - key: discovery
+    guidance: "A science or research report on a finding, with a researcher explaining it plainly and an unsettling implication nobody wants to dwell on."

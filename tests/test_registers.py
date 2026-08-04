@@ -62,6 +62,55 @@ def test_ideate_prompt_carries_engine_and_bans_the_crutch():
     assert "repossession" in prompt
 
 
+def test_no_ruling_shaped_styles():
+    # 04/08/2026: style=court overrode engine=logistics and still produced
+    # "High Court Orders Street Greasing For Mobile Whale Liver". A style that
+    # forces a ruling shape defeats the whole engine rotation.
+    styles = _load("styles.yaml")["styles"]
+    keys = {s["key"] for s in styles}
+    assert "court" not in keys and "notice" not in keys
+    assert {"investigation", "trend", "discovery"} <= keys
+    for s in styles:
+        g = s["guidance"].lower()
+        # a style may BAN the ruling shape ("not a ruling or a verdict"); none may
+        # prescribe one
+        assert "is a ruling shape" not in g, f"{s['key']} prescribes a ruling"
+        assert "judicial" not in g, f"{s['key']} prescribes judicial language"
+        assert "handing down" not in g, f"{s['key']} prescribes a ruling"
+
+
+def test_dates_are_far_enough_out_to_feel_futuristic():
+    # A 33-years-hence dispatch read as near-present. Nothing nearer than 60.
+    d = _load("settings.yaml")["dates"]
+    assert d["min_years"] >= 60
+    assert d["bands"]["near"][0] >= 60
+    # the near band must not dominate the way it did (was 0.70)
+    assert d["band_weights"][0] <= 0.5
+
+
+def test_prompts_require_a_satirical_target():
+    ip = ideate.build_prompt(
+        dateline={"year": 2500, "years_from_now": 474}, domain="food",
+        bible_motifs=[], seed_premises=[], avoid_headlines=[], n=8,
+        style_guidance="A wire report.", engine_guidance="etiquette")
+    assert "SATIRISE SOMETHING REAL" in ip
+    wp = write_stage.build_prompt(
+        premise="p", dateline={"year": 2500, "years_from_now": 474},
+        domain="food", style_guidance="A wire report.",
+        place_guidance="a lunar crater town")
+    assert "MUST BE ABOUT SOMETHING" in wp
+    assert "IT MUST FEEL LIKE THE FUTURE" in wp
+    assert "cobblestones" in wp        # the named anti-pattern
+
+
+def test_scene_guidance_protects_the_illustrator():
+    wp = write_stage.build_prompt(
+        premise="p", dateline={"year": 2500, "years_from_now": 474},
+        domain="food", style_guidance="A wire report.", place_guidance="a moon")
+    assert "CENTRE IT ON PEOPLE" in wp
+    assert "blob" in wp
+
+
 def test_write_prompt_bans_the_legal_crutch_and_varies_the_turn():
     prompt = write_stage.build_prompt(
         premise="p", dateline={"year": 2500, "years_from_now": 474},

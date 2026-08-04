@@ -115,6 +115,24 @@ def test_au_spelling_normalised_preserving_case():
     assert f("the defense center") == "the defence centre"
 
 
+def test_ise_suffix_rule_generalises_beyond_the_word_list():
+    # 04/08/2026 shipped "civilization"; enumerating words one at a time does not
+    # scale, so there is a general -ize/-ization -> -ise/-isation rule.
+    f = write_stage._fix_slips
+    assert f("Polite civilization was built") == "Polite civilisation was built"
+    assert f("CIVILIZATION ENDS") == "CIVILISATION ENDS"
+    assert f("they memorized it") == "they memorised it"
+    assert f("sterilizing the bay") == "sterilising the bay"
+    assert f("Baptized in orbit") == "Baptised in orbit"
+
+
+def test_ise_rule_skips_the_size_and_prize_family():
+    f = write_stage._fix_slips
+    for phrase in ("the ship capsized", "downsized the crew", "a prize",
+                   "the size of it", "seize the day", "resize the hull"):
+        assert f(phrase) == phrase, phrase
+
+
 def test_au_spelling_leaves_ambiguous_and_unrelated_words_alone():
     f = write_stage._fix_slips
     # deliberately not in the map (noun/verb or software/non-software split)
