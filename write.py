@@ -118,7 +118,11 @@ def prose_report(body: str) -> dict:
     sentences and stock connective phrases. Printed after each run so drift is
     visible in the CI log instead of only being noticed by a reader."""
     flat = re.sub(r"\s+", " ", body).strip()
-    sents = [s for s in re.split(r"(?<=[.!?])\s+", flat) if s.strip()]
+    # Allow a closing quote after the full stop, or sentences ending inside
+    # dialogue get merged with the next one - which inflated the mean and hid
+    # short sentences, firing false "reads long/uniform" warnings.
+    sents = [s for s in re.split(r"(?<=[.!?])[\"”’']*\s+", flat)
+             if s.strip()]
     lens = [len(s.split()) for s in sents] or [0]
     return {
         "words": len(flat.split()),
@@ -136,10 +140,29 @@ def _fix_slips(text: str) -> str:
     return _au_spelling(text)
 
 
+def _era_rule(years: int) -> str:
+    """How strange everything must be, scaled to the distance. Without this the
+    model furnishes any date with present-day props: a dispatch set in 37562 came
+    back with Boston ferns, candles, handwritten poems and a bronze plaque."""
+    if years < 400:
+        return ("Institutions are still recognisable but strained; technology and "
+                "daily habits have clearly moved a generation or two beyond ours.")
+    if years < 4000:
+        return ("Centuries have passed. Institutions, jobs, materials and customs "
+                "should be UNFAMILIAR - descendants of ours, not ours. Nothing "
+                "should be branded or built the way it is today.")
+    return ("This is tens of thousands of years out - further from us than we are "
+            "from the first cities. Essentially NOTHING of the present survives "
+            "unchanged: not our nations, languages, companies, materials, plants, "
+            "animals, religions or units. If something ancient does persist, that "
+            "persistence must itself be the point of the story.")
+
+
 def build_prompt(premise: str, dateline: dict, domain: str,
                  style_guidance: str, place_guidance: str = "") -> str:
     place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
                   if place_guidance else "")
+    era_rule = _era_rule(int(dateline.get("years_from_now") or 0))
     return f"""You are a correspondent for The Aftertimes. Write a single news
 dispatch, datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
@@ -152,10 +175,22 @@ Today's dispatch format: {style_guidance}
 The house voice is intelligent, dry and deadpan. This must actually be FUNNY and
 interesting, not merely competent sci-fi. Commit fully to the one absurd idea and
 follow its internal logic to increasingly ridiculous but consistent conclusions.
-Make the comic idea clear within the first two sentences - never bury it under
-procedure or worldbuilding. Favour wit and clarity over dense jargon. Do NOT force
-a strained running metaphor (for instance narrating a court ruling or an
-interest-rate rise as though it were a sports match) unless it genuinely lands.
+Favour wit and clarity over dense jargon. Do NOT force a strained running metaphor
+(for instance narrating a court ruling as though it were a sports match) unless it
+genuinely lands.
+
+REPORT THE FACTS; NEVER STATE THE JOKE. Open on concrete news - what happened, to
+whom, where, when - and get to it fast, without burying it under worldbuilding.
+But the absurdity must be VISIBLE IN THE FACTS, never asserted in a summary
+clause. Do not have the narrator, or a character, describe the comic mechanism out
+loud. Characters must behave as though their world is entirely normal; they cannot
+see the joke.
+  Bad: "They realised the settlement was too distraught over a dead fern to notice
+  the missing crew." (states the conceit flatly, and has the characters
+  understanding the joke's own mechanics - it reads very odd)
+  Good: report that the shaft was sealed on the Tuesday, that three days of
+  mourning for the fern were already scheduled, and that no one filed a query.
+  Let the reader put it together. That realisation IS the joke.
 
 THE DISPATCH MUST BE ABOUT SOMETHING. Whimsy alone is not satire. Before writing,
 decide what recognisably human or institutional behaviour this story is mocking -
@@ -166,15 +201,25 @@ piece having felt that point land. The absurd premise is the vehicle, not the
 destination. A story where a strange thing simply happens and people react to it
 is a FAILURE.
 
-IT MUST FEEL LIKE THE FUTURE. Show a world genuinely transformed: how people live,
-work, travel, socialise, believe and die in this era. Do NOT write a
-pre-industrial or Victorian scene with one futuristic object dropped into it -
-no cobblestones, lard, apothecaries, horse-drawn logic, guildish trades or
-medieval alleyways standing in for a future city. (A dispatch set in 2059 came
-back reading like 1890 with a lab-grown organ in it.) If the story is set on
-Earth, the Earth must have visibly moved on. The illustrations are deliberately
-antique engravings; the WRITING must supply the future, or the whole thing reads
-as historical.
+IT MUST FEEL LIKE THE FUTURE, AND SPECIFICALLY LIKE **{dateline['years_from_now']}
+YEARS FROM NOW**. {era_rule}
+
+Two failure modes, both of which have shipped:
+- Do NOT write a pre-industrial or Victorian scene with one futuristic object
+  dropped in - no cobblestones, lard, apothecaries, guildish trades or medieval
+  alleyways standing in for a future city. (A dispatch set in 2059 read like 1890
+  with a lab-grown organ in it.)
+- Do NOT furnish the far future with PRESENT-DAY props and names. Banned unless
+  the story is specifically about their survival: candles, handwritten poems,
+  bronze plaques, dormitory lockers, boots, clipboards, paper files, vellum,
+  present-day plant and pet breeds ("a Boston fern"), current company or country
+  names, and current units of currency. (A dispatch set in 37562 mourned a Boston
+  fern by candlelight under a bronze plaque.)
+
+Invent the era's own objects, materials, rituals and turns of phrase, and use them
+casually as though everyone knows what they are. Show how people live, work,
+travel, grieve and believe here. The illustrations are deliberately antique
+engravings; the WRITING must supply the future, or the whole thing reads historical.
 
 COMEDY IS STRUCTURE, NOT VOCABULARY. The single most common failure is a flat
 list of escalating consequences decorated with invented compound nouns

@@ -115,6 +115,28 @@ def test_au_spelling_normalised_preserving_case():
     assert f("the defense center") == "the defence centre"
 
 
+def test_prose_report_counts_sentences_ending_inside_quotes():
+    # The first version split only on (?<=[.!?])\s+, so a sentence ending
+    # '...storage."' merged with the next one - inflating the mean and hiding
+    # short sentences, which fired false "reads long/uniform" warnings.
+    body = '"Sector 12 was mostly storage." Sector 12 remains submerged.'
+    r = write_stage.prose_report(body)
+    assert r["sentences"] == 2
+    assert r["short_sentences"] == 2
+    assert r["mean_sentence"] < 6
+
+
+def test_prose_report_flags_machine_phrases_and_long_uniform_prose():
+    long_body = ("The proceedings took an unexpected turn when the assembled "
+                 "delegates, who had gathered under conditions of considerable "
+                 "procedural formality, discovered that the entire arrangement "
+                 "had been predicated upon a misapprehension of the schedule.")
+    r = write_stage.prose_report(long_body)
+    assert "took an unexpected turn" in r["machine_phrases"]
+    assert r["mean_sentence"] > 22
+    assert r["short_sentences"] == 0
+
+
 def test_ise_suffix_rule_generalises_beyond_the_word_list():
     # 04/08/2026 shipped "civilization"; enumerating words one at a time does not
     # scale, so there is a general -ize/-ization -> -ise/-isation rule.
