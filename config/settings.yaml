@@ -21,12 +21,18 @@ dates:
   # 2060s, and a 33-years-hence dispatch does not read as futuristic - Charlie:
   # "this doesn't seem very futuristic at all / or spacey / almost like back in
   # time". Nothing nearer than 60 years now, and the mid band carries equal weight.
+  # 04/08/2026: deep band dropped (was [4000, 40000] at 0.15). A 35,000-years-out
+  # dispatch is past what the model can furnish plausibly - it kept reaching for
+  # present-day props (a Boston fern by candlelight, a coffee press, banners at
+  # half-mast), and that produced the weakest writing on the site. Writing quality
+  # is the product, so the ceiling is now ~4000 years. The three bands are kept so
+  # the sampler and era rules stay unchanged; "deep" is simply the top of the range.
   min_years: 60
   band_weights: [0.45, 0.40, 0.15]   # near, mid, deep
   bands:
     near: [60, 400]
-    mid: [400, 4000]
-    deep: [4000, 40000]
+    mid: [400, 1500]
+    deep: [1500, 4000]
   anti_cluster:
     era_bucket_years: 50    # two dates in the same 50-year bucket count as the same era
     avoid_recent_days: 5    # do not reuse an era used within the last N dispatches

@@ -148,3 +148,20 @@ def test_write_prompt_bans_the_legal_crutch_and_varies_the_turn():
         place_guidance="a lunar crater town")
     assert "LEGAL/FINANCIAL CRUTCH" in prompt
     assert "do not default to a rival claimant or an official body" in prompt
+
+
+def test_hyphenate_strips_the_whole_dash_family():
+    # 04/08/2026: gpt-oss-120b emits U+2011 non-breaking hyphens
+    # ("grief-counselling") and nine survived the old two-character version.
+    from common import hyphenate
+    for cp in (0x2010, 0x2011, 0x2012, 0x2013, 0x2014, 0x2015, 0x2043,
+               0x2212, 0xFE58, 0xFE63, 0xFF0D):
+        assert hyphenate("a" + chr(cp) + "b") == "a-b", hex(cp)
+
+
+def test_prompt_forbids_copying_its_own_examples():
+    # llama-3.3-70b lifted the rhythm example verbatim into a story.
+    wp = write_stage.build_prompt(
+        premise="p", dateline={"year": 2500, "years_from_now": 474},
+        domain="food", style_guidance="A wire report.", place_guidance="a moon")
+    assert "Never copy an example's words" in wp

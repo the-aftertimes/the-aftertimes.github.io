@@ -50,6 +50,27 @@ def rel(path: str) -> str:
     return _path(path)
 
 
+#: Every dash-like codepoint collapses to a plain hyphen. Covers the WHOLE family,
+#: not just em/en: 04/08/2026 a model emitted U+2011 non-breaking hyphens
+#: ("grief\u2011counselling") and nine of them sailed through the old two-character
+#: version straight towards the page.
+#: Built from codepoints so this file stays free of literal dash characters.
+_DASH_CODEPOINTS = (
+    0x2010,  # hyphen
+    0x2011,  # non-breaking hyphen
+    0x2012,  # figure dash
+    0x2013,  # en dash
+    0x2014,  # em dash
+    0x2015,  # horizontal bar
+    0x2043,  # hyphen bullet
+    0x2212,  # minus sign
+    0xFE58,  # small em dash
+    0xFE63,  # small hyphen-minus
+    0xFF0D,  # fullwidth hyphen-minus
+)
+_DASH_MAP = {cp: "-" for cp in _DASH_CODEPOINTS}
+
+
 def hyphenate(text: str) -> str:
-    """House style: no em/en dashes anywhere - collapse to a plain hyphen."""
-    return (text or "").replace("\u2014", "-").replace("\u2013", "-")
+    """House style: no em/en dashes or any other dash variant - all become '-'."""
+    return (text or "").translate(_DASH_MAP)
