@@ -103,6 +103,36 @@ def test_prompts_require_a_satirical_target():
     assert "cobblestones" in wp        # the named anti-pattern
 
 
+def test_era_rule_scales_strangeness_with_distance():
+    near = write_stage._era_rule(120)
+    mid = write_stage._era_rule(1500)
+    deep = write_stage._era_rule(37536)
+    assert "recognisable" in near
+    assert "UNFAMILIAR" in mid
+    assert "NOTHING of the present survives" in deep
+    assert near != mid != deep
+
+
+def test_prompt_bans_present_day_props_in_the_far_future():
+    # 37562 AD came back with a Boston fern, candles and a bronze plaque.
+    wp = write_stage.build_prompt(
+        premise="p", dateline={"year": 37562, "years_from_now": 35536},
+        domain="death and mourning", style_guidance="An expose.",
+        place_guidance="an under-ice settlement")
+    assert "35536" in wp                      # the distance is stated explicitly
+    assert "Boston fern" in wp
+    assert "bronze plaques" in wp
+    assert "NOTHING of the present survives" in wp
+
+
+def test_prompt_forbids_stating_the_joke():
+    wp = write_stage.build_prompt(
+        premise="p", dateline={"year": 2500, "years_from_now": 474},
+        domain="food", style_guidance="A wire report.", place_guidance="a moon")
+    assert "NEVER STATE THE JOKE" in wp
+    assert "cannot see the joke" in wp or "cannot\nsee the joke" in wp
+
+
 def test_scene_guidance_protects_the_illustrator():
     wp = write_stage.build_prompt(
         premise="p", dateline={"year": 2500, "years_from_now": 474},
