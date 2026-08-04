@@ -69,3 +69,42 @@ def test_length_minor_and_major(quality_cfg):
     tiny = " ".join(["word"] * 100) + "."
     v = critic.check_length(critic.metrics_for(tiny), quality_cfg)
     assert any(x["rule"] == "length" and x["severity"] == "major" for x in v)
+
+
+def test_machine_phrases_are_major():
+    v = critic.check_phrases("The proceedings took an unexpected turn today.")
+    assert v and v[0]["rule"] == "machine_phrases"
+    assert v[0]["severity"] == "major"
+    assert "took an unexpected turn" in v[0]["detail"]
+
+
+def test_legal_register_flagged_but_not_for_the_bureaucratic_engine():
+    body = "The tribunal issued a writ and the bailiff served an injunction."
+    assert critic.check_register(body, "logistics")
+    assert critic.check_register(body, "bureaucratic") == []
+
+
+def test_present_day_props_escalate_with_distance():
+    body = "She lit a candle beside the bronze plaque and drank her coffee."
+    near = critic.check_props(body, 120)
+    far = critic.check_props(body, 3000)
+    assert near and near[0]["severity"] == "minor"
+    assert far and far[0]["severity"] == "major"
+
+
+def test_props_clean_text_passes():
+    assert critic.check_props("The sculptor whipped the cloud perimeter.", 3000) == []
+
+
+def test_stated_joke_is_only_a_minor_nudge():
+    body = ("They realised the settlement was too distraught over a fern to "
+            "notice the missing crew. More text follows here to pad it out.")
+    v = critic.check_stated_joke(body)
+    assert v and v[0]["rule"] == "stated_joke"
+    assert v[0]["severity"] == "minor"
+
+
+def test_stated_joke_ignores_later_paragraphs():
+    body = ("The shaft was sealed on Tuesday. Nobody filed a query. "
+            "Weeks later the inspector realised the logs were missing.")
+    assert critic.check_stated_joke(body) == []
