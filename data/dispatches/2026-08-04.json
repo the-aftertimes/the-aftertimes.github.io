@@ -1,0 +1,39 @@
+{
+  "run_date": "2026-08-04",
+  "run_time": "2026-08-04T21:04:59.690455+00:00",
+  "dispatch": {
+    "headline": "HR Euphemism Drops Living Executive Into Jupiter",
+    "body": "Atmospheric Departure Suites confirmed today that regional director Tarek Al-Mansoor was dropped into Jupiter’s liquid hydrogen mantle while still conscious, following an automated processing error triggered by a human resources email.\n\nAl-Mansoor had received a routine notice stating he was \"voluntarily separated from the organisation.\"\n\nBecause the platform's funeral chute uses identical phrasing for terminal sky-cremations, the floor hatch beneath his desk opened immediately.\n\n\"He screamed,\" said Priya Chen. \"Our intake logs listed his status as finalised, so we assumed the noise was pre-recorded grief synthesis.\"\n\nChen added that ground staff attempted to pause the release sequence, but the override lever required written approval from Al-Mansoor’s direct supervisor, who was currently leading a remote sync meeting.\n\nBy the time the meeting adjourned, Al-Mansoor had passed through the lower cloud deck.\n\nAtmospheric Departure Suites confirmed that his desk is already listed for internal transfer.\n\n\"We respect Tarek’s prompt transition,\" said Danica Oduya. \"His rapid descent saved three billable hours of exit interview procedure.\"\n\nOduya added that the department’s automatic severance system functioned as intended, though minor language updates are scheduled for next quarter.\n\n\"The language was clear,\" Oduya noted. \"He is no longer with the organisation.\"\n\nFuneral technicians have begun recalibrating the drop chute sensors.\n\nNo charges were filed.",
+    "scene": "Two technicians in padded flight suits look down through an open floor hatch while a supervisor holds a digital tablet beside an empty office desk.",
+    "dateline": {
+      "place": "Amphitrite Stratodeck, Jovian Cloud Belt",
+      "year": 2183,
+      "month": 6,
+      "day": 6,
+      "years_from_now": 157
+    },
+    "domain": "death and mourning",
+    "glossary": [
+      {
+        "term": "grief synthesis",
+        "gloss": "Synthetic audio streams generated during sky-cremations to simulate vocal mourning."
+      },
+      {
+        "term": "sky-cremation",
+        "gloss": "The ceremonial disposal of remains by atmospheric drop into gas giant mantles."
+      }
+    ],
+    "premise": "A cloud-city funeral parlor above Jupiter accidentally dropped a living executive into the crushing mantle today after corporate HR euphemisms shifted until 'voluntarily separated from the organization' was processed as an instruction for sky-cremation.",
+    "image": "assets/img/2026-08-04.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-04T21:04:59.690455+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 13,
+    "locator_deep_max": 4000
+  }
+}
