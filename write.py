@@ -73,13 +73,36 @@ def _match_case(src: str, repl: str) -> str:
     return repl
 
 
+# Words ending -ize/-ization that are NOT the -ise suffix (they derive from
+# "size", "prize" etc.) and must be left alone.
+_IZE_EXCEPTIONS = {"capsize", "capsized", "capsizing", "downsize", "downsized",
+                   "downsizing", "upsize", "resize", "resized", "resizing",
+                   "oversize", "oversized", "midsize", "assize", "assizes"}
+
+
+def _ise_suffix(text: str) -> str:
+    """General -ize/-ization -> -ise/-isation rule, so the paper does not need an
+    entry per word (a headline shipped 'civilization'). Requires a 4+ character
+    stem and skips the size/prize family."""
+    def sub(m):
+        word = m.group(0)
+        if word.lower() in _IZE_EXCEPTIONS:
+            return word
+        i = word.lower().rfind("iz")           # swap only the z of the -iz- suffix
+        z = word[i + 1]
+        return word[:i + 1] + ("S" if z.isupper() else "s") + word[i + 2:]
+    return re.sub(r"\b\w{4,}iz(?:e|es|ed|ing|ation|ations)\b", sub, text,
+                  flags=re.IGNORECASE)
+
+
 def _au_spelling(text: str) -> str:
     """Rewrite US spellings to Australian, preserving the original casing.
     Word-boundary matched so 'programmer' / 'kilometers' style stems are safe."""
     def sub(m):
         return _match_case(m.group(0), _AU_SPELLING[m.group(0).lower()])
     pattern = r"\b(" + "|".join(sorted(_AU_SPELLING, key=len, reverse=True)) + r")\b"
-    return re.sub(pattern, sub, text, flags=re.IGNORECASE)
+    text = re.sub(pattern, sub, text, flags=re.IGNORECASE)
+    return _ise_suffix(text)
 
 
 def _fix_slips(text: str) -> str:
@@ -108,6 +131,25 @@ Make the comic idea clear within the first two sentences - never bury it under
 procedure or worldbuilding. Favour wit and clarity over dense jargon. Do NOT force
 a strained running metaphor (for instance narrating a court ruling or an
 interest-rate rise as though it were a sports match) unless it genuinely lands.
+
+THE DISPATCH MUST BE ABOUT SOMETHING. Whimsy alone is not satire. Before writing,
+decide what recognisably human or institutional behaviour this story is mocking -
+status anxiety, procedure defeating its own purpose, professional vanity,
+sentimentality misapplied, how fast people normalise the monstrous, the gap
+between a stated reason and the real one - and make sure a reader finishes the
+piece having felt that point land. The absurd premise is the vehicle, not the
+destination. A story where a strange thing simply happens and people react to it
+is a FAILURE.
+
+IT MUST FEEL LIKE THE FUTURE. Show a world genuinely transformed: how people live,
+work, travel, socialise, believe and die in this era. Do NOT write a
+pre-industrial or Victorian scene with one futuristic object dropped into it -
+no cobblestones, lard, apothecaries, horse-drawn logic, guildish trades or
+medieval alleyways standing in for a future city. (A dispatch set in 2059 came
+back reading like 1890 with a lab-grown organ in it.) If the story is set on
+Earth, the Earth must have visibly moved on. The illustrations are deliberately
+antique engravings; the WRITING must supply the future, or the whole thing reads
+as historical.
 
 COMEDY IS STRUCTURE, NOT VOCABULARY. The single most common failure is a flat
 list of escalating consequences decorated with invented compound nouns
@@ -165,10 +207,18 @@ Rules:
   or necessary; if the story needs none, return an empty glossary. Only
   glossary a term a reader could not infer from context.
 - Also provide "scene": ONE vivid, concrete, physical sentence describing a
-  single visual moment from the story that an illustrator could draw -
-  specific people, objects and setting, not abstract concepts. Example: "an
-  armoured military unit pulls up to a suburban driveway while a couple hides
-  beneath a dining table".
+  single visual moment from the story that an illustrator could draw.
+  CENTRE IT ON PEOPLE AND WHAT THEY ARE DOING - their posture, tools, clothing
+  and setting. The illustrator renders humans, animals, vehicles, machinery and
+  architecture well, but CANNOT render exotic or shapeless things
+  recognisably: a strange organ, a mass of tissue, an energy field, a cloud or
+  an abstract object will come out as an unidentifiable blob. So never make such
+  a thing the visual subject - keep it out of the scene, or reduce it to a small
+  background element, and let the PEOPLE carry the picture.
+  Good: "an armoured military unit pulls up to a suburban driveway while a couple
+  hides beneath a dining table".
+  Bad: "a glistening forty-tonne whale liver rolls past a clock tower" (the
+  subject cannot be drawn, and it was rendered as a giant bean).
 - Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
 - Use Australian English spelling (organise, colour, defence, metre, favour).

@@ -71,8 +71,13 @@ def run_pipeline() -> dict:
     place_kind = rng.choice(
         [p for p in place_kinds if p["key"] not in recent_places] or place_kinds)
     recent_engines = {e.get("engine") for e in ledger[-ac["avoid_recent_days"]:]}
-    engine = rng.choice(
-        [e for e in engines if e["key"] not in recent_engines] or engines)
+    # The bureaucratic engine is the over-used register (see config/engines.yaml),
+    # so cap how often it can be drawn at all rather than relying on anti-repeat.
+    pool = [e for e in engines
+            if e["key"] not in recent_engines
+            and not (e["key"] == "bureaucratic" and rng.random() > 0.25)]
+    engine = rng.choice(pool or [e for e in engines if e["key"] != "bureaucratic"]
+                        or engines)
     print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / "
           f"{domain} / {style['key']} / {place_kind['key']} / {engine['key']}")
 

@@ -32,8 +32,20 @@ the bureaucratic one, do NOT reach for money, courts, contracts, fines, unpaid
 bills, licences or legal process as the source of the joke. They are a crutch.
 Find the comedy where today's engine says it lives.
 
-Each premise needs a real comedic engine - not merely "a futuristic version of a
-present-day thing", but a genuine twist. A reader should smile at the premise
+EVERY PREMISE MUST SATIRISE SOMETHING REAL. This is the most important rule and
+the one most often missed. A premise that is merely a whimsical impossibility -
+"a giant organ rolls through a city", "a cloud is towed away" - is a failure, no
+matter how absurd, because it is ABOUT nothing. Each premise must take aim at a
+recognisably true human or institutional behaviour that a reader today would
+recognise instantly and wince at: status-signalling, box-ticking that defeats its
+own purpose, nostalgia weaponised, professional self-importance, the way people
+adapt instantly to the monstrous, sentimentality about the wrong things, the
+gap between an organisation's stated reason and its real one. The future setting
+exists to make that familiar behaviour visible in a new light. If you cannot name
+what a premise is mocking about people or institutions NOW, discard it.
+
+Each premise also needs a real comedic engine - not merely "a futuristic version
+of a present-day thing", but a genuine twist. A reader should smile at the premise
 alone. Make each surprising,
 specific and self-contained, and vary them widely across genuinely different ideas.
 Do NOT explain them. Order them strongest first - put the sharpest, funniest, most
