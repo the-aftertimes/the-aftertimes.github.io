@@ -1,7 +1,7 @@
 site:
   name: "The Aftertimes"
   tagline: "Tomorrow's headlines, a little early"
-  base_url: "https://the-aftertimes.github.io"
+  base_url: "https://aftertimes.charlietrenorden.com"
 timezone: "Australia/Sydney"
 update_hour_utc: 20
 output_html: "index.html"
