@@ -11,7 +11,8 @@ from __future__ import annotations
 
 import re
 
-from write import _MACHINE_PHRASES, prose_report
+from common import _DASH_CODEPOINTS
+from write import _AU_SPELLING, _MACHINE_PHRASES, prose_report
 
 
 def metrics_for(body: str) -> dict:
@@ -125,3 +126,54 @@ def check_stated_joke(body: str) -> list[dict]:
     return [_v("stated_joke",
                f"the opening states the conceit ({m.group(0)!r}) instead of "
                "reporting facts", "minor")]
+
+
+_US_WORDS = re.compile(
+    r"\b(" + "|".join(sorted(_AU_SPELLING, key=len, reverse=True)) + r")\b", re.I)
+
+
+def check_residue(text: str) -> list[dict]:
+    """A hit here means one of the deterministic fixers has a GAP - the text was
+    supposed to be cleaned before it ever reached the critic. Treated as major
+    for exactly that reason."""
+    out = []
+    dashes = sorted({hex(ord(c)) for c in text if ord(c) in _DASH_CODEPOINTS})
+    if dashes:
+        out.append(_v("dash_residue",
+                      "dash characters survived hyphenate(): " + ", ".join(dashes),
+                      "major"))
+    us = sorted({m.group(0).lower() for m in _US_WORDS.finditer(text)})
+    if us:
+        out.append(_v("us_spelling",
+                      "US spellings survived the normaliser: " + ", ".join(us),
+                      "major"))
+    return out
+
+
+def score(dispatch: dict, context: dict, cfg: dict) -> dict:
+    """Measure a dispatch. `context` carries years_from_now and engine, both of
+    which make some checks conditional. Returns the score, the violations and the
+    raw metrics; a draft breaking any cfg["hard_reject"] rule is flagged
+    `rejected` but still returned, because the orchestrator may need it as a last
+    resort rather than failing to publish."""
+    body = dispatch.get("body", "") or ""
+    text = f"{dispatch.get('headline', '')} {body}"
+    metrics = metrics_for(body)
+    violations = []
+    violations += check_rhythm(metrics, cfg)
+    violations += check_length(metrics, cfg)
+    violations += check_phrases(body)
+    violations += check_register(body, context.get("engine", ""))
+    violations += check_props(text, context.get("years_from_now", 0))
+    violations += check_stated_joke(body)
+    violations += check_residue(text)
+    weights = cfg["weights"]
+    penalty = sum(weights.get(v["severity"], weights["minor"])
+                  for v in violations)
+    hard = set(cfg["hard_reject"])
+    return {
+        "score": round(max(0.0, 1.0 - penalty), 3),
+        "rejected": any(v["rule"] in hard for v in violations),
+        "violations": violations,
+        "metrics": metrics,
+    }

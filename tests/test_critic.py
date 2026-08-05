@@ -108,3 +108,64 @@ def test_stated_joke_ignores_later_paragraphs():
     body = ("The shaft was sealed on Tuesday. Nobody filed a query. "
             "Weeks later the inspector realised the logs were missing.")
     assert critic.check_stated_joke(body) == []
+
+
+def test_residue_checks_detect_fixer_gaps():
+    v = critic.check_residue("a" + chr(0x2014) + "b")
+    assert any(x["rule"] == "dash_residue" and x["severity"] == "major"
+               for x in v)
+    v = critic.check_residue("the neighbor complained")
+    assert any(x["rule"] == "us_spelling" and x["severity"] == "major"
+               for x in v)
+
+
+def test_residue_clean_text_passes():
+    assert critic.check_residue("the neighbour complained - loudly") == []
+
+
+def _clean_dispatch():
+    """A dispatch that breaks no rule: mean sentence 15 words, longest 18, three
+    short sentences, 225 words. Padded with whole SENTENCES on purpose - padding
+    with a bare word list produced one 180-word sentence, which tripped
+    rhythm_mean and rhythm_longest and made this fixture unpassable."""
+    long_s = ("The council sealed the shaft on Tuesday and nobody filed a query "
+              "about the missing crew that week. ")
+    short_s = "She walked out. "
+    body = (long_s * 12 + short_s * 3).strip()
+    return {"headline": "Shaft Sealed Quietly", "body": body}
+
+
+def test_clean_dispatch_scores_well_and_is_not_rejected(quality_cfg):
+    r = critic.score(_clean_dispatch(),
+                     {"years_from_now": 300, "engine": "logistics"}, quality_cfg)
+    assert r["rejected"] is False
+    assert r["score"] > 0.8
+    assert r["metrics"]["words"] > 0
+
+
+def test_hard_reject_rules_set_the_rejected_flag(quality_cfg):
+    d = _clean_dispatch()
+    d["body"] += " The tribunal served an injunction on the bailiff."
+    r = critic.score(d, {"years_from_now": 300, "engine": "logistics"},
+                     quality_cfg)
+    assert r["rejected"] is True
+    assert any(x["rule"] == "legal_register" for x in r["violations"])
+
+
+def test_engine_bureaucratic_prevents_that_rejection(quality_cfg):
+    d = _clean_dispatch()
+    d["body"] += " The tribunal served an injunction on the bailiff."
+    r = critic.score(d, {"years_from_now": 300, "engine": "bureaucratic"},
+                     quality_cfg)
+    assert r["rejected"] is False
+
+
+def test_score_floors_at_zero(quality_cfg):
+    d = {"headline": "Neighbor" + chr(0x2014) + "Dispute",
+         "body": "The proceedings took an unexpected turn. "
+                 "They realised it was too odd to notice. "
+                 + " ".join(["word"] * 60) + ". A tribunal issued a writ."}
+    r = critic.score(d, {"years_from_now": 3000, "engine": "logistics"},
+                     quality_cfg)
+    assert r["score"] == 0.0
+    assert r["rejected"] is True
