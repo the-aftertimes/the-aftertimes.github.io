@@ -16,3 +16,16 @@ def date_cfg():
         "anti_cluster": {"era_bucket_years": 50, "avoid_recent_days": 5,
                          "max_attempts": 12},
     }
+
+
+@pytest.fixture
+def quality_cfg():
+    return {
+        "n_drafts": 3, "judge": True, "revise": True,
+        "hard_reject": ["structure", "machine_phrases", "legal_register",
+                        "dash_residue", "us_spelling"],
+        "weights": {"major": 0.25, "minor": 0.08},
+        "rhythm": {"mean_min": 14, "mean_max": 20, "mean_hard_min": 12,
+                   "mean_hard_max": 24, "longest_max": 35, "min_short": 2},
+        "length": {"min": 200, "max": 280, "hard_min": 160, "hard_max": 340},
+    }
