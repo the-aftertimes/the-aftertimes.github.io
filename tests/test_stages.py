@@ -180,3 +180,30 @@ def test_fix_slips_corrects_common_idioms():
         "done for all intents and purposes"
     assert write_stage._fix_slips("that peaked my interest") == "that piqued my interest"
     assert write_stage._fix_slips("nothing to fix here") == "nothing to fix here"
+
+
+def test_select_many_returns_n_distinct_premises():
+    premises = ["a city sues the sea", "a moon secedes over time zones",
+                "a fern is mourned by a whole colony",
+                "an orbital cricket league refuses zero gravity"]
+    out = select_stage.select_many(premises, [], SETTINGS, 3)
+    assert len(out) == 3
+    assert len(set(out)) == 3
+    assert out[0] == premises[0]      # ideate orders strongest first
+
+
+def test_select_many_drops_near_duplicate_candidates():
+    premises = ["a fern is mourned by a whole colony",
+                "a fern is mourned by an entire colony",
+                "an orbital cricket league refuses zero gravity"]
+    out = select_stage.select_many(premises, [], SETTINGS, 3)
+    assert len(out) == 2
+    assert "cricket" in out[1]
+
+
+def test_select_many_falls_back_when_too_few_survive():
+    premises = ["a fern is mourned by a whole colony",
+                "a fern is mourned by an entire colony"]
+    out = select_stage.select_many(premises, [], SETTINGS, 3)
+    assert len(out) >= 1
+    assert out[0] == premises[0]
