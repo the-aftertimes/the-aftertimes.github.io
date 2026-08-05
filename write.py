@@ -336,6 +336,25 @@ def _generate_json(prompt: str, settings: dict, model: str | None,
     return gemini.extract_json(raw)
 
 
+def normalise(d: dict, dateline: dict, domain: str, premise: str) -> dict:
+    """Turn a raw parsed model object into a dispatch record, applying every
+    deterministic fixer. Shared by the write and revise stages so a revision gets
+    exactly the same cleanup as a fresh draft."""
+    dl = dict(dateline)
+    dl["place"] = hyphenate((d.get("dateline_place") or "").strip())
+    return {
+        "headline": hyphenate(_fix_slips((d.get("headline") or "").strip())),
+        "body": hyphenate(_fix_slips((d.get("body") or "").strip())),
+        "scene": hyphenate((d.get("scene") or "").strip()),
+        "dateline": dl,
+        "domain": (d.get("domain") or domain).strip(),
+        "glossary": [{"term": hyphenate(g.get("term", "").strip()),
+                      "gloss": hyphenate(g.get("gloss", "").strip())}
+                     for g in d.get("glossary", []) if g.get("term")],
+        "premise": premise,
+    }
+
+
 def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str, place_guidance: str = "") -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance,
@@ -358,16 +377,4 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
         d = _generate_json(prompt, settings, g["model"])
         served = g["model"]
     print(f"    write: served by {served}", file=sys.stderr)
-    dl = dict(dateline)
-    dl["place"] = hyphenate((d.get("dateline_place") or "").strip())
-    return {
-        "headline": hyphenate(_fix_slips((d.get("headline") or "").strip())),
-        "body": hyphenate(_fix_slips((d.get("body") or "").strip())),
-        "scene": hyphenate((d.get("scene") or "").strip()),
-        "dateline": dl,
-        "domain": (d.get("domain") or domain).strip(),
-        "glossary": [{"term": hyphenate(g.get("term", "").strip()),
-                      "gloss": hyphenate(g.get("gloss", "").strip())}
-                     for g in d.get("glossary", []) if g.get("term")],
-        "premise": premise,
-    }
+    return normalise(d, dateline, domain, premise)
