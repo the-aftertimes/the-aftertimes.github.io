@@ -16,10 +16,13 @@ from datetime import date, datetime, timezone
 from common import load_settings, load_yaml, read_json, rel, write_json
 import archive as archive_mod
 import bible as bible_mod
+import critic
 import ideate as ideate_stage
 import illustrate as illustrate_mod
+import judge as judge_mod
 import ledger as ledger_mod
 import render as render_mod
+import revise as revise_mod
 import selection as select_stage
 import write as write_stage
 from dates import sample_future_dateline
@@ -43,6 +46,68 @@ def inject_stale_banner(output_html: str) -> bool:
         with open(path, "w", encoding="utf-8") as fh:
             fh.write(doc)
     return True
+
+
+def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
+                 settings: dict) -> tuple[dict, dict]:
+    """Score every draft, then let the model pick the funniest survivor. Returns
+    (chosen dispatch, info) where info records the scores and how the choice was
+    made. Never raises: a judge failure falls back to the top score, and if every
+    draft is rejected the best of them is published anyway - a flawed dispatch
+    beats no dispatch."""
+    scored = [(d, critic.score(d, context, qcfg)) for d in drafts]
+    for i, (d, s) in enumerate(scored, start=1):
+        rules = ", ".join(v["rule"] for v in s["violations"]) or "clean"
+        print(f"    draft {i}: score {s['score']} "
+              f"{'REJECTED ' if s['rejected'] else ''}[{rules}]")
+    survivors = [(d, s) for d, s in scored if not s["rejected"]]
+    all_rejected = not survivors
+    pool = sorted(survivors or scored, key=lambda pair: pair[1]["score"],
+                  reverse=True)
+    info = {"scores": [s["score"] for _, s in scored],
+            "violations": [[v["rule"] for v in s["violations"]] for _, s in scored],
+            "all_rejected": all_rejected, "judge_reason": ""}
+    if all_rejected:
+        print("    WARN every draft was rejected; publishing the best of them",
+              file=sys.stderr)
+    if qcfg.get("judge") and len(pool) > 1:
+        try:
+            verdict = judge_mod.judge([d for d, _ in pool], settings)
+            info["judge_reason"] = verdict["reason"]
+            print(f"    judge picked {verdict['pick'] + 1}: {verdict['reason']}")
+            return pool[verdict["pick"]][0], info
+        except Exception as exc:  # noqa: BLE001 - best effort
+            print(f"    WARN judge failed ({exc}); using the top score",
+                  file=sys.stderr)
+    return pool[0][0], info
+
+
+def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
+                 settings: dict) -> tuple[dict, dict]:
+    """Critique and rewrite, publishing the revision ONLY if it measures no worse
+    than the draft. This makes the pass non-regressive: a rewrite that sands off
+    the voice to satisfy the rules is discarded."""
+    before = critic.score(dispatch, context, qcfg)
+    info = {"revision_accepted": False, "score_before": before["score"],
+            "score_after": None, "critique": ""}
+    if not qcfg.get("revise"):
+        return dispatch, info
+    try:
+        out = revise_mod.revise(dispatch, before["violations"], settings)
+    except Exception as exc:  # noqa: BLE001 - best effort
+        print(f"    WARN revise failed ({exc}); keeping the draft",
+              file=sys.stderr)
+        return dispatch, info
+    after = critic.score(out["dispatch"], context, qcfg)
+    info["critique"] = out["critique"]
+    info["score_after"] = after["score"]
+    if after["score"] >= before["score"]:
+        info["revision_accepted"] = True
+        print(f"    revision accepted ({before['score']} -> {after['score']})")
+        return out["dispatch"], info
+    print(f"    revision discarded, measured worse "
+          f"({before['score']} -> {after['score']})")
+    return dispatch, info
 
 
 def run_pipeline() -> dict:
@@ -89,24 +154,37 @@ def run_pipeline() -> dict:
                                     place_kind["guidance"])
     print(f"    {len(premises)} premises")
 
+    qcfg = settings["quality"]
+    context = {"years_from_now": dateline["years_from_now"],
+               "engine": engine["key"]}
+
     print(">>> SELECT")
-    premise = select_stage.select(premises, ledger, settings)
-    print(f"    chosen: {premise[:70]}")
+    chosen_premises = select_stage.select_many(
+        premises, ledger, settings, qcfg["n_drafts"])
+    print(f"    {len(chosen_premises)} premises chosen")
 
     print(">>> WRITE")
-    dispatch = write_stage.write(premise, dateline, domain, settings,
-                                 style["guidance"], place_kind["guidance"])
-    print(f"    headline: {dispatch['headline'][:60]}")
+    drafts = []
+    for i, premise in enumerate(chosen_premises, start=1):
+        try:
+            drafts.append(write_stage.write(
+                premise, dateline, domain, settings,
+                style["guidance"], place_kind["guidance"]))
+            print(f"    draft {i}: {drafts[-1]['headline'][:56]}")
+        except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
+            print(f"    WARN draft {i} failed: {exc}", file=sys.stderr)
+    if not drafts:
+        raise RuntimeError("every draft failed")
+
+    print(">>> CHOOSE")
+    dispatch, choose_info = choose_draft(drafts, context, qcfg, settings)
+
+    print(">>> REVISE")
+    dispatch, revise_info = maybe_revise(dispatch, context, qcfg, settings)
     pr = write_stage.prose_report(dispatch["body"])
-    print(f"    prose: {pr['words']}w / {pr['sentences']} sentences / "
-          f"mean {pr['mean_sentence']}w / longest {pr['longest']}w / "
-          f"{pr['short_sentences']} short")
-    if pr["mean_sentence"] > 22 or pr["short_sentences"] < 2:
-        print(f"    WARN prose reads long/uniform (machine-like): {pr}",
-              file=sys.stderr)
-    if pr["machine_phrases"]:
-        print(f"    WARN stock machine phrases present: {pr['machine_phrases']}",
-              file=sys.stderr)
+    print(f"    final: {dispatch['headline'][:60]}")
+    print(f"    prose: {pr['words']}w / mean {pr['mean_sentence']}w / "
+          f"longest {pr['longest']}w / {pr['short_sentences']} short")
 
     print(">>> ILLUSTRATE")
     dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings)
@@ -133,7 +211,9 @@ def run_pipeline() -> dict:
 
     print(">>> RECORD")
     record = {"run_date": run_date, "run_time": run_dt.isoformat(),
-              "dispatch": dispatch, "meta": meta}
+              "dispatch": dispatch, "meta": meta,
+              "quality": {"n_drafts": len(drafts), **choose_info,
+                          **revise_info}}
     write_json(f"data/dispatches/{run_date}.json", record)
     ledger_mod.save_ledger(ledger_mod.append_entry(
         ledger, run_date, dateline, domain, dispatch["headline"],
