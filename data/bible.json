@@ -47,6 +47,12 @@
       "gloss": "The ceremonial disposal of remains by atmospheric drop into gas giant mantles.",
       "kind": "term",
       "first_seen": "2026-08-04"
+    },
+    {
+      "term": "synth-fat",
+      "gloss": "A dense lipid compound used to lubricate heavy mining machinery and magnetic drive systems.",
+      "kind": "term",
+      "first_seen": "2026-08-05"
     }
   ]
 }
