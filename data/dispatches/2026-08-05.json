@@ -1,0 +1,35 @@
+{
+  "run_date": "2026-08-05",
+  "run_time": "2026-08-05T21:01:09.983265+00:00",
+  "dispatch": {
+    "headline": "Station Classifies Collapsed Ore Tram As Anxious Terrier",
+    "body": "Maintenance records from the Ceres Transit Authority reveal that a four-hundred-ton ore tram was legally reclassified as a companion terrier after its chassis snapped.\n\nDirectors registered the rail vehicle under asteroid pet rules to bypass mandatory safety inspections.\n\nCommuters who suffered broken limbs in the magnetic chute were recorded in official logs as receiving nips.\n\nEngineer Sunita Patel met reporters in a dark bay near the grinding track.\n\n\"We stopped servicing brakes,\" Patel said.\n\n\"Management insisted that routine repair work causes emotional distress,\" Patel added, holding a metal bucket of grease. \"Now we throw synth-fat into the engine intake twice per shift and pray he settles down.\"\n\nWhen the tram sheared through a rock bulkhead last month, station managers posted notices warning passengers to refrain from making direct eye contact with the vehicle grill.\n\nDirector Tomas Kalu issued a flat denial.\n\nHe insisted the iron vehicle was healthy and merely going through a mouthy phase after swallowing two freight containers.\n\nTransit safety officers later classified a derailed ore car as a dropped leash.\n\nMedical staff at the airlock treated eleven miners for crushed legs before discharging them with rubber teething rings.\n\nThe tram remains in full service on the main line.\n\nIt will not receive maintenance until its scheduled vet check next century.",
+    "scene": "A mechanic in stained coveralls scoops synth-grease from a bucket into the front intake of a giant iron tram while commuters step over a severed rail.",
+    "dateline": {
+      "place": "SILT-REACH, CERES",
+      "year": 3458,
+      "month": 7,
+      "day": 15,
+      "years_from_now": 1432
+    },
+    "domain": "transport",
+    "glossary": [
+      {
+        "term": "synth-fat",
+        "gloss": "A dense lipid compound used to lubricate heavy mining machinery and magnetic drive systems."
+      }
+    ],
+    "premise": "An investigation into Ceres Freeport’s transit corridor reveals directors concealed catastrophic structural failures in the main ore tram by officially reclassifying the 400-ton vehicle as an aging emotional-support terrier, dismissing passenger crush injuries as 'playful nips' while denying the tram is mechanically defunct.",
+    "image": "assets/img/2026-08-05.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-05T21:01:09.983265+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 14,
+    "locator_deep_max": 4000
+  }
+}

@@ -112,5 +112,15 @@
     "style": "wire",
     "place_kind": "gasgiant",
     "engine": "language"
+  },
+  {
+    "run_date": "2026-08-05",
+    "year": 3458,
+    "era_bucket": 28,
+    "domain": "transport",
+    "headline": "Station Classifies Collapsed Ore Tram As Anxious Terrier",
+    "style": "investigation",
+    "place_kind": "asteroid",
+    "engine": "category"
   }
 ]
