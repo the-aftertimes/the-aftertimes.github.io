@@ -11,7 +11,8 @@ def test_quality_config_present_and_complete():
     assert cfg["judge"] is True
     assert cfg["revise"] is True
     assert set(cfg["hard_reject"]) == {
-        "machine_phrases", "legal_register", "dash_residue", "us_spelling"}
+        "structure", "machine_phrases", "legal_register", "dash_residue",
+        "us_spelling"}
     assert cfg["weights"]["major"] > cfg["weights"]["minor"] > 0
     r = cfg["rhythm"]
     assert r["mean_min"] == 14 and r["mean_max"] == 20
@@ -132,7 +133,8 @@ def _clean_dispatch():
               "about the missing crew that week. ")
     short_s = "She walked out. "
     body = (long_s * 12 + short_s * 3).strip()
-    return {"headline": "Shaft Sealed Quietly", "body": body}
+    return {"headline": "Shaft Sealed Quietly", "body": body,
+            "dateline": {"place": "Oronko"}}
 
 
 def test_clean_dispatch_scores_well_and_is_not_rejected(quality_cfg):
@@ -169,3 +171,52 @@ def test_score_floors_at_zero(quality_cfg):
                      quality_cfg)
     assert r["score"] == 0.0
     assert r["rejected"] is True
+
+
+def test_score_runs_against_the_REAL_settings_config():
+    """Guards a whole class of silent failure: every other test here uses the
+    hardcoded quality_cfg fixture, so renaming a key in config/settings.yaml
+    would leave the suite green while production raised KeyError inside
+    choose_draft and the site went stale."""
+    import yaml
+    with open(rel("config/settings.yaml"), encoding="utf-8") as fh:
+        real = yaml.safe_load(fh)["quality"]
+    d = _clean_dispatch()
+    d["dateline"] = {"place": "Oronko"}
+    r = critic.score(d, {"years_from_now": 300, "engine": "logistics"}, real)
+    assert r["rejected"] is False
+    assert r["score"] == 1.0
+
+
+def test_structure_catches_a_missing_headline(quality_cfg):
+    d = _clean_dispatch()
+    d["dateline"] = {"place": "Oronko"}
+    d["headline"] = ""
+    r = critic.score(d, {"years_from_now": 300, "engine": "logistics"},
+                     quality_cfg)
+    assert r["rejected"] is True
+    assert any(v["rule"] == "structure" and "no headline" in v["detail"]
+               for v in r["violations"])
+
+
+def test_structure_catches_a_missing_dateline_place_and_a_stub_body(quality_cfg):
+    r = critic.score({"headline": "Fine", "body": "Three words only.",
+                      "dateline": {"place": ""}},
+                     {"years_from_now": 300, "engine": "logistics"}, quality_cfg)
+    details = " ".join(v["detail"] for v in r["violations"]
+                       if v["rule"] == "structure")
+    assert "no dateline place" in details
+    assert "absolute floor" in details
+    assert r["rejected"] is True
+
+
+def test_legal_regex_does_not_fire_on_ordinary_english():
+    # "a fine morning" and "would not permit entry" used to trip a HARD REJECT.
+    for innocent in ("It was a fine morning on the ridge.",
+                     "The doors would not permit entry.",
+                     "She paid a fine for it.",
+                     "He held a licence to fish.",
+                     "The insurance of continuity mattered."):
+        assert critic.check_register(innocent, "logistics") == [], innocent
+    # genuinely legal language still fires
+    assert critic.check_register("The tribunal issued a writ.", "logistics")

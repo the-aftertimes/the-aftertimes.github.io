@@ -121,3 +121,74 @@ def test_maybe_revise_is_skipped_when_disabled(monkeypatch):
     assert out["headline"] == "Untouched"
     assert called == []
     assert info["revision_accepted"] is False
+
+
+# A body that scores below GOOD_BODY but is NOT rejected: 171 words trips the
+# minor length rule only. Needed so sorting actually reorders the pool.
+MEDIOCRE_BODY = (_LONG_S * 9 + _SHORT_S * 3).strip()
+
+
+def test_judge_index_resolves_against_the_SORTED_pool(monkeypatch):
+    """The judge is handed `pool` (re-sorted by score), so its index must be
+    resolved against that same list. Two equal-scoring drafts cannot detect a
+    mix-up, because sorted() is stable and input order survives - so this uses
+    drafts with DIFFERENT scores, where sorting genuinely reorders."""
+    mediocre = _dispatch("Mediocre", MEDIOCRE_BODY)
+    good = _dispatch("Good", GOOD_BODY)
+    seen = {}
+
+    def fake_judge(drafts, settings):
+        seen["headlines"] = [d["headline"] for d in drafts]
+        return {"pick": 1, "reason": "second one"}
+
+    monkeypatch.setattr(judge_mod, "judge", fake_judge)
+    # input order puts Mediocre first; sorted pool must put Good first
+    chosen, info = run_mod.choose_draft([mediocre, good], CTX, CFG, {})
+    assert seen["headlines"] == ["Good", "Mediocre"]
+    assert chosen["headline"] == "Mediocre"      # pool[1], not scored[1]
+    assert info["judge_pick"] == 1
+    assert info["chosen_index"] == 0             # index into the ORIGINAL drafts
+
+
+def test_maybe_revise_accepts_an_exact_tie(monkeypatch):
+    """The spec's gate is `>=`, so an equal-scoring revision is published. This
+    is load-bearing and was previously untested."""
+    draft = _dispatch("Draft", GOOD_BODY)
+    twin = _dispatch("Twin", GOOD_BODY)
+    monkeypatch.setattr(revise_mod, "revise",
+                        lambda d, v, s: {"critique": "c", "dispatch": twin})
+    out, info = run_mod.maybe_revise(draft, CTX, CFG, {})
+    assert info["score_after"] == info["score_before"]
+    assert info["revision_accepted"] is True
+    assert out["headline"] == "Twin"
+
+
+def test_maybe_revise_refuses_a_revision_that_breaks_a_hard_rule(monkeypatch):
+    """Even a tie or an improvement must not admit a revision that trips a hard
+    reject the draft did not."""
+    cfg = dict(CFG, hard_reject=["structure"])
+    draft = _dispatch("Draft", GOOD_BODY)
+    headless = _dispatch("", GOOD_BODY)
+    monkeypatch.setattr(revise_mod, "revise",
+                        lambda d, v, s: {"critique": "c", "dispatch": headless})
+    out, info = run_mod.maybe_revise(draft, CTX, cfg, {})
+    assert out["headline"] == "Draft"
+    assert info["revision_accepted"] is False
+
+
+def test_maybe_revise_demands_strict_improvement_at_the_score_floor(monkeypatch):
+    """The score floors at 0.0, so a draft already at the floor would TIE with
+    any replacement at all - including a three-word stub. At the floor the gate
+    must require a strict improvement."""
+    cfg = dict(CFG, hard_reject=[])
+    floored = _dispatch("Floored", BAD_BODY + " A tribunal issued a writ. "
+                        + "They realised it was too odd to notice. "
+                        + " ".join(["word"] * 60) + ".")
+    before = critic.score(floored, CTX, cfg)
+    assert before["score"] == 0.0, "fixture must actually sit at the floor"
+    stub = _dispatch("Stub", "It stayed sealed.")
+    monkeypatch.setattr(revise_mod, "revise",
+                        lambda d, v, s: {"critique": "c", "dispatch": stub})
+    out, info = run_mod.maybe_revise(floored, CTX, cfg, {})
+    assert out["headline"] == "Floored"
+    assert info["revision_accepted"] is False

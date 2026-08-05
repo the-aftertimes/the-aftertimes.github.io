@@ -59,11 +59,17 @@ def check_length(metrics: dict, cfg: dict) -> list[dict]:
 
 #: The legal/financial register the paper over-used (see config/engines.yaml).
 #: Suppressed when the day's comic engine IS the bureaucratic one.
+#:
+#: UNAMBIGUOUS TERMS ONLY. The first version included bare "fine", "fined",
+#: "fines", "permit", "permits", "licence", "insurance" and "liability", which
+#: match ordinary English - "it was a fine morning" and "the doors would not
+#: permit entry" both tripped it. Since legal_register is a HARD REJECT, those
+#: false positives would have binned good drafts routinely and pushed the run
+#: into the all-rejected branch as a matter of course.
 _LEGAL = re.compile(
     r"\b(sue[sd]?|suing|lawsuit|court|magistrate|tribunal|injunction|lien|liens"
-    r"|repossess\w*|bailiff\w*|writ|statute|ordinance|permit|permits|licence"
-    r"|tax|taxes|levy|levies|debt|debts|fine|fined|fines|insurance"
-    r"|liability|liabilities)\b", re.I)
+    r"|repossess\w*|bailiff\w*|writ|statute|ordinance"
+    r"|tax|taxes|levy|levies|debt|debts)\b", re.I)
 
 #: Present-day objects that should not furnish a far-future dispatch unless
 #: their survival is the story. A dispatch set in 37562 mourned a Boston fern by
@@ -150,6 +156,26 @@ def check_residue(text: str) -> list[dict]:
     return out
 
 
+def check_structure(dispatch: dict, cfg: dict) -> list[dict]:
+    """The parts a dispatch cannot be published without. Nothing else in the
+    critic looks at whether a field is actually THERE - so before this existed, a
+    revision that came back with a body but no headline scored identically to a
+    good one (1.0), sailed through the acceptance gate, and would have published
+    an empty <h1> and emailed it to subscribers."""
+    out = []
+    if not (dispatch.get("headline") or "").strip():
+        out.append(_v("structure", "no headline", "major"))
+    if not ((dispatch.get("dateline") or {}).get("place") or "").strip():
+        out.append(_v("structure", "no dateline place", "major"))
+    body = (dispatch.get("body") or "").strip()
+    floor = cfg["length"]["hard_min"]
+    if len(body.split()) < floor:
+        out.append(_v("structure",
+                      f"body is {len(body.split())} words, below the {floor}-word "
+                      "absolute floor", "major"))
+    return out
+
+
 def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     """Measure a dispatch. `context` carries years_from_now and engine, both of
     which make some checks conditional. Returns the score, the violations and the
@@ -160,6 +186,7 @@ def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     text = f"{dispatch.get('headline', '')} {body}"
     metrics = metrics_for(body)
     violations = []
+    violations += check_structure(dispatch, cfg)
     violations += check_rhythm(metrics, cfg)
     violations += check_length(metrics, cfg)
     violations += check_phrases(body)

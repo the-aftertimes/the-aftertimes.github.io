@@ -201,9 +201,23 @@ def test_select_many_drops_near_duplicate_candidates():
     assert "cricket" in out[1]
 
 
-def test_select_many_falls_back_when_too_few_survive():
+def test_select_many_tops_up_so_the_judge_always_has_a_choice():
+    # Both premises are near-duplicates, so only one passes the novelty gate.
+    # Returning one would collapse the multi-draft pipeline to a single draft, so
+    # it must top up to two even though the second is a near-clone.
     premises = ["a fern is mourned by a whole colony",
                 "a fern is mourned by an entire colony"]
     out = select_stage.select_many(premises, [], SETTINGS, 3)
-    assert len(out) >= 1
+    assert len(out) == 2
     assert out[0] == premises[0]
+
+
+def test_select_many_does_not_pad_beyond_the_minimum():
+    # Two distinct premises already give the judge a choice, so a third
+    # near-duplicate must NOT be padded in just to reach n=3.
+    premises = ["a fern is mourned by a whole colony",
+                "a fern is mourned by an entire colony",
+                "an orbital cricket league refuses zero gravity"]
+    out = select_stage.select_many(premises, [], SETTINGS, 3)
+    assert len(out) == 2
+    assert "cricket" in out[1]
