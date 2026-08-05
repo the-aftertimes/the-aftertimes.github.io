@@ -52,8 +52,15 @@ def revise(dispatch: dict, violations: list[dict], settings: dict) -> dict:
     if isinstance(data, list):
         data = data[0] if data else {}
     revised = data.get("revised")
-    if not isinstance(revised, dict) or not (revised.get("body") or "").strip():
+    if not isinstance(revised, dict):
         raise gemini.GeminiError(f"revise returned no usable revision: {data!r}")
+    # Validate EVERY field the page needs, not just the body. A revision with a
+    # body but no headline used to pass here, then score identically to a good
+    # dispatch, and would have published an empty <h1>.
+    for field in ("headline", "dateline_place", "body"):
+        if not (revised.get(field) or "").strip():
+            raise gemini.GeminiError(
+                f"revise returned a revision with no {field}: {revised!r}")
     out = normalise(revised, dispatch["dateline"], dispatch["domain"],
                     dispatch.get("premise", ""))
     return {"critique": str(data.get("critique", "")).strip(), "dispatch": out}

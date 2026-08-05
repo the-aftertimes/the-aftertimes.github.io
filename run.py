@@ -64,22 +64,37 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
     all_rejected = not survivors
     pool = sorted(survivors or scored, key=lambda pair: pair[1]["score"],
                   reverse=True)
+    # Keep the FULL violation dicts and record which draft actually won, indexed
+    # against the original `drafts` order. `pool` is re-sorted by score, so a bare
+    # judge index would be meaningless to anything reading the record later (the
+    # learning loop needs to know which premise and draft was published).
     info = {"scores": [s["score"] for _, s in scored],
-            "violations": [[v["rule"] for v in s["violations"]] for _, s in scored],
-            "all_rejected": all_rejected, "judge_reason": ""}
+            "violations": [s["violations"] for _, s in scored],
+            "all_rejected": all_rejected, "judge_reason": "", "judge_pick": None}
+
+    def _finish(dispatch):
+        for idx, (d, _) in enumerate(scored):
+            if d is dispatch:
+                info["chosen_index"] = idx
+                break
+        return dispatch, info
+
     if all_rejected:
         print("    WARN every draft was rejected; publishing the best of them",
               file=sys.stderr)
-    if qcfg.get("judge") and len(pool) > 1:
+    # Do not spend a judge call on a pool where nothing passed - the spec calls
+    # for a deterministic best-of-the-bad pick in that case.
+    if qcfg.get("judge") and not all_rejected and len(pool) > 1:
         try:
             verdict = judge_mod.judge([d for d, _ in pool], settings)
             info["judge_reason"] = verdict["reason"]
+            info["judge_pick"] = verdict["pick"]
             print(f"    judge picked {verdict['pick'] + 1}: {verdict['reason']}")
-            return pool[verdict["pick"]][0], info
+            return _finish(pool[verdict["pick"]][0])
         except Exception as exc:  # noqa: BLE001 - best effort
             print(f"    WARN judge failed ({exc}); using the top score",
                   file=sys.stderr)
-    return pool[0][0], info
+    return _finish(pool[0][0])
 
 
 def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
@@ -93,15 +108,32 @@ def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
     if not qcfg.get("revise"):
         return dispatch, info
     try:
+        # Unwrapping and scoring stay INSIDE the try: if revise ever changes its
+        # contract, a recoverable fault must not become a lost day.
         out = revise_mod.revise(dispatch, before["violations"], settings)
+        after = critic.score(out["dispatch"], context, qcfg)
     except Exception as exc:  # noqa: BLE001 - best effort
         print(f"    WARN revise failed ({exc}); keeping the draft",
               file=sys.stderr)
         return dispatch, info
-    after = critic.score(out["dispatch"], context, qcfg)
     info["critique"] = out["critique"]
     info["score_after"] = after["score"]
-    if after["score"] >= before["score"]:
+    # ABSOLUTE gate first: a structurally broken revision is never publishable,
+    # whatever it scores. Relative comparison cannot protect us here - because the
+    # score floors at 0.0, a three-word stub actually scores HIGHER (0.17) than a
+    # badly flawed full draft (0.0) and would otherwise be "an improvement".
+    structural = [v for v in after["violations"] if v["rule"] == "structure"]
+    if structural:
+        print("    revision discarded, structurally unusable: "
+              + "; ".join(v["detail"] for v in structural), file=sys.stderr)
+        return dispatch, info
+    # Never trade a clean draft for a rejected revision, whatever the scores say.
+    if after["rejected"] and not before["rejected"]:
+        print("    revision discarded, it breaks a hard rule the draft did not")
+        return dispatch, info
+    improved = (after["score"] > before["score"] if before["score"] == 0.0
+                else after["score"] >= before["score"])
+    if improved:
         info["revision_accepted"] = True
         print(f"    revision accepted ({before['score']} -> {after['score']})")
         return out["dispatch"], info

@@ -22,7 +22,7 @@ def date_cfg():
 def quality_cfg():
     return {
         "n_drafts": 3, "judge": True, "revise": True,
-        "hard_reject": ["machine_phrases", "legal_register",
+        "hard_reject": ["structure", "machine_phrases", "legal_register",
                         "dash_residue", "us_spelling"],
         "weights": {"major": 0.25, "minor": 0.08},
         "rhythm": {"mean_min": 14, "mean_max": 20, "mean_hard_min": 12,
