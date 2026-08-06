@@ -5,9 +5,13 @@ on:
   workflow_dispatch:
     inputs:
       test_send:
-        description: "Send a one-off test email to BREVO_TEST_EMAIL now (does not affect the daily send)"
+        description: "Send a one-off test email now (does not affect the daily send)"
         type: boolean
         default: false
+      test_email:
+        description: "Override the test recipient (defaults to the BREVO_TEST_EMAIL secret)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -38,7 +42,9 @@ jobs:
         continue-on-error: true   # an email hiccup must never block publishing
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-          BREVO_TEST_EMAIL: ${{ secrets.BREVO_TEST_EMAIL }}   # only used by --test
+          # only used by --test; the workflow input overrides the secret so a test
+          # can be aimed at an arbitrary address without editing secrets
+          BREVO_TEST_EMAIL: ${{ inputs.test_email || secrets.BREVO_TEST_EMAIL }}
         run: python send_email.py ${{ github.event.inputs.test_send == 'true' && '--test' || '' }}
       - name: Commit and push
         run: |

@@ -12,7 +12,14 @@ newsletter:
   provider: brevo
   api_base: https://api.brevo.com/v3
   sender_name: "The Aftertimes"
-  sender_email: "charlie.rochfordgroup@gmail.com"   # Brevo-verified sender
+  # MUST be on a Brevo-authenticated domain. A freemail address cannot be
+  # authenticated, so Brevo rewrites the From to its own SHARED <id>.brevosend.com
+  # and you inherit that domain's cold reputation - which made a new subscriber's
+  # FIRST edition land in spam every time. mail.charlietrenorden.com is
+  # authenticated in this Brevo account (SPF/DKIM/DMARC), so the From survives.
+  # The address must ALSO exist as a Brevo Sender or the campaign API returns
+  # 400 "Sender is invalid / inactive" - see brevo_sender.py.
+  sender_email: "aftertimes@mail.charlietrenorden.com"
   list_id: 3                                        # Brevo list "The Aftertimes" (#3)
 
 dates:

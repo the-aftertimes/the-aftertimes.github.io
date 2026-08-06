@@ -1,0 +1,100 @@
+"""Brevo sender/domain admin, run from GitHub Actions where BREVO_API_KEY lives.
+
+    python brevo_sender.py list
+    python brevo_sender.py create
+
+Exists because Brevo cannot authenticate a freemail From address: it rewrites the
+From to its own SHARED `<id>.brevosend.com` domain, and you inherit that shared
+domain's cold reputation, so a new subscriber's FIRST edition reliably lands in
+spam. Sending from an authenticated domain fixes it.
+
+The authenticated domain alone is NOT enough - the address must also exist as a
+Sender, or the campaign API returns 400 "Sender is invalid / inactive". That is
+what `create` does. It is idempotent: an existing sender is reported, not
+duplicated.
+"""
+from __future__ import annotations
+
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+
+from common import load_settings
+
+API = "https://api.brevo.com/v3"
+
+
+def _key() -> str:
+    k = os.environ.get("BREVO_API_KEY", "").strip()
+    if not k:
+        print("BREVO_API_KEY not set", file=sys.stderr)
+        raise SystemExit(1)
+    return k
+
+
+def _call(path: str, payload: dict | None = None):
+    req = urllib.request.Request(
+        f"{API}{path}",
+        data=json.dumps(payload).encode() if payload is not None else None,
+        headers={"api-key": _key(), "accept": "application/json",
+                 "content-type": "application/json"},
+        method="POST" if payload is not None else "GET")
+    try:
+        with urllib.request.urlopen(req, timeout=45) as resp:
+            body = resp.read().decode()
+            return resp.status, (json.loads(body) if body.strip() else {})
+    except urllib.error.HTTPError as exc:
+        return exc.code, {"error": exc.read().decode()[:400]}
+
+
+def show() -> None:
+    status, data = _call("/senders")
+    print(f"senders HTTP {status}")
+    for s in data.get("senders", []):
+        print(f"  id={s.get('id')}  {s.get('email')}  active={s.get('active')}")
+    status, data = _call("/senders/domains")
+    print(f"domains HTTP {status}")
+    for d in data.get("domains", []):
+        print(f"  {d.get('domain_name')}  authenticated={d.get('authenticated')}"
+              f"  verified={d.get('verified')}")
+
+
+def create() -> None:
+    """Create the configured sender if it is missing. The address and name come
+    from config/settings.yaml, so the config stays the single source of truth."""
+    nl = load_settings()["newsletter"]
+    email, name = nl["sender_email"], nl["sender_name"]
+    domain = email.split("@")[-1]
+
+    status, data = _call("/senders/domains")
+    match = next((d for d in data.get("domains", [])
+                  if d.get("domain_name") == domain), None)
+    if not match:
+        print(f"WARN {domain} is not in this Brevo account's domain list; "
+              f"Brevo will rewrite the From address", file=sys.stderr)
+    elif not match.get("authenticated"):
+        print(f"WARN {domain} exists but is NOT authenticated; Brevo will "
+              f"rewrite the From address", file=sys.stderr)
+    else:
+        print(f"OK {domain} is authenticated")
+
+    status, data = _call("/senders")
+    existing = next((s for s in data.get("senders", [])
+                     if (s.get("email") or "").lower() == email.lower()), None)
+    if existing:
+        print(f"OK sender already exists: id={existing.get('id')} {email} "
+              f"active={existing.get('active')}")
+        return
+    status, data = _call("/senders", {"name": name, "email": email})
+    if status in (201, 200):
+        print(f"CREATED sender {email} -> {data}")
+    else:
+        print(f"FAILED to create sender ({status}): {data}", file=sys.stderr)
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    action = sys.argv[1] if len(sys.argv) > 1 else "list"
+    {"list": show, "create": create}.get(action, show)()
