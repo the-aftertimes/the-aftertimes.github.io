@@ -305,11 +305,29 @@ def _load_dotenv() -> None:
             os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
 
 
-def main() -> int:
+def already_filed(run_date: str) -> bool:
+    """True if a dispatch has already been filed for this UTC date.
+
+    GitHub silently DROPS scheduled runs (it dropped 06/08/2026 entirely), so
+    daily.yml carries a backup cron later the same UTC day. Without this guard
+    that backup would file a SECOND, different dispatch over the top of the one
+    subscribers were already emailed - send_email.py's own per-date guard would
+    suppress the email, leaving the live page and the edition in their inbox
+    telling different stories."""
+    return os.path.exists(rel(f"data/dispatches/{run_date}.json"))
+
+
+def main(argv: list[str] | None = None) -> int:
+    argv = sys.argv[1:] if argv is None else argv
     _load_dotenv()
     print("=" * 70)
     print("THE AFTERTIMES - daily dispatch")
     print("=" * 70)
+    run_date = datetime.now(timezone.utc).date().isoformat()
+    if already_filed(run_date) and "--force" not in argv:
+        print(f"Dispatch for {run_date} is already filed - nothing to do.")
+        print("(Pass --force to regenerate and overwrite it.)")
+        return 0
     try:
         run_pipeline()
         print("\nOK - fresh dispatch filed.")
