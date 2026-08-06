@@ -30,7 +30,11 @@ jobs:
           python-version: "3.13"
       - name: Install deps
         run: pip install -r requirements.txt
+      # A test send re-emails the LAST COMMITTED dispatch, so it deliberately does
+      # NOT regenerate: doing so would burn a day's model quota and republish over
+      # the live page (desyncing it from the edition subscribers already received).
       - name: Generate today's dispatch
+        if: ${{ !inputs.test_send }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
@@ -47,6 +51,7 @@ jobs:
           BREVO_TEST_EMAIL: ${{ inputs.test_email || secrets.BREVO_TEST_EMAIL }}
         run: python send_email.py ${{ github.event.inputs.test_send == 'true' && '--test' || '' }}
       - name: Commit and push
+        if: ${{ !inputs.test_send }}
         run: |
           git config user.name "aftertimes-bot"
           git config user.email "bot@the-aftertimes.github.io"
