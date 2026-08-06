@@ -7,6 +7,7 @@ then commit the dispatch to the archive, ledger and bible. Never crash-publishes
 on any failure it keeps the previous index.html and flags it stale."""
 from __future__ import annotations
 
+import glob
 import os
 import random
 import sys
@@ -15,8 +16,10 @@ from datetime import date, datetime, timezone
 
 from common import load_settings, load_yaml, read_json, rel, write_json
 import archive as archive_mod
+import avoid
 import bible as bible_mod
 import critic
+import exemplars
 import ideate as ideate_stage
 import illustrate as illustrate_mod
 import judge as judge_mod
@@ -24,6 +27,7 @@ import ledger as ledger_mod
 import render as render_mod
 import revise as revise_mod
 import selection as select_stage
+import trends
 import write as write_stage
 from dates import sample_future_dateline
 
@@ -142,6 +146,20 @@ def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
     return dispatch, info
 
 
+def build_avoid_block(records: list[dict], lcfg: dict) -> str:
+    """The 'recently over-used' block, or an empty string. Never raises: a
+    staleness-detection fault must not be able to stop the paper publishing."""
+    if not lcfg.get("enabled"):
+        return ""
+    try:
+        window = avoid.recent(records, lcfg["window"])
+        return avoid.render(trends.detect(window, lcfg["min_count"]), lcfg)
+    except Exception as exc:  # noqa: BLE001 - decorative, never fatal
+        print(f"    WARN trend spotting failed ({exc}); no avoid block",
+              file=sys.stderr)
+        return ""
+
+
 def run_pipeline() -> dict:
     settings = load_settings()
     domains = load_yaml("config/domains.yaml")["domains"]
@@ -178,12 +196,24 @@ def run_pipeline() -> dict:
     print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / "
           f"{domain} / {style['key']} / {place_kind['key']} / {engine['key']}")
 
+    lcfg = settings.get("learning", {"enabled": False})
+    past = [read_json(f"data/dispatches/{os.path.basename(f)}")
+            for f in sorted(glob.glob(rel("data/dispatches/*.json")))]
+    avoid_block = build_avoid_block([p for p in past if p], lcfg)
+    if avoid_block:
+        print(f"    avoid block: {len(avoid_block)} chars")
+
+    pool = load_yaml("config/exemplars.yaml").get("exemplars") or []
+    seeds_plus = seeds + [p for p in pool if p not in seeds]
+
     print(">>> IDEATE")
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
-    avoid = ledger_mod.recent_headlines(ledger, settings["ideate"]["recent_premise_window"])
-    premises = ideate_stage.ideate(dateline, domain, motifs, seeds, avoid, settings,
+    avoid_headlines = ledger_mod.recent_headlines(
+        ledger, settings["ideate"]["recent_premise_window"])
+    premises = ideate_stage.ideate(dateline, domain, motifs, seeds_plus,
+                                    avoid_headlines, settings,
                                     style["guidance"], engine["guidance"],
-                                    place_kind["guidance"])
+                                    place_kind["guidance"], avoid_block=avoid_block)
     print(f"    {len(premises)} premises")
 
     qcfg = settings["quality"]
@@ -201,7 +231,8 @@ def run_pipeline() -> dict:
         try:
             drafts.append(write_stage.write(
                 premise, dateline, domain, settings,
-                style["guidance"], place_kind["guidance"]))
+                style["guidance"], place_kind["guidance"],
+                avoid_block=avoid_block))
             print(f"    draft {i}: {drafts[-1]['headline'][:56]}")
         except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
             print(f"    WARN draft {i} failed: {exc}", file=sys.stderr)
