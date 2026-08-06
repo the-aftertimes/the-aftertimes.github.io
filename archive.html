@@ -19,18 +19,21 @@ body{margin:0;background:var(--bg);color:var(--fg);
   letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.6rem;}
 h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:1.4rem 0 0.8rem;}
-.timeline{position:relative;height:60px;margin:0 0 2rem;}
-.timeline::before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;
-  background:var(--rule);}
-.ttoday,.tmark{position:absolute;top:0;text-align:center;transform:translateX(-50%);}
-.ttoday-dot{display:block;width:9px;height:9px;margin:17.5px auto 0;box-sizing:border-box;
-  border:1.5px solid var(--muted);border-radius:50%;background:var(--bg);}
-.tdot{display:block;width:9px;height:9px;margin:17.5px auto 0;border-radius:50%;
+.timeline{position:relative;height:74px;margin:0 0 2.2rem;}
+.taxis{position:absolute;left:0;right:0;top:10px;height:1px;background:var(--rule);}
+.tmark{position:absolute;top:0;text-align:center;transform:translateX(-50%);}
+.tdot{display:block;width:9px;height:9px;margin:6px auto 0;border-radius:50%;
   background:var(--accent);opacity:0.85;}
-.ttoday-label,.tyear{display:block;margin-top:0.35rem;white-space:nowrap;
+.tdot.hollow{box-sizing:border-box;border:1.5px solid var(--muted);
+  background:var(--bg);opacity:1;}
+.tyear{display:block;margin-top:0.35rem;white-space:nowrap;
   font-family:-apple-system,system-ui,sans-serif;font-size:0.6rem;letter-spacing:0.06em;
   color:var(--muted);}
-.ttoday-label{text-transform:uppercase;}
+.ttoday .tyear{text-transform:uppercase;letter-spacing:0.12em;}
+/* Second tier: a label that would collide drops down behind a leader line. */
+.tmark.t1 .tyear{margin-top:1.5rem;}
+.tmark.t1::after{content:"";position:absolute;left:50%;top:15px;width:1px;
+  height:18px;background:var(--rule);transform:translateX(-50%);}
 .chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.4rem;
   font-family:-apple-system,system-ui,sans-serif;}
 .chip{cursor:pointer;font:inherit;font-size:0.68rem;letter-spacing:0.08em;
@@ -40,13 +43,28 @@ h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
 .chip.is-active{background:var(--accent);border-color:var(--accent);color:var(--bg);}
 ul.disp{list-style:none;margin:0;padding:0;}
 ul.disp li.is-hidden,.timeline .tmark.is-hidden{display:none;}
-ul.disp li{padding:0.9rem 0;border-top:1px solid var(--rule);}
-.disp .dl{font-family:-apple-system,system-ui,sans-serif;font-size:0.68rem;
-  font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
-.disp a{color:var(--fg);text-decoration:none;font-size:1.15rem;font-weight:700;
+/* The list is itself a timeline: year on a rail, ordered by distance from now. */
+ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
+  border-top:1px solid var(--rule);}
+.disp .rail{flex:0 0 5.5rem;text-align:right;position:relative;}
+.disp .rail::after{content:"";position:absolute;right:-0.63rem;top:0.4rem;
+  width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.disp .ryear{display:block;font-size:1.15rem;font-weight:700;color:var(--fg);
+  line-height:1.1;}
+.disp .rago{display:block;font-family:-apple-system,system-ui,sans-serif;
+  font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);margin-top:0.15rem;}
+.disp .rbody{flex:1 1 auto;border-left:1px solid var(--rule);padding-left:1.2rem;}
+.disp a{color:var(--fg);text-decoration:none;font-size:1.05rem;font-weight:700;
   border-bottom:1px solid var(--accent);}
-.disp .dom{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
-  color:var(--muted);margin-top:0.2rem;}
+.disp .dom{font-family:-apple-system,system-ui,sans-serif;font-size:0.7rem;
+  color:var(--muted);margin-top:0.25rem;}
+@media (max-width:30rem){
+  ul.disp li{flex-direction:column;gap:0.3rem;}
+  .disp .rail{text-align:left;}
+  .disp .rail::after{display:none;}
+  .disp .rbody{border-left:none;padding-left:0;}
+}
 a.home{font-family:-apple-system,system-ui,sans-serif;color:var(--accent);
   text-decoration:none;border-bottom:1px solid var(--accent);font-size:0.85rem;}
 footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
@@ -64,10 +82,10 @@ footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
     <p class="hublink"><a class="home" href="https://charlie-tren.github.io/">Other
       Projects &#8599;</a></p>
     <h2>Futures visited</h2>
-    <div class="timeline"><div class="ttoday"><span class="ttoday-dot"></span><span class="ttoday-label">today</span></div><div class="tmark" data-domain="transport" style="left:100.0%" title="Station Classifies Collapsed Ore Tram As Anxious Terrier"><span class="tdot"></span><span class="tyear">3458</span></div><div class="tmark" data-domain="death and mourning" style="left:69.6%" title="HR Euphemism Drops Living Executive Into Jupiter"><span class="tdot"></span><span class="tyear">2183</span></div><div class="tmark" data-domain="biotech" style="left:48.1%" title="High Court Orders Street Greasing For Mobile Whale Liver"><span class="tdot"></span><span class="tyear">2059</span></div><div class="tmark" data-domain="love and marriage" style="left:77.8%" title="Matchmaker Argues Groom’s Agony Feed Added Romantic Depth"><span class="tdot"></span><span class="tyear">2311</span></div><div class="tmark" data-domain="crime" style="left:79.8%" title="Orbital Assault Authorised Over Mismatched Kitchenware"><span class="tdot"></span><span class="tyear">2356</span></div><div class="tmark" data-domain="sport" style="left:54.6%" title="Goalkeeper Who Consecrated Penalty Box Dies Aged 88"><span class="tdot"></span><span class="tyear">2079</span></div><div class="tmark" data-domain="weather and climate" style="left:93.4%" title="Neighbor&#x27;s &#x27;Alpine Blizzard&#x27; Garden Package Dumps Snowdrifts Over Fence"><span class="tdot"></span><span class="tyear">2914</span></div><div class="tmark" data-domain="death and mourning" style="left:66.8%" title="Resurrected Miner Billed Back Taxes for Time Spent Dead"><span class="tdot"></span><span class="tyear">2154</span></div></div>
+    <div class="timeline"><div class="taxis"></div><div class="tmark ttoday" style="left:0%"><span class="tdot hollow"></span><span class="tyear">today</span></div><div class="tmark t0" data-domain="biotech" style="left:9.08%" title="High Court Orders Street Greasing For Mobile Whale Liver"><span class="tdot"></span><span class="tyear">2059</span></div><div class="tmark t1" data-domain="sport" style="left:11.51%" title="Goalkeeper Who Consecrated Penalty Box Dies Aged 88"><span class="tdot"></span><span class="tyear">2079</span></div><div class="tmark t0" data-domain="death and mourning" style="left:17.89%" title="Resurrected Miner Billed Back Taxes for Time Spent Dead"><span class="tdot"></span><span class="tyear">2154</span></div><div class="tmark t1" data-domain="death and mourning" style="left:19.81%" title="HR Euphemism Drops Living Executive Into Jupiter"><span class="tdot"></span><span class="tyear">2183</span></div><div class="tmark t0" data-domain="love and marriage" style="left:26.69%" title="Matchmaker Argues Groom’s Agony Feed Added Romantic Depth"><span class="tdot"></span><span class="tyear">2311</span></div><div class="tmark t1" data-domain="crime" style="left:28.72%" title="Orbital Assault Authorised Over Mismatched Kitchenware"><span class="tdot"></span><span class="tyear">2356</span></div><div class="tmark t0" data-domain="weather and climate" style="left:47.12%" title="Neighbor&#x27;s &#x27;Alpine Blizzard&#x27; Garden Package Dumps Snowdrifts Over Fence"><span class="tdot"></span><span class="tyear">2914</span></div><div class="tmark t0" data-domain="transport" style="left:59.83%" title="Station Classifies Collapsed Ore Tram As Anxious Terrier"><span class="tdot"></span><span class="tyear">3458</span></div></div>
     <h2>All dispatches</h2>
     <div class="chips" role="group" aria-label="Filter by domain"><button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button><button type="button" class="chip" data-filter="biotech" aria-pressed="false">Biotech</button><button type="button" class="chip" data-filter="crime" aria-pressed="false">Crime</button><button type="button" class="chip" data-filter="death and mourning" aria-pressed="false">Death and Mourning</button><button type="button" class="chip" data-filter="love and marriage" aria-pressed="false">Love and Marriage</button><button type="button" class="chip" data-filter="sport" aria-pressed="false">Sport</button><button type="button" class="chip" data-filter="transport" aria-pressed="false">Transport</button><button type="button" class="chip" data-filter="weather and climate" aria-pressed="false">Weather and Climate</button></div>
-    <ul class="disp"><li data-domain="transport"><div class="dl">SILT-REACH, CERES . 15 July 3458</div><a href="d/2026-08-05.html">Station Classifies Collapsed Ore Tram As Anxious Terrier</a><div class="dom">Transport</div></li><li data-domain="death and mourning"><div class="dl">Amphitrite Stratodeck, Jovian Cloud Belt . 6 June 2183</div><a href="d/2026-08-04.html">HR Euphemism Drops Living Executive Into Jupiter</a><div class="dom">Death and Mourning</div></li><li data-domain="biotech"><div class="dl">ZURICH-ON-STILTS . 25 February 2059</div><a href="d/2026-08-03.html">High Court Orders Street Greasing For Mobile Whale Liver</a><div class="dom">Biotech</div></li><li data-domain="love and marriage"><div class="dl">THE AETHELGARD RING . 6 January 2311</div><a href="d/2026-08-02.html">Matchmaker Argues Groom’s Agony Feed Added Romantic Depth</a><div class="dom">Love and Marriage</div></li><li data-domain="crime"><div class="dl">Mare Imbrium Basin, Luna . 25 January 2356</div><a href="d/2026-08-01.html">Orbital Assault Authorised Over Mismatched Kitchenware</a><div class="dom">Crime</div></li><li data-domain="sport"><div class="dl">Hermitage of St Brendan . 14 July 2079</div><a href="d/2026-07-31.html">Goalkeeper Who Consecrated Penalty Box Dies Aged 88</a><div class="dom">Sport</div></li><li data-domain="weather and climate"><div class="dl">New Wollongong . 22 December 2914</div><a href="d/2026-07-30.html">Neighbor&#x27;s &#x27;Alpine Blizzard&#x27; Garden Package Dumps Snowdrifts Over Fence</a><div class="dom">Weather and Climate</div></li><li data-domain="death and mourning"><div class="dl">Port Low-G, Vesta . 28 March 2154</div><a href="d/2026-07-29.html">Resurrected Miner Billed Back Taxes for Time Spent Dead</a><div class="dom">Death and Mourning</div></li></ul>
+    <ul class="disp"><li data-domain="biotech"><div class="rail"><span class="ryear">2059</span><span class="rago">33 yrs</span></div><div class="rbody"><a href="d/2026-08-03.html">High Court Orders Street Greasing For Mobile Whale Liver</a><div class="dom">ZURICH-ON-STILTS &middot; Biotech</div></div></li><li data-domain="sport"><div class="rail"><span class="ryear">2079</span><span class="rago">53 yrs</span></div><div class="rbody"><a href="d/2026-07-31.html">Goalkeeper Who Consecrated Penalty Box Dies Aged 88</a><div class="dom">Hermitage of St Brendan &middot; Sport</div></div></li><li data-domain="death and mourning"><div class="rail"><span class="ryear">2154</span><span class="rago">128 yrs</span></div><div class="rbody"><a href="d/2026-07-29.html">Resurrected Miner Billed Back Taxes for Time Spent Dead</a><div class="dom">Port Low-G, Vesta &middot; Death and Mourning</div></div></li><li data-domain="death and mourning"><div class="rail"><span class="ryear">2183</span><span class="rago">157 yrs</span></div><div class="rbody"><a href="d/2026-08-04.html">HR Euphemism Drops Living Executive Into Jupiter</a><div class="dom">Amphitrite Stratodeck, Jovian Cloud Belt &middot; Death and Mourning</div></div></li><li data-domain="love and marriage"><div class="rail"><span class="ryear">2311</span><span class="rago">285 yrs</span></div><div class="rbody"><a href="d/2026-08-02.html">Matchmaker Argues Groom’s Agony Feed Added Romantic Depth</a><div class="dom">THE AETHELGARD RING &middot; Love and Marriage</div></div></li><li data-domain="crime"><div class="rail"><span class="ryear">2356</span><span class="rago">330 yrs</span></div><div class="rbody"><a href="d/2026-08-01.html">Orbital Assault Authorised Over Mismatched Kitchenware</a><div class="dom">Mare Imbrium Basin, Luna &middot; Crime</div></div></li><li data-domain="weather and climate"><div class="rail"><span class="ryear">2914</span><span class="rago">888 yrs</span></div><div class="rbody"><a href="d/2026-07-30.html">Neighbor&#x27;s &#x27;Alpine Blizzard&#x27; Garden Package Dumps Snowdrifts Over Fence</a><div class="dom">New Wollongong &middot; Weather and Climate</div></div></li><li data-domain="transport"><div class="rail"><span class="ryear">3458</span><span class="rago">1,432 yrs</span></div><div class="rbody"><a href="d/2026-08-05.html">Station Classifies Collapsed Ore Tram As Anxious Terrier</a><div class="dom">SILT-REACH, CERES &middot; Transport</div></div></li></ul>
     <footer>Every dispatch is fiction, written by a machine. None of it has happened. Yet.
     </footer>
   </div>

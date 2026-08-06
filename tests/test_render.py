@@ -101,22 +101,27 @@ def test_image_slot_optional():
 from archive import render_archive
 
 
-def test_archive_lists_dispatches_newest_first():
+def test_archive_lists_dispatches_by_distance_not_publication_date():
+    """The list IS the timeline now (06/08/2026), so it is ordered by how far out
+    each dispatch is set, NOT newest-published-first as it was before. Note the
+    nearer future here was published LATER, so the two orderings disagree and the
+    assertion is meaningful."""
     records = [
         {"run_date": "2026-07-27", "dispatch": {
-            "headline": "Older story", "domain": "sport",
-            "dateline": {"place": "Luna", "year": 2200, "month": 1, "day": 1,
-                         "years_from_now": 174}}},
-        {"run_date": "2026-07-28", "dispatch": {
-            "headline": "Newer story", "domain": "law",
+            "headline": "Distant story", "domain": "law",
             "dateline": {"place": "Mars", "year": 2400, "month": 2, "day": 2,
                          "years_from_now": 374}}},
+        {"run_date": "2026-07-28", "dispatch": {
+            "headline": "Nearer story", "domain": "sport",
+            "dateline": {"place": "Luna", "year": 2200, "month": 1, "day": 1,
+                         "years_from_now": 174}}},
     ]
     meta = {"site_name": "The Aftertimes",
             "tagline": "Dispatches from years that have not yet happened"}
     html = render_archive(records, meta)
-    assert html.index("Newer story") < html.index("Older story")
+    assert html.index("Nearer story") < html.index("Distant story")
     assert "d/2026-07-28.html" in html
+    assert "174 yrs" in html and "374 yrs" in html   # the year rail
     assert "\u2014" not in html
 
 
