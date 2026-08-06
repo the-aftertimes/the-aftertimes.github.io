@@ -53,6 +53,18 @@
       "gloss": "A dense lipid compound used to lubricate heavy mining machinery and magnetic drive systems.",
       "kind": "term",
       "first_seen": "2026-08-05"
+    },
+    {
+      "term": "sky-baptism",
+      "gloss": "A subterranean youth ritual involving standing beneath slow pipe condensation",
+      "kind": "term",
+      "first_seen": "2026-08-06"
+    },
+    {
+      "term": "ice rot",
+      "gloss": "Structural degradation caused by moisture freezing inside sealed frame joints",
+      "kind": "term",
+      "first_seen": "2026-08-06"
     }
   ]
 }

@@ -122,5 +122,15 @@
     "style": "investigation",
     "place_kind": "asteroid",
     "engine": "category"
+  },
+  {
+    "run_date": "2026-08-06",
+    "year": 4793,
+    "era_bucket": 55,
+    "domain": "weather and climate",
+    "headline": "Youth Culture Devastated After Plumbers Destroy Vault's Only Cloud",
+    "style": "trend",
+    "place_kind": "subsurface",
+    "engine": "ritual"
   }
 ]
