@@ -1,0 +1,93 @@
+{
+  "run_date": "2026-08-06",
+  "run_time": "2026-08-06T23:04:48.577230+00:00",
+  "dispatch": {
+    "headline": "Youth Culture Devastated After Plumbers Destroy Vault's Only Cloud",
+    "body": "Dozens of teenagers gathered beneath the main circulation duct in Vault Four on Thursday, waiting for the ceiling to leak. They were holding silent vigil for the rare drop of grey condensation. Known locally as a sky-baptism, the drop fell every forty minutes as air-scrubbers cycled human breath against cold steel. \"It feels profoundly existential,\" explained Tenzin Kido, eighteen, wearing a soggy tunic fashioned from filter mesh. \"You realise the roof is not structural cladding, but a sensitive entity weeping for our sins.\" The spiritual trend has infuriated elder residents who spent four gruelling decades sealing joists with expanded foam to prevent ice rot. \"We fought two localised civil wars to keep this bunker dry,\" said chief pipe welder Nadira Ocampo, brandishing a caulking gun. \"Now my granddaughter sits in a grey puddle writing miserable poetry about atmospheric moisture. She even refuses her algae paste unless it is diluted with ceiling sweat.\" Tension escalated on Monday when youths jammed stolen insulation into drainage traps. The resulting backlog forced three thousand litres of wash-water through joints, creating fog across Sector Seven. Facility engineers cleared the blockage yesterday using heavy suction equipment, effectively restoring total dryness to the sector. Disconsolate youth leaders declared a week of mourning for their vanished climate. They briefly gathered beneath an overheating pump in Sector Nine to contemplate their loss. By Friday morning, however, the movement found fresh hope when the communal sewage recycler began leaking directly above the mess hall.",
+    "scene": "Subterranean circulation duct under repair",
+    "dateline": {
+      "place": "VAULT FOUR",
+      "year": 4793,
+      "month": 12,
+      "day": 4,
+      "years_from_now": 2767
+    },
+    "domain": "Post-collapse facility management",
+    "glossary": [
+      {
+        "term": "sky-baptism",
+        "gloss": "A subterranean youth ritual involving standing beneath slow pipe condensation"
+      },
+      {
+        "term": "ice rot",
+        "gloss": "Structural degradation caused by moisture freezing inside sealed frame joints"
+      }
+    ],
+    "premise": "Youth in the Enceladus ice-sheet vaults have begun holding midnight vigils beneath air-scrubber condensation drips to receive 'sky-baptisms,' infuriating an older generation who remember when leaky plumbing was a maintenance flaw rather than a sacrament.",
+    "image": "assets/img/2026-08-06.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-06T23:04:48.577230+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 15,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.67,
+      0.84,
+      0.67
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 11.4 words, wanted 14-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "193 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 13.1 words, wanted 14-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "184 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 11.6 words, wanted 14-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "198 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 2 nails the generational divide and infrastructure satire with a brilliant headline and a perfect kicker line ('The sky is ruined').",
+    "judge_pick": 1,
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.67,
+    "score_after": 0.92,
+    "critique": "The original draft fell short of length requirements with choppy, truncated sentences. It also presented the premise neutrally rather than leaning into comedic satire."
+  }
+}
