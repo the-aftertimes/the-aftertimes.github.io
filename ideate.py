@@ -9,11 +9,12 @@ import gemini
 def build_prompt(dateline: dict, domain: str, bible_motifs: list[dict],
                  seed_premises: list[str], avoid_headlines: list[str],
                  n: int, style_guidance: str, engine_guidance: str = "",
-                 place_guidance: str = "") -> str:
+                 place_guidance: str = "", avoid_block: str = "") -> str:
     motif_lines = "\n".join(f"- {m['term']}: {m.get('gloss', '')}"
                             for m in bible_motifs) or "(none yet)"
     seed_lines = "\n".join(f"- {p}" for p in seed_premises) or "(none)"
     avoid_lines = "\n".join(f"- {h}" for h in avoid_headlines) or "(none)"
+    avoid_extra = f"\n{avoid_block}\n" if avoid_block else ""
     return f"""You are the wire desk of The Aftertimes, a newspaper filing real
 news dispatches from the future. The register is imaginative science fiction with
 a knowing satirical edge: strange, funny, but written completely straight-faced,
@@ -76,17 +77,19 @@ naturally; otherwise ignore them entirely:
 
 Avoid anything close to these recently-used stories:
 {avoid_lines}
-
+{avoid_extra}
 Return JSON only: {{"premises": ["...", "...", ...]}} with exactly {n} items."""
 
 
 def ideate(dateline: dict, domain: str, bible_motifs: list[dict],
            seed_premises: list[str], avoid_headlines: list[str],
            settings: dict, style_guidance: str,
-           engine_guidance: str = "", place_guidance: str = "") -> list[str]:
+           engine_guidance: str = "", place_guidance: str = "",
+           avoid_block: str = "") -> list[str]:
     prompt = build_prompt(dateline, domain, bible_motifs, seed_premises,
                           avoid_headlines, settings["ideate"]["n_premises"],
-                          style_guidance, engine_guidance, place_guidance)
+                          style_guidance, engine_guidance, place_guidance,
+                          avoid_block)
     raw = gemini.generate(prompt, settings,
                           settings["gemini"]["temperature_ideate"])
     data = gemini.extract_json(raw)
