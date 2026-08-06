@@ -1,0 +1,5 @@
+# Premises Charlie marked "good", promoted here automatically by exemplars.py.
+# These are FEW-SHOT examples, which steer the model far harder than instructions
+# do - so the register balance is guarded (see exemplars.legal_share). Starts
+# empty and grows one verdict at a time.
+exemplars: []
