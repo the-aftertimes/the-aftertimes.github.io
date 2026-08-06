@@ -219,7 +219,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
       <div class="tag">{html.escape(hyphenate(meta['tagline']))}</div>
     </header>
     <p><a class="home" href="index.html">&larr; Today's dispatch</a></p>
-    <p class="hublink"><a class="home" href="https://charlie-tren.github.io/">Other
+    <p class="hublink"><a class="home" href="https://charlietrenorden.com/">Other
       Projects &#8599;</a></p>
     <h2>Futures visited</h2>
     {_timeline(recs)}
