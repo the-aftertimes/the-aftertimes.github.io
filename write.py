@@ -159,10 +159,12 @@ def _era_rule(years: int) -> str:
 
 
 def build_prompt(premise: str, dateline: dict, domain: str,
-                 style_guidance: str, place_guidance: str = "") -> str:
+                 style_guidance: str, place_guidance: str = "",
+                 avoid_block: str = "") -> str:
     place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
                   if place_guidance else "")
     era_rule = _era_rule(int(dateline.get("years_from_now") or 0))
+    avoid_extra = f"\n{avoid_block}\n" if avoid_block else ""
     return f"""You are a correspondent for The Aftertimes. Write a single news
 dispatch, datelined the year {dateline['year']}
 ({dateline['years_from_now']} years from now), in the domain: {domain}.
@@ -320,7 +322,7 @@ Rules:
 - Give every named person a fresh, varied, culturally diverse name. Do NOT use the names "Vance", "Elena", "Rostova", "Marcus" or "Kovac" - invent new ones each time. Do not default the weekday to Tuesday; vary or omit the day.
 - Do not put the year in the dateline place; the date is shown separately.
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
-
+{avoid_extra}
 Return JSON only:
 {{"headline": "...", "dateline_place": "...", "body": "...", "scene": "...",
   "domain": "{domain}", "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
@@ -356,9 +358,10 @@ def normalise(d: dict, dateline: dict, domain: str, premise: str) -> dict:
 
 
 def write(premise: str, dateline: dict, domain: str, settings: dict,
-          style_guidance: str, place_guidance: str = "") -> dict:
+          style_guidance: str, place_guidance: str = "",
+          avoid_block: str = "") -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance,
-                          place_guidance)
+                          place_guidance, avoid_block)
     g = settings["gemini"]
     pro = (g.get("write_model") or "").strip()
     d = None
