@@ -242,7 +242,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     </section>
     {signup}
     {archive_link}
-    <p class="hublink"><a class="arc" href="https://charlie-tren.github.io/">Other
+    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">Other
       Projects &#8599;</a></p>
     <footer>
       <p class="fiction">Every dispatch is fiction, written by a machine each
