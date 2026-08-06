@@ -34,12 +34,19 @@ def _key() -> str:
     return k
 
 
+#: Cloudflare sits in front of parts of the Brevo API and rejects urllib's default
+#: "Python-urllib/3.x" agent with 403 error 1010 browser_signature_banned. The
+#: /senders endpoints refuse it even though /emailCampaigns (used by send_email.py)
+#: does not, so a plain UA is required here.
+_UA = "the-aftertimes/1.0 (+https://aftertimes.charlietrenorden.com)"
+
+
 def _call(path: str, payload: dict | None = None):
     req = urllib.request.Request(
         f"{API}{path}",
         data=json.dumps(payload).encode() if payload is not None else None,
         headers={"api-key": _key(), "accept": "application/json",
-                 "content-type": "application/json"},
+                 "content-type": "application/json", "user-agent": _UA},
         method="POST" if payload is not None else "GET")
     try:
         with urllib.request.urlopen(req, timeout=45) as resp:
