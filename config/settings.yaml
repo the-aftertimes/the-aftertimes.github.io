@@ -102,3 +102,15 @@ quality:
     max: 280
     hard_min: 160
     hard_max: 340
+
+# Daily self-improvement. Only REPETITION is automated: it is measurable, whereas
+# "funny" is not, and a loop optimising only what it can measure drifts toward
+# bland-but-compliant prose. Charlie's verdicts supply the quality signal, and the
+# hand-written prompts are never machine-edited - see proposals.py.
+learning:
+  enabled: true           # kill switch: false restores the fixed prompts exactly
+  window: 30              # dispatches considered when judging staleness
+  min_count: 3            # occurrences before something counts as over-used
+  avoid_char_cap: 1200    # hard cap on the injected block, guards prompt bloat
+  exemplar_cap: 24        # maximum Charlie-endorsed premises in the few-shot pool
+  proposals_weekday: 0    # Monday
