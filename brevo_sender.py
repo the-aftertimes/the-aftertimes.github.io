@@ -102,6 +102,25 @@ def create() -> None:
         raise SystemExit(1)
 
 
+def campaign() -> None:
+    """Print the sender actually recorded on the most recent campaign. This is the
+    load-bearing check: an authenticated domain and an existing Sender only matter
+    if the campaign really went out under that From address."""
+    status, data = _call("/emailCampaigns?limit=1&sort=desc")
+    print(f"campaigns HTTP {status}")
+    for c in data.get("campaigns", []):
+        s = c.get("sender") or {}
+        email = s.get("email", "")
+        print(f"  id={c.get('id')}  status={c.get('status')}")
+        print(f"  subject={c.get('subject', '')[:60]}")
+        print(f"  FROM: {s.get('name')} <{email}>")
+        if "brevosend.com" in email:
+            print("  BAD: still going out on Brevo's shared domain",
+                  file=sys.stderr)
+        elif email:
+            print("  GOOD: sending from an authenticated domain")
+
+
 if __name__ == "__main__":
     action = sys.argv[1] if len(sys.argv) > 1 else "list"
-    {"list": show, "create": create}.get(action, show)()
+    {"list": show, "create": create, "campaign": campaign}.get(action, show)()
