@@ -30,10 +30,13 @@ def test_chips_dedupe_on_key_keep_first_label():
 
 
 def test_list_and_timeline_carry_matching_domain_keys():
+    import re
     out = archive.render_archive(_recs(["crime", "space law", "death and mourning"]), META)
     for key in ("crime", "space law", "death and mourning"):
         assert f'<li data-domain="{key}"' in out
-        assert f'class="tmark" data-domain="{key}"' in out
+        # marks carry a tier class (t0/t1) for collision staggering, so match on
+        # the attribute rather than an exact class string
+        assert re.search(rf'class="tmark t\d" data-domain="{key}"', out), key
 
 
 def test_default_is_all_visible_when_js_off():
