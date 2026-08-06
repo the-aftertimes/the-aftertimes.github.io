@@ -38,6 +38,32 @@ def pending() -> list[str]:
     return [d for d in reversed(dates) if d not in judged]
 
 
+def _promote_if_good(run_date: str, call: str) -> str:
+    """A good verdict promotes the dispatch's premise into the few-shot pool.
+    Returns a short status line for the CLI."""
+    if call != "good":
+        return ""
+    rec = read_json(f"data/dispatches/{run_date}.json")
+    premise = ((rec or {}).get("dispatch") or {}).get("premise", "").strip()
+    if not premise:
+        return "no premise recorded, nothing promoted"
+    import yaml
+    import exemplars
+    from common import load_settings
+    cap = load_settings().get("learning", {}).get("exemplar_cap", 24)
+    path = rel("config/exemplars.yaml")
+    with open(path, encoding="utf-8") as fh:
+        doc = yaml.safe_load(fh) or {}
+    pool = doc.get("exemplars") or []
+    out = exemplars.promote(pool, premise, cap)
+    if out == pool:
+        return "not promoted (already present, or it would unbalance the register)"
+    doc["exemplars"] = out
+    with open(path, "w", encoding="utf-8") as fh:
+        yaml.safe_dump(doc, fh, allow_unicode=True, sort_keys=False)
+    return f"promoted to the exemplar pool ({len(out)} total)"
+
+
 def main(argv: list[str]) -> int:
     if len(argv) < 2:
         todo = pending()
@@ -53,6 +79,9 @@ def main(argv: list[str]) -> int:
         print(exc, file=sys.stderr)
         return 1
     print(f"Recorded {run_date}: {call} {note}".strip())
+    status = _promote_if_good(run_date, call)
+    if status:
+        print(f"  {status}")
     return 0
 
 
