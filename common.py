@@ -74,3 +74,18 @@ _DASH_MAP = {cp: "-" for cp in _DASH_CODEPOINTS}
 def hyphenate(text: str) -> str:
     """House style: no em/en dashes or any other dash variant - all become '-'."""
     return (text or "").translate(_DASH_MAP)
+
+
+# Cloudflare Web Analytics. Feeds the private stats dashboard, which runs ONE
+# account-wide GraphQL query and splits the results by `requestHost` - so this is
+# deliberately the same token used across every site in the estate, not a per-site
+# one. Cookieless, no personal data, ~10KB deferred so it costs nothing visible.
+#
+# It lives here because render.py and archive.py both emit a <head> and a beacon
+# on only one of them would silently under-count. It is a plain constant rather
+# than inline HTML because both call sites are f-strings, where the token's braces
+# would otherwise need escaping and would eventually get it wrong.
+BEACON = (
+    '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
+    '''data-cf-beacon='{"token": "32b821209b5441a08df42ccf61c9e6c2"}'></script>'''
+)
