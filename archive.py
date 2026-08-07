@@ -7,7 +7,7 @@ import html
 import math
 import os
 
-from common import hyphenate, load_settings, read_json, rel
+from common import BEACON, hyphenate, load_settings, read_json, rel
 
 _MINOR = {"a", "an", "and", "the", "of", "to", "in", "on", "for", "at", "by", "or", "with"}
 
@@ -211,6 +211,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <title>Archive - {html.escape(meta['site_name'])}</title>
 <style>{_CSS}</style>
+{BEACON}
 </head>
 <body>
   <div class="wrap">

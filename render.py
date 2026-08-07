@@ -8,7 +8,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 import locator
-from common import hyphenate
+from common import BEACON, hyphenate
 from dates import format_date, format_dateline
 
 _CSS = """
@@ -213,6 +213,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <meta name="twitter:card" content="summary_large_image">
 <style>{_CSS}</style>
 {font_face}
+{BEACON}
 </head>
 <body>
   <div class="wrap">
