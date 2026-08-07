@@ -132,5 +132,15 @@
     "style": "trend",
     "place_kind": "subsurface",
     "engine": "ritual"
+  },
+  {
+    "run_date": "2026-08-07",
+    "year": 2168,
+    "era_bucket": 2,
+    "domain": "medicine",
+    "headline": "Fatal Square Hearts Hailed As Triumph For Radiography Filing",
+    "style": "discovery",
+    "place_kind": "lunar",
+    "engine": "sentiment"
   }
 ]

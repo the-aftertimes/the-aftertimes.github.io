@@ -65,6 +65,12 @@
       "gloss": "Structural degradation caused by moisture freezing inside sealed frame joints",
       "kind": "term",
       "first_seen": "2026-08-06"
+    },
+    {
+      "term": "cubic myocardial drift",
+      "gloss": "A fatal cardiac condition caused by low gravity that reshapes the heart into a six-sided cube.",
+      "kind": "term",
+      "first_seen": "2026-08-07"
     }
   ]
 }
