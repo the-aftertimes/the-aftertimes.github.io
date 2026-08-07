@@ -1,0 +1,74 @@
+{
+  "run_date": "2026-08-07",
+  "run_time": "2026-08-07T20:54:01.803313+00:00",
+  "dispatch": {
+    "headline": "Fatal Square Hearts Hailed As Triumph For Radiography Filing",
+    "body": "SHACKLETON DOME, THE MOON - Cardiologists at the Shackleton Dome have confirmed that gravity on the Moon slowly compresses the human heart into a six-sided cube.\n\nThe fatal condition, known as cubic myocardial drift, halts blood circulation within five months of onset.\n\nDespite the high mortality rate, hospital staff praise the outcome as a major victory for diagnostic filing.\n\n\"Earth hearts are messy sacks,\" said Dr Priya Sylvan. \"They overlap with adjacent scan frames and ruin the display margins.\"\n\nIn low gravity, the muscle walls flatten into right angles.\n\nThis spatial symmetry allows staff to tile forty-eight chest scans onto a single screen without wasted border space.\n\nArchival efficiency has tripled.\n\n\"Look at those corners,\" Sylvan said, pointing to a patient scan. \"You could align them with a square.\"\n\nThe medical record department awarded the cardiology ward its highest honour for cataloguing speed.\n\nThe deformation is permanent once the angles lock in place.\n\nLast month, the health board voted to ban weighted vests across the settlement.\n\nThe vests save lives.\n\nHowever, they introduce soft curves back into the chest cavity, disrupting the visual order.\n\nPatients raised minor objections regarding their survival prospects.\n\nSylvan dismissed the complaints, noting that the morgue ordered square boxes to maintain grid alignment after death.",
+    "scene": "A radiologist holds a plastic triangle against a wall monitor displaying a square heart scan while a doctor takes notes.",
+    "dateline": {
+      "place": "SHACKLETON DOME, THE MOON",
+      "year": 2168,
+      "month": 10,
+      "day": 17,
+      "years_from_now": 142
+    },
+    "domain": "medicine",
+    "glossary": [
+      {
+        "term": "cubic myocardial drift",
+        "gloss": "A fatal cardiac condition caused by low gravity that reshapes the heart into a six-sided cube."
+      }
+    ],
+    "premise": "Cardiologists at the Shackleton Crater medical dome report that low gravity gradually compresses human hearts into flawless geometric cubes, a fatal condition they are nonetheless praising with intense professional pride for making chest X-rays exceptionally tidy.",
+    "image": "assets/img/2026-08-07.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-07T20:54:01.803313+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 16,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      0.75,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 12.3 words, wanted 14-20",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.1 words, wanted 14-20",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 12.9 words, wanted 14-20",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "all_rejected": false,
+    "judge_reason": "It brilliantly satirises institutional administrative sociopathy prioritizing grid alignment over human life, topped off with a great final kicker.",
+    "judge_pick": 0,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": 0.42,
+    "critique": "Sentence lengths averaged only 12.3 words, falling short of the required 14-20 word range. The piece lacked punchy humor, a sharp joke in the headline, and a recontextualising final kicker."
+  }
+}
