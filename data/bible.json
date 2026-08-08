@@ -71,6 +71,12 @@
       "gloss": "A fatal cardiac condition caused by low gravity that reshapes the heart into a six-sided cube.",
       "kind": "term",
       "first_seen": "2026-08-07"
+    },
+    {
+      "term": "Roster Lock",
+      "gloss": "The sacred weekly deadline after which unapproved player swaps trigger immediate excommunication.",
+      "kind": "term",
+      "first_seen": "2026-08-08"
     }
   ]
 }

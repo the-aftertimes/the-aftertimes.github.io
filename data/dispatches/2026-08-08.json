@@ -1,0 +1,89 @@
+{
+  "run_date": "2026-08-08",
+  "run_time": "2026-08-08T20:44:52.448724+00:00",
+  "dispatch": {
+    "headline": "Holy Draft Master Dies At 102, Leaving Entire Order Listed As Questionable",
+    "body": "Brother Kenji Odu, the last Grand Master of the Holy Fantasy League, died on Thursday at the Void Garrison. He was 102.\n\nOdu took his vows in 2054, inheriting a fantasy draft established to keep deep-space monks disciplined during multi-century patrols. For six decades, he manually recalculated point totals to account for relativistic light-delay between star systems while ruthlessly suppressing trade talk during silent prayer.\n\nHis defining moment came during the 2088 season when an impetuous novice swapped a reserve striker three seconds after the weekly roster lock. Odu excommunicated the entire squad. The roster spent twenty years in solitary contemplation, sending daily quantum transmissions begging for reinstatement. Odu denied every single petition.\n\n\"A bench swap without prior incense is treason against the standings,\" Odu declared during his 2092 synod. \"If the Lord intended flex positions to be fluid after vespers, He would have placed a running back in the Book of Leviticus.\"\n\nUnder his governance, the league shrank from forty garrisons to three as terrified monks feared drafting players who might suffer decompression mid-fixture. He spent his final morning updating his optic lens matrix to dock points from a deceased midfielder whose funeral ran four minutes into kickoff.\n\nIn his final hour, Odu refused last rites from the garrison chaplain because the chaplain was his direct opponent in the semifinals. When the chaplain offered absolution anyway, Odu penalised him thirty points for unsolicited sideline contact and claimed the forfeit, leaving the grand final to be contested entirely between two corpses.",
+    "scene": "An austere deep-space monastery control room overlooking a star cluster",
+    "dateline": {
+      "place": "VOID GARRISON",
+      "year": 2114,
+      "month": 5,
+      "day": 23,
+      "years_from_now": 88
+    },
+    "domain": "Ecclesiastical Fantasy Sports",
+    "glossary": [
+      {
+        "term": "Roster Lock",
+        "gloss": "The sacred weekly deadline after which unapproved player swaps trigger immediate excommunication."
+      }
+    ],
+    "premise": "The Garrison of the Dark Void has laid to rest the last Grand Master of the Holy Fantasy League, a monk who spent six decades administering an interstellar sports draft and excommunicated an entire squad over an unapproved bench swap.",
+    "image": "assets/img/2026-08-08.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-08T20:44:52.448724+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 17,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.59,
+      0.84,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 11.8 words, wanted 14-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "188 words, wanted 200-280",
+          "severity": "minor"
+        },
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: coffee",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 13.9 words, wanted 14-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "194 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "184 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "all_rejected": false,
+    "judge_reason": "Extremely sharp satire of fantasy sports pettiness with an outstanding final kicker joke.",
+    "judge_pick": 0,
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 1.0,
+    "critique": "Draft fell short of the 200-word minimum and lacked comedic edge. Needed sharper quotes, stronger punchlines, and a clearer recontextualising final twist."
+  }
+}
