@@ -142,5 +142,15 @@
     "style": "discovery",
     "place_kind": "lunar",
     "engine": "sentiment"
+  },
+  {
+    "run_date": "2026-08-08",
+    "year": 2114,
+    "era_bucket": 1,
+    "domain": "religion",
+    "headline": "Holy Draft Master Dies At 102, Leaving Entire Order Listed As Questionable",
+    "style": "obituary",
+    "place_kind": "deepspace",
+    "engine": "leisure"
   }
 ]
