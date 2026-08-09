@@ -77,6 +77,18 @@
       "gloss": "The sacred weekly deadline after which unapproved player swaps trigger immediate excommunication.",
       "kind": "term",
       "first_seen": "2026-08-08"
+    },
+    {
+      "term": "silt-strider",
+      "gloss": "A twelve-tonne native predatory organism endemic to the salt-flats of Epsilon Eridani b.",
+      "kind": "term",
+      "first_seen": "2026-08-09"
+    },
+    {
+      "term": "light-pad",
+      "gloss": "A hand-held flat tablet used across off-world colonies for official administrative communications.",
+      "kind": "term",
+      "first_seen": "2026-08-09"
     }
   ]
 }

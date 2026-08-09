@@ -1,0 +1,66 @@
+{
+  "run_date": "2026-08-09",
+  "run_time": "2026-08-09T20:48:31.863917+00:00",
+  "dispatch": {
+    "headline": "Insurer Rules Being Eaten Is Unapproved Asset Transfer",
+    "body": "I am standing in the dust-vaults of Ostraka Crater, watching Lira Sen try to collect her late husband’s life insurance payout. Bram was swallowed three weeks ago by a silt-strider while mending a water pipe in the ridge.\n\nOrbit Mutual rejected her claim yesterday. The denial notice on her light-pad defines Bram’s digestion as an unauthorised asset transfer. Because the silt-strider lacked accreditation, his absorption falls outside approved care pathways.\n\n\"They advised me to appeal,\" Lira says, wiping grey dust from her sleeve. \"If I can coax the strider to submit a formal discharge summary, they will reconsider.\"\n\nThe strider currently weighs twelve tonnes and rests six kilometres north in the salt-flats.\n\nI watch an adjuster, Soren Tan, check his breathing filter behind a sealed desk while reviewing the file. He insists the math is clear.\n\n\"We cover metabolic cessation, but we do not cover the distribution of assets to unregistered fauna,\" Soren says.\n\nBram did not volunteer. The wild beast simply hit him from behind without warning while he worked alone.\n\n\"He entered the digestive system without authorisation, which constitutes a co-pay violation,\" Soren adds.\n\nLira must now pay Orbit Mutual a penalty for storing Bram's mass inside a wild organism.",
+    "scene": "In a dim colonial office, a grieving woman in dusty coveralls shows a glowing handheld screen to a seated insurance adjuster wearing a plastic face filter.",
+    "dateline": {
+      "place": "Ostraka Crater, Epsilon Eridani b",
+      "year": 5915,
+      "month": 7,
+      "day": 19,
+      "years_from_now": 3889
+    },
+    "domain": "money and finance",
+    "glossary": [
+      {
+        "term": "silt-strider",
+        "gloss": "A twelve-tonne native predatory organism endemic to the salt-flats of Epsilon Eridani b."
+      },
+      {
+        "term": "light-pad",
+        "gloss": "A hand-held flat tablet used across off-world colonies for official administrative communications."
+      }
+    ],
+    "premise": "An exoplanetary insurer on Epsilon Eridani b is refusing all mortality claims from alien wildlife attacks, ruling that being digested by native fauna constitutes an 'unauthorised out-of-network biological transfer'.",
+    "image": "assets/img/2026-08-09.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-09T20:48:31.863917+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 18,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 13.5 words, wanted 14-20",
+          "severity": "minor"
+        }
+      ],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Hits the sharpest satire of insurance bureaucracy with hilarious jargon like 'co-pay violation' and a brilliant kicker.",
+    "judge_pick": 2,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": 0.84,
+    "critique": "Sentence length averaged under 14 words, leaving the prose slightly too choppy for the publication standard.\nThe headline and ending merely summarized the plot rather than delivering sharp, satirical punchlines."
+  }
+}

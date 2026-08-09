@@ -152,5 +152,15 @@
     "style": "obituary",
     "place_kind": "deepspace",
     "engine": "leisure"
+  },
+  {
+    "run_date": "2026-08-09",
+    "year": 5915,
+    "era_bucket": 77,
+    "domain": "money and finance",
+    "headline": "Insurer Rules Being Eaten Is Unapproved Asset Transfer",
+    "style": "firstperson",
+    "place_kind": "exoplanet",
+    "engine": "bureaucratic"
   }
 ]
