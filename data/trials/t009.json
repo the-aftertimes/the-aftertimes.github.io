@@ -1,0 +1,70 @@
+{
+  "generated": "2026-08-10T07:17:09.278552+00:00",
+  "dispatch": {
+    "headline": "Ice Scraping Sinks Cloud City",
+    "body": "AMPHITRITE FLOAT-SPIRE - A seven-month study of the thirty-mile intake funnel on Amphitrite Float-Spire has found that manually squeegeeing frost off the outer hull causes ice to reform forty percent faster.\n\nThe report, released by the Atmospheric Work Institute, revealed that friction from long composite poles heats the metal skin just enough to flash-freeze incoming gas.\n\nSqueegee shifts will double next month.\n\n\"The pole line provides immediate visual proof of high staff engagement,\" said lead researcher Dr. Sunita Rao. \"When orbital sweepers scan our station, executive staff need to see motion.\"\n\nThe study also highlights an unintended physical complication. Roughly four hundred workers have frozen solid while clinging to their poles, forming a heavy human crust along the lower rim.\n\nTheir added weight is currently pulling the floating city down toward Jupiter's liquid hydrogen mantle. The platform is sinking at four metres an hour.\n\nIt will implode on Friday.\n\nStation managers have officially ruled out unclipping the frozen workers or pausing the shifts. The report noted that removing bodies would create visible gaps in the line.\n\nInstead, replacement staff are being issued shorter poles so they can work closer to the frozen bodies.\n\n\"An empty funnel suggests poor workplace culture,\" Dr. Rao said. \"If the sweepers record an unmanned hull, head office will assume we are not trying.\"",
+    "scene": "Four workers in bulky thermal suits lean over a frosted railing on a metallic cloud platform, pushing long poles against a massive frozen wall while several encrusted, motionless workers hang suspended beside them.",
+    "dateline": {
+      "place": "Amphitrite Float-Spire",
+      "year": 2110,
+      "month": 12,
+      "day": 24,
+      "years_from_now": 84
+    },
+    "domain": "labour and work",
+    "glossary": [
+      {
+        "term": "sweeper",
+        "gloss": "An orbital monitor deployed by corporate boards to visually track physical worker activity on outer station surfaces."
+      }
+    ],
+    "premise": "A study on a Jovian cloud platform reveals that manually squeegeeing frost off the 30-mile intake funnel with long poles actually causes the ice to reform faster, though lead researchers plainly explain that the endless physical relay keeps staff visible, blithely overlooking that the sheer weight of frozen workers clinging to the poles is currently dragging the station down toward the planet’s liquid hydrogen mantle."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 2110,
+      "month": 12,
+      "day": 24,
+      "years_from_now": 84
+    },
+    "domain": "labour and work",
+    "style": "discovery",
+    "place_kind": "gasgiant",
+    "engine": "logistics",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 1.0,
+    "violations": []
+  },
+  "prose": {
+    "words": 218,
+    "sentences": 17,
+    "mean_sentence": 12.8,
+    "longest": 31,
+    "short_sentences": 4,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "AMPHITRITE FLOAT-SPIRE - A seven-month study of the thirty-mile intake funnel on Amphitrite Float-Spire has found that manually squeegeeing frost off the outer hull causes ice to reform forty percent faster.",
+    "The report, released by the Atmospheric Work Institute, revealed that friction from long composite poles heats the metal skin just enough to flash-freeze incoming gas.",
+    "Squeegee shifts will double next month.",
+    "\"The pole line provides immediate visual proof of high staff engagement,\" said lead researcher Dr.",
+    "Sunita Rao.",
+    "\"When orbital sweepers scan our station, executive staff need to see motion.\"",
+    "The study also highlights an unintended physical complication.",
+    "Roughly four hundred workers have frozen solid while clinging to their poles, forming a heavy human crust along the lower rim.",
+    "Their added weight is currently pulling the floating city down toward Jupiter's liquid hydrogen mantle.",
+    "The platform is sinking at four metres an hour.",
+    "It will implode on Friday.",
+    "Station managers have officially ruled out unclipping the frozen workers or pausing the shifts.",
+    "The report noted that removing bodies would create visible gaps in the line.",
+    "Instead, replacement staff are being issued shorter poles so they can work closer to the frozen bodies.",
+    "\"An empty funnel suggests poor workplace culture,\" Dr.",
+    "Rao said.",
+    "\"If the sweepers record an unmanned hull, head office will assume we are not trying.\""
+  ],
+  "funny": [],
+  "slug": "t009"
+}

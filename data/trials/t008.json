@@ -1,0 +1,65 @@
+{
+  "generated": "2026-08-10T07:15:58.947073+00:00",
+  "dispatch": {
+    "headline": "Rail Master Delays Trains For Velvet",
+    "body": "Master rail tuner Haruto Lind delayed forty thousand commuters for four hours today after stopping the transit grid to polish three miles of track with velvet.\n\nLind refused to allow commuter pods into the yard at dawn. He claimed alignment tractors lacked acoustic soul and left a harsh resonance in the levitation field.\n\nHolding a rod wrapped in velvet, Lind walked the high line. He buffed the track by hand while thirty trains waited on the gantry behind him.\n\n\"Lasers align a rail,\" Lind said. \"Only velvet makes it sing.\"\n\nYard directors could not remove him. Under a charter written seven centuries ago, master tuners possess absolute authority over track texture until their shift ends.\n\nTractor crews stood by in silence.\n\nWork stopped across the basin.\n\nWhen Lind finished his walk, yard engineers tested the line with an empty pod. The polishing had no effect on rail friction. It had, however, reversed the track polarity.\n\nThe test pod immediately shot backward at two hundred kilometres per hour, smashing through the depot doors where the commuters were still waiting inside.\n\nYard officials confirmed no passengers were hurt during the impact. To compensate for the delay, yard management gave each commuter a scrap of velvet.",
+    "scene": "A rail tuner in a heavy work suit rubs a levitation track with cloth while helmeted tractor drivers watch from their halted vehicles.",
+    "dateline": {
+      "place": "RUST RIM, Hellas Basin",
+      "year": 2965,
+      "month": 11,
+      "day": 24,
+      "years_from_now": 939
+    },
+    "domain": "transport",
+    "glossary": [],
+    "premise": "A master magnetic-rail tuner in the half-built Hellas Basin commuter yard delayed forty thousand commuters by manually polishing three miles of track with velvet, declaring that automated laser-alignment lacks 'acoustic soul.'"
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 2965,
+      "month": 11,
+      "day": 24,
+      "years_from_now": 939
+    },
+    "domain": "transport",
+    "style": "wire",
+    "place_kind": "marsform",
+    "engine": "expertise",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 1.0,
+    "violations": []
+  },
+  "prose": {
+    "words": 203,
+    "sentences": 17,
+    "mean_sentence": 11.9,
+    "longest": 26,
+    "short_sentences": 5,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Master rail tuner Haruto Lind delayed forty thousand commuters for four hours today after stopping the transit grid to polish three miles of track with velvet.",
+    "Lind refused to allow commuter pods into the yard at dawn.",
+    "He claimed alignment tractors lacked acoustic soul and left a harsh resonance in the levitation field.",
+    "Holding a rod wrapped in velvet, Lind walked the high line.",
+    "He buffed the track by hand while thirty trains waited on the gantry behind him.",
+    "\"Lasers align a rail,\" Lind said.",
+    "\"Only velvet makes it sing.\"",
+    "Yard directors could not remove him.",
+    "Under a charter written seven centuries ago, master tuners possess absolute authority over track texture until their shift ends.",
+    "Tractor crews stood by in silence.",
+    "Work stopped across the basin.",
+    "When Lind finished his walk, yard engineers tested the line with an empty pod.",
+    "The polishing had no effect on rail friction.",
+    "It had, however, reversed the track polarity.",
+    "The test pod immediately shot backward at two hundred kilometres per hour, smashing through the depot doors where the commuters were still waiting inside.",
+    "Yard officials confirmed no passengers were hurt during the impact.",
+    "To compensate for the delay, yard management gave each commuter a scrap of velvet."
+  ],
+  "funny": [],
+  "slug": "t008"
+}
