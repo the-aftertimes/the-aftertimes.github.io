@@ -1,0 +1,49 @@
+{
+  "run_date": "2026-08-10",
+  "run_time": "2026-08-10T20:57:22.183104+00:00",
+  "dispatch": {
+    "headline": "Vine Eats Paintings During Vault Robbery",
+    "body": "Four high-society art collectors were taken into custody early this morning inside the flooded vaults of the Grand Lagoon Gallery.\n\nAuthorities say the group introduced a fast-growing strain of kudzu to dissolve the heavy metal hinges of the gallery's lower vault. The plant breached the outer grate in four minutes. It then bypassed the titanium wall entirely to consume three original sixteenth-century oil paintings for their organic nitrate content.\n\nGallery guards arrived to find the suspects attempting to pull the vine off Titian's Portrait of a Young Man.\n\n\"It showed complete disregard for the glazing,\" said suspect Tariq Sterling, speaking through a rebreather while tethered to a police pontoon. \"We brought heavy shears, but it preferred the canvas to the vault door.\"\n\nBy five o'clock, the vine had digested two Bellini altarpieces and four square metres of gilt framing.\n\nIt grew nine inches per minute.\n\nWhen tactical divers entered the chamber, the thieves were frantically waving velvet mooring ropes at the central stem to distract it.\n\nInvestigator Sunita Chen confirmed the group spent two years acquiring the seed from an off-world orbital garden. They had planned to sell the artwork to an offshore sanctuary.\n\nThe vault remains locked.\n\nThe door is completely untouched.",
+    "scene": "Three evening-wear-clad thieves wearing diving goggles fight over a pair of heavy shears on a floating metal platform inside a submerged marble gallery.",
+    "dateline": {
+      "place": "Pelag-Venice, Stilt-Sector 4",
+      "year": 2847,
+      "month": 10,
+      "day": 22,
+      "years_from_now": 821
+    },
+    "domain": "crime",
+    "glossary": [],
+    "premise": "A ring of high-society art thieves in Pelag-Venice were apprehended after the mutated kudzu they introduced to dissolve a vault door consumed the priceless Renaissance paintings for their nitrate content instead.",
+    "image": "assets/img/2026-08-10.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-10T20:57:22.183104+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 19,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "scores": [
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": ""
+  }
+}
