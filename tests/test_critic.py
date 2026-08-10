@@ -15,7 +15,14 @@ def test_quality_config_present_and_complete():
         "us_spelling"}
     assert cfg["weights"]["major"] > cfg["weights"]["minor"] > 0
     r = cfg["rhythm"]
-    assert r["mean_min"] == 14 and r["mean_max"] == 20
+    # The floor was 14 until 10/08/2026, when the only trial containing lines
+    # Charlie called funny was the ONLY one the critic docked - for a mean of
+    # 13.7. Two of those funny lines were 6 and 10 words, so they were what
+    # pulled the mean down: the floor was penalising the comedy, and revise.py
+    # optimises toward the score. Assert the INVARIANT, not the old magic number.
+    assert r["mean_min"] <= 12, "a high floor penalises short, funny lines"
+    assert r["mean_hard_min"] < r["mean_min"] < r["mean_max"] < r["mean_hard_max"]
+    assert cfg["headline_max_words"] <= 7
     assert r["longest_max"] == 35 and r["min_short"] == 2
     ln = cfg["length"]
     assert ln["hard_min"] < ln["min"] < ln["max"] < ln["hard_max"]
@@ -220,3 +227,30 @@ def test_legal_regex_does_not_fire_on_ordinary_english():
         assert critic.check_register(innocent, "logistics") == [], innocent
     # genuinely legal language still fires
     assert critic.check_register("The tribunal issued a writ.", "logistics")
+
+
+def test_headline_length_is_flagged_but_never_hard_rejects():
+    """Verbose headlines were Charlie's first complaint on 10/08/2026, but a
+    long headline is a style miss, not a broken dispatch - it must not share the
+    `structure` rule name, which IS a hard reject."""
+    import critic
+    from common import load_settings
+    cfg = load_settings()["quality"]
+    d = {"headline": "Grandmother Banished To In-Law Shade At Luminary Glades",
+         "dateline": {"place": "Somewhere"},
+         "body": " ".join(["word"] * 260) + "."}
+    v = critic.check_structure(d, cfg)
+    rules = [x["rule"] for x in v]
+    assert "headline_length" in rules
+    assert "structure" not in rules
+    assert "headline_length" not in cfg["hard_reject"]
+
+
+def test_short_headline_passes():
+    import critic
+    from common import load_settings
+    cfg = load_settings()["quality"]
+    d = {"headline": "Council Rules Snow Is Trespassing",
+         "dateline": {"place": "Somewhere"},
+         "body": " ".join(["word"] * 260) + "."}
+    assert [x["rule"] for x in critic.check_structure(d, cfg)] == []

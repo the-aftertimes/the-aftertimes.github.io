@@ -69,6 +69,11 @@
     "Engineers have begun writing rebuttal auroras.",
     "A purple beam currently arcs across the horizon, reminding teenagers that curfew starts at nine."
   ],
-  "funny": [],
+  "funny": [
+    1,
+    2,
+    3,
+    6
+  ],
   "slug": "t002"
 }
