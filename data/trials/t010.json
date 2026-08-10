@@ -1,0 +1,77 @@
+{
+  "generated": "2026-08-10T07:18:14.050312+00:00",
+  "dispatch": {
+    "headline": "Police Tell Hostage Beam It Is Safe",
+    "body": "I am standing behind a heavy blast wall in Sector 4.\n\nTwenty tactical officers have surrounded Airlock B. Inside, a disgruntled welder named Sun-Mi Chen has locked himself to Girder 9. He holds a plasma cutter against the primary joint.\n\nThe dome ceiling sags four centimetres.\n\nChief Negotiator Kaelen Ross speaks through a loudhailer. He uses standard domestic crisis protocol.\n\n\"We know you are both under pressure,\" Ross says into the microphone. \"Neither of you is to blame.\"\n\nChen demands six hundred litres of water and an apology from dome management. Ross ignores Chen and addresses the alloy directly.\n\n\"Girder nine, if you feel threatened, flicker the floor lights,\" Ross says.\n\nThe floor lights flicker.\n\nRoss turns to his deputy. \"The beam is asking for space.\"\n\nChen insists he is merely acting as an advocate. He claims the girder told him its rivets were fatigued from carrying three residential blocks without a rest cycle.\n\nRoss agrees to a mandatory cooling-off period. He offers to evacuate the residential blocks so the beam can process its feelings in private.\n\n\"Relationships between load-bearing steel and civil infrastructure require trust,\" Ross tells me. \"We cannot force a beam to support a dome if it feels unappreciated.\"\n\nRoss now refuses to send in emergency support jacks. He says bringing in another pillar while the girder is vulnerable would send a message of conditional love.",
+    "scene": "A helmeted negotiator with a loudhailer kneels behind an inflatable blast wall while a welder gestures at a creaking structural beam with a sparking plasma cutter inside a domed chamber.",
+    "dateline": {
+      "place": "Mendel Crater Dome",
+      "year": 3582,
+      "month": 1,
+      "day": 25,
+      "years_from_now": 1556
+    },
+    "domain": "crime",
+    "glossary": [],
+    "premise": "SWAT officers in a lunar crater dome have surrounded an airlock where an intruder is holding a primary support girder hostage, using standard domestic crisis protocols to negotiate the beam’s safe release."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 3582,
+      "month": 1,
+      "day": 25,
+      "years_from_now": 1556
+    },
+    "domain": "crime",
+    "style": "firstperson",
+    "place_kind": "lunar",
+    "engine": "category",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 0.92,
+    "violations": [
+      {
+        "rule": "rhythm_mean",
+        "detail": "mean sentence is 10.0 words, wanted 11-20",
+        "severity": "minor"
+      }
+    ]
+  },
+  "prose": {
+    "words": 229,
+    "sentences": 23,
+    "mean_sentence": 10.0,
+    "longest": 19,
+    "short_sentences": 6,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "I am standing behind a heavy blast wall in Sector 4.",
+    "Twenty tactical officers have surrounded Airlock B.",
+    "Inside, a disgruntled welder named Sun-Mi Chen has locked himself to Girder 9.",
+    "He holds a plasma cutter against the primary joint.",
+    "The dome ceiling sags four centimetres.",
+    "Chief Negotiator Kaelen Ross speaks through a loudhailer.",
+    "He uses standard domestic crisis protocol.",
+    "\"We know you are both under pressure,\" Ross says into the microphone.",
+    "\"Neither of you is to blame.\"",
+    "Chen demands six hundred litres of water and an apology from dome management.",
+    "Ross ignores Chen and addresses the alloy directly.",
+    "\"Girder nine, if you feel threatened, flicker the floor lights,\" Ross says.",
+    "The floor lights flicker.",
+    "Ross turns to his deputy.",
+    "\"The beam is asking for space.\"",
+    "Chen insists he is merely acting as an advocate.",
+    "He claims the girder told him its rivets were fatigued from carrying three residential blocks without a rest cycle.",
+    "Ross agrees to a mandatory cooling-off period.",
+    "He offers to evacuate the residential blocks so the beam can process its feelings in private.",
+    "\"Relationships between load-bearing steel and civil infrastructure require trust,\" Ross tells me.",
+    "\"We cannot force a beam to support a dome if it feels unappreciated.\"",
+    "Ross now refuses to send in emergency support jacks.",
+    "He says bringing in another pillar while the girder is vulnerable would send a message of conditional love."
+  ],
+  "funny": [],
+  "slug": "t010"
+}
