@@ -254,3 +254,45 @@ def test_short_headline_passes():
          "dateline": {"place": "Somewhere"},
          "body": " ".join(["word"] * 260) + "."}
     assert [x["rule"] for x in critic.check_structure(d, cfg)] == []
+
+
+def test_funny_block_shows_setup_not_orphaned_lines():
+    """Charlie, 10/08/2026: "the lines are funny in the context they're in, not
+    just by themself". A pool of bare one-liners teaches the model that flat
+    sentences are inherently funny - the opposite of the lesson."""
+    import write
+    pool = [{"line": "Most messages address minor domestic disputes.",
+             "setup": ["Teenagers cracked the magnetosphere grid.",
+                       "The graffiti spans five hundred miles."],
+             "source": "t002"}]
+    b = write.funny_block(pool)
+    assert ">>>Most messages address minor domestic disputes.<<<" in b
+    assert "Teenagers cracked the magnetosphere grid." in b
+    assert "the SET-UP" in b and "SEQUENCE" in b
+
+
+def test_funny_block_merges_marks_from_one_source():
+    """Four marks from one paragraph must not repeat their shared setup four
+    times - that bloats the prompt and over-weights one dispatch's wording."""
+    import write
+    setup = ["Teenagers cracked the magnetosphere grid."]
+    pool = [{"line": "It spans five hundred miles.", "setup": setup, "source": "t002"},
+            {"line": "Most messages are petty.",
+             "setup": setup + ["It spans five hundred miles."], "source": "t002"}]
+    b = write.funny_block(pool)
+    assert b.count("Teenagers cracked the magnetosphere grid.") == 1
+    assert ">>>It spans five hundred miles.<<<" in b
+    assert ">>>Most messages are petty.<<<" in b
+
+
+def test_funny_block_keeps_separate_sources_apart():
+    import write
+    pool = [{"line": "A landed here.", "setup": ["Setup A."], "source": "t002"},
+            {"line": "B landed here.", "setup": ["Setup B."], "source": "t007"}]
+    b = write.funny_block(pool)
+    assert len([ln for ln in b.splitlines() if ln.startswith("  ...")]) == 2
+
+
+def test_funny_block_empty_pool_is_silent():
+    import write
+    assert write.funny_block([]) == ""

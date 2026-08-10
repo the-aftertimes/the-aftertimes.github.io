@@ -20,6 +20,9 @@ from common import read_json, rel
 
 _PATH = "config/funny_lines.yaml"
 _CAP = 30
+# Sentences of setup carried with each marked line, so the pool preserves the
+# sequence the comedy actually lives in.
+_CONTEXT = 2
 
 
 def load() -> list[dict]:
@@ -53,7 +56,14 @@ def add(slug: str, numbers: list[int], why: str = "") -> tuple[int, int]:
         if line in seen:
             skipped += 1
             continue
-        pool.append({"line": line, "source": slug, "why": why})
+        # Store the SETUP with the payoff. Charlie's note on 10/08/2026: "the
+        # lines are funny in the context they're in, not just by themself" -
+        # "Most messages address minor domestic disputes." is nothing without
+        # the magnetosphere sentence before it. A pool of orphaned one-liners
+        # teaches the model that flat sentences are inherently funny, which is
+        # the opposite of the lesson.
+        setup = [s for s in sents[max(0, n - 1 - _CONTEXT):n - 1]]
+        pool.append({"line": line, "setup": setup, "source": slug, "why": why})
         seen.add(line)
         added += 1
     # Keep the freshest, so the pool tracks current taste rather than ossifying.
