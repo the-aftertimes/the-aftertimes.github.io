@@ -205,6 +205,11 @@ def run_pipeline() -> dict:
 
     pool = load_yaml("config/exemplars.yaml").get("exemplars") or []
     seeds_plus = seeds + [p for p in pool if p not in seeds]
+    # Sentences Charlie marked funny - the project's only taste memory between
+    # days. Injected as few-shot evidence of a TECHNIQUE, not material to copy.
+    funny_lines = load_yaml("config/funny_lines.yaml").get("lines") or []
+    if funny_lines:
+        print(f"    funny-line pool: {len(funny_lines)} line(s)")
 
     print(">>> IDEATE")
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
@@ -232,7 +237,7 @@ def run_pipeline() -> dict:
             drafts.append(write_stage.write(
                 premise, dateline, domain, settings,
                 style["guidance"], place_kind["guidance"],
-                avoid_block=avoid_block))
+                avoid_block=avoid_block, funny_lines=funny_lines))
             print(f"    draft {i}: {drafts[-1]['headline'][:56]}")
         except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
             print(f"    WARN draft {i} failed: {exc}", file=sys.stderr)

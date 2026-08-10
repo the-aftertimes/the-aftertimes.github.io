@@ -158,11 +158,35 @@ def _era_rule(years: int) -> str:
             "persistence must itself be the point of the story.")
 
 
+def funny_block(lines: list[dict], cap: int = 8) -> str:
+    """Few-shot evidence of what actually lands, from config/funny_lines.yaml.
+
+    These are the only taste-derived instructions in the prompt. They are shown
+    as EVIDENCE OF A TECHNIQUE, never as material to copy - a pool shown without
+    that framing gets lifted verbatim (a Cloudflare model did exactly that with
+    an example during the model survey)."""
+    if not lines:
+        return ""
+    picked = lines[-cap:]
+    body = "\n".join(f'  - "{e["line"]}"' for e in picked)
+    return (
+        "\nLINES THAT ACTUALLY LANDED, from earlier dispatches a reader marked as\n"
+        "funny. Study WHY they work, then do the same thing with today's premise:\n"
+        f"{body}\n"
+        "Notice what NONE of them does: there is no punchline, no wordplay, no\n"
+        "comic adjective, no nudge to the reader. Each is flat wire-service\n"
+        "reportage of an absurd fact. The comedy is the mismatch between the\n"
+        "scale of the machinery and the pettiness of the human motive, and it is\n"
+        "left entirely for the reader to notice. Several are very short.\n"
+        "NEVER reuse their words, names or subject matter - copy the TECHNIQUE.\n")
+
+
 def build_prompt(premise: str, dateline: dict, domain: str,
                  style_guidance: str, place_guidance: str = "",
-                 avoid_block: str = "") -> str:
+                 avoid_block: str = "", funny_lines: list[dict] | None = None) -> str:
     place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
                   if place_guidance else "")
+    funny_rule = funny_block(funny_lines or [])
     era_rule = _era_rule(int(dateline.get("years_from_now") or 0))
     avoid_extra = f"\n{avoid_block}\n" if avoid_block else ""
     return f"""You are a correspondent for The Aftertimes. Write a single news
@@ -257,11 +281,11 @@ Rules:
   ruling or an official notice, do NOT frame the story as an authority handing down
   a ruling with a spokesperson quote - use the format's own structure and voice.
 - 200 to 280 words. Straight-faced, as a real wire story. Dry wit, never winking.
-- RHYTHM, measured. Average sentence length between 14 and 20 words. Include at
-  least two sentences of SIX WORDS OR FEWER, and no sentence over 35 words. VARY
-  it: a run of uniformly long sentences is the clearest sign a machine wrote it,
-  but a run of uniformly short ones reads like a telegram. Mostly medium
-  sentences, then land a short one hard, then carry on.
+- RHYTHM, measured. No sentence over 35 words, and include at least two of SIX
+  WORDS OR FEWER. VARY it: a run of uniformly long sentences is the clearest sign
+  a machine wrote it. Do NOT pad a sentence to reach a length - on the evidence
+  so far the funniest lines were the SHORTEST, and a short flat sentence landing
+  straight after a huge set-up is the single most reliable comic move available.
   EVERY example in these instructions illustrates RHYTHM, SHAPE or a MISTAKE only.
   Never copy an example's words, names or subject matter into the dispatch.
 - WRITE PLAINLY. Prefer the short Anglo-Saxon word to the Latinate one. Cut every
@@ -282,7 +306,12 @@ Rules:
   "sparking debate", "serving as a reminder", "underscoring", "highlighting the",
   "marking a", "in a move that", "one thing is certain", "only time will tell".
   Also avoid the "Rather than X, Y" and "not out of X but Y" constructions.
-- THE HEADLINE MUST CARRY THE JOKE, in under 10 words. A newspaper-accurate but
+- THE HEADLINE MUST CARRY THE JOKE, in SEVEN WORDS OR FEWER - shorter is better,
+  and four or five is ideal. Long headlines read as verbose and explain the joke
+  away; cut every word that is not load-bearing, and never stack two ideas.
+  Too verbose: "Grandmother Banished To In-Law Shade At Luminary Glades"
+  Too verbose: "Surgeons Refuse To Dim Lamps As Moss Fills Cavities"
+  A newspaper-accurate but
   purely descriptive label is a failure. Do NOT use the pattern
   "'Branded Product' Does Literal Thing To Place" - that describes the premise
   instead of being funny about it. The headline should make a reader smile before
@@ -322,7 +351,7 @@ Rules:
 - Give every named person a fresh, varied, culturally diverse name. Do NOT use the names "Vance", "Elena", "Rostova", "Marcus" or "Kovac" - invent new ones each time. Do not default the weekday to Tuesday; vary or omit the day.
 - Do not put the year in the dateline place; the date is shown separately.
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
-{avoid_extra}
+{avoid_extra}{funny_rule}
 Return JSON only:
 {{"headline": "...", "dateline_place": "...", "body": "...", "scene": "...",
   "domain": "{domain}", "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
@@ -359,9 +388,9 @@ def normalise(d: dict, dateline: dict, domain: str, premise: str) -> dict:
 
 def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str, place_guidance: str = "",
-          avoid_block: str = "") -> dict:
+          avoid_block: str = "", funny_lines: list[dict] | None = None) -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance,
-                          place_guidance, avoid_block)
+                          place_guidance, avoid_block, funny_lines)
     g = settings["gemini"]
     pro = (g.get("write_model") or "").strip()
     d = None

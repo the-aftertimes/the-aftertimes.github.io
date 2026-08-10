@@ -1,39 +1,28 @@
-# Rotating style/format modes; one is chosen per day (with light anti-repeat).
-# House voice for all: intelligent, dry, deadpan; the comedy comes from one absurd
-# idea followed to its logical conclusions, never crude or broad.
-#
-# NO style may be shaped as an authority handing down a ruling. Do NOT write
-# "[official body] rules X, and a spokesperson explains" - that is banned outright.
-#
-# EVERY style must still read as JOURNALISM - something a newspaper would print,
-# written by a correspondent about events involving OTHER people. The reader is
-# an outsider being told the news, never the recipient of someone's complaint.
-#
-# Removal history (both for the same reason - the shape itself was the problem):
-#   31/07/2026 "letter" + "advice" - a first-person council complaint is not news.
-#   04/08/2026 "court" + "notice" - these FORCED the legal/bureaucratic register
-#     that Charlie had already objected to twice. Worse, they overrode the
-#     comic-engine rotation: 03/08 drew engine=logistics but style=court and
-#     still produced "High Court Orders Street Greasing For Mobile Whale Liver".
-#     Replaced with investigation / trend / discovery.
 styles:
-  - key: wire
-    guidance: "A straight breaking-news wire report of an EVENT as it unfolds - who, what, where, and eyewitnesses. Not a ruling or a verdict."
-  - key: feature
-    guidance: "A human-centred feature that follows one named person or place through the story - scene-setting, their own words, the texture of their day. Not an announcement."
-  - key: obituary
-    guidance: "An obituary for a person, institution, technology or idea that has died - told as a life story in roughly chronological order, dignified and dryly fond."
-  - key: review
-    guidance: "A first-hand review of a product, place or experience from this future, in the reviewer's voice - evaluative, specific, ending on a verdict or a star rating."
-  - key: sport
-    guidance: "A match or contest report - the build-up, key moments as they happened, the final result, and a competitor's quote from the mixed zone. Play-by-play, not policy."
-  - key: interview
-    guidance: "A profile built around a single interview - mostly one character's voice answering questions, revealing the absurd world through how utterly normal they find it."
-  - key: firstperson
-    guidance: "A correspondent's first-person, present-tense eyewitness dispatch - 'I' am there, describing what I see and the people I meet, wry and observational."
-  - key: investigation
-    guidance: "An investigative expose - the correspondent has found something being quietly concealed or ignored, laid out as evidence with a reluctant source and a denial."
-  - key: trend
-    guidance: "A social-trend piece on something ordinary people have started doing - what it is, who is doing it, what the disapproving older generation says about it."
-  - key: discovery
-    guidance: "A science or research report on a finding, with a researcher explaining it plainly and an unsettling implication nobody wants to dwell on."
+- key: wire
+  guidance: A straight breaking-news wire report of an EVENT as it unfolds - who, what, where, and eyewitnesses.
+    Not a ruling or a verdict.
+- key: feature
+  guidance: A human-centred feature that follows one named person or place through the story - scene-setting,
+    their own words, the texture of their day. Not an announcement.
+- key: obituary
+  guidance: An obituary for a person, institution, technology or idea that has died - told as a life story
+    in roughly chronological order, dignified and dryly fond.
+- key: sport
+  guidance: A match or contest report - the build-up, key moments as they happened, the final result,
+    and a competitor's quote from the mixed zone. Play-by-play, not policy.
+- key: interview
+  guidance: A profile built around a single interview - mostly one character's voice answering questions,
+    revealing the absurd world through how utterly normal they find it.
+- key: firstperson
+  guidance: A correspondent's first-person, present-tense eyewitness dispatch - 'I' am there, describing
+    what I see and the people I meet, wry and observational.
+- key: investigation
+  guidance: An investigative expose - the correspondent has found something being quietly concealed or
+    ignored, laid out as evidence with a reluctant source and a denial.
+- key: trend
+  guidance: A social-trend piece on something ordinary people have started doing - what it is, who is
+    doing it, what the disapproving older generation says about it.
+- key: discovery
+  guidance: A science or research report on a finding, with a researcher explaining it plainly and an
+    unsettling implication nobody wants to dwell on.

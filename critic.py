@@ -29,6 +29,12 @@ def check_rhythm(metrics: dict, cfg: dict) -> list[dict]:
     r = cfg["rhythm"]
     out = []
     mean = metrics["mean_sentence"]
+    # The FLOOR here is dangerous and was wrong once already. On 10/08/2026 the
+    # only trial containing lines Charlie called funny (t002) was the only one
+    # the critic docked, purely for mean 13.7 against a then-floor of 14 - and
+    # two of the four funny lines were 6 and 10 words, i.e. they were what pulled
+    # the mean down. A floor set by taste rather than evidence makes revise.py
+    # optimise AWAY from comedy. Keep it low enough to catch only telegram-prose.
     if not (r["mean_min"] <= mean <= r["mean_max"]):
         hard = mean < r["mean_hard_min"] or mean > r["mean_hard_max"]
         out.append(_v("rhythm_mean",
@@ -167,6 +173,12 @@ def check_structure(dispatch: dict, cfg: dict) -> list[dict]:
         out.append(_v("structure", "no headline", "major"))
     if not ((dispatch.get("dateline") or {}).get("place") or "").strip():
         out.append(_v("structure", "no dateline place", "major"))
+    words = len((dispatch.get("headline") or "").split())
+    cap = cfg.get("headline_max_words", 7)
+    if words > cap:
+        out.append(_v("headline_length",
+                      f"headline is {words} words, wanted {cap} or fewer",
+                      "minor"))
     body = (dispatch.get("body") or "").strip()
     floor = cfg["length"]["hard_min"]
     if len(body.split()) < floor:
