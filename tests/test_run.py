@@ -76,3 +76,20 @@ def test_main_runs_the_pipeline_when_the_day_is_unfiled(tmp_path, monkeypatch):
     monkeypatch.setattr(run_mod, "run_pipeline", lambda: calls.append(1))
     assert run_mod.main([]) == 0
     assert calls == [1]
+
+
+def test_trial_sentences_split_across_paragraph_breaks():
+    """Bodies carry paragraph breaks; splitting on spaces alone merged the last
+    sentence of a paragraph with the first of the next, which would misalign the
+    numbering Charlie marks funny sentences against."""
+    import trial
+    body = 'He denied it. I missed the marker.\n\nThe staff refused.'
+    assert trial.split_sentences(body) == [
+        "He denied it.", "I missed the marker.", "The staff refused."]
+
+
+def test_trial_sentences_keep_quoted_endings_separate():
+    import trial
+    body = '"Your grandmother glows," she said. The staff refused to move her.'
+    assert trial.split_sentences(body) == [
+        '"Your grandmother glows," she said.', "The staff refused to move her."]

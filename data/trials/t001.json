@@ -1,0 +1,72 @@
+{
+  "generated": "2026-08-10T06:49:22.336805+00:00",
+  "dispatch": {
+    "headline": "Grandmother Banished To In-Law Shade At Luminary Glades",
+    "body": "The soil on Kepler-186f is famously red, but the Luminary Glades promised a regal purple bloom for matriarchs. I purchased their top-tier interment package for my grandmother, expecting her bio-ash capsule to sprout a magnificent twelve-metre crown of violet fronds.\n\nI missed the marker. Instead, I dropped her capsule into the low-lumen sector, a damp hollow strictly reserved for second-tier in-laws such as step-uncles and former husbands.\n\nConsequently, grandmother sprouted as a squat, rust-coloured fungus that emits a dull hum whenever anyone steps nearby. My family arrived expecting regal lavender, but they found only a faint rust toadstool. Aunt Priyanka sat on the damp moss and wept into her hands.\n\n\"Your step-uncle Sivan was a junior clerk and he got a weeping cedar,\" she said. \"Your grandmother is glowing like a wet sponge.\"\n\nThe staff refused to move her. Bio-ash flora locks its taproot into slate within minutes to prevent theft by wild grazers, so the gardener merely offered us a screen to hide her from the primary mourners.\n\nBy evening, the wake split into two hostile camps across the ridge. The blood relatives stood near the high-lumen trees, while my step-brother used grandmother's dim fungal stalk to read a menu.\n\nGrandmother hated bright light. She would have loved the shade, but as a prestigious memorial venue, two out of five stars.",
+    "scene": "A family in dark draped wraps stands arguing beside a glowing rust-coloured toadstool while a young man crouches beside it to read a menu.",
+    "dateline": {
+      "place": "Luminary Glades, Kepler-186f",
+      "year": 4867,
+      "month": 3,
+      "day": 16,
+      "years_from_now": 2841
+    },
+    "domain": "death and mourning",
+    "glossary": [
+      {
+        "term": "bio-ash capsule",
+        "gloss": "A nutrient-sealed container holding refined human remains, engineered to germinate bioluminescent flora upon contact with off-world soil."
+      },
+      {
+        "term": "low-lumen sector",
+        "gloss": "The shaded boundary of a memorial garden designated for low-status or peripheral relatives, planted with faint, low-energy vegetation."
+      }
+    ],
+    "premise": "I tested the premier bioluminescent memorial gardens on Kepler-186f and accidentally planted my grandmother's bio-ash capsule in the shaded section reserved for second-tier in-laws, sparking an excruciating family status war during the wake; two out of five stars."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 4867,
+      "month": 3,
+      "day": 16,
+      "years_from_now": 2841
+    },
+    "domain": "death and mourning",
+    "style": "review",
+    "place_kind": "exoplanet",
+    "engine": "etiquette",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 1.0,
+    "violations": []
+  },
+  "prose": {
+    "words": 222,
+    "sentences": 15,
+    "mean_sentence": 14.8,
+    "longest": 30,
+    "short_sentences": 3,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "The soil on Kepler-186f is famously red, but the Luminary Glades promised a regal purple bloom for matriarchs.",
+    "I purchased their top-tier interment package for my grandmother, expecting her bio-ash capsule to sprout a magnificent twelve-metre crown of violet fronds.",
+    "I missed the marker.",
+    "Instead, I dropped her capsule into the low-lumen sector, a damp hollow strictly reserved for second-tier in-laws such as step-uncles and former husbands.",
+    "Consequently, grandmother sprouted as a squat, rust-coloured fungus that emits a dull hum whenever anyone steps nearby.",
+    "My family arrived expecting regal lavender, but they found only a faint rust toadstool.",
+    "Aunt Priyanka sat on the damp moss and wept into her hands.",
+    "\"Your step-uncle Sivan was a junior clerk and he got a weeping cedar,\" she said.",
+    "\"Your grandmother is glowing like a wet sponge.\"",
+    "The staff refused to move her.",
+    "Bio-ash flora locks its taproot into slate within minutes to prevent theft by wild grazers, so the gardener merely offered us a screen to hide her from the primary mourners.",
+    "By evening, the wake split into two hostile camps across the ridge.",
+    "The blood relatives stood near the high-lumen trees, while my step-brother used grandmother's dim fungal stalk to read a menu.",
+    "Grandmother hated bright light.",
+    "She would have loved the shade, but as a prestigious memorial venue, two out of five stars."
+  ],
+  "funny": [],
+  "slug": "t001"
+}
