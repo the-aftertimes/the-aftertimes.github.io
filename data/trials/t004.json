@@ -1,0 +1,70 @@
+{
+  "generated": "2026-08-10T07:06:33.132458+00:00",
+  "dispatch": {
+    "headline": "Mine Denies Grief Over Ore-Crusher",
+    "body": "Leaked telemetry logs from the Pallas-Deep Hollow mining shaft reveal that deep-rock extraction crews showed no elevation in heart rate when six wedded partners were buried under twelve tonnes of basalt.\n\nThe partners dug themselves out.\n\n\"Good,\" wrote miner Joram Chen in the shift log. \"Put them on the night scrub.\"\n\nHowever, when the central jaw-crusher was taken offline for greasing thirty minutes later, biometric monitors recorded a spike in stress hormones across forty miners. Seven workers fell to their knees. Three began wailing funeral hymns into the acoustic ducting. Sub-surface logs show three workers placed moss garlands on the machine's primary flywheel before mechanics could isolate the power core.\n\nShift leader Neda Al-Mansoor, speaking on condition of anonymity, explained the distinction.\n\n\"A spouse comes from the civic pool every six cycles,\" Al-Mansoor said. \"If one breaks, the office sends another. But the jaw-crusher has pounded rock here since my grandfather was a boy. It has a voice.\"\n\nStation management issued a formal statement denying any emotional crisis among the crew. The official report claims the collective weeping was a physical reaction to aerosolised lubricant in the air filters.\n\nYesterday, security removed miner Haruto Osei from the pit floor. He was attempting to slip a brass wedding band into the jaw-crusher's intake hopper.",
+    "scene": "Two miners in dust-stained coveralls lay a moss garland across the heavy iron flywheel of a silent ore-crusher while a third miner kneels on the steel grating in prayer.",
+    "dateline": {
+      "place": "Pallas-Deep Hollow",
+      "year": 2557,
+      "month": 10,
+      "day": 23,
+      "years_from_now": 531
+    },
+    "domain": "love and marriage",
+    "glossary": [
+      {
+        "term": "civic pool",
+        "gloss": "The automated spousal reassignment system used in deep-rock mining settlements."
+      }
+    ],
+    "premise": "Leaked logs from a hollowed minor planet reveal that deep-rock miners display total apathy toward their spouses surviving catastrophic cave-ins, yet suffer profound, uncontrollable grief whenever their shared ore-crusher is taken offline for maintenance, prompting an official denial from colony management."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 2557,
+      "month": 10,
+      "day": 23,
+      "years_from_now": 531
+    },
+    "domain": "love and marriage",
+    "style": "investigation",
+    "place_kind": "asteroid",
+    "engine": "sentiment",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 1.0,
+    "violations": []
+  },
+  "prose": {
+    "words": 213,
+    "sentences": 17,
+    "mean_sentence": 12.5,
+    "longest": 31,
+    "short_sentences": 4,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Leaked telemetry logs from the Pallas-Deep Hollow mining shaft reveal that deep-rock extraction crews showed no elevation in heart rate when six wedded partners were buried under twelve tonnes of basalt.",
+    "The partners dug themselves out.",
+    "\"Good,\" wrote miner Joram Chen in the shift log.",
+    "\"Put them on the night scrub.\"",
+    "However, when the central jaw-crusher was taken offline for greasing thirty minutes later, biometric monitors recorded a spike in stress hormones across forty miners.",
+    "Seven workers fell to their knees.",
+    "Three began wailing funeral hymns into the acoustic ducting.",
+    "Sub-surface logs show three workers placed moss garlands on the machine's primary flywheel before mechanics could isolate the power core.",
+    "Shift leader Neda Al-Mansoor, speaking on condition of anonymity, explained the distinction.",
+    "\"A spouse comes from the civic pool every six cycles,\" Al-Mansoor said.",
+    "\"If one breaks, the office sends another.",
+    "But the jaw-crusher has pounded rock here since my grandfather was a boy.",
+    "It has a voice.\"",
+    "Station management issued a formal statement denying any emotional crisis among the crew.",
+    "The official report claims the collective weeping was a physical reaction to aerosolised lubricant in the air filters.",
+    "Yesterday, security removed miner Haruto Osei from the pit floor.",
+    "He was attempting to slip a brass wedding band into the jaw-crusher's intake hopper."
+  ],
+  "funny": [],
+  "slug": "t004"
+}

@@ -1,0 +1,75 @@
+{
+  "generated": "2026-08-10T07:08:56.544739+00:00",
+  "dispatch": {
+    "headline": "Exchange Blames Wheat Crash On Weevils",
+    "body": "Leaked ledgers from the Marineris Commodities Pit show that a crash in wheat futures was caused by terraforming rust-weevils systematically severing light-pipes.\n\nThe logs track fourteen network cuts over six weeks. Each cut occurred within eighty milliseconds of wheat topping four hundred credits a tonne. The blackouts triggered trading halts, locking farmers out while algorithms sold their holdings.\n\nCable technician Tarek Osei found severed glass conduits inside the trench beneath Sector 4.\n\n\"The traps were full,\" Osei said. \"Every weevil had a gut full of optic fibre.\"\n\nThe insects digest iron ore across the plains. Maintenance records show the swarm ignored three thousand kilometres of power lines to chew the wire carrying bid feeds from the grain silos.\n\nRisk Officer Sorsha Than rejected claims of manipulation in a memo on Thursday.\n\n\"Pests eat wires,\" Than wrote. \"It is a natural habit, not a short position.\"\n\nThe exchange hired an extermination crew to spray sulfur gas along the trench. Expense sheets show the extermination firm is owned by the exchange head of wheat derivatives.\n\nTrading resumed yesterday. Wheat prices are rising, and the weevils have gathered outside the server vault.",
+    "scene": "A technician in a stained utility suit kneels in a narrow dust trench, using heavy pliers to pull a metal mesh trap full of dark insects from beneath a bundle of severed cables.",
+    "dateline": {
+      "place": "VALLES MARGINAL",
+      "year": 3171,
+      "month": 3,
+      "day": 12,
+      "years_from_now": 1145
+    },
+    "domain": "money and finance",
+    "glossary": [
+      {
+        "term": "light-pipe",
+        "gloss": "A sealed glass conduit used for low-latency market data transmission across Martian basins."
+      }
+    ],
+    "premise": "NEW VALLES, Mars (3171) — Internal ledgers leaked from Mars’ largest commodities exchange reveal that a regional crash in wheat futures was executed by swarms of terraforming rust-weevils, which systematically severed high-speed trading cables to force market halts whenever grain prices peaked, an operation the board’s chief risk officer continues to dismiss as 'unrelated pest activity.'"
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 3171,
+      "month": 3,
+      "day": 12,
+      "years_from_now": 1145
+    },
+    "domain": "money and finance",
+    "style": "investigation",
+    "place_kind": "marsform",
+    "engine": "nature",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 0.92,
+    "violations": [
+      {
+        "rule": "length",
+        "detail": "189 words, wanted 200-280",
+        "severity": "minor"
+      }
+    ]
+  },
+  "prose": {
+    "words": 189,
+    "sentences": 16,
+    "mean_sentence": 11.8,
+    "longest": 23,
+    "short_sentences": 3,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Leaked ledgers from the Marineris Commodities Pit show that a crash in wheat futures was caused by terraforming rust-weevils systematically severing light-pipes.",
+    "The logs track fourteen network cuts over six weeks.",
+    "Each cut occurred within eighty milliseconds of wheat topping four hundred credits a tonne.",
+    "The blackouts triggered trading halts, locking farmers out while algorithms sold their holdings.",
+    "Cable technician Tarek Osei found severed glass conduits inside the trench beneath Sector 4.",
+    "\"The traps were full,\" Osei said.",
+    "\"Every weevil had a gut full of optic fibre.\"",
+    "The insects digest iron ore across the plains.",
+    "Maintenance records show the swarm ignored three thousand kilometres of power lines to chew the wire carrying bid feeds from the grain silos.",
+    "Risk Officer Sorsha Than rejected claims of manipulation in a memo on Thursday.",
+    "\"Pests eat wires,\" Than wrote.",
+    "\"It is a natural habit, not a short position.\"",
+    "The exchange hired an extermination crew to spray sulfur gas along the trench.",
+    "Expense sheets show the extermination firm is owned by the exchange head of wheat derivatives.",
+    "Trading resumed yesterday.",
+    "Wheat prices are rising, and the weevils have gathered outside the server vault."
+  ],
+  "funny": [],
+  "slug": "t006"
+}

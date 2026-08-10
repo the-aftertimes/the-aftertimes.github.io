@@ -108,7 +108,8 @@ def generate_one(cfg: dict, rng: random.Random, n_drafts: int) -> dict:
         try:
             drafts.append(write_stage.write(
                 premise, dateline, domain, settings,
-                style["guidance"], place_kind["guidance"]))
+                style["guidance"], place_kind["guidance"],
+                funny_lines=cfg["funny_lines"]))
         except Exception as exc:  # noqa: BLE001 - one bad draft must not stop the batch
             print(f"      WARN draft failed: {exc}", file=sys.stderr)
     if not drafts:
@@ -145,6 +146,9 @@ def generate(target: int, n_drafts: int) -> int:
         "engines": load_yaml("config/engines.yaml")["engines"],
         "ledger": ledger_mod.load_ledger(),
         "bible": bible_mod.load_bible(),
+        # Trials MUST see the same funny-line pool the live prompt does, or the
+        # batch measures a prompt that is not the one running in production.
+        "funny_lines": load_yaml("config/funny_lines.yaml").get("lines") or [],
     }
     rng = random.Random()
     made = 0

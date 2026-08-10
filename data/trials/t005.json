@@ -1,0 +1,72 @@
+{
+  "generated": "2026-08-10T07:07:44.329865+00:00",
+  "dispatch": {
+    "headline": "Trachea Scouring Replaces Dome Repairs",
+    "body": "Epidemiologists at the Gale Basin Medical Unit have confirmed a cure for spore-rot, the fungal lung infection currently affecting seven thousand residents beneath Dome Three.\n\nThe procedure requires six orderlies to suspend an inverted patient by the ankles. A technician then inserts a narrow feed-tube into the airway, scouring the inner lining of the trachea with pressurised synth-fat to blast away fungal colonies.\n\n\"It is ninety-eight percent effective,\" said Dr. Olamide Hale, lead author of the report. \"The patient experiences brief suffocation, but lung capacity recovers almost instantly.\"\n\nThe treatment works.\n\nHowever, because the fungus breeds in water dripping from a structural tear in the overhead dome, cured patients inhale fresh spores before reaching the lobby. To prevent respiratory collapse, patients must undergo the upside-down wash three times daily.\n\nThe hospital has converted three parking bays into continuous flipping stations to process six hundred patients an hour.\n\nWhen asked why the settlement does not patch the ceiling, Hale explained that municipal repairs require a district referendum, an environmental impact audit, and three council readings.\n\n\"A roof repair takes four years,\" Hale said. \"Flipping a person takes forty seconds.\"\n\nThe clinic ordered ninety washers.\n\nYesterday, the city council commended the hospital for resolving the health crisis without touching the public works budget.",
+    "scene": "Six orderlies in rubber aprons hold an upside-down patient by the ankles while a technician aims a hose into the open throat inside a wet medical bay.",
+    "dateline": {
+      "place": "Gale Basin",
+      "year": 3585,
+      "month": 9,
+      "day": 7,
+      "years_from_now": 1559
+    },
+    "domain": "medicine",
+    "glossary": [
+      {
+        "term": "synth-fat",
+        "gloss": "A high-viscosity synthetic lubricant used in off-world bio-cleansing."
+      },
+      {
+        "term": "spore-rot",
+        "gloss": "An airborne fungal infection endemic to unsealed atmospheric domes."
+      }
+    ],
+    "premise": "Epidemiologists in Mars’s half-domed Gale Crater report that Martian lung-fungus can be cured by six orderlies physically inverting the patient and scouring their trachea with synth-fat pressure washers, a procedure Dr. Hale plainly notes is required three times daily because fixing the dome's leaking roof would require municipal effort."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 3585,
+      "month": 9,
+      "day": 7,
+      "years_from_now": 1559
+    },
+    "domain": "medicine",
+    "style": "discovery",
+    "place_kind": "marsform",
+    "engine": "logistics",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 1.0,
+    "violations": []
+  },
+  "prose": {
+    "words": 211,
+    "sentences": 15,
+    "mean_sentence": 14.1,
+    "longest": 27,
+    "short_sentences": 3,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Epidemiologists at the Gale Basin Medical Unit have confirmed a cure for spore-rot, the fungal lung infection currently affecting seven thousand residents beneath Dome Three.",
+    "The procedure requires six orderlies to suspend an inverted patient by the ankles.",
+    "A technician then inserts a narrow feed-tube into the airway, scouring the inner lining of the trachea with pressurised synth-fat to blast away fungal colonies.",
+    "\"It is ninety-eight percent effective,\" said Dr.",
+    "Olamide Hale, lead author of the report.",
+    "\"The patient experiences brief suffocation, but lung capacity recovers almost instantly.\"",
+    "The treatment works.",
+    "However, because the fungus breeds in water dripping from a structural tear in the overhead dome, cured patients inhale fresh spores before reaching the lobby.",
+    "To prevent respiratory collapse, patients must undergo the upside-down wash three times daily.",
+    "The hospital has converted three parking bays into continuous flipping stations to process six hundred patients an hour.",
+    "When asked why the settlement does not patch the ceiling, Hale explained that municipal repairs require a district referendum, an environmental impact audit, and three council readings.",
+    "\"A roof repair takes four years,\" Hale said.",
+    "\"Flipping a person takes forty seconds.\"",
+    "The clinic ordered ninety washers.",
+    "Yesterday, the city council commended the hospital for resolving the health crisis without touching the public works budget."
+  ],
+  "funny": [],
+  "slug": "t005"
+}

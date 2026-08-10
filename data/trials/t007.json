@@ -1,0 +1,78 @@
+{
+  "generated": "2026-08-10T07:09:48.421614+00:00",
+  "dispatch": {
+    "headline": "Sommeliers Decry Teen Slush Craze",
+    "body": "Subterranean teenagers in Castalia Trench are scaling maintenance ladders to scrape raw ceiling frost into plastic cups, flavouring the shavings with synthetic melon syrup.\n\nThe trend, known locally as drift-shaving, has outraged the Sub-Glacial Sommelier Guild. Guild elders maintain that the ceiling frost contains four-thousand-year-old ocean-brine fracture lines that require delicate extraction.\n\n\"They are using steel picks,\" said Master Sommelier Hitoshi Mori. \"They are crushing the salt-lacing. You cannot taste the historic sulphur depth if the crystal structure has experienced violence.\"\n\nGuild members spend decades learning to slice frost along its natural mineral seams using heated glass scalpels. The resulting flakes are traditionally served on cold basalt to off-world diplomats.\n\nThe youth use fork tines.\n\n\"It takes two minutes,\" said sixteen-year-old Mara Sun. \"The ancient sulphur note just tastes like egg anyway.\"\n\nTensions escalated after three sommeliers attempted to patrol the sector four ceiling arches with velvet catch-nets. Teenagers pelted them with melon slush.\n\nThe Guild is furious.\n\nA regional vault survey confirmed that seventy percent of local ceiling arches have lost their structural brine layering. The Guild has requested a ban on handheld metal utensils.\n\nMara remains unimpressed.\n\n\"The deeper ice is better,\" she said. \"The three-million-year-old crust makes a much crisper slush.\"",
+    "scene": "A teenager balanced near the top of a tall metal ladder scrapes frost from a low dark ceiling into a cup, while an elderly man in a heavy embroidered robe shakes his fist from the ground.",
+    "dateline": {
+      "place": "Castalia Trench, Europa",
+      "year": 3350,
+      "month": 9,
+      "day": 19,
+      "years_from_now": 1324
+    },
+    "domain": "food",
+    "glossary": [
+      {
+        "term": "drift-shaving",
+        "gloss": "The unauthorized harvesting of overhead vault frost for recreational consumption."
+      }
+    ],
+    "premise": "A trend among subterranean Europa teens of hand-scraping ceiling frost into artisanal dessert slushes has drawn fierce condemnation from master ice-sommeliers, who accuse the youth of reckless chisel technique that ruins the ocean-brine fracture lines."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 3350,
+      "month": 9,
+      "day": 19,
+      "years_from_now": 1324
+    },
+    "domain": "food",
+    "style": "trend",
+    "place_kind": "subsurface",
+    "engine": "expertise",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 0.92,
+    "violations": [
+      {
+        "rule": "rhythm_mean",
+        "detail": "mean sentence is 10.7 words, wanted 11-20",
+        "severity": "minor"
+      }
+    ]
+  },
+  "prose": {
+    "words": 204,
+    "sentences": 19,
+    "mean_sentence": 10.7,
+    "longest": 24,
+    "short_sentences": 5,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Subterranean teenagers in Castalia Trench are scaling maintenance ladders to scrape raw ceiling frost into plastic cups, flavouring the shavings with synthetic melon syrup.",
+    "The trend, known locally as drift-shaving, has outraged the Sub-Glacial Sommelier Guild.",
+    "Guild elders maintain that the ceiling frost contains four-thousand-year-old ocean-brine fracture lines that require delicate extraction.",
+    "\"They are using steel picks,\" said Master Sommelier Hitoshi Mori.",
+    "\"They are crushing the salt-lacing.",
+    "You cannot taste the historic sulphur depth if the crystal structure has experienced violence.\"",
+    "Guild members spend decades learning to slice frost along its natural mineral seams using heated glass scalpels.",
+    "The resulting flakes are traditionally served on cold basalt to off-world diplomats.",
+    "The youth use fork tines.",
+    "\"It takes two minutes,\" said sixteen-year-old Mara Sun.",
+    "\"The ancient sulphur note just tastes like egg anyway.\"",
+    "Tensions escalated after three sommeliers attempted to patrol the sector four ceiling arches with velvet catch-nets.",
+    "Teenagers pelted them with melon slush.",
+    "The Guild is furious.",
+    "A regional vault survey confirmed that seventy percent of local ceiling arches have lost their structural brine layering.",
+    "The Guild has requested a ban on handheld metal utensils.",
+    "Mara remains unimpressed.",
+    "\"The deeper ice is better,\" she said.",
+    "\"The three-million-year-old crust makes a much crisper slush.\""
+  ],
+  "funny": [],
+  "slug": "t007"
+}
