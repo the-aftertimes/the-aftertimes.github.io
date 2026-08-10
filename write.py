@@ -168,16 +168,46 @@ def funny_block(lines: list[dict], cap: int = 8) -> str:
     if not lines:
         return ""
     picked = lines[-cap:]
-    body = "\n".join(f'  - "{e["line"]}"' for e in picked)
+    # Shown as EXCERPTS, never bare lines. The marked sentence is only funny
+    # where it sits: "Most messages address minor domestic disputes." is inert
+    # until the sentence about hijacking a planetary magnetosphere comes first.
+    # Orphaned one-liners would teach the model that flat sentences are funny in
+    # themselves, which is the wrong lesson.
+    #
+    # Consecutive marks from one dispatch are merged into a SINGLE passage. Four
+    # marks from one paragraph would otherwise repeat their shared setup four
+    # times, bloating the prompt and over-weighting that dispatch's exact
+    # wording - which is how a model starts lifting examples verbatim.
+    groups: list[tuple[str, list[str], set[str]]] = []
+    for e in picked:
+        src = e.get("source", "")
+        if groups and groups[-1][0] == src:
+            _, seq, marked = groups[-1]
+        else:
+            seq, marked = [], set()
+            groups.append((src, seq, marked))
+        for s in (e.get("setup") or []):
+            if s not in seq:
+                seq.append(s)
+        if e["line"] not in seq:
+            seq.append(e["line"])
+        marked.add(e["line"])
+    blocks = []
+    for _, seq, marked in groups:
+        text = " ".join(f">>>{s}<<<" if s in marked else s for s in seq)
+        blocks.append(f"  ...{text}")
+    body = "\n".join(blocks)
     return (
-        "\nLINES THAT ACTUALLY LANDED, from earlier dispatches a reader marked as\n"
-        "funny. Study WHY they work, then do the same thing with today's premise:\n"
+        "\nEXCERPTS THAT ACTUALLY LANDED, from earlier dispatches. A reader marked\n"
+        "the sentence between >>> <<< as genuinely funny; the text before it is\n"
+        "the SET-UP that makes it work. Study the sequence, not the sentence:\n"
         f"{body}\n"
-        "Notice what NONE of them does: there is no punchline, no wordplay, no\n"
-        "comic adjective, no nudge to the reader. Each is flat wire-service\n"
-        "reportage of an absurd fact. The comedy is the mismatch between the\n"
-        "scale of the machinery and the pettiness of the human motive, and it is\n"
-        "left entirely for the reader to notice. Several are very short.\n"
+        "Notice what NONE of the marked lines does: there is no punchline, no\n"
+        "wordplay, no comic adjective, no nudge to the reader. Each is flat\n"
+        "wire-service reportage of a fact. NONE of them is funny on its own -\n"
+        "the comedy is the SEQUENCE: build something enormous, then report its\n"
+        "petty human consequence in a plain, often very short sentence, and let\n"
+        "the reader notice the mismatch. Never explain it.\n"
         "NEVER reuse their words, names or subject matter - copy the TECHNIQUE.\n")
 
 
@@ -311,6 +341,17 @@ Rules:
   away; cut every word that is not load-bearing, and never stack two ideas.
   Too verbose: "Grandmother Banished To In-Law Shade At Luminary Glades"
   Too verbose: "Surgeons Refuse To Dim Lamps As Moss Fills Cavities"
+- USE PLAIN, ORDINARY WORDS IN THE HEADLINE. This matters as much as the length.
+  Every word should be one a person would actually say out loud. No technical or
+  clinical terms, no Latinate journalese, no words a reader has to decode.
+  Too complex: "Trachea Scouring Replaces Dome Repairs" (trachea, scouring)
+  Too complex: "Sommeliers Decry Teen Slush Craze" (sommeliers, decry)
+  Too complex: "Exchange Blames Wheat Crash On Weevils" (weevils)
+  Plain: "Council Rules Snow Is Trespassing"
+  Plain: "Mine Denies Grief Over Ore-Crusher"
+  A short headline built from long, clever words is still a failure. If a word
+  sounds like it came from a textbook or a wine list, replace it with the blunt
+  everyday word for the same thing.
   A newspaper-accurate but
   purely descriptive label is a failure. Do NOT use the pattern
   "'Branded Product' Does Literal Thing To Place" - that describes the premise

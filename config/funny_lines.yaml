@@ -3,12 +3,24 @@ lines:
     grid to project glowing green complaints onto the upper sky.
   source: t002
   why: planetary-scale infrastructure hijacked for playground-level spite, stated as plain fact
+  setup: []
 - line: The light-graffiti spans five hundred miles of low night orbit.
   source: t002
   why: a bare measurement doing the comic work; no adjective, no comment
+  setup:
+  - Teenagers across the northern mud-flats have spent three months cracking the regional magnetosphere
+    grid to project glowing green complaints onto the upper sky.
 - line: Most messages address minor domestic disputes.
   source: t002
   why: six words; deadpan understatement immediately after the enormous set-up
+  setup:
+  - Teenagers across the northern mud-flats have spent three months cracking the regional magnetosphere
+    grid to project glowing green complaints onto the upper sky.
+  - The light-graffiti spans five hundred miles of low night orbit.
 - line: The hacks bend secondary radiation baffles, leaving southern crop domes vulnerable to solar bursts.
   source: t002
   why: the real consequence reported straight, with nobody acknowledging the absurdity
+  setup:
+  - On Thursday, a luminous ribbon over the Isidis Basin informed three million settlers that a boy named
+    Jaxon had forgotten his sister's synth-lizard.
+  - Orbital shield technicians are furious.
