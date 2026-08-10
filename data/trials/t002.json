@@ -1,0 +1,74 @@
+{
+  "generated": "2026-08-10T06:51:52.301535+00:00",
+  "dispatch": {
+    "headline": "Ion Shield Misused To Inform Hemisphere That Tarek Sucks",
+    "body": "Teenagers across the northern mud-flats have spent three months cracking the regional magnetosphere grid to project glowing green complaints onto the upper sky.\n\nThe light-graffiti spans five hundred miles of low night orbit. Most messages address minor domestic disputes. On Thursday, a luminous ribbon over the Isidis Basin informed three million settlers that a boy named Jaxon had forgotten his sister's synth-lizard.\n\nOrbital shield technicians are furious. The hacks bend secondary radiation baffles, leaving southern crop domes vulnerable to solar bursts.\n\n\"They are skewing the ion distribution by eight per cent,\" said senior beam-tender Orla Lindqvist. \"If they want to call someone a bad roommate, they should use a board.\"\n\nThe trend began when apprentices at the atmospheric plant realised deflector coils could be aligned with hand tools. By midnight, the sky over Port Vond glowed with neon script attacking local haircuts.\n\nThe practice expanded rapidly. Yesterday, two rival groups fought a five-hour aurora war over whether a girl named Kira was fake.\n\nDefence crews cannot patch the grid without rebooting the planetary shield, which would expose the entire basin to direct solar winds.\n\nEngineers have begun writing rebuttal auroras. A purple beam currently arcs across the horizon, reminding teenagers that curfew starts at nine.",
+    "scene": "A teenage apprentice crouches on a rust-stained gantry, cranking a deflector coil with a steel wrench while gazing up at glowing green text suspended in the night sky.",
+    "dateline": {
+      "place": "Port Vond, Isidis Shelf",
+      "year": 2646,
+      "month": 6,
+      "day": 10,
+      "years_from_now": 620
+    },
+    "domain": "art",
+    "glossary": [
+      {
+        "term": "beam-tender",
+        "gloss": "A technician responsible for maintaining the magnetic deflection coils that protect Martian surface settlements from cosmic rays."
+      }
+    ],
+    "premise": "Teens across Mars’s half-finished Isidis Basin are hacking regional magnetosphere arrays to paint 500-mile auroral light-graffiti spelling out minor personal grievances across the night sky, a trend older orbital defense engineers condemn as a frivolous misuse of radiation shielding."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 2646,
+      "month": 6,
+      "day": 10,
+      "years_from_now": 620
+    },
+    "domain": "art",
+    "style": "trend",
+    "place_kind": "marsform",
+    "engine": "scale",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 0.92,
+    "violations": [
+      {
+        "rule": "rhythm_mean",
+        "detail": "mean sentence is 13.7 words, wanted 14-20",
+        "severity": "minor"
+      }
+    ]
+  },
+  "prose": {
+    "words": 205,
+    "sentences": 15,
+    "mean_sentence": 13.7,
+    "longest": 23,
+    "short_sentences": 4,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Teenagers across the northern mud-flats have spent three months cracking the regional magnetosphere grid to project glowing green complaints onto the upper sky.",
+    "The light-graffiti spans five hundred miles of low night orbit.",
+    "Most messages address minor domestic disputes.",
+    "On Thursday, a luminous ribbon over the Isidis Basin informed three million settlers that a boy named Jaxon had forgotten his sister's synth-lizard.",
+    "Orbital shield technicians are furious.",
+    "The hacks bend secondary radiation baffles, leaving southern crop domes vulnerable to solar bursts.",
+    "\"They are skewing the ion distribution by eight per cent,\" said senior beam-tender Orla Lindqvist.",
+    "\"If they want to call someone a bad roommate, they should use a board.\"",
+    "The trend began when apprentices at the atmospheric plant realised deflector coils could be aligned with hand tools.",
+    "By midnight, the sky over Port Vond glowed with neon script attacking local haircuts.",
+    "The practice expanded rapidly.",
+    "Yesterday, two rival groups fought a five-hour aurora war over whether a girl named Kira was fake.",
+    "Defence crews cannot patch the grid without rebooting the planetary shield, which would expose the entire basin to direct solar winds.",
+    "Engineers have begun writing rebuttal auroras.",
+    "A purple beam currently arcs across the horizon, reminding teenagers that curfew starts at nine."
+  ],
+  "funny": [],
+  "slug": "t002"
+}

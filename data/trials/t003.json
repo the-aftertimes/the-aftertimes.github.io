@@ -1,0 +1,68 @@
+{
+  "generated": "2026-08-10T06:52:57.578018+00:00",
+  "dispatch": {
+    "headline": "Surgeons Refuse To Dim Lamps As Moss Fills Cavities",
+    "body": "Surgical teams inside the Vostok-Gorge trench suspended all open-chest procedures this morning after native subterranean moss began colonising open incisions under the operating lamps.\n\nThe organism, previously confined to dark basalt fissures, feeds on the ultra-bright sterilisation beams used during high-tier cardiac operations. When exposed to the high-wattage glare, airborne spores settle inside open thoracic cavities and bloom into thick velvet mats within six minutes.\n\nChief Surgeon Tahi Okeke confirmed three patients are resting with temporarily sealed chest plates while administrators review lighting guidelines.\n\n\"The moss is non-toxic, but it covers the valves,\" Okeke said. \"We could dim the lamps, but that lowers our clinic rating.\"\n\nUnder trench health codes, reducing light intensity reclassifies the hospital as a triage shed, which revokes executive elevator access to the upper ice-shelf.\n\nSurgeons now work around the growth. Medical technicians rake the green turf from open ribcages every ten minutes using heated glass combs. The combs keep the field clear enough for basic suturing.\n\nPatients remain asleep.\n\nThe regional hospital board refused to alter lighting standards before Friday's quarterly audit.\n\n\"The green layer is visually pleasant,\" said patient union representative Jun-ho Chen. \"We want our surgeons to keep their elevator privileges.\"\n\nDefoliation teams will spray the surgical bays tonight before the next scheduled bypass.",
+    "scene": "Two masked surgeons stand over an illuminated operating berth using long glass combs to scrape vegetation from an open thoracic frame while a uniformed elevator attendant waits by the door.",
+    "dateline": {
+      "place": "Vostok-Gorge Trench",
+      "year": 3253,
+      "month": 12,
+      "day": 4,
+      "years_from_now": 1227
+    },
+    "domain": "medicine",
+    "glossary": [
+      {
+        "term": "triage shed",
+        "gloss": "A subterranean clinic demoted from primary network funding and stripped of high-speed transport access."
+      }
+    ],
+    "premise": "Surgeons in an Antarctic sub-ice arcology were forced to halt open-heart procedures after native blind cave-moss adapted to photosynthesize under ultra-sterile surgical lamps, turning open chest cavities into thriving spore nurseries."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 3253,
+      "month": 12,
+      "day": 4,
+      "years_from_now": 1227
+    },
+    "domain": "medicine",
+    "style": "wire",
+    "place_kind": "subsurface",
+    "engine": "nature",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 1.0,
+    "violations": []
+  },
+  "prose": {
+    "words": 211,
+    "sentences": 15,
+    "mean_sentence": 14.1,
+    "longest": 24,
+    "short_sentences": 2,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Surgical teams inside the Vostok-Gorge trench suspended all open-chest procedures this morning after native subterranean moss began colonising open incisions under the operating lamps.",
+    "The organism, previously confined to dark basalt fissures, feeds on the ultra-bright sterilisation beams used during high-tier cardiac operations.",
+    "When exposed to the high-wattage glare, airborne spores settle inside open thoracic cavities and bloom into thick velvet mats within six minutes.",
+    "Chief Surgeon Tahi Okeke confirmed three patients are resting with temporarily sealed chest plates while administrators review lighting guidelines.",
+    "\"The moss is non-toxic, but it covers the valves,\" Okeke said.",
+    "\"We could dim the lamps, but that lowers our clinic rating.\"",
+    "Under trench health codes, reducing light intensity reclassifies the hospital as a triage shed, which revokes executive elevator access to the upper ice-shelf.",
+    "Surgeons now work around the growth.",
+    "Medical technicians rake the green turf from open ribcages every ten minutes using heated glass combs.",
+    "The combs keep the field clear enough for basic suturing.",
+    "Patients remain asleep.",
+    "The regional hospital board refused to alter lighting standards before Friday's quarterly audit.",
+    "\"The green layer is visually pleasant,\" said patient union representative Jun-ho Chen.",
+    "\"We want our surgeons to keep their elevator privileges.\"",
+    "Defoliation teams will spray the surgical bays tonight before the next scheduled bypass."
+  ],
+  "funny": [],
+  "slug": "t003"
+}
