@@ -262,6 +262,8 @@ def render_archive(records: list[dict], meta: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f4efe3">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
 <title>Archive - {html.escape(meta['site_name'])}</title>
 <style>{_CSS}</style>
 {BEACON}
