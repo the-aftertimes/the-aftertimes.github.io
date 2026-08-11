@@ -1,0 +1,66 @@
+{
+  "run_date": "2026-08-11",
+  "run_time": "2026-08-11T20:59:29.304075+00:00",
+  "dispatch": {
+    "headline": "Mantle Drillers Promoted For Outstanding Listening Skills",
+    "body": "Shift logs from the Pelagia Trench reveal that eighty-six mantle drillers buried in last month's basalt collapse were logged as entering silent mode.\n\nA corrupted software update permanently scrubbed \"dead\" from municipal systems, replacing it with \"indefinitely non-verbal\". When a thermal pressure valve melted the lower staging platform, automated diagnostics marked all missing personnel as taking extended conversational pauses.\n\nTrench clerk Kaelen Voss produced logs showing flatlined cardiac monitors registered as zero-volume speech events.\n\n\"The software thinks a stopped heart is just an extraordinarily polite pause,\" Voss said. \"They are currently being billed for overusing the quiet room.\"\n\nVoss sighed.\n\nBecause non-verbal staff remain on active employment rolls, directors filed no safety casualties with off-world regulators. Relatives received no pension payouts. Instead, municipal billing systems automatically charged the families for unused vocal ration credits.\n\nWhen asked about the workers remaining twenty metres below molten slag, Project Director Amara Sola denied concealing fatalities.\n\n\"No one died,\" Sola said. \"They are listening.\"\n\nSafety inspectors later found seventy melted pressure suits hanging in the airlock, each stamped with a written reprimand for failing to participate in team-building exercises.\n\nBy Friday, human resources plans to roll out the non-verbal protocol department-wide, noting that the dead crew has achieved complete compliance with corporate communication goals.",
+    "scene": "Sub-crustal industrial outpost where automated municipal software reframes workplace mortality as exemplary quietness.",
+    "dateline": {
+      "place": "Pelagia Trench",
+      "year": 3199,
+      "month": 2,
+      "day": 11,
+      "years_from_now": 1173
+    },
+    "domain": "Municipal Labour",
+    "glossary": [
+      {
+        "term": "Vocal ration credits",
+        "gloss": "Daily speech allowances issued to trench workers to restrict non-essential workplace conversations."
+      },
+      {
+        "term": "Indefinitely non-verbal",
+        "gloss": "The mandatory civic euphemism assigned to deceased personnel following a software style guide update."
+      }
+    ],
+    "premise": "An investigation into New Aphrodite’s half-built terraforming rift reveals that municipal directors have been hiding hundreds of workplace fatalities by classifying them as \"vocabulary departures,\" after a corrupted civic style guide permanently banned the word \"dead\" in favor of \"indefinitely non-verbal.\"",
+    "image": "assets/img/2026-08-11.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-11T20:59:29.304075+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 20,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 3 brilliantly satirizes corporate doublespeak and HR euphemisms with hilarious quotes and a sharp kicker.",
+    "judge_pick": 2,
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 1.0,
+    "critique": "The original text contained only one sentence of six words or fewer and described the premise neutrally rather than landing a satirical joke.\nThe dialogue lacked punch and the original ending merely restated the setup rather than recontextualising it."
+  }
+}
