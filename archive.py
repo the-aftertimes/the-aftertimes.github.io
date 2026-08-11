@@ -55,7 +55,7 @@ body{margin:0;background:var(--bg);color:var(--fg);
   letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.6rem;}
 h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:1.4rem 0 0.8rem;}
-.timeline{position:relative;height:74px;margin:0 0 2.2rem;}
+.timeline{position:relative;margin:0 0 2.6rem;}
 .taxis{position:absolute;left:0;right:0;top:10px;height:1px;background:var(--rule);}
 .tmark{position:absolute;top:0;text-align:center;transform:translateX(-50%);}
 .tdot{display:block;width:9px;height:9px;margin:6px auto 0;border-radius:50%;
@@ -66,10 +66,17 @@ h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   font-family:-apple-system,system-ui,sans-serif;font-size:0.6rem;letter-spacing:0.06em;
   color:var(--muted);}
 .ttoday .tyear{text-transform:uppercase;letter-spacing:0.12em;}
-/* Second tier: a label that would collide drops down behind a leader line. */
+/* Lower tiers: a label that would collide drops down behind a leader line. One
+   tier per level of crowding, so a cluster of four fans out instead of two of
+   them landing back on the same row. */
 .tmark.t1 .tyear{margin-top:1.5rem;}
-.tmark.t1::after{content:"";position:absolute;left:50%;top:15px;width:1px;
-  height:18px;background:var(--rule);transform:translateX(-50%);}
+.tmark.t2 .tyear{margin-top:2.65rem;}
+.tmark.t3 .tyear{margin-top:3.8rem;}
+.tmark.t1::after,.tmark.t2::after,.tmark.t3::after{content:"";position:absolute;
+  left:50%;top:15px;width:1px;background:var(--rule);transform:translateX(-50%);}
+.tmark.t1::after{height:18px;}
+.tmark.t2::after{height:36px;}
+.tmark.t3::after{height:55px;}
 .chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.4rem;
   font-family:-apple-system,system-ui,sans-serif;}
 .chip{cursor:pointer;font:inherit;font-size:0.68rem;letter-spacing:0.08em;
@@ -96,6 +103,9 @@ ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
 .disp .dom{font-family:-apple-system,system-ui,sans-serif;font-size:0.7rem;
   color:var(--muted);margin-top:0.25rem;}
 @media (max-width:30rem){
+  /* Tiering works in percent, but label width does not shrink with the
+     viewport. Trim the year type so the gap stays real on a phone. */
+  .tyear{font-size:0.55rem;letter-spacing:0.02em;}
   ul.disp li{flex-direction:column;gap:0.3rem;}
   .disp .rail{text-align:left;}
   .disp .rail::after{display:none;}
@@ -138,19 +148,29 @@ _FILTER_JS = """
 _AXIS_MAX_YEARS = 4000
 
 #: Minimum horizontal gap, in percent, before two year labels are treated as
-#: colliding and the second drops to a lower tier.
-_LABEL_GAP_PCT = 7.0
+#: colliding and the later one drops to a lower tier.
+#: 8% is ~26px at the 327px mobile width, against a 23px four-digit label, so
+#: even the narrowest viewport keeps real air between neighbours.
+_LABEL_GAP_PCT = 8.0
+
+#: How many stacked label rows the timeline will use before it starts reusing
+#: the least-recently-occupied one. Bounds the block's height.
+_MAX_TIERS = 4
 
 
 def _timeline(records: list[dict]) -> str:
     """A horizontal 'distance from now' axis.
 
-    Two deliberate choices, both fixing observed defects:
+    Three deliberate choices, all fixing observed defects:
     - SQUARE ROOT, not log. Log crushed everything into the right-hand half (the
       nearest dispatch sat at 48% with a dead gap before it); sqrt spreads the
       near centuries across the width, putting that same dispatch near 15%.
-    - Colliding labels drop to a SECOND TIER with a leader line instead of
+    - Colliding labels drop to a LOWER TIER with a leader line instead of
       overlapping. 2311 and 2356 sit about 5% apart and used to render as mush.
+    - The tier is chosen by asking each row in turn whether its OWN last label
+      has cleared, rather than alternating 0/1/0/1. Alternating only ever
+      separates neighbours: a cluster of four (2114/2154/2163/2183) put the
+      first and third back on the same row about 2% apart, which overlapped.
     """
     if not records:
         return ""
@@ -160,13 +180,27 @@ def _timeline(records: list[dict]) -> str:
     marks = ('<div class="tmark ttoday" style="left:0%">'
              '<span class="tdot hollow"></span>'
              '<span class="tyear">today</span></div>')
-    last_pct, tier = -99.0, 0
+    # Rightmost label position occupied on each tier; tier 0 starts as taken by
+    # the "today" mark at 0%.
+    last_on_tier = [0.0]
+    max_tier = 0
     for r in ordered:
         d = r["dispatch"]
         y = max(1, min(int(d["dateline"]["years_from_now"]), _AXIS_MAX_YEARS))
         pct = 100.0 * math.sqrt(y) / span
-        tier = 1 - tier if (pct - last_pct) < _LABEL_GAP_PCT else 0
-        last_pct = pct
+        tier = next((t for t, last in enumerate(last_on_tier)
+                     if pct - last >= _LABEL_GAP_PCT), len(last_on_tier))
+        if tier == len(last_on_tier):
+            if tier < _MAX_TIERS:
+                last_on_tier.append(pct)
+            else:
+                # Everything is crowded: give it to whichever row has the most
+                # room, so the unavoidable overlap is as small as possible.
+                tier = min(range(_MAX_TIERS), key=lambda t: last_on_tier[t])
+                last_on_tier[tier] = pct
+        else:
+            last_on_tier[tier] = pct
+        max_tier = max(max_tier, tier)
         headline = html.escape(hyphenate(d["headline"]))
         year = html.escape(str(d["dateline"]["year"]))
         dk = html.escape(_dom_key(d.get("domain", "")), quote=True)
@@ -174,7 +208,11 @@ def _timeline(records: list[dict]) -> str:
                   f'style="left:{pct:.2f}%" title="{headline}">'
                   f'<span class="tdot"></span>'
                   f'<span class="tyear">{year}</span></div>')
-    return f'<div class="timeline"><div class="taxis"></div>{marks}</div>'
+    # Height follows the deepest tier actually used, so a sparse archive keeps a
+    # compact bar and a crowded one gets the room it needs.
+    height = 56 + round(max_tier * 18.4)
+    return (f'<div class="timeline" style="height:{height}px">'
+            f'<div class="taxis"></div>{marks}</div>')
 
 
 def render_archive(records: list[dict], meta: dict) -> str:
