@@ -7,7 +7,9 @@ import html
 import math
 import os
 
-from common import BEACON, hyphenate, load_settings, read_json, rel
+import locator
+from common import (BEACON, hyphenate, load_settings, normalise_place,
+                   read_json, rel)
 
 _MINOR = {"a", "an", "and", "the", "of", "to", "in", "on", "for", "at", "by", "or", "with"}
 
@@ -98,6 +100,11 @@ ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
   font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;
   color:var(--muted);margin-top:0.15rem;}
 .disp .rbody{flex:1 1 auto;border-left:1px solid var(--rule);padding-left:1.2rem;}
+/* One locator thumbnail per row, drawn from the same seed as that dispatch's
+   own chart, so the archive reads as a set of places rather than a list. */
+.disp .rmap{flex:0 0 46px;align-self:center;line-height:0;}
+.disp .rmap .thumb{display:block;width:46px;height:46px;opacity:0.72;}
+.disp li:hover .rmap .thumb{opacity:1;}
 .disp a{color:var(--fg);text-decoration:none;font-size:1.05rem;font-weight:700;
   border-bottom:1px solid var(--accent);}
 .disp .dom{font-family:-apple-system,system-ui,sans-serif;font-size:0.7rem;
@@ -106,16 +113,21 @@ ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
   /* Tiering works in percent, but label width does not shrink with the
      viewport. Trim the year type so the gap stays real on a phone. */
   .tyear{font-size:0.55rem;letter-spacing:0.02em;}
-  ul.disp li{flex-direction:column;gap:0.3rem;}
-  .disp .rail{text-align:left;}
+  /* Rail and body stack, but the thumbnail stays beside them rather than
+     dropping to a third row of its own. */
+  ul.disp li{display:grid;gap:0.3rem 0.8rem;align-items:center;
+    grid-template-columns:1fr 38px;
+    grid-template-areas:"rail map" "body map";}
+  .disp .rail{grid-area:rail;text-align:left;}
   .disp .rail::after{display:none;}
-  .disp .rbody{border-left:none;padding-left:0;}
+  .disp .rbody{grid-area:body;border-left:none;padding-left:0;}
+  .disp .rmap{grid-area:map;}
+  .disp .rmap .thumb{width:38px;height:38px;}
 }
 a.home{font-family:-apple-system,system-ui,sans-serif;color:var(--accent);
   text-decoration:none;border-bottom:1px solid var(--accent);font-size:0.85rem;}
 footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
   font-size:0.78rem;color:var(--muted);}
-.hublink{margin:0.45rem 0 0;}
 """
 
 
@@ -222,11 +234,12 @@ def render_archive(records: list[dict], meta: dict) -> str:
     # had just shown, in publication order.
     by_distance = sorted(
         records, key=lambda r: r["dispatch"]["dateline"]["years_from_now"])
+    deep_max = int(meta.get("locator_deep_max") or 4000)
     rows = ""
     for r in by_distance:
         d = r["dispatch"]
         dl = d["dateline"]
-        place = html.escape(hyphenate((dl.get("place") or "").strip()))
+        place = html.escape(hyphenate(normalise_place(dl.get("place"))))
         head = html.escape(hyphenate(d["headline"]))
         dom = html.escape(hyphenate(_title_case(d.get("domain", ""))))
         dk = html.escape(_dom_key(d.get("domain", "")), quote=True)
@@ -238,7 +251,9 @@ def render_archive(records: list[dict], meta: dict) -> str:
                  f'<div class="rbody">'
                  f'<a href="d/{r["run_date"]}.html">{head}</a>'
                  f'<div class="dom">{place + " &middot; " if place else ""}'
-                 f'{dom}</div></div></li>')
+                 f'{dom}</div></div>'
+                 f'<div class="rmap">{locator.thumbnail(dl, deep_max)}</div>'
+                 f'</li>')
     chips = _domain_chips(recs)
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -258,8 +273,6 @@ def render_archive(records: list[dict], meta: dict) -> str:
       <div class="tag">{html.escape(hyphenate(meta['tagline']))}</div>
     </header>
     <p><a class="home" href="index.html">&larr; Today's dispatch</a></p>
-    <p class="hublink"><a class="home" href="https://charlietrenorden.com/">Other
-      Projects &#8599;</a></p>
     <h2>Futures visited</h2>
     {_timeline(recs)}
     <h2>All dispatches</h2>
@@ -279,7 +292,11 @@ def build() -> str:
     files = sorted(glob.glob(rel("data/dispatches/*.json")))
     records = [read_json(f"data/dispatches/{os.path.basename(f)}") for f in files]
     records = [r for r in records if r]
-    meta = {"site_name": settings["site"]["name"], "tagline": settings["site"]["tagline"]}
+    # locator_deep_max must match render.py's, or a row's thumbnail would put
+    # the same dispatch at a different radius from its own page.
+    meta = {"site_name": settings["site"]["name"],
+            "tagline": settings["site"]["tagline"],
+            "locator_deep_max": settings["dates"]["bands"]["deep"][1]}
     out = render_archive(records, meta)
     with open(rel("archive.html"), "w", encoding="utf-8") as fh:
         fh.write(out)

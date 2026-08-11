@@ -76,6 +76,50 @@ def hyphenate(text: str) -> str:
     return (text or "").translate(_DASH_MAP)
 
 
+#: Words the model shouts that stay lowercase inside a place name.
+_PLACE_MINOR = {"of", "the", "on", "at", "in", "and", "upon", "under", "by",
+                "de", "del", "la", "le", "der", "van", "von"}
+
+
+def _place_word(word: str, first: bool) -> str:
+    """Title-case one word, keeping hyphenated compounds sensible:
+    ZURICH-ON-STILTS -> Zurich-on-Stilts, SILT-REACH -> Silt-Reach."""
+    parts = word.split("-")
+    out = []
+    for i, p in enumerate(parts):
+        if not p:
+            out.append(p)
+        elif p.lower() in _PLACE_MINOR and not (first and i == 0):
+            out.append(p.lower())
+        else:
+            out.append(p[:1].upper() + p[1:].lower())
+    return "-".join(out)
+
+
+def normalise_place(place: str) -> str:
+    """Even out the case of a dateline place.
+
+    The model shouts some of them and not others - the archive held
+    'THE AETHELGARD RING' and 'SHACKLETON DOME, THE MOON' next to
+    'Port Low-G, Vesta', which read as a mistake in a list.
+
+    ONLY all-caps names are touched, and each comma-separated segment is
+    capitalised from its own first word. Anything already mixed-case is returned
+    verbatim, because the model's own casing carries meaning this cannot infer:
+    'Epsilon Eridani b' is a planet designation and 'Epsilon Eridani B' would be
+    a companion star, and 'Port Low-G' is not 'Port Low-g'.
+    """
+    s = (place or "").strip()
+    if not s or not any(c.isalpha() for c in s) or s != s.upper():
+        return s
+    segments = []
+    for seg in s.split(","):
+        words = seg.split()
+        segments.append(" ".join(_place_word(w, i == 0)
+                                 for i, w in enumerate(words)))
+    return ", ".join(seg for seg in segments if seg)
+
+
 # Cloudflare Web Analytics. Feeds the private stats dashboard, which runs ONE
 # account-wide GraphQL query and splits the results by `requestHost` - so this is
 # deliberately the same token used across every site in the estate, not a per-site
