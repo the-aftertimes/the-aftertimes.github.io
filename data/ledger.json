@@ -172,5 +172,15 @@
     "style": "wire",
     "place_kind": "drowned",
     "engine": "nature"
+  },
+  {
+    "run_date": "2026-08-11",
+    "year": 3199,
+    "era_bucket": 23,
+    "domain": "death and mourning",
+    "headline": "Mantle Drillers Promoted For Outstanding Listening Skills",
+    "style": "investigation",
+    "place_kind": "marsform",
+    "engine": "language"
   }
 ]

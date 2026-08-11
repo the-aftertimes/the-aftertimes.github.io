@@ -89,6 +89,18 @@
       "gloss": "A hand-held flat tablet used across off-world colonies for official administrative communications.",
       "kind": "term",
       "first_seen": "2026-08-09"
+    },
+    {
+      "term": "Vocal ration credits",
+      "gloss": "Daily speech allowances issued to trench workers to restrict non-essential workplace conversations.",
+      "kind": "term",
+      "first_seen": "2026-08-11"
+    },
+    {
+      "term": "Indefinitely non-verbal",
+      "gloss": "The mandatory civic euphemism assigned to deceased personnel following a software style guide update.",
+      "kind": "term",
+      "first_seen": "2026-08-11"
     }
   ]
 }
