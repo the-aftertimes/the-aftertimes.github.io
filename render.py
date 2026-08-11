@@ -243,8 +243,8 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     </section>
     {signup}
     {archive_link}
-    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">Other
-      Projects &#8599;</a></p>
+    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">&larr;
+      Other Projects</a></p>
     <footer>
       <p class="fiction">Every dispatch is fiction, written by a machine each
         morning. None of it has happened. Yet.</p>

@@ -14,6 +14,8 @@ import hashlib
 import math
 import re
 
+from common import normalise_place
+
 # Palette mirrors render.py's bone-broadsheet variables.
 _INK = "#1a1611"
 _MUTED = "#6b5f4d"
@@ -95,7 +97,9 @@ def _caption(place: str, years: int) -> str:
             else f"~{years // 1000},{years % 1000:03d} years hence"
     else:
         far = f"{years} years hence"
-    label = place or "Somewhere"
+    # Display only - the chart's seed is taken from the raw scrubbed place in
+    # _geom(), so evening out the case here cannot move any existing target.
+    label = normalise_place(place) or "Somewhere"
     return label, far
 
 
@@ -240,6 +244,38 @@ def variant_rings(dl: dict, deep_max: int) -> str:
     return "".join(parts)
 
 
+
+
+# ---------------------------------------------------------------------------
+# Thumbnail - the archive list, one per row, at ~46px
+# ---------------------------------------------------------------------------
+def thumbnail(dl: dict, deep_max: int) -> str:
+    """A stripped-down plate for the archive list.
+
+    Same seed and geometry as the full chart, so a row's dot sits exactly where
+    that dispatch's own page puts it. Everything that would turn to mush at
+    46px is dropped: no stars, no spokes, one ring instead of three, and no
+    crosshair arms. Marked aria-hidden - the row's text already names the place,
+    and a second announcement of it is noise to a screen reader.
+    """
+    place, _rng, _angle, _radius, tx, ty = _geom(dl, deep_max)
+    label, far = _caption(place, int(dl.get("years_from_now", 0)))
+    return "".join([
+        f'<svg viewBox="14 14 232 232" class="thumb" aria-hidden="true" '
+        f'focusable="false" xmlns="http://www.w3.org/2000/svg">',
+        f'<title>{label}, {far}</title>',
+        # +9 not +6: the outermost target sits at _R_MAX and its dot has a
+        # radius, so a tighter frame would let a deep-future mark poke through.
+        f'<circle cx="{_CX}" cy="{_CY}" r="{_R_MAX + 9:.1f}" fill="none" '
+        f'stroke="{_INK}" stroke-width="3"/>',
+        f'<circle cx="{_CX}" cy="{_CY}" r="{_R_MAX * 0.58:.1f}" fill="none" '
+        f'stroke="{_RULE}" stroke-width="2.5"/>',
+        f'<circle cx="{_CX}" cy="{_CY}" r="5" fill="{_INK}"/>',
+        f'<line x1="{_CX}" y1="{_CY}" x2="{tx:.1f}" y2="{ty:.1f}" '
+        f'stroke="{_ACCENT}" stroke-width="2.5"/>',
+        f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="7.5" fill="{_ACCENT}"/>',
+        "</svg>",
+    ])
 
 
 _VARIANTS = {"plate": variant_plate, "survey": variant_survey, "rings": variant_rings}
