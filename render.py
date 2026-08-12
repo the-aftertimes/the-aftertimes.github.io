@@ -158,7 +158,12 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
                     '&rarr;</a></p>') if not is_permalink else (
                     '<p><a class="arc" href="../index.html">Today\'s dispatch '
                     '&rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>')
-    title = html.escape(hyphenate(f"{dispatch['headline']} - {meta['site_name']}"))
+    # A browser tab shows roughly 20 characters, so the tab wants the MASTHEAD first -
+    # headline-first truncated to "Mantle Drillers Prom..." with no clue which site it was,
+    # and it changes daily, so the tab was never recognisable. A shared link wants the
+    # opposite: og:title leads with the headline, which is the interesting part.
+    title = html.escape(hyphenate(f"{meta['site_name']} - {dispatch['headline']}"))
+    og_title = html.escape(hyphenate(f"{dispatch['headline']} - {meta['site_name']}"))
     desc = html.escape("Fiction. A daily news dispatch from a random date in the future.")
     asset_prefix = "../" if is_permalink else ""
     font_face = (
@@ -210,7 +215,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <title>{title}</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{html.escape(meta['site_name'])}">
-<meta property="og:title" content="{title}">
+<meta property="og:title" content="{og_title}">
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary_large_image">
 <style>{_CSS}</style>
