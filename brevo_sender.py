@@ -68,6 +68,36 @@ def show() -> None:
               f"  verified={d.get('verified')}")
 
 
+def whoami() -> None:
+    """Which Brevo account is this key actually for, and what state is it in?
+
+    Added 12/08/2026, when campaign creation started returning HTTP 402
+    account_under_validation and the login address for the account was not
+    known. The key identifies the account even when nobody can sign in, so
+    /account is the cheapest way to recover the owner email. Read-only.
+    """
+    status, data = _call("/account")
+    print(f"account HTTP {status}")
+    if status != 200:
+        print(f"  {data}", file=sys.stderr)
+        raise SystemExit(1)
+    print(f"  login email : {data.get('email')}")
+    print(f"  name        : {data.get('firstName')} {data.get('lastName')}")
+    print(f"  company     : {data.get('companyName')}")
+    plan = data.get("plan")
+    if isinstance(plan, list):
+        for p in plan:
+            print(f"  plan        : {p.get('type')} credits={p.get('credits')}")
+    rel_ = data.get("relay") or {}
+    if rel_:
+        print(f"  relay       : enabled={rel_.get('enable')}")
+    # Anything the API volunteers about a hold is worth seeing verbatim, since
+    # the 402 body itself says nothing beyond "under validation".
+    for k in ("marketingAutomation", "status", "state", "validation"):
+        if k in data:
+            print(f"  {k}: {data[k]}")
+
+
 def create() -> None:
     """Create the configured sender if it is missing. The address and name come
     from config/settings.yaml, so the config stays the single source of truth."""
@@ -123,4 +153,5 @@ def campaign() -> None:
 
 if __name__ == "__main__":
     action = sys.argv[1] if len(sys.argv) > 1 else "list"
-    {"list": show, "create": create, "campaign": campaign}.get(action, show)()
+    {"list": show, "create": create, "campaign": campaign,
+     "whoami": whoami}.get(action, show)()
