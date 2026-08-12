@@ -94,6 +94,18 @@ def diagnose() -> None:
         print(f"  {str(c.get('createdAt'))[:19]}  {c.get('email')}  "
               f"blacklisted={c.get('emailBlacklisted')}")
 
+    # Verify the subscriber counts a SECOND way. totalSubscribers being 0 on
+    # every list would be a startling finding, and an unpopulated field looks
+    # identical to a genuine zero - the same false-negative trap the Cloudflare
+    # 403 set on /senders/domains. Ask the membership endpoint directly.
+    print("\n== list membership, checked directly")
+    for l in lists.get("lists", []):
+        lid = l.get("id")
+        st, mem = _call(f"/contacts/lists/{lid}/contacts?limit=3")
+        got = mem.get("contacts") or []
+        print(f"  list {lid} HTTP {st} count={mem.get('count')} "
+              f"sample={[c.get('email') for c in got]}")
+
     # Deliverability on what DID go out. High hard-bounce or complaint rates are
     # the other common trigger and would point somewhere different entirely.
     status, camps = _call("/emailCampaigns?limit=8&sort=desc")
@@ -105,6 +117,17 @@ def diagnose() -> None:
               f"deliv={g.get('delivered', 0)} hardB={g.get('hardBounces', 0)} "
               f"softB={g.get('softBounces', 0)} spam={g.get('complaints', 0)} "
               f"unsub={g.get('unsubscriptions', 0)}")
+
+    # The list response may omit statistics entirely, which would render as
+    # sent=0 above and read as "delivered to nobody". Fetch one campaign in full
+    # to tell an unpopulated field apart from a real zero.
+    latest = (camps.get("campaigns") or [{}])[0].get("id")
+    if latest:
+        st, one = _call(f"/emailCampaigns/{latest}")
+        stats = one.get("statistics") or {}
+        print(f"\n== campaign {latest} in full (HTTP {st})")
+        print(f"  status={one.get('status')} recipients={one.get('recipients')}")
+        print(f"  globalStats={stats.get('globalStats')}")
 
 
 def show() -> None:
