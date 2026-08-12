@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: "whoami / list / campaign (read-only) or create (adds the sender from settings.yaml)"
+        description: "diagnose / whoami / list / campaign (read-only) or create (adds the sender from settings.yaml)"
         type: choice
-        options: [whoami, list, campaign, create]
+        options: [diagnose, whoami, list, campaign, create]
         default: list
 
 jobs:
