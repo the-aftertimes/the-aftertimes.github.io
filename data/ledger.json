@@ -182,5 +182,15 @@
     "style": "investigation",
     "place_kind": "marsform",
     "engine": "language"
+  },
+  {
+    "run_date": "2026-08-12",
+    "year": 2298,
+    "era_bucket": 5,
+    "domain": "weather and climate",
+    "headline": "Elevator Chief Blames Collapses On Soft Lungs",
+    "style": "interview",
+    "place_kind": "orbital",
+    "engine": "expertise"
   }
 ]

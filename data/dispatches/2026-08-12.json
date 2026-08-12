@@ -1,0 +1,51 @@
+{
+  "run_date": "2026-08-12",
+  "run_time": "2026-08-12T20:58:45.451307+00:00",
+  "dispatch": {
+    "headline": "Elevator Chief Blames Collapses On Soft Lungs",
+    "body": "Soren Patel does not accept that Ouros Tether Station has an air problem.\n\nEvery morning at eight, the chief barometric tuner drops terminal pressure to match the summit of Mount Everest. Commuters routinely collapse beside the breakfast stalls.\n\n\"People slump,\" Patel said. \"They mouth-breathe.\"\n\nPatel manages atmospheric weight for twelve thousand daily commuters ascending from the ocean tether. He insists thin air merely exposes poor posture and shallow habits.\n\n\"If your diaphragm is disciplined, four hundred millibars feels crisp,\" Patel said. \"We have forgotten how to inhale with intent.\"\n\nThe daily pressure drop saves thirty thousand kilowatt-hours of wall-pumping energy every hour. Patel noted this was a helpful side effect, though his primary goal remains physical discipline across the terminal.\n\n\"The station deck is soft,\" Patel said, gesturing toward three unconscious transit clerks near gate four. \"They lie down because they lack core tension.\"\n\nStation medics now patrol the platforms with smelling salts rather than oxygen canisters, under strict instructions not to indulge shallow breathers. Commuters have begun wearing heavy nose-clips to force efficient intake before stepping off the car.\n\nPatel views the clips as partial progress, though he plans to drop oxygen levels further on Thursday to cure slumping in the security queue.\n\n\"A lungs-first culture takes time,\" Patel said. \"The weak will adapt.\"",
+    "scene": "An official in an immaculate tunic stands over two unconscious commuters on a metal platform while other passengers adjust nose-clips.",
+    "dateline": {
+      "place": "Ouros Tether Station",
+      "year": 2298,
+      "month": 12,
+      "day": 27,
+      "years_from_now": 272
+    },
+    "domain": "weather and climate",
+    "glossary": [],
+    "premise": "The chief barometric tuner at an orbital elevator terminus defends dropping habitat air pressure to mountain-summit levels during morning rush hour, attributing passenger fainting spells to poor posture and unrefined breathing.",
+    "image": "assets/img/2026-08-12.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-12T20:58:45.451307+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "https://6de84235.sibforms.com/serve/MUIFAH84x8Y5Zc4rzquN71pwQaj-zgUD8ZHzxwOoChOWvx_0PJrsbbA2YFNI9QVe49LjX6dXBWm96m0PKkJYjZkfi6Kc_nEl1GG6TW8rh_-r021yVFQEwNN70Wxe2U73N9IZ3x3S-o2B02EiXBJ36hNF6fO63Ate8mOAXb3Hhzplkqg-KpyoB_SuguQhpxzQKrJ1x4v49Ys9jTpUmA==",
+    "edition": 21,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Sharp satire of corporate austerity and cost-cutting absurdly rebranded as personal accountability and wellness culture.",
+    "judge_pick": 2,
+    "chosen_index": 2,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original headline merely stated the premise rather than landing a punchline, and the story lacked a sharp recontextualising kicker.\nThe character quotes needed stronger comedic conviction to highlight the absurdity of treating oxygen as a moral luxury."
+  }
+}
