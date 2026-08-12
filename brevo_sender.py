@@ -56,6 +56,57 @@ def _call(path: str, payload: dict | None = None):
         return exc.code, {"error": exc.read().decode()[:400]}
 
 
+def diagnose() -> None:
+    """Evidence for WHY Brevo put this account under validation (13/08/2026).
+
+    The 402 says the account is under review but not what triggered it. The
+    usual triggers are visible through the API, so gather them before anyone
+    guesses or clicks through the dashboard: list growth (a sudden spike of
+    signups is the list-bombing pattern their anti-abuse team looks for),
+    contact provenance, and the bounce/complaint rates on the campaigns that
+    were actually delivered. Read-only."""
+    status, acct = _call("/account")
+    print(f"== account (HTTP {status})")
+    if status == 200:
+        plan = (acct.get("plan") or [{}])
+        print(f"  email      : {acct.get('email')}")
+        print(f"  company    : {(acct.get('companyName') or '?')}")
+        for p in plan:
+            print(f"  plan       : {p.get('type')} credits={p.get('credits')} "
+                  f"({p.get('creditsType')})")
+    else:
+        print(f"  {acct}", file=sys.stderr)
+
+    status, lists = _call("/contacts/lists?limit=50")
+    print(f"\n== lists (HTTP {status})")
+    for l in lists.get("lists", []):
+        print(f"  id={l.get('id'):<4} {str(l.get('name'))[:34]:<34} "
+              f"subscribers={l.get('totalSubscribers')} "
+              f"blacklisted={l.get('totalBlacklisted')}")
+
+    # Newest contacts first: a burst of addresses created within minutes of each
+    # other, or obvious junk domains, is the signal that a single-opt-in form was
+    # abused. Modified-desc is the only ordering the endpoint offers.
+    status, contacts = _call("/contacts?limit=50&sort=desc")
+    print(f"\n== newest contacts (HTTP {status}) "
+          f"total={contacts.get('count')}")
+    for c in contacts.get("contacts", [])[:25]:
+        print(f"  {str(c.get('createdAt'))[:19]}  {c.get('email')}  "
+              f"blacklisted={c.get('emailBlacklisted')}")
+
+    # Deliverability on what DID go out. High hard-bounce or complaint rates are
+    # the other common trigger and would point somewhere different entirely.
+    status, camps = _call("/emailCampaigns?limit=8&sort=desc")
+    print(f"\n== recent campaigns (HTTP {status})")
+    for c in camps.get("campaigns", []):
+        g = ((c.get("statistics") or {}).get("globalStats") or {})
+        print(f"  {str(c.get('sentDate'))[:10]}  id={c.get('id'):<4} "
+              f"{c.get('status'):<10} sent={g.get('sent', 0)} "
+              f"deliv={g.get('delivered', 0)} hardB={g.get('hardBounces', 0)} "
+              f"softB={g.get('softBounces', 0)} spam={g.get('complaints', 0)} "
+              f"unsub={g.get('unsubscriptions', 0)}")
+
+
 def show() -> None:
     status, data = _call("/senders")
     print(f"senders HTTP {status}")
@@ -154,4 +205,4 @@ def campaign() -> None:
 if __name__ == "__main__":
     action = sys.argv[1] if len(sys.argv) > 1 else "list"
     {"list": show, "create": create, "campaign": campaign,
-     "whoami": whoami}.get(action, show)()
+     "whoami": whoami, "diagnose": diagnose}.get(action, show)()
