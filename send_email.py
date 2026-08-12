@@ -32,6 +32,33 @@ from common import load_settings, read_json, rel, write_json
 from email_render import build_email
 
 _STATE = "data/last_email.json"
+# Set when Brevo refuses to create campaigns at all (account under manual
+# review). While it exists, we do not call the API - see _hold_reason().
+_HOLD = "data/send_hold.json"
+# Brevo error codes that mean "stop asking", not "try again later".
+_HOLD_CODES = {"account_under_validation", "account_blocked", "account_disabled"}
+
+
+def _hold_reason() -> dict | None:
+    return read_json(_HOLD, default=None) or None
+
+
+def _record_hold(code: str, message: str, run_date: str) -> None:
+    """Latch a hold so the next run short-circuits.
+
+    Brevo put this account under validation on 10/08/2026 and BOTH projects kept
+    calling campaign creation every day, twice daily counting the backup cron -
+    roughly a dozen rejected attempts against an account already under manual
+    review, which is exactly what retry abuse looks like to whoever is assessing
+    it. Persisted under data/, which the daily workflow commits, because the CI
+    runner itself is ephemeral."""
+    existing = _hold_reason()
+    if existing:
+        return
+    write_json(_HOLD, {"code": code, "message": message[:300],
+                       "first_seen": run_date, "attempts_stopped_after": run_date})
+    print(f"HOLD RECORDED ({code}) - further sends will be skipped until this is "
+          f"cleared with: python send_email.py --clear-hold", file=sys.stderr)
 
 
 def _latest_dispatch() -> dict | None:
@@ -57,6 +84,15 @@ def _post(url: str, key: str, payload: dict | None) -> tuple[int, dict]:
 def main() -> int:
     force_dry = "--dry-run" in sys.argv
     force_test = "--test" in sys.argv   # send a test to BREVO_TEST_EMAIL, no guard
+    if "--clear-hold" in sys.argv:
+        held = _hold_reason()
+        if not held:
+            print("No hold in place.")
+            return 0
+        os.remove(rel(_HOLD))
+        print(f"Cleared hold ({held.get('code')}, first seen "
+              f"{held.get('first_seen')}). The next run will attempt a send.")
+        return 0
     settings = load_settings()
     record = _latest_dispatch()
     if not record:
@@ -91,6 +127,14 @@ def main() -> int:
         print(f"Body: {len(body)} bytes")
         return 0
 
+    held = _hold_reason()
+    if held and not force_dry:
+        print(f"SEND HELD since {held.get('first_seen')}: {held.get('code')} - "
+              f"{held.get('message', '')[:160]}")
+        print("Not calling Brevo. Resolve the account, then: "
+              "python send_email.py --clear-hold")
+        return 2
+
     api = str(nl.get("api_base") or "https://api.brevo.com/v3").rstrip("/")
     name = f"The Aftertimes {run_date}" + (" [test]" if force_test else "")
     campaign = {
@@ -124,8 +168,15 @@ def main() -> int:
         _post(f"{api}/emailCampaigns/{campaign_id}/sendNow", key, None)
         print(f"Sent '{subject[:60]}' -> campaign {campaign_id}")
     except urllib.error.HTTPError as e:
-        print(f"Send FAILED: HTTP {e.code} "
-              f"{e.read().decode('utf-8', 'replace')[:400]}", file=sys.stderr)
+        raw = e.read().decode("utf-8", "replace")
+        print(f"Send FAILED: HTTP {e.code} {raw[:400]}", file=sys.stderr)
+        try:
+            code = (json.loads(raw) or {}).get("code", "")
+        except ValueError:
+            code = ""
+        if code in _HOLD_CODES:
+            _record_hold(code, raw, run_date)
+            return 2
         return 1
 
     write_json(_STATE, {"date": run_date, "subject": subject})
