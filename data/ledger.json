@@ -192,5 +192,15 @@
     "style": "interview",
     "place_kind": "orbital",
     "engine": "expertise"
+  },
+  {
+    "run_date": "2026-08-13",
+    "year": 2373,
+    "era_bucket": 6,
+    "domain": "language and slang",
+    "headline": "Dock Quarantined After Fitter Mentions Air",
+    "style": "feature",
+    "place_kind": "lunar",
+    "engine": "ritual"
   }
 ]
