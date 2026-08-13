@@ -1,6 +1,34 @@
 # The Aftertimes - launch checklist
 
 ## Open
+
+- [x] **NEWSLETTER RETIRED 13/08/2026 - this is a web-only site now.** Charlie's call
+      after the shared Brevo account was suspended on 10/08 under the **Terms of Use**
+      category (not the recoverable "negative results" one). The most likely objection
+      is this site's content: daily, automated, AI-generated fictional news. That is
+      clearly-labelled satire and not a genuine violation, but it is exactly what an
+      automated compliance classifier flags, and the risk does not go away by moving to
+      another marketing platform - it just relocates. The site itself is unaffected and
+      keeps publishing daily.
+      **What changed:** `signup_form_url` emptied (render.py's `_signup` returns "" on a
+      falsy URL, so the signup section disappears from the page with no code change);
+      `newsletter.enabled: false`; the send step, its failed-send issue alarm, the
+      `test_send`/`test_email` inputs and the `issues: write` permission all removed from
+      `daily.yml`; `brevo-admin.yml` deleted. `send_email.py`, `email_render.py` and
+      `brevo_sender.py` are **left in place but wired to nothing** - retired, not deleted,
+      so this is reversible. `tests/test_send.py::test_hold_short_circuits_the_send` now
+      forces `enabled: True` in its own settings stub, so it still exercises the hold
+      logic instead of passing because the feature is off.
+      **Blast radius was the real lesson:** both newsletters shared one Brevo account, so
+      this site's content risk took One Story down with it. One Story is moving to its own
+      provider (Resend) on its own account - never share a sending account across two
+      projects with different content-risk profiles again.
+      **If it is ever revived:** use infrastructure-level sending (Amazon SES or a
+      self-hosted sender), not a marketing platform. SES has contact lists and
+      subscription management with `{{amazonSESUnsubscribeUrl}}`, charges ~$0.10/1,000
+      emails, and does not apply marketing-compliance content classification - but note
+      the account starts in a sandbox that needs production access approved, and only ONE
+      contact list is allowed per AWS account.
 - [ ] **Ongoing: story-quality tuning.** Keep flagging flat/bland dispatches - but note the levers CHANGED on 06/08/2026 and hand-editing prompts is no longer the first move.
   - **First move now: `python verdict.py <date> good|bad "why"`.** A good verdict promotes that premise into `config/exemplars.yaml`, which steers every future generation. Few-shot examples dominate model output far more than instructions, so this is the highest-leverage lever available and it is the ONLY one that needs Charlie. `python verdict.py` with no arguments lists dispatches awaiting a call.
   - Automatic now: three drafts are written and scored by `critic.py`, a judge picks the funniest, and a critique-rewrite pass runs but is published only if it measures no worse. `trends.py` feeds a capped "recently over-used" block into both prompts each day.
