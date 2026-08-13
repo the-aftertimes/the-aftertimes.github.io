@@ -1,0 +1,57 @@
+{
+  "run_date": "2026-08-13",
+  "run_time": "2026-08-13T20:58:11.862644+00:00",
+  "dispatch": {
+    "headline": "Dock Quarantined After Fitter Mentions Air",
+    "body": "At dawn, eleven air-dock workers knelt on the cold basalt floor of Lock Four. They held spit-trays.\n\nSenior seal-brusher Amara Osei led the scrub. Two hours earlier, a junior fitter had looked through the thick port at the Earth above the crater wall and called the shift a breath of fresh air.\n\nBy six o'clock, the safety board had quarantined the lock. Spoken references to unmetered weather carry a Grade One contamination penalty under crater law. The phrase implies that gas exists without a bill.\n\n\"We wipe the seal with zinc paste,\" Osei said, rinsing her mouth with sterile brine. \"Then we spit into the grey sump.\"\n\nWork on three freight barges stopped completely. The entire dock crew gargled recycled nitrogen while a chime rang through the ducts. No one smiled.\n\nTo ensure the spoken words left no acoustic vibration in the steel, the safety board opened the outer hatch. They dumped ninety thousand litres of pressurised oxygen into the crater to flush the phrase out.\n\n\"It is about discipline,\" Osei said, checking her wrist-gauge. \"If workers think air is free, they stop looking at the gaskets.\"\n\nThe fitter was sent to the deep ice drills. He is now only permitted to speak in numbers.",
+    "scene": "Eleven dock workers in thick orange suits kneel in a circle on a steel deck, spitting into shallow metal trays.",
+    "dateline": {
+      "place": "Shackleton-South Rim",
+      "year": 2373,
+      "month": 4,
+      "day": 15,
+      "years_from_now": 347
+    },
+    "domain": "language and slang",
+    "glossary": [],
+    "premise": "Air-dock workers in Shackleton Crater observe a mandatory dawn purification ritual after a technician uttered the forbidden terrestrial idiom 'a breath of fresh air' near the life-support seal.",
+    "image": "assets/img/2026-08-13.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-13T20:58:11.862644+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 22,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.5 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "It delivers sharp satire on corporate commodification and bureaucracy with brilliant logic, funny quotes, and a strong kicker.",
+    "judge_pick": 0,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.84,
+    "critique": "The original headline merely summarized the setup instead of landing a punchline.\nThe dialogue was too expository, and the final line lacked a comedic twist to recontextualise the premise."
+  }
+}
