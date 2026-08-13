@@ -62,6 +62,13 @@ def test_hold_short_circuits_the_send(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(se, "build_email", lambda d, m: ("subj", "<p>body</p>"))
     monkeypatch.setenv("BREVO_API_KEY", "key")
     monkeypatch.setattr(se.sys, 'argv', ['send_email.py'])
+    # The newsletter was retired on 13/08/2026 (newsletter.enabled: false), which
+    # makes the live config dry-run before it ever reaches the hold check. Force
+    # the enabled config here so this still exercises the hold logic rather than
+    # passing for the wrong reason - the module is retired, not deleted.
+    _live = se.load_settings()
+    monkeypatch.setattr(se, "load_settings", lambda: {
+        **_live, "newsletter": {**_live["newsletter"], "enabled": True}})
     assert se.main() == 2
     assert "SEND HELD" in capsys.readouterr().out
 
