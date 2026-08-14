@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4efe3">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+<link rel="apple-touch-icon" href="../assets/favicon-192.png">
+<title>The Aftertimes - Worker Leans Out, Becomes Foreign Cargo</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Aftertimes">
+<meta property="og:title" content="Worker Leans Out, Becomes Foreign Cargo - The Aftertimes">
+<meta property="og:description" content="Fiction. A daily news dispatch from a random date in the future.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#f4efe3;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:Georgia,'Times New Roman',serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased;}
+.wrap{max-width:52rem;margin:0 auto;padding:clamp(2rem,7vw,4.5rem) 1.5rem 4rem;
+  min-height:100vh;display:flex;flex-direction:column;}
+.masthead{text-align:center;border-bottom:3px double var(--fg);padding-bottom:0.9rem;
+  margin-bottom:2rem;}
+.masthead .edition{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;}
+.masthead .name{font-family:'Aftertimes Flag','UnifrakturCook',serif;font-weight:700;
+  font-size:clamp(2.7rem,10vw,4.6rem);line-height:1;letter-spacing:0.01em;}
+.masthead .tag{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.7rem;}
+.dateline{font-family:-apple-system,system-ui,sans-serif;font-size:0.92rem;
+  font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);
+  margin:0 0 0.8rem;}
+.engraving{margin:1.2rem 0 1.8rem;}
+.engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
+.meta-locrow{display:flex;align-items:stretch;margin-top:0.7rem;}
+.meta-loctext{flex:1 1 0;text-align:right;padding-right:1.5rem;
+  display:flex;flex-direction:column;justify-content:center;}
+figure.locator{flex:1 1 0;margin:0;text-align:left;
+  border-left:1px solid var(--rule);padding-left:1.5rem;}
+figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multiply;}
+.meta-location{font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;
+  font-weight:700;color:var(--fg);line-height:1.1;margin-bottom:0.2rem;}
+.meta-far{font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.9rem;}
+@media (max-width:36rem){
+  .meta-locrow{flex-direction:column;}
+  .meta-loctext{text-align:center;padding-right:0;}
+  figure.locator{border-left:none;padding-left:0;margin-top:1.1rem;}
+}
+h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
+  margin:0 0 1.1rem;letter-spacing:-0.01em;}
+.body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
+.meta{font-family:-apple-system,system-ui,sans-serif;margin-top:1.8rem;}
+.meta-title{margin:0;color:var(--accent);font-weight:600;font-size:0.72rem;
+  letter-spacing:0.16em;text-transform:uppercase;padding-top:0.6rem;
+  border-top:1px solid var(--rule);}
+.meta-body{color:var(--muted);font-size:0.9rem;padding-top:0.6rem;}
+.meta-facts{line-height:1.6;}
+.meta-facts b{color:var(--fg);}
+.stale{font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;
+  background:var(--accent);color:var(--bg);padding:0.6rem 1rem;border-radius:0.3rem;
+  margin-bottom:1.8rem;}
+.signup{margin:2.5rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--rule);
+  font-family:-apple-system,system-ui,sans-serif;}
+.signup-lead{margin:0 0 0.9rem;color:var(--fg);font-weight:600;}
+.signup-form{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.signup-form input{flex:1 1 12rem;min-width:0;padding:0.6rem 0.8rem;font-size:0.95rem;
+  color:var(--fg);background:#fff;border:1px solid var(--rule);border-radius:0.3rem;
+  font-family:inherit;}
+.signup-form button{padding:0.6rem 1.2rem;font-weight:600;cursor:pointer;
+  color:var(--bg);background:var(--accent);border:none;border-radius:0.3rem;
+  font-family:inherit;}
+.signup-note{margin:0.7rem 0 0;color:var(--muted);font-size:0.78rem;}
+footer{padding-top:2rem;font-family:-apple-system,system-ui,sans-serif;
+  font-size:0.78rem;color:var(--muted);}
+footer .fiction{font-style:italic;margin:0 0 0.6rem;}
+.hublink{margin:0.45rem 0 0;}
+a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
+</style>
+<style>@font-face{font-family:'Aftertimes Flag';src:url('../assets/fonts/unifrakturcook-700.woff2') format('woff2');font-weight:700;font-display:swap;}</style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "32b821209b5441a08df42ccf61c9e6c2"}'></script>
+</head>
+<body>
+  <div class="wrap">
+    
+    <header class="masthead">
+      <div class="edition">VOL. MMDCCLIII &middot; No. 23 &middot; Sat 15 August 2026</div>
+      <div class="name">The Aftertimes</div>
+      <div class="tag">Tomorrow&#x27;s headlines, a little early</div>
+    </header>
+    <p class="dateline">Solder-Bays, Generation Freighter Argus . 2 April 2753</p>
+    <h1>Worker Leans Out, Becomes Foreign Cargo</h1>
+    <figure class="engraving"><img src="../assets/img/2026-08-14.jpg" alt="Two technicians in bulky thermal pressure suits stand inside an open airlock, using a long plastic pipe to push a food tube toward a tethered worker who floats six inches past the outer hull." loading="lazy"></figure>
+    <div class="body"><p>A two-year spatial survey aboard the generation freighter Argus has established that human rights extend precisely fifteen centimetres past the outer hull plating.</p><p>The finding resolved a decade of disputes over tool salvage rights. However, it created an immediate administrative obstacle during routine maintenance on Thursday morning.</p><p>Senior hull-sweeper Prahlad Nayar leaned twenty centimetres past the threshold while scraping lichen off a sensor dish. Under fleet law, his upper torso ceased to be a recognised person. When his magnetic boots slipped, his entire body crossed into unmapped void, revoking his citizenship instantly.</p><p>Because Nayar is no longer a citizen, pulling his tether back inside the ship would constitute importing unmanifested biological cargo without a clearance manifest.</p><p>&quot;The geometry is immaculate,&quot; said lead juris-cartographer Nnamdi Eze. &quot;Inside the line, you have human rights. Outside the line, you are raw material. If we reel him in now, we are smuggling.&quot;</p><p>Nayar remains attached to the hull by a safety line while officers draft an emergency import declaration. Ship authorities cannot supply his suit with extra oxygen, as sending pressurised gas across the border requires a separate export licence.</p><p>He remains outside.</p><p>Earlier today, a crewmate pushed a nutrient paste tube across the boundary using a fiberglass pipe. Nayar ate it.</p><p>Customs inspectors have opened an inquiry into whether the tube was legally dumped.</p></div>
+    <section class="meta">
+      <h2 class="meta-title">Dispatch metadata</h2>
+      <div class="meta-body">
+        <div class="meta-locrow">
+          <div class="meta-loctext">
+            <div class="meta-location">Solder-Bays, Generation Freighter Argus</div><div class="meta-far">727 years hence</div>
+            <div class="meta-facts">
+              <b>2 April 2753</b><br>Domain: <b>Space Law</b>
+            </div>
+          </div>
+          <figure class="locator"><svg viewBox="14 6 232 244" width="220" role="img" xmlns="http://www.w3.org/2000/svg" class="locator-svg" aria-label="Locator chart: Solder-Bays, Generation Freighter Argus, 727 years hence">><title>Locator chart for Solder-Bays, Generation Freighter Argus (727 years hence)</title><circle cx="130.0" cy="130.0" r="112.0" fill="none" stroke="#1a1611" stroke-width="1.4"/><circle cx="130.0" cy="130.0" r="108.0" fill="none" stroke="#1a1611" stroke-width="0.6"/><circle cx="130.0" cy="130.0" r="33.3" fill="none" stroke="#cdc3ad" stroke-width="0.7"/><circle cx="130.0" cy="130.0" r="64.5" fill="none" stroke="#cdc3ad" stroke-width="0.7"/><circle cx="130.0" cy="130.0" r="93.6" fill="none" stroke="#cdc3ad" stroke-width="0.7"/><line x1="130.0" y1="130.0" x2="234.0" y2="130.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="220.1" y2="182.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="182.0" y2="220.1" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="130.0" y2="234.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="78.0" y2="220.1" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="39.9" y2="182.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="26.0" y2="130.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="39.9" y2="78.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="78.0" y2="39.9" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="130.0" y2="26.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="182.0" y2="39.9" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="220.1" y2="78.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><circle cx="164.2" cy="106.3" r="1.39" fill="#6b5f4d" opacity="0.48"/><circle cx="93.9" cy="131.7" r="1.49" fill="#6b5f4d" opacity="0.42"/><circle cx="150.3" cy="68.2" r="0.89" fill="#6b5f4d" opacity="0.65"/><circle cx="112.5" cy="138.5" r="0.72" fill="#6b5f4d" opacity="0.30"/><circle cx="115.9" cy="182.3" r="0.86" fill="#6b5f4d" opacity="0.60"/><circle cx="158.8" cy="60.2" r="1.25" fill="#6b5f4d" opacity="0.36"/><circle cx="116.9" cy="98.8" r="1.46" fill="#6b5f4d" opacity="0.49"/><circle cx="136.2" cy="126.1" r="0.94" fill="#6b5f4d" opacity="0.40"/><circle cx="165.4" cy="79.3" r="1.03" fill="#6b5f4d" opacity="0.48"/><circle cx="90.1" cy="43.2" r="1.29" fill="#6b5f4d" opacity="0.26"/><circle cx="146.7" cy="184.3" r="0.96" fill="#6b5f4d" opacity="0.45"/><circle cx="126.4" cy="154.3" r="1.60" fill="#6b5f4d" opacity="0.39"/><circle cx="118.9" cy="209.0" r="0.53" fill="#6b5f4d" opacity="0.34"/><circle cx="65.6" cy="173.1" r="0.65" fill="#6b5f4d" opacity="0.32"/><circle cx="173.5" cy="154.5" r="0.73" fill="#6b5f4d" opacity="0.37"/><circle cx="129.3" cy="184.2" r="0.63" fill="#6b5f4d" opacity="0.71"/><circle cx="187.5" cy="185.4" r="1.04" fill="#6b5f4d" opacity="0.25"/><circle cx="67.9" cy="121.4" r="0.64" fill="#6b5f4d" opacity="0.54"/><circle cx="183.4" cy="197.3" r="1.41" fill="#6b5f4d" opacity="0.36"/><circle cx="165.5" cy="38.7" r="1.22" fill="#6b5f4d" opacity="0.65"/><circle cx="100.2" cy="139.1" r="0.53" fill="#6b5f4d" opacity="0.32"/><circle cx="51.0" cy="91.0" r="0.58" fill="#6b5f4d" opacity="0.75"/><circle cx="125.8" cy="68.5" r="0.65" fill="#6b5f4d" opacity="0.36"/><circle cx="149.1" cy="80.6" r="1.50" fill="#6b5f4d" opacity="0.72"/><circle cx="63.0" cy="173.4" r="0.50" fill="#6b5f4d" opacity="0.39"/><circle cx="220.6" cy="109.8" r="0.61" fill="#6b5f4d" opacity="0.71"/><circle cx="46.1" cy="113.6" r="0.82" fill="#6b5f4d" opacity="0.36"/><circle cx="129.9" cy="89.9" r="1.47" fill="#6b5f4d" opacity="0.57"/><circle cx="149.1" cy="195.6" r="1.51" fill="#6b5f4d" opacity="0.31"/><circle cx="169.3" cy="67.2" r="0.87" fill="#6b5f4d" opacity="0.30"/><circle cx="163.3" cy="211.8" r="1.36" fill="#6b5f4d" opacity="0.63"/><circle cx="80.3" cy="72.3" r="1.54" fill="#6b5f4d" opacity="0.27"/><circle cx="136.6" cy="214.9" r="0.61" fill="#6b5f4d" opacity="0.42"/><circle cx="122.5" cy="214.9" r="1.03" fill="#6b5f4d" opacity="0.68"/><circle cx="82.7" cy="216.7" r="0.68" fill="#6b5f4d" opacity="0.54"/><circle cx="47.2" cy="175.3" r="1.46" fill="#6b5f4d" opacity="0.54"/><circle cx="110.2" cy="63.3" r="1.49" fill="#6b5f4d" opacity="0.40"/><circle cx="161.2" cy="103.7" r="0.65" fill="#6b5f4d" opacity="0.25"/><circle cx="196.4" cy="123.0" r="1.05" fill="#6b5f4d" opacity="0.47"/><circle cx="164.8" cy="179.0" r="1.32" fill="#6b5f4d" opacity="0.28"/><circle cx="148.5" cy="176.0" r="1.04" fill="#6b5f4d" opacity="0.43"/><circle cx="57.2" cy="182.5" r="0.85" fill="#6b5f4d" opacity="0.67"/><circle cx="143.8" cy="87.9" r="1.23" fill="#6b5f4d" opacity="0.68"/><circle cx="221.9" cy="118.4" r="0.75" fill="#6b5f4d" opacity="0.56"/><circle cx="155.1" cy="161.3" r="1.29" fill="#6b5f4d" opacity="0.69"/><circle cx="63.3" cy="123.5" r="0.95" fill="#6b5f4d" opacity="0.42"/><circle cx="130.0" cy="130.0" r="2.6" fill="none" stroke="#1a1611" stroke-width="1"/><line x1="130.0" y1="130.0" x2="211.1" y2="162.9" stroke="#7a2b2b" stroke-width="0.8" stroke-dasharray="2 2"/><circle cx="211.1" cy="162.9" r="8" fill="none" stroke="#7a2b2b" stroke-width="1"/><line x1="199.1" y1="162.9" x2="223.1" y2="162.9" stroke="#7a2b2b" stroke-width="0.7"/><line x1="211.1" y1="150.9" x2="211.1" y2="174.9" stroke="#7a2b2b" stroke-width="0.7"/><circle cx="211.1" cy="162.9" r="2.4" fill="#7a2b2b"/></svg></figure>
+        </div>
+      </div>
+    </section>
+    
+    <p><a class="arc" href="../index.html">Today's dispatch &rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>
+    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">&larr;
+      Other Projects</a></p>
+    <footer>
+      <p class="fiction">Every dispatch is fiction, written by a machine each
+        morning. None of it has happened. Yet.</p>
+      Filed 15/08/2026 06:40 AEST.
+    </footer>
+  </div>
+</body>
+</html>
