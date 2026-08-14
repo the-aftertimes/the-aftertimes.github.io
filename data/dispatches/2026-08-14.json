@@ -1,0 +1,68 @@
+{
+  "run_date": "2026-08-14",
+  "run_time": "2026-08-14T20:40:58.310400+00:00",
+  "dispatch": {
+    "headline": "Worker Leans Out, Becomes Foreign Cargo",
+    "body": "A two-year spatial survey aboard the generation freighter Argus has established that human rights extend precisely fifteen centimetres past the outer hull plating.\n\nThe finding resolved a decade of disputes over tool salvage rights. However, it created an immediate administrative obstacle during routine maintenance on Thursday morning.\n\nSenior hull-sweeper Prahlad Nayar leaned twenty centimetres past the threshold while scraping lichen off a sensor dish. Under fleet law, his upper torso ceased to be a recognised person. When his magnetic boots slipped, his entire body crossed into unmapped void, revoking his citizenship instantly.\n\nBecause Nayar is no longer a citizen, pulling his tether back inside the ship would constitute importing unmanifested biological cargo without a clearance manifest.\n\n\"The geometry is immaculate,\" said lead juris-cartographer Nnamdi Eze. \"Inside the line, you have human rights. Outside the line, you are raw material. If we reel him in now, we are smuggling.\"\n\nNayar remains attached to the hull by a safety line while officers draft an emergency import declaration. Ship authorities cannot supply his suit with extra oxygen, as sending pressurised gas across the border requires a separate export licence.\n\nHe remains outside.\n\nEarlier today, a crewmate pushed a nutrient paste tube across the boundary using a fiberglass pipe. Nayar ate it.\n\nCustoms inspectors have opened an inquiry into whether the tube was legally dumped.",
+    "scene": "Two technicians in bulky thermal pressure suits stand inside an open airlock, using a long plastic pipe to push a food tube toward a tethered worker who floats six inches past the outer hull.",
+    "dateline": {
+      "place": "Solder-Bays, Generation Freighter Argus",
+      "year": 2753,
+      "month": 4,
+      "day": 2,
+      "years_from_now": 727
+    },
+    "domain": "space law",
+    "glossary": [
+      {
+        "term": "juris-cartographer",
+        "gloss": "A legal specialist who physically measures where statutory rights and civil protections end."
+      }
+    ],
+    "premise": "An astro-law report aboard the generation freighter Argus has mapped the precise boundary of human rights in deep space—exactly six inches beyond the outer hull—explaining that while this clarifies salvage protocols for dropped tools, maintenance workers who lean out too far legally cease to be citizens and cannot be pulled back in without triggering an illegal import violation.",
+    "image": "assets/img/2026-08-14.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-14T20:40:58.310400+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 23,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      0.92,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.2 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.8 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "It brilliantly satirises the absurd hyper-legalism of border bureaucracy, with incredible quotes and a sharp headline.",
+    "judge_pick": 0,
+    "chosen_index": 2,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.34,
+    "critique": "The original headline merely summarised the plot premise rather than landing a punchy satirical joke.\nThe ending restated Nayar's plight instead of escalating the bureaucratic absurdity to a sharp, recontextualising conclusion."
+  }
+}

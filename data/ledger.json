@@ -202,5 +202,15 @@
     "style": "feature",
     "place_kind": "lunar",
     "engine": "ritual"
+  },
+  {
+    "run_date": "2026-08-14",
+    "year": 2753,
+    "era_bucket": 14,
+    "domain": "space law",
+    "headline": "Worker Leans Out, Becomes Foreign Cargo",
+    "style": "discovery",
+    "place_kind": "shipboard",
+    "engine": "scale"
   }
 ]

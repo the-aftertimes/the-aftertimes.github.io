@@ -101,6 +101,12 @@
       "gloss": "The mandatory civic euphemism assigned to deceased personnel following a software style guide update.",
       "kind": "term",
       "first_seen": "2026-08-11"
+    },
+    {
+      "term": "juris-cartographer",
+      "gloss": "A legal specialist who physically measures where statutory rights and civil protections end.",
+      "kind": "term",
+      "first_seen": "2026-08-14"
     }
   ]
 }
