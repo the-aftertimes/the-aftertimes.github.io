@@ -1,0 +1,56 @@
+{
+  "run_date": "2026-08-15",
+  "run_time": "2026-08-15T20:34:52.038371+00:00",
+  "dispatch": {
+    "headline": "Mine Drills Registered As Food Trucks",
+    "body": "PALLAS-4, SINKING-SHAFT CORE - Municipal health inspectors on Pallas-4 have designated seven industrial rock-boring excavators as unlicensed food trucks after catching local teenagers eating raw nutrient slurry directly off active tungsten drills.\n\nThe trend, known locally as bit-scraping, has spread through the asteroid's deepest tunnels. Teenagers gather at the mine face during shift changes, holding metal spoons against the spinning three-metre drill heads to scoop up warm lubricant grease and protein yeast before it drips into the dust.\n\nOlder miners have condemned the practice.\n\n\"It is pure laziness,\" said driller Sula Chen. \"In my day, we scraped slurry off our work suits and cooked it on the engine exhaust pipes until it formed a dark crust. Eating it wet off a turning bit shows no craft.\"\n\nThe mining board tried to ban teenagers from the excavation zones last month. The teenagers responded by bringing bottled hot sauces and salt shaker attachments to the rock face.\n\nOn Wednesday, hygiene officers stopped clearing the shafts. Instead, they ordered shift bosses to weld napkin dispensers and hand-sanitiser bottles onto all twelve-tonne cutter frames. Excavators now require a valid catering permit before breaking rock.\n\nDrilling has slowed. The bits keep failing their daily swab tests because of excess garlic.",
+    "scene": "A group of teenagers in heavy overalls hold metal spoons against a massive mining drill head while a health inspector attaches a sanitiser bottle to the excavator frame.",
+    "dateline": {
+      "place": "Pallas-4, Sinking-Shaft Core",
+      "year": 2398,
+      "month": 6,
+      "day": 4,
+      "years_from_now": 372
+    },
+    "domain": "food",
+    "glossary": [
+      {
+        "term": "bit-scraping",
+        "gloss": "The practice of eating warm industrial nutrient slurry directly off spinning mining drill bits."
+      }
+    ],
+    "premise": "In the hollowed-out asteroid of Pallas-4, teenagers are eating raw, unheated nutrient sludge directly off active tungsten mining drills, prompting municipal health inspectors to classify industrial excavators as unlicensed food trucks while older drillers complain that back in their day, sludge was properly singed on exhaust manifolds.",
+    "image": "assets/img/2026-08-15.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-15T20:34:52.038371+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 24,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "It features the sharpest headline, fantastic quote about 'craft', and an absurdly perfect kicker about garlic contamination.",
+    "judge_pick": 0,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.84,
+    "critique": "The original headline stated the plot mechanics rather than landing a punchline.\nThe ending restated the garlic joke rather than escalating the institutional absurdity."
+  }
+}

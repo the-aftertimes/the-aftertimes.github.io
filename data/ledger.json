@@ -212,5 +212,15 @@
     "style": "discovery",
     "place_kind": "shipboard",
     "engine": "scale"
+  },
+  {
+    "run_date": "2026-08-15",
+    "year": 2398,
+    "era_bucket": 7,
+    "domain": "food",
+    "headline": "Mine Drills Registered As Food Trucks",
+    "style": "trend",
+    "place_kind": "asteroid",
+    "engine": "bureaucratic"
   }
 ]
