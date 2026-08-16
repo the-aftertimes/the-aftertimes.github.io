@@ -1,0 +1,62 @@
+{
+  "run_date": "2026-08-16",
+  "run_time": "2026-08-16T20:34:27.033907+00:00",
+  "dispatch": {
+    "headline": "Police Trim Wicks As Burglar Wins",
+    "body": "Bram Thorne won the Spire-London Safe-Cracking Open yesterday after Tactical Squad 9 halted pursuit to complete a mandatory lantern-lighting ritual. Thorne cracked the Sky-Thames main vault in four minutes. He tripped the alarm on purpose to pull precinct officers onto the high girders.\n\nSquad 9 cornered Thorne on the open gantry six hundred metres above the tide. They drew close. Then the city clocks struck dusk. Under the 1688 Watch Charter, all precinct officers must stop at sunset to trim and ignite three brass oil-lamps.\n\nCommander Hana Osei ordered her squad to sheath their stun nets and open their brass lamp kits. Officer Dev Patel spent seven minutes striking a damp flint against steel. Thorne waited on the railing and ate an energy bar.\n\nThorne opened the inner vault door with a tension rod while Squad 9 hummed the evening watch hymn. He packed forty gold bars into a float-bag and dropped down the chute. Squad 9 lit the last lamp ten minutes later. They tagged the empty vault as secure and logged a clean patrol.\n\nIn the mixed zone, Thorne polished his trophy with a cloth.\n\n\"I respect civic duty,\" Thorne said. \"If they ever switch to automated lamps, I will retire.\"",
+    "scene": "An armoured police officer crouches on a high steel gantry to strike a flint against a brass lamp while a burglar slides down a metal chute.",
+    "dateline": {
+      "place": "SPIRE-LONDON",
+      "year": 2833,
+      "month": 5,
+      "day": 20,
+      "years_from_now": 807
+    },
+    "domain": "crime",
+    "glossary": [
+      {
+        "term": "float-bag",
+        "gloss": "An inflated transport pouch that neutralises cargo mass during vertical drops."
+      }
+    ],
+    "premise": "The 2833 Spire-London Safe-Cracking Open was won by a veteran burglar who defeated the precinct's tactical squad after police were forced to halt their pursuit to perform a mandatory 17th-century lantern-lighting protocol dictated by the city's original watch charter.",
+    "image": "assets/img/2026-08-16.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-16T20:34:27.033907+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 25,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      0.75,
+      1.0
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: statute",
+          "severity": "major"
+        }
+      ],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 has a sharper kicker quote that highlights how the criminal's career relies entirely on police bureaucratic absurdity.",
+    "judge_pick": 0,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.76,
+    "critique": "The original headline merely stated the plot rather than landing a punchline.\nThe ending simply restated the heist's conclusion without delivering a comedic recontextualisation."
+  }
+}

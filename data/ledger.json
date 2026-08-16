@@ -222,5 +222,15 @@
     "style": "trend",
     "place_kind": "asteroid",
     "engine": "bureaucratic"
+  },
+  {
+    "run_date": "2026-08-16",
+    "year": 2833,
+    "era_bucket": 16,
+    "domain": "crime",
+    "headline": "Police Trim Wicks As Burglar Wins",
+    "style": "sport",
+    "place_kind": "drowned",
+    "engine": "obsolescence"
   }
 ]
