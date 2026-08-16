@@ -113,6 +113,12 @@
       "gloss": "The practice of eating warm industrial nutrient slurry directly off spinning mining drill bits.",
       "kind": "term",
       "first_seen": "2026-08-15"
+    },
+    {
+      "term": "float-bag",
+      "gloss": "An inflated transport pouch that neutralises cargo mass during vertical drops.",
+      "kind": "term",
+      "first_seen": "2026-08-16"
     }
   ]
 }
