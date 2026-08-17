@@ -36,6 +36,7 @@ from datetime import date, datetime, timezone
 from common import load_settings, load_yaml, read_json, rel, write_json
 import bible as bible_mod
 import critic
+import depict
 import ideate as ideate_stage
 import ledger as ledger_mod
 import selection as select_stage
@@ -129,13 +130,14 @@ def generate_one(cfg: dict, rng: random.Random, n_drafts: int) -> dict:
                  "engine": engine["key"], "n_drafts": len(drafts)},
         "critic": {"score": best_score["score"],
                    "violations": best_score["violations"]},
+        "brief": cfg.get("brief_stage") and depict.depict(best, settings) or None,
         "prose": write_stage.prose_report(best["body"]),
         "sentences": split_sentences(best["body"]),
         "funny": [],   # indices Charlie marks, filled in by mark.py
     }
 
 
-def generate(target: int, n_drafts: int) -> int:
+def generate(target: int, n_drafts: int, brief_stage: bool = False) -> int:
     settings = load_settings()
     cfg = {
         "settings": settings,
@@ -149,6 +151,8 @@ def generate(target: int, n_drafts: int) -> int:
         # Trials MUST see the same funny-line pool the live prompt does, or the
         # batch measures a prompt that is not the one running in production.
         "funny_lines": load_yaml("config/funny_lines.yaml").get("lines") or [],
+        # --brief spends one extra Gemini call per trial to exercise depict.py.
+        "brief_stage": brief_stage,
     }
     rng = random.Random()
     made = 0
@@ -233,7 +237,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"TRIAL BATCH - {target} dispatch(es), {n_drafts} draft(s) each")
     print(f"~{target * (1 + n_drafts)} Gemini calls; nothing published")
     print("=" * 70)
-    made = generate(target, n_drafts)
+    made = generate(target, n_drafts, "--brief" in argv)
     print(f"\n{made} trial(s) generated.")
     print(f"wrote {render()}")
     return 0

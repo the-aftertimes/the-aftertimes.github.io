@@ -17,16 +17,50 @@ from PIL import Image
 from common import rel
 
 
-def build_prompt(dispatch: dict) -> str:
+_STYLE = ("A masterful wood engraving in the style of Gustave Dore. Fine black ink "
+          "linework and dense cross-hatching on aged paper, dramatic chiaroscuro "
+          "lighting, a single clear focal subject, figures in a believable "
+          "environment, rich background detail.")
+#: "no border, no frame" is ported from photocopy and is NOT cosmetic: the first
+#: brief-built image came back with a drawn white margin ruled around it, because
+#: a richly specified scene reads to flux as a plate in a book. The engraving must
+#: bleed to the edge - the page supplies its own framing.
+#: The hatching clause is here for the same reason: the structured brief pulled
+#: the sky toward a smooth grey wash, away from the linework the house style is.
+_NEGATIVE = ("Every tone built from engraved lines and cross-hatching, never "
+             "smooth grey shading. Full bleed to the edges: no border, no frame, "
+             "no margin, no plate mark. No colour. Absolutely no text, no letters, "
+             "no words, no captions, no titles, no numbers, no signatures and no "
+             "watermark anywhere in the image - purely pictorial.")
+
+
+def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
+    """Assemble the flux prompt, preferring a structured brief from depict.py.
+
+    Ported from ~/dev/photocopy 17/08/2026. Two details there are load-bearing
+    and are the reason this is not just string concatenation:
+      - EMPTY SLOTS ARE SKIPPED, not emitted blank. flux reads a dangling
+        "Light: ." as an instruction about punctuation and it shows in the image.
+      - THE NEGATIVE GOES LAST. flux weights the tail of a prompt most heavily,
+        and the slots are exactly what tempts it to render lettering, so a
+        no-text clause placed in front of them loses the argument.
+    """
+    if brief:
+        parts = [_STYLE]
+        lead = ", ".join(p for p in ((brief.get("subject") or "").strip(),
+                                     (brief.get("action") or "").strip()) if p)
+        parts.append((lead or "a figure").rstrip(".") + ".")
+        for field, prefix in (("setting", ""), ("light", "Light: "),
+                              ("materials", "Materials: "), ("anomaly", "")):
+            value = (brief.get(field) or "").strip()
+            if value:
+                parts.append(f"{prefix}{value}".rstrip(".") + ".")
+        parts.append(_NEGATIVE)
+        return " ".join(parts)
+
+    # Fallback: the writer's scene line, which is prose written for a reader.
     subject = (dispatch.get("scene") or "").strip() or dispatch["headline"]
-    return (
-        "A masterful wood engraving in the style of Gustave Dore. Fine black ink linework "
-        "and dense cross-hatching on aged paper, dramatic chiaroscuro lighting, a single "
-        "clear focal subject, figures in a believable environment, rich background detail. "
-        f"It depicts this scene: \"{subject}\". No colour. Absolutely no text, no letters, "
-        "no words, no captions, no titles, no numbers, no signatures and no watermark "
-        "anywhere in the image - purely pictorial."
-    )
+    return f"{_STYLE} It depicts this scene: \"{subject}\". {_NEGATIVE}"
 
 
 def _cf_image(prompt: str, settings: dict) -> bytes | None:
@@ -62,12 +96,13 @@ def _crop(raw: bytes, frac: list) -> bytes:
     return out.getvalue()
 
 
-def generate(dispatch: dict, run_date: str, settings: dict) -> str | None:
+def generate(dispatch: dict, run_date: str, settings: dict,
+             brief: dict | None = None) -> str | None:
     """Return a repo-relative path like 'assets/img/2026-07-28.jpg', or None."""
     if not settings.get("image", {}).get("enabled"):
         return None
     try:
-        raw = _cf_image(build_prompt(dispatch), settings)
+        raw = _cf_image(build_prompt(dispatch, brief), settings)
         if not raw:
             return None
         cropped = _crop(raw, settings["image"]["crop"])
