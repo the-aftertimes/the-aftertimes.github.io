@@ -38,7 +38,9 @@ _STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
 #: the sky toward a smooth grey wash, away from the linework the house style is.
 _NEGATIVE = ("Every tone built from engraved lines and cross-hatching, never "
              "smooth grey shading. Full bleed to the edges: no border, no frame, "
-             "no margin, no plate mark. No colour. Absolutely no text, no letters, "
+             "no margin, no plate mark. One figure only, or at most two - no "
+             "crowd, no onlookers, no background figures. No colour. Absolutely "
+             "no text, no letters, "
              "no words, no captions, no titles, no numbers, no signatures and no "
              "watermark anywhere in the image - purely pictorial.")
 
