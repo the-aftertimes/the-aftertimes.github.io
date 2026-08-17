@@ -232,5 +232,15 @@
     "style": "sport",
     "place_kind": "drowned",
     "engine": "obsolescence"
+  },
+  {
+    "run_date": "2026-08-17",
+    "year": 2175,
+    "era_bucket": 2,
+    "domain": "biotech",
+    "headline": "Bunker Bars Medics To Protect Foot Truffles",
+    "style": "wire",
+    "place_kind": "subsurface",
+    "engine": "sentiment"
   }
 ]
