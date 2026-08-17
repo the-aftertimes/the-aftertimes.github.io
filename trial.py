@@ -33,7 +33,8 @@ import sys
 import traceback
 from datetime import date, datetime, timezone
 
-from common import load_settings, load_yaml, read_json, rel, write_json
+from common import (load_common_words, load_settings, load_yaml, read_json,
+                    rel, write_json)
 import bible as bible_mod
 import critic
 import depict
@@ -117,7 +118,8 @@ def generate_one(cfg: dict, rng: random.Random, n_drafts: int) -> dict:
         raise RuntimeError("every draft failed")
 
     context = {"years_from_now": dateline["years_from_now"],
-               "engine": engine["key"]}
+               "engine": engine["key"],
+               "common_words": load_common_words()}
     scored = [(critic.score(d, context, settings["quality"]), d) for d in drafts]
     scored.sort(key=lambda pair: pair[0]["score"], reverse=True)
     best_score, best = scored[0]

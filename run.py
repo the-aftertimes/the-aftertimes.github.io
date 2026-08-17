@@ -14,7 +14,8 @@ import sys
 import traceback
 from datetime import date, datetime, timezone
 
-from common import load_settings, load_yaml, read_json, rel, write_json
+from common import (load_common_words, load_settings, load_yaml, read_json,
+                    rel, write_json)
 import archive as archive_mod
 import avoid
 import bible as bible_mod
@@ -224,7 +225,8 @@ def run_pipeline() -> dict:
 
     qcfg = settings["quality"]
     context = {"years_from_now": dateline["years_from_now"],
-               "engine": engine["key"]}
+               "engine": engine["key"],
+               "common_words": load_common_words()}
 
     print(">>> SELECT")
     chosen_premises = select_stage.select_many(
@@ -251,9 +253,17 @@ def run_pipeline() -> dict:
     print(">>> REVISE")
     dispatch, revise_info = maybe_revise(dispatch, context, qcfg, settings)
     pr = write_stage.prose_report(dispatch["body"])
+    # The decode rate is logged even when it is clean, unlike the violation,
+    # which only speaks up past the threshold. Charlie's complaint on 17/08/2026
+    # was that the paper had drifted archaic over WEEKS - a number that appears
+    # only once it is already too high cannot show a trend.
+    rare = critic.rare_words(dispatch["body"], context["common_words"])
+    pr["rare_words"] = len(rare)
+    pr["rare_rate"] = round(100.0 * len(rare) / max(1, pr["words"]), 1)
     print(f"    final: {dispatch['headline'][:60]}")
     print(f"    prose: {pr['words']}w / mean {pr['mean_sentence']}w / "
-          f"longest {pr['longest']}w / {pr['short_sentences']} short")
+          f"longest {pr['longest']}w / {pr['short_sentences']} short / "
+          f"{pr['rare_rate']}% to decode")
 
     print(">>> ILLUSTRATE")
     # A structured visual brief beats the writer's scene line, which is prose
@@ -289,8 +299,12 @@ def run_pipeline() -> dict:
     print(">>> RECORD")
     record = {"run_date": run_date, "run_time": run_dt.isoformat(),
               "dispatch": dispatch, "meta": meta,
+              # `prose` was printed but never stored, so "has the paper drifted
+              # archaic or long-winded?" could only be answered by re-measuring
+              # every body. It is stored now, decode rate included, because that
+              # is the question Charlie actually asked on 17/08/2026.
               "quality": {"n_drafts": len(drafts), **choose_info,
-                          **revise_info}}
+                          **revise_info, "prose": pr}}
     write_json(f"data/dispatches/{run_date}.json", record)
     ledger_mod.save_ledger(ledger_mod.append_entry(
         ledger, run_date, dateline, domain, dispatch["headline"],

@@ -3,8 +3,11 @@ styles:
   guidance: A straight breaking-news wire report of an EVENT as it unfolds - who, what, where, and eyewitnesses.
     Not a ruling or a verdict.
 - key: feature
-  guidance: A human-centred feature that follows one named person or place through the story - scene-setting,
-    their own words, the texture of their day. Not an announcement.
+  guidance: >-
+    A human-centred feature that follows one named person or place through the story - their own words,
+    the texture of their day, the detail a wire report would skip. Not an announcement. It still OPENS on
+    what happened, never on a scene. On 17/08/2026 this style produced "At dawn, eleven air-dock workers
+    knelt on the cold basalt floor of Lock Four", which tells a reader nothing about the news.
 - key: obituary
   guidance: An obituary for a person, institution, technology or idea that has died - told as a life story
     in roughly chronological order, dignified and dryly fond.
@@ -16,7 +19,8 @@ styles:
     revealing the absurd world through how utterly normal they find it.
 - key: firstperson
   guidance: A correspondent's first-person, present-tense eyewitness dispatch - 'I' am there, describing
-    what I see and the people I meet, wry and observational.
+    what I see and the people I meet, wry and observational. The 'I' is a reporter filing copy, never an
+    essayist - it states the news in the first sentence, then witnesses it.
 - key: investigation
   guidance: An investigative expose - the correspondent has found something being quietly concealed or
     ignored, laid out as evidence with a reluctant source and a denial.

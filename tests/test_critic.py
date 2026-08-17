@@ -296,3 +296,101 @@ def test_funny_block_keeps_separate_sources_apart():
 def test_funny_block_empty_pool_is_silent():
     import write
     assert write.funny_block([]) == ""
+
+
+# --- plainness: the vocabulary a reader has to decode -----------------------
+# Added 17/08/2026 after Charlie said the dispatches were hard to read and used
+# archaic words. He was right, and the cause was that plainness was the only
+# quality dimension the critic did not measure, so it lost to every rule that
+# was measured.
+
+def _plain_cfg():
+    return {"plainness": {"rate_max": 5.0, "rate_major": 7.0}}
+
+
+def test_rare_words_ignores_invented_proper_nouns():
+    """The paper is built on invented names; they are supposed to be unfamiliar.
+    Only the ordinary vocabulary AROUND them is the readability problem."""
+    import critic
+    common = frozenset({"walked", "into", "the", "shaft", "with", "her", "crew"})
+    hits = critic.rare_words("Amara Osei walked into Lock Four with her crew.",
+                             common)
+    assert hits == []
+
+
+def test_rare_words_splits_hyphenated_coinages():
+    """A coinage built from plain words is free; one built from archaic words is
+    still caught. This is the whole point - keep the world strange, the language
+    plain."""
+    import critic
+    common = frozenset({"seal", "brusher", "held", "spit", "tray", "and", "the"})
+    assert critic.rare_words("The seal-brusher held a spit-tray.", common) == []
+    assert critic.rare_words("The juris-cartographer held a spit-tray.",
+                             common) == ["juris", "cartographer"]
+
+
+def test_check_plainness_is_silent_on_plain_prose():
+    import critic
+    common = frozenset("the vault door opened and forty gold bars went down "
+                       "chute he waited on railing ate a bar".split())
+    body = ("The vault door opened and forty gold bars went down the chute. "
+            "He waited on the railing and ate a bar.")
+    assert critic.check_plainness(body, common, _plain_cfg()) == []
+
+
+def test_check_plainness_flags_archaic_prose_and_names_the_words():
+    """The offending words must appear in the detail line, because that string is
+    what revise.py shows the model - a bare rate would be unactionable."""
+    import critic
+    common = frozenset("the walked past and to buy from with a of".split())
+    body = " ".join(["The apothecary walked past the cobblestone hermitage to "
+                     "buy lard and chrism from a gravedigger."] * 2)
+    out = critic.check_plainness(body, common, _plain_cfg())
+    assert len(out) == 1 and out[0]["rule"] == "plainness"
+    for word in ("apothecary", "cobblestone", "hermitage", "chrism"):
+        assert word in out[0]["detail"]
+
+
+def test_check_plainness_escalates_to_major_past_the_upper_rate():
+    """6% of the body is a minor fault, 8% a major one - the thresholds bracket
+    the range the real archive actually ran at."""
+    import critic
+    common = frozenset({"the", "and"})
+    filler = "the and " * 47                       # 94 plain words
+    minor = critic.check_plainness(filler + "apothecary " * 6, common,
+                                   _plain_cfg())    # 6 of 100 = 6.0%
+    major = critic.check_plainness(filler + "apothecary " * 8, common,
+                                   _plain_cfg())    # 8 of 102 = 7.8%
+    assert minor and minor[0]["severity"] == "minor"
+    assert major and major[0]["severity"] == "major"
+
+
+def test_check_plainness_skipped_without_a_word_list():
+    """critic.py does no file IO, so the caller supplies the vocabulary. Absent
+    it the check must no-op rather than guess."""
+    import critic
+    assert critic.check_plainness("apothecary chrism lard", None,
+                                  _plain_cfg()) == []
+
+
+def test_plainness_is_never_a_hard_reject():
+    """Sometimes the unfamiliar word is the right word. A taste threshold must
+    cost points, never refuse to publish."""
+    from common import load_settings
+    assert "plainness" not in load_settings()["quality"]["hard_reject"]
+
+
+def test_score_applies_plainness_when_the_caller_supplies_the_words(quality_cfg):
+    import critic
+    body = " ".join(["The apothecary sealed the hermitage on the Tuesday."] * 8)
+    dispatch = {"headline": "Vault Door Shut", "body": body,
+                "dateline": {"place": "Lock Four"}}
+    common = frozenset("the sealed on tuesday".split())
+    with_words = critic.score(dispatch, {"years_from_now": 200, "engine": "x",
+                                         "common_words": common}, quality_cfg)
+    without = critic.score(dispatch, {"years_from_now": 200, "engine": "x"},
+                           quality_cfg)
+    rules = [v["rule"] for v in with_words["violations"]]
+    assert "plainness" in rules
+    assert "plainness" not in [v["rule"] for v in without["violations"]]
+    assert with_words["score"] < without["score"]
