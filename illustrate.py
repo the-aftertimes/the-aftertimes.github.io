@@ -17,10 +17,19 @@ from PIL import Image
 from common import rel
 
 
-_STYLE = ("A masterful wood engraving in the style of Gustave Dore. Fine black ink "
-          "linework and dense cross-hatching on aged paper, dramatic chiaroscuro "
-          "lighting, a single clear focal subject, figures in a believable "
-          "environment, rich background detail.")
+#: "documentary" and the anti-surrealism clause matter as much as the Dore
+#: reference. Charlie, 17/08/2026, on the first brief-built image: "still really
+#: Dali-esque and absurd, it doesn't look real". A structured brief gives flux
+#: enough specificity to compose an ALLEGORY, and a surreal picture explains the
+#: joke - the same failure the prose had before "report the facts, never state
+#: the joke". The events are absurd; the picture reports them deadpan.
+_STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
+          "newspaper illustration of a real event that was actually witnessed. "
+          "Fine black ink linework and dense cross-hatching on aged paper, a "
+          "single clear focal subject, figures in a believable environment, rich "
+          "background detail. Plain eye-level view, natural gravity, everything "
+          "resting on solid ground - nothing floating or suspended, no symbolic "
+          "or dreamlike composition.")
 #: "no border, no frame" is ported from photocopy and is NOT cosmetic: the first
 #: brief-built image came back with a drawn white margin ruled around it, because
 #: a richly specified scene reads to flux as a plate in a book. The engraving must

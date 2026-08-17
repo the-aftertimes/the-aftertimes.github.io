@@ -32,13 +32,15 @@ import gemini
 FIELDS = ("subject", "action", "setting", "light", "materials", "anomaly")
 
 _GUIDE = {
-    "subject": "the single focal thing or figure, and what it is made of, in one clause",
-    "action": "what it is doing at this exact instant, and which way it faces",
-    "setting": "the place around it, in concrete nouns",
+    "subject": "the person or object at the centre, and what it is made of, in one clause",
+    "action": ("what they are plainly DOING - working, waiting, walking, watching. "
+               "An ordinary action caught mid-way, not a dramatic pose"),
+    "setting": "the ordinary working place around them, in concrete nouns",
     "light": "direction, hardness and source of the light",
     "materials": "the three or four materials actually visible, named plainly",
-    "anomaly": ("the single most specific detail in this scene - the one thing a "
-                "generic illustration of this story would NOT have. Name it exactly."),
+    "anomaly": ("one mundane, specific detail that proves this is a real place "
+                "someone works in - wear, clutter, a tool set down, a repair. "
+                "Something dull and true, NOT something strange"),
 }
 
 #: flux renders any text it is told about, and the engraving is meant to be
@@ -77,8 +79,19 @@ def build_prompt(dispatch: dict) -> str:
     body = (dispatch.get("body") or "").strip()
     return (
         "You are the picture editor for a newspaper. Below is a news dispatch. "
-        "Choose the ONE moment in it that should be illustrated, and describe "
-        "that moment as it would look to someone standing there.\n\n"
+        "Choose ONE ordinary moment from it and describe it as a PRESS "
+        "PHOTOGRAPH - the plain, unstaged record a reporter would file.\n\n"
+        "This is the most important instruction: THE PICTURE MUST LOOK REAL. "
+        "The events in these stories are absurd, and the picture must report "
+        "them completely straight, exactly as the writing does. A surreal or "
+        "symbolic image explains the joke and kills it.\n"
+        "So: everything obeys gravity and rests on something. Nothing floats, "
+        "hovers or is suspended in mid-air. No object is impossibly large. "
+        "People stand and work normally - nobody is falling, flailing, "
+        "reaching skyward or arranged into a tableau. No allegory, no dreamlike "
+        "composition, no swirling sky. Ordinary eye-level view.\n"
+        "Prefer the dull moment AFTER the event to the dramatic instant of it: "
+        "the clean-up, the inspection, the queue, the paperwork being carried.\n\n"
         f"HEADLINE: {headline}\n"
         f"SUGGESTED SCENE: {scene}\n"
         f"DISPATCH:\n{body[:1500]}\n\n"
