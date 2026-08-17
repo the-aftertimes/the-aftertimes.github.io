@@ -74,7 +74,8 @@ h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
 footer{padding-top:2rem;font-family:-apple-system,system-ui,sans-serif;
   font-size:0.78rem;color:var(--muted);}
 footer .fiction{font-style:italic;margin:0 0 0.6rem;}
-.hublink{margin:0.45rem 0 0;}
+/* House standard: the back-link sits top right on every property. */
+.hublink{margin:0 0 0.6rem;text-align:right;}
 a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
 """
 
@@ -225,6 +226,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <body>
   <div class="wrap">
     {stale_banner}
+    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">&larr;&nbsp;Other projects</a></p>
     <header class="masthead">
       {edition_line}
       <div class="name">{html.escape(meta['site_name'])}</div>
@@ -250,8 +252,6 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     </section>
     {signup}
     {archive_link}
-    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">&larr;
-      Other Projects</a></p>
     <footer>
       <p class="fiction">Every dispatch is fiction, written by a machine each
         morning. None of it has happened. Yet.</p>
