@@ -1,0 +1,74 @@
+{
+  "run_date": "2026-08-17",
+  "run_time": "2026-08-17T20:38:40.082560+00:00",
+  "dispatch": {
+    "headline": "Bunker Bars Medics To Protect Foot Truffles",
+    "body": "Residents of Deep-Ice Shaft Kanchenjunga-7 blocked a public health team on Thursday to prevent the eradication of a gene-spore that grows edible black truffles under their toenails.\n\nThe emergency spray crew arrived with anti-fungal foggers after atmospheric sensors detected high spore counts across six residential levels. However, thirty vault residents barricaded the access hatch using cold-storage carts and small carving boards.\n\nThe fungal strain, originally engineered for automated mushroom trays, drifted into the shaft's air scrubbers in November. It replaces human toe-plates with firm, aromatic truffle caps every three weeks. While health officials classed the outbreak as a systemic skin rot, local dinner hostesses quickly integrated the harvests into regional soups.\n\nBy January, foot shaving became a key social ritual.\n\n\"The health board claims we are infected,\" said resident Tashi Lhadon, holding a small knife at the hatch. \"In fact, we are self-sufficient.\"\n\nMedical officers warned that the spore weakens bone density if left untreated. The shaft council responded by banning all anti-fungal soap from the central market.\n\n\"Sector C tried the medical cream,\" Lhadon said. \"Their nails grew back normal. Nobody attended their parties.\"\n\nThey threw hot stock. The health team retreated.\n\nA medical report notes that the spore will eventually turn the lower foot into a solid root mass. Council members expect this to double their starter yield by autumn.",
+    "scene": "Thirty vault residents stand behind a barricade of cold-storage carts inside a narrow ice tunnel, holding carving knives and steaming soup pots.",
+    "dateline": {
+      "place": "Deep-Ice Shaft Kanchenjunga-7",
+      "year": 2175,
+      "month": 10,
+      "day": 6,
+      "years_from_now": 149
+    },
+    "domain": "biotech",
+    "glossary": [
+      {
+        "term": "toe-plate",
+        "gloss": "The natural human nail bed modified by bio-engineering."
+      }
+    ],
+    "premise": "Inhabitants of a deep Himalayan mountain bunker are passionately refusing anti-fungal treatments for a gene-spore that replaces human toenails with edible truffles, citing intense regional pride in their self-harvested dinner party delicacies.",
+    "brief": {
+      "subject": "a woman in a thick padded thermal suit sitting on an inverted composite crate with her right foot bare",
+      "action": "using a short ceramic blade to slice a dark rounded fungus cap off her big toe into a stainless steel bowl on her lap",
+      "setting": "a frost-lined tunnel junction with bundled utility cables running along the wall and two heavy insulated carts parked across the hatchway behind her",
+      "light": "flat hard white light from an overhead tubular lamp",
+      "materials": "frosted ice walls, quilted synthetic fabric, stainless steel, dark fibrous fungus",
+      "anomaly": "a strip of green masking tape wrapped around the cracked handle of the knife"
+    },
+    "image": "assets/img/2026-08-17.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-17T20:38:40.082560+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 26,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "It sharply satirizes social vanity and the rejection of medical advice for status, anchored by a genuinely hilarious quote about social ruin.",
+    "judge_pick": 1,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original draft explained the premise rather than capitalizing on its comedic potential.\nThe dialogue and final kicker needed sharper punchlines to treat the absurdity as a mundane social standard.",
+    "prose": {
+      "words": 222,
+      "sentences": 18,
+      "mean_sentence": 12.3,
+      "longest": 27,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 7,
+      "rare_rate": 3.2
+    }
+  }
+}

@@ -119,6 +119,12 @@
       "gloss": "An inflated transport pouch that neutralises cargo mass during vertical drops.",
       "kind": "term",
       "first_seen": "2026-08-16"
+    },
+    {
+      "term": "toe-plate",
+      "gloss": "The natural human nail bed modified by bio-engineering.",
+      "kind": "term",
+      "first_seen": "2026-08-17"
     }
   ]
 }
