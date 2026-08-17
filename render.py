@@ -74,8 +74,15 @@ h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
 footer{padding-top:2rem;font-family:-apple-system,system-ui,sans-serif;
   font-size:0.78rem;color:var(--muted);}
 footer .fiction{font-style:italic;margin:0 0 0.6rem;}
-/* House standard: the back-link sits top right on every property. */
-.hublink{margin:0 0 0.6rem;text-align:right;}
+/* The back-link sits top right on Charlie's other properties, but this one is a
+   newspaper front page: anything above the masthead competes with it. Both
+   end-links share one row at the foot instead, pointing opposite ways - back to
+   the hub on the left, on to the archive on the right. The pair needs about
+   300px; below that flex-wrap stacks them, and space-between leaves a lone item
+   on its own line flush left, which is what we want - so no breakpoint here. */
+.endlinks{display:flex;justify-content:space-between;align-items:baseline;
+  gap:0.4rem 1.5rem;flex-wrap:wrap;margin:0;}
+.endlinks p{margin:0;}
 a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
 """
 
@@ -226,7 +233,6 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <body>
   <div class="wrap">
     {stale_banner}
-    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">&larr;&nbsp;Other projects</a></p>
     <header class="masthead">
       {edition_line}
       <div class="name">{html.escape(meta['site_name'])}</div>
@@ -251,7 +257,10 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
       </div>
     </section>
     {signup}
-    {archive_link}
+    <div class="endlinks">
+      <p><a class="arc" href="https://charlietrenorden.com/">&larr;&nbsp;Other projects</a></p>
+      {archive_link}
+    </div>
     <footer>
       <p class="fiction">Every dispatch is fiction, written by a machine each
         morning. None of it has happened. Yet.</p>

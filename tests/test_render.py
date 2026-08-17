@@ -158,3 +158,23 @@ def test_tab_title_leads_with_the_masthead_and_og_title_does_not():
     assert tab.startswith("The Aftertimes"), tab
     assert not og.startswith("The Aftertimes"), og
     assert og.endswith("The Aftertimes"), og
+
+
+def test_end_links_share_one_row_at_the_foot():
+    """Charlie 17/08/2026: put Other Projects in line with Browse the Archive.
+    Nothing may sit above the masthead - this is a front page, and a link there
+    competes with it."""
+    out = render_dispatch(DISPATCH, META)
+    row = out.split('<div class="endlinks">')[1].split("</div>")[0]
+    assert "Other projects" in row and "Browse the archive" in row
+    assert 'class="hublink"' not in out
+    body = out.split("<body>")[1]
+    assert body.index("masthead") < body.index("Other projects")
+
+
+def test_permalink_end_links_pair_with_the_back_links():
+    """The permalink's row carries 'Today's dispatch / Archive' instead, and must
+    still hold the hub link - it is the only way off a permalink to the hub."""
+    out = render_dispatch(DISPATCH, META, is_permalink=True)
+    row = out.split('<div class="endlinks">')[1].split("</div>")[0]
+    assert "Other projects" in row and "Archive" in row
