@@ -28,3 +28,23 @@ def test_build_avoid_block_is_empty_when_disabled():
 def test_build_avoid_block_never_raises_on_bad_input():
     """A trend-spotting fault must never take the daily publish down with it."""
     assert run_mod.build_avoid_block([{"broken": True}], CFG_ON) == ""
+
+
+def test_run_passes_the_word_list_into_the_critic():
+    """The plainness check no-ops when `common_words` is missing from the
+    context, so a silent unwiring would look exactly like clean prose. This
+    repo has shipped config pointing at code nothing calls before - assert the
+    wiring, not just the function."""
+    import inspect
+    src = inspect.getsource(run_mod)
+    assert '"common_words": load_common_words()' in src
+
+
+def test_the_word_list_loads_and_holds_plain_english():
+    from common import load_common_words
+    words = load_common_words()
+    assert len(words) > 20_000
+    for plain in ("chest", "drill", "spoon", "vault", "morning"):
+        assert plain in words
+    for hard in ("apothecary", "chrism", "vespers", "thorax", "girder"):
+        assert hard not in words

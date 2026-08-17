@@ -105,6 +105,17 @@ quality:
     max: 280
     hard_min: 160
     hard_max: 340
+  # Percentage of body words that are NOT in config/common_words.txt - the words
+  # a reader has to stop and decode. Derived from the archive on 17/08/2026, not
+  # from taste: the nineteen dispatches to that date ran a median 4.2% and a
+  # worst case of 7.5%, and the worst cases are exactly the ones Charlie called
+  # archaic (apothecary, cobblestone, lard, chrism, vespers, hermitage). So the
+  # minor threshold sits just above the median and the major one at the top of
+  # the observed range. Deliberately NOT in hard_reject: sometimes the
+  # unfamiliar word is the right word.
+  plainness:
+    rate_max: 5.0
+    rate_major: 7.0
 
 # Daily self-improvement. Only REPETITION is automated: it is measurable, whereas
 # "funny" is not, and a loop optimising only what it can measure drifts toward

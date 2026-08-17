@@ -237,6 +237,14 @@ genuinely lands.
 
 REPORT THE FACTS; NEVER STATE THE JOKE. Open on concrete news - what happened, to
 whom, where, when - and get to it fast, without burying it under worldbuilding.
+THE FIRST SENTENCE MUST CARRY THE NEWS, whatever today's format is. A format is a
+shape for the rest of the piece; it is never a licence to open on a scene, a mood,
+an abstract finding or a survey result. If a reader could finish sentence one
+without knowing what has happened, it is the wrong sentence.
+  Wrong: "At dawn, eleven dock workers knelt on the cold floor of Lock Four."
+  Wrong: "A two-year survey has established where human rights end."
+  Right: "A dock crew spent Tuesday scrubbing their own mouths after a fitter
+  said the words 'fresh air' on shift."
 But the absurdity must be VISIBLE IN THE FACTS, never asserted in a summary
 clause. Do not have the narrator, or a character, describe the comic mechanism out
 loud. Characters must behave as though their world is entirely normal; they cannot
@@ -322,6 +330,27 @@ Rules:
   adjective and adverb that is not doing real work - "supreme", "utterly",
   "entirely", "merely", "precise", "heart-wrenching", "deep". One adjective per
   sentence at most, usually none.
+- EVERY WORD MUST BE ONE A READER KNOWS WITHOUT STOPPING. This applies to the
+  BODY exactly as hard as it applies to the headline, and it is the single
+  biggest thing this paper gets wrong. A reader should never have to decode a
+  word, look one up, or work out what a thing is from its name.
+  Banned register 1, ANTIQUE: apothecary, cobblestone, lard, chrism, vespers,
+  hermitage, altarpiece, gravedigger, offal, dowel, joist, pergola, matriarch,
+  honorific, unlacing, ritually. Writing "not present-day" does NOT mean writing
+  pre-industrial. Reaching for an old word is the laziest way to sound like
+  another era and it makes the paper read like a historical novel.
+  Banned register 2, CLINICAL AND TECHNICAL: thorax, brainstem, myocardial,
+  barometric, relativistic, decompression, minimisation, reclassified,
+  recalibrate. If a word sounds like it came from a manual, use the blunt word a
+  person would say instead - chest, not thorax; air pressure, not barometric.
+  The test: if a word would look out of place spoken aloud in a pub, cut it.
+- THE FUTURE LIVES IN THE NOUNS YOU INVENT AND WHAT PEOPLE DO, NOT IN HARD
+  VOCABULARY. Invented names - of places, ships, bodies, jobs, customs - are
+  where the strangeness belongs, and they should be built out of ORDINARY words
+  so a reader gets them instantly: "seal-brusher", "spit-tray", "quiet room",
+  "the evening watch". A coinage assembled from difficult words ("juris-
+  cartographer", "chief barometric tuner") makes the reader work twice. Keep the
+  world strange and the language plain.
 - NAME A THING ONCE, THEN REUSE THE SAME WORDS. Do not elegantly vary: if it is a
   "thought feed", it stays a "thought feed" - not "raw neural architecture", then
   "the subconscious stream", then "the recorded link". Rotating synonyms for one

@@ -28,4 +28,5 @@ def quality_cfg():
         "rhythm": {"mean_min": 14, "mean_max": 20, "mean_hard_min": 12,
                    "mean_hard_max": 24, "longest_max": 35, "min_short": 2},
         "length": {"min": 200, "max": 280, "hard_min": 160, "hard_max": 340},
+        "plainness": {"rate_max": 5.0, "rate_major": 7.0},
     }

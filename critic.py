@@ -129,6 +129,67 @@ def check_props(text: str, years_from_now: int) -> list[dict]:
                "present-day props: " + ", ".join(hits), severity)]
 
 
+#: A capitalised word is skipped by check_plainness: invented place names, ships,
+#: institutions and people are SUPPOSED to be unfamiliar, and the paper would be
+#: nothing without them. What makes a dispatch hard to read is the ordinary
+#: vocabulary around them - "apothecary", "chrism", "cobblestone", "gantry" -
+#: which is exactly what is left once the proper nouns are set aside.
+_WORD = re.compile(r"[A-Za-z][A-Za-z'-]*")
+
+
+def rare_words(body: str, common: frozenset[str]) -> list[str]:
+    """Lowercase words a reader has to stop and decode, in order of appearance.
+
+    Hyphenated coinages are split and judged part by part, so an invented
+    compound built from plain words ("seal-brusher", "spit-tray") costs nothing
+    while one built from archaic ones is still caught. Parts of three letters or
+    fewer are skipped, matching the word list's own floor.
+    """
+    out = []
+    for tok in _WORD.findall(body):
+        if tok[:1].isupper():
+            continue
+        for part in re.split(r"[-']", tok.lower()):
+            if len(part) > 3 and part not in common:
+                out.append(part)
+    return out
+
+
+def check_plainness(body: str, common: frozenset[str] | None,
+                    cfg: dict) -> list[dict]:
+    """Flag prose the reader has to decode. Added 17/08/2026, when Charlie said
+    the dispatches were "hard to read, they don't read like a news article, they
+    use really archaic words".
+
+    He was right, and the reason it had drifted is that plainness was the ONE
+    quality dimension with no measurement behind it. The write prompt has always
+    asked for plain Anglo-Saxon words, but rhythm, length, the legal register and
+    present-day props were all measured and therefore selected for across the
+    three drafts, while vocabulary was not - so the instruction lost every time
+    it competed with "invent the era's own objects, materials and rituals".
+
+    Graded, never a hard reject: an unfamiliar word is sometimes the right word,
+    and a threshold that could refuse a draft outright would be taste dressed up
+    as measurement. It costs the draft points and it names the offending words in
+    the detail line, which is what the revise pass reads.
+    """
+    if common is None:
+        return []
+    words = len(body.split()) or 1
+    hits = rare_words(body, common)
+    rate = 100.0 * len(hits) / words
+    p = cfg.get("plainness") or {}
+    minor_at, major_at = p.get("rate_max", 5.0), p.get("rate_major", 7.0)
+    if rate < minor_at:
+        return []
+    shown = sorted(set(hits))
+    return [_v("plainness",
+               f"{len(hits)} words a reader must decode in {words} "
+               f"({rate:.1f}%, wanted under {minor_at:.0f}%) - replace with the "
+               f"blunt everyday word: " + ", ".join(shown),
+               "major" if rate >= major_at else "minor")]
+
+
 def check_stated_joke(body: str) -> list[dict]:
     flat = re.sub(r"\s+", " ", body).strip()
     opening = " ".join(_SENTENCE_SPLIT.split(flat)[:_STATED_JOKE_SENTENCES])
@@ -190,7 +251,9 @@ def check_structure(dispatch: dict, cfg: dict) -> list[dict]:
 
 def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     """Measure a dispatch. `context` carries years_from_now and engine, both of
-    which make some checks conditional. Returns the score, the violations and the
+    which make some checks conditional, plus `common_words` for the plainness
+    check - omit it and that check is skipped, which keeps this module free of
+    file IO. Returns the score, the violations and the
     raw metrics; a draft breaking any cfg["hard_reject"] rule is flagged
     `rejected` but still returned, because the orchestrator may need it as a last
     resort rather than failing to publish."""
@@ -205,6 +268,7 @@ def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     violations += check_register(body, context.get("engine", ""))
     violations += check_props(text, context.get("years_from_now", 0))
     violations += check_stated_joke(body)
+    violations += check_plainness(body, context.get("common_words"), cfg)
     violations += check_residue(text)
     weights = cfg["weights"]
     penalty = sum(weights.get(v["severity"], weights["minor"])

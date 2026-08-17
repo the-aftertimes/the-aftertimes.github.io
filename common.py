@@ -26,6 +26,26 @@ def load_yaml(rel_path: str) -> dict:
         return yaml.safe_load(fh)
 
 
+_COMMON_WORDS: frozenset[str] | None = None
+
+
+def load_common_words() -> frozenset[str]:
+    """The plain-English vocabulary the critic scores prose against.
+
+    Cached, because it is ~28,000 lines and the critic scores three drafts a
+    run. Returned as a frozenset so a caller cannot mutate the shared copy.
+    See tools/build_common_words.py for where the list comes from.
+    """
+    global _COMMON_WORDS
+    if _COMMON_WORDS is None:
+        with open(_path("config", "common_words.txt"), "r",
+                  encoding="utf-8") as fh:
+            _COMMON_WORDS = frozenset(
+                line.strip() for line in fh
+                if line.strip() and not line.startswith("#"))
+    return _COMMON_WORDS
+
+
 def tz_now(settings: dict) -> datetime:
     return datetime.now(ZoneInfo(settings["timezone"]))
 
