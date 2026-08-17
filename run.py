@@ -19,6 +19,7 @@ import archive as archive_mod
 import avoid
 import bible as bible_mod
 import critic
+import depict
 import exemplars
 import ideate as ideate_stage
 import illustrate as illustrate_mod
@@ -255,7 +256,15 @@ def run_pipeline() -> dict:
           f"longest {pr['longest']}w / {pr['short_sentences']} short")
 
     print(">>> ILLUSTRATE")
-    dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings)
+    # A structured visual brief beats the writer's scene line, which is prose
+    # written for a reader rather than a renderer. Returns None on any failure
+    # and illustrate falls back, so this can cost a better picture but never the
+    # picture. One extra Gemini call.
+    brief = depict.depict(dispatch, settings)
+    if brief:
+        print(f"    brief: {', '.join(f for f in depict.FIELDS if brief.get(f))}")
+    dispatch["brief"] = brief
+    dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings, brief)
     print(f"    image: {dispatch['image'] or 'none (fallback)'}")
 
     print(">>> RENDER")

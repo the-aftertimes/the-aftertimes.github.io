@@ -1,0 +1,87 @@
+{
+  "generated": "2026-08-17T02:00:15.521902+00:00",
+  "dispatch": {
+    "headline": "Guests Brawl Over First Tear",
+    "body": "Ooligan Ridge - Following Sunday's brawl at the Vapour Deck funeral of the Sterling family, head protocol clerk Kaelen Mbatha remains firm that his staff handled the disturbance with standard decorum.\n\nThe fight broke out forty minutes into the service. Eighteen mourners brawled over the cloud-condenser valve to deposit the inaugural grief drop.\n\n\"The order of moisture is strict,\" Mbatha said. \"The prime heir clears their nasal passages first. Then the spouse drops one tear into the condenser funnel to scent the weather array.\"\n\nThe argument began when Delphine Sterling stepped toward the funnel ahead of the eldest nephew.\n\n\"Delphine brought a saline bulb in her wrap,\" Mbatha said. \"That is an illegal discharge. The nephew tackled her into the orchid basin, and three cousins joined with salad forks.\"\n\nThe brawl lasted twenty minutes. Nine guests were treated for broken ribs, and four fell into the cloud layer.\n\n\"The family showed real devotion,\" Mbatha said. \"The air output from that service will rain purified salt over the lower decks for weeks.\"\n\nWhen asked about the contents of the sealed casket, Mbatha checked his slate.\n\n\"We are still waiting on the manifest,\" he said. \"It could be Great-Uncle Hector. Or the gene-hound.\"\n\nHe adjusted his collar. \"Either way, the moisture yield was remarkable.\"",
+    "scene": "Dressed in flowing formal silks, two mourners wrestle over a tall silver funnel while a clerk in a crisp uniform checks a glowing slate.",
+    "dateline": {
+      "place": "Ooligan Ridge",
+      "year": 2769,
+      "month": 10,
+      "day": 17,
+      "years_from_now": 743
+    },
+    "domain": "death and mourning",
+    "glossary": [
+      {
+        "term": "cloud-condenser",
+        "gloss": "A high-platform atmosphere processor that converts ritual fluid contributions into atmospheric mist."
+      }
+    ],
+    "premise": "Cloud-city socialites at a high-altitude wake erupt into a devastated, tearful brawl over who is entitled to shed the first tear into the platform's prestige atmospheric condenser, completely unaware of which family member is in the coffin."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 2769,
+      "month": 10,
+      "day": 17,
+      "years_from_now": 743
+    },
+    "domain": "death and mourning",
+    "style": "interview",
+    "place_kind": "gasgiant",
+    "engine": "sentiment",
+    "n_drafts": 2
+  },
+  "critic": {
+    "score": 0.92,
+    "violations": [
+      {
+        "rule": "rhythm_mean",
+        "detail": "mean sentence is 10.6 words, wanted 11-20",
+        "severity": "minor"
+      }
+    ]
+  },
+  "brief": {
+    "subject": "a woman in pleated metallic silk holding a squeezed saline bulb",
+    "action": "falling backward into a bed of dark orchids while a man in a high-collared tunic grabs her wrist, facing toward the open sky",
+    "setting": "a high-altitude open balcony surrounded by transparent railings above a layer of solid white clouds",
+    "light": "hard, direct sunlight coming from directly above",
+    "materials": "metallic silk, polished chrome, broken white quartz, crushed purple petals",
+    "anomaly": "a stream of liquid squirting from a clear bulb toward a tall chrome vapor funnel"
+  },
+  "prose": {
+    "words": 212,
+    "sentences": 20,
+    "mean_sentence": 10.6,
+    "longest": 31,
+    "short_sentences": 5,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Ooligan Ridge - Following Sunday's brawl at the Vapour Deck funeral of the Sterling family, head protocol clerk Kaelen Mbatha remains firm that his staff handled the disturbance with standard decorum.",
+    "The fight broke out forty minutes into the service.",
+    "Eighteen mourners brawled over the cloud-condenser valve to deposit the inaugural grief drop.",
+    "\"The order of moisture is strict,\" Mbatha said.",
+    "\"The prime heir clears their nasal passages first.",
+    "Then the spouse drops one tear into the condenser funnel to scent the weather array.\"",
+    "The argument began when Delphine Sterling stepped toward the funnel ahead of the eldest nephew.",
+    "\"Delphine brought a saline bulb in her wrap,\" Mbatha said.",
+    "\"That is an illegal discharge.",
+    "The nephew tackled her into the orchid basin, and three cousins joined with salad forks.\"",
+    "The brawl lasted twenty minutes.",
+    "Nine guests were treated for broken ribs, and four fell into the cloud layer.",
+    "\"The family showed real devotion,\" Mbatha said.",
+    "\"The air output from that service will rain purified salt over the lower decks for weeks.\"",
+    "When asked about the contents of the sealed casket, Mbatha checked his slate.",
+    "\"We are still waiting on the manifest,\" he said.",
+    "\"It could be Great-Uncle Hector.",
+    "Or the gene-hound.\"",
+    "He adjusted his collar.",
+    "\"Either way, the moisture yield was remarkable.\""
+  ],
+  "funny": [],
+  "slug": "t011"
+}
