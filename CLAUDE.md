@@ -37,6 +37,46 @@ Publishing is unaffected and has continued throughout. See `docs/TODO.md` for th
 full diagnosis, including the separate and larger finding that campaigns have
 been delivering to an effectively empty list.
 
+## The deadpan rule governs EVERY channel, not just the prose
+
+The whole conceit is that absurd events are reported completely straight. That is
+settled for the writing - "report the facts, never state the joke". **It applies
+just as hard to the pictures, and twice now I have broken it in a channel I was
+not thinking of:**
+
+- `letter` and `advice` styles wrote first-person council complaints, then `review`
+  wrote a consumer review of a funeral venue. Charlie: "doesn't feel like a news
+  story." All three are gone.
+- Porting photocopy's image brief, I copied an `anomaly` slot asking for "the one
+  thing a generic illustration would NOT have" - an instruction to be bizarre - and
+  got a surreal tableau. Charlie: "really Dali-esque, it doesn't look real."
+
+Photocopy is a drifting art project where surreal is the point. This is a
+newspaper. **Before adding or porting anything that shapes an output - a style, a
+prompt slot, a few-shot pool - ask whether it pushes toward reporting the absurd
+thing plainly or toward performing it.** Anything that amplifies the absurdity is
+wrong here, however good it looks elsewhere.
+
+House style is settled and is NOT to be re-pitched: Dore engraving, monochrome,
+one or two figures. Four alternatives were rendered and rejected on 17/08/2026 -
+see `docs/TODO.md` and `data/trials/img/style-*.jpg`.
+
+## Read docs/TODO.md before writing to it
+
+It is edited by other sessions between turns. On 17/08/2026 I appended an item
+about duotoning the newsletter image, having missed that the newsletter had been
+retired four days earlier - the file said so, I just had not re-read it. Append
+via an editor that reads first, never a blind script.
+
+## Trial batches eat the cron's quota
+
+`trial.py` and the daily run share one Gemini free tier. Ten trials is roughly
+thirty calls and **it exhausted the daily allowance on 10/08/2026, degrading that
+night's dispatch** - the judge and revise passes both 429'd. I had told Charlie the
+cron was not at risk, reasoning from a reset time rather than measuring. Run
+batches AFTER the day's dispatch has filed, and do not reassure anyone about
+headroom without checking what was actually consumed.
+
 ## Before changing anything about prose quality
 
 Read `config/funny_lines.yaml` and the `quality` block in `config/settings.yaml`
