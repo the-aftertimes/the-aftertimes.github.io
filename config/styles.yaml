@@ -17,10 +17,14 @@ styles:
 - key: interview
   guidance: A profile built around a single interview - mostly one character's voice answering questions,
     revealing the absurd world through how utterly normal they find it.
-- key: firstperson
-  guidance: A correspondent's first-person, present-tense eyewitness dispatch - 'I' am there, describing
-    what I see and the people I meet, wry and observational. The 'I' is a reporter filing copy, never an
-    essayist - it states the news in the first sentence, then witnesses it.
+# firstperson REMOVED 18/08/2026. Charlie: "shouldn't be first person (e.g. i am)".
+# It is the fourth style cut for the same reason - letter, advice and review all
+# went earlier because they "didn't feel like a news story". A reporter who says
+# "I" is writing a column, and a column cannot report an absurd event straight.
+# Earlier the same day I had tried to SAVE this style by telling it to state the
+# news in the first sentence and witness it second; that was the wrong repair.
+# The problem was never the lede, it was the narrator. Do not reintroduce it, and
+# treat any new format that puts the correspondent in the frame the same way.
 - key: investigation
   guidance: An investigative expose - the correspondent has found something being quietly concealed or
     ignored, laid out as evidence with a reluctant source and a denial.

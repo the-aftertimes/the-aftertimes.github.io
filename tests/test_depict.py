@@ -90,3 +90,18 @@ def test_depict_returns_none_on_a_thin_brief(monkeypatch):
     monkeypatch.setattr(depict.gemini, "generate", lambda *a, **k: '{"subject": "x"}')
     from common import load_settings
     assert depict.depict({"headline": "H", "body": "B"}, load_settings()) is None
+
+
+def test_brief_must_centre_the_person_the_headline_is_about():
+    """18/08/2026: a dispatch about six nuns guarding a burst pipe was
+    illustrated as a lone station fitter at a cart. The brief was plain, real and
+    faithful to a moment in the story - and unrecognisable as that story. The
+    one-or-two-figures rule is settled house style, so the fix is WHICH figure,
+    not how many."""
+    prompt = depict.build_prompt({"headline": "Nuns Block Pipe Repair",
+                                  "scene": "six nuns with wrenches",
+                                  "body": "A fitter waited, bored."})
+    assert "THE PERSON IN FRAME MUST BE THE PERSON THE HEADLINE IS ABOUT" in prompt
+    assert "never a bystander" in prompt
+    # the one-or-two-figures rule must survive the fix, not be traded away for it
+    assert "ONE person, or at most two" in prompt
