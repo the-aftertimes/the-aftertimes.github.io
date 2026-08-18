@@ -230,7 +230,16 @@ Today's dispatch format: {style_guidance}
 
 The house voice is intelligent, dry and deadpan. This must actually be FUNNY and
 interesting, not merely competent sci-fi. Commit fully to the one absurd idea and
-follow its internal logic to increasingly ridiculous but consistent conclusions.
+follow its internal logic to conclusions that are increasingly SERIOUS - never
+increasingly silly.
+
+ONE ABSURDITY PER DISPATCH, AND EVERYTHING ELSE IS ORDINARY. The premise is the
+only thing allowed to be strange. Every consequence, every institution and every
+person around it behaves exactly as they would in a real newsroom's copy: the
+costs are real, the procedures are real, the reactions are the boring ones people
+actually have. Piling a second and third absurdity on top does not double the
+comedy, it tells the reader nothing here is real and there is nothing at stake -
+which is the fastest way to make a funny premise stop being funny.
 Favour wit and clarity over dense jargon. Do NOT force a strained running metaphor
 (for instance narrating a court ruling as though it were a sports match) unless it
 genuinely lands.

@@ -165,3 +165,19 @@ def test_prompt_forbids_copying_its_own_examples():
         premise="p", dateline={"year": 2500, "years_from_now": 474},
         domain="food", style_guidance="A wire report.", place_guidance="a moon")
     assert "Never copy an example's words" in wp
+
+
+def test_no_first_person_or_correspondent_styles():
+    """18/08/2026, Charlie: "shouldn't be first person (e.g. i am)". The fourth
+    style cut for the same reason, after letter, advice and review - a reporter
+    who says "I" is writing a column, and a column cannot report an absurd event
+    straight. The guidance is checked too, because the first repair attempt kept
+    the style and only changed its lede, which did not fix anything."""
+    styles = _load("styles.yaml")["styles"]
+    keys = {s["key"] for s in styles}
+    for gone in ("firstperson", "letter", "advice", "review", "opinion",
+                 "column", "diary"):
+        assert gone not in keys, f"{gone} puts the correspondent in the frame"
+    for s in styles:
+        g = s["guidance"].lower()
+        assert "first-person" not in g and "first person" not in g, s["key"]

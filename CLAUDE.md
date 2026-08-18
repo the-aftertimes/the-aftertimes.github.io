@@ -46,7 +46,17 @@ not thinking of:**
 
 - `letter` and `advice` styles wrote first-person council complaints, then `review`
   wrote a consumer review of a funeral venue. Charlie: "doesn't feel like a news
-  story." All three are gone.
+  story." All three are gone. `firstperson` followed on 18/08/2026 - "shouldn't be
+  first person (e.g. i am)" - which makes four styles cut for one reason. Earlier
+  that same day I had tried to SAVE it by telling it to state the news in sentence
+  one and witness it second. Wrong repair: the fault was the narrator, not the
+  lede. A reporter who says "I" is writing a column.
+- **The picture must be of the story's SUBJECT, not just a true moment from it.**
+  18/08/2026, on a dispatch about six nuns guarding a burst pipe, `depict.py`
+  returned a lone station fitter at a cart and flux drew it faithfully. Every rule
+  was obeyed - plain, real, one figure, the dull moment after the event - and the
+  picture was unrecognisable as the story. The one-or-two-figures rule is settled
+  house style, so the fix was WHICH figure, never how many.
 - Porting photocopy's image brief, I copied an `anomaly` slot asking for "the one
   thing a generic illustration would NOT have" - an instruction to be bizarre - and
   got a surreal tableau. Charlie: "really Dali-esque, it doesn't look real."
