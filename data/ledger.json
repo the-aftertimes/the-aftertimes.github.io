@@ -242,5 +242,15 @@
     "style": "wire",
     "place_kind": "subsurface",
     "engine": "sentiment"
+  },
+  {
+    "run_date": "2026-08-18",
+    "year": 2090,
+    "era_bucket": 1,
+    "domain": "religion",
+    "headline": "Nuns Block Pipe Repair Over Holy Typo",
+    "style": "firstperson",
+    "place_kind": "orbital",
+    "engine": "language"
   }
 ]

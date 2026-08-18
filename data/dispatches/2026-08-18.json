@@ -1,0 +1,69 @@
+{
+  "run_date": "2026-08-18",
+  "run_time": "2026-08-18T20:36:07.170875+00:00",
+  "dispatch": {
+    "headline": "Nuns Block Pipe Repair Over Holy Typo",
+    "body": "I am watching six nuns from the Order of the Sealed Valve stand guard around a ruptured hydraulic line in the main transept of Pallas Ring Station.\n\nSister Maeve steps into the red mist with a heavy torque wrench held high. Every twenty seconds, a jet of warm synthetic oil splashes across her habit and coats the deck in grease. Behind her, three station fitters wait with a patching clamp, looking bored.\n\n\"The holy text is absolute,\" Sister Maeve says, wiping oil from her goggles. \"Sentence three says the leak shall inherit the berth.\"\n\nThe line broke four weeks ago during a power spike. Instead of letting maintenance seal the hole, the nuns built a rail around the spray and declared the floor sacred. The oil has since spread into three nearby airlocks, forcing seventy cargo pods to dock elsewhere.\n\nAn engineer shows me his slate, which displays the original manuscript from 2040. A note in the margin confirms a dead translator typed 'leak' instead of 'meek', and 'berth' instead of 'earth'.\n\nThe nuns do not care.\n\n\"Mistakes are part of the plan,\" Sister Maeve says. \"If the Lord meant earth, he would have given us soil instead of three thousand square metres of prime docking space.\"\n\nStation chief Aris Thorne has given up trying to shut off the main valve. Whenever he touches the housing, the nuns ring the station bell and lay down in the oil.\n\nTonight, the fluid reaches my ankles.\n\nSister Maeve hands me a plastic bucket and asks if I want to help scoop the inheritance into Lock Four.",
+    "scene": "Six nuns in oil-stained grey robes stand in a semicircle holding heavy steel wrenches around a spraying pipe while three engineers in bright orange overalls sit on a hydraulic lift with folded arms.",
+    "dateline": {
+      "place": "Pallas Ring Station",
+      "year": 2090,
+      "month": 7,
+      "day": 9,
+      "years_from_now": 64
+    },
+    "domain": "religion",
+    "glossary": [],
+    "premise": "An orbital order of nuns fiercely guards a ruptured hydraulic line in the station's transept, citing a scripture translation error that promises 'the leak shall inherit the berth.'",
+    "brief": {
+      "subject": "a station fitter in a grease-stained orange synthetic work suit and rubber-soled boots",
+      "action": "standing with his hands resting on the handles of a heavy steel patching clamp set on a low utility cart",
+      "setting": "an industrial station corridor with bolted floor plates, bundled wall conduits, and a low rubber floor threshold",
+      "light": "hard white light coming directly from overhead strip fixtures",
+      "materials": "cast steel, dark synthetic oil, orange polymer fabric, vulcanized rubber",
+      "anomaly": "a roll of gray duct tape sitting on top of a hydraulic valve housing behind him"
+    },
+    "image": "assets/img/2026-08-18.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-18T20:36:07.170875+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 27,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Sister Maeve's theological justification about prime docking space and the final kicker about scooping the inheritance are exceptionally sharp comedic hits.",
+    "judge_pick": 2,
+    "chosen_index": 2,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original headline merely stated the premise without landing a joke, and the final line restated the situation rather than escalating it. The dialogue needed a sharper deadpan turn to treat the logistical chaos as normal.",
+    "prose": {
+      "words": 264,
+      "sentences": 18,
+      "mean_sentence": 14.7,
+      "longest": 27,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 1.9
+    }
+  }
+}
