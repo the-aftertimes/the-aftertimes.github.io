@@ -1,0 +1,69 @@
+{
+  "run_date": "2026-08-19",
+  "run_time": "2026-08-19T20:40:41.233266+00:00",
+  "dispatch": {
+    "headline": "Mother Freezes Family For Better Lighting",
+    "body": "Seven members of the Osei family were admitted to the cold ward at Deep-Lanthorn Nine on Friday after being forced onto the unheated exterior hull for a matching-fleece holiday photo.\n\nNone wore pressure helmets.\n\nThandiwe Osei, who manages the waystation light-beacon, had spent three months weaving matching red garments for her children, grandchildren, and ninety-year-old mother. She insisted the living quarters were unsuitable for a proper portrait.\n\n\"The scrubber lamps make everyone look grey,\" Thandiwe said from her bunk, where both her feet were wrapped in blue heat-foam. \"The starlight outside is far more flattering.\"\n\nThe family stood on the outer plating in deep vacuum for ninety seconds while Thandiwe adjusted the tripod legs. Her son-in-law lost two toes. Her mother's jaw froze mid-smile, requiring four hours under the warm lamps to unhook.\n\nNobody could scream.\n\nStation medics confirmed that all seven family members are now stable, though three grandchildren cannot feel their ears.\n\nThe shutter froze shut before the sensor triggered, recording only a black frame and a burst of static.\n\nThandiwe remains undeterred by the injuries or the loss of the image.\n\n\"Next year we will use the solar array,\" she said, adjusting her drip line. \"The contrast is much better.\"",
+    "scene": "A family in identical red knitted jumpers stands stiffly on the dark metal surface of a space station while a woman adjusts a camera tripod.",
+    "dateline": {
+      "place": "Deep-Lanthorn Nine",
+      "year": 5657,
+      "month": 11,
+      "day": 2,
+      "years_from_now": 3631
+    },
+    "domain": "family",
+    "glossary": [],
+    "premise": "A family running an isolated deep-space waystation suffered widespread frostbite after the mother forced three generations onto the unheated exterior hull to capture a matching-sweater holiday photo.",
+    "brief": {
+      "subject": "a woman in a red knitted fleece sweater sitting in a medical bunk with both feet encased in bulky blue heat-foam boots",
+      "action": "adjusting the small plastic valve on an intravenous line connected to her arm",
+      "setting": "a cramped space station recovery room with recessed alloy wall lockers and overhead heating lamps",
+      "light": "hard, direct white light from a single ceiling-mounted tube fixture",
+      "materials": "blue heat-foam, coarse red wool, clear vinyl tubing, matte grey composite metal",
+      "anomaly": "a ball of red yarn sitting in a plastic washbasin on the bedside table"
+    },
+    "image": "assets/img/2026-08-19.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-19T20:40:41.233266+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 28,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Perfectly skewers the universal insanity of family holiday photo ops with sharp quotes and a great final kicker.",
+    "judge_pick": 1,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original draft described the absurd premise in the headline rather than landing a distinct punchline.\nThe ending merely restated her stubbornness instead of recontextualising the failed photo as an actual sent product.",
+    "prose": {
+      "words": 203,
+      "sentences": 15,
+      "mean_sentence": 13.5,
+      "longest": 30,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.5
+    }
+  }
+}

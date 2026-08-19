@@ -252,5 +252,15 @@
     "style": "firstperson",
     "place_kind": "orbital",
     "engine": "language"
+  },
+  {
+    "run_date": "2026-08-19",
+    "year": 5657,
+    "era_bucket": 72,
+    "domain": "family",
+    "headline": "Mother Freezes Family For Better Lighting",
+    "style": "feature",
+    "place_kind": "deepspace",
+    "engine": "leisure"
   }
 ]
