@@ -1,4 +1,4 @@
-"""Archive page: domain-filter chips + data-domain tagging on list and timeline."""
+"""Archive page: domain-filter chips + data-domain tagging on the list."""
 import archive
 
 
@@ -29,14 +29,29 @@ def test_chips_dedupe_on_key_keep_first_label():
     assert 'data-filter="all"' in out and ">All<" in out
 
 
-def test_list_and_timeline_carry_matching_domain_keys():
-    import re
+def test_list_rows_carry_their_domain_key():
     out = archive.render_archive(_recs(["crime", "space law", "death and mourning"]), META)
     for key in ("crime", "space law", "death and mourning"):
         assert f'<li data-domain="{key}"' in out
-        # marks carry a tier class (t0/t1) for collision staggering, so match on
-        # the attribute rather than an exact class string
-        assert re.search(rf'class="tmark t\d" data-domain="{key}"', out), key
+
+
+def test_the_futures_visited_bar_is_gone():
+    """Charlie cut it 18/08/2026 after two reworks. It duplicated the year rail
+    the list already carries, so the filter has only one set of items to hide."""
+    out = archive.render_archive(_recs(["crime", "space law"]), META)
+    for dead in ("tmark", "tyear", "taxis", "Futures visited", "timeline"):
+        assert dead not in out, dead
+    assert "querySelectorAll('ul.disp li')" in out
+
+
+def test_archive_masthead_matches_the_front_page():
+    """Same paper, same flag. It was plain Georgia here and blackletter there."""
+    import render
+    out = archive.render_archive(_recs(["crime"]), META)
+    assert "'Aftertimes Flag','UnifrakturCook',serif" in out
+    assert "unifrakturcook-700.woff2" in out
+    for rule in ("font-size:clamp(2.7rem,10vw,4.6rem)",):
+        assert rule in out and rule in render._CSS
 
 
 def test_default_is_all_visible_when_js_off():

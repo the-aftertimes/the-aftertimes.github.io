@@ -1,10 +1,14 @@
-"""Build archive.html - every past dispatch, newest first, plus a future-timeline
-bar plotting each by its dateline. Pure functions; run separately or from run.py."""
+"""Build archive.html - every past dispatch, newest first, ordered by how far out
+it is set. Pure functions; run separately or from run.py.
+
+There WAS a horizontal futures-visited bar above the list. Charlie cut it on
+18/08/2026. It had been reworked twice - sqrt scale, then four-tier collision
+avoidance - and it still read as a hairline rule with dots, while duplicating
+the year rail the list already carries. Do not rebuild it."""
 from __future__ import annotations
 
 import glob
 import html
-import math
 import os
 
 import locator
@@ -52,33 +56,16 @@ body{margin:0;background:var(--bg);color:var(--fg);
 .wrap{max-width:46rem;margin:0 auto;padding:clamp(2rem,7vw,4rem) 1.5rem 4rem;}
 .masthead{text-align:center;border-bottom:3px double var(--fg);padding-bottom:0.9rem;
   margin-bottom:1.4rem;}
-.masthead .name{font-size:clamp(2rem,8vw,3rem);font-weight:700;line-height:1;}
-.masthead .tag{font-family:-apple-system,system-ui,sans-serif;font-size:0.6rem;
-  letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.6rem;}
+/* Kept identical to render.py's masthead - Charlie, 18/08/2026: the logo on the
+   archive must be the same as on the main page. It was plain bold Georgia here
+   while the front page wore the blackletter flag, so the two pages did not look
+   like the same paper. If one changes, change both. */
+.masthead .name{font-family:'Aftertimes Flag','UnifrakturCook',serif;font-weight:700;
+  font-size:clamp(2.7rem,10vw,4.6rem);line-height:1;letter-spacing:0.01em;}
+.masthead .tag{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.7rem;}
 h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:1.4rem 0 0.8rem;}
-.timeline{position:relative;margin:0 0 2.6rem;}
-.taxis{position:absolute;left:0;right:0;top:10px;height:1px;background:var(--rule);}
-.tmark{position:absolute;top:0;text-align:center;transform:translateX(-50%);}
-.tdot{display:block;width:9px;height:9px;margin:6px auto 0;border-radius:50%;
-  background:var(--accent);opacity:0.85;}
-.tdot.hollow{box-sizing:border-box;border:1.5px solid var(--muted);
-  background:var(--bg);opacity:1;}
-.tyear{display:block;margin-top:0.35rem;white-space:nowrap;
-  font-family:-apple-system,system-ui,sans-serif;font-size:0.6rem;letter-spacing:0.06em;
-  color:var(--muted);}
-.ttoday .tyear{text-transform:uppercase;letter-spacing:0.12em;}
-/* Lower tiers: a label that would collide drops down behind a leader line. One
-   tier per level of crowding, so a cluster of four fans out instead of two of
-   them landing back on the same row. */
-.tmark.t1 .tyear{margin-top:1.5rem;}
-.tmark.t2 .tyear{margin-top:2.65rem;}
-.tmark.t3 .tyear{margin-top:3.8rem;}
-.tmark.t1::after,.tmark.t2::after,.tmark.t3::after{content:"";position:absolute;
-  left:50%;top:15px;width:1px;background:var(--rule);transform:translateX(-50%);}
-.tmark.t1::after{height:18px;}
-.tmark.t2::after{height:36px;}
-.tmark.t3::after{height:55px;}
 .chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.4rem;
   font-family:-apple-system,system-ui,sans-serif;}
 .chip{cursor:pointer;font:inherit;font-size:0.68rem;letter-spacing:0.08em;
@@ -87,8 +74,9 @@ h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
 .chip:hover{border-color:var(--accent);color:var(--accent);}
 .chip.is-active{background:var(--accent);border-color:var(--accent);color:var(--bg);}
 ul.disp{list-style:none;margin:0;padding:0;}
-ul.disp li.is-hidden,.timeline .tmark.is-hidden{display:none;}
-/* The list is itself a timeline: year on a rail, ordered by distance from now. */
+ul.disp li.is-hidden{display:none;}
+/* Year on a rail, ordered by distance from now - this list does the job the
+   futures-visited bar used to, without a second copy of every date. */
 ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
   border-top:1px solid var(--rule);}
 .disp .rail{flex:0 0 5.5rem;text-align:right;position:relative;}
@@ -110,9 +98,6 @@ ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
 .disp .dom{font-family:-apple-system,system-ui,sans-serif;font-size:0.7rem;
   color:var(--muted);margin-top:0.25rem;}
 @media (max-width:30rem){
-  /* Tiering works in percent, but label width does not shrink with the
-     viewport. Trim the year type so the gap stays real on a phone. */
-  .tyear{font-size:0.55rem;letter-spacing:0.02em;}
   /* Rail and body stack, but the thumbnail stays beside them rather than
      dropping to a third row of its own. */
   ul.disp li{display:grid;gap:0.3rem 0.8rem;align-items:center;
@@ -131,10 +116,18 @@ footer{margin-top:3rem;font-family:-apple-system,system-ui,sans-serif;
 """
 
 
+#: The masthead flag. archive.html is at the root, so the path needs no prefix
+#: (render.py's permalinks do). Declared here rather than shared with render.py
+#: because that module builds it per page depth.
+_FONT_FACE = ("<style>@font-face{font-family:'Aftertimes Flag';"
+              "src:url('assets/fonts/unifrakturcook-700.woff2') format('woff2');"
+              "font-weight:700;font-display:swap;}</style>")
+
+
 _FILTER_JS = """
 (function(){
   var chips=document.querySelectorAll('.chip');
-  var items=document.querySelectorAll('ul.disp li, .timeline .tmark');
+  var items=document.querySelectorAll('ul.disp li');
   if(!chips.length)return;
   function apply(key){
     items.forEach(function(el){
@@ -152,79 +145,6 @@ _FILTER_JS = """
   });
 })();
 """
-
-
-#: Top of the sampled range (config dates.bands deep max). Fixing the axis to the
-#: configured ceiling rather than to whatever the archive happens to hold keeps
-#: the scale stable as dispatches accumulate.
-_AXIS_MAX_YEARS = 4000
-
-#: Minimum horizontal gap, in percent, before two year labels are treated as
-#: colliding and the later one drops to a lower tier.
-#: 8% is ~26px at the 327px mobile width, against a 23px four-digit label, so
-#: even the narrowest viewport keeps real air between neighbours.
-_LABEL_GAP_PCT = 8.0
-
-#: How many stacked label rows the timeline will use before it starts reusing
-#: the least-recently-occupied one. Bounds the block's height.
-_MAX_TIERS = 4
-
-
-def _timeline(records: list[dict]) -> str:
-    """A horizontal 'distance from now' axis.
-
-    Three deliberate choices, all fixing observed defects:
-    - SQUARE ROOT, not log. Log crushed everything into the right-hand half (the
-      nearest dispatch sat at 48% with a dead gap before it); sqrt spreads the
-      near centuries across the width, putting that same dispatch near 15%.
-    - Colliding labels drop to a LOWER TIER with a leader line instead of
-      overlapping. 2311 and 2356 sit about 5% apart and used to render as mush.
-    - The tier is chosen by asking each row in turn whether its OWN last label
-      has cleared, rather than alternating 0/1/0/1. Alternating only ever
-      separates neighbours: a cluster of four (2114/2154/2163/2183) put the
-      first and third back on the same row about 2% apart, which overlapped.
-    """
-    if not records:
-        return ""
-    ordered = sorted(records,
-                     key=lambda r: r["dispatch"]["dateline"]["years_from_now"])
-    span = math.sqrt(_AXIS_MAX_YEARS)
-    marks = ('<div class="tmark ttoday" style="left:0%">'
-             '<span class="tdot hollow"></span>'
-             '<span class="tyear">today</span></div>')
-    # Rightmost label position occupied on each tier; tier 0 starts as taken by
-    # the "today" mark at 0%.
-    last_on_tier = [0.0]
-    max_tier = 0
-    for r in ordered:
-        d = r["dispatch"]
-        y = max(1, min(int(d["dateline"]["years_from_now"]), _AXIS_MAX_YEARS))
-        pct = 100.0 * math.sqrt(y) / span
-        tier = next((t for t, last in enumerate(last_on_tier)
-                     if pct - last >= _LABEL_GAP_PCT), len(last_on_tier))
-        if tier == len(last_on_tier):
-            if tier < _MAX_TIERS:
-                last_on_tier.append(pct)
-            else:
-                # Everything is crowded: give it to whichever row has the most
-                # room, so the unavoidable overlap is as small as possible.
-                tier = min(range(_MAX_TIERS), key=lambda t: last_on_tier[t])
-                last_on_tier[tier] = pct
-        else:
-            last_on_tier[tier] = pct
-        max_tier = max(max_tier, tier)
-        headline = html.escape(hyphenate(d["headline"]))
-        year = html.escape(str(d["dateline"]["year"]))
-        dk = html.escape(_dom_key(d.get("domain", "")), quote=True)
-        marks += (f'<div class="tmark t{tier}" data-domain="{dk}" '
-                  f'style="left:{pct:.2f}%" title="{headline}">'
-                  f'<span class="tdot"></span>'
-                  f'<span class="tyear">{year}</span></div>')
-    # Height follows the deepest tier actually used, so a sparse archive keeps a
-    # compact bar and a crowded one gets the room it needs.
-    height = 56 + round(max_tier * 18.4)
-    return (f'<div class="timeline" style="height:{height}px">'
-            f'<div class="taxis"></div>{marks}</div>')
 
 
 def render_archive(records: list[dict], meta: dict) -> str:
@@ -266,6 +186,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
 <link rel="apple-touch-icon" href="assets/favicon-192.png">
 <title>Archive - {html.escape(meta['site_name'])}</title>
 <style>{_CSS}</style>
+{_FONT_FACE}
 {BEACON}
 </head>
 <body>
@@ -275,8 +196,6 @@ def render_archive(records: list[dict], meta: dict) -> str:
       <div class="tag">{html.escape(hyphenate(meta['tagline']))}</div>
     </header>
     <p><a class="home" href="index.html">&larr; Today's dispatch</a></p>
-    <h2>Futures visited</h2>
-    {_timeline(recs)}
     <h2>All dispatches</h2>
     {chips}
     <ul class="disp">{rows}</ul>
