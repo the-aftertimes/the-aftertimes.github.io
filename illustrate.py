@@ -36,7 +36,21 @@ _STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
 #: bleed to the edge - the page supplies its own framing.
 #: The hatching clause is here for the same reason: the structured brief pulled
 #: the sky toward a smooth grey wash, away from the linework the house style is.
-_NEGATIVE = ("Every tone built from engraved lines and cross-hatching, never "
+#: The clothing clause is not prudishness, it is a gap-filling failure. On
+#: 19/08/2026 a brief read "a woman in a red knitted fleece sweater... with both
+#: feet encased in bulky heat-foam boots" - a top and boots, and nothing said
+#: about anything between them. flux completed the gap with bare legs and put her
+#: in a reclining pin-up pose on the bunk. Charlie: "today's image was a bit
+#: lewd." Any body part the brief leaves unspecified is a part flux will decide
+#: about, so the prompt states the default explicitly and the negative closes it.
+_NEGATIVE = ("Everyone is fully and modestly clothed for work in complete "
+             "practical clothing that covers the whole body - sleeves, full-"
+             "length trousers or skirts, proper footwear. No nudity, no partial "
+             "nudity, no bare legs, no bare chest, no underwear, no swimwear, no "
+             "exposed skin beyond hands and face. Nobody is posed suggestively, "
+             "reclining, draped or arranged for the viewer: they are standing or "
+             "sitting upright, getting on with the work. "
+             "Every tone built from engraved lines and cross-hatching, never "
              "smooth grey shading. Full bleed to the edges: no border, no frame, "
              "no margin, no plate mark. One figure only, or at most two - no "
              "crowd, no onlookers, no background figures. No colour. Absolutely "

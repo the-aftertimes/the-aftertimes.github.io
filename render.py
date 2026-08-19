@@ -45,7 +45,14 @@ figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multipl
 @media (max-width:36rem){
   .meta-locrow{flex-direction:column;}
   .meta-loctext{text-align:center;padding-right:0;}
-  figure.locator{border-left:none;padding-left:0;margin-top:1.1rem;}
+  /* Once the row stacks, the plate is alone on a full-width line and was still
+     wearing the two-column `text-align:left`, so it sat hard against the left
+     edge under centred text. Charlie, 19/08/2026: centre it on mobile. Both
+     rules are needed - text-align centres the inline SVG box, margin:auto holds
+     it there if the svg is ever made display:block. */
+  figure.locator{border-left:none;padding-left:0;margin-top:1.1rem;
+    text-align:center;}
+  figure.locator svg{margin-left:auto;margin-right:auto;}
 }
 h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}

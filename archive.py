@@ -101,13 +101,17 @@ ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
   /* Rail and body stack, but the thumbnail stays beside them rather than
      dropping to a third row of its own. */
   ul.disp li{display:grid;gap:0.3rem 0.8rem;align-items:center;
-    grid-template-columns:1fr 38px;
+    grid-template-columns:1fr 54px;
     grid-template-areas:"rail map" "body map";}
   .disp .rail{grid-area:rail;text-align:left;}
   .disp .rail::after{display:none;}
   .disp .rbody{grid-area:body;border-left:none;padding-left:0;}
+  /* Bigger on a phone than on the desktop, which looks wrong written down and
+     is right on the page: the mobile row is a two-column grid where the map has
+     its own full-height column beside two stacked text lines, so there is more
+     room for it here than in the desktop flex row. Charlie, 19/08/2026. */
   .disp .rmap{grid-area:map;}
-  .disp .rmap .thumb{width:38px;height:38px;}
+  .disp .rmap .thumb{width:54px;height:54px;}
 }
 a.home{font-family:-apple-system,system-ui,sans-serif;color:var(--accent);
   text-decoration:none;border-bottom:1px solid var(--accent);font-size:0.85rem;}
