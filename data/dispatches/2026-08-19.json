@@ -16,12 +16,12 @@
     "glossary": [],
     "premise": "A family running an isolated deep-space waystation suffered widespread frostbite after the mother forced three generations onto the unheated exterior hull to capture a matching-sweater holiday photo.",
     "brief": {
-      "subject": "a woman in a red knitted fleece sweater sitting in a medical bunk with both feet encased in bulky blue heat-foam boots",
-      "action": "adjusting the small plastic valve on an intravenous line connected to her arm",
-      "setting": "a cramped space station recovery room with recessed alloy wall lockers and overhead heating lamps",
-      "light": "hard, direct white light from a single ceiling-mounted tube fixture",
-      "materials": "blue heat-foam, coarse red wool, clear vinyl tubing, matte grey composite metal",
-      "anomaly": "a ball of red yarn sitting in a plastic washbasin on the bedside table"
+      "subject": "a middle-aged woman wearing a thick hand-knitted red wool jumper, dark gray thermal work trousers, and heavy black insulated work boots",
+      "action": "kneeling on one knee to tighten a clamp on a tripod leg mounted on the deck",
+      "setting": "the flat riveted metal exterior plating of a space station hull near a raised cable conduit running along the deck",
+      "light": "hard direct sunlight from the side, casting sharp dark shadows across the hull",
+      "materials": "coarse red wool yarn, brushed titanium deck plates, carbon-composite tripod tubing, and heavy boot rubber",
+      "anomaly": "a bright yellow magnetic gear clip snapped onto the base of the central tripod post to hold a pair of work gloves"
     },
     "image": "assets/img/2026-08-19.jpg"
   },
