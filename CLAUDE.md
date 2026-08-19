@@ -87,6 +87,32 @@ cron was not at risk, reasoning from a reset time rather than measuring. Run
 batches AFTER the day's dispatch has filed, and do not reassure anyone about
 headroom without checking what was actually consumed.
 
+## Measure the archive BEFORE you change a prompt
+
+Charlie's quality complaints are reliable as **symptoms** and often wrong as
+**causes**. He reads the paper; he does not read the pipeline. Take the symptom
+seriously and go measure it across `data/dispatches/*.json` before touching a
+single prompt line - the measurement has changed the fix every time it has been
+run:
+
+- 17/08/2026, "hard to read... really archaic words and it's very verbose."
+  Verbosity was **already fixed** - late July ran 271-317 words at a 21-30 word
+  mean sentence, that week ran ~205 at 12-16. He was reading the BACK CATALOGUE,
+  which the archive page surfaces just as prominently as today's. Rewriting the
+  prompt for verbosity would have fixed nothing and probably broken something.
+  The archaic half WAS real and measurable, and the root cause was not the model
+  drifting: plainness was the one quality dimension `critic.py` did not measure,
+  so it lost to every rule that was measured.
+- 18/08/2026, "little bit too absurd." The write prompt was asking for it in as
+  many words - "follow its internal logic to increasingly ridiculous conclusions".
+  Not drift, an instruction.
+- 18/08/2026, "image doesn't really match what it's about." flux was fine. The
+  brief was fine prose. `depict.py` had chosen the wrong PERSON.
+
+So: reproduce the complaint as a number over the whole archive, find the line of
+config or prompt that CAUSES it, and only then edit. "The model has drifted" has
+been the wrong answer three times running.
+
 ## Before changing anything about prose quality
 
 Read `config/funny_lines.yaml` and the `quality` block in `config/settings.yaml`
