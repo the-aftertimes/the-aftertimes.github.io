@@ -1,0 +1,58 @@
+name: reillustrate
+
+# Redraw the picture for one already-published dispatch. Manual only.
+#
+# Exists because the picture stages need CF_ACCOUNT_ID / CF_API_TOKEN and a
+# Gemini key, all of which live here and not on any laptop - so when a published
+# engraving is wrong there was previously no way to replace it. Re-running
+# daily.yml does not help: run.already_filed() correctly refuses to refile a date
+# that has published.
+#
+# The words are never touched. See reillustrate.py.
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Dispatch date to redraw, YYYY-MM-DD. Blank = the most recent."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+# Shares a group with nothing, but must not overlap ITSELF - two redraws of one
+# date would race on the same image file and push conflicting commits.
+concurrency:
+  group: reillustrate
+  cancel-in-progress: false
+
+jobs:
+  redraw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Redraw
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: python reillustrate.py ${{ inputs.date }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "aftertimes-bot"
+          git config user.email "bot@the-aftertimes.github.io"
+          git add index.html archive.html d/ data/ assets/img/
+          git commit -m "reillustrate: ${{ inputs.date || 'latest' }}" \
+            || echo "no changes"
+          # The daily cron may have pushed while this ran; rebase rather than
+          # fail, since the redraw touches files the cron does not.
+          git pull --rebase
+          git push

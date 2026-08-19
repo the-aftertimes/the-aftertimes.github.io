@@ -253,26 +253,48 @@ def thumbnail(dl: dict, deep_max: int) -> str:
     """A stripped-down plate for the archive list.
 
     Same seed and geometry as the full chart, so a row's dot sits exactly where
-    that dispatch's own page puts it. Everything that would turn to mush at
-    46px is dropped: no stars, no spokes, one ring instead of three, and no
-    crosshair arms. Marked aria-hidden - the row's text already names the place,
-    and a second announcement of it is noise to a screen reader.
+    that dispatch's own page puts it. Marked aria-hidden - the row's text already
+    names the place, and a second announcement of it is noise to a screen reader.
+
+    Detail level raised 19/08/2026 - Charlie asked for these to be "slightly
+    bigger and more detailed" on mobile, where they now draw at 54px rather than
+    38px. Added back: a second graduation ring, four crosshair ticks on the
+    frame, and an open collar around the target so the mark reads as a fix on
+    something rather than a dot. Still deliberately absent are the stars and the
+    full spoke fan from the big plate: those are what actually turned to mush,
+    because they are many fine strokes at low contrast rather than a few heavy
+    ones. Everything added here is a heavy stroke on the accent or ink colour.
+    Nothing here touches the seed or the target position - decoration only, so a
+    row and its permalink still agree exactly.
     """
     place, _rng, _angle, _radius, tx, ty = _geom(dl, deep_max)
     label, far = _caption(place, int(dl.get("years_from_now", 0)))
+    frame = _R_MAX + 9      # see below: the target dot must not poke through
+    ticks = "".join(
+        f'<line x1="{_CX + dx * (frame - 11):.1f}" y1="{_CY + dy * (frame - 11):.1f}" '
+        f'x2="{_CX + dx * (frame + 5):.1f}" y2="{_CY + dy * (frame + 5):.1f}" '
+        f'stroke="{_INK}" stroke-width="3"/>'
+        for dx, dy in ((0, -1), (1, 0), (0, 1), (-1, 0)))
     return "".join([
-        f'<svg viewBox="14 14 232 232" class="thumb" aria-hidden="true" '
+        f'<svg viewBox="8 8 244 244" class="thumb" aria-hidden="true" '
         f'focusable="false" xmlns="http://www.w3.org/2000/svg">',
         f'<title>{label}, {far}</title>',
         # +9 not +6: the outermost target sits at _R_MAX and its dot has a
         # radius, so a tighter frame would let a deep-future mark poke through.
-        f'<circle cx="{_CX}" cy="{_CY}" r="{_R_MAX + 9:.1f}" fill="none" '
+        # The viewBox is 6 units wider than the frame on each side, so the ticks
+        # that overshoot it are not clipped.
+        f'<circle cx="{_CX}" cy="{_CY}" r="{frame:.1f}" fill="none" '
         f'stroke="{_INK}" stroke-width="3"/>',
-        f'<circle cx="{_CX}" cy="{_CY}" r="{_R_MAX * 0.58:.1f}" fill="none" '
+        f'<circle cx="{_CX}" cy="{_CY}" r="{_R_MAX * 0.72:.1f}" fill="none" '
         f'stroke="{_RULE}" stroke-width="2.5"/>',
+        f'<circle cx="{_CX}" cy="{_CY}" r="{_R_MAX * 0.44:.1f}" fill="none" '
+        f'stroke="{_RULE}" stroke-width="2.5"/>',
+        ticks,
         f'<circle cx="{_CX}" cy="{_CY}" r="5" fill="{_INK}"/>',
         f'<line x1="{_CX}" y1="{_CY}" x2="{tx:.1f}" y2="{ty:.1f}" '
         f'stroke="{_ACCENT}" stroke-width="2.5"/>',
+        f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="13" fill="none" '
+        f'stroke="{_ACCENT}" stroke-width="2.5" opacity="0.75"/>',
         f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="7.5" fill="{_ACCENT}"/>',
         "</svg>",
     ])

@@ -105,3 +105,35 @@ def test_brief_must_centre_the_person_the_headline_is_about():
     assert "never a bystander" in prompt
     # the one-or-two-figures rule must survive the fix, not be traded away for it
     assert "ONE person, or at most two" in prompt
+
+
+def test_brief_must_dress_the_whole_person():
+    """19/08/2026: a brief named a jumper and boots and nothing between them, and
+    flux filled the gap with bare legs and a reclining pose. Charlie: "today's
+    image was a bit lewd." Any body part the brief leaves unspecified is one the
+    renderer decides about."""
+    prompt = depict.build_prompt({"headline": "H", "scene": "s", "body": "b"})
+    assert "DESCRIBE THE WHOLE OF WHAT THE PERSON IS WEARING" in prompt
+    assert "dressed for work" in prompt
+
+
+def test_brief_must_draw_the_headline_moment_not_the_aftermath():
+    """The second half of the same failure: the picture showed the woman later,
+    alone in a recovery bunk, rather than doing the thing the headline describes.
+    The old rule preferred the dull moment AFTER the event unconditionally."""
+    prompt = depict.build_prompt({"headline": "H", "scene": "s", "body": "b"})
+    assert "THE MOMENT MUST BE THE ONE IN THE HEADLINE" in prompt
+    assert "unless the aftermath IS the story" in prompt
+
+
+def test_flux_prompt_dresses_everyone_and_bans_posing():
+    """The brief is one guard; the image prompt is the other. flux weights the
+    tail of a prompt most heavily, so this lives in the negative block."""
+    import illustrate
+    out = illustrate.build_prompt({"headline": "H", "scene": "s"},
+                                  {"subject": "a woman in a jumper"})
+    for clause in ("fully and modestly clothed", "No nudity", "no bare legs",
+                   "posed suggestively"):
+        assert clause in out, clause
+    # and it must still come after the slots, or it loses the argument
+    assert out.index("a woman in a jumper") < out.index("No nudity")
