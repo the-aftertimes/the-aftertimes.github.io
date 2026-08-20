@@ -115,3 +115,18 @@ def test_a_bad_token_is_not_retried(monkeypatch):
                         _fake_urlopen([403], []))
     assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
     assert calls == [], "a 403 must not sleep or retry"
+
+
+def test_background_figures_are_allowed_but_crowds_are_not():
+    """20/08/2026. The negative block used to say "no background figures" while
+    depict was putting the scene's other people in `setting` - the two halves of
+    the prompt contradicted each other and flux picked a side. Charlie saw the
+    result and kept it: "it actually looks fine here with multiple figures"."""
+    import illustrate
+    out = illustrate.build_prompt({"headline": "H", "scene": "s"},
+                                  {"subject": "a woman at a tripod",
+                                   "setting": "her family lined up behind her"})
+    assert "no background figures" not in out
+    assert "may stand behind them" in out
+    # the thing the cap was actually protecting against must still be banned
+    assert "No dense crowd" in out and "competing with the subject" in out

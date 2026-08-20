@@ -184,11 +184,12 @@ def test_no_first_person_or_correspondent_styles():
 
 
 def test_writer_names_a_single_figure_in_the_scene():
-    """19/08/2026. The engraving holds one or two figures - Charlie confirmed
-    that cap rather than lifting it - so a plural scene must be cut down before
-    it can be drawn. The WRITER does that cutting now: it knows which of the six
-    nuns or eleven dock workers the story was about, and the picture editor was
-    demonstrably guessing wrong."""
+    """19/08/2026. A plural scene has to resolve to one focal person before it
+    can be drawn, and the WRITER does that now: it knows which of the six nuns or
+    eleven dock workers the story was about, and the picture editor was
+    demonstrably guessing wrong. Note this survived the 20/08 relaxation - the
+    others may now appear BEHIND the subject, but something still has to be the
+    subject, or the engraving has no focal point."""
     wp = write_stage.build_prompt(
         premise="p", dateline={"year": 2500, "years_from_now": 474},
         domain="food", style_guidance="A wire report.", place_guidance="a moon")

@@ -116,8 +116,12 @@ def build_prompt(dispatch: dict) -> str:
         "Naming only a top and boots leaves the renderer to invent the rest, and "
         "on 19/08/2026 it invented bare legs and a reclining pose. Everyone in "
         "these pictures is dressed for work.\n"
-        "ONE person, or at most two. A crowd has no focal subject and the "
-        "engraving turns every extra face into mush.\n\n"
+        "THE SUBJECT IS ONE PERSON, or at most two - never a group. That cap is "
+        "on the SUBJECT, not on the picture: other people from the scene may "
+        "stand behind them, and belong in `setting`. What the engraving cannot "
+        "do is a picture with no focal subject, where a dozen equal faces all "
+        "turn to mush. One person in front, doing the thing, and the rest "
+        "behind.\n\n"
         # "SUGGESTED SCENE" is what this line used to say, and one word was
         # doing real damage: a suggestion is a thing you may decline. The
         # dispatch stays in the prompt because the brief needs the era's
