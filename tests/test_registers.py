@@ -181,3 +181,18 @@ def test_no_first_person_or_correspondent_styles():
     for s in styles:
         g = s["guidance"].lower()
         assert "first-person" not in g and "first person" not in g, s["key"]
+
+
+def test_writer_names_a_single_figure_in_the_scene():
+    """19/08/2026. The engraving holds one or two figures - Charlie confirmed
+    that cap rather than lifting it - so a plural scene must be cut down before
+    it can be drawn. The WRITER does that cutting now: it knows which of the six
+    nuns or eleven dock workers the story was about, and the picture editor was
+    demonstrably guessing wrong."""
+    wp = write_stage.build_prompt(
+        premise="p", dateline={"year": 2500, "years_from_now": 474},
+        domain="food", style_guidance="A wire report.", place_guidance="a moon")
+    assert "NAME ONE PERSON AS THE SUBJECT" in wp
+    assert "two at the very most" in wp
+    # both real failures are carried as worked examples, not just as a rule
+    assert "Six nuns" in wp and "identical red jumpers" in wp
