@@ -101,8 +101,10 @@ def test_brief_must_centre_the_person_the_headline_is_about():
     prompt = depict.build_prompt({"headline": "Nuns Block Pipe Repair",
                                   "scene": "six nuns with wrenches",
                                   "body": "A fitter waited, bored."})
-    assert "THE PERSON IN FRAME MUST BE THE PERSON THE HEADLINE IS ABOUT" in prompt
-    assert "never a bystander" in prompt
+    # Reworded 19/08 when this stage stopped choosing at all: the subject is no
+    # longer something depict picks correctly, it is something it copies.
+    assert "The `subject` is the scene's subject" in prompt
+    assert "bystanding fitter" in prompt          # the failure kept as evidence
     # the one-or-two-figures rule must survive the fix, not be traded away for it
     assert "ONE person, or at most two" in prompt
 
@@ -113,17 +115,26 @@ def test_brief_must_dress_the_whole_person():
     image was a bit lewd." Any body part the brief leaves unspecified is one the
     renderer decides about."""
     prompt = depict.build_prompt({"headline": "H", "scene": "s", "body": "b"})
-    assert "DESCRIBE THE WHOLE OF WHAT THE PERSON IS WEARING" in prompt
+    assert "DESCRIBE THE WHOLE OF WHAT THE SUBJECT IS WEARING" in prompt
     assert "dressed for work" in prompt
 
 
-def test_brief_must_draw_the_headline_moment_not_the_aftermath():
-    """The second half of the same failure: the picture showed the woman later,
-    alone in a recovery bunk, rather than doing the thing the headline describes.
-    The old rule preferred the dull moment AFTER the event unconditionally."""
+def test_depict_specifies_the_given_scene_and_never_rechooses():
+    """19/08/2026, third wrong picture running. Every previous fix tried to make
+    this stage choose BETTER; the fix is that it does not choose at all. The
+    writer already picked the moment, knowing the whole story, and the figure cap
+    means a plural scene gets cut down to one - so the writer does the cutting,
+    where the judgement is, rather than the picture editor guessing.
+
+    The label matters as much as the instruction: it used to read SUGGESTED
+    SCENE, and a suggestion is a thing you may decline."""
     prompt = depict.build_prompt({"headline": "H", "scene": "s", "body": "b"})
-    assert "THE MOMENT MUST BE THE ONE IN THE HEADLINE" in prompt
-    assert "unless the aftermath IS the story" in prompt
+    assert "SUGGESTED SCENE" not in prompt
+    assert "THE SCENE TO DRAW (not a suggestion - draw this)" in prompt
+    assert "not to pick a different" in prompt
+    assert "do not pick a moment from it" in prompt
+    # the cap Charlie confirmed on 19/08 must survive the rewrite
+    assert "ONE person, or at most two" in prompt
 
 
 def test_flux_prompt_dresses_everyone_and_bans_posing():

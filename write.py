@@ -424,6 +424,24 @@ Rules:
   hides beneath a dining table".
   Bad: "a glistening forty-tonne whale liver rolls past a clock tower" (the
   subject cannot be drawn, and it was rendered as a giant bean).
+  NAME ONE PERSON AS THE SUBJECT - two at the very most. The engraving holds one
+  or two figures and turns every extra face into mush, so a scene naming six
+  nuns, eleven dock workers or a whole family has to be cut down to one before it
+  can be drawn, and whoever does that cutting is guessing which of them mattered.
+  You are the one who knows. Pick the single person the headline is about, put
+  them in the sentence DOING the headline's action, and let everyone else go.
+  If the crowd is the joke, keep two or three of them as background, behind that
+  one person - never as the subject.
+  Bad: "Six nuns in oil-stained robes stand in a semicircle holding wrenches
+  around a spraying pipe while three engineers wait." (nine figures; it was cut
+  down to a bystanding engineer and the nuns vanished from the picture)
+  Good: "A nun in an oil-soaked grey habit kneels with a heavy wrench against a
+  spraying pipe, two more nuns blocking the passage behind her."
+  Bad: "A family in identical red jumpers stands stiffly on a space station hull
+  while a woman adjusts a camera tripod." (it was cut down to the woman alone,
+  indoors, afterwards)
+  Good: "A woman in a hand-knitted red jumper crouches at a camera tripod on the
+  bare hull plating, two jumpered relatives standing rigid behind her."
 - Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
 - Use Australian English spelling (organise, colour, defence, metre, favour).
