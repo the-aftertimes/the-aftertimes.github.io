@@ -67,9 +67,25 @@ prompt slot, a few-shot pool - ask whether it pushes toward reporting the absurd
 thing plainly or toward performing it.** Anything that amplifies the absurdity is
 wrong here, however good it looks elsewhere.
 
-House style is settled and is NOT to be re-pitched: Dore engraving, monochrome,
-one or two figures. Four alternatives were rendered and rejected on 17/08/2026 -
-see `docs/TODO.md` and `data/trials/img/style-*.jpg`.
+House style is settled and is NOT to be re-pitched: Dore engraving, monochrome.
+Four alternatives were rendered and rejected on 17/08/2026 - see `docs/TODO.md`
+and `data/trials/img/style-*.jpg`.
+
+**The figure rule changed on 20/08/2026 and this note used to say the opposite.**
+It read "one or two figures", full stop, and that cap was the reason three
+consecutive pictures failed to look like their stories: roughly half the
+dispatches have a group as the joke, and the cap forced the picture editor to
+throw the group away and pick one person, which it kept getting wrong. Charlie
+reconfirmed the hard cap when asked, then saw the first picture that broke it - a
+woman at a camera tripod with her family lined up behind her - and said "it
+actually looks fine here with multiple figures". So:
+
+**One or two people are the SUBJECT; the cap is on the subject, not on the
+frame.** Others may stand behind them, smaller and plainer. What is still banned
+is a picture with no focal subject - a dozen equal faces at equal weight, which
+is what actually turns to mush in an engraving. If a future picture is criticised
+for being crowded, the fix is to make the subject dominate, not to empty the
+background again.
 
 ## Read docs/TODO.md before writing to it
 

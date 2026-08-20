@@ -105,8 +105,8 @@ def test_brief_must_centre_the_person_the_headline_is_about():
     # longer something depict picks correctly, it is something it copies.
     assert "The `subject` is the scene's subject" in prompt
     assert "bystanding fitter" in prompt          # the failure kept as evidence
-    # the one-or-two-figures rule must survive the fix, not be traded away for it
-    assert "ONE person, or at most two" in prompt
+    # the focal-subject rule must survive the fix, not be traded away for it
+    assert "THE SUBJECT IS ONE PERSON, or at most two" in prompt
 
 
 def test_brief_must_dress_the_whole_person():
@@ -133,8 +133,10 @@ def test_depict_specifies_the_given_scene_and_never_rechooses():
     assert "THE SCENE TO DRAW (not a suggestion - draw this)" in prompt
     assert "not to pick a different" in prompt
     assert "do not pick a moment from it" in prompt
-    # the cap Charlie confirmed on 19/08 must survive the rewrite
-    assert "ONE person, or at most two" in prompt
+    # the cap must survive the rewrite - though 20/08 moved it from the FRAME to
+    # the subject, once Charlie saw a background group and liked it
+    assert "THE SUBJECT IS ONE PERSON, or at most two" in prompt
+    assert "not on the picture" in prompt
 
 
 def test_flux_prompt_dresses_everyone_and_bans_posing():
