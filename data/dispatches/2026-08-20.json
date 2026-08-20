@@ -1,0 +1,79 @@
+{
+  "run_date": "2026-08-20",
+  "run_time": "2026-08-20T20:41:03.450312+00:00",
+  "dispatch": {
+    "headline": "Rembrandt Varnish Job Knocks Ship Off Course",
+    "body": "Chief Conservator Bamidele Osei completed the triennial re-varnishing of Rembrandt's The Night Watch on Thursday during a four-g engine burn that broke three passenger collarbones.\n\nThe 90-second manoeuvre pushed the migrant freighter Seven Sisters into deep transit, flattening crew into their bunks while Osei applied resin with a badger-hair brush.\n\n\"You cannot lay down varnish in zero gravity,\" Osei said, cleaning his palette knife. \"The molecules pool into bubbles. Rembrandt painted under gravity, so the canvas demands four g to settle.\"\n\nEngine burns consume twelve tonnes of fuel and require months of clearance from flight command.\n\n\"The captain asked if we could wait for our mid-voyage brake,\" Osei said. \"I told her varnish does not wait for steering. Art dictates the course.\"\n\nDuring the manoeuvre, Osei stood locked into a heavy harness, leaning against four times his weight to stroke the dark surface.\n\n\"My left arm went numb on the final pass,\" he said. \"It was worth it. Look at the gloss on the captain's coat.\"\n\nFlight controller Maya Lin confirmed the sudden burn pushed the ship two weeks off course and into a dust field.\n\n\"Controllers complain about course drift,\" Osei said. \"Course drift can be fixed. A sagging resin coat is permanent.\"\n\nOsei plans to re-examine the canvas during next year's emergency deceleration.",
+    "scene": "Chief conservator Bamidele Osei, strapped tight into a steel wall harness, reaches forward with a fine brush toward an oil painting while the heavy engine burn pulls his face taut.",
+    "dateline": {
+      "place": "Gideon Sector, Freighter Seven Sisters",
+      "year": 2974,
+      "month": 4,
+      "day": 22,
+      "years_from_now": 948
+    },
+    "domain": "art",
+    "glossary": [],
+    "premise": "A generation ship’s chief restorer completes the sacred triennial varnishing of a Rembrandt canvas, insisting the holy brushstrokes can only be applied during high-gravity engine-burn maneuvers.",
+    "brief": null,
+    "image": "assets/img/2026-08-20.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-20T20:41:03.450312+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 29,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.84,
+      1.0,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.2 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "183 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.7 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "all_rejected": false,
+    "judge_reason": "It sharpest satirises institutional art-world pretension overriding human survival, featuring brilliant absurd quotes and an incredible kicker line.",
+    "judge_pick": 0,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original headline merely stated the plot rather than delivering a satirical punch.\nThe draft lacked sharp comedic quotes and ended on a weak restatement instead of an escalation.",
+    "prose": {
+      "words": 215,
+      "sentences": 18,
+      "mean_sentence": 11.9,
+      "longest": 25,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 7,
+      "rare_rate": 3.3
+    }
+  }
+}

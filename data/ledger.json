@@ -262,5 +262,15 @@
     "style": "feature",
     "place_kind": "deepspace",
     "engine": "leisure"
+  },
+  {
+    "run_date": "2026-08-20",
+    "year": 2974,
+    "era_bucket": 18,
+    "domain": "art",
+    "headline": "Rembrandt Varnish Job Knocks Ship Off Course",
+    "style": "interview",
+    "place_kind": "shipboard",
+    "engine": "ritual"
   }
 ]
