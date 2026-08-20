@@ -59,3 +59,59 @@ def test_crop_dimensions():
     cropped = illustrate._crop(raw, [0.03, 0.03, 0.97, 0.86])
     w, h = Image.open(io.BytesIO(cropped)).size
     assert w == 940 and h == 830
+
+
+# --- Cloudflare retry -------------------------------------------------------
+# 20/08/2026: a redraw died on a bare 429. The free image tier is a short rolling
+# window, not a daily allowance, so waiting is the fix and giving up is not.
+
+def _fake_urlopen(codes, sleeps):
+    """Raise the given HTTP codes in order, then succeed."""
+    import urllib.error
+    seq = list(codes)
+
+    class _Resp:
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def read(self): return b'{"success": true, "result": {"image": "eA=="}}'
+
+    def opener(req, timeout=None):
+        if seq:
+            raise urllib.error.HTTPError("u", seq.pop(0), "m", {}, None)
+        return _Resp()
+    return opener
+
+
+def test_a_429_is_retried_and_can_succeed(monkeypatch):
+    import json as _json
+    import illustrate
+    waits = []
+    monkeypatch.setattr(illustrate.time, "sleep", waits.append)
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen",
+                        _fake_urlopen([429], waits))
+    monkeypatch.setattr(illustrate.json, "load",
+                        lambda fh: _json.loads(fh.read().decode()))
+    out = illustrate._post_with_retry(object(), {"timeout": 1})
+    assert out == {"success": True, "result": {"image": "eA=="}}
+    assert waits[:1] == [20], "first retry should back off before trying again"
+
+
+def test_retries_are_bounded(monkeypatch):
+    import illustrate
+    monkeypatch.setattr(illustrate.time, "sleep", lambda s: None)
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen",
+                        _fake_urlopen([429, 429, 429, 429], []))
+    assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
+
+
+def test_a_bad_token_is_not_retried(monkeypatch):
+    """403 is a credentials problem. Retrying it burns quota and delays an
+    honest failure - the caller can then fall back or fail fast."""
+    import illustrate
+    calls = []
+    monkeypatch.setattr(illustrate.time, "sleep",
+                        lambda s: calls.append(s))
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen",
+                        _fake_urlopen([403], []))
+    assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
+    assert calls == [], "a 403 must not sleep or retry"

@@ -10,6 +10,8 @@ import io
 import json
 import os
 import sys
+import time
+import urllib.error
 import urllib.request
 
 from PIL import Image
@@ -88,6 +90,45 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
     return f"{_STYLE} It depicts this scene: \"{subject}\". {_NEGATIVE}"
 
 
+#: Waits between Cloudflare attempts, in seconds. Three tries over roughly a
+#: minute and a half. Added 20/08/2026, after a redraw died on a bare 429 that a
+#: single retry would very likely have survived - the free image tier is a short
+#: rolling window rather than a daily allowance, so the fix is to wait, not to
+#: give up for the day. Deliberately short: the daily cron has a backup run two
+#: hours later, and a job that sits blocked for ten minutes is worse than one
+#: that fails fast and lets the backup take it.
+_RETRY_WAITS = (20, 45)
+
+
+def _post_with_retry(req, cfg: dict):
+    """POST, retrying only what is worth retrying.
+
+    429 (rate limited) and 5xx (Cloudflare having a moment) are transient and get
+    another go. A 401/403 is a bad token and a 400 is a bad prompt - retrying
+    either just burns quota and delays the honest failure, so they return
+    immediately.
+    """
+    for attempt in range(len(_RETRY_WAITS) + 1):
+        try:
+            with urllib.request.urlopen(
+                    req, timeout=cfg.get("timeout", 120)) as resp:
+                return json.load(resp)
+        except urllib.error.HTTPError as exc:
+            transient = exc.code == 429 or 500 <= exc.code < 600
+            last = attempt >= len(_RETRY_WAITS)
+            if not transient or last:
+                print(f"    illustrate: CF HTTP {exc.code}"
+                      f"{'' if transient else ' (not retryable)'}"
+                      f"{' after ' + str(attempt + 1) + ' attempts' if transient else ''}",
+                      file=sys.stderr)
+                return None
+            wait = _RETRY_WAITS[attempt]
+            print(f"    illustrate: CF HTTP {exc.code}, retrying in {wait}s "
+                  f"({attempt + 1}/{len(_RETRY_WAITS)})", file=sys.stderr)
+            time.sleep(wait)
+    return None
+
+
 def _cf_image(prompt: str, settings: dict) -> bytes | None:
     acct = os.environ.get("CF_ACCOUNT_ID", "").strip()
     tok = os.environ.get("CF_API_TOKEN", "").strip()
@@ -100,8 +141,9 @@ def _cf_image(prompt: str, settings: dict) -> bytes | None:
     body = json.dumps({"prompt": prompt, "steps": cfg["steps"]}).encode()
     req = urllib.request.Request(url, data=body, headers={
         "Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=cfg.get("timeout", 120)) as resp:
-        data = json.load(resp)
+    data = _post_with_retry(req, cfg)
+    if data is None:
+        return None
     if not data.get("success") or "result" not in data:
         print(f"    illustrate: CF returned no image ({str(data.get('errors'))[:200]})",
               file=sys.stderr)
