@@ -272,5 +272,15 @@
     "style": "interview",
     "place_kind": "shipboard",
     "engine": "ritual"
+  },
+  {
+    "run_date": "2026-08-21",
+    "year": 2283,
+    "era_bucket": 5,
+    "domain": "entertainment",
+    "headline": "Visors Required As Tenor Lungs Burst",
+    "style": "discovery",
+    "place_kind": "gasgiant",
+    "engine": "bureaucratic"
   }
 ]

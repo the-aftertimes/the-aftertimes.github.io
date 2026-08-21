@@ -125,6 +125,12 @@
       "gloss": "The natural human nail bed modified by bio-engineering.",
       "kind": "term",
       "first_seen": "2026-08-17"
+    },
+    {
+      "term": "cloud-deck",
+      "gloss": "An exterior stage gantry exposed directly to the gas giant atmosphere.",
+      "kind": "term",
+      "first_seen": "2026-08-21"
     }
   ]
 }
