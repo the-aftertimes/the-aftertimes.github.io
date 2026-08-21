@@ -226,7 +226,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <meta name="theme-color" content="#f4efe3">
 <link rel="icon" type="image/svg+xml" href="{'../' if is_permalink else ''}assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="{'../' if is_permalink else ''}assets/favicon-192.png">
-<link rel="apple-touch-icon" href="{'../' if is_permalink else ''}assets/favicon-192.png">
+<link rel="apple-touch-icon" href="{'../' if is_permalink else ''}assets/apple-touch-icon.png">
 <title>{title}</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{html.escape(meta['site_name'])}">
