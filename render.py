@@ -235,6 +235,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{html.escape(meta['site_name'])}">
 <meta property="og:title" content="{og_title}">
+<meta name="description" content="{desc}">
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary_large_image">
 <style>{_CSS}</style>
