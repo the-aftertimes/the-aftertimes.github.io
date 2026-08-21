@@ -177,8 +177,12 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     # headline-first truncated to "Mantle Drillers Prom..." with no clue which site it was,
     # and it changes daily, so the tab was never recognisable. A shared link wants the
     # opposite: og:title leads with the headline, which is the interesting part.
-    title = html.escape(hyphenate(f"{meta['site_name']} - {dispatch['headline']}"))
     og_title = html.escape(hyphenate(f"{dispatch['headline']} - {meta['site_name']}"))
+    # House convention: an index page is the project name alone; a page WITHIN a
+    # project reads "page - project". The front page is today's dispatch, so its
+    # tab said the whole headline - useless with twenty tabs open, and it changed
+    # daily. The dated permalinks keep the headline, because there it IS the page.
+    title = og_title if is_permalink else html.escape(meta["site_name"])
     desc = html.escape("Fiction. A daily news dispatch from a random date in the future.")
     asset_prefix = "../" if is_permalink else ""
     font_face = (
