@@ -1,0 +1,74 @@
+{
+  "run_date": "2026-08-21",
+  "run_time": "2026-08-21T20:36:36.368393+00:00",
+  "dispatch": {
+    "headline": "Visors Required As Tenor Lungs Burst",
+    "body": "A six-month study of cloud-deck theatre troupes on Aether-Seven Platform confirmed Friday that heavy methane air expands singers' lungs until they burst on high notes.\n\nSafety inspectors have formally categorised the explosions as an acceptable performance variance, provided front-row patrons wear disposable plastic visors.\n\nDr. Aris Thorne, who led the research team, explained the process during a press briefing. \"Methane gathers inside the chest during soft spoken passages,\" Thorne said. \"When a singer strikes a sustained high note, the air inside the lungs expands four times over.\"\n\nThe chest gives way.\n\nThe board ruled that the phenomenon poses no threat to public health, provided theatre staff hand out protective eye shields at the door.\n\n\"So long as patrons wipe their visors between acts, audience risk is zero,\" Thorne said. \"The sudden loss of a singer is strictly an internal staff matter.\"\n\nThe study revealed that no cloud-deck troupes intend to transpose their musical scores to lower keys. Instead, directors have begun moving high notes to the final scene of the evening so stage hands only need to scrub the platform once per show.\n\nUnderstudies wait with mops.\n\nFront-row ticket sales have doubled since the report was published. Audition notices for next season now list next of kin as a mandatory field.",
+    "scene": "An usher on a open cloud platform hands a clear plastic visor to a theatre patron sitting in the front row.",
+    "dateline": {
+      "place": "Aether-Seven Platform",
+      "year": 2283,
+      "month": 8,
+      "day": 5,
+      "years_from_now": 257
+    },
+    "domain": "entertainment",
+    "glossary": [
+      {
+        "term": "cloud-deck",
+        "gloss": "An exterior stage gantry exposed directly to the gas giant atmosphere."
+      }
+    ],
+    "premise": "A study of cloud-deck theatre troupes reveals that high-pressure methane gas expands actors' lungs until they burst on high notes, a phenomenon safety inspectors have categorized as an acceptable \"structural performance variance\" provided front-row patrons wear disposable splatter visors.",
+    "brief": {
+      "subject": "a theatre usher dressed in a grey high-collared synthetic-wool tunic, matching straight-cut trousers, and black rubber-soled work shoes",
+      "action": "extending a thin curved plastic visor with a fabric band toward a seated theatergoer",
+      "setting": "the metal-grate deck of an outdoor high-altitude platform theatre, with rows of dark composite seats and safety railings, and seated patrons visible in the background",
+      "light": "flat, glare-free daylight coming evenly from high overcast cloud cover",
+      "materials": "clear polycarbonate, painted tubular steel, grey synthetic felt, perforated deck grating",
+      "anomaly": "an open cardboard shipping box filled with extra visors resting on the aisle floor next to a discarded plastic wrapping strip"
+    },
+    "image": null
+  },
+  "meta": {
+    "run_time": "2026-08-21T20:36:36.368393+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 30,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 2 features sharp corporate/institutional satire regarding workplace safety loopholes, perfectly absurd character quotes, and a brilliant kicker.",
+    "judge_pick": 1,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.51,
+    "critique": "The original headline merely stated the plot premise without landing a joke, and the ending restated facts rather than escalating the satire. The rewrite sharpens the deadpan bureaucrate-speak, heightens the comedy in the quotes, and ends on a stronger punchline.",
+    "prose": {
+      "words": 211,
+      "sentences": 15,
+      "mean_sentence": 14.1,
+      "longest": 26,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 7,
+      "rare_rate": 3.3
+    }
+  }
+}
