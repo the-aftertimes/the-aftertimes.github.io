@@ -145,8 +145,10 @@ def test_flux_prompt_dresses_everyone_and_bans_posing():
     import illustrate
     out = illustrate.build_prompt({"headline": "H", "scene": "s"},
                                   {"subject": "a woman in a jumper"})
-    for clause in ("fully and modestly clothed", "No nudity", "no bare legs",
-                   "posed suggestively"):
+    # Wording compressed 21/08 to claw back characters against Cloudflare's
+    # 2048-char cap; every RULE survived, which is what these assert.
+    for clause in ("fully and modestly dressed", "No nudity", "no bare",
+                   "posed for the viewer"):
         assert clause in out, clause
     # and it must still come after the slots, or it loses the argument
     assert out.index("a woman in a jumper") < out.index("No nudity")

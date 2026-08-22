@@ -45,23 +45,57 @@ _STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
 #: in a reclining pin-up pose on the bunk. Charlie: "today's image was a bit
 #: lewd." Any body part the brief leaves unspecified is a part flux will decide
 #: about, so the prompt states the default explicitly and the negative closes it.
-_NEGATIVE = ("Everyone is fully and modestly clothed for work in complete "
-             "practical clothing that covers the whole body - sleeves, full-"
-             "length trousers or skirts, proper footwear. No nudity, no partial "
-             "nudity, no bare legs, no bare chest, no underwear, no swimwear, no "
-             "exposed skin beyond hands and face. Nobody is posed suggestively, "
-             "reclining, draped or arranged for the viewer: they are standing or "
-             "sitting upright, getting on with the work. "
-             "Every tone built from engraved lines and cross-hatching, never "
-             "smooth grey shading. Full bleed to the edges: no border, no frame, "
-             "no margin, no plate mark. One clear focal figure in the "
-             "foreground, or at most two, larger and more sharply drawn than "
-             "anyone else; a few further figures may stand behind them, smaller "
-             "and plainer. No dense crowd, no sea of faces, nobody competing "
-             "with the subject for attention. No colour. Absolutely "
-             "no text, no letters, "
-             "no words, no captions, no titles, no numbers, no signatures and no "
-             "watermark anywhere in the image - purely pictorial.")
+#: KEEP THIS TIGHT. It shares a 2048-character budget with everything else, and
+#: on 21/08/2026 it was what blew that budget - see MAX_PROMPT below. Every rule
+#: here is load-bearing, so compress the wording, never drop a rule.
+_NEGATIVE = ("Everyone fully and modestly dressed for work, whole body covered, "
+             "sleeves, long trousers or skirts, proper boots. No nudity, no bare "
+             "legs or chest, no underwear, no exposed skin beyond hands and "
+             "face. Nobody reclining, draped or posed for the viewer: upright "
+             "and working. Every tone engraved lines and cross-hatching, never "
+             "smooth grey. Full bleed: no border, frame, margin or plate mark. "
+             "One or two clear focal figures in front, larger and sharper than "
+             "anyone else; a few plainer figures may stand behind. No dense "
+             "crowd or sea of faces. No colour. Absolutely no text, letters, "
+             "words, captions, numbers, signatures or watermark - purely "
+             "pictorial.")
+
+
+#: Cloudflare's flux endpoint rejects a prompt over 2048 characters with a bare
+#: HTTP 400. This bit on 21/08/2026 and cost that day its picture: the prompt had
+#: been running at 1978-2039 characters for a week - nine characters of headroom
+#: at its worst - and two rules added to _NEGATIVE on the 19th and 20th pushed it
+#: to 2132. Nothing warned, because the length lived nowhere; it was an emergent
+#: property of a style constant, a negative constant and six model-written slots.
+#: 1900 leaves room for a long brief without going near the wall.
+MAX_PROMPT = 1900
+
+
+def _fit(core: list[str], optional: list[str], negative: str) -> str:
+    """Join the prompt, dropping the least important slots if it will not fit.
+
+    The style, the subject-and-action and the negative block are never dropped:
+    the first two are the picture and the third carries the clothing and no-text
+    rules, so losing it is how an unusable image gets published. Everything else
+    is detail, and detail is what goes. Dropped from the end backwards, because
+    the slots are already ordered by how much they matter - setting, light,
+    materials, then the anomaly, which is the most expendable.
+
+    A single enormous subject clause is truncated rather than dropped, since a
+    prompt with no subject draws nothing.
+    """
+    budget = MAX_PROMPT - len(negative) - 1
+    kept = list(optional)
+    while kept and len(" ".join(core + kept)) > budget:
+        dropped = kept.pop()
+        print(f"    illustrate: prompt over {MAX_PROMPT} chars, dropped a slot "
+              f"({dropped[:40]}...)", file=sys.stderr)
+    head = " ".join(core + kept)
+    if len(head) > budget:
+        print(f"    illustrate: subject clause alone is {len(head)} chars, "
+              f"truncating", file=sys.stderr)
+        head = head[:budget].rsplit(" ", 1)[0].rstrip(",;") + "."
+    return f"{head} {negative}"
 
 
 def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
@@ -76,21 +110,20 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
         no-text clause placed in front of them loses the argument.
     """
     if brief:
-        parts = [_STYLE]
         lead = ", ".join(p for p in ((brief.get("subject") or "").strip(),
                                      (brief.get("action") or "").strip()) if p)
-        parts.append((lead or "a figure").rstrip(".") + ".")
+        core = [_STYLE, (lead or "a figure").rstrip(".") + "."]
+        optional = []
         for field, prefix in (("setting", ""), ("light", "Light: "),
                               ("materials", "Materials: "), ("anomaly", "")):
             value = (brief.get(field) or "").strip()
             if value:
-                parts.append(f"{prefix}{value}".rstrip(".") + ".")
-        parts.append(_NEGATIVE)
-        return " ".join(parts)
+                optional.append(f"{prefix}{value}".rstrip(".") + ".")
+        return _fit(core, optional, _NEGATIVE)
 
     # Fallback: the writer's scene line, which is prose written for a reader.
     subject = (dispatch.get("scene") or "").strip() or dispatch["headline"]
-    return f"{_STYLE} It depicts this scene: \"{subject}\". {_NEGATIVE}"
+    return _fit([_STYLE], [f'It depicts this scene: "{subject}".'], _NEGATIVE)
 
 
 #: Waits between Cloudflare attempts, in seconds. Three tries over roughly a
@@ -120,10 +153,18 @@ def _post_with_retry(req, cfg: dict):
             transient = exc.code == 429 or 500 <= exc.code < 600
             last = attempt >= len(_RETRY_WAITS)
             if not transient or last:
+                # Print what Cloudflare actually SAID. The first version of this
+                # function swallowed the body, so the 21/08 failure logged a bare
+                # "CF HTTP 400" and the reason (prompt too long) had to be worked
+                # out afterwards from character counts.
+                try:
+                    detail = exc.read().decode()[:300]
+                except Exception:      # noqa: BLE001 - a body is a nicety
+                    detail = "<no body>"
                 print(f"    illustrate: CF HTTP {exc.code}"
                       f"{'' if transient else ' (not retryable)'}"
-                      f"{' after ' + str(attempt + 1) + ' attempts' if transient else ''}",
-                      file=sys.stderr)
+                      f"{' after ' + str(attempt + 1) + ' attempts' if transient else ''}"
+                      f": {detail}", file=sys.stderr)
                 return None
             wait = _RETRY_WAITS[attempt]
             print(f"    illustrate: CF HTTP {exc.code}, retrying in {wait}s "
