@@ -1,0 +1,69 @@
+{
+  "run_date": "2026-08-22",
+  "run_time": "2026-08-22T20:35:19.515076+00:00",
+  "dispatch": {
+    "headline": "Tycho Mayor Who Faked Clumsiness Dies",
+    "body": "Former Mayor Toby Haze, who governed Tycho Rim for thirty years by constantly spilling soup on his shoes, died on Monday. He was eighty-four.\n\nHaze rose from airlock technician to district mayor on a platform of pure awkwardness. While upper-dome politicians spoke with sleek grace, Haze dropped his voting wands, tripped over door sills, and tangled his jacket in air valves during speeches. Voters trusted a man who could not manage his own sleeves. He won six straight elections.\n\nHis career ended during his seventh campaign. A leaked recording revealed that his famous clumsiness was choreographed by top decorum consultants from the upper gardens.\n\nThe tapes showed Haze rehearsing a trip over a power line for forty minutes. His coaches corrected his posture whenever he fell too gracefully.\n\n\"A poor man falls with his elbows tucked,\" said his lead coach, Kaelen Voss. \"Toby kept landing like a dancer, so we had to break his poise.\"\n\nPublic trust collapsed instantly. Citizens forgave his budget deficits, but they could not forgive his hidden elegance. In his final election, voters rejected him for a logistics clerk who had never once dropped a spoon.\n\nHaze spent his final years indoors. Neighbours reported that he walked with a crisp, perfect stride that everyone found deeply offensive. His memorial service will be held in the lower basin. Attendees are asked to walk carefully.",
+    "scene": "Kaelen Voss holds a metal timing rod over Mayor Toby Haze as the politician practices stumbling across a padded floor.",
+    "dateline": {
+      "place": "Tycho Rim",
+      "year": 3707,
+      "month": 11,
+      "day": 22,
+      "years_from_now": 1681
+    },
+    "domain": "governance and elections",
+    "glossary": [],
+    "premise": "Obituary for Mayor Haze, who built a thirty-year career in Tycho Dome on calculated, working-class clumsiness, until his reelection campaign imploded when a leaked recording exposed his staged awkwardness as being choreographed by elite decorum consultants.",
+    "brief": {
+      "subject": "Kaelen Voss, wearing a fitted charcoal synthetic tunic with silver piping, matching tailored trousers, and smooth black neoprene slip-on boots",
+      "action": "holding a narrow brushed-aluminum timing rod horizontally with both hands at chest height while watching",
+      "setting": "a small indoor training chamber with interlocking grey foam floor mats, where Mayor Toby Haze pitches forward in a controlled stumble in the background",
+      "light": "flat, bright light from long LED ceiling strips directly overhead",
+      "materials": "brushed aluminum, dense EVA foam padding, synthetic jersey textile, soft vinyl",
+      "anomaly": "a roll of black adhesive tape and an unlit plastic flashlight sitting on a low utility bench"
+    },
+    "image": "assets/img/2026-08-22.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-22T20:35:19.515076+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 31,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "It sharply satirises manufactured political relatability with a brilliant quote from a 'decorum consultant' training a politician to fall clumsily.",
+    "judge_pick": 2,
+    "chosen_index": 2,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original headline described the premise rather than landing a punchline, and the quote lacked absurd commitment. The final line restated the setup instead of escalating the joke.",
+    "prose": {
+      "words": 227,
+      "sentences": 19,
+      "mean_sentence": 11.9,
+      "longest": 25,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.2
+    }
+  }
+}

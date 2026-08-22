@@ -282,5 +282,15 @@
     "style": "discovery",
     "place_kind": "gasgiant",
     "engine": "bureaucratic"
+  },
+  {
+    "run_date": "2026-08-22",
+    "year": 3707,
+    "era_bucket": 33,
+    "domain": "governance and elections",
+    "headline": "Tycho Mayor Who Faked Clumsiness Dies",
+    "style": "obituary",
+    "place_kind": "lunar",
+    "engine": "etiquette"
   }
 ]
