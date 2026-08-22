@@ -21,14 +21,14 @@
     ],
     "premise": "A study of cloud-deck theatre troupes reveals that high-pressure methane gas expands actors' lungs until they burst on high notes, a phenomenon safety inspectors have categorized as an acceptable \"structural performance variance\" provided front-row patrons wear disposable splatter visors.",
     "brief": {
-      "subject": "a theatre usher dressed in a grey high-collared synthetic-wool tunic, matching straight-cut trousers, and black rubber-soled work shoes",
-      "action": "extending a thin curved plastic visor with a fabric band toward a seated theatergoer",
-      "setting": "the metal-grate deck of an outdoor high-altitude platform theatre, with rows of dark composite seats and safety railings, and seated patrons visible in the background",
-      "light": "flat, glare-free daylight coming evenly from high overcast cloud cover",
-      "materials": "clear polycarbonate, painted tubular steel, grey synthetic felt, perforated deck grating",
-      "anomaly": "an open cardboard shipping box filled with extra visors resting on the aisle floor next to a discarded plastic wrapping strip"
+      "subject": "a theatre usher dressed in a dark grey high-necked synthetic jumpsuit with reinforced knee panels and matte black rubber work boots",
+      "action": "handing a thin curved clear plastic eye visor to a patron seated in the front row",
+      "setting": "an open-air deck seating area made of grey metal floor grating, with a low metal guardrail and thick white cloud cover visible in the background",
+      "light": "diffuse bright daylight coming evenly through high grey haze",
+      "materials": "clear polycarbonate, steel floor grating, matte rubber, synthetic weave fabric",
+      "anomaly": "a yellow microfiber wiping rag stuffed into the usher's side pocket next to a stack of spare plastic visors"
     },
-    "image": null
+    "image": "assets/img/2026-08-21.jpg"
   },
   "meta": {
     "run_time": "2026-08-21T20:36:36.368393+00:00",
