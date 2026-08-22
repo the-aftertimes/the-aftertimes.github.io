@@ -127,6 +127,49 @@ def test_background_figures_are_allowed_but_crowds_are_not():
                                   {"subject": "a woman at a tripod",
                                    "setting": "her family lined up behind her"})
     assert "no background figures" not in out
-    assert "may stand behind them" in out
+    assert "may stand behind" in out
     # the thing the cap was actually protecting against must still be banned
-    assert "No dense crowd" in out and "competing with the subject" in out
+    assert "No dense crowd or sea of faces" in out
+
+
+# --- prompt length ----------------------------------------------------------
+# 21/08/2026 cost a day its picture. Cloudflare's flux endpoint 400s over 2048
+# characters, the prompt had been running within nine characters of that wall
+# for a week, and two rules added to _NEGATIVE tipped it over. Nothing warned,
+# because the length was an emergent property of two constants and six
+# model-written slots and lived nowhere.
+
+def _brief(**over):
+    b = {"subject": "a woman in a red jumper", "action": "adjusting a tripod",
+         "setting": "a station hull", "light": "hard side light",
+         "materials": "wool, steel", "anomaly": "tape on a tripod leg"}
+    b.update(over)
+    return b
+
+
+def test_prompt_stays_under_the_cloudflare_limit_whatever_the_brief():
+    """The guard has to hold for a brief the model writes badly, not just for a
+    typical one - that is the case nobody is watching when it happens."""
+    import illustrate
+    for brief in (_brief(), _brief(subject="x " * 900, setting="z " * 400),
+                  _brief(anomaly="a " * 500), None):
+        out = illustrate.build_prompt({"headline": "H", "scene": "s " * 400},
+                                      brief)
+        assert len(out) <= illustrate.MAX_PROMPT, len(out)
+
+
+def test_the_negative_block_is_never_dropped_to_make_room():
+    """It carries the clothing and no-text rules. Losing it to fit a long
+    setting clause is how an unusable picture gets published."""
+    import illustrate
+    out = illustrate.build_prompt({"headline": "H", "scene": "s"},
+                                  _brief(subject="x " * 900))
+    assert illustrate._NEGATIVE in out
+
+
+def test_detail_slots_are_dropped_from_the_least_important_end():
+    import illustrate
+    out = illustrate.build_prompt({"headline": "H", "scene": "s"},
+                                  _brief(setting="z " * 600))
+    assert "a woman in a red jumper" in out          # subject always survives
+    assert "tape on a tripod leg" not in out         # anomaly goes first
