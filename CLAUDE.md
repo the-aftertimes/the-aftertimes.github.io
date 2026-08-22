@@ -87,6 +87,23 @@ is what actually turns to mush in an engraving. If a future picture is criticise
 for being crowded, the fix is to make the subject dominate, not to empty the
 background again.
 
+## The flux prompt has a hard 2048-character budget
+
+Cloudflare's image endpoint rejects a longer prompt with a bare HTTP 400, and the
+prompt is assembled from `illustrate._STYLE`, `illustrate._NEGATIVE` and six
+model-written brief slots - so **no single edit looks big enough to matter and
+the total is what breaks.** On 21/08/2026 it did: two rules added to `_NEGATIVE`
+on the 19th and 20th took a prompt that had been running within nine characters
+of the wall past it, and that day published with no picture while the job stayed
+green.
+
+`build_prompt` now fits to `MAX_PROMPT` (1900) by dropping detail slots, so a
+400 cannot recur - but the headroom is still finite and dropped slots are lost
+detail. **Before adding a rule to `_NEGATIVE`, shorten another one**, and check
+`len(_NEGATIVE)`: it was 398 characters in mid-August, ballooned to 1002, and is
+648 now. Every rule in it is load-bearing; compress the wording, never drop a
+rule.
+
 ## Read docs/TODO.md before writing to it
 
 It is edited by other sessions between turns. On 17/08/2026 I appended an item
