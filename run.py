@@ -143,8 +143,46 @@ def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
         info["revision_accepted"] = True
         print(f"    revision accepted ({before['score']} -> {after['score']})")
         return out["dispatch"], info
-    print(f"    revision discarded, measured worse "
-          f"({before['score']} -> {after['score']})")
+
+    # The revision measures worse - but the deterministic score cannot see the
+    # thing the revision was written to fix.
+    #
+    # 22/08/2026 is the case that forced this. All three drafts scored a perfect
+    # 1.0, the critique correctly said "the final line restated the setup instead
+    # of escalating the joke", the rewrite fixed it and scored 0.92 on ONE minor
+    # violation, and the gate threw it away. Charlie then read the published
+    # piece and said the final line was not funny. From a 1.0 draft the old gate
+    # could only ever accept a score-neutral rewrite, so the revise pass was
+    # structurally incapable of improving the comedy on exactly the days the
+    # prose was already clean.
+    #
+    # So the score now VETOES the unpublishable rather than arbitrating the
+    # funny: structural faults and new hard rejects are still absolute (above),
+    # a large drop still auto-rejects, and inside the tolerance the judge - which
+    # already picks the funniest of the drafts - is asked to compare the two.
+    drop = before["score"] - after["score"]
+    tolerance = qcfg.get("revise_judge_tolerance", 0.0)
+    if not qcfg.get("judge") or drop > tolerance:
+        print(f"    revision discarded, measures worse "
+              f"({before['score']} -> {after['score']})")
+        return dispatch, info
+    try:
+        # Order is fixed at [draft, revision], so any positional bias in the
+        # model favours KEEPING the draft. That is the conservative direction and
+        # is preferred to shuffling, which would make a run harder to read back.
+        verdict = judge_mod.judge([dispatch, out["dispatch"]], settings)
+    except Exception as exc:  # noqa: BLE001 - best effort; the draft is fine
+        print(f"    WARN revise-judge failed ({exc}); keeping the draft",
+              file=sys.stderr)
+        return dispatch, info
+    info["revise_judge_reason"] = verdict["reason"]
+    if verdict["pick"] == 1:
+        info["revision_accepted"] = True
+        print(f"    revision accepted on the judge's call despite "
+              f"{before['score']} -> {after['score']}: {verdict['reason'][:80]}")
+        return out["dispatch"], info
+    print(f"    revision discarded, judge preferred the draft: "
+          f"{verdict['reason'][:80]}")
     return dispatch, info
 
 

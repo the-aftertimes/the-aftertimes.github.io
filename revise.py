@@ -32,6 +32,25 @@ sure a quoted character says something genuinely funny while treating the absurd
 world as normal, and make the final line a real kicker that recontextualises
 rather than restates.
 
+THEN READ IT ONCE MORE FOR INTERNAL LOGIC. The measured faults above are
+mechanical; these are not, and nothing else in the pipeline can see them. All
+three shipped on 22/08/2026 in a piece whose premise was strong.
+- DOES EACH QUOTE COME FROM WHERE THE STORY SAYS IT DOES? A dispatch whose source
+  is a leaked recording cannot then write '"..." said his coach' - nobody was
+  being interviewed. Attribute it to the tape: the coach is HEARD saying it.
+  Check every "said" against how the reporter could possibly have heard it.
+- DOES THE PUNCHLINE OBEY THE STORY'S OWN LOGIC? A public that adored a
+  politician for being clumsy does not then elect "a logistics clerk who had
+  never once dropped a spoon" - the joke inverts the very thing the story
+  established. They would elect someone genuinely, catastrophically clumsy. Trace
+  each consequence back and check it follows from the premise rather than
+  contradicting it.
+- IS EVERY INVENTED TERM UNDERSTANDABLE ON SIGHT? "He dropped his voting wands"
+  went out with no explanation and no glossary entry, and a reader simply stops.
+  Being made of plain words is not enough; the reader has to be able to picture
+  the thing. Either make it obvious in the sentence that uses it, or use the
+  ordinary word.
+
 Do NOT blandify. Keep the specific, concrete and strange details; cut the
 explanatory and generic sentences instead. Keep the same story, dateline place
 and domain. Australian spelling. Plain hyphens only, never em or en dashes.

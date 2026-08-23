@@ -66,3 +66,17 @@ def test_revise_raises_on_a_missing_revised_object(monkeypatch):
     except gemini.GeminiError:
         return
     raise AssertionError("expected GeminiError when revised is missing")
+
+
+def test_editor_checks_internal_logic_not_just_the_measured_faults():
+    """22/08/2026 shipped three logic faults in a piece Charlie said had a very
+    good premise: a covert recording quoted as if someone had been interviewed, a
+    punchline that inverted the story's own logic, and an unexplained coinage
+    ("voting wands"). None of them is mechanical, so the critic cannot see any of
+    them - the editor pass is the only stage that can."""
+    import revise
+    prompt = revise.build_prompt({"headline": "H", "body": "B"}, [])
+    assert "INTERNAL LOGIC" in prompt
+    assert "leaked recording" in prompt          # attribution vs source
+    assert "inverts the very thing" in prompt    # punchline vs premise
+    assert "voting wands" in prompt              # coinage a reader cannot picture
