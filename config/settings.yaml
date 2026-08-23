@@ -124,6 +124,12 @@ quality:
   # better joke, not enough to smuggle a major fault past. A bigger drop is still
   # rejected outright, as are structural faults and new hard rejects.
   revise_judge_tolerance: 0.09
+  # Minor faults the judge may NOT excuse, however much funnier the rewrite is.
+  # Everything else inside the tolerance is taste; these are house rules with
+  # stated reasons and worked examples behind them, and a joke does not buy them.
+  # Added when the first re-edit dry run offered "Tycho Mayor Dies At 84, Exposed
+  # As Secretly Capable" - nine words against a seven-word cap.
+  revise_judge_never: [headline_length]
 
 # Daily self-improvement. Only REPETITION is automated: it is measurable, whereas
 # "funny" is not, and a loop optimising only what it can measure drifts toward
