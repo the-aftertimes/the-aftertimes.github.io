@@ -126,3 +126,33 @@ def test_the_words_are_never_touched(repo, monkeypatch):
 
 def test_an_unknown_date_is_refused(repo):
     assert reill.reillustrate("1999-01-01") == 1
+
+
+def test_a_scene_override_changes_the_picture_and_nothing_else(repo, monkeypatch):
+    """22/08/2026: a redraw could not fix a picture whose SCENE LINE was the
+    fault - depict is handed that line and told to draw it, so the same wrong
+    picture came back. The override must reach the brief and leave the prose
+    alone."""
+    seen = {}
+    monkeypatch.setattr(reill.depict, "depict",
+                        lambda d, s: seen.setdefault("scene", d["scene"]) and None
+                        or {"subject": "the mayor"})
+    monkeypatch.setattr(reill.illustrate_mod, "generate",
+                        lambda d, rd, s, b=None: "assets/img/2026-08-01.jpg")
+    assert reill.reillustrate("2026-08-01", scene="The mayor on the floor.") == 0
+    assert seen["scene"] == "The mayor on the floor."
+    after = repo.store["data/dispatches/2026-08-01.json"]["dispatch"]
+    assert after["scene"] == "The mayor on the floor."
+    assert after["body"] == RECORD["dispatch"]["body"]
+    assert after["headline"] == RECORD["dispatch"]["headline"]
+
+
+def test_no_override_keeps_the_stored_scene(repo, monkeypatch):
+    seen = {}
+    monkeypatch.setattr(reill.depict, "depict",
+                        lambda d, s: seen.setdefault("scene", d["scene"]) and None
+                        or {"subject": "x"})
+    monkeypatch.setattr(reill.illustrate_mod, "generate",
+                        lambda d, rd, s, b=None: "assets/img/2026-08-01.jpg")
+    reill.reillustrate("2026-08-01")
+    assert seen["scene"] == RECORD["dispatch"]["scene"]

@@ -1,7 +1,8 @@
 """Redraw the picture for an already-published dispatch, leaving the words alone.
 
-    python reillustrate.py             # the most recent dispatch
-    python reillustrate.py 2026-08-19  # a specific one
+    python reillustrate.py                        # the most recent dispatch
+    python reillustrate.py 2026-08-19             # a specific one
+    python reillustrate.py 2026-08-19 --scene "..."   # ...with a corrected scene
 
 Written 19/08/2026, when a published engraving came back lewd - a brief that
 named a jumper and boots and nothing in between, which flux completed with bare
@@ -40,7 +41,7 @@ def _latest_date() -> str | None:
     return os.path.basename(files[-1])[:-5] if files else None
 
 
-def reillustrate(run_date: str) -> int:
+def reillustrate(run_date: str, scene: str = "") -> int:
     settings = load_settings()
     record = read_json(f"data/dispatches/{run_date}.json")
     if not record:
@@ -48,6 +49,17 @@ def reillustrate(run_date: str) -> int:
         return 1
     dispatch, meta = record["dispatch"], record["meta"]
     print(f">>> REILLUSTRATE {run_date}: {dispatch.get('headline', '')[:70]}")
+
+    # A redraw alone cannot fix a bad SCENE LINE, because depict is handed that
+    # line and told to draw it rather than choose. 22/08/2026: the scene named
+    # the mayor's coach as the subject for an obituary of the mayor, so the first
+    # redraw faithfully produced the same wrong picture. The override edits the
+    # picture brief only - never the headline, body or dateline - and is stored,
+    # so a record always says what its illustration was actually drawn from.
+    if scene:
+        print(f"    scene overridden\n      was: {dispatch.get('scene', '')}"
+              f"\n      now: {scene}")
+        dispatch["scene"] = scene
 
     old_brief = dispatch.get("brief") or {}
     print("    old brief:")
@@ -98,8 +110,15 @@ def reillustrate(run_date: str) -> int:
 
 if __name__ == "__main__":
     _load_dotenv()
-    date = sys.argv[1] if len(sys.argv) > 1 else _latest_date()
+    args = [a for a in sys.argv[1:] if a]
+    date = args[0] if args and not args[0].startswith("--") else _latest_date()
+    scene = ""
+    for i, a in enumerate(args):
+        if a == "--scene" and i + 1 < len(args):
+            scene = args[i + 1]
+        elif a.startswith("--scene="):
+            scene = a.split("=", 1)[1]
     if not date:
         print("No dispatches to reillustrate.", file=sys.stderr)
         raise SystemExit(1)
-    raise SystemExit(reillustrate(date))
+    raise SystemExit(reillustrate(date, scene))
