@@ -163,3 +163,34 @@ def test_a_judge_failure_keeps_the_draft(monkeypatch):
     out, info = run_mod.maybe_revise(_dispatch("draft"), {}, _qcfg(), {})
     assert info["revision_accepted"] is False
     assert out["headline"] == "Head draft"
+
+
+def test_the_judge_cannot_excuse_a_house_rule(monkeypatch):
+    """Some minors are taste; the seven-word headline cap is not. The first
+    reedit dry run offered a nine-word headline and the tolerance alone would
+    have let it through."""
+    import run as run_mod
+    called = []
+    scores = iter([1.0, 0.92])
+    monkeypatch.setattr(run_mod.critic, "score", lambda d, c, q: {
+        "score": next(scores), "rejected": False, "metrics": {},
+        "violations": ([] if not called.append(0) else [])
+        or ([{"rule": "headline_length", "severity": "minor", "detail": "9 words"}]
+            if len(called) > 1 else [])})
+    monkeypatch.setattr(run_mod.revise_mod, "revise",
+                        lambda d, v, s: {"critique": "c",
+                                         "dispatch": _dispatch("revised")})
+    judged = []
+    monkeypatch.setattr(run_mod.judge_mod, "judge",
+                        lambda d, s: judged.append(1) or {"pick": 1, "reason": ""})
+    out, info = run_mod.maybe_revise(_dispatch("draft"), {}, _qcfg(), {})
+    assert info["revision_accepted"] is False
+    assert judged == [], "a house-rule breach must not even reach the judge"
+    assert out["headline"] == "Head draft"
+
+
+def test_a_pre_existing_house_rule_breach_is_not_held_against_the_revision():
+    """If the DRAFT already broke the cap, the revision is not punished for
+    inheriting it - only newly-introduced breaches block."""
+    from common import load_settings
+    assert "headline_length" in load_settings()["quality"]["revise_judge_never"]

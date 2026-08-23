@@ -160,6 +160,21 @@ def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
     # funny: structural faults and new hard rejects are still absolute (above),
     # a large drop still auto-rejects, and inside the tolerance the judge - which
     # already picks the funniest of the drafts - is asked to compare the two.
+    # Some minor faults are taste the judge may trade for a better joke; others
+    # are house rules that a joke does not buy. The first reedit dry run on
+    # 22/08/2026 produced "Tycho Mayor Dies At 84, Exposed As Secretly Capable" -
+    # nine words against a seven-word cap Charlie has stated repeatedly and given
+    # worked examples for - and the tolerance would have let it through, because
+    # headline_length is only a minor.
+    never = set(qcfg.get("revise_judge_never") or ())
+    blocking = sorted({v["rule"] for v in after["violations"]
+                       if v["rule"] in never}
+                      - {v["rule"] for v in before["violations"]})
+    if blocking:
+        print(f"    revision discarded, breaks a rule a joke cannot buy: "
+              f"{', '.join(blocking)}")
+        return dispatch, info
+
     drop = before["score"] - after["score"]
     tolerance = qcfg.get("revise_judge_tolerance", 0.0)
     if not qcfg.get("judge") or drop > tolerance:
