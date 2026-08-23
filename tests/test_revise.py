@@ -101,3 +101,14 @@ def test_the_editor_cannot_change_the_scene_line(monkeypatch):
                     "domain": "politics", "glossary": []}})
     out = revise.revise(draft, [], {"gemini": {"temperature_write": 1}})
     assert out["dispatch"]["scene"] == "The real scene line."
+
+
+def test_the_editor_is_told_the_headline_cap_it_is_judged_against():
+    """Twice on 22/08/2026 a revision that fixed every logic fault was thrown
+    away for a nine-word headline. The cap is checked mechanically and the write
+    prompt explains it at length - but the editor never sees the write prompt, so
+    it was being marked against a rule it had not been given."""
+    import revise
+    prompt = revise.build_prompt({"headline": "H", "body": "B"}, [])
+    assert "SEVEN WORDS OR FEWER" in prompt
+    assert "Count the words before returning" in prompt

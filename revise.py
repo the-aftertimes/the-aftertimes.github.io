@@ -26,6 +26,15 @@ CURRENT BODY:
 MEASURED FAULTS:
 {render_violations(violations)}
 
+THE HEADLINE IS SEVEN WORDS OR FEWER - four or five is ideal, and shorter always
+beats cleverer. This is a hard house rule, it is checked mechanically, and a
+rewrite that breaks it is thrown away no matter how much funnier it is. Twice on
+22/08/2026 a revision that correctly fixed everything else was discarded for
+offering "Tycho Mayor Dies At 84, Exposed As Secretly Capable" - nine words, and
+it explains the joke instead of landing it. Count the words before returning.
+Use plain, ordinary words a person would say out loud: no technical or clinical
+terms, no Latinate journalese, nothing a reader has to decode.
+
 Fix every fault above. At the same time make the piece FUNNIER and more pointed:
 sharpen the headline so it lands a joke rather than describing the premise, make
 sure a quoted character says something genuinely funny while treating the absurd
