@@ -1,0 +1,55 @@
+name: reedit
+
+# Re-run the editor over one already-published dispatch. Words only - the
+# picture is left alone; use reillustrate.yml for that.
+#
+# Manual only, and it rewrites published text, so it keeps every superseded
+# version in the record's `revisions` list. See reedit.py.
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Dispatch date to re-edit, YYYY-MM-DD. Blank = the most recent."
+        required: false
+        default: ""
+      dry:
+        description: "Print the rewrite without changing anything"
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reedit
+  cancel-in-progress: false
+
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Re-edit
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python reedit.py "${{ inputs.date }}" \
+            ${{ inputs.dry == true && '--dry' || '' }}
+
+      - name: Commit and push
+        if: ${{ inputs.dry != true }}
+        run: |
+          git config user.name "aftertimes-bot"
+          git config user.email "bot@the-aftertimes.github.io"
+          git add index.html archive.html d/ data/
+          git commit -m "reedit: ${{ inputs.date || 'latest' }}" || echo "no changes"
+          git pull --rebase
+          git push
