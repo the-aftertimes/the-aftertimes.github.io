@@ -19,8 +19,8 @@ REWRITING A PUBLISHED PAPER IS AN EDITORIAL ACT, so two things are deliberate:
    back numbers is doing something worse than publishing a flat joke. Nothing is
    ever overwritten without the previous text surviving in the record.
 2. **The dateline, domain, date and ledger entry are never touched** - only the
-   headline, body and scene. A re-edit cannot turn one dispatch into a different
-   one, and `--dry` shows the rewrite without writing anything at all.
+   headline and body. A re-edit cannot turn one dispatch into a different one,
+   and `--dry` shows the rewrite without writing anything at all.
 
 The illustration is left exactly as it is even when the body changes: the picture
 is expensive, often hand-corrected, and a re-edit is a prose pass. Redraw
@@ -42,7 +42,10 @@ from run import _load_dotenv, maybe_revise
 
 #: Fields a re-edit is allowed to change. Everything else in the dispatch - the
 #: dateline, the domain, the glossary, the image - is identity, not prose.
-EDITABLE = ("headline", "body", "scene")
+#: `scene` is deliberately NOT here: it is the picture brief, revise.py now
+#: carries it through untouched, and a 22/08 dry run showed why - the editor
+#: returned the word "OBITUARIES" for it.
+EDITABLE = ("headline", "body")
 
 
 def _latest_date() -> str | None:

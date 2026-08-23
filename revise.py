@@ -82,4 +82,16 @@ def revise(dispatch: dict, violations: list[dict], settings: dict) -> dict:
                 f"revise returned a revision with no {field}: {revised!r}")
     out = normalise(revised, dispatch["dateline"], dispatch["domain"],
                     dispatch.get("premise", ""))
+    # THE EDITOR DOES NOT GET TO REWRITE THE PICTURE BRIEF. Caught 22/08/2026 on
+    # a dry run: asked to revise an obituary, the model returned
+    # `"scene": "OBITUARIES"` - it read the field as a section label, because
+    # nothing in THIS prompt explains what a scene line is (the write prompt
+    # spends a paragraph on it, and the editor never sees that). The scene drives
+    # depict and therefore the illustration, so an accepted revision would have
+    # drawn the day's picture from the word OBITUARIES.
+    #
+    # It is also the right rule regardless of the bug: this is a prose pass. If
+    # the rewrite genuinely moves the visual moment, redraw deliberately with
+    # reillustrate.py --scene rather than let it happen as a side effect.
+    out["scene"] = dispatch.get("scene", "")
     return {"critique": str(data.get("critique", "")).strip(), "dispatch": out}
