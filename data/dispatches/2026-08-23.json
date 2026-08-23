@@ -1,0 +1,102 @@
+{
+  "run_date": "2026-08-23",
+  "run_time": "2026-08-23T20:35:25.529902+00:00",
+  "dispatch": {
+    "headline": "Lawyer Wins Land Without Looking",
+    "body": "Bram Hallow retained his Jurisdictional Sprint title on Friday by etching a four-hundred-clause land easement into ground frost before his visor could clear.\n\nThe annual contest tests speed and accuracy in property law. Competitors must step from an airlock into the gully, mark a legal border, and register the deed before ice blinds their view. Most entrants managed three sentences. Hallow dropped to his knees at the mark and dragged legal script through frost with his thumb.\n\nBy second twenty, three rivals had tripped over rock drills while wiping their faceplates. By second forty, Hallow was halfway through the water rights clause. Judges watching through heat monitors noted his writing remained readable down to the margins required for trench access. He finished with three seconds remaining.\n\nA late challenge from the regional land board failed after surveyors confirmed the frost deed remained valid until the afternoon thaw. By then, the boundary had already entered the planetary register.\n\n\"The air was warm,\" Hallow said in the mixed zone, scraping ice from his chin. \"People waste time trying to see what they write. A good property lawyer can scratch out a late-fee penalty using elbow memory alone.\"\n\nHis victory secures water access to eight kilometres of dry ditch until tomorrow, when council heat lamps melt the official record and the trench reverts to whoever can run fastest.",
+    "scene": "A lawyer in a heavy pressure suit kneels in a rocky gully, using a gloved thumb to write neat paragraphs into white ground frost while frost obscures his helmet visor.",
+    "dateline": {
+      "place": "OLYMPUS GULLY",
+      "year": 4967,
+      "month": 5,
+      "day": 10,
+      "years_from_now": 2941
+    },
+    "domain": "Frontier Law",
+    "glossary": [
+      {
+        "term": "frost deed",
+        "gloss": "A temporary legal contract scratched directly into surface ice, enforceable only until solar exposure or heating lamps melt the text."
+      }
+    ],
+    "premise": "Mars’s premier planetary boundary advocate defended his title at the Port Rust Jurisdictional Sprint by drafting a flawless 400-clause easement directly into the atmospheric frost before his visor could defog.",
+    "brief": {
+      "subject": "a male lawyer wearing a full heavy grey pressurized suit with padded joints, thick rubberized work boots, heavy gauntlets, and a dome helmet with a completely frosted glass visor",
+      "action": "kneeling on one knee in the dirt while dragging his thick gloved thumb across a patch of white ground frost to trace long parallel grooves",
+      "setting": "a narrow, rough gully floor covered in dark loose gravel, cracked rock ledges, and thick white frost, with the dark metal hull of an airlock visible in the background",
+      "light": "harsh, low-angled sunlight from the left side casting long hard shadows across the rocky ground",
+      "materials": "crystalline frost, coarse dark basalt stone, heavy synthetic suit fabric, and thick clear ice",
+      "anomaly": "a scuffed composite knee pad secured with a wrap of bright utility tape around the joint"
+    },
+    "image": "assets/img/2026-08-23.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-23T20:35:25.529902+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 32,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.75,
+      0.67,
+      0.67
+    ],
+    "violations": [
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "197 words, wanted 200-280",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court, tribunal",
+          "severity": "major"
+        }
+      ]
+    ],
+    "all_rejected": true,
+    "judge_reason": "",
+    "judge_pick": null,
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.75,
+    "score_after": 1.0,
+    "critique": "The original headline merely described the contest instead of landing a joke, and the final sentence relied on the forbidden legal crutch 'court'. The punchline also restated the premise rather than recontextualising the absurdity of the sport.",
+    "prose": {
+      "words": 225,
+      "sentences": 15,
+      "mean_sentence": 15.0,
+      "longest": 30,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.2
+    }
+  }
+}
