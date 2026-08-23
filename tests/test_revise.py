@@ -80,3 +80,24 @@ def test_editor_checks_internal_logic_not_just_the_measured_faults():
     assert "leaked recording" in prompt          # attribution vs source
     assert "inverts the very thing" in prompt    # punchline vs premise
     assert "voting wands" in prompt              # coinage a reader cannot picture
+
+
+def test_the_editor_cannot_change_the_scene_line(monkeypatch):
+    """22/08/2026, caught on a dry run before it published: asked to revise an
+    obituary the model returned `"scene": "OBITUARIES"`, reading the field as a
+    section label. The scene drives depict and therefore the illustration, so an
+    accepted revision would have drawn the day's picture from that word. Nothing
+    in the revise prompt explains what a scene line is - the write prompt does,
+    and the editor never sees it."""
+    import revise, gemini
+    draft = {"headline": "H", "body": "B", "scene": "The real scene line.",
+             "domain": "politics", "premise": "p",
+             "dateline": {"place": "P", "year": 2400, "years_from_now": 374}}
+    monkeypatch.setattr(gemini, "generate", lambda *a, **k: "{}")
+    monkeypatch.setattr(gemini, "extract_json", lambda raw: {
+        "critique": "c",
+        "revised": {"headline": "New", "dateline_place": "P",
+                    "body": "New body.", "scene": "OBITUARIES",
+                    "domain": "politics", "glossary": []}})
+    out = revise.revise(draft, [], {"gemini": {"temperature_write": 1}})
+    assert out["dispatch"]["scene"] == "The real scene line."

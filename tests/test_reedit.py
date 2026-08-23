@@ -33,8 +33,7 @@ RECORD = {
              "base_url": "https://example.invalid", "locator_deep_max": 4000},
 }
 
-REWRITE = {"headline": "New Headline", "body": "A better body. " * 6,
-           "scene": "A better scene."}
+REWRITE = {"headline": "New Headline", "body": "A better body. " * 6}
 
 
 class _NullArchive:
@@ -102,12 +101,15 @@ def test_only_prose_fields_change(repo, monkeypatch):
 
 def test_the_picture_is_left_alone(repo, monkeypatch):
     """The illustration is expensive and often hand-corrected. A prose pass has
-    no business discarding it."""
+    no business discarding it - and that includes the SCENE LINE it is drawn
+    from. A 22/08 dry run had the editor return the word "OBITUARIES" as the
+    scene, which would have drawn the next redraw from a section label."""
     _accept(monkeypatch)
     reedit.reedit("2026-08-01")
     after = repo.store["data/dispatches/2026-08-01.json"]["dispatch"]
     assert after["image"] == RECORD["dispatch"]["image"]
     assert after["brief"] == RECORD["dispatch"]["brief"]
+    assert after["scene"] == RECORD["dispatch"]["scene"]
 
 
 def test_a_rejected_revision_writes_nothing(repo, monkeypatch):
