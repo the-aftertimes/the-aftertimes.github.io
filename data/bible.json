@@ -131,6 +131,12 @@
       "gloss": "An exterior stage gantry exposed directly to the gas giant atmosphere.",
       "kind": "term",
       "first_seen": "2026-08-21"
+    },
+    {
+      "term": "frost deed",
+      "gloss": "A temporary legal contract scratched directly into surface ice, enforceable only until solar exposure or heating lamps melt the text.",
+      "kind": "term",
+      "first_seen": "2026-08-23"
     }
   ]
 }

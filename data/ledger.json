@@ -292,5 +292,15 @@
     "style": "obituary",
     "place_kind": "lunar",
     "engine": "etiquette"
+  },
+  {
+    "run_date": "2026-08-23",
+    "year": 4967,
+    "era_bucket": 58,
+    "domain": "space law",
+    "headline": "Lawyer Wins Land Without Looking",
+    "style": "sport",
+    "place_kind": "marsform",
+    "engine": "expertise"
   }
 ]
