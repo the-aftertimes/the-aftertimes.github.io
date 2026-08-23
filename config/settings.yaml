@@ -116,6 +116,14 @@ quality:
   plainness:
     rate_max: 5.0
     rate_major: 7.0
+  # How far a revision may measure WORSE and still be put to the judge. The
+  # deterministic score cannot see comedy, and on 22/08/2026 it threw away a
+  # rewrite that fixed the exact fault its own critique had named, because the
+  # draft was already a perfect 1.0 and the rewrite carried one minor violation.
+  # 0.09 is one minor violation (weight 0.08) plus rounding: enough to buy a
+  # better joke, not enough to smuggle a major fault past. A bigger drop is still
+  # rejected outright, as are structural faults and new hard rejects.
+  revise_judge_tolerance: 0.09
 
 # Daily self-improvement. Only REPETITION is automated: it is measurable, whereas
 # "funny" is not, and a loop optimising only what it can measure drifts toward

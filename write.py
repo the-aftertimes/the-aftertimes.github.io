@@ -424,6 +424,17 @@ Rules:
   hides beneath a dining table".
   Bad: "a glistening forty-tonne whale liver rolls past a clock tower" (the
   subject cannot be drawn, and it was rendered as a giant bean).
+  THE SCENE'S SUBJECT IS THE PERSON IN THE HEADLINE, doing the thing the
+  headline says they did. Not a colleague, not an official reacting to it, not
+  someone from a flashback in the middle of the piece. A reader sees the picture
+  and the headline together, and nothing else - if the two do not obviously match,
+  the picture is wasted.
+  Bad: for "Tycho Mayor Who Faked Clumsiness Dies", a scene naming the mayor's
+  COACH holding a timing rod while the mayor practises falling in the background.
+  It drew a fitness instructor in a bare room and said nothing about a mayor,
+  about dying, or about clumsiness.
+  Good: the mayor himself sprawled across a council chamber floor with soup down
+  his shoes while officials look away.
   NAME ONE PERSON AS THE SUBJECT - two at the very most. The engraving holds one
   or two figures and turns every extra face into mush, so a scene naming six
   nuns, eleven dock workers or a whole family has to be cut down to one before it

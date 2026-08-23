@@ -197,3 +197,17 @@ def test_writer_names_a_single_figure_in_the_scene():
     assert "two at the very most" in wp
     # both real failures are carried as worked examples, not just as a rule
     assert "Six nuns" in wp and "identical red jumpers" in wp
+
+
+def test_the_scene_subject_is_the_person_in_the_headline():
+    """22/08/2026: for "Tycho Mayor Who Faked Clumsiness Dies" the scene named the
+    mayor's COACH holding a timing rod, with the mayor practising falling in the
+    background. depict rendered it faithfully and the picture said nothing about a
+    mayor, about dying or about clumsiness. The picture and the headline are the
+    only two things a reader sees together."""
+    wp = write_stage.build_prompt(
+        premise="p", dateline={"year": 2500, "years_from_now": 474},
+        domain="politics", style_guidance="An obituary.", place_guidance="a moon")
+    assert "THE SCENE'S SUBJECT IS THE PERSON IN THE HEADLINE" in wp
+    assert "someone from a flashback in the middle of the piece" in wp
+    assert "Tycho Mayor Who Faked Clumsiness Dies" in wp   # the worked failure
