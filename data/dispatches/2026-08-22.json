@@ -4,7 +4,7 @@
   "dispatch": {
     "headline": "Tycho Mayor Who Faked Clumsiness Dies",
     "body": "Former Mayor Toby Haze, who governed Tycho Rim for thirty years by constantly spilling soup on his shoes, died on Monday. He was eighty-four.\n\nHaze rose from airlock technician to district mayor on a platform of pure awkwardness. While upper-dome politicians spoke with sleek grace, Haze dropped his voting wands, tripped over door sills, and tangled his jacket in air valves during speeches. Voters trusted a man who could not manage his own sleeves. He won six straight elections.\n\nHis career ended during his seventh campaign. A leaked recording revealed that his famous clumsiness was choreographed by top decorum consultants from the upper gardens.\n\nThe tapes showed Haze rehearsing a trip over a power line for forty minutes. His coaches corrected his posture whenever he fell too gracefully.\n\n\"A poor man falls with his elbows tucked,\" said his lead coach, Kaelen Voss. \"Toby kept landing like a dancer, so we had to break his poise.\"\n\nPublic trust collapsed instantly. Citizens forgave his budget deficits, but they could not forgive his hidden elegance. In his final election, voters rejected him for a logistics clerk who had never once dropped a spoon.\n\nHaze spent his final years indoors. Neighbours reported that he walked with a crisp, perfect stride that everyone found deeply offensive. His memorial service will be held in the lower basin. Attendees are asked to walk carefully.",
-    "scene": "Kaelen Voss holds a metal timing rod over Mayor Toby Haze as the politician practices stumbling across a padded floor.",
+    "scene": "Former Mayor Toby Haze lies sprawled on the polished stone floor of a domed council chamber with soup spilled across his shoes, while seated officials at a long table look away.",
     "dateline": {
       "place": "Tycho Rim",
       "year": 3707,
@@ -16,12 +16,12 @@
     "glossary": [],
     "premise": "Obituary for Mayor Haze, who built a thirty-year career in Tycho Dome on calculated, working-class clumsiness, until his reelection campaign imploded when a leaked recording exposed his staged awkwardness as being choreographed by elite decorum consultants.",
     "brief": {
-      "subject": "Decorum consultant Kaelen Voss, wearing a high-collared grey synthetic tunic, dark tailored trousers, and low-profile black work shoes",
-      "action": "holding a slender metal timing rod horizontally over Mayor Toby Haze as Haze rehearses an off-balance step across a padded mat",
-      "setting": "an indoor training room inside a dome complex, with modular composite wall panels, a mirrored wall section, and stacked foam pads along the side",
-      "light": "even, diffuse white light from overhead recessed ceiling panels",
-      "materials": "brushed aluminum, dense vinyl foam, woven synthetic fabric, composite floor resin",
-      "anomaly": "a roll of black electrical tape sitting on the corner of a plastic folding chair near the wall"
+      "subject": "Former Mayor Toby Haze, an elderly man wearing a high-collared dark blue tunic, matching dark trousers, and leather boots splattered with thick yellow soup",
+      "action": "lying flat on his back on the floor with an overturned ceramic bowl resting beside his shoulder",
+      "setting": "the polished grey granite floor of a circular domed council chamber, with three council officials seated at a long raised wooden desk in the background facing away from him",
+      "light": "diffuse white light shining directly down from recessed circular panels in the domed ceiling",
+      "materials": "polished granite, smooth wool blend fabric, dark polished hardwood, ceramic",
+      "anomaly": "a scuffed brass cable access hatch in the floor sitting slightly ajar near the edge of the spill"
     },
     "image": "assets/img/2026-08-22.jpg"
   },
