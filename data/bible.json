@@ -137,6 +137,12 @@
       "gloss": "A temporary legal contract scratched directly into surface ice, enforceable only until solar exposure or heating lamps melt the text.",
       "kind": "term",
       "first_seen": "2026-08-23"
+    },
+    {
+      "term": "glow-tubes",
+      "gloss": "Sub-surface lighting units used to cultivate dense timber in underground vaults.",
+      "kind": "term",
+      "first_seen": "2026-08-24"
     }
   ]
 }

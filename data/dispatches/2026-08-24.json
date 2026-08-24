@@ -1,0 +1,80 @@
+{
+  "run_date": "2026-08-24",
+  "run_time": "2026-08-24T20:44:27.981394+00:00",
+  "dispatch": {
+    "headline": "Lift Boss Mourns Fine Timber",
+    "body": "Internal logs from the Mount Orestes lift system show managers hushed up a fatal four-hundred-floor cable snap to hold a silent light-vigil for the cab's mahogany lining.\n\nThe hoist cable parted on Thursday inside Shaft Twelve, dropping Car Forty two thousand metres into the mountain sump. Six transit workers were killed on impact.\n\nTransport director Sola Nduka locked the emergency brakes thirty seconds later. He sent no rescue team. Instead, Nduka ordered every lift display across the lower wards set to half-brightness.\n\nGrid workers stood facing the empty shaft in silence.\n\n\"It was a dark day for internal joinery,\" Nduka wrote in a station-wide broadcast sent four minutes after the drop. \"Car Forty was our finest timber car. It never groaned.\"\n\nShift clerk Kaelen Voss leaked the network transcripts alongside an audio memo after receiving orders to wax the remaining hoist doors with floral polish.\n\n\"We assumed the silence was for the crew,\" Voss said on the recording. \"Then the chief warned us not to confuse essential panelling with disposable staff.\"\n\nNduka rejected claims of improper conduct in a follow-up directive, noting six replacement technicians had already arrived from Level Two by noon.\n\n\"Human labour is easily replaced,\" Nduka wrote. \"Grain of that density takes three hundred years to harden under glow-tubes.\"\n\nA salvage team was finally lowered into the sump on Friday, armed strictly with wood filler.",
+    "scene": "A transport director in a black tunic kneels on the steel platform of a lift shaft, bowing his head toward a scrap of dark polished wood while two technicians watch from a doorway.",
+    "dateline": {
+      "place": "MOUNT ORESTES",
+      "year": 4917,
+      "month": 7,
+      "day": 8,
+      "years_from_now": 2891
+    },
+    "domain": "Public Transport",
+    "glossary": [
+      {
+        "term": "glow-tubes",
+        "gloss": "Sub-surface lighting units used to cultivate dense timber in underground vaults."
+      }
+    ],
+    "premise": "Leaked logs from a subterranean mountain arcology’s vertical lift network show officials hushed up a fatal 400-floor cable snap, choosing instead to hold a solemn candlelit vigil exclusively for the crushed elevator's 'unusually loyal' mahogany panelling.",
+    "brief": {
+      "subject": "a transport director with short grey-cropped hair, wearing a high-collared black synthetic tunic, matching black trousers, and thick-soled work boots",
+      "action": "kneeling on one knee on the metal floor plate and looking down at a splintered scrap of dark polished wood resting near the drop edge",
+      "setting": "the open structural ledge of a deep industrial lift shaft, with heavy vertical guide rails and two technicians in grey coveralls standing together in a metal doorway behind him",
+      "light": "cold, direct light coming straight down from overhead strip lamps",
+      "materials": "chequered steel floor plate, dark polished mahogany wood, dull iron girders, synthetic weave fabric",
+      "anomaly": "a smudged grease mark and a pair of discarded cotton work gloves lying beside the doorway frame"
+    },
+    "image": "assets/img/2026-08-24.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-24T20:44:27.981394+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 33,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.75,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: europa",
+          "severity": "major"
+        }
+      ],
+      [],
+      []
+    ],
+    "all_rejected": false,
+    "judge_reason": "Brilliantly satirizes corporate devaluation of human life with absurdly calm, hilarious quotes prioritizing timber over workers.",
+    "judge_pick": 0,
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The original headline merely summarized the story rather than landing the joke, while the final line was a flat restatement. Quote attributions were tightened to match the leaked transcript premise, and the comedy was sharpened throughout.",
+    "prose": {
+      "words": 228,
+      "sentences": 17,
+      "mean_sentence": 13.4,
+      "longest": 27,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 2.6
+    }
+  }
+}
