@@ -302,5 +302,15 @@
     "style": "sport",
     "place_kind": "marsform",
     "engine": "expertise"
+  },
+  {
+    "run_date": "2026-08-24",
+    "year": 4917,
+    "era_bucket": 57,
+    "domain": "transport",
+    "headline": "Lift Boss Mourns Fine Timber",
+    "style": "investigation",
+    "place_kind": "subsurface",
+    "engine": "sentiment"
   }
 ]
