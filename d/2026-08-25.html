@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4efe3">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<title>Power Walkers Jam Station Reactor Corridor - The Aftertimes</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Aftertimes">
+<meta property="og:title" content="Power Walkers Jam Station Reactor Corridor - The Aftertimes">
+<meta name="description" content="A wire service reporting from the future.">
+<meta property="og:description" content="A wire service reporting from the future.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#f4efe3;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:Georgia,'Times New Roman',serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased;}
+.wrap{max-width:52rem;margin:0 auto;padding:clamp(2rem,7vw,4.5rem) 1.5rem 4rem;
+  min-height:100vh;display:flex;flex-direction:column;}
+.masthead{text-align:center;border-bottom:3px double var(--fg);padding-bottom:0.9rem;
+  margin-bottom:2rem;}
+.masthead .edition{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;}
+.masthead .name{font-family:'Aftertimes Flag','UnifrakturCook',serif;font-weight:700;
+  font-size:clamp(2.7rem,10vw,4.6rem);line-height:1;letter-spacing:0.01em;}
+.masthead .tag{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.7rem;}
+.dateline{font-family:-apple-system,system-ui,sans-serif;font-size:0.92rem;
+  font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);
+  margin:0 0 0.8rem;}
+.engraving{margin:1.2rem 0 1.8rem;}
+.engraving img{width:100%;height:auto;display:block;mix-blend-mode:multiply;}
+.meta-locrow{display:flex;align-items:stretch;margin-top:0.7rem;}
+.meta-loctext{flex:1 1 0;text-align:right;padding-right:1.5rem;
+  display:flex;flex-direction:column;justify-content:center;}
+figure.locator{flex:1 1 0;margin:0;text-align:left;
+  border-left:1px solid var(--rule);padding-left:1.5rem;}
+figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multiply;}
+.meta-location{font-family:Georgia,'Times New Roman',serif;font-size:1.6rem;
+  font-weight:700;color:var(--fg);line-height:1.1;margin-bottom:0.2rem;}
+.meta-far{font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.9rem;}
+@media (max-width:36rem){
+  .meta-locrow{flex-direction:column;}
+  .meta-loctext{text-align:center;padding-right:0;}
+  /* Once the row stacks, the plate is alone on a full-width line and was still
+     wearing the two-column `text-align:left`, so it sat hard against the left
+     edge under centred text. Charlie, 19/08/2026: centre it on mobile. Both
+     rules are needed - text-align centres the inline SVG box, margin:auto holds
+     it there if the svg is ever made display:block. */
+  figure.locator{border-left:none;padding-left:0;margin-top:1.1rem;
+    text-align:center;}
+  figure.locator svg{margin-left:auto;margin-right:auto;}
+}
+h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
+  margin:0 0 1.1rem;letter-spacing:-0.01em;}
+.body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
+.meta{font-family:-apple-system,system-ui,sans-serif;margin-top:1.8rem;}
+.meta-title{margin:0;color:var(--accent);font-weight:600;font-size:0.72rem;
+  letter-spacing:0.16em;text-transform:uppercase;padding-top:0.6rem;
+  border-top:1px solid var(--rule);}
+.meta-body{color:var(--muted);font-size:0.9rem;padding-top:0.6rem;}
+.meta-facts{line-height:1.6;}
+.meta-facts b{color:var(--fg);}
+.stale{font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;
+  background:var(--accent);color:var(--bg);padding:0.6rem 1rem;border-radius:0.3rem;
+  margin-bottom:1.8rem;}
+.signup{margin:2.5rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--rule);
+  font-family:-apple-system,system-ui,sans-serif;}
+.signup-lead{margin:0 0 0.9rem;color:var(--fg);font-weight:600;}
+.signup-form{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.signup-form input{flex:1 1 12rem;min-width:0;padding:0.6rem 0.8rem;font-size:0.95rem;
+  color:var(--fg);background:#fff;border:1px solid var(--rule);border-radius:0.3rem;
+  font-family:inherit;}
+.signup-form button{padding:0.6rem 1.2rem;font-weight:600;cursor:pointer;
+  color:var(--bg);background:var(--accent);border:none;border-radius:0.3rem;
+  font-family:inherit;}
+.signup-note{margin:0.7rem 0 0;color:var(--muted);font-size:0.78rem;}
+footer{padding-top:2rem;font-family:-apple-system,system-ui,sans-serif;
+  font-size:0.78rem;color:var(--muted);}
+footer .fiction{font-style:italic;margin:0 0 0.6rem;}
+/* The back-link sits top right on Charlie's other properties, but this one is a
+   newspaper front page: anything above the masthead competes with it. Both
+   end-links share one row at the foot instead, pointing opposite ways - back to
+   the hub on the left, on to the archive on the right. The pair needs about
+   300px; below that flex-wrap stacks them, and space-between leaves a lone item
+   on its own line flush left, which is what we want - so no breakpoint here. */
+.endlinks{display:flex;justify-content:space-between;align-items:baseline;
+  gap:0.4rem 1.5rem;flex-wrap:wrap;margin:0;}
+.endlinks p{margin:0;}
+a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
+</style>
+<style>@font-face{font-family:'Aftertimes Flag';src:url('../assets/fonts/unifrakturcook-700.woff2') format('woff2');font-weight:700;font-display:swap;}</style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "32b821209b5441a08df42ccf61c9e6c2"}'></script>
+</head>
+<body>
+  <div class="wrap">
+    
+    <header class="masthead">
+      <div class="edition">VOL. MMCVI &middot; No. 34 &middot; Wed 26 August 2026</div>
+      <div class="name">The Aftertimes</div>
+      <div class="tag">Tomorrow&#x27;s headlines, a little early</div>
+    </header>
+    <p class="dateline">Waystation 80, Varda Drift . 20 December 2106</p>
+    <h1>Power Walkers Jam Station Reactor Corridor</h1>
+    
+    <div class="body"><p>Commuters on Waystation 80 have taken to zero-gravity power-walking through the primary reactor corridor during peak shift changes, drawing fierce complaints from retired engineers. The habit, known among station staff as core-pacing, involves participants strapping heavy lead-foam weights to their wrists and pumping their legs through the zero-g heat-exchanger bays.</p><p>Walkers favour the sector because small thermal leaks from the reactor core make it the only passage on the station warm enough to induce physical perspiration. Over eighty clerks and administrators now gather after each watch, wearing bright tension-straps and driving their boots through zero-g in strict cadence.</p><p>Sweat is not contraband. However, veteran station crew insist the display damages morale.</p><p>&quot;A true spaceman only sweats when the cooling tanks fail,&quot; retired plant fitter Tomas Aris told the station safety council on Friday. &quot;When I see forty wet accountants rushing past the turbine manifolds, I start looking for my patch kit.&quot;</p><p>Walkers have refused to move to the cold cargo decks. Group leader Priya Chen argued that the warm pipe insulation keeps muscles soft, while the red flash of the secondary warning lights marks a perfect four-minute lap.</p><p>&quot;We tried the gym,&quot; Ms Chen said. &quot;It has no atmosphere.&quot;</p></div>
+    <section class="meta">
+      <h2 class="meta-title">Dispatch metadata</h2>
+      <div class="meta-body">
+        <div class="meta-locrow">
+          <div class="meta-loctext">
+            <div class="meta-location">Waystation 80, Varda Drift</div><div class="meta-far">80 years hence</div>
+            <div class="meta-facts">
+              <b>20 December 2106</b><br>Domain: <b>Sport</b>
+            </div>
+          </div>
+          <figure class="locator"><svg viewBox="14 6 232 244" width="220" role="img" xmlns="http://www.w3.org/2000/svg" class="locator-svg" aria-label="Locator chart: Waystation 80, Varda Drift, 80 years hence">><title>Locator chart for Waystation 80, Varda Drift (80 years hence)</title><circle cx="130.0" cy="130.0" r="112.0" fill="none" stroke="#1a1611" stroke-width="1.4"/><circle cx="130.0" cy="130.0" r="108.0" fill="none" stroke="#1a1611" stroke-width="0.6"/><circle cx="130.0" cy="130.0" r="33.3" fill="none" stroke="#cdc3ad" stroke-width="0.7"/><circle cx="130.0" cy="130.0" r="64.5" fill="none" stroke="#cdc3ad" stroke-width="0.7"/><circle cx="130.0" cy="130.0" r="93.6" fill="none" stroke="#cdc3ad" stroke-width="0.7"/><line x1="130.0" y1="130.0" x2="234.0" y2="130.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="220.1" y2="182.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="182.0" y2="220.1" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="130.0" y2="234.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="78.0" y2="220.1" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="39.9" y2="182.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="26.0" y2="130.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="39.9" y2="78.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="78.0" y2="39.9" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="130.0" y2="26.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="182.0" y2="39.9" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><line x1="130.0" y1="130.0" x2="220.1" y2="78.0" stroke="#cdc3ad" stroke-width="0.4" opacity="0.6"/><circle cx="51.7" cy="184.4" r="0.71" fill="#6b5f4d" opacity="0.34"/><circle cx="69.7" cy="136.1" r="0.51" fill="#6b5f4d" opacity="0.28"/><circle cx="77.8" cy="94.6" r="0.53" fill="#6b5f4d" opacity="0.68"/><circle cx="60.4" cy="58.7" r="0.60" fill="#6b5f4d" opacity="0.33"/><circle cx="116.0" cy="44.0" r="0.63" fill="#6b5f4d" opacity="0.71"/><circle cx="107.8" cy="152.5" r="0.92" fill="#6b5f4d" opacity="0.74"/><circle cx="64.3" cy="151.4" r="1.07" fill="#6b5f4d" opacity="0.73"/><circle cx="77.5" cy="199.1" r="1.13" fill="#6b5f4d" opacity="0.38"/><circle cx="66.3" cy="155.3" r="1.51" fill="#6b5f4d" opacity="0.70"/><circle cx="105.2" cy="76.2" r="0.93" fill="#6b5f4d" opacity="0.69"/><circle cx="71.1" cy="53.5" r="0.77" fill="#6b5f4d" opacity="0.69"/><circle cx="71.7" cy="99.8" r="0.68" fill="#6b5f4d" opacity="0.47"/><circle cx="123.4" cy="43.5" r="0.93" fill="#6b5f4d" opacity="0.45"/><circle cx="99.2" cy="41.9" r="0.67" fill="#6b5f4d" opacity="0.52"/><circle cx="214.3" cy="135.2" r="1.21" fill="#6b5f4d" opacity="0.39"/><circle cx="159.9" cy="80.3" r="1.01" fill="#6b5f4d" opacity="0.64"/><circle cx="151.6" cy="218.4" r="0.96" fill="#6b5f4d" opacity="0.51"/><circle cx="187.1" cy="178.3" r="1.23" fill="#6b5f4d" opacity="0.59"/><circle cx="77.0" cy="209.3" r="1.40" fill="#6b5f4d" opacity="0.71"/><circle cx="71.2" cy="132.4" r="0.64" fill="#6b5f4d" opacity="0.39"/><circle cx="35.4" cy="125.3" r="0.66" fill="#6b5f4d" opacity="0.74"/><circle cx="167.4" cy="208.0" r="1.07" fill="#6b5f4d" opacity="0.26"/><circle cx="124.2" cy="201.9" r="0.72" fill="#6b5f4d" opacity="0.65"/><circle cx="135.2" cy="98.1" r="1.27" fill="#6b5f4d" opacity="0.32"/><circle cx="86.1" cy="185.8" r="0.58" fill="#6b5f4d" opacity="0.52"/><circle cx="161.9" cy="134.1" r="0.52" fill="#6b5f4d" opacity="0.49"/><circle cx="61.3" cy="59.4" r="1.45" fill="#6b5f4d" opacity="0.30"/><circle cx="124.9" cy="147.4" r="1.52" fill="#6b5f4d" opacity="0.52"/><circle cx="69.5" cy="122.9" r="1.44" fill="#6b5f4d" opacity="0.30"/><circle cx="48.4" cy="117.7" r="0.89" fill="#6b5f4d" opacity="0.74"/><circle cx="107.2" cy="89.7" r="0.63" fill="#6b5f4d" opacity="0.65"/><circle cx="166.0" cy="166.0" r="1.22" fill="#6b5f4d" opacity="0.35"/><circle cx="74.1" cy="96.7" r="1.21" fill="#6b5f4d" opacity="0.69"/><circle cx="44.2" cy="123.0" r="0.93" fill="#6b5f4d" opacity="0.62"/><circle cx="162.1" cy="119.0" r="0.98" fill="#6b5f4d" opacity="0.49"/><circle cx="116.5" cy="173.0" r="0.60" fill="#6b5f4d" opacity="0.63"/><circle cx="65.3" cy="109.1" r="1.28" fill="#6b5f4d" opacity="0.35"/><circle cx="82.1" cy="213.7" r="0.78" fill="#6b5f4d" opacity="0.60"/><circle cx="54.5" cy="163.5" r="0.63" fill="#6b5f4d" opacity="0.44"/><circle cx="170.2" cy="166.2" r="0.82" fill="#6b5f4d" opacity="0.49"/><circle cx="78.3" cy="70.8" r="1.17" fill="#6b5f4d" opacity="0.60"/><circle cx="91.5" cy="216.8" r="1.27" fill="#6b5f4d" opacity="0.40"/><circle cx="138.4" cy="94.2" r="1.23" fill="#6b5f4d" opacity="0.29"/><circle cx="189.7" cy="98.1" r="0.93" fill="#6b5f4d" opacity="0.60"/><circle cx="73.1" cy="192.8" r="0.75" fill="#6b5f4d" opacity="0.38"/><circle cx="174.7" cy="137.4" r="0.99" fill="#6b5f4d" opacity="0.29"/><circle cx="130.0" cy="130.0" r="2.6" fill="none" stroke="#1a1611" stroke-width="1"/><line x1="130.0" y1="130.0" x2="134.6" y2="63.9" stroke="#7a2b2b" stroke-width="0.8" stroke-dasharray="2 2"/><circle cx="134.6" cy="63.9" r="8" fill="none" stroke="#7a2b2b" stroke-width="1"/><line x1="122.6" y1="63.9" x2="146.6" y2="63.9" stroke="#7a2b2b" stroke-width="0.7"/><line x1="134.6" y1="51.9" x2="134.6" y2="75.9" stroke="#7a2b2b" stroke-width="0.7"/><circle cx="134.6" cy="63.9" r="2.4" fill="#7a2b2b"/></svg></figure>
+        </div>
+      </div>
+    </section>
+    
+    <div class="endlinks">
+      <p><a class="arc" href="https://charlietrenorden.com/">&larr;&nbsp;Other projects</a></p>
+      <p><a class="arc" href="../index.html">Today's dispatch &rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>
+    </div>
+    <footer>
+      <p class="fiction">Every dispatch is fiction, written by a machine each
+        morning. None of it has happened. Yet.</p>
+      Filed 26/08/2026 06:41 AEST.
+    </footer>
+  </div>
+</body>
+</html>

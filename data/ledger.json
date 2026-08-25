@@ -312,5 +312,15 @@
     "style": "investigation",
     "place_kind": "subsurface",
     "engine": "sentiment"
+  },
+  {
+    "run_date": "2026-08-25",
+    "year": 2106,
+    "era_bucket": 1,
+    "domain": "sport",
+    "headline": "Power Walkers Jam Station Reactor Corridor",
+    "style": "trend",
+    "place_kind": "deepspace",
+    "engine": "leisure"
   }
 ]
