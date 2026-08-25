@@ -143,6 +143,12 @@
       "gloss": "Sub-surface lighting units used to cultivate dense timber in underground vaults.",
       "kind": "term",
       "first_seen": "2026-08-24"
+    },
+    {
+      "term": "core-pacing",
+      "gloss": "The practice of fitness-walking through zero-gravity reactor corridors to utilise waste heat for exercise.",
+      "kind": "term",
+      "first_seen": "2026-08-25"
     }
   ]
 }

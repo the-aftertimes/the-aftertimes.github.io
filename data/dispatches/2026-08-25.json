@@ -1,0 +1,97 @@
+{
+  "run_date": "2026-08-25",
+  "run_time": "2026-08-25T20:41:05.551769+00:00",
+  "dispatch": {
+    "headline": "Power Walkers Jam Station Reactor Corridor",
+    "body": "Commuters on Waystation 80 have taken to zero-gravity power-walking through the primary reactor corridor during peak shift changes, drawing fierce complaints from retired engineers. The habit, known among station staff as core-pacing, involves participants strapping heavy lead-foam weights to their wrists and pumping their legs through the zero-g heat-exchanger bays.\n\nWalkers favour the sector because small thermal leaks from the reactor core make it the only passage on the station warm enough to induce physical perspiration. Over eighty clerks and administrators now gather after each watch, wearing bright tension-straps and driving their boots through zero-g in strict cadence.\n\nSweat is not contraband. However, veteran station crew insist the display damages morale.\n\n\"A true spaceman only sweats when the cooling tanks fail,\" retired plant fitter Tomas Aris told the station safety council on Friday. \"When I see forty wet accountants rushing past the turbine manifolds, I start looking for my patch kit.\"\n\nWalkers have refused to move to the cold cargo decks. Group leader Priya Chen argued that the warm pipe insulation keeps muscles soft, while the red flash of the secondary warning lights marks a perfect four-minute lap.\n\n\"We tried the gym,\" Ms Chen said. \"It has no atmosphere.\"",
+    "scene": "A woman wearing a neon tension-strap and wrist weights power-walks through a narrow zero-gravity pipe corridor, while a retired engineer in grey coveralls glares at her from a maintenance ladder.",
+    "dateline": {
+      "place": "Waystation 80, Varda Drift",
+      "year": 2106,
+      "month": 12,
+      "day": 20,
+      "years_from_now": 80
+    },
+    "domain": "sport",
+    "glossary": [
+      {
+        "term": "core-pacing",
+        "gloss": "The practice of fitness-walking through zero-gravity reactor corridors to utilise waste heat for exercise."
+      }
+    ],
+    "premise": "Station commuters at Interstellar Waystation 80 have taken to performative zero-gravity power-walking through the main reactor corridors, drawing fierce condemnation from retired engineers who insist true spacemen shouldn't sweat unless the coolant tanks are failing.",
+    "brief": {
+      "subject": "a woman in her thirties wearing a bright neon-yellow tension-strap harness over a fitted dark-grey thermal base layer with full-length trousers, blue lead-foam wrist cuffs, and heavy black neoprene deck boots",
+      "action": "pumping her bent arms in a rigid power-walking stride while pushing off a wall-mounted guide rail",
+      "setting": "a narrow cylindrical reactor corridor lined with thick lagged heat-exchanger pipes, with a grey-bearded engineer in worn grey utility coveralls glaring from the rungs of a metal maintenance ladder behind her",
+      "light": "hard directional red light from a recessed wall-mounted indicator strip, casting sharp distinct shadows across the pipe insulation",
+      "materials": "quilted metallic pipe-lagging, brushed aluminium conduit, ribbed rubber handrails, and woven nylon harness webbing",
+      "anomaly": "a forgotten grease gun clipped to an unpainted pipe flange with a smudged shop rag tied around its nozzle"
+    },
+    "image": null
+  },
+  "meta": {
+    "run_time": "2026-08-25T20:41:05.551769+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 34,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.75,
+      0.67,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: debt",
+          "severity": "major"
+        },
+        {
+          "rule": "plainness",
+          "detail": "11 words a reader must decode in 209 (5.3%, wanted under 5%) - replace with the blunt everyday word: blinks, bulkhead, dockyard, flinch, kettles, novices, quietists, refectory, stilling, twitches",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "199 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "chosen_index": 2,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": 0.67,
+    "critique": "The draft fell short of the 200-word minimum by one word and used a descriptive headline. The closing quote needed a sharper kicker to recontextualise the walkers' reliance on reactor danger.",
+    "prose": {
+      "words": 199,
+      "sentences": 12,
+      "mean_sentence": 16.6,
+      "longest": 27,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.5
+    }
+  }
+}
