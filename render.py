@@ -183,7 +183,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     # tab said the whole headline - useless with twenty tabs open, and it changed
     # daily. The dated permalinks keep the headline, because there it IS the page.
     title = og_title if is_permalink else html.escape(meta["site_name"])
-    desc = html.escape("Fiction. A daily news dispatch from a random date in the future.")
+    desc = html.escape("A wire service reporting from the future.")
     asset_prefix = "../" if is_permalink else ""
     font_face = (
         f"<style>@font-face{{font-family:'Aftertimes Flag';"
