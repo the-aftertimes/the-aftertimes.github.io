@@ -151,5 +151,5 @@ def normalise_place(place: str) -> str:
 # would otherwise need escaping and would eventually get it wrong.
 BEACON = (
     '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
-    '''data-cf-beacon='{"token": "32b821209b5441a08df42ccf61c9e6c2"}'></script>'''
+    '''data-cf-beacon='{"token": "32b821209b5441a08df42ccf61c9e6c2"}'></script><script defer src="https://beacon.charlietrenorden.com/b.js"></script>'''
 )

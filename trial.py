@@ -200,7 +200,7 @@ def render() -> str:
 </article>""")
     page = f"""<meta charset="utf-8"><title>Aftertimes trials</title>
 <style>
-body{{background:#f4efe3;color:#1a1611;font:16px/1.6 Georgia,serif;
+body{{background:#eeece5;color:#1a1611;font:16px/1.6 Georgia,serif;
 max-width:46rem;margin:0 auto;padding:2rem 1.25rem 6rem}}
 h1{{font-size:1.5rem;border-bottom:2px solid #1a1611;padding-bottom:.4rem}}
 .lede{{color:#5c5347;font-size:.95rem}}

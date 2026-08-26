@@ -29,27 +29,8 @@ def _dom_key(domain: str) -> str:
     return " ".join((domain or "").strip().lower().split())
 
 
-def _domain_chips(records: list[dict]) -> str:
-    """A row of filter chips: 'All' plus every distinct domain observed in the
-    records (label is first-seen title-case; key is the normalised form)."""
-    labels: dict[str, str] = {}
-    for r in records:
-        raw = r["dispatch"].get("domain", "")
-        key = _dom_key(raw)
-        if key and key not in labels:
-            labels[key] = _title_case(hyphenate(raw.strip()))
-    if not labels:
-        return ""
-    chips = ('<button type="button" class="chip is-active" '
-             'data-filter="all" aria-pressed="true">All</button>')
-    for key in sorted(labels, key=lambda k: labels[k].lower()):
-        chips += (f'<button type="button" class="chip" '
-                  f'data-filter="{html.escape(key, quote=True)}" '
-                  f'aria-pressed="false">{html.escape(labels[key])}</button>')
-    return f'<div class="chips" role="group" aria-label="Filter by domain">{chips}</div>'
-
 _CSS = """
-:root{--bg:#f4efe3;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
+:root{--bg:#eeece5;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
 *{box-sizing:border-box;}
 body{margin:0;background:var(--bg);color:var(--fg);
   font-family:Georgia,'Times New Roman',serif;line-height:1.5;}
@@ -64,23 +45,14 @@ body{margin:0;background:var(--bg);color:var(--fg);
   font-size:clamp(2.7rem,10vw,4.6rem);line-height:1;letter-spacing:0.01em;}
 .masthead .tag{font-family:-apple-system,system-ui,sans-serif;font-size:0.62rem;
   letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.7rem;}
+/* The gap BELOW the heading is deliberately large. The first row carries a
+   border-top, so a rule sitting close under a small uppercase label reads as an
+   underline on the label rather than as the top of a list. Charlie asked twice
+   for more air here, the second time with a screenshot. */
 h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
-  letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:1.4rem 0 0.8rem;}
-/* The three bands under "All dispatches" - heading, topic chips, then the list -
-   were nearly touching, so the chips read as part of the heading and the first
-   row read as part of the chips. Charlie, 26/08/2026: slight spacing between
-   them. The gap BELOW the chips is the larger of the two because the first row
-   carries a border-top, and a rule sitting tight under a row of pills looks like
-   an underline on the pills rather than the start of a list. */
-.chips{display:flex;flex-wrap:wrap;gap:0.45rem;margin:0.85rem 0 1.35rem;
-  font-family:-apple-system,system-ui,sans-serif;}
-.chip{cursor:pointer;font:inherit;font-size:0.68rem;letter-spacing:0.08em;
-  text-transform:uppercase;padding:0.32rem 0.7rem;border:1px solid var(--rule);
-  border-radius:1rem;background:transparent;color:var(--muted);}
-.chip:hover{border-color:var(--accent);color:var(--accent);}
-.chip.is-active{background:var(--accent);border-color:var(--accent);color:var(--bg);}
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);
+  margin:2.2rem 0 1.6rem;}
 ul.disp{list-style:none;margin:0;padding:0;}
-ul.disp li.is-hidden{display:none;}
 /* Year on a rail, ordered by distance from now - this list does the job the
    futures-visited bar used to, without a second copy of every date. */
 ul.disp li{display:flex;gap:1.2rem;padding:0.8rem 0;
@@ -134,29 +106,6 @@ _FONT_FACE = ("<style>@font-face{font-family:'Aftertimes Flag';"
               "font-weight:700;font-display:swap;}</style>")
 
 
-_FILTER_JS = """
-(function(){
-  var chips=document.querySelectorAll('.chip');
-  var items=document.querySelectorAll('ul.disp li');
-  if(!chips.length)return;
-  function apply(key){
-    items.forEach(function(el){
-      var show=(key==='all'||el.getAttribute('data-domain')===key);
-      el.classList.toggle('is-hidden',!show);
-    });
-    chips.forEach(function(c){
-      var on=c.getAttribute('data-filter')===key;
-      c.classList.toggle('is-active',on);
-      c.setAttribute('aria-pressed',on?'true':'false');
-    });
-  }
-  chips.forEach(function(c){
-    c.addEventListener('click',function(){apply(c.getAttribute('data-filter'));});
-  });
-})();
-"""
-
-
 def render_archive(records: list[dict], meta: dict) -> str:
     recs = sorted(records, key=lambda r: r["run_date"], reverse=True)
     # The LIST IS THE TIMELINE: ordered by how far out each dispatch is set, with
@@ -172,9 +121,8 @@ def render_archive(records: list[dict], meta: dict) -> str:
         place = html.escape(hyphenate(normalise_place(dl.get("place"))))
         head = html.escape(hyphenate(d["headline"]))
         dom = html.escape(hyphenate(_title_case(d.get("domain", ""))))
-        dk = html.escape(_dom_key(d.get("domain", "")), quote=True)
         yfn = int(dl["years_from_now"])
-        rows += (f'<li data-domain="{dk}">'
+        rows += (f'<li>'
                  f'<div class="rail"><span class="ryear">'
                  f'{html.escape(str(dl["year"]))}</span>'
                  f'<span class="rago">{yfn:,} yrs</span></div>'
@@ -184,13 +132,12 @@ def render_archive(records: list[dict], meta: dict) -> str:
                  f'{dom}</div></div>'
                  f'<div class="rmap">{locator.thumbnail(dl, deep_max)}</div>'
                  f'</li>')
-    chips = _domain_chips(recs)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4efe3">
+<meta name="theme-color" content="#eeece5">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -207,12 +154,10 @@ def render_archive(records: list[dict], meta: dict) -> str:
     </header>
     <p><a class="home" href="index.html">&larr; Today's dispatch</a></p>
     <h2>All dispatches</h2>
-    {chips}
     <ul class="disp">{rows}</ul>
     <footer>Every dispatch is fiction, written by a machine. None of it has happened. Yet.
     </footer>
   </div>
-  <script>{_FILTER_JS}</script>
 </body>
 </html>
 """

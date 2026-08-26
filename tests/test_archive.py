@@ -1,4 +1,4 @@
-"""Archive page: domain-filter chips + data-domain tagging on the list."""
+"""Archive page: the dispatch list, and what has been deliberately removed."""
 import archive
 
 
@@ -14,27 +14,6 @@ def _recs(domains):
 
 
 META = {"site_name": "The Aftertimes", "tagline": "x"}
-
-
-def test_dom_key_normalises_case_and_space():
-    assert archive._dom_key("  Space   Law ") == "space law"
-    assert archive._dom_key("") == ""
-
-
-def test_chips_dedupe_on_key_keep_first_label():
-    # "Space Law" and "space law" collapse to one chip; label is first-seen title-case.
-    out = archive.render_archive(_recs(["Space Law", "space law", "crime"]), META)
-    assert out.count('data-filter="space law"') == 1
-    assert ">Space Law<" in out
-    assert 'data-filter="all"' in out and ">All<" in out
-
-
-def test_list_rows_carry_their_domain_key():
-    out = archive.render_archive(_recs(["crime", "space law", "death and mourning"]), META)
-    for key in ("crime", "space law", "death and mourning"):
-        assert f'<li data-domain="{key}"' in out
-
-
 def test_the_futures_visited_bar_is_gone():
     """Charlie cut it 18/08/2026 after two reworks. It duplicated the year rail
     the list already carries, so the filter has only one set of items to hide."""
@@ -66,12 +45,24 @@ def test_no_em_or_en_dashes():
     assert chr(0x2014) not in out and chr(0x2013) not in out
 
 
-def test_the_topic_chips_have_air_above_and_below():
-    """Charlie, 26/08/2026: slight spacing between the heading, the topics and
-    the list. The gap below is the larger of the two because the first row
-    carries a border-top, and a rule tight under a row of pills reads as an
-    underline on the pills rather than the start of a list."""
-    out = archive.render_archive(_recs(["crime", "space law"]), META)
-    assert ".chips{" in out
-    chips_rule = out.split(".chips{")[1].split("}")[0]
-    assert "margin:0.85rem 0 1.35rem" in chips_rule
+def test_the_domain_filter_is_gone():
+    """Removed 26/08/2026. 17 of 22 chips returned exactly one dispatch and the
+    largest returned three, so it was not a filter - it was the article list
+    again, in pill form, costing 457px above the first story on a phone. The
+    domain still prints on every row, so nothing is lost. Charlie delegated the
+    call; this guard is here because the obvious "improvement" is to rebuild it."""
+    out = archive.render_archive(_recs(["crime", "space law", "crime"]), META)
+    for dead in ("chip", "data-filter", "data-domain", "is-hidden", "<script"):
+        assert dead not in out, dead
+    # the domain must still be readable on each row - that is what makes the
+    # filter redundant rather than merely absent
+    assert "Crime" in out and "Space Law" in out
+
+
+def test_the_heading_has_air_above_the_list():
+    """Charlie asked twice, the second time with a screenshot. The first row
+    carries a border-top, so a rule close under a small uppercase label reads as
+    an underline on the label rather than the top of a list."""
+    out = archive.render_archive(_recs(["crime"]), META)
+    h2_rule = out.split("h2{")[1].split("}")[0]
+    assert "margin:2.2rem 0 1.6rem" in h2_rule

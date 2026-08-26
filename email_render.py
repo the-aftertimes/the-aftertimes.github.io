@@ -37,11 +37,11 @@ def build_email(dispatch: dict, meta: dict) -> tuple[str, str]:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <meta name="supported-color-schemes" content="light"></head>
-<body style="margin:0;padding:0;background:#f4efe3;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4efe3">
+<body style="margin:0;padding:0;background:#eeece5;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#eeece5">
 <tr><td align="center" style="padding:24px 12px 48px;">
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" bgcolor="#f4efe3"
-  style="max-width:600px;background:#f4efe3;border:1px solid #cdc3ad;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" bgcolor="#eeece5"
+  style="max-width:600px;background:#eeece5;border:1px solid #cdc3ad;">
 <tr><td style="padding:28px 32px;font-family:Georgia,serif;">
   <div style="text-align:center;border-bottom:3px double #1a1611;padding-bottom:12px;margin-bottom:20px;">
     {masthead}
