@@ -97,6 +97,18 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
     # learning loop needs to know which premise and draft was published).
     info = {"scores": [s["score"] for _, s in scored],
             "violations": [s["violations"] for _, s in scored],
+            # KEEP THE LOSING DRAFTS. Two thirds of what this paper writes was
+            # being discarded unread, surviving only as a headline in a CI log
+            # that expires. On 26/08/2026 Charlie read one of those log lines -
+            # "Sentries Turn Missile Silo Into Pickleball Court" - and said it
+            # sounded funny; the body was already gone. That is the single
+            # signal the learning loop has never had, thrown away daily for
+            # nothing. Costs a few kilobytes of JSON and no API calls.
+            "drafts": [{"headline": d.get("headline", ""),
+                        "body": d.get("body", ""),
+                        "premise": d.get("premise", ""),
+                        "score": s["score"], "rejected": s["rejected"]}
+                       for d, s in scored],
             "all_rejected": all_rejected, "judge_reason": "", "judge_pick": None}
 
     def _finish(dispatch):

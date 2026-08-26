@@ -12,17 +12,26 @@ from __future__ import annotations
 
 import re
 
-_LEGAL = re.compile(
-    r"\b(sue[sd]?|suing|lawsuit|court|magistrate|tribunal|injunction|lien|liens"
-    r"|repossess\w*|bailiff\w*|writ|statute|ordinance|tax|taxes|levy|levies"
-    r"|debt|debts|money|budget|paperwork|accountant)\b", re.I)
+from critic import legal_hits
+
+#: Financial words this module guards against that the CRITIC does not. The
+#: critic reads finished prose, where "money" and "budget" are ordinary; a POOL
+#: of premises about money is how the paper collapsed into debt stories in July.
+#: Kept as a SUPPLEMENT to the shared detector rather than as a second copy of
+#: it - on 26/08/2026 this module's private copy silently refused the first
+#: premise Charlie ever endorsed, reading "pickleball court" as a courtroom. That
+#: was the same false positive fixed in critic.py the day before, still live here
+#: because the pattern had been duplicated. docs/TODO.md had flagged the drift
+#: risk; this is the drift arriving.
+_EXTRA_FINANCIAL = re.compile(r"\b(money|budget|paperwork|accountant)\b", re.I)
 
 #: Maximum share of the pool that may be legal or financial in register.
 _MAX_LEGAL_SHARE = 0.25
 
 
 def is_legal(premise: str) -> bool:
-    return bool(_LEGAL.search(premise or ""))
+    return bool(legal_hits(premise or "")
+                or _EXTRA_FINANCIAL.search(premise or ""))
 
 
 def legal_share(pool: list[str]) -> float:

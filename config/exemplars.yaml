@@ -1,5 +1,12 @@
 # Premises Charlie marked "good", promoted here automatically by exemplars.py.
 # These are FEW-SHOT examples, which steer the model far harder than instructions
-# do - so the register balance is guarded (see exemplars.legal_share). Starts
-# empty and grows one verdict at a time.
-exemplars: []
+# do - so the register balance is guarded (see exemplars.legal_share).
+#
+# The first entry was added by hand on 26/08/2026. Charlie read the CI log and
+# said "this sounds funny - Sentries Turn Missile Silo Into Pickleball Court".
+# That draft had been HARD REJECTED for legal register (the word "court") and
+# its body is gone, because losing drafts were not stored - so the premise is
+# reconstructed from the headline, which is the part that steers generation.
+exemplars:
+- Bored sentries at a live missile silo convert the launch bay into a pickleball court and
+  keep playing around the warhead

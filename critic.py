@@ -125,7 +125,7 @@ _COURT_NOT_LEGAL = {
 _COURT_MENTION = re.compile(r"(?:(\w+)[\s-]+)?\bcourts?\b", re.I)
 
 
-def _legal_hits(body: str) -> list[str]:
+def legal_hits(body: str) -> list[str]:
     """The legal-register words in a body, with the sport sense of `court`
     excluded. Everything else in the list is unambiguous enough to take at face
     value; `court` is the one word in it with a common innocent meaning.
@@ -146,7 +146,7 @@ def _legal_hits(body: str) -> list[str]:
 def check_register(body: str, engine: str) -> list[dict]:
     if (engine or "") == "bureaucratic":
         return []
-    hits = _legal_hits(body)
+    hits = legal_hits(body)
     if not hits:
         return []
     return [_v("legal_register",
