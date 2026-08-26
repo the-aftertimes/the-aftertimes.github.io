@@ -12,7 +12,7 @@ from common import BEACON, hyphenate
 from dates import format_date, format_dateline
 
 _CSS = """
-:root{--bg:#f4efe3;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
+:root{--bg:#eeece5;--fg:#1a1611;--muted:#6b5f4d;--accent:#7a2b2b;--rule:#cdc3ad;}
 *{box-sizing:border-box;}
 body{margin:0;background:var(--bg);color:var(--fg);
   font-family:Georgia,'Times New Roman',serif;line-height:1.55;
@@ -227,7 +227,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4efe3">
+<meta name="theme-color" content="#eeece5">
 <link rel="icon" type="image/svg+xml" href="{'../' if is_permalink else ''}assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="{'../' if is_permalink else ''}assets/favicon-192.png">
 <link rel="apple-touch-icon" href="{'../' if is_permalink else ''}assets/apple-touch-icon.png">
