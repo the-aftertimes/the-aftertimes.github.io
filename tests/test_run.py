@@ -292,3 +292,23 @@ def test_two_clean_drafts_are_judged_without_rescuing_anything(monkeypatch):
     drafts = [_dispatch("a"), _dispatch("b"), _dispatch("c")]
     run_mod.choose_draft(drafts, {}, _qcfg(), {})
     assert seen == [2], "a healthy pool must not drag rejected drafts back in"
+
+
+def test_losing_drafts_are_kept(monkeypatch):
+    """26/08/2026: Charlie read a CI log line - "Sentries Turn Missile Silo Into
+    Pickleball Court" - and said it sounded funny. That draft's body was already
+    gone, because only the winner was ever stored. Two thirds of the paper's
+    output was being discarded unread, and it is the one signal the learning loop
+    has never had."""
+    import run as run_mod
+    _scored(monkeypatch, [(0.75, True, ["legal_register"]),
+                          (0.9, False, []), (0.92, False, [])])
+    monkeypatch.setattr(run_mod.judge_mod, "judge",
+                        lambda d, s: {"pick": 0, "reason": "r"})
+    drafts = [dict(_dispatch(t), premise=f"premise {t}") for t in "abc"]
+    _, info = run_mod.choose_draft(drafts, {}, _qcfg(), {})
+    assert len(info["drafts"]) == 3
+    kept = info["drafts"][0]
+    assert kept["headline"] == "Head a" and kept["body"]
+    assert kept["premise"] == "premise a"
+    assert kept["rejected"] is True and kept["score"] == 0.75
