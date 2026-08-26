@@ -130,6 +130,14 @@ quality:
   # Added when the first re-edit dry run offered "Tycho Mayor Dies At 84, Exposed
   # As Secretly Capable" - nine words against a seven-word cap.
   revise_judge_never: [headline_length]
+  # Hard-reject rules a draft can be RESCUED from when fewer than two drafts
+  # survive, so the judge always has a real choice instead of an election with
+  # one candidate. Only register taste belongs here - the judge is exactly the
+  # right authority on whether a piece leans on the legal register, and exactly
+  # the wrong one on whether it has a headline. 25/08/2026: two of three drafts
+  # were eliminated on legal_register, the day was decided by elimination, and
+  # Charlie said the article was not funny.
+  judge_can_rescue: [legal_register]
 
 # Daily self-improvement. Only REPETITION is automated: it is measurable, whereas
 # "funny" is not, and a loop optimising only what it can measure drifts toward

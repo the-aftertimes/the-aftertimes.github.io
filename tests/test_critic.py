@@ -394,3 +394,28 @@ def test_score_applies_plainness_when_the_caller_supplies_the_words(quality_cfg)
     assert "plainness" in rules
     assert "plainness" not in [v["rule"] for v in without["violations"]]
     assert with_words["score"] < without["score"]
+
+
+def test_a_sporting_court_is_not_the_legal_register():
+    """25/08/2026: "Sentries Turn Missile Silo Into Pickleball Court" was HARD
+    rejected for legal register and never reached the judge. A word-list that
+    cannot tell a sport from a lawsuit should not be able to delete a draft."""
+    import critic
+    assert critic.check_register("They built a pickleball court.", "") == []
+    assert critic.check_register("Play resumed on the indoor courts.", "") == []
+
+
+def test_a_real_court_still_flags_even_beside_a_sporting_one():
+    """One legal mention is enough - a piece that plays pickleball AND sues
+    somebody is still leaning on the register."""
+    import critic
+    out = critic.check_register(
+        "The pickleball court hosted a hearing after the court fined them.", "")
+    assert out and "court" in out[0]["detail"]
+
+
+def test_the_rest_of_the_legal_list_is_untouched():
+    import critic
+    out = critic.check_register("The magistrate raised a levy on the debt.", "")
+    assert out and {"magistrate", "levy", "debt"} <= set(
+        out[0]["detail"].split(": ")[1].split(", "))
