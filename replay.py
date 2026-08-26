@@ -10,7 +10,7 @@ import glob
 import os
 import sys
 
-from common import load_settings, read_json, rel
+from common import load_settings, read_json, refresh_render_meta, rel
 import render as render_mod
 
 
@@ -35,7 +35,7 @@ def main() -> int:
     meta["tagline"] = settings["site"]["tagline"]
     meta["site_name"] = settings["site"]["name"]
     meta["base_url"] = settings["site"]["base_url"]
-    meta["locator_deep_max"] = settings["dates"]["bands"]["deep"][1]
+    refresh_render_meta(meta, settings)
     html = render_mod.render_dispatch(record["dispatch"], meta, stale=False)
     with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
         fh.write(html)

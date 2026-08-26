@@ -48,3 +48,54 @@ def test_output_is_well_formed_and_dash_clean():
         assert s.startswith("<svg") and s.endswith("</svg>")
         assert "<title>" in s and "aria-label" in s
         assert chr(0x2014) not in s and chr(0x2013) not in s
+
+
+# --- the locator ceiling has ONE owner --------------------------------------
+# 26/08/2026: six permalinks drew their dispatch at a different radius from its
+# own archive row, because archive.py computed the ceiling live for every row
+# while render.py took whatever was stored on the record at filing time. Their
+# fallback defaults disagreed too - 40000 against 4000 - which is why the one
+# record with no stored ceiling was furthest wrong.
+
+def test_re_rendering_a_stale_record_picks_up_todays_ceiling():
+    """A record filed under an old config must not reproduce the old page."""
+    from common import locator_ceiling, load_settings, refresh_render_meta
+    settings = load_settings()
+    meta = {"locator_deep_max": 40000}
+    refresh_render_meta(meta, settings)
+    assert meta["locator_deep_max"] == locator_ceiling(settings)
+    assert meta["locator_deep_max"] != 40000
+
+
+def test_a_record_with_no_ceiling_gets_one():
+    from common import locator_ceiling, load_settings, refresh_render_meta
+    settings = load_settings()
+    meta = {}
+    refresh_render_meta(meta, settings)
+    assert meta["locator_deep_max"] == locator_ceiling(settings)
+
+
+def test_only_the_ceiling_is_refreshed():
+    """It is a presentation field. A re-render must not quietly restamp the
+    dispatch's own identity."""
+    from common import load_settings, refresh_render_meta
+    meta = {"locator_deep_max": 40000, "run_time": "2026-07-29T20:00:00+00:00",
+            "edition": 1, "site_name": "The Aftertimes"}
+    refresh_render_meta(meta, load_settings())
+    assert meta["run_time"] == "2026-07-29T20:00:00+00:00"
+    assert meta["edition"] == 1 and meta["site_name"] == "The Aftertimes"
+
+
+def test_nothing_reads_the_setting_directly_any_more():
+    """The whole point is one owner. Five call sites used to read it and they
+    disagreed; a sixth would reintroduce the divergence silently."""
+    import glob, os, re
+    offenders = []
+    for path in glob.glob(os.path.join(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__))), "*.py")):
+        if os.path.basename(path) == "common.py":
+            continue
+        src = open(path, encoding="utf-8").read()
+        if re.search(r'\["bands"\]\s*\[\s*"deep"\s*\]\s*\[\s*1\s*\]', src):
+            offenders.append(os.path.basename(path))
+    assert not offenders, f"read locator_ceiling() instead: {offenders}"

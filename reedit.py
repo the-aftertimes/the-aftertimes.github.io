@@ -33,7 +33,8 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from common import load_settings, read_json, rel, write_json
+from common import (load_settings, read_json, refresh_render_meta, rel,
+                    write_json)
 import archive as archive_mod
 import critic
 import render as render_mod
@@ -60,6 +61,9 @@ def reedit(run_date: str, dry: bool = False) -> int:
         print(f"No dispatch for {run_date}.", file=sys.stderr)
         return 1
     dispatch, meta = record["dispatch"], record["meta"]
+    # An already-filed record carries the presentation config it was filed
+    # under; re-rendering without this reproduces the old page faithfully.
+    refresh_render_meta(meta, settings)
     qcfg = settings["quality"]
     print(f">>> REEDIT {run_date}: {dispatch.get('headline', '')[:70]}")
 
