@@ -145,3 +145,42 @@ def test_repeated_edits_accumulate_history(repo, monkeypatch):
 
 def test_an_unknown_date_is_refused(repo):
     assert reedit.reedit("1999-01-01") == 1
+
+
+# --- the archaic batch, and its quota gate ----------------------------------
+# 26/08/2026. "Run it after 20:13 UTC" was a TODO note, which is exactly the kind
+# of instruction that survives nowhere else and gets forgotten. It is code now.
+
+from datetime import datetime, timezone
+
+
+def test_the_gate_shuts_before_the_cron_on_an_unfiled_day(monkeypatch):
+    monkeypatch.setattr(reedit, "read_json", lambda p, default=None: None)
+    ok, why = reedit.quota_window_open(
+        datetime(2026, 8, 26, 12, 48, tzinfo=timezone.utc))
+    assert ok is False and "before 20:13" in why
+
+
+def test_the_gate_opens_after_the_cron(monkeypatch):
+    monkeypatch.setattr(reedit, "read_json", lambda p, default=None: None)
+    ok, why = reedit.quota_window_open(
+        datetime(2026, 8, 26, 20, 14, tzinfo=timezone.utc))
+    assert ok is True and "past 20:13" in why
+
+
+def test_the_gate_opens_early_once_the_day_has_filed(monkeypatch):
+    """The hour is a proxy; what actually matters is whether the dispatch that
+    the batch would compete with has already been written."""
+    monkeypatch.setattr(reedit, "read_json",
+                        lambda p, default=None: {"dispatch": {}})
+    ok, why = reedit.quota_window_open(
+        datetime(2026, 8, 26, 9, 0, tzinfo=timezone.utc))
+    assert ok is True and "has filed" in why
+
+
+def test_archaic_selects_by_measurement_not_by_date_range():
+    """The TODO said "the six pre-04/08 pieces". Two of the real six are 08/08
+    and 14/08, and 29/07 and 02/08 are clean - the remembered range was wrong."""
+    dates = reedit.archaic_dates()
+    assert "2026-08-14" in dates and "2026-08-08" in dates
+    assert "2026-07-29" not in dates and "2026-08-02" not in dates

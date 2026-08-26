@@ -54,6 +54,50 @@ def _latest_date() -> str | None:
     return os.path.basename(files[-1])[:-5] if files else None
 
 
+#: The daily cron fires at 20:13 UTC. A batch of re-edits before it competes for
+#: the same free Gemini tier, and a trial batch run early on 10/08/2026 exhausted
+#: the allowance and degraded that night's dispatch. The gate is enforced here
+#: rather than left to whoever presses the button, because "run it after 20:13"
+#: is exactly the kind of instruction that survives in a TODO and nowhere else.
+_CRON_UTC_HOUR, _CRON_UTC_MINUTE = 20, 13
+
+
+def quota_window_open(now: datetime | None = None) -> tuple[bool, str]:
+    """Is it safe to spend a batch of model calls? Returns (ok, why)."""
+    now = now or datetime.now(timezone.utc)
+    today = now.date().isoformat()
+    if read_json(f"data/dispatches/{today}.json"):
+        return True, f"{today} has filed"
+    cron = now.replace(hour=_CRON_UTC_HOUR, minute=_CRON_UTC_MINUTE,
+                       second=0, microsecond=0)
+    if now >= cron:
+        return True, f"past {_CRON_UTC_HOUR:02d}:{_CRON_UTC_MINUTE:02d} UTC"
+    return False, (f"{today} has not filed and it is "
+                   f"{now:%H:%M} UTC, before {_CRON_UTC_HOUR:02d}:"
+                   f"{_CRON_UTC_MINUTE:02d} - a batch now competes with the "
+                   f"day's dispatch for the same free tier")
+
+
+def archaic_dates() -> list[str]:
+    """Published dispatches whose prose still measures as a plainness fault.
+
+    Selected by MEASUREMENT, not by the date range anyone remembers: the
+    docs/TODO.md note said "the six pre-04/08 pieces" and the real six are
+    30/07, 31/07, 01/08, 03/08, 08/08 and 14/08.
+    """
+    from common import load_common_words
+    cfg = load_settings()["quality"]
+    words = load_common_words()
+    out = []
+    for path in sorted(glob.glob(rel("data/dispatches/*.json"))):
+        date = os.path.basename(path)[:-5]
+        rec = read_json(f"data/dispatches/{date}.json") or {}
+        body = (rec.get("dispatch") or {}).get("body", "")
+        if body and critic.check_plainness(body, words, cfg):
+            out.append(date)
+    return out
+
+
 def reedit(run_date: str, dry: bool = False) -> int:
     settings = load_settings()
     record = read_json(f"data/dispatches/{run_date}.json")
@@ -126,6 +170,24 @@ if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if a]
     dry = "--dry" in args
     positional = [a for a in args if not a.startswith("--")]
+
+    if "--archaic" in args:
+        dates = archaic_dates()
+        if not dates:
+            print("No published dispatch measures as a plainness fault.")
+            raise SystemExit(0)
+        ok, why = quota_window_open()
+        if not ok and "--force" not in args:
+            print(f"REFUSING: {why}.", file=sys.stderr)
+            print(f"({len(dates)} would be re-edited: {', '.join(dates)}.) "
+                  f"Pass --force to override.", file=sys.stderr)
+            raise SystemExit(2)
+        print(f">>> ARCHAIC BATCH - {len(dates)} dispatch(es); quota ok: {why}")
+        rc = 0
+        for d in dates:
+            rc |= reedit(d, dry)
+        raise SystemExit(rc)
+
     date = positional[0] if positional else _latest_date()
     if not date:
         print("No dispatches to re-edit.", file=sys.stderr)
