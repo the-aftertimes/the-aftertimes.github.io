@@ -7,10 +7,11 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-<title>Worker Leans Out, Becomes Foreign Cargo - The Aftertimes</title>
+<title>Hull Cleaner Becomes Foreign Cargo - The Aftertimes</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Aftertimes">
-<meta property="og:title" content="Worker Leans Out, Becomes Foreign Cargo - The Aftertimes">
+<meta property="og:title" content="Hull Cleaner Becomes Foreign Cargo - The Aftertimes">
+<meta name="description" content="A wire service reporting from the future.">
 <meta property="og:description" content="A wire service reporting from the future.">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -47,7 +48,14 @@ figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multipl
 @media (max-width:36rem){
   .meta-locrow{flex-direction:column;}
   .meta-loctext{text-align:center;padding-right:0;}
-  figure.locator{border-left:none;padding-left:0;margin-top:1.1rem;}
+  /* Once the row stacks, the plate is alone on a full-width line and was still
+     wearing the two-column `text-align:left`, so it sat hard against the left
+     edge under centred text. Charlie, 19/08/2026: centre it on mobile. Both
+     rules are needed - text-align centres the inline SVG box, margin:auto holds
+     it there if the svg is ever made display:block. */
+  figure.locator{border-left:none;padding-left:0;margin-top:1.1rem;
+    text-align:center;}
+  figure.locator svg{margin-left:auto;margin-right:auto;}
 }
 h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
@@ -76,8 +84,15 @@ h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
 footer{padding-top:2rem;font-family:-apple-system,system-ui,sans-serif;
   font-size:0.78rem;color:var(--muted);}
 footer .fiction{font-style:italic;margin:0 0 0.6rem;}
-/* House standard: the back-link sits top right on every property. */
-.hublink{margin:0 0 0.6rem;text-align:right;}
+/* The back-link sits top right on Charlie's other properties, but this one is a
+   newspaper front page: anything above the masthead competes with it. Both
+   end-links share one row at the foot instead, pointing opposite ways - back to
+   the hub on the left, on to the archive on the right. The pair needs about
+   300px; below that flex-wrap stacks them, and space-between leaves a lone item
+   on its own line flush left, which is what we want - so no breakpoint here. */
+.endlinks{display:flex;justify-content:space-between;align-items:baseline;
+  gap:0.4rem 1.5rem;flex-wrap:wrap;margin:0;}
+.endlinks p{margin:0;}
 a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
 </style>
 <style>@font-face{font-family:'Aftertimes Flag';src:url('../assets/fonts/unifrakturcook-700.woff2') format('woff2');font-weight:700;font-display:swap;}</style>
@@ -86,16 +101,15 @@ a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--acc
 <body>
   <div class="wrap">
     
-    <p class="hublink"><a class="arc" href="https://charlietrenorden.com/">&larr;&nbsp;Other projects</a></p>
     <header class="masthead">
       <div class="edition">VOL. MMDCCLIII &middot; No. 23 &middot; Sat 15 August 2026</div>
       <div class="name">The Aftertimes</div>
       <div class="tag">Tomorrow&#x27;s headlines, a little early</div>
     </header>
     <p class="dateline">Solder-Bays, Generation Freighter Argus . 2 April 2753</p>
-    <h1>Worker Leans Out, Becomes Foreign Cargo</h1>
+    <h1>Hull Cleaner Becomes Foreign Cargo</h1>
     <figure class="engraving"><img src="../assets/img/2026-08-14.jpg" alt="Two technicians in bulky thermal pressure suits stand inside an open airlock, using a long plastic pipe to push a food tube toward a tethered worker who floats six inches past the outer hull." loading="lazy"></figure>
-    <div class="body"><p>A two-year spatial survey aboard the generation freighter Argus has established that human rights extend precisely fifteen centimetres past the outer hull plating.</p><p>The finding resolved a decade of disputes over tool salvage rights. However, it created an immediate administrative obstacle during routine maintenance on Thursday morning.</p><p>Senior hull-sweeper Prahlad Nayar leaned twenty centimetres past the threshold while scraping lichen off a sensor dish. Under fleet law, his upper torso ceased to be a recognised person. When his magnetic boots slipped, his entire body crossed into unmapped void, revoking his citizenship instantly.</p><p>Because Nayar is no longer a citizen, pulling his tether back inside the ship would constitute importing unmanifested biological cargo without a clearance manifest.</p><p>&quot;The geometry is immaculate,&quot; said lead juris-cartographer Nnamdi Eze. &quot;Inside the line, you have human rights. Outside the line, you are raw material. If we reel him in now, we are smuggling.&quot;</p><p>Nayar remains attached to the hull by a safety line while officers draft an emergency import declaration. Ship authorities cannot supply his suit with extra oxygen, as sending pressurised gas across the border requires a separate export licence.</p><p>He remains outside.</p><p>Earlier today, a crewmate pushed a nutrient paste tube across the boundary using a fiberglass pipe. Nayar ate it.</p><p>Customs inspectors have opened an inquiry into whether the tube was legally dumped.</p></div>
+    <div class="body"><p>A two-year survey aboard the generation ship Argus has established that human rights extend precisely six inches past the outer metal skin.</p><p>The finding settled a ten-year dispute over tool salvage rights, but created a fresh headache during routine cleaning on Thursday morning.</p><p>Senior hull cleaner Prahlad Nayar leaned eight inches past the line while scraping grime off a sensor. Under ship law, his top half ceased to be a real person. When his magnetic boots slipped, his entire body fell into empty space, cancelling his citizenship instantly.</p><p>Because Nayar is no longer a citizen, pulling his safety rope back inside would count as importing unlisted meat without a permit.</p><p>&quot;The line is absolute,&quot; said chief legal map-maker Nnamdi Eze. &quot;Inside it, you have civil rights. Outside it, you are raw ore. If we pull him in now without paying duty, we are active smugglers, and I will not have this ship dragged down by illegal meat.&quot;</p><p>Nayar remains tied to the hull while officers fill out an emergency import form. Ship bosses cannot send bottled air to his suit, as pushing gas across the border requires a separate export licence.</p><p>Earlier today, a workmate shoved a paste tube across the line with a plastic pole. Nayar ate it.</p><p>Customs officers have now charged Nayar with smuggling the food inside his own stomach.</p></div>
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">
@@ -111,7 +125,10 @@ a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--acc
       </div>
     </section>
     
-    <p><a class="arc" href="../index.html">Today's dispatch &rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>
+    <div class="endlinks">
+      <p><a class="arc" href="https://charlietrenorden.com/">&larr;&nbsp;Other projects</a></p>
+      <p><a class="arc" href="../index.html">Today's dispatch &rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>
+    </div>
     <footer>
       <p class="fiction">Every dispatch is fiction, written by a machine each
         morning. None of it has happened. Yet.</p>
