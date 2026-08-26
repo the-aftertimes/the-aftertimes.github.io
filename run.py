@@ -14,7 +14,8 @@ import sys
 import traceback
 from datetime import date, datetime, timezone
 
-from common import (load_common_words, load_settings, load_yaml, read_json,
+from common import (load_common_words, load_settings, load_yaml,
+                    locator_ceiling, read_json,
                     rel, write_json)
 import archive as archive_mod
 import avoid
@@ -372,7 +373,7 @@ def run_pipeline() -> dict:
         "base_url": settings["site"]["base_url"],
         "signup_form_url": settings.get("signup_form_url", ""),
         "edition": len(ledger) + 1,
-        "locator_deep_max": settings["dates"]["bands"]["deep"][1],
+        "locator_deep_max": locator_ceiling(settings),
     }
     with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
         fh.write(render_mod.render_dispatch(dispatch, meta, stale=False))

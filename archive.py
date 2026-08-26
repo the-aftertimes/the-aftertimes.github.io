@@ -12,7 +12,8 @@ import html
 import os
 
 import locator
-from common import (BEACON, hyphenate, load_settings, normalise_place,
+from common import (BEACON, hyphenate, load_settings, locator_ceiling,
+                    normalise_place,
                    read_json, rel)
 
 _MINOR = {"a", "an", "and", "the", "of", "to", "in", "on", "for", "at", "by", "or", "with"}
@@ -113,7 +114,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
     # had just shown, in publication order.
     by_distance = sorted(
         records, key=lambda r: r["dispatch"]["dateline"]["years_from_now"])
-    deep_max = int(meta.get("locator_deep_max") or 4000)
+    deep_max = int(meta.get("locator_deep_max") or 4000)  # see common.locator_ceiling
     rows = ""
     for r in by_distance:
         d = r["dispatch"]
@@ -169,10 +170,12 @@ def build() -> str:
     records = [read_json(f"data/dispatches/{os.path.basename(f)}") for f in files]
     records = [r for r in records if r]
     # locator_deep_max must match render.py's, or a row's thumbnail would put
-    # the same dispatch at a different radius from its own page.
+    # the same dispatch at a different radius from its own page - which is
+    # exactly what happened to six permalinks. common.locator_ceiling is the
+    # single owner now; do not read the setting directly here again.
     meta = {"site_name": settings["site"]["name"],
             "tagline": settings["site"]["tagline"],
-            "locator_deep_max": settings["dates"]["bands"]["deep"][1]}
+            "locator_deep_max": locator_ceiling(settings)}
     out = render_archive(records, meta)
     with open(rel("archive.html"), "w", encoding="utf-8") as fh:
         fh.write(out)

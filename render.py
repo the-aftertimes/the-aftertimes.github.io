@@ -214,7 +214,10 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     loc_meta = ""
     try:
         svg = locator.render_locator_svg(
-            dl, int(meta.get("locator_deep_max", 40000)), "plate")
+            # No fallback default here beyond archive.py's: the two used to
+            # disagree (40000 vs 4000), which is how the one record with no
+            # stored ceiling ended up furthest from its own archive row.
+            dl, int(meta.get("locator_deep_max") or 4000), "plate")
         loc_place, loc_far = locator.caption_text(dl)
         locator_fig = f'<figure class="locator">{svg}</figure>'
         loc_meta = (f'<div class="meta-location">{html.escape(hyphenate(loc_place))}</div>'

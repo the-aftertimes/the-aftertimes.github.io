@@ -28,7 +28,8 @@ import json
 import os
 import sys
 
-from common import load_settings, read_json, rel, write_json
+from common import (load_settings, read_json, refresh_render_meta, rel,
+                    write_json)
 import archive as archive_mod
 import depict
 import illustrate as illustrate_mod
@@ -48,6 +49,9 @@ def reillustrate(run_date: str, scene: str = "") -> int:
         print(f"No dispatch for {run_date}.", file=sys.stderr)
         return 1
     dispatch, meta = record["dispatch"], record["meta"]
+    # An already-filed record carries the presentation config it was filed
+    # under; re-rendering without this reproduces the old page faithfully.
+    refresh_render_meta(meta, settings)
     print(f">>> REILLUSTRATE {run_date}: {dispatch.get('headline', '')[:70]}")
 
     # A redraw alone cannot fix a bad SCENE LINE, because depict is handed that

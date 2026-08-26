@@ -46,6 +46,36 @@ def load_common_words() -> frozenset[str]:
     return _COMMON_WORDS
 
 
+def locator_ceiling(settings: dict) -> int:
+    """The deep-future ceiling the locator plate scales against.
+
+    ONE owner, because five places used to read it and they disagreed. It is a
+    PRESENTATION parameter, not a property of a dispatch: `archive.py` has always
+    computed it live for every row, while `render.py` took whatever was stored on
+    the record at filing time. Any change to `dates.bands.deep` therefore made a
+    permalink draw its own story at a different radius from its archive row, and
+    on 26/08/2026 six of them did - the ceiling was cut from 40000 to 4000 on
+    04/08 and nothing re-rendered. Their two fallback defaults disagreed as well,
+    40000 against 4000, which is how the very first dispatch (whose record has no
+    ceiling at all) ended up furthest wrong.
+    """
+    return int(settings["dates"]["bands"]["deep"][1])
+
+
+def refresh_render_meta(meta: dict, settings: dict) -> dict:
+    """Bring a stored record's meta up to date with today's presentation config
+    before re-rendering it. Mutates and returns `meta`.
+
+    Any path that re-renders an ALREADY-FILED dispatch must call this, or it
+    faithfully reproduces the page as it looked under an old config - which is
+    what made re-rendering the six stale permalinks a no-op until the stored
+    ceiling itself was corrected. Only presentation fields are touched; the
+    dispatch, its dateline and its run date are never in scope.
+    """
+    meta["locator_deep_max"] = locator_ceiling(settings)
+    return meta
+
+
 def tz_now(settings: dict) -> datetime:
     return datetime.now(ZoneInfo(settings["timezone"]))
 
