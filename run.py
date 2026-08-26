@@ -398,6 +398,29 @@ def already_filed(run_date: str) -> bool:
     return os.path.exists(rel(f"data/dispatches/{run_date}.json"))
 
 
+def fill_missing_image(run_date: str) -> bool:
+    """Draw the picture for a day that published without one. Returns True if it
+    actually drew something.
+
+    Deliberately narrow. It touches the image, the record's brief and the
+    rendered pages - never the prose - so the backup cron cannot rewrite an
+    edition that has already gone out. Everything about it is best-effort: a
+    second failure just leaves the day as it already was.
+    """
+    record = read_json(f"data/dispatches/{run_date}.json")
+    if not record or (record.get("dispatch") or {}).get("image"):
+        print("    picture present; nothing to do.")
+        return False
+    print("    NO PICTURE on a filed dispatch - attempting the illustration only")
+    try:
+        import reillustrate
+        return reillustrate.reillustrate(run_date) == 0
+    except Exception as exc:  # noqa: BLE001 - a failed retry must not fail the job
+        print(f"    fill-in failed ({type(exc).__name__}: {exc}); leaving as is",
+              file=sys.stderr)
+        return False
+
+
 def main(argv: list[str] | None = None) -> int:
     argv = sys.argv[1:] if argv is None else argv
     _load_dotenv()
@@ -406,7 +429,18 @@ def main(argv: list[str] | None = None) -> int:
     print("=" * 70)
     run_date = datetime.now(timezone.utc).date().isoformat()
     if already_filed(run_date) and "--force" not in argv:
-        print(f"Dispatch for {run_date} is already filed - nothing to do.")
+        print(f"Dispatch for {run_date} is already filed.")
+        # ...but "filed" is not the same as "complete". The picture can fail on
+        # its own while the words publish fine, and until 26/08/2026 the 22:13
+        # backup cron - which exists precisely to catch a dropped primary - would
+        # print "nothing to do" and leave the day pictureless. 25/08 published
+        # with no engraving and nobody found out until Charlie looked.
+        #
+        # The illustration is the ONLY thing retried here. Re-running the whole
+        # pipeline would rewrite a published edition, which is what already_filed
+        # is there to prevent.
+        if fill_missing_image(run_date):
+            return 0
         print("(Pass --force to regenerate and overwrite it.)")
         return 0
     try:

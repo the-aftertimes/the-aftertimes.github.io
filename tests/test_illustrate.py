@@ -173,3 +173,53 @@ def test_detail_slots_are_dropped_from_the_least_important_end():
                                   _brief(setting="z " * 600))
     assert "a woman in a red jumper" in out          # subject always survives
     assert "tape on a tripod leg" not in out         # anomaly goes first
+
+
+def _http_error(code, body):
+    import urllib.error, io as _io
+    return urllib.error.HTTPError("u", code, "m", {}, _io.BytesIO(body.encode()))
+
+
+def test_an_exhausted_daily_allocation_is_not_retried(monkeypatch):
+    """Cloudflare returns 429 for BOTH "slow down" and "your 10,000-neuron daily
+    allocation is gone" (code 4006). The second cannot clear until the UTC day
+    rolls, so waiting for it just burns a minute - which is what 25/08/2026 did
+    before publishing with no picture."""
+    import illustrate
+    slept = []
+    monkeypatch.setattr(illustrate.time, "sleep", slept.append)
+    body = ('{"errors":[{"message":"AiError: you have used up your daily free '
+            'allocation of 10,000 neurons","code":4006}],"success":false}')
+
+    def opener(req, timeout=None):
+        raise _http_error(429, body)
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen", opener)
+    assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
+    assert slept == [], "an exhausted allocation must not sleep"
+
+
+def test_an_ordinary_429_still_retries(monkeypatch):
+    """The distinction has to cut both ways, or the fix for one failure becomes
+    a regression for the other."""
+    import illustrate
+    slept = []
+    monkeypatch.setattr(illustrate.time, "sleep", slept.append)
+
+    def opener(req, timeout=None):
+        raise _http_error(429, '{"errors":[{"message":"rate limited"}]}')
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen", opener)
+    assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
+    assert slept == list(illustrate._RETRY_WAITS)
+
+
+def test_the_error_body_survives_to_the_log(monkeypatch, capsys):
+    """An HTTPError body is a stream: reading it twice returns empty the second
+    time. The 4006 check reads it first, so the log must reuse that value."""
+    import illustrate
+    monkeypatch.setattr(illustrate.time, "sleep", lambda s: None)
+
+    def opener(req, timeout=None):
+        raise _http_error(400, '{"errors":[{"message":"prompt too long"}]}')
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen", opener)
+    illustrate._post_with_retry(object(), {"timeout": 1})
+    assert "prompt too long" in capsys.readouterr().err

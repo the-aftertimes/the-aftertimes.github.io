@@ -194,3 +194,44 @@ def test_a_pre_existing_house_rule_breach_is_not_held_against_the_revision():
     inheriting it - only newly-introduced breaches block."""
     from common import load_settings
     assert "headline_length" in load_settings()["quality"]["revise_judge_never"]
+
+
+# --- the backup cron fills a missing picture ---------------------------------
+
+def test_a_filed_day_with_no_picture_is_retried(monkeypatch, tmp_path):
+    """25/08/2026 published with no engraving. The 22:13 backup cron exists to
+    catch a dropped primary, saw the day was filed, printed "nothing to do" and
+    left it pictureless. "Filed" is not "complete"."""
+    import run as run_mod
+    called = []
+    monkeypatch.setattr(run_mod, "read_json", lambda p, default=None: {
+        "dispatch": {"headline": "H", "image": None}})
+    import reillustrate
+    monkeypatch.setattr(reillustrate, "reillustrate",
+                        lambda d, scene="": called.append(d) or 0)
+    assert run_mod.fill_missing_image("2026-08-25") is True
+    assert called == ["2026-08-25"]
+
+
+def test_a_filed_day_with_a_picture_is_left_alone(monkeypatch):
+    """The backup must never redraw a good picture - that would burn a
+    Cloudflare call every night and could replace a hand-corrected engraving."""
+    import run as run_mod
+    called = []
+    monkeypatch.setattr(run_mod, "read_json", lambda p, default=None: {
+        "dispatch": {"headline": "H", "image": "assets/img/x.jpg"}})
+    import reillustrate
+    monkeypatch.setattr(reillustrate, "reillustrate",
+                        lambda d, scene="": called.append(d) or 0)
+    assert run_mod.fill_missing_image("2026-08-25") is False
+    assert called == []
+
+
+def test_a_failed_fill_in_never_fails_the_job(monkeypatch):
+    import run as run_mod
+    monkeypatch.setattr(run_mod, "read_json", lambda p, default=None: {
+        "dispatch": {"headline": "H", "image": None}})
+    import reillustrate
+    monkeypatch.setattr(reillustrate, "reillustrate",
+                        lambda d, scene="": (_ for _ in ()).throw(RuntimeError("cf")))
+    assert run_mod.fill_missing_image("2026-08-25") is False
