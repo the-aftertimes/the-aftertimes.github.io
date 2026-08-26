@@ -22,6 +22,20 @@ Watch for conflicts in `data/` specifically - it is the one tree both you and
 the bot write to (`data/dispatches/`, `data/last_email.json`,
 `data/send_hold.json`, `data/trials/`).
 
+## Stage files explicitly here - never `git add -A`
+
+`main` has the daily bot AND other Claude sessions writing to it, so the working
+tree is not yours alone. On 26/08/2026 a `git add -A` in this repo swept up a
+`docs/superpowers/specs/` file another session was touching (line-endings only,
+harmlessly) - and in the same window MY uncommitted `archive.py` edits landed
+inside a different session's commit, "Count returning people, which Web Analytics
+cannot", which is nothing to do with them. The content was right and the tree was
+clean, so it was not worth rewriting pushed history, but the archaeology is now
+permanently misleading.
+
+`git status` before staging, name the paths, and do not assume a modified file is
+one of yours.
+
 ## The newsletter is HELD, not broken (as at 17/08/2026)
 
 Brevo put the shared account under validation on 10/08. `send_email.py` latches
