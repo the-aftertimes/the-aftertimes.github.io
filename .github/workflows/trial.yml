@@ -76,7 +76,7 @@ jobs:
       # trials.html is gitignored on purpose - committing it would publish a
       # scratch page to the live site - so it comes back as an artefact instead.
       - name: Upload the mark-up page
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: trials
           path: trials.html
