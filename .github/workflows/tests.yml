@@ -1,0 +1,22 @@
+name: Tests
+
+# The daily job gates on these too, but that is up to 24 hours after a change
+# lands. This runs them on the push that breaks them, which is when the person
+# who broke them is still looking.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest tests -q
