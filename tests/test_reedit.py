@@ -178,9 +178,29 @@ def test_the_gate_opens_early_once_the_day_has_filed(monkeypatch):
     assert ok is True and "has filed" in why
 
 
-def test_archaic_selects_by_measurement_not_by_date_range():
-    """The TODO said "the six pre-04/08 pieces". Two of the real six are 08/08
-    and 14/08, and 29/07 and 02/08 are clean - the remembered range was wrong."""
-    dates = reedit.archaic_dates()
-    assert "2026-08-14" in dates and "2026-08-08" in dates
-    assert "2026-07-29" not in dates and "2026-08-02" not in dates
+def test_archaic_selects_by_measurement_not_by_date_range(monkeypatch):
+    """Selection is a MEASUREMENT, not a remembered date range - the TODO said
+    "the six pre-04/08 pieces" and two of the real six were 08/08 and 14/08.
+
+    Written first against the live archive, which was the wrong scope: it
+    asserted that specific dates were faulty, so it went red the moment the
+    re-edit fixed them. A test of a selector belongs on synthetic input, or it is
+    really a test of today's data.
+    """
+    archaic = ("The apothecary lit a tallow cresset in the cobblestone "
+               "hermitage and intoned the vespers antiphon. ") * 4
+    plain = "The crew shut the door and went to lunch. " * 4
+    store = {"2026-01-01": archaic, "2026-01-02": plain}
+    monkeypatch.setattr(reedit.glob, "glob",
+                        lambda pat: [f"{d}.json" for d in store])
+    monkeypatch.setattr(reedit, "read_json", lambda p, default=None: {
+        "dispatch": {"body": store[os.path.basename(p)[:-5]]}})
+    picked = reedit.archaic_dates()
+    assert "2026-01-01" in picked, "an archaic body must be selected"
+    assert "2026-01-02" not in picked, "a plain body must not be"
+
+
+def test_archaic_is_empty_once_the_archive_is_clean():
+    """The real archive after the 26/08 batch. This one IS about today's data,
+    and says so - it is the check that the back-catalogue work actually landed."""
+    assert reedit.archaic_dates() == []
