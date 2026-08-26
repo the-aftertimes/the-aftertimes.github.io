@@ -21,14 +21,14 @@
     ],
     "premise": "Station commuters at Interstellar Waystation 80 have taken to performative zero-gravity power-walking through the main reactor corridors, drawing fierce condemnation from retired engineers who insist true spacemen shouldn't sweat unless the coolant tanks are failing.",
     "brief": {
-      "subject": "a woman in her thirties wearing a bright neon-yellow tension-strap harness over a fitted dark-grey thermal base layer with full-length trousers, blue lead-foam wrist cuffs, and heavy black neoprene deck boots",
-      "action": "pumping her bent arms in a rigid power-walking stride while pushing off a wall-mounted guide rail",
-      "setting": "a narrow cylindrical reactor corridor lined with thick lagged heat-exchanger pipes, with a grey-bearded engineer in worn grey utility coveralls glaring from the rungs of a metal maintenance ladder behind her",
-      "light": "hard directional red light from a recessed wall-mounted indicator strip, casting sharp distinct shadows across the pipe insulation",
-      "materials": "quilted metallic pipe-lagging, brushed aluminium conduit, ribbed rubber handrails, and woven nylon harness webbing",
-      "anomaly": "a forgotten grease gun clipped to an unpainted pipe flange with a smudged shop rag tied around its nozzle"
+      "subject": "a woman wearing a fitted charcoal-grey thermal undersuit, a high-visibility neon tension-strap across her torso, thick black wrist weights, and dark navy grip shoes",
+      "action": "pumping her bent arms in a rigid walking motion along a narrow central guide rail",
+      "setting": "a tight utility corridor lined with thick insulated coolant pipes and heat exchangers, with a retired engineer in grey work coveralls standing on a metal ladder rung behind her",
+      "light": "hard directional glare from overhead fluorescent tubes mixed with a soft red glow from a wall lamp",
+      "materials": "quilted pipe wrap, brushed steel tubing, textured floor grating, heavy canvas coverall fabric",
+      "anomaly": "a pair of rusted adjustable pliers hanging from an unused pipe flange near the ladder"
     },
-    "image": null
+    "image": "assets/img/2026-08-25.jpg"
   },
   "meta": {
     "run_time": "2026-08-25T20:41:05.551769+00:00",
