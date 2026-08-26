@@ -150,17 +150,35 @@ def _post_with_retry(req, cfg: dict):
                     req, timeout=cfg.get("timeout", 120)) as resp:
                 return json.load(resp)
         except urllib.error.HTTPError as exc:
-            transient = exc.code == 429 or 500 <= exc.code < 600
+            # Cloudflare returns 429 for BOTH "too fast, slow down" and "your
+            # 10,000-neuron daily free allocation is gone" (error code 4006).
+            # Only the first is worth waiting for; the second cannot clear until
+            # the UTC day rolls, so retrying it just burns a minute and hammers
+            # an endpoint that has already said no. 25/08/2026 spent 65 seconds
+            # doing exactly that before publishing without a picture.
+            body = ""
+            try:
+                body = exc.read().decode()[:400]
+            except Exception:  # noqa: BLE001 - a body is a nicety
+                pass
+            exhausted = "4006" in body or "daily free allocation" in body
+            transient = (exc.code == 429 or 500 <= exc.code < 600) and not exhausted
             last = attempt >= len(_RETRY_WAITS)
+            if exhausted:
+                print("    illustrate: Cloudflare's daily free allocation is "
+                      "used up - not retryable until the UTC day rolls. NOTE the "
+                      "allocation is shared with the photocopy project, which "
+                      "also draws one image a day on this account.",
+                      file=sys.stderr)
+                return None
             if not transient or last:
-                # Print what Cloudflare actually SAID. The first version of this
-                # function swallowed the body, so the 21/08 failure logged a bare
-                # "CF HTTP 400" and the reason (prompt too long) had to be worked
-                # out afterwards from character counts.
-                try:
-                    detail = exc.read().decode()[:300]
-                except Exception:      # noqa: BLE001 - a body is a nicety
-                    detail = "<no body>"
+                # Print what Cloudflare actually SAID - `body`, read once above.
+                # An HTTPError body is a stream and the second read comes back
+                # empty, so this must NOT call exc.read() again. The first
+                # version of this function swallowed the body entirely and the
+                # 21/08 failure logged a bare "CF HTTP 400", leaving the reason
+                # (prompt too long) to be reconstructed from character counts.
+                detail = body or "<no body>"
                 print(f"    illustrate: CF HTTP {exc.code}"
                       f"{'' if transient else ' (not retryable)'}"
                       f"{' after ' + str(attempt + 1) + ' attempts' if transient else ''}"
