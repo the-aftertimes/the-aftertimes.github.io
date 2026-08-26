@@ -1,0 +1,114 @@
+{
+  "run_date": "2026-08-26",
+  "run_time": "2026-08-26T21:40:22.317258+00:00",
+  "dispatch": {
+    "headline": "Support Maggot Refuses Leather Muzzle",
+    "body": "Deep-rock fitter Tomas Cerna has refused three safety orders to muzzle his three-metre flesh-maggot on 16 Psyche. The biological weapon was engineered during the Ceres trade disputes to dissolve heavy metal hull plating. It currently slumps across Cerna's workbench like a giant warm beanbag. \"Barnaby is an emotional support animal, and he gets nervous when the drills hum,\" Cerna explained. Safety officers issued citations after the creature chewed through two hydraulic lifts and a floor beam on Thursday. \"That was bad luck because the gravity dropped and he panicked,\" Cerna said. \"A spaniel barks when it gets scared, but Barnaby chews structural steel.\" Under union rules, support animals are exempt from muzzling if the restraint causes distress or skin irritation. \"The leather gives his stomach segments a rash, and he is very sensitive,\" Cerna said. Cerna bought the creature from a surplus yard last month to manage his severe shift anxiety. \"My heart rate is down twelve points since I got him,\" Cerna reported. \"If he eats a spare drill bit, I pay for the bit, which seems fair.\" Station managers confirmed drilling remains paused while safety officers source a softer muzzle for the larva. They need a restraint broad enough for a three-metre worm that will not ruin its mood. \"He sleeps in my bunk because he likes the heat,\" Cerna added. \"My bunkmate now sleeps standing up in the corridor, but he fully supports my mental health.\"",
+    "scene": "A man in grease-stained blue coveralls sits on a metal workbench beside a thick three-metre grey worm, holding a cup of tea while a safety inspector gestures at a tiny leather strap.",
+    "dateline": {
+      "place": "16 PSYCHE",
+      "year": 2199,
+      "month": 4,
+      "day": 20,
+      "years_from_now": 173
+    },
+    "domain": "LABOUR RELATIONS",
+    "glossary": [
+      {
+        "term": "flesh-maggot",
+        "gloss": "A bio-engineered larval organism designed to secrete acid capable of breaking down metallic alloys."
+      }
+    ],
+    "premise": "A deep-rock mechanic on 16 Psyche refuses to muzzle his three-meter, vat-grown flesh-maggot, claiming the metal-chugging bio-weapon is merely a nervous emotional support spaniel that nips when ambient gravity drops.",
+    "brief": {
+      "subject": "a deep-rock fitter in a grease-stained blue canvas coverall that covers his torso and legs, wearing heavy black rubber-soled work boots, sitting beside a thick three-metre grey segmented worm",
+      "action": "holding a white ceramic cup of tea in both hands while sitting still on the edge of the workbench",
+      "setting": "an asteroid maintenance bay with steel floor plating, heavy drilling machinery, and a safety inspector standing beside the workbench gesturing toward a tiny leather strap lying on the steel surface",
+      "light": "harsh overhead white light from high-bay strip fixtures casting sharp, direct shadows",
+      "materials": "stained blue canvas fabric, rubbery grey skin, brushed steel plating, and narrow brown leather",
+      "anomaly": "a roll of black electrical tape and an open spanner set resting on a shelf beneath the workbench"
+    },
+    "image": null
+  },
+  "meta": {
+    "run_time": "2026-08-26T21:40:22.317258+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 35,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      0.84,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.1 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.9 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "188 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Mine Chief Celebrates Filter's Eightieth Birthday",
+        "body": "Shaft Chief Anton Varga marked the eightieth year of Shaft Nine’s bio-filter on Monday by bringing twelve crew members to stand in silence beside its intake valve.\n\nThe four-tonne organ processes toxic metal runoff from the lower rock face. Varga insists the pulsing liver-mass is a strict elderly relative named Gran.\n\n\"She does not like slackers,\" Varga said. \"Last month we had three line failures on the slush pump. People blamed the seals. Gran knew better.\"\n\nAccording to Varga, the filter’s daily bile discharges carry moral guidance.\n\n\"If the slime is brown, we are taking long tea breaks,\" he said. \"If it turns yellow, someone lied on a timesheet. She sees everything.\"\n\nThe gathering included a brass band from the ore plant and three hundred kilograms of protein paste shaped like a cake. Crew members watched as Varga fed two slices into the intake valve.\n\nWhen asked how a brainless organ could hold moral views, Varga dismissed the query.\n\n\"My real grandmother lost her wits by eighty,\" he said. \"She still knew if you took extra butter. Gran works the same way.\"\n\nThe filter responded to the cake by spewing sixty litres of burning acid onto the deck. Varga called it a blessing.\n\n\"She wants the floor scrubbed,\" he said. \"We start now.\"",
+        "premise": "A drill-rig chief inside the asteroid 4 Vesta has organized an 80th birthday party for the shaft's industrial bio-filter organ, insisting the brainless, pulsing liver-mass is a beloved, stern grandmother whose toxic bile discharges are strict moral advice.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Mechanic Refuses To Muzzle Support Maggot",
+        "body": "Deep-rock fitter Tomas Cerna has refused three station safety orders to muzzle his three-metre vat-grown flesh-maggot during heavy drilling shifts on 16 Psyche.\n\nThe biological weapon, engineered during the Ceres trade disputes to dissolve metal hull plating, currently slumps across Cerna's workbench.\n\n\"Barnaby is an emotional support animal,\" Cerna said. \"He gets nervous.\"\n\nSafety officers issued the citations after the creature chewed through two hydraulic lifts and a floor beam on Thursday.\n\n\"That was bad luck,\" Cerna said. \"The gravity dropped and he panicked. A spaniel barks. Barnaby chews.\"\n\nUnder union rules, registered support animals are exempt from air-lock muzzling if the restraint causes distress.\n\n\"The leather gives him a rash,\" Cerna said. \"He is very sensitive.\"\n\nCerna bought the creature from a surplus yard to manage his shift anxiety.\n\n\"My heart rate is down twelve points,\" he said. \"If he eats a drill bit, I pay for the bit. That is fair.\"\n\nStation managers confirmed drilling remains paused while safety officers source a muzzle broad enough for a three-metre larva that does not ruin its mood.\n\n\"He sleeps in my bunk,\" Cerna said. \"He likes the heat.\"",
+        "premise": "A deep-rock mechanic on 16 Psyche refuses to muzzle his three-meter, vat-grown flesh-maggot, claiming the metal-chugging bio-weapon is merely a nervous emotional support spaniel that nips when ambient gravity drops.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Miners Refuse To Scrub Mouldy Duct",
+        "body": "The day shift at Siderite Shaft has laid down their scrapers after air officers ordered the removal of a four-metre fungal bloom from the primary intake vent. Shift supervisor Tomas Osei says the bloom - a cultured spore strain the crew raised - is merely going through a rough growth spurt.\n\n\"If you barge in with scrapers while he is forming his skin, he just shuts down,\" Osei said, pointing to a thick grey mat dissolving a steel strut. \"We all remember nineteen. Your sweat tastes wrong.\"\n\nThe bloom covers forty metres of ducting and has turned two air valves into black sludge. Filter teams report heavy spore clouds throughout the living quarters.\n\n\"The safety crew keeps threatening him with lye,\" Osei said. \"It is deeply invasive. He is trying to set boundaries.\"\n\nThe strain has already eaten through the outer wall seal of Shaft Four, forcing backup pumps to run continuously.\n\n\"He knows the hull is there,\" Osei said. \"He is not stupid. He just wants us to knock first.\"\n\nOsei said the crew bought the bloom a low-power heater for his growth marker next month.\n\n\"He will clear the duct when he is ready,\" Osei said. \"On Monday he pulled back two inches from the fan blades without anyone nagging him.\"",
+        "premise": "Miners in the hollows of Pallas are refusing to scrub a corrosive fungal bloom from the main air ducts, explaining that their sensitive adolescent boy is just going through a phase and will clean his room when he is ready.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "It sharply satirises the modern phenomenon of emotional support animal loopholes and workplace compliance logic with brilliantly funny dialogue.",
+    "judge_pick": 2,
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.92,
+    "critique": "The original dispatch was too short and used overly abrupt sentences. The headline described the setup rather than landing the punchline.",
+    "prose": {
+      "words": 239,
+      "sentences": 16,
+      "mean_sentence": 14.9,
+      "longest": 18,
+      "short_sentences": 0,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 3.8
+    }
+  }
+}
