@@ -312,3 +312,46 @@ def test_losing_drafts_are_kept(monkeypatch):
     assert kept["headline"] == "Head a" and kept["body"]
     assert kept["premise"] == "premise a"
     assert kept["rejected"] is True and kept["score"] == 0.75
+
+
+# --- the fill-in reaches back, but only a little ----------------------------
+# 26/08/2026: the day published with no engraving because Cloudflare's allocation
+# was spent, and the allocation resets before the next cron - so the gap would
+# have been orphaned the moment the UTC date rolled, because the fill-in looked
+# only at its own day.
+
+def _records(monkeypatch, present):
+    """present: {date: has_image}"""
+    import run as run_mod
+    monkeypatch.setattr(run_mod, "read_json", lambda p, default=None: (
+        {"dispatch": {"image": "x.jpg" if present[d] else None}}
+        if (d := p.split("/")[-1][:-5]) in present else None))
+
+
+def test_today_is_preferred_when_it_is_the_one_missing(monkeypatch):
+    """The front page is what a reader sees, so it jumps the queue."""
+    import run as run_mod
+    _records(monkeypatch, {"2026-08-27": False, "2026-08-25": False})
+    assert run_mod._newest_pictureless("2026-08-27") == "2026-08-27"
+
+
+def test_an_older_gap_is_picked_up_once_today_is_fine(monkeypatch):
+    import run as run_mod
+    _records(monkeypatch, {"2026-08-27": True, "2026-08-26": False})
+    assert run_mod._newest_pictureless("2026-08-27") == "2026-08-26"
+
+
+def test_nothing_to_do_when_every_day_has_its_picture(monkeypatch):
+    import run as run_mod
+    _records(monkeypatch, {"2026-08-27": True, "2026-08-26": True})
+    assert run_mod._newest_pictureless("2026-08-27") is None
+
+
+def test_the_lookback_is_bounded(monkeypatch):
+    """It runs on the publish path. An unbounded backlog sweep would turn one bad
+    week into a quota stampede that starves the day's own dispatch."""
+    import run as run_mod
+    old = "2026-08-01"
+    _records(monkeypatch, {"2026-08-27": True, old: False})
+    assert run_mod._newest_pictureless("2026-08-27") is None
+    assert run_mod._FILL_LOOKBACK_DAYS <= 7

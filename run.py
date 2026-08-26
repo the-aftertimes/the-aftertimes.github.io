@@ -12,7 +12,7 @@ import os
 import random
 import sys
 import traceback
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 from common import (load_common_words, load_settings, load_yaml,
                     locator_ceiling, read_json,
@@ -468,6 +468,29 @@ def already_filed(run_date: str) -> bool:
     return os.path.exists(rel(f"data/dispatches/{run_date}.json"))
 
 
+#: How far back the picture fill-in will look. Bounded on purpose: this runs on
+#: the publish path and draws at most ONE image per run, so it cannot turn a
+#: backlog into a quota stampede that starves the day's own dispatch.
+_FILL_LOOKBACK_DAYS = 4
+
+
+def _newest_pictureless(run_date: str) -> str | None:
+    """The dispatch most in need of a picture: today if it lacks one, else the
+    oldest gap within the lookback window. Returns None when all are fine."""
+    start = date.fromisoformat(run_date)
+    candidates = [(start - timedelta(days=n)).isoformat()
+                  for n in range(_FILL_LOOKBACK_DAYS)]
+    gaps = []
+    for d in candidates:
+        rec = read_json(f"data/dispatches/{d}.json")
+        if rec and not (rec.get("dispatch") or {}).get("image"):
+            gaps.append(d)
+    if not gaps:
+        return None
+    # Today first if it is one of them - the front page is what a reader sees.
+    return run_date if run_date in gaps else min(gaps)
+
+
 def fill_missing_image(run_date: str) -> bool:
     """Draw the picture for a day that published without one. Returns True if it
     actually drew something.
@@ -477,14 +500,21 @@ def fill_missing_image(run_date: str) -> bool:
     edition that has already gone out. Everything about it is best-effort: a
     second failure just leaves the day as it already was.
     """
-    record = read_json(f"data/dispatches/{run_date}.json")
-    if not record or (record.get("dispatch") or {}).get("image"):
+    target = _newest_pictureless(run_date)
+    if not target:
         print("    picture present; nothing to do.")
         return False
+    if target != run_date:
+        # A dispatch that misses its picture and then rolls over the UTC date is
+        # orphaned: the next run looks only at ITS own day and never comes back.
+        # 26/08/2026 was minutes from exactly that - the day published with no
+        # engraving because Cloudflare's allocation was spent, and the allocation
+        # resets before the next cron. Look back a few days, oldest gap first.
+        print(f"    filling an OLDER gap: {target}")
     print("    NO PICTURE on a filed dispatch - attempting the illustration only")
     try:
         import reillustrate
-        return reillustrate.reillustrate(run_date) == 0
+        return reillustrate.reillustrate(target) == 0
     except Exception as exc:  # noqa: BLE001 - a failed retry must not fail the job
         print(f"    fill-in failed ({type(exc).__name__}: {exc}); leaving as is",
               file=sys.stderr)
