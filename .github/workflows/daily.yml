@@ -31,6 +31,16 @@ jobs:
           python-version: "3.13"
       - name: Install deps
         run: pip install -r requirements.txt
+
+      # Before the model is called and before anything is written. requirements.txt
+      # has installed pytest since the repo was built and nothing ever ran it, so
+      # 259 tests guarding the ledger, the archive, the date handling and the
+      # prompt-injection filters sat there while the pipeline published daily.
+      # A red gate costs a day's dispatch and shows as a failed run; a bad
+      # dispatch is permanent and shows as nothing at all.
+      - name: Tests must pass before anything is generated
+        run: python -m pytest tests -q
+
       - name: Generate today's dispatch
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
