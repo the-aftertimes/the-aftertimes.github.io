@@ -164,14 +164,5 @@ OpenAI-shaped (`result.choices[0].message.content`), unlike Gemini.
 Untested elsewhere (would need a new key): Groq, GitHub Models, OpenRouter free tier.
 
 ## Later (v3 ideas)
-- [ ] **Raster favicons still carry the old bone-paper hex** (26/08/2026). The
-  background moved `#f4efe3` -> `#eeece5` across all 36 text files, but the "A"
-  glyph in `assets/favicon.ico`, `favicon-48.png`, `favicon-192.png` and
-  `apple-touch-icon.png` is still filled with the old colour. There is no
-  generator script for them - they were made by hand - and the shift is invisible
-  at 16px on the maroon tile, so this was left deliberately rather than missed.
-  Worth doing next time the icons are touched for any other reason; a
-  `tools/make_icons.py` that renders all four from `favicon.svg` would stop the
-  same drift happening on the next palette change.
-
+- [x] **Raster favicons still carry the old bone-paper hex** (26/08/2026). DONE same day - `tools/make_icons.py` now renders all four from `assets/favicon.svg`, so the tile colour and the glyph colour have one source of truth and the next palette change is one command. Preserves the two conventions the hand-made files already had: transparent corners on the tab icons, opaque full-bleed on apple-touch (iOS paints transparency black). Not wired into CI on purpose - the SVG draws its "A" with `font-family="Georgia"`, so a Linux runner would substitute a different serif.
 - [ ] **Style-transfer the locator into an engraving.** The chart is clean vector; a future pass could render it as a hand-engraved star plate to sit even closer to the Dore illustrations.
