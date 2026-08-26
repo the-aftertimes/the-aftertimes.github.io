@@ -7,8 +7,23 @@ on:
     # off the hour, plus a backup 2h later that publishes only if the primary
     # never landed (run.py refuses to refile a date; see run.already_filed).
     # Both crons sit in the SAME UTC day, which is what makes that guard work.
-    - cron: "13 20 * * *"   # 20:13 UTC / 06:13 AEST - primary
-    - cron: "13 22 * * *"   # 22:13 UTC / 08:13 AEST - backup if the primary was dropped
+    #
+    # THE BACKUP MUST LAND BEFORE CHARLIE LOOKS, which is 07:55 AEST / 21:55 UTC.
+    # On 26/08/2026 GitHub dropped the 20:13 primary here, Photocopy's 20:40 and the
+    # hub's 21:05 thumbnail job - all three in the same band. All three had a backup
+    # and every one was scheduled after 07:55, so he opened the paper to a stale card
+    # and the estate healed quietly once he had gone. A backup that runs after the
+    # reader has left is not a backup.
+    - cron: "13 19 * * *"   # 19:13 UTC / 05:13 AEST - primary. An hour earlier than
+                            # the old 20:13: One Story sits at 18:00/19:00 and was the
+                            # only daily job GitHub did NOT drop on 26/08.
+    - cron: "13 21 * * *"   # 21:13 UTC / 07:13 AEST - backup, lands 07:29-07:35 with
+                            # the 16-22 min of scheduler lateness this estate sees, so
+                            # a dropped primary is fixed before he opens the page.
+    - cron: "13 22 * * *"   # 22:13 UTC / 08:13 AEST - third line. Too late to save the
+                            # morning; kept because a dispatch is better late than
+                            # missing. All four sit in the SAME UTC day, which is what
+                            # makes the already_filed guard work.
   workflow_dispatch:
 
 # The newsletter was RETIRED on 13/08/2026 - this site is web-only now. See
