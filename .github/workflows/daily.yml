@@ -42,6 +42,10 @@ jobs:
         run: |
           git config user.name "aftertimes-bot"
           git config user.email "bot@the-aftertimes.github.io"
-          git add index.html archive.html d/ data/ assets/img/
+          # docs/proposals.md is written on the configured weekday only.
+          # Without it here the weekly document would be generated and never
+          # committed, which is the same written-but-unwired failure that
+          # left proposals.py uncalled for a month in the first place.
+          git add index.html archive.html d/ data/ assets/img/ docs/proposals.md
           git commit -m "dispatch: $(date -u +%Y-%m-%d)" || echo "no changes"
           git push
