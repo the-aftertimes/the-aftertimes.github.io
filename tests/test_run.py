@@ -235,3 +235,60 @@ def test_a_failed_fill_in_never_fails_the_job(monkeypatch):
     monkeypatch.setattr(reillustrate, "reillustrate",
                         lambda d, scene="": (_ for _ in ()).throw(RuntimeError("cf")))
     assert run_mod.fill_missing_image("2026-08-25") is False
+
+
+# --- a pool of one is not a choice ------------------------------------------
+
+def _scored(monkeypatch, specs):
+    """specs: list of (score, rejected, rules) in draft order."""
+    import run as run_mod
+    it = iter(specs)
+    monkeypatch.setattr(run_mod.critic, "score", lambda d, c, q: (
+        lambda sc: {"score": sc[0], "rejected": sc[1], "metrics": {},
+                    "violations": [{"rule": r, "severity": "major",
+                                    "detail": r} for r in sc[2]]})(next(it)))
+
+
+def test_a_draft_rejected_only_for_register_is_put_back_to_the_judge(monkeypatch):
+    """25/08/2026: two of three drafts were hard rejected on legal_register, so
+    the judge was never asked and the day was decided by elimination."""
+    import run as run_mod
+    _scored(monkeypatch, [(0.75, True, ["legal_register"]),
+                          (0.67, True, ["legal_register"]),
+                          (0.92, False, [])])
+    seen = []
+    monkeypatch.setattr(run_mod.judge_mod, "judge",
+                        lambda drafts, s: seen.append(len(drafts))
+                        or {"pick": 0, "reason": "funnier"})
+    drafts = [_dispatch("a"), _dispatch("b"), _dispatch("c")]
+    out, info = run_mod.choose_draft(drafts, {}, _qcfg(), {})
+    assert seen == [3], "all three should reach the judge, not just the survivor"
+    assert info["judge_reason"] == "funnier"
+
+
+def test_a_structurally_broken_draft_is_never_rescued(monkeypatch):
+    """The rescue list is register TASTE. A missing headline is not an opinion."""
+    import run as run_mod
+    _scored(monkeypatch, [(0.75, True, ["structure"]),
+                          (0.67, True, ["structure"]),
+                          (0.92, False, [])])
+    seen = []
+    monkeypatch.setattr(run_mod.judge_mod, "judge",
+                        lambda drafts, s: seen.append(len(drafts))
+                        or {"pick": 0, "reason": ""})
+    drafts = [_dispatch("a"), _dispatch("b"), _dispatch("c")]
+    run_mod.choose_draft(drafts, {}, _qcfg(), {})
+    assert seen == [], "one survivor and nothing rescuable means no judge call"
+
+
+def test_two_clean_drafts_are_judged_without_rescuing_anything(monkeypatch):
+    import run as run_mod
+    _scored(monkeypatch, [(0.75, True, ["legal_register"]),
+                          (0.9, False, []), (0.92, False, [])])
+    seen = []
+    monkeypatch.setattr(run_mod.judge_mod, "judge",
+                        lambda drafts, s: seen.append(len(drafts))
+                        or {"pick": 0, "reason": ""})
+    drafts = [_dispatch("a"), _dispatch("b"), _dispatch("c")]
+    run_mod.choose_draft(drafts, {}, _qcfg(), {})
+    assert seen == [2], "a healthy pool must not drag rejected drafts back in"

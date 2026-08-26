@@ -68,6 +68,27 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
               f"{'REJECTED ' if s['rejected'] else ''}[{rules}]")
     survivors = [(d, s) for d, s in scored if not s["rejected"]]
     all_rejected = not survivors
+    # A pool of ONE is not a choice - it is an election with a single candidate,
+    # and the judge is never asked. 25/08/2026: two of three drafts were hard
+    # rejected on legal_register, one of them for the word "court" in
+    # "pickleball court", so the day's dispatch was decided by elimination and
+    # Charlie said the article was not funny.
+    #
+    # So a draft rejected ONLY for a rule listed in judge_can_rescue is put back
+    # in front of the judge when the pool is thin. Those rules are register
+    # TASTE, and taste is exactly what the judge is for. Rules not listed -
+    # structure, dash residue, US spelling - stay fatal, because they are
+    # mechanical faults rather than opinions.
+    rescuable = set(qcfg.get("judge_can_rescue") or ())
+    if len(survivors) < 2 and rescuable:
+        rescued = [(d, s) for d, s in scored
+                   if s["rejected"] and s not in [x[1] for x in survivors]
+                   and {v["rule"] for v in s["violations"] if v["rule"]
+                        in set(qcfg["hard_reject"])} <= rescuable]
+        if rescued:
+            print(f"    only {len(survivors)} clean draft(s); putting "
+                  f"{len(rescued)} rescuable one(s) back to the judge")
+            survivors = survivors + rescued
     pool = sorted(survivors or scored, key=lambda pair: pair[1]["score"],
                   reverse=True)
     # Keep the FULL violation dicts and record which draft actually won, indexed

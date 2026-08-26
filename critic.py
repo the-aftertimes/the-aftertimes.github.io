@@ -110,10 +110,43 @@ def check_phrases(body: str) -> list[dict]:
                "major")]
 
 
+#: Words that make a "court" a place to play in rather than a place to be tried
+#: in. 25/08/2026: "Sentries Turn Missile Silo Into Pickleball Court" was HARD
+#: REJECTED for legal register and never reached the judge, which left one
+#: survivor - so that day's dispatch was chosen by elimination rather than by
+#: comedy, and Charlie said the article was not funny. A word-list that cannot
+#: tell a sport from a lawsuit should not have the power to delete a draft.
+_COURT_NOT_LEGAL = {
+    "pickleball", "tennis", "squash", "badminton", "basketball", "netball",
+    "volleyball", "handball", "food", "central", "grass", "clay", "indoor",
+    "outdoor", "practice", "training", "exercise",
+}
+#: The word immediately before a "court", which is what decides its sense.
+_COURT_MENTION = re.compile(r"(?:(\w+)[\s-]+)?\bcourts?\b", re.I)
+
+
+def _legal_hits(body: str) -> list[str]:
+    """The legal-register words in a body, with the sport sense of `court`
+    excluded. Everything else in the list is unambiguous enough to take at face
+    value; `court` is the one word in it with a common innocent meaning.
+
+    EVERY mention is judged separately, and one legal court is enough to keep the
+    flag - a piece that plays pickleball and also sues somebody is still leaning
+    on the register.
+    """
+    hits = {m.group(0).lower() for m in _LEGAL.finditer(body)}
+    if "court" in hits:
+        senses = [(m.group(1) or "").lower()
+                  for m in _COURT_MENTION.finditer(body)]
+        if senses and all(s in _COURT_NOT_LEGAL for s in senses):
+            hits.discard("court")
+    return sorted(hits)
+
+
 def check_register(body: str, engine: str) -> list[dict]:
     if (engine or "") == "bureaucratic":
         return []
-    hits = sorted({m.group(0).lower() for m in _LEGAL.finditer(body)})
+    hits = _legal_hits(body)
     if not hits:
         return []
     return [_v("legal_register",
