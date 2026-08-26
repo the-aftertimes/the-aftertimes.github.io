@@ -1,0 +1,64 @@
+{
+  "generated": "2026-08-26T11:23:09.540006+00:00",
+  "dispatch": {
+    "headline": "Airlock Fitters Ditch Gauges For Mallets",
+    "body": "Airlock fitters across the western crater have abandoned pressure gauges in favour of tuning hatch seals by ear with wooden mallets. The practice began among junior shift crews at the freight locks, who insist digital metres lack warmth.\n\nFitters claim that electronic readers produce a sterile seal. By contrast, hitting the latch ring with a seasoned ash hammer allows the worker to judge the air gap by the tone of the hit.\n\nStation engineers note that hatches sealed by ear leak five percent more oxygen every shift.\n\nWork crews remain unbothered. In the lower housing blocks beneath Lock Four, family quarters now feature a constant low whistle and thin air by evening.\n\n'A screen gives you a number, but wood gives you truth,' said fitter Bram Devos. He carries three hammers. 'When you strike the ring, you want a rich, heavy sound. If it sounds thin, you keep hitting it.'\n\nSupervisors tried handing out calibrated digital gauges yesterday. The fitters tapped the glass displays with their knuckles to test their acoustic tone, then dropped them into the recycling chute.\n\nAt current leak rates, the sector air store will empty before the dust season ends. The fitters have scheduled a mallet polishing workshop for Friday.",
+    "scene": "A young airlock fitter in a grease-stained jumpsuit kneels beside a massive iron hatch ring, striking the latch with a wooden mallet while a senior engineer holds an unused digital gauge.",
+    "dateline": {
+      "place": "NEW OLYMPUS",
+      "year": 3152,
+      "month": 2,
+      "day": 14,
+      "years_from_now": 1126
+    },
+    "domain": "labour and work",
+    "glossary": [],
+    "premise": "NEW OLYMPUS, 3152 – A trend among Martian airlock calibrators of tuning hatch-seal thuds by ear using wooden mallets—claiming digital pressure gauges lack \"acoustic warmth\"—has drawn sharp rebuke from veteran engineers who note the analog seals leak five percent more oxygen."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 3152,
+      "month": 2,
+      "day": 14,
+      "years_from_now": 1126
+    },
+    "domain": "labour and work",
+    "style": "trend",
+    "place_kind": "marsform",
+    "engine": "expertise",
+    "n_drafts": 3
+  },
+  "critic": {
+    "score": 1.0,
+    "violations": []
+  },
+  "brief": null,
+  "prose": {
+    "words": 204,
+    "sentences": 15,
+    "mean_sentence": 13.6,
+    "longest": 25,
+    "short_sentences": 2,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Airlock fitters across the western crater have abandoned pressure gauges in favour of tuning hatch seals by ear with wooden mallets.",
+    "The practice began among junior shift crews at the freight locks, who insist digital metres lack warmth.",
+    "Fitters claim that electronic readers produce a sterile seal.",
+    "By contrast, hitting the latch ring with a seasoned ash hammer allows the worker to judge the air gap by the tone of the hit.",
+    "Station engineers note that hatches sealed by ear leak five percent more oxygen every shift.",
+    "Work crews remain unbothered.",
+    "In the lower housing blocks beneath Lock Four, family quarters now feature a constant low whistle and thin air by evening.",
+    "'A screen gives you a number, but wood gives you truth,' said fitter Bram Devos.",
+    "He carries three hammers.",
+    "'When you strike the ring, you want a rich, heavy sound.",
+    "If it sounds thin, you keep hitting it.'",
+    "Supervisors tried handing out calibrated digital gauges yesterday.",
+    "The fitters tapped the glass displays with their knuckles to test their acoustic tone, then dropped them into the recycling chute.",
+    "At current leak rates, the sector air store will empty before the dust season ends.",
+    "The fitters have scheduled a mallet polishing workshop for Friday."
+  ],
+  "funny": [],
+  "slug": "t012"
+}
