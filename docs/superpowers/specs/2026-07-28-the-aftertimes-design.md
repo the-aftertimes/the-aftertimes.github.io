@@ -72,7 +72,7 @@ Orchestrated by a single `run.py` that holds data in memory across stages and ru
 
 **Direction: "Broadsheet 2200" - light bone paper.** A grand newspaper printed in a future that never arrived.
 
-- **Palette:** bone paper `#f4efe3`, ink `#1a1611`, muted `#6b5f4d`, oxblood accent `#7a2b2b`, hairline rule `#cdc3ad`. (Accent is a single-token swap; oxblood is the default.)
+- **Palette:** bone paper `#eeece5` (was `#f4efe3` until 26/08/2026 - the yellow was pulled out for a greyer stone), ink `#1a1611`, muted `#6b5f4d`, oxblood accent `#7a2b2b`, hairline rule `#cdc3ad`. (Accent is a single-token swap; oxblood is the default.)
 - **Type:** Georgia / Times serif for masthead, headline, body. System sans for labels/datelines/metadata (small uppercase, letter-spaced).
 - **Masthead:** centred "The Aftertimes" in large serif, double-rule (`3px double`) underline, tagline "Dispatches from years that have not yet happened".
 - **Body layout** (single column, ~44rem, like One Story): masthead -> dateline (oxblood, uppercase, letter-spaced) -> big serif headline -> lede/body -> "Filed by [wire]" -> collapsible Dispatch metadata panel -> footer.

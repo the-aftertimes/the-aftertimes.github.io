@@ -20,7 +20,8 @@ def test_the_futures_visited_bar_is_gone():
     out = archive.render_archive(_recs(["crime", "space law"]), META)
     for dead in ("tmark", "tyear", "taxis", "Futures visited", "timeline"):
         assert dead not in out, dead
-    assert "querySelectorAll('ul.disp li')" in out
+    # the filter script that used to hide marks alongside rows is gone too - see
+    # test_the_domain_filter_is_gone
 
 
 def test_archive_masthead_matches_the_front_page():
@@ -52,8 +53,12 @@ def test_the_domain_filter_is_gone():
     domain still prints on every row, so nothing is lost. Charlie delegated the
     call; this guard is here because the obvious "improvement" is to rebuild it."""
     out = archive.render_archive(_recs(["crime", "space law", "crime"]), META)
-    for dead in ("chip", "data-filter", "data-domain", "is-hidden", "<script"):
+    for dead in ("chip", "data-filter", "data-domain", "is-hidden",
+                 "querySelectorAll"):
         assert dead not in out, dead
+    # the analytics beacon is a <script> and stays, so this checks for the
+    # FILTER script rather than for scripts in general
+    assert "beacon.min.js" in out
     # the domain must still be readable on each row - that is what makes the
     # filter redundant rather than merely absent
     assert "Crime" in out and "Space Law" in out
