@@ -1,0 +1,77 @@
+{
+  "generated": "2026-08-26T11:24:30.129983+00:00",
+  "dispatch": {
+    "headline": "Photographer Straps Relatives Flat For Portrait",
+    "body": "Tomasz Pryce spent three days strapping fourteen floating relatives to a steel frame to make them look like they were standing on Earth. Pryce, the migrant fleet's chief family-photo gravity-calibrator, refuses to use digital posture tools.\n\n\"Anyone can press a button to drop an uncle six inches,\" Pryce said from his workshop on Habitation Deck 4. \"It looks dead. If an uncle is not fighting a harness, he is not sitting in a living room.\"\n\nThe portrait took seventy-two hours to rig. It shows four generations suspended in zero gravity, held by web straps behind their coats to mimic the pull of a planet none of them have seen. His grandmother was weighted with iron shot in her shoes to achieve a realistic terrestrial slouch.\n\n\"Her spine wanted to float,\" Pryce said. \"I told her we are an honest family, not a cloud.\"\n\nAutomated software can flatten a weightless photo in three seconds. Pryce calls the code lazy.\n\n\"Software guesses where gravity goes,\" he said. \"It makes people look relaxed. Real families are never relaxed.\"\n\nHis niece fainted twice during the shoulder levelling.\n\n\"She was fine,\" Pryce said. \"Her collarbones were flat.\"\n\nThe finished print hangs in the mess hall. His son appears to be standing near a couch, though both were tied to a water pipe.\n\n\"Look at that knee,\" Pryce said. \"That is honest planet leg.\"",
+    "scene": "Tomasz Pryce tightens a heavy web strap around his suspended grandmother to pull her shoulders flat against a metal frame.",
+    "dateline": {
+      "place": "Deck 12, The Great Crossing",
+      "year": 2999,
+      "month": 3,
+      "day": 13,
+      "years_from_now": 973
+    },
+    "domain": "family",
+    "glossary": [],
+    "premise": "The generation ship’s chief Family-Photo Gravity-Calibrator defends spending three days manually strapping four generations of floating relatives into a flat terrestrial pose, calling automated digital alignment an insult to honest family posture."
+  },
+  "meta": {
+    "dateline": {
+      "place": "",
+      "year": 2999,
+      "month": 3,
+      "day": 13,
+      "years_from_now": 973
+    },
+    "domain": "family",
+    "style": "interview",
+    "place_kind": "shipboard",
+    "engine": "expertise",
+    "n_drafts": 3
+  },
+  "critic": {
+    "score": 0.92,
+    "violations": [
+      {
+        "rule": "rhythm_mean",
+        "detail": "mean sentence is 10.4 words, wanted 11-20",
+        "severity": "minor"
+      }
+    ]
+  },
+  "brief": null,
+  "prose": {
+    "words": 228,
+    "sentences": 22,
+    "mean_sentence": 10.4,
+    "longest": 27,
+    "short_sentences": 8,
+    "machine_phrases": []
+  },
+  "sentences": [
+    "Tomasz Pryce spent three days strapping fourteen floating relatives to a steel frame to make them look like they were standing on Earth.",
+    "Pryce, the migrant fleet's chief family-photo gravity-calibrator, refuses to use digital posture tools.",
+    "\"Anyone can press a button to drop an uncle six inches,\" Pryce said from his workshop on Habitation Deck 4.",
+    "\"It looks dead.",
+    "If an uncle is not fighting a harness, he is not sitting in a living room.\"",
+    "The portrait took seventy-two hours to rig.",
+    "It shows four generations suspended in zero gravity, held by web straps behind their coats to mimic the pull of a planet none of them have seen.",
+    "His grandmother was weighted with iron shot in her shoes to achieve a realistic terrestrial slouch.",
+    "\"Her spine wanted to float,\" Pryce said.",
+    "\"I told her we are an honest family, not a cloud.\"",
+    "Automated software can flatten a weightless photo in three seconds.",
+    "Pryce calls the code lazy.",
+    "\"Software guesses where gravity goes,\" he said.",
+    "\"It makes people look relaxed.",
+    "Real families are never relaxed.\"",
+    "His niece fainted twice during the shoulder levelling.",
+    "\"She was fine,\" Pryce said.",
+    "\"Her collarbones were flat.\"",
+    "The finished print hangs in the mess hall.",
+    "His son appears to be standing near a couch, though both were tied to a water pipe.",
+    "\"Look at that knee,\" Pryce said.",
+    "\"That is honest planet leg.\""
+  ],
+  "funny": [],
+  "slug": "t013"
+}
