@@ -166,6 +166,36 @@ documented fallback if flash quota ever disappears - all CF models are
 OpenAI-shaped (`result.choices[0].message.content`), unlike Gemini.
 Untested elsewhere (would need a new key): Groq, GitHub Models, OpenRouter free tier.
 
+## An imageless dispatch is never retried (27/08/2026)
+
+Today's dispatch published with `image: none (fallback)` because Cloudflare's free
+allocation was exhausted, and there is **no path that ever gives it a picture**.
+The dispatch is filed, `already_filed()` correctly refuses to refile it, and
+`reillustrate` has to be run by hand - I ran it and it failed the same way, twice.
+The allocation resets at 00:00 UTC / 10:00 AEST.
+
+Two facts that make this sharper than "the quota ran out":
+
+- **The daily jobs run at the most depleted point of the UTC quota day.** Publishing
+  at 06:00-07:00 AEST means 20+ hours into the UTC day. Moving the primary to 19:13
+  UTC helps slightly; it does not fix the shape.
+- **The allocation is shared with Photocopy** per illustrate.py's own error text -
+  but on 27/08 Photocopy drew successfully at 22:06 UTC while this repo was refused
+  at 21:42 and again at 22:09. So either they are on different accounts and that
+  note is wrong, or the models have separate limits. **Worth establishing which
+  before designing around it** - the fix differs completely.
+
+- [ ] **Retry the picture once the UTC day rolls.** A cron just after 00:00 UTC that
+  runs reillustrate ONLY when the current dispatch has no image. `reillustrate.py`
+  already does the work and takes a date, but it redraws unconditionally, so it
+  needs a guard - otherwise a nightly retry quietly replaces good art and burns the
+  next day's allocation. Lands at 10:00 AEST, after Charlie reads, which is worse
+  than in-time and much better than never.
+- [ ] **Establish whether the Cloudflare allocation is genuinely shared with
+  Photocopy.** `cf-usage` returns 400 on `/accounts/*/ai/usage`, so it cannot
+  currently answer this. Fix the probe first; the answer decides whether the two
+  projects need to coordinate or simply have separate budgets.
+
 ## Later (v3 ideas)
 - [x] **Raster favicons still carry the old bone-paper hex** (26/08/2026). DONE same day - `tools/make_icons.py` now renders all four from `assets/favicon.svg`, so the tile colour and the glyph colour have one source of truth and the next palette change is one command. Preserves the two conventions the hand-made files already had: transparent corners on the tab icons, opaque full-bleed on apple-touch (iOS paints transparency black). Not wired into CI on purpose - the SVG draws its "A" with `font-family="Georgia"`, so a Linux runner would substitute a different serif.
 - [ ] **Style-transfer the locator into an engraving.** The chart is clean vector; a future pass could render it as a hand-engraved star plate to sit even closer to the Dore illustrations.
