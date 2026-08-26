@@ -1,0 +1,33 @@
+name: cf-usage
+
+# What is consuming the Cloudflare Workers AI allocation. Read-only: this
+# workflow has no write permission and commits nothing.
+#
+# Two days in August published with no engraving because the account's daily
+# 10,000-neuron free allocation was exhausted, and every proposed fix so far has
+# been a guess. This answers it with a number.
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to report"
+        required: false
+        default: "7"
+
+permissions:
+  contents: read
+
+jobs:
+  usage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Report usage
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: python cfusage.py --days "${{ inputs.days }}"
