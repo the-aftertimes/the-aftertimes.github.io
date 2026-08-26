@@ -1,0 +1,92 @@
+name: trial
+
+# Generate throwaway dispatches to test a PROSE change, without publishing.
+#
+# Built 26/08/2026 after being offered five times. Every prompt change made this
+# month - plainness, the news lede, the absurdity cap, the picture's subject, the
+# internal-logic pass, the headline cap - shipped unverified, because trial.py
+# needs a Gemini key that exists only here. The first evidence was always a live
+# 06:13 dispatch, which is a slow and expensive way to find out a prompt is wrong.
+#
+# Trials touch NOTHING the site reads: they are keyed by slug into data/trials/,
+# never by run date, so they cannot collide with a published edition, trip
+# already_filed(), or write index.html. See trial.py's own docstring.
+#
+# QUOTA IS THE REAL CONSTRAINT and this shares one free Gemini tier with the
+# daily cron. At --drafts 1 a trial is 2 calls; at 3 it is 6. Ten trials at three
+# drafts exhausted the day's allowance on 10/08/2026 and degraded that night's
+# dispatch. Hence: manual only, a small default, and a warning in the summary.
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many trials to generate"
+        required: false
+        default: "3"
+      drafts:
+        description: "Drafts per trial. 3 matches production; 1 is a third of the quota."
+        required: false
+        default: "3"
+      brief:
+        description: "Also run depict, to test a picture-brief change (1 extra call each)"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trial
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Warn if today's dispatch has not filed yet
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          if [ -f "data/dispatches/$TODAY.json" ]; then
+            echo "Today's dispatch has filed - safe to spend quota."
+          else
+            echo "::warning::$TODAY has NOT filed yet. Trials share the Gemini free"
+            echo "::warning::tier with the daily cron; a big batch now can degrade it."
+          fi
+
+      - name: Generate trials
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python trial.py "${{ inputs.count }}" \
+            --drafts "${{ inputs.drafts }}" \
+            ${{ inputs.brief == true && '--brief' || '' }}
+
+      - name: Render the mark-up page
+        run: python trial.py --render
+
+      # trials.html is gitignored on purpose - committing it would publish a
+      # scratch page to the live site - so it comes back as an artefact instead.
+      - name: Upload the mark-up page
+        uses: actions/upload-artifact@v4
+        with:
+          name: trials
+          path: trials.html
+          retention-days: 30
+
+      - name: Commit the trial records
+        run: |
+          git config user.name "aftertimes-bot"
+          git config user.email "bot@the-aftertimes.github.io"
+          git add data/trials/
+          git commit -m "trials: ${{ inputs.count }} generated" || echo "no changes"
+          git pull --rebase
+          git push
