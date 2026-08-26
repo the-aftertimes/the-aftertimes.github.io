@@ -64,3 +64,14 @@ def test_default_is_all_visible_when_js_off():
 def test_no_em_or_en_dashes():
     out = archive.render_archive(_recs(["crime", "space law"]), META)
     assert chr(0x2014) not in out and chr(0x2013) not in out
+
+
+def test_the_topic_chips_have_air_above_and_below():
+    """Charlie, 26/08/2026: slight spacing between the heading, the topics and
+    the list. The gap below is the larger of the two because the first row
+    carries a border-top, and a rule tight under a row of pills reads as an
+    underline on the pills rather than the start of a list."""
+    out = archive.render_archive(_recs(["crime", "space law"]), META)
+    assert ".chips{" in out
+    chips_rule = out.split(".chips{")[1].split("}")[0]
+    assert "margin:0.85rem 0 1.35rem" in chips_rule
