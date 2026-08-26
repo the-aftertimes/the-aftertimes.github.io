@@ -27,6 +27,7 @@ import ideate as ideate_stage
 import illustrate as illustrate_mod
 import judge as judge_mod
 import ledger as ledger_mod
+import proposals
 import render as render_mod
 import revise as revise_mod
 import selection as select_stage
@@ -235,6 +236,39 @@ def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
     return dispatch, info
 
 
+def maybe_write_proposals(records: list[dict], lcfg: dict,
+                          today: date) -> str | None:
+    """On the configured weekday, write the weekly prompt-proposal document.
+
+    Wired 26/08/2026. `proposals.py` had been written, documented and tested for
+    a month and NOTHING called it - `learning.proposals_weekday: 0` pointed at a
+    Monday run that did not exist. The choice was wire it or delete it, and
+    wiring won on cost: it is a pure function over records already in memory, so
+    it spends no API call and adds no failure mode to the publish path.
+
+    It proposes; it never applies. That is the whole design - an unattended
+    process editing the house voice is the highest-blast-radius change available.
+    Returns the path written, or None.
+    """
+    if not lcfg.get("enabled") or today.weekday() != lcfg.get("proposals_weekday", 0):
+        return None
+    try:
+        window = avoid.recent(records, lcfg["window"])
+        hits = trends.detect(window, lcfg["min_count"])
+        doc = proposals.build(records, read_json("data/verdicts.json", {}) or {},
+                              hits)
+    except Exception as exc:  # noqa: BLE001 - a weekly nicety must never take
+        print(f"    WARN proposals failed ({exc}); skipping",  # down the publish
+              file=sys.stderr)
+        return None
+    path = "docs/proposals.md"
+    os.makedirs(os.path.dirname(rel(path)), exist_ok=True)
+    with open(rel(path), "w", encoding="utf-8") as fh:
+        fh.write(doc)
+    print(f"    wrote {path} ({len(hits)} over-used items)")
+    return path
+
+
 def build_avoid_block(records: list[dict], lcfg: dict) -> str:
     """The 'recently over-used' block, or an empty string. Never raises: a
     staleness-detection fault must not be able to stop the paper publishing."""
@@ -288,7 +322,9 @@ def run_pipeline() -> dict:
     lcfg = settings.get("learning", {"enabled": False})
     past = [read_json(f"data/dispatches/{os.path.basename(f)}")
             for f in sorted(glob.glob(rel("data/dispatches/*.json")))]
-    avoid_block = build_avoid_block([p for p in past if p], lcfg)
+    records = [p for p in past if p]
+    avoid_block = build_avoid_block(records, lcfg)
+    maybe_write_proposals(records, lcfg, date.today())
     if avoid_block:
         print(f"    avoid block: {len(avoid_block)} chars")
 
