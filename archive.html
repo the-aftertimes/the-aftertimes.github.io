@@ -26,7 +26,13 @@ body{margin:0;background:var(--bg);color:var(--fg);
   letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-top:0.7rem;}
 h2{font-family:-apple-system,system-ui,sans-serif;font-size:0.72rem;
   letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:1.4rem 0 0.8rem;}
-.chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.4rem;
+/* The three bands under "All dispatches" - heading, topic chips, then the list -
+   were nearly touching, so the chips read as part of the heading and the first
+   row read as part of the chips. Charlie, 26/08/2026: slight spacing between
+   them. The gap BELOW the chips is the larger of the two because the first row
+   carries a border-top, and a rule sitting tight under a row of pills looks like
+   an underline on the pills rather than the start of a list. */
+.chips{display:flex;flex-wrap:wrap;gap:0.45rem;margin:0.85rem 0 1.35rem;
   font-family:-apple-system,system-ui,sans-serif;}
 .chip{cursor:pointer;font:inherit;font-size:0.68rem;letter-spacing:0.08em;
   text-transform:uppercase;padding:0.32rem 0.7rem;border:1px solid var(--rule);
