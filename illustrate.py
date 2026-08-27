@@ -176,11 +176,19 @@ def _post_with_retry(req, cfg: dict):
                 # diagnosis down the wrong path; the spend is all inside THIS
                 # account, so look at trial/reedit/reillustrate runs earlier in
                 # the same UTC day.
-                print("    illustrate: Cloudflare's daily free allocation for "
-                      "THIS account is used up - not retryable until the UTC "
-                      "day rolls (00:00 UTC / 10:00 AEST). The spend is this "
-                      "repo's own: check today's trial, reedit and reillustrate "
-                      "runs, which draw on the same budget as the dispatch.",
+                # "until the UTC day rolls" is what Cloudflare's docs imply and
+                # it is NOT what was observed: on 27/08/2026 a redraw at 00:05
+                # UTC, five minutes after the roll, was refused exactly as the
+                # 21:42 and 22:09 attempts had been. So the window is either
+                # rolling-24h or lags the boundary. Do not promise a reset time
+                # in this message until someone has measured one.
+                print("    illustrate: Cloudflare's free allocation for THIS "
+                      "account is used up. The spend is this repo's own: check "
+                      "today's trial, reedit and reillustrate runs, which draw "
+                      "on the same budget as the dispatch. NOTE the reset is "
+                      "NOT reliably at 00:00 UTC - a redraw five minutes after "
+                      "the roll was still refused (27/08/2026), so treat the "
+                      "window as unmeasured rather than daily.",
                       file=sys.stderr)
                 return None
             if not transient or last:
