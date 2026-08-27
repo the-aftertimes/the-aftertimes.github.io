@@ -465,7 +465,49 @@ def already_filed(run_date: str) -> bool:
     subscribers were already emailed - send_email.py's own per-date guard would
     suppress the email, leaving the live page and the edition in their inbox
     telling different stories."""
-    return os.path.exists(rel(f"data/dispatches/{run_date}.json"))
+    if os.path.exists(rel(f"data/dispatches/{run_date}.json")):
+        return True
+    return _filed_recently()
+
+
+#: A dispatch filed within this many hours means the run now starting is a LATE
+#: BACKUP for that edition, not a new day's. The shortest real gap between two
+#: editions is the 22:13 cron to the next day's 19:13, about 21 hours, so 12 is
+#: comfortably below anything legitimate.
+_RECENT_FILE_HOURS = 12
+
+
+def _filed_recently() -> bool:
+    """True if an edition was filed in the last _RECENT_FILE_HOURS.
+
+    The date-keyed guard above breaks the moment GitHub delivers a cron ACROSS
+    UTC MIDNIGHT. On 27/08/2026 the 22:13 backup arrived at 03:17 the next day;
+    already_filed() looked for a 27/08 record, found none, and ran a full
+    generation over an edition filed five hours earlier. It then hit a Gemini 429
+    - the day's quota was spent on the real dispatch - and the fallback stamped
+    "today's edition did not file" across a completely current page.
+
+    So the guard cannot be "is there a file for today"; it has to be "was an
+    edition published recently", which is what the crons actually mean."""
+    newest = max(glob.glob(rel("data/dispatches/*.json")), default=None)
+    if not newest:
+        return False
+    rec = read_json(f"data/dispatches/{os.path.basename(newest)}")
+    stamp = (rec or {}).get("run_time")
+    if not stamp:
+        return False
+    try:
+        filed = datetime.fromisoformat(stamp)
+    except ValueError:
+        return False
+    if filed.tzinfo is None:
+        filed = filed.replace(tzinfo=timezone.utc)
+    age = (datetime.now(timezone.utc) - filed).total_seconds() / 3600
+    if age < _RECENT_FILE_HOURS:
+        print(f"    an edition was filed {age:.1f}h ago - treating this run as a "
+              f"late backup for it, not a new day")
+        return True
+    return False
 
 
 #: How far back the picture fill-in will look. Bounded on purpose: this runs on
@@ -551,6 +593,15 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\nPIPELINE FAILED: {type(exc).__name__}: {exc}", file=sys.stderr)
         traceback.print_exc()
         settings = load_settings()
+        # Only deface the page if it is ACTUALLY stale. On 27/08/2026 a late
+        # backup run failed three times against a page carrying that morning's
+        # edition, and each failure stamped "today's edition did not file" over
+        # a completely current dispatch. The banner is for a reader who would
+        # otherwise be misled; a fresh edition on the page misleads nobody.
+        if _filed_recently():
+            print("FALLBACK - a recent edition is already on the page; "
+                  "leaving it alone.", file=sys.stderr)
+            return 0
         if inject_stale_banner(settings["output_html"]):
             print("FALLBACK - kept previous page, flagged stale.", file=sys.stderr)
             return 0

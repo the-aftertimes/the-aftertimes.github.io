@@ -355,3 +355,74 @@ def test_the_lookback_is_bounded(monkeypatch):
     _records(monkeypatch, {"2026-08-27": True, old: False})
     assert run_mod._newest_pictureless("2026-08-27") is None
     assert run_mod._FILL_LOOKBACK_DAYS <= 7
+
+
+def _write_dispatch(tmp_path, run_date, hours_ago):
+    from datetime import timedelta
+    d = tmp_path / "data" / "dispatches"
+    d.mkdir(parents=True, exist_ok=True)
+    stamp = (run_mod.datetime.now(run_mod.timezone.utc)
+             - timedelta(hours=hours_ago)).isoformat()
+    (d / f"{run_date}.json").write_text(
+        '{"run_date": "%s", "run_time": "%s"}' % (run_date, stamp),
+        encoding="utf-8")
+
+
+def test_a_cron_delivered_after_utc_midnight_does_not_refile(tmp_path, monkeypatch):
+    """27/08/2026: the 22:13 backup arrived at 03:17 the next UTC day, so the
+    date-keyed guard missed, a full generation ran over an edition filed five
+    hours earlier, 429'd, and stamped a stale banner on a current page."""
+    import common
+    _orig = common._path
+    monkeypatch.setattr(common, "_path", lambda *p: str(tmp_path.joinpath(*p))
+                        if p and p[0].startswith("data") else _orig(*p))
+    monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
+    _write_dispatch(tmp_path, "2026-08-26", hours_ago=5.6)
+    # The run believes it is the 27th; no 27th record exists.
+    assert run_mod.already_filed("2026-08-27") is True
+
+
+def test_a_genuinely_new_day_still_files(tmp_path, monkeypatch):
+    """The shortest real gap between editions is about 21h, so yesterday's
+    dispatch must NOT suppress today's."""
+    import common
+    _orig = common._path
+    monkeypatch.setattr(common, "_path", lambda *p: str(tmp_path.joinpath(*p))
+                        if p and p[0].startswith("data") else _orig(*p))
+    monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
+    _write_dispatch(tmp_path, "2026-08-26", hours_ago=21)
+    assert run_mod.already_filed("2026-08-27") is False
+
+
+def test_no_dispatches_at_all_is_not_recently_filed(tmp_path, monkeypatch):
+    import common
+    _orig = common._path
+    monkeypatch.setattr(common, "_path", lambda *p: str(tmp_path.joinpath(*p))
+                        if p and p[0].startswith("data") else _orig(*p))
+    monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
+    (tmp_path / "data" / "dispatches").mkdir(parents=True, exist_ok=True)
+    assert run_mod.already_filed("2026-08-27") is False
+
+
+def test_a_failed_run_does_not_flag_a_current_page_as_stale(tmp_path, monkeypatch, capsys):
+    """27/08/2026: three failed backup runs each stamped "today's edition did not
+    file" over a page carrying that morning's dispatch."""
+    import common
+    _orig = common._path
+    monkeypatch.setattr(common, "_path", lambda *p: str(tmp_path.joinpath(*p))
+                        if p and p[0].startswith("data") else _orig(*p))
+    monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
+    monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
+    _write_dispatch(tmp_path, "2026-08-26", hours_ago=5.6)
+
+    def _boom():
+        raise RuntimeError("every draft failed")
+
+    monkeypatch.setattr(run_mod, "run_pipeline", _boom)
+
+    def _must_not_run(*a, **k):
+        raise AssertionError("must not banner a page holding a recent edition")
+
+    monkeypatch.setattr(run_mod, "inject_stale_banner", _must_not_run)
+    assert run_mod.main(["--force"]) == 0
+    assert "leaving it alone" in capsys.readouterr().err
