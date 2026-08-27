@@ -32,6 +32,13 @@ on:
                             # missing. All four sit in the SAME UTC day, which is what
                             # makes the already_filed guard work.
   workflow_dispatch:
+  # Fired by the heartbeat Worker (site-stats/heartbeat) at 20:30 UTC, from
+  # OUTSIDE GitHub Actions. On 26/08/2026 GitHub's scheduler went down and took
+  # every cron on the estate with it, catch-ups included; a backup that shares a
+  # failure domain with the thing it backs up is not a backup. Safe to fire
+  # redundantly - the already-filed guard makes a second run of the day a no-op.
+  repository_dispatch:
+    types: [heartbeat]
 
 # The newsletter was RETIRED on 13/08/2026 - this site is web-only now. See
 # docs/TODO.md for why. The sending code (send_email.py, email_render.py,
