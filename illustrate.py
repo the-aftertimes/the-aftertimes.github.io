@@ -165,31 +165,34 @@ def _post_with_retry(req, cfg: dict):
             transient = (exc.code == 429 or 500 <= exc.code < 600) and not exhausted
             last = attempt >= len(_RETRY_WAITS)
             if exhausted:
-                # The note here used to blame the photocopy project for sharing
-                # this allocation. It does NOT: on 27/08/2026 photocopy drew
-                # successfully at 22:06 UTC while this repo was refused at 21:42
-                # AND again at 22:09, on the identical model
-                # (@cf/black-forest-labs/flux-1-schnell). Cloudflare's free
-                # neuron budget is per ACCOUNT, so two projects cannot see
-                # different answers from one exhausted budget - they are on
-                # different accounts. Pointing at photocopy sent a whole
-                # diagnosis down the wrong path; the spend is all inside THIS
-                # account, so look at trial/reedit/reillustrate runs earlier in
-                # the same UTC day.
-                # "until the UTC day rolls" is what Cloudflare's docs imply and
-                # it is NOT what was observed: on 27/08/2026 a redraw at 00:05
-                # UTC, five minutes after the roll, was refused exactly as the
-                # 21:42 and 22:09 attempts had been. So the window is either
-                # rolling-24h or lags the boundary. Do not promise a reset time
-                # in this message until someone has measured one.
-                print("    illustrate: Cloudflare's free allocation for THIS "
-                      "account is used up. The spend is this repo's own: check "
-                      "today's trial, reedit and reillustrate runs, which draw "
-                      "on the same budget as the dispatch. NOTE the reset is "
-                      "NOT reliably at 00:00 UTC - a redraw five minutes after "
-                      "the roll was still refused (27/08/2026), so treat the "
-                      "window as unmeasured rather than daily.",
-                      file=sys.stderr)
+                # WHAT THIS MESSAGE HAS BEEN WRONG ABOUT, TWICE, IN ONE DAY.
+                #
+                # It used to say the allocation is shared with the photocopy
+                # project. It is not: on 27/08/2026 photocopy drew successfully
+                # at 22:06 UTC while this repo was refused at 21:42 AND at
+                # 22:09, on the identical model (flux-1-schnell). Cloudflare's
+                # neuron budget is per ACCOUNT, so two projects cannot get
+                # different answers from one exhausted budget.
+                #
+                # It then said "not retryable until the UTC day rolls". Also
+                # untrue: a redraw at 00:05 UTC, five minutes past the roll, was
+                # refused identically.
+                #
+                # It then blamed trial and reedit runs for the spend. Wrong
+                # again - neither draws. Only run.py and reillustrate.py call
+                # generate(), which test_only_run_and_reillustrate_spend_the_
+                # image_budget now pins.
+                #
+                # Three wrong explanations in a row, all confidently worded,
+                # because this branch threw away the ONE piece of evidence that
+                # could have settled it. So it no longer explains anything. It
+                # prints what Cloudflare said and stops. Note the first image
+                # call of that UTC day was already refused with nothing having
+                # been spent, which is not what an exhausted daily budget looks
+                # like - 4006 may be standing in for an entitlement or plan
+                # problem. Read the body below before theorising.
+                print(f"    illustrate: CF HTTP {exc.code} - refusing to draw. "
+                      f"Cloudflare said: {body or '(no body)'}", file=sys.stderr)
                 return None
             if not transient or last:
                 # Print what Cloudflare actually SAID - `body`, read once above.
