@@ -56,9 +56,11 @@ def test_the_domain_filter_is_gone():
     for dead in ("chip", "data-filter", "data-domain", "is-hidden",
                  "querySelectorAll"):
         assert dead not in out, dead
-    # the analytics beacon is a <script> and stays, so this checks for the
-    # FILTER script rather than for scripts in general
-    assert "beacon.min.js" in out
+    # the analytics gate is a <script> and stays, so this checks for the
+    # FILTER script rather than for scripts in general. Assert on the gate marker
+    # rather than on the beacon URL: since the gate went in, that URL appears in
+    # every page as a string inside the loader whether or not anything loads it.
+    assert "ct.nostats" in out
     # the domain must still be readable on each row - that is what makes the
     # filter redundant rather than merely absent
     assert "Crime" in out and "Space Law" in out
