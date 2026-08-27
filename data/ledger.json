@@ -332,5 +332,15 @@
     "style": "interview",
     "place_kind": "asteroid",
     "engine": "category"
+  },
+  {
+    "run_date": "2026-08-27",
+    "year": 2324,
+    "era_bucket": 5,
+    "domain": "medicine",
+    "headline": "Sterile Room Saved From Patients",
+    "style": "feature",
+    "place_kind": "shipboard",
+    "engine": "ritual"
   }
 ]
