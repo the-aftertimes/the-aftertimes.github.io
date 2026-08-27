@@ -165,10 +165,22 @@ def _post_with_retry(req, cfg: dict):
             transient = (exc.code == 429 or 500 <= exc.code < 600) and not exhausted
             last = attempt >= len(_RETRY_WAITS)
             if exhausted:
-                print("    illustrate: Cloudflare's daily free allocation is "
-                      "used up - not retryable until the UTC day rolls. NOTE the "
-                      "allocation is shared with the photocopy project, which "
-                      "also draws one image a day on this account.",
+                # The note here used to blame the photocopy project for sharing
+                # this allocation. It does NOT: on 27/08/2026 photocopy drew
+                # successfully at 22:06 UTC while this repo was refused at 21:42
+                # AND again at 22:09, on the identical model
+                # (@cf/black-forest-labs/flux-1-schnell). Cloudflare's free
+                # neuron budget is per ACCOUNT, so two projects cannot see
+                # different answers from one exhausted budget - they are on
+                # different accounts. Pointing at photocopy sent a whole
+                # diagnosis down the wrong path; the spend is all inside THIS
+                # account, so look at trial/reedit/reillustrate runs earlier in
+                # the same UTC day.
+                print("    illustrate: Cloudflare's daily free allocation for "
+                      "THIS account is used up - not retryable until the UTC "
+                      "day rolls (00:00 UTC / 10:00 AEST). The spend is this "
+                      "repo's own: check today's trial, reedit and reillustrate "
+                      "runs, which draw on the same budget as the dispatch.",
                       file=sys.stderr)
                 return None
             if not transient or last:
