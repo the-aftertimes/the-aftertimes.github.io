@@ -1,0 +1,109 @@
+{
+  "run_date": "2026-08-27",
+  "run_time": "2026-08-27T21:54:50.773855+00:00",
+  "dispatch": {
+    "headline": "Sterile Room Saved From Patients",
+    "body": "Surgeon Mara Vane performed an emergency appendectomy on a dining table in Deck 14's main corridor on Thursday, preserving the three-hundred-year record of the ship's untouched operating room.\n\nThe theatre behind her has maintained a zero-dust rating since the freighter left Earth orbit. No human has opened its inner seal since the initial crew blessing.\n\n\"If we put a bleeding human in there, the filters would fall out of spec,\" Vane said, scraping gravy off a plastic tray to hold her clamps. \"An operating room is for audits, not sick people.\"\n\nThe patient, a welder named Jori Chen, lay beneath a blue tarpaulin while commuters squeezed past his stretcher with breakfast trays. Fan units blew hallway dust away from his open belly.\n\nVane has operated in the corridor for twelve years. Her team keeps their bandages in a disused vending machine outside the sealed theatre doors.\n\nThe ship council awarded the medical department a gold badge last year for maintaining perfect sterile scores across three centuries.\n\n\"A real hospital would be filthy,\" Vane said, adjusting her face visor as a luggage cart backed past the table. \"We have standards.\"\n\nNext week, Vane plans to move Chen to the engine room so his recovery does not ruin the linen closet's immaculate dust score.",
+    "scene": "Surgeon Mara Vane, wearing a blue face visor and apron, leans over a patient on a hallway table while a commuter carrying a breakfast tray walks past.",
+    "dateline": {
+      "place": "DECK 14",
+      "year": 2324,
+      "month": 4,
+      "day": 19,
+      "years_from_now": 298
+    },
+    "domain": "Space Travel / Healthcare",
+    "glossary": [
+      {
+        "term": "zero-dust rating",
+        "gloss": "An official cleanliness certification granted only to ship compartments that have never been entered by breathing crew members."
+      }
+    ],
+    "premise": "Surgeon Mara Vane marked the 300th anniversary of the freighter Proserpina's pristine operating room by performing an appendectomy in a crowded hallway, adhering to a sacred medical vow never to defile the holy sterile field inside.",
+    "brief": {
+      "subject": "Surgeon Mara Vane, wearing a blue plastic face visor, a dark grey synthetic work jacket under a blue rubberized apron, matching grey trousers, and flat black rubber boots",
+      "action": "leaning over a low utility table to adjust a surgical clamp on a patient covered by a blue vinyl tarp",
+      "setting": "a narrow metal ship corridor lined with sealed bulkhead doors, a small floor fan blowing toward the table, and a commuter carrying a breakfast tray walking past in the background",
+      "light": "hard white light from overhead recessed ceiling strips casting sharp down-shadows",
+      "materials": "brushed aluminum, vinyl sheeting, molded plastic, surgical steel",
+      "anomaly": "a strip of woven duct tape securing the fan's black power cord across the floor metal grating"
+    },
+    "image": "assets/img/2026-08-27.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-27T21:54:50.773855+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 36,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      0.92,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Surgeon Operates In Corridor To Save Clean Room",
+        "body": "Surgeon Mara Vane performed an emergency appendectomy on a dining table in Deck 14's main corridor on Thursday, preserving the three-hundred-year record of the ship's untouched operating room.\n\nThe theatre behind her has maintained a zero-dust rating since the freighter left Earth orbit. No human has opened its inner seal since the initial crew blessing.\n\n\"If we put a bleeding patient in there, the filters would fall out of spec,\" Vane said, trimming a plastic tray to hold her clamps. \"The room is a marvel. We cannot ruin it for an appendix.\"\n\nThe patient, a welder named Jori Chen, lay beneath a blue tarpaulin while commuters squeezed past his stretcher with breakfast trays. Fan units blew hallway dust away from his open belly.\n\nVane has operated in the hallway for twelve years. Her team keeps their bandages in a disused vending machine outside the sealed theatre doors.\n\nThe room remained clean.\n\nThe ship council awarded the medical department a gold badge last year for maintaining perfect sterile scores across three centuries.\n\n\"A real hospital would be dirty,\" Vane said, adjusting her face visor as a luggage cart backed past the table. \"We have high standards.\"\n\nChen recovered well in a linen closet down the hall.",
+        "premise": "Surgeon Mara Vane marked the 300th anniversary of the freighter Proserpina's pristine operating room by performing an appendectomy in a crowded hallway, adhering to a sacred medical vow never to defile the holy sterile field inside.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Surgeon Blesses File While Patient Bleeds",
+        "body": "Surgeon Mira Das completed a forty-hour charting vigil over a patient's electronic file on Friday, waving sweet-leaf smoke across her glass screen while the man lay in bay four with a deep thigh bleed.\n\nThe ritual is mandatory across the migrant fleet. Before making an incision, doctors must burn dried resin over every past record to cleanse the file of missing entries. Das spent two nights in the quiet room, stirring ash in a brass pan and tapping compliance checks with her thumb.\n\n\"The smoke cleans the file,\" Das said. \"If you cut a man while his forms hold errors, the bad data stays in his blood.\"\n\nThe patient, a freight loader named Jon, spent the vigil wrapped in paper blankets to keep warm. By hour thirty-six, the low temperature in the unheated bay slowed his pulse so much that the torn artery clotted on its own.\n\nWhen Das finally entered the bay with a clean file, she found the bleeding had stopped. The wound was dry.\n\nThe fleet medical board praised the case as a triumph of record care. Official reviews showed the file had zero missing fields, making it the cleanest operation on the ship this year.\n\nDas was granted a brass pin for administrative speed. Jon was sent back to the cargo deck with a drum of sweet-leaf for the morning watch.",
+        "premise": "Dr. Eleni Rostova of the migrant vessel Caelum completed a forty-hour Holy Charting Vigil, a mandatory ritual where surgeons burn incense over electronic patient files to ensure record compliance before addressing active hemorrhages.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Doctor Wheels Coma Ward To Reactor",
+        "body": "Chief Physician Jon Vane wheeled forty comatose care patients into the main reactor bay on Thursday to absorb what his order treats as morning sun.\n\nSenior orderly Paul Oduya spent three hours steering the heavy steel gurneys through the blast doors. The floor hummed. Oduya wiped grey coolant oil off a pulse monitor while Vane raised his hands toward the blue fuel core.\n\n\"The light brings peace,\" Vane said, tightening the neck seal on his lead apron. \"And the morning beam hits the lower beds first.\"\n\nThe patients remained asleep.\n\nFor six years, Vane has led the morning ritual to bless the fleet's sickest bodies. Reactor crews usually clear the deck during the prayer, but ship logs show the core glow sterilises bed frame mould faster than chemical soap. The hospital now saves twelve hundred litres of scrub wash each spring by parking the ward near the fuel rod array.\n\nOduya prefers the ritual shift to his usual work in the low-deck clinics. The reactor bay is warm, and the thick lead blankets block the cold draught from the hull vents. He spent the second hour moving three drip stands out of the path of an automated floor buffer.\n\nNext month, Vane plans to bring thirty lung cases down for the evening watch. Oduya has already asked the deck chief for thicker boots.",
+        "premise": "Chief Physician Jon Vane of the migrant fleet Seraph led the annual Ritual of the Earthly Sun, wheeling forty comatose intensive-care patients into the ship’s nuclear reactor bay to absorb what his order sincerely treats as morning light.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 2 brilliantly satirizes institutional metric-worship with hilarious quotes treating extreme operational dysfunction as high standards.",
+    "judge_pick": 1,
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "The headline was eight words long, violating the strict seven-word limit. The original ending merely restated the premise rather than escalating the joke.",
+    "prose": {
+      "words": 212,
+      "sentences": 13,
+      "mean_sentence": 16.3,
+      "longest": 28,
+      "short_sentences": 1,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.4
+    }
+  }
+}

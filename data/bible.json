@@ -155,6 +155,12 @@
       "gloss": "A bio-engineered larval organism designed to secrete acid capable of breaking down metallic alloys.",
       "kind": "term",
       "first_seen": "2026-08-26"
+    },
+    {
+      "term": "zero-dust rating",
+      "gloss": "An official cleanliness certification granted only to ship compartments that have never been entered by breathing crew members.",
+      "kind": "term",
+      "first_seen": "2026-08-27"
     }
   ]
 }
