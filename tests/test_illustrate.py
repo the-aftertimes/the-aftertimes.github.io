@@ -223,3 +223,57 @@ def test_the_error_body_survives_to_the_log(monkeypatch, capsys):
     monkeypatch.setattr(illustrate.urllib.request, "urlopen", opener)
     illustrate._post_with_retry(object(), {"timeout": 1})
     assert "prompt too long" in capsys.readouterr().err
+
+
+def test_an_exhausted_allocation_still_prints_what_cloudflare_SAID(monkeypatch, capsys):
+    """27/08/2026. The exhausted branch printed a canned sentence and threw the
+    response body away, while the branch directly below it carries a comment
+    about why swallowing the body was a mistake worth fixing. That asymmetry cost
+    a morning: the paper published with no picture, every retry returned the same
+    canned line, and nobody could tell whether the account was actually out of
+    neurons or whether 4006 was standing in for something else - an entitlement
+    or plan problem would read identically.
+
+    The suspicion is concrete. The FIRST image call of that UTC day was already
+    refused, nothing else in the repo had drawn (only run.py and reillustrate.py
+    touch this budget - trial.py and reedit.py do not), a redraw five minutes
+    after the UTC roll was refused too, and photocopy drew fine on the identical
+    model. None of that is settled by a canned message.
+
+    So: the diagnostic must surface the HTTP code and the raw body, exactly as
+    the non-transient path does."""
+    import illustrate
+    monkeypatch.setattr(illustrate.time, "sleep", lambda s: None)
+    body = ('{"errors":[{"message":"AiError: you have used up your daily free '
+            'allocation of 10,000 neurons","code":4006}],"success":false}')
+
+    def opener(req, timeout=None):
+        raise _http_error(429, body)
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen", opener)
+    assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
+
+    err = capsys.readouterr().err
+    assert "4006" in err, "the Cloudflare error CODE must reach the log"
+    assert "10,000 neurons" in err, "the Cloudflare message must reach the log"
+    assert "429" in err, "the HTTP status must reach the log"
+
+
+def test_only_run_and_reillustrate_spend_the_image_budget():
+    """27/08/2026. A diagnosis was written on the belief that trial.py and
+    reedit.py also draw pictures. They do not - they spend the Gemini text tier.
+    Only run.py (the day's dispatch) and reillustrate.py call illustrate. That
+    matters because it decides where to look when the budget is gone, and the
+    wrong list sent a whole investigation at photocopy and at trial runs.
+
+    Pinned as a test so the claim cannot rot: if a third caller starts drawing,
+    this fails and whoever added it has to update the diagnosis with it."""
+    import pathlib
+    root = pathlib.Path(__file__).resolve().parent.parent
+    drawers = set()
+    for path in root.glob("*.py"):
+        text = path.read_text(encoding="utf-8")
+        if "illustrate_mod.generate" in text or "illustrate.generate" in text:
+            drawers.add(path.name)
+    assert drawers == {"run.py", "reillustrate.py"}, (
+        f"image-budget callers changed: {sorted(drawers)}. Update the "
+        f"exhausted-allocation message in illustrate.py to match.")
