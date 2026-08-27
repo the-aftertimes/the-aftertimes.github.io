@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import glob
 import os
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -54,12 +55,33 @@ def _latest_date() -> str | None:
     return os.path.basename(files[-1])[:-5] if files else None
 
 
-#: The daily cron fires at 20:13 UTC. A batch of re-edits before it competes for
-#: the same free Gemini tier, and a trial batch run early on 10/08/2026 exhausted
-#: the allowance and degraded that night's dispatch. The gate is enforced here
-#: rather than left to whoever presses the button, because "run it after 20:13"
-#: is exactly the kind of instruction that survives in a TODO and nowhere else.
-_CRON_UTC_HOUR, _CRON_UTC_MINUTE = 20, 13
+#: A batch of re-edits before the day's dispatch competes for the same free
+#: Gemini tier, and a trial batch run early on 10/08/2026 exhausted the allowance
+#: and degraded that night's dispatch. The gate is enforced here rather than left
+#: to whoever presses the button, because "run it after the cron" is exactly the
+#: kind of instruction that survives in a TODO and nowhere else.
+#:
+#: READ FROM THE WORKFLOW, not typed. This was `= 20, 13` until 27/08/2026, when
+#: the primary cron moved to 19:13 to dodge GitHub's congested 20:00-21:00 band
+#: and this copy was left behind - so the gate would have gone on refusing for an
+#: hour after the dispatch it protects had already run, and worse, would have
+#: opened at 20:13 on a day the primary was DROPPED, letting a batch spend the
+#: budget the 21:13 backup still needed. A schedule written down in two places
+#: drifts; there is now one place.
+_CRON_FALLBACK = (19, 13)
+
+
+def _primary_cron_utc() -> tuple[int, int]:
+    """(hour, minute) of the FIRST schedule in the daily workflow."""
+    try:
+        with open(rel(".github/workflows/daily.yml"), encoding="utf-8") as fh:
+            for line in fh:
+                m = re.search(r'cron:\s*"(\d+)\s+(\d+)\s', line)
+                if m:
+                    return int(m.group(2)), int(m.group(1))
+    except OSError:
+        pass
+    return _CRON_FALLBACK
 
 
 def quota_window_open(now: datetime | None = None) -> tuple[bool, str]:
@@ -68,14 +90,13 @@ def quota_window_open(now: datetime | None = None) -> tuple[bool, str]:
     today = now.date().isoformat()
     if read_json(f"data/dispatches/{today}.json"):
         return True, f"{today} has filed"
-    cron = now.replace(hour=_CRON_UTC_HOUR, minute=_CRON_UTC_MINUTE,
-                       second=0, microsecond=0)
+    hour, minute = _primary_cron_utc()
+    cron = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
     if now >= cron:
-        return True, f"past {_CRON_UTC_HOUR:02d}:{_CRON_UTC_MINUTE:02d} UTC"
+        return True, f"past {hour:02d}:{minute:02d} UTC"
     return False, (f"{today} has not filed and it is "
-                   f"{now:%H:%M} UTC, before {_CRON_UTC_HOUR:02d}:"
-                   f"{_CRON_UTC_MINUTE:02d} - a batch now competes with the "
-                   f"day's dispatch for the same free tier")
+                   f"{now:%H:%M} UTC, before {hour:02d}:{minute:02d} - a batch "
+                   f"now competes with the day's dispatch for the same free tier")
 
 
 def archaic_dates() -> list[str]:
