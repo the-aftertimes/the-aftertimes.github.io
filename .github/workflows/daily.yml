@@ -14,9 +14,16 @@ on:
     # and every one was scheduled after 07:55, so he opened the paper to a stale card
     # and the estate healed quietly once he had gone. A backup that runs after the
     # reader has left is not a backup.
-    - cron: "13 19 * * *"   # 19:13 UTC / 05:13 AEST - primary. An hour earlier than
-                            # the old 20:13: One Story sits at 18:00/19:00 and was the
-                            # only daily job GitHub did NOT drop on 26/08.
+    #
+    # WHY 19:13 AND NOT THE OLD 20:13 - corrected 28/08/2026. Moved on 27/08 on
+    # the theory that the 20:00-21:00 UTC band is congested, inferred from One
+    # Story surviving 26/08 at 18:00/19:00. That inference was WRONG: GitHub's
+    # status history records four Actions incidents on 26/08 (15:09, 15:11,
+    # 22:56, plus a billing disruption at 23:37), this workflow had run twice a
+    # day at ~20:35 and ~22:40 for the six days before it without missing once,
+    # and One Story failed on 27/08 too. The platform was broken; the slot was
+    # fine. The earlier time is kept only as free margin.
+    - cron: "13 19 * * *"   # 19:13 UTC / 05:13 AEST - primary
     - cron: "13 21 * * *"   # 21:13 UTC / 07:13 AEST - backup, lands 07:29-07:35 with
                             # the 16-22 min of scheduler lateness this estate sees, so
                             # a dropped primary is fixed before he opens the page.
