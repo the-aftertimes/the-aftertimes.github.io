@@ -151,21 +151,29 @@ def test_an_unknown_date_is_refused(repo):
 # 26/08/2026. "Run it after 20:13 UTC" was a TODO note, which is exactly the kind
 # of instruction that survives nowhere else and gets forgotten. It is code now.
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 
 def test_the_gate_shuts_before_the_cron_on_an_unfiled_day(monkeypatch):
+    """The expected time is DERIVED, not typed. These two assertions read
+    "before 20:13" / "past 20:13" until 27/08/2026, when the primary cron moved
+    to 19:13 and they failed - correctly, but for the wrong reason: they were
+    pinning a literal, so they would equally have passed on a gate that had
+    silently drifted away from the schedule. Derive it and they test the
+    relationship instead of the number."""
     monkeypatch.setattr(reedit, "read_json", lambda p, default=None: None)
+    hour, minute = reedit._primary_cron_utc()
     ok, why = reedit.quota_window_open(
         datetime(2026, 8, 26, 12, 48, tzinfo=timezone.utc))
-    assert ok is False and "before 20:13" in why
+    assert ok is False and f"before {hour:02d}:{minute:02d}" in why
 
 
 def test_the_gate_opens_after_the_cron(monkeypatch):
     monkeypatch.setattr(reedit, "read_json", lambda p, default=None: None)
-    ok, why = reedit.quota_window_open(
-        datetime(2026, 8, 26, 20, 14, tzinfo=timezone.utc))
-    assert ok is True and "past 20:13" in why
+    hour, minute = reedit._primary_cron_utc()
+    after = datetime(2026, 8, 26, hour, minute, tzinfo=timezone.utc) + timedelta(minutes=1)
+    ok, why = reedit.quota_window_open(after)
+    assert ok is True and f"past {hour:02d}:{minute:02d}" in why
 
 
 def test_the_gate_opens_early_once_the_day_has_filed(monkeypatch):
@@ -204,3 +212,65 @@ def test_archaic_is_empty_once_the_archive_is_clean():
     """The real archive after the 26/08 batch. This one IS about today's data,
     and says so - it is the check that the back-catalogue work actually landed."""
     assert reedit.archaic_dates() == []
+
+
+def test_the_quota_gate_reads_the_cron_from_the_workflow_not_a_constant():
+    """27/08/2026. The gate's cron time was typed into reedit.py as `= 20, 13`.
+    The primary cron then moved to 19:13 - to dodge the 20:00-21:00 UTC band
+    GitHub had just dropped three of this estate's daily jobs from - and this
+    copy was left behind.
+
+    Two real consequences, not cosmetics. The gate would have gone on refusing
+    for an hour after the dispatch it protects had already run; and on a day the
+    primary was DROPPED it would have opened at 20:13 and let a batch spend the
+    Gemini budget the 21:13 backup still needed - which is the exact failure the
+    gate was written for on 10/08/2026.
+
+    So the schedule lives in one place. This test fails if a second copy appears
+    or the workflow's first cron changes without the derivation still finding
+    it."""
+    import re
+    import reedit
+    from common import rel
+
+    with open(rel(".github/workflows/daily.yml"), encoding="utf-8") as fh:
+        crons = re.findall(r'cron:\s*"(\d+)\s+(\d+)\s', fh.read())
+    assert crons, "daily.yml has no schedule - the gate would silently fall back"
+
+    minute, hour = crons[0]
+    assert reedit._primary_cron_utc() == (int(hour), int(minute)), (
+        "the quota gate is keyed on a different time than the workflow's first "
+        "cron - a batch could spend the budget the dispatch needs")
+
+    assert reedit._primary_cron_utc() != reedit._CRON_FALLBACK or (
+        (int(hour), int(minute)) == reedit._CRON_FALLBACK), (
+        "derivation returned the fallback, which means it failed to read the "
+        "workflow rather than agreeing with it")
+
+
+def test_every_daily_cron_lands_before_charlie_looks():
+    """27/08/2026, and the reason the times moved at all. He opens the site at
+    07:55 AEST / 21:55 UTC. On 26/08 GitHub dropped the primary here, in
+    photocopy and in the hub's thumbnail job; all three had a backup and every
+    backup was scheduled AFTER 07:55, so the estate healed itself once the only
+    reader had gone.
+
+    A backup that runs after the reader has left is not a backup. At least one
+    cron must land before 21:55 UTC allowing for the 16-22 minutes of scheduler
+    lateness this estate consistently shows - so the last useful slot starts no
+    later than 21:33."""
+    import re
+    from common import rel
+
+    with open(rel(".github/workflows/daily.yml"), encoding="utf-8") as fh:
+        crons = [(int(h), int(m)) for m, h in
+                 re.findall(r'cron:\s*"(\d+)\s+(\d+)\s', fh.read())]
+    assert crons, "daily.yml has no schedule"
+
+    LOOKS_AT = 21 * 60 + 55
+    LATENESS = 22
+    in_time = [(h, m) for h, m in crons if h * 60 + m + LATENESS <= LOOKS_AT]
+    assert len(in_time) >= 2, (
+        f"only {len(in_time)} of {len(crons)} crons can deliver before 21:55 UTC "
+        f"with {LATENESS} min of lateness: {crons}. A dropped primary needs a "
+        f"backup he can actually see.")

@@ -2,9 +2,18 @@
 
 ## `main` has a SECOND writer: the bot
 
-`daily-dispatch` commits and pushes to `main` **twice a day** (20:13 and 22:13
-UTC), writing `index.html`, `archive.html`, `d/`, `data/` and `assets/img/`. So
-your local clone goes stale on its own, with nobody touching it.
+`daily-dispatch` commits and pushes to `main` **three times a day** (19:13,
+21:13 and 22:13 UTC), writing `index.html`, `archive.html`, `d/`, `data/` and
+`assets/img/`. So your local clone goes stale on its own, with nobody touching
+it.
+
+The times are not arbitrary and should not be tidied. 19:13 is early enough to
+dodge the 20:00-21:00 UTC band GitHub dropped three of this estate's daily jobs
+from on 26/08/2026; 21:13 exists so a dropped primary is repaired before Charlie
+opens the site at 07:55 AEST / 21:55 UTC, allowing the 16-22 minutes of scheduler
+lateness that is measured here rather than assumed. Two tests in
+`tests/test_reedit.py` enforce both properties, and `reedit.quota_window_open`
+reads the first cron out of the workflow rather than keeping its own copy.
 
 **Always `git pull` before you commit or push.** A push that has worked all
 session will be rejected the moment a cron lands, and on 17/08/2026 it was
