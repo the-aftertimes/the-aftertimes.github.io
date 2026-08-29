@@ -178,3 +178,55 @@ def test_permalink_end_links_pair_with_the_back_links():
     out = render_dispatch(DISPATCH, META, is_permalink=True)
     row = out.split('<div class="endlinks">')[1].split("</div>")[0]
     assert "Other projects" in row and "Archive" in row
+
+
+def test_a_page_with_no_card_does_not_promise_a_large_image():
+    """THE BUG, 29/08/2026. Every page declared `twitter:card=summary_large_image`
+    and shipped no `og:image` from launch. That is worse than carrying no card
+    tags at all: the tag tells X and Slack to reserve a large image slot, and they
+    render it empty, so every share of the paper looked broken. It went unnoticed
+    for months because a broken card is invisible from the site itself - it only
+    appears in somebody else's timeline.
+
+    A dispatch with no engraving is a real state (it is what happens when the
+    Cloudflare allocation is spent), so the honest tag there is plain `summary`."""
+    html = render_dispatch({**DISPATCH, "image": None}, META)
+    assert 'content="summary"' in html
+    assert "summary_large_image" not in html
+    assert "og:image" not in html
+
+
+def test_the_card_tags_are_absolute_and_complete_when_one_exists(tmp_path, monkeypatch):
+    """og:image must be ABSOLUTE - a relative path is silently ignored by every
+    platform, which looks exactly like having no card at all and is exactly as
+    hard to notice. Width and height are declared so the platform reserves the
+    right shape before the image loads."""
+    import os
+    import render as render_mod
+
+    monkeypatch.setattr(render_mod.os.path, "exists", lambda p: True)
+    html = render_dispatch({**DISPATCH, "image": "assets/img/2026-08-27.jpg"}, META)
+
+    base = META["base_url"]
+    assert f'content="{base}/assets/card/2026-08-27.jpg"' in html
+    assert 'content="summary_large_image"' in html
+    assert 'og:image:width" content="1200"' in html
+    assert 'og:image:height" content="630"' in html
+    assert f'<link rel="canonical" href="{base}/"' in html
+    assert "og:image:alt" in html
+
+
+def test_a_permalink_points_its_canonical_at_the_dated_page():
+    """The front page and the dated permalink render the same dispatch. If both
+    claimed the same canonical URL, the archive copy would tell crawlers it was
+    the homepage - and the homepage changes daily."""
+    import render as render_mod
+
+    real = render_mod.os.path.exists
+    render_mod.os.path.exists = lambda p: True
+    try:
+        html = render_dispatch({**DISPATCH, "image": "assets/img/2026-08-27.jpg"},
+                               META, is_permalink=True)
+    finally:
+        render_mod.os.path.exists = real
+    assert f'{META["base_url"]}/d/2026-08-27.html' in html

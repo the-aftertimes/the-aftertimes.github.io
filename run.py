@@ -24,6 +24,7 @@ import critic
 import depict
 import exemplars
 import ideate as ideate_stage
+import card
 import illustrate as illustrate_mod
 import judge as judge_mod
 import ledger as ledger_mod
@@ -399,6 +400,14 @@ def run_pipeline() -> dict:
     dispatch["brief"] = brief
     dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings, brief)
     print(f"    image: {dispatch['image'] or 'none (fallback)'}")
+    # The share card, built from the engraving that was just drawn. Best-effort:
+    # a card is a nicety and must never take the edition down with it, whereas a
+    # pictureless day is already handled and publishes fine.
+    if dispatch["image"]:
+        try:
+            print(f"    card: {card.write(run_date, dispatch['image'])}")
+        except Exception as exc:  # noqa: BLE001 - a card is not worth failing over
+            print(f"    card: FAILED {type(exc).__name__}: {exc}", file=sys.stderr)
 
     print(">>> RENDER")
     meta = {

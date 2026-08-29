@@ -32,6 +32,7 @@ from common import (load_settings, read_json, refresh_render_meta, rel,
                     write_json)
 import archive as archive_mod
 import depict
+import card
 import illustrate as illustrate_mod
 import render as render_mod
 from run import _load_dotenv
@@ -89,6 +90,13 @@ def reillustrate(run_date: str, scene: str = "") -> int:
 
     dispatch["brief"] = brief
     dispatch["image"] = image
+    # The share card is cut from the engraving, so a redraw makes the old card
+    # stale. Rebuilt here rather than left for the next daily run, or the card
+    # would show the picture this redraw exists to replace.
+    try:
+        print(f"    card: {card.write(run_date, image)}")
+    except Exception as exc:  # noqa: BLE001 - a card never blocks a redraw
+        print(f"    card: FAILED {type(exc).__name__}: {exc}", file=sys.stderr)
     write_json(f"data/dispatches/{run_date}.json", record)
 
     perma = f"d/{run_date}.html"

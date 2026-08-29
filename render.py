@@ -3,12 +3,13 @@ All model/feed text is HTML-escaped and hyphenated. Pure function; run.py owns I
 from __future__ import annotations
 
 import html
+import os
 import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 import locator
-from common import BEACON, hyphenate
+from common import BEACON, hyphenate, rel
 from dates import format_date, format_dateline
 
 _CSS = """
@@ -185,6 +186,48 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     title = og_title if is_permalink else html.escape(meta["site_name"])
     desc = html.escape("A wire service reporting from the future.")
     asset_prefix = "../" if is_permalink else ""
+
+    # The share card, and the canonical URL beside it.
+    #
+    # Until 29/08/2026 this page declared `twitter:card=summary_large_image` and
+    # supplied NO og:image, so every share reserved a large image slot and
+    # rendered it empty - worse than carrying no card tags at all, which at least
+    # degrades to an honest plain link preview. It survived months because a
+    # broken share card is invisible from the site itself; it only appears in
+    # somebody else's Slack.
+    #
+    # og:image must be ABSOLUTE - a relative path is silently ignored by every
+    # platform, which would look exactly like having no card at all and would be
+    # just as hard to notice.
+    # The date comes from the illustration path rather than a parameter: this
+    # function is handed the INNER dispatch dict and never saw run_date. Deriving
+    # it here avoided changing the signature in three callers for one meta tag.
+    base = str(meta.get("base_url", "")).rstrip("/")
+    art = dispatch.get("image") or ""
+    stem = os.path.splitext(os.path.basename(art))[0] if art else ""
+    card_rel = f"assets/card/{stem}.jpg" if stem else ""
+    has_card = bool(base and card_rel and os.path.exists(rel(card_rel)))
+    # AN HONEST CARD TYPE. summary_large_image with no image is worse than no card
+    # tags at all - it tells the platform to reserve a large slot and then leaves
+    # it empty, which is what this page did for months. A day that published with
+    # no engraving now declares plain "summary" and gets a tidy text preview.
+    card_kind = "summary_large_image" if has_card else "summary"
+    card_tags = ""
+    if has_card:
+        page_url = f"{base}/d/{stem}.html" if is_permalink else f"{base}/"
+        tags = [
+            f'<link rel="canonical" href="{html.escape(page_url, quote=True)}">',
+            f'<meta property="og:url" content="{html.escape(page_url, quote=True)}">',
+            f'<meta property="og:image" content="{base}/{card_rel}">',
+            '<meta property="og:image:width" content="1200">',
+            '<meta property="og:image:height" content="630">',
+            '<meta property="og:image:alt" content="The Aftertimes masthead above the engraving for the day">',
+        ]
+        # Joined with chr(10) rather than a newline escape. This block was first
+        # written through a nested heredoc and every escape arrived as a REAL
+        # newline, splitting each f-string across two lines and breaking the
+        # module outright. Escape-free means the next edit cannot repeat it.
+        card_tags = chr(10) + chr(10).join(tags)
     font_face = (
         f"<style>@font-face{{font-family:'Aftertimes Flag';"
         f"src:url('{asset_prefix}assets/fonts/unifrakturcook-700.woff2') "
@@ -240,7 +283,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <meta property="og:title" content="{og_title}">
 <meta name="description" content="{desc}">
 <meta property="og:description" content="{desc}">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="{card_kind}">{card_tags}
 <style>{_CSS}</style>
 {font_face}
 {BEACON}
