@@ -241,3 +241,16 @@ Two facts that make this sharper than "the quota ran out":
       published dispatches rather than to measure anything further. Logged as its own
       item below.
 
+- [ ] **Check the cast actually diversifies** (fix shipped 29/08/2026, commit 2b20794,
+      EFFECT UNVERIFIED). `trends.repeated_names` now counts surnames as well as full
+      names, so the avoid block went from one entry to four - Chen x6, Kaelen Voss x3,
+      Osei x3, Thorne x3. That is the block the writer RECEIVES; whether it changes what
+      the writer DOES is a separate question, and prompts do not always obey.
+      **The measurement, in a week or so:** re-run the count over the newest 10 dispatches
+      and compare against today's baseline of 17-of-31 using one of those four surnames.
+      A flat or rising rate means the avoid block is being read and ignored, which is a
+      prompt-placement problem rather than a detection one - and the Ghostwriters fix the
+      same week was exactly that, moving the voice to the END of the prompt where the
+      model reads it last.
+      One line to get the number:
+      `python -c "import sys,glob,os;sys.path.insert(0,'.');import trends,avoid;from common import read_json,load_yaml;r=[read_json(f'data/dispatches/{os.path.basename(f)}') for f in sorted(glob.glob('data/dispatches/*.json'))];print(trends.detect(avoid.recent([x for x in r if x],10),3))"`
