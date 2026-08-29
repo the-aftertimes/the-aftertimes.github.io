@@ -206,3 +206,32 @@ Two facts that make this sharper than "the quota ran out":
 ## Later (v3 ideas)
 - [x] **Raster favicons still carry the old bone-paper hex** (26/08/2026). DONE same day - `tools/make_icons.py` now renders all four from `assets/favicon.svg`, so the tile colour and the glyph colour have one source of truth and the next palette change is one command. Preserves the two conventions the hand-made files already had: transparent corners on the tab icons, opaque full-bleed on apple-touch (iOS paints transparency black). Not wired into CI on purpose - the SVG draws its "A" with `font-family="Georgia"`, so a Linux runner would substitute a different serif.
 - [ ] **Style-transfer the locator into an engraving.** The chart is clean vector; a future pass could render it as a hand-engraved star plate to sit even closer to the Dore illustrations.
+
+- [ ] **The quality judge is saturated, so best-of-3 is picking at random** (measured
+      29/08/2026 from `data/dispatches/*.json`, prompted by Charlie saying the output
+      "is not that great"). Across 22 editions and 65 drafts:
+        - **37 of 65 drafts score a perfect 1.0**, mean 0.92
+        - the best draft scored 1.0 on **18 of 22 editions**
+        - the spread between the three drafts was **exactly zero on 8 of 22**
+      A gate that passes everything is not quality control, it is a green light with a
+      checklist taped to it. When all three drafts score the same there is nothing for
+      "pick the best" to pick on, so the selection is effectively arbitrary, and the
+      daily run reports success either way. That is the most likely reason the output
+      feels flat: nothing is being filtered.
+
+      **Not a plumbing fault.** The revision guard genuinely works - 14 of 14 revisions
+      that lowered the score were rejected - so the machinery does what it says. It is
+      the judge's SCALE that has no room left to move.
+
+      The fix that worked on Ghostwriters the same week was to stop asking for an
+      absolute number and ask for an ORDERING instead: a model asked "score this out of
+      ten" reaches for the same few anchors, while one asked "put these three in order,
+      best first, and say what separates first from third" has to discriminate. Worth
+      trying as: rank the drafts against each other, keep the winner, and record the
+      stated reason so a run of identical reasons is visible too.
+
+      **Read a week of dispatches before designing it.** The scores say the judge cannot
+      discriminate; they do not say whether the drafts are actually alike, which is the
+      other explanation and needs eyes, not statistics. If three drafts really are
+      near-identical then the diversity problem is upstream in generation and a better
+      judge fixes nothing.
