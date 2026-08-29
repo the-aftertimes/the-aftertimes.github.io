@@ -161,6 +161,12 @@
       "gloss": "An official cleanliness certification granted only to ship compartments that have never been entered by breathing crew members.",
       "kind": "term",
       "first_seen": "2026-08-27"
+    },
+    {
+      "term": "Singa-Spires",
+      "gloss": "A cluster of oceanic platform towers serving as a regional financial hub.",
+      "kind": "term",
+      "first_seen": "2026-08-29"
     }
   ]
 }

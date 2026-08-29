@@ -342,5 +342,15 @@
     "style": "feature",
     "place_kind": "shipboard",
     "engine": "ritual"
+  },
+  {
+    "run_date": "2026-08-29",
+    "year": 2541,
+    "era_bucket": 10,
+    "domain": "money and finance",
+    "headline": "All Bankers Promoted, Locked Out",
+    "style": "wire",
+    "place_kind": "drowned",
+    "engine": "language"
   }
 ]

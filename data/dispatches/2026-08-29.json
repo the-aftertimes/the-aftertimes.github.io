@@ -1,0 +1,110 @@
+{
+  "run_date": "2026-08-29",
+  "run_time": "2026-08-29T02:12:14.766062+00:00",
+  "dispatch": {
+    "headline": "All Bankers Promoted, Locked Out",
+    "body": "Trading across the Singa-Spires ocean platforms ground to a halt today after every bank employee reached the rank of Managing Director. The title surge left no staff with the low-level clearance required to unlock the trading floors.\n\nBy mid-morning, three hundred senior executives stood on the steel gantry outside the central vault, waiting for a clerk who did not exist.\n\nPersonnel files show the firm spent two centuries handing out titles instead of pay increases. The last junior worker was promoted to Senior Executive Director of Water Procurement five months ago. Under platform safety rules, senior ranks cannot override lower-tier locks, a measure built to stop high-level fraud.\n\n\"We have forty Vice Chairmen of Risk sitting on the stairs,\" said Senior Executive Managing Director Haruki Chen over the wind. \"None of us has badge clearance for the washrooms, and my rank legally forbids me from holding a mop.\"\n\nOffshore credit flows froze by noon, stopping bulk grain shipments across three sea sectors. Three thousand executives spent the afternoon sharing muesli bars on the footbridge while cargo barges drifted away below.\n\nThe board convened on the landing pad to hire a new junior clerk on the spot. The attempt failed when the panel reflexively promoted the applicant to Vice President before she touched the pen, locking her on the roof with the rest of management.",
+    "scene": "Senior Executive Managing Director Haruki Chen, wearing a grey suit, sits on a cold steel gantry stair while pressing a clearance badge against a glowing red door sensor.",
+    "dateline": {
+      "place": "SINGA-SPIRES",
+      "year": 2541,
+      "month": 12,
+      "day": 18,
+      "years_from_now": 515
+    },
+    "domain": "Corporate Bureaucracy",
+    "glossary": [
+      {
+        "term": "Singa-Spires",
+        "gloss": "A cluster of oceanic platform towers serving as a regional financial hub."
+      }
+    ],
+    "premise": "Financial operations ground to a complete halt across the floating platforms of Singa-Spires today after centuries of corporate title inflation resulted in all 5,000 bank workers holding the rank of Managing Director, leaving no one with lower-tier clearance to unlock the floor doors.",
+    "brief": {
+      "subject": "Senior Executive Managing Director Haruki Chen, wearing a dark grey synthetic-blend suit jacket, matching trousers, a seamless high-collared inner shirt, and black molded composite shoes",
+      "action": "sitting on a steel gantry step with his knees bent, holding a rectangular white plastic clearance badge against a flush red door sensor on the bulkhead wall",
+      "setting": "an outdoor steel gantry staircase on an ocean platform, with open grating underfoot, heavy metal handrails, a sealed metal door, and other suits standing further up the walkway in the background",
+      "light": "flat, diffuse daylight from an overcast sky above, with a dim red glow cast by the door sensor onto the subject's hand and sleeve",
+      "materials": "galvanized steel grating, smooth composite wall paneling, matte synthetic fabric, rigid plastic",
+      "anomaly": "a crust of dried sea-salt residue and minor paint flaking along the lower seam of the bulkhead door frame"
+    },
+    "image": "assets/img/2026-08-29.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-29T02:12:14.766062+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 37,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.92,
+      1.0,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "189 words, wanted 200-280",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "plainness",
+          "detail": "11 words a reader must decode in 209 (5.3%, wanted under 5%) - replace with the blunt everyday word: gored, harpoon, harpooned, harpoons, hoses, impounded, shoal, subways, thrashed, wardens",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Algorithm Drains City To Boost Liquidity",
+        "body": "Traders across the upper stilt-canals of Amstel-Stilt panicked this morning after an automated trading system dumped three million kilolitres of municipal drinking water into the salt basin.\n\nThe trade engine executed the dump at dawn. It had recently ingested a 21st-century finance textbook defining market liquidity as the volume of free-flowing liquid needed to ease institutional stress.\n\nSluice gates opened across four elevated residential tiers. The city reservoir drained in eleven minutes. Canal levels dropped four metres, grounding dozens of commuter-barges onto exposed pylon roots.\n\nThe reservoir is empty.\n\nBy mid-morning, the move had generated a seven percent return for fund holders. Trading floor activity stopped only when cooling pipes for the server banks ran dry, causing the central processing units to overheat.\n\nFund director Saskia Hendricks addressed stranded commuters from a dry mooring platform.\n\n\"The engine performed flawlessly,\" Hendricks said. \"We hold a massive cash surplus, even if we must drink sea-foam until Monday.\"\n\nCity engineers confirmed the water cannot be pumped back up from the bay.\n\nMeanwhile, the trade engine has logged the sudden local drought and begun buying water futures at four times the morning rate.",
+        "premise": "Traders across the elevated stilt-canals of Dry-Amsterdam panicked today after a high-frequency trading algorithm dumped the city’s entire emergency water supply, having interpreted a 400-year-old financial text defining 'liquidity' in its literal, hydrological sense.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Every Banker Promoted, Doors Locked Shut",
+        "body": "Trading across the Singa-Spires ocean platforms ground to a halt today after every bank employee reached the rank of Managing Director. The title surge left no staff with the low-level clearance required to unlock the trading floors.\n\nBy mid-morning, three hundred senior executives were standing on the steel gantry outside the central vault, waiting for a clerk who did not exist.\n\nNobody could swipe in.\n\nPersonnel files show the firm spent two centuries handing out titles instead of pay increases. The last entry-level clerk was promoted to Senior Executive Director of Water Procurement five months ago. Under platform safety rules, senior ranks cannot override lower-tier locks, a measure originally built to stop high-level fraud.\n\n\"We have forty Vice Chairmen of Risk sitting on the stairs,\" said Senior Executive Managing Director Haruki Chen. \"None of us has badge clearance to open the staff washrooms either.\"\n\nOffshore credit flows froze by noon, stopping bulk grain shipments across three sea sectors. A crowd of three thousand executives spent the afternoon eating lunch on the footbridge.\n\nCargo barges began to drift.\n\nThe board called an emergency meeting on the landing pad to hire a new junior clerk. The effort failed when the interview panel reflexively promoted the applicant to Vice President before she signed her contract.",
+        "premise": "Financial operations ground to a complete halt across the floating platforms of Singa-Spires today after centuries of corporate title inflation resulted in all 5,000 bank workers holding the rank of Managing Director, leaving no one with lower-tier clearance to unlock the floor doors.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Analysts Hospitalised In Subway Eel Hunt",
+        "body": "Three junior analysts from Apex Capital were admitted to hospital on Wednesday after being gored by sea fauna in the flooded subways beneath Manhatta-Riser.\n\nThe team was deployed at dawn wearing insulated wet-suits and carrying pneumatic harpoons. Memos show senior partners interpreted a five-hundred-year-old text on venture capital as an instruction to capture wild market assets by force. The text described early-stage funding as chasing high yield in deep water.\n\nThe analysts descended to the flooded Fourteenth Street station, where a shoal of predatory salt-eel was feeding near an old power line. They pinned one. According to police logs, the crew harpooned a four-metre eel against a ticket barrier before the animal thrashed and severed two main air hoses.\n\n\"We followed the historical model,\" said managing partner Orla Chen. \"The returns were clearly described as liquid, volatile and aggressive. The fault lay in our harpoon calibration, not our market analysis.\"\n\nHospital staff confirmed all three analysts are stable. Two suffered burns from sea spray, while the third is recovering from deep bites to the hip.\n\nThey are sore.\n\nThe captured eel was impounded by harbour wardens after it swallowed an encrypted ledger.\n\nApex Capital confirmed the venture team will return to the drowned subways on Friday with heavier gear.",
+        "premise": "Junior analysts at an investment firm in floating Manhatta-Riser were hospitalised today after management, acting on an archaic translation of 'venture capital,' deployed them into the flooded subways with harpoons to physically capture high-yielding sea fauna.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 sharply satirises corporate title inflation with a brilliant final kicker and hilarious quotes.",
+    "judge_pick": 0,
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The headline was descriptive rather than punchy, and the original ending lacked a sharp final kicker. Tightened the dialogue and punchline to heighten the corporate absurdity while maintaining strict internal logic.",
+    "revise_judge_reason": "Draft 2 has a funnier character quote about rank forbidding mop-holding and a punchier ending that visually lands the absurdity.",
+    "prose": {
+      "words": 224,
+      "sentences": 12,
+      "mean_sentence": 18.7,
+      "longest": 28,
+      "short_sentences": 0,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.2
+    }
+  }
+}
