@@ -207,31 +207,37 @@ Two facts that make this sharper than "the quota ran out":
 - [x] **Raster favicons still carry the old bone-paper hex** (26/08/2026). DONE same day - `tools/make_icons.py` now renders all four from `assets/favicon.svg`, so the tile colour and the glyph colour have one source of truth and the next palette change is one command. Preserves the two conventions the hand-made files already had: transparent corners on the tab icons, opaque full-bleed on apple-touch (iOS paints transparency black). Not wired into CI on purpose - the SVG draws its "A" with `font-family="Georgia"`, so a Linux runner would substitute a different serif.
 - [ ] **Style-transfer the locator into an engraving.** The chart is clean vector; a future pass could render it as a hand-engraved star plate to sit even closer to the Dore illustrations.
 
-- [ ] **The quality judge is saturated, so best-of-3 is picking at random** (measured
-      29/08/2026 from `data/dispatches/*.json`, prompted by Charlie saying the output
-      "is not that great"). Across 22 editions and 65 drafts:
-        - **37 of 65 drafts score a perfect 1.0**, mean 0.92
-        - the best draft scored 1.0 on **18 of 22 editions**
-        - the spread between the three drafts was **exactly zero on 8 of 22**
-      A gate that passes everything is not quality control, it is a green light with a
-      checklist taped to it. When all three drafts score the same there is nothing for
-      "pick the best" to pick on, so the selection is effectively arbitrary, and the
-      daily run reports success either way. That is the most likely reason the output
-      feels flat: nothing is being filtered.
+- [x] ~~**The quality judge is saturated, so best-of-3 is picking at random**~~ -
+      **WRONG, WITHDRAWN 29/08/2026 the same day it was written.** Both halves of it were
+      mistaken and the corrections are worth keeping, because the mistakes are easy to
+      make again from the same data.
 
-      **Not a plumbing fault.** The revision guard genuinely works - 14 of 14 revisions
-      that lowered the score were rejected - so the machinery does what it says. It is
-      the judge's SCALE that has no room left to move.
+      **1. The 1.0s are not a saturated quality score.** `critic.score` returns
+      `1.0 - penalty` where the penalty comes from RULE VIOLATIONS - length, rhythm,
+      plainness, register, props, residue. A 1.0 means "broke no rules", so 37 of 65
+      drafts scoring 1.0 is a compliance floor working correctly, not a judge that
+      cannot discriminate. Comedy is judged somewhere else entirely, by `judge.py`,
+      qualitatively, in its own call. I read the distribution and diagnosed the wrong
+      instrument.
 
-      The fix that worked on Ghostwriters the same week was to stop asking for an
-      absolute number and ask for an ORDERING instead: a model asked "score this out of
-      ten" reaches for the same few anchors, while one asked "put these three in order,
-      best first, and say what separates first from third" has to discriminate. Worth
-      trying as: rank the drafts against each other, keep the winner, and record the
-      stated reason so a run of identical reasons is visible too.
+      **2. `judge_pick` and `chosen_index` are not the same index space,** so the
+      "selection follows neither signal" measurement was comparing two different
+      orderings. `run.py` shows the judge the `pool`, which is the survivors re-sorted
+      by score, and records `judge_pick` against THAT; `_finish` then records
+      `chosen_index` against the original `drafts` order, deliberately, so the learning
+      loop can find the published draft later. Reconstructing the pool and translating
+      between them, they agree on **3 of 3** - every dispatch that has both a judge call
+      and a kept `drafts` field, which only exists from 26/08. Small n, and it is all
+      the data there is.
 
-      **Read a week of dispatches before designing it.** The scores say the judge cannot
-      discriminate; they do not say whether the drafts are actually alike, which is the
-      other explanation and needs eyes, not statistics. If three drafts really are
-      near-identical then the diversity problem is upstream in generation and a better
-      judge fixes nothing.
+      The 29/08 case that looked like an off-by-one is the same thing: the judge returned
+      `pick: 1` and its reason described corporate title inflation, which is draft index
+      1 in the original order but the FIRST draft in the pool it was shown. It was right.
+
+      **What actually stands:** the drafts are genuinely diverse - 29/08 produced three
+      unrelated stories, not three versions of one - so "the drafts are too alike" is
+      also ruled out. Charlie's sense that the output is not great is still unexplained
+      by anything in the metrics, which means the next move is to READ a week of
+      published dispatches rather than to measure anything further. Logged as its own
+      item below.
+

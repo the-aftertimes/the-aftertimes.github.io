@@ -118,19 +118,58 @@ def repeated_openers(records, min_count=3, words=3):
                    if len(ds) >= min_count], key=lambda h: -h["count"])
 
 
+# Number words read as surnames to a capitalised-bigram matcher: this paper is full of
+# "Waystation 80", "Sister Four", "Deck Seven", so "Four" surfaced as an over-used name
+# on its first run. Deliberately ONLY numerals - two earlier attempts at a general
+# stoplist for titles and sentence-starters both went wrong, one by missing words nobody
+# predicted and one by filtering out the real surnames, and a numeral can never be a
+# family name so this list is closed and cannot rot.
+_NOT_A_NAME = {
+    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+    "Eleven", "Twelve", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Hundred",
+    "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth",
+}
+
+
 def repeated_names(records, min_count=3):
-    """Character names reused across dispatches."""
+    """Character names reused across dispatches, counted BOTH ways.
+
+    Keying on the full name alone missed the pattern that was actually happening.
+    Measured over the first 31 dispatches on 29/08/2026: "Chen" carried a character
+    in six of them - Priya Chen, Haruki Chen, Jori Chen and three more - and the
+    detector saw six distinct full names, none of which reached min_count. Meanwhile
+    it correctly caught "Kaelen Voss" x3, because that one happened to repeat whole.
+
+    So the surname is counted on its own as well. This is the same generalisation
+    `place_formulas` already makes below, where "New Wollongong" and "New Cairo" are
+    one tired formula rather than two fresh names: what a reader notices is the
+    shape, not the literal string. A forename is NOT counted alone - a paper may
+    reasonably have two unrelated Priyas, and a first name repeating is far less
+    conspicuous than a family name.
+    """
     seen = defaultdict(set)
     dates_seen = defaultdict(set)
     for idx, date, body in _bodies(records):
         for first, last in _NAME.findall(body):
-            key = f"{first} {last}"
-            seen[key].add(idx)
-            if date:
-                dates_seen[key].add(date)
-    return sorted([_hit("name", k, len(ds), dates_seen.get(k, set()))
-                   for k, ds in seen.items()
-                   if len(ds) >= min_count], key=lambda h: -h["count"])
+            # The full name reads better in the avoid block when it IS the repeat,
+            # so both keys are kept and the caller's cap decides what fits.
+            if last in _NOT_A_NAME:
+                continue
+            for key in (f"{first} {last}", last):
+                seen[key].add(idx)
+                if date:
+                    dates_seen[key].add(date)
+    hits = [_hit("name", k, len(ds), dates_seen.get(k, set()))
+            for k, ds in seen.items() if len(ds) >= min_count]
+    # Drop the surname-only hit when the full name is already reported at the same
+    # strength, so the block never carries "Kaelen Voss (x3)" and "Voss (x3)" both.
+    full = {h["item"] for h in hits if " " in h["item"]}
+    hits = [h for h in hits
+            if " " in h["item"]
+            or not any(f.endswith(" " + h["item"])
+                       and next(x["count"] for x in hits if x["item"] == f) >= h["count"]
+                       for f in full)]
+    return sorted(hits, key=lambda h: -h["count"])
 
 
 def place_formulas(records, min_count=3):
