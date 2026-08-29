@@ -248,29 +248,34 @@ def test_the_quota_gate_reads_the_cron_from_the_workflow_not_a_constant():
         "workflow rather than agreeing with it")
 
 
-def test_every_daily_cron_lands_before_charlie_looks():
-    """27/08/2026, and the reason the times moved at all. He opens the site at
-    07:55 AEST / 21:55 UTC. On 26/08 GitHub dropped the primary here, in
-    photocopy and in the hub's thumbnail job; all three had a backup and every
-    backup was scheduled AFTER 07:55, so the estate healed itself once the only
-    reader had gone.
+def test_every_daily_cron_sits_inside_one_utc_day():
+    """This test used to assert that at least two crons could deliver before
+    Charlie looks at 21:55 UTC, "allowing 16-22 minutes of scheduler lateness".
 
-    A backup that runs after the reader has left is not a backup. At least one
-    cron must land before 21:55 UTC allowing for the 16-22 minutes of scheduler
-    lateness this estate consistently shows - so the last useful slot starts no
-    later than 21:33."""
+    That assertion was retired on 29/08/2026 because its input was false. The
+    16-22 minute figure had been measured once, in a good week, and written down
+    as a constant. Re-measured with no open incident, GitHub started these runs
+    01:47-06:57 and 03:05-04:11 the following morning - **three to seven hours**
+    late, every night, across four repos. A test parametrised on a stale constant
+    passes happily while the property it claims to protect is untrue in practice,
+    which is the most expensive kind of green.
+
+    **The delivery guarantee does not live here.** It lives in the heartbeat
+    Worker (`site-stats/heartbeat`), which fires from Cloudflare and does not
+    depend on GitHub remembering anything. What this file can still usefully
+    assert is the property the crons DO have and that the code depends on: they
+    all sit inside one UTC day, which is what makes `already_filed()` turn the
+    later runs into no-ops instead of republishing the day."""
     import re
     from common import rel
 
     with open(rel(".github/workflows/daily.yml"), encoding="utf-8") as fh:
         crons = [(int(h), int(m)) for m, h in
                  re.findall(r'cron:\s*"(\d+)\s+(\d+)\s', fh.read())]
-    assert crons, "daily.yml has no schedule"
+    assert len(crons) >= 2, "a single cron has no backup at all"
 
-    LOOKS_AT = 21 * 60 + 55
-    LATENESS = 22
-    in_time = [(h, m) for h, m in crons if h * 60 + m + LATENESS <= LOOKS_AT]
-    assert len(in_time) >= 2, (
-        f"only {len(in_time)} of {len(crons)} crons can deliver before 21:55 UTC "
-        f"with {LATENESS} min of lateness: {crons}. A dropped primary needs a "
-        f"backup he can actually see.")
+    hours = [h for h, _ in crons]
+    assert max(hours) - min(hours) < 24 and min(hours) >= 12, (
+        f"crons {crons} straddle a UTC midnight - already_filed() keys on the UTC "
+        f"date, so a run on the other side of it would republish the day rather "
+        f"than no-op")
