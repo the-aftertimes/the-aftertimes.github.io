@@ -20,15 +20,8 @@
       }
     ],
     "premise": "A deep-rock mechanic on 16 Psyche refuses to muzzle his three-meter, vat-grown flesh-maggot, claiming the metal-chugging bio-weapon is merely a nervous emotional support spaniel that nips when ambient gravity drops.",
-    "brief": {
-      "subject": "a deep-rock fitter in a grease-stained blue canvas coverall that covers his torso and legs, wearing heavy black rubber-soled work boots, sitting beside a thick three-metre grey segmented worm",
-      "action": "holding a white ceramic cup of tea in both hands while sitting still on the edge of the workbench",
-      "setting": "an asteroid maintenance bay with steel floor plating, heavy drilling machinery, and a safety inspector standing beside the workbench gesturing toward a tiny leather strap lying on the steel surface",
-      "light": "harsh overhead white light from high-bay strip fixtures casting sharp, direct shadows",
-      "materials": "stained blue canvas fabric, rubbery grey skin, brushed steel plating, and narrow brown leather",
-      "anomaly": "a roll of black electrical tape and an open spanner set resting on a shelf beneath the workbench"
-    },
-    "image": null
+    "brief": null,
+    "image": "assets/img/2026-08-26.jpg"
   },
   "meta": {
     "run_time": "2026-08-26T21:40:22.317258+00:00",
