@@ -1,0 +1,104 @@
+{
+  "run_date": "2026-08-30",
+  "run_time": "2026-08-30T00:18:50.971283+00:00",
+  "dispatch": {
+    "headline": "Man Who Winched Borders Dies",
+    "body": "Tariq Olowu, the last tether-clerk of Port Aphrodite who spent forty-five years winching brass boundary markers through sulphuric gales to keep sky lots aligned, died on Sunday aged eighty-one.\n\nOlowu joined the municipal boundary office in 3004. Port Aphrodite had recently declared its drifting gas clouds to be taxable real estate, requiring constant physical adjustments to match paper land deeds with weather patterns. Every morning at dawn, Olowu locked himself into a steel winch box and hand-cranked two-tonne brass markers sixty miles up suspended cables. The work was heavy. High winds often threw the markers three miles out of alignment, dragging entire residential neighbourhoods into unmapped storm fronts. He never missed a shift.\n\nBecause Olowu could only winch twelve feet of steel line a minute, cloud currents usually outran his arms. For most of his career, every bedroom in the eastern district spent four hours a day legally situated inside the municipal sewage tank.\n\n\"Tariq kept the north border straight,\" said city surveyor Ananya Rao. \"Even when it was passing through my kitchen.\"\n\nOlowu retired last month after the city council installed automated thrusters to position the markers. The thrusters broke down on Tuesday, leaving the central hospital four kilometres inside the open sky.",
+    "scene": "An elderly man in a heavy padded suit turns a massive iron winch handle inside a cramped suspended metal box while a huge brass marker sways on a cable in yellow gas clouds behind him.",
+    "dateline": {
+      "place": "PORT APHRODITE, Venus",
+      "year": 3049,
+      "month": 9,
+      "day": 4,
+      "years_from_now": 1023
+    },
+    "domain": "space law",
+    "glossary": [],
+    "premise": "PORT APHRODITE, Venus (3049) – Obituary for the cloud-city’s last Tether-Clerk, who spent forty-five years manually winching crate-sized brass boundary markers up sixty miles of steel cable through sulfuric gales to keep property lines aligned with drifting clouds.",
+    "brief": {
+      "subject": "an elderly man with thin white hair, wearing a high-collared padded thermal suit, heavy reinforced trousers, and thick rubberized work boots",
+      "action": "gripping both hands onto a massive iron winch handle and leaning his torso forward to turn it",
+      "setting": "the interior of a narrow suspended metal cage with riveted wall plates, looking out an open rear hatch where a large brass marker hangs on a thick cable against dense yellow gas clouds",
+      "light": "flat directional light coming through the rear open hatch from the bright yellow gas clouds outside",
+      "materials": "sheet steel, cast iron, tarnished brass, rubberized fabric",
+      "anomaly": "a grease gun and a dirty wiping rag resting in a small metal bracket welded to the cage wall"
+    },
+    "image": "assets/img/2026-08-30.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-30T00:18:50.971283+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 38,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      0.75,
+      1.0,
+      0.75
+    ],
+    "violations": [
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: bailiff, court",
+          "severity": "major"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tax",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Court Retires Three-Ton Hydraulic Gavel",
+        "body": "The High Court of Clay Gate has retired its original gavel, a three-ton hydraulic pile-driver that served forty years in canvas courtrooms across the red basin.\n\nImported during the dry settlement of 3009, the machine was built to seat foundation pilings into shelf rock. Pioneer judge Hesperus Flint instead wired the firing pedal to his bench. He argued that loud order was essential where law was thin.\n\nThe machine worked. When struck, the piston hit a steel anvil at ten thousand foot-pounds. The force cleared courtroom galleries instantly. It also pulled down the main canvas ridge pole.\n\nBetween 3012 and 3035, the court collapsed four hundred times. Jury duty was extended from three days to five to allow time for shovelling. No verdict was ever overturned on appeal, as the clay buried the trial notes.\n\nBailiff Tariq Ndlovu remembered the early circuit trials warmly. \"It kept speeches short,\" Ndlovu said. \"Nobody called a second witness if the roof was swaying.\"\n\nIn 3028, defence lawyers asked for foam pads beneath the anvil. The full bench refused. The court ruled that quiet order lacked binding force.\n\nThe driver gave its final strike on Thursday during a property hearing. The blow cracked the floor of the new stone courthouse and dropped the witness box three metres into a drain line.\n\nThe court will now use a hand hammer. Juries have reported feeling unsafe.",
+        "premise": "NEW OLYMPUS, Mars (3049) – Obituary for the Martian High Court’s original 'Gavel-Bore,' a three-ton hydraulic pile-driver used for forty years to physically strike order into canvas tent-courtrooms, which routinely collapsed the roof and buried juries under tons of red clay.",
+        "score": 0.75,
+        "rejected": true
+      },
+      {
+        "headline": "Man Who Winched Borders Dies",
+        "body": "Tariq Olowu, the last tether-clerk of Port Aphrodite who spent forty-five years winching brass boundary markers through sulphuric gales to keep sky lots aligned, died on Sunday aged eighty-one.\n\nOlowu joined the municipal boundary office in 3004. Port Aphrodite had recently declared its drifting gas clouds to be taxable real estate, requiring constant physical adjustments to match paper land deeds with weather patterns. Every morning at dawn, Olowu locked himself into a steel winch box and hand-cranked two-tonne brass markers sixty miles up suspended cables. The work was heavy. High winds often threw the markers three miles out of alignment, dragging entire residential neighbourhoods into unmapped storm fronts. He never missed a shift.\n\nBecause Olowu could only winch twelve feet of steel line a minute, cloud currents usually outran his arms. For most of his career, every bedroom in the eastern district spent four hours a day legally situated inside the municipal sewage tank.\n\n\"Tariq kept the north border straight,\" said city surveyor Ananya Rao. \"Even when it was passing through my kitchen.\"\n\nOlowu retired last month after the city council installed automated thrusters to position the markers. The thrusters broke down on Tuesday, leaving the central hospital four kilometres inside the open sky.",
+        "premise": "PORT APHRODITE, Venus (3049) – Obituary for the cloud-city’s last Tether-Clerk, who spent forty-five years manually winching crate-sized brass boundary markers up sixty miles of steel cable through sulfuric gales to keep property lines aligned with drifting clouds.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Law Tower Melts Into Ice Cap",
+        "body": "The Outer Rim Codification Vault sank into a ninety-metre pit of steam on Wednesday after seven centuries of printed space law crushed the ice beneath it.\n\nBuilt in 2315, the lead tower was meant to protect physical treaty texts from solar flares. Its first filing was a thirty-page charter on tugboat lights. By 2600, the building held nine thousand volumes covering moon dust rights, fuel tax disputes and shipboard plumbing codes.\n\nThe weight grew as space treaties grew more specific. An amendment on engine noise added forty tonnes of foil to the top floor. To store the extra text, engineers built upward, adding six lead stories to a frame resting on frozen gas.\n\nThe tower did not break.\n\nIt simply got heavy.\n\nAs the foundation warmed under the crush, steam vented through the lift shafts. Archivists wore cooling suits to file local dump rules, while print-presses ran day and night to log new filings.\n\n\"The building was steady until the Ceres riders arrived,\" said Senior Registrar Corin Vane, who escaped through the roof hatch. \"After that, the lower floors groaned constantly.\"\n\nOn Wednesday, an addendum on barge horn tones broke the underlying ice. The entire structure dropped into the pit.\n\nLawyers now gather at the warm edge to read the steam.",
+        "premise": "NEW RUST-GULLY, Mars (3049) – Obituary for the Outer Rim Codification Vault, a seven-story lead-lined tower built on the Martian ice cap to physically store printed interplanetary treaties, which finally melted into its own geothermal crater under the weight of its addendums.",
+        "score": 0.75,
+        "rejected": true
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "It sharply satirizes municipal administrative greed and arbitrary property lines, featuring the best character quote and headline.",
+    "judge_pick": 0,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.67,
+    "critique": "The headline merely described the premise rather than landing a punchline.\nThe ending lacked a strong comedic kicker that recontextualised the situation.",
+    "prose": {
+      "words": 204,
+      "sentences": 13,
+      "mean_sentence": 15.7,
+      "longest": 29,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 4.4
+    }
+  }
+}
