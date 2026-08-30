@@ -352,5 +352,15 @@
     "style": "wire",
     "place_kind": "drowned",
     "engine": "language"
+  },
+  {
+    "run_date": "2026-08-30",
+    "year": 3049,
+    "era_bucket": 20,
+    "domain": "space law",
+    "headline": "Man Who Winched Borders Dies",
+    "style": "obituary",
+    "place_kind": "marsform",
+    "engine": "logistics"
   }
 ]
