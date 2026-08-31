@@ -112,7 +112,8 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
                         "premise": d.get("premise", ""),
                         "score": s["score"], "rejected": s["rejected"]}
                        for d, s in scored],
-            "all_rejected": all_rejected, "judge_reason": "", "judge_pick": None}
+            "all_rejected": all_rejected, "judge_reason": "", "judge_pick": None,
+            "judge_score": None}
 
     def _finish(dispatch):
         for idx, (d, _) in enumerate(scored):
@@ -131,7 +132,9 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
             verdict = judge_mod.judge([d for d, _ in pool], settings)
             info["judge_reason"] = verdict["reason"]
             info["judge_pick"] = verdict["pick"]
-            print(f"    judge picked {verdict['pick'] + 1}: {verdict['reason']}")
+            info["judge_score"] = verdict.get("score")
+            print(f"    judge picked {verdict['pick'] + 1} "
+                  f"(score {verdict.get('score')}): {verdict['reason']}")
             return _finish(pool[verdict["pick"]][0])
         except Exception as exc:  # noqa: BLE001 - best effort
             print(f"    WARN judge failed ({exc}); using the top score",
@@ -336,6 +339,9 @@ def run_pipeline() -> dict:
     funny_lines = load_yaml("config/funny_lines.yaml").get("lines") or []
     if funny_lines:
         print(f"    funny-line pool: {len(funny_lines)} line(s)")
+    flat_lines = load_yaml("config/flat_lines.yaml").get("lines") or []
+    if flat_lines:
+        print(f"    fell-flat pool: {len(flat_lines)} line(s)")
 
     print(">>> IDEATE")
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
@@ -357,22 +363,64 @@ def run_pipeline() -> dict:
         premises, ledger, settings, qcfg["n_drafts"])
     print(f"    {len(chosen_premises)} premises chosen")
 
+    def write_batch(pool: list[str], label: str) -> list[dict]:
+        out = []
+        for i, premise in enumerate(pool, start=1):
+            try:
+                out.append(write_stage.write(
+                    premise, dateline, domain, settings,
+                    style["guidance"], place_kind["guidance"],
+                    avoid_block=avoid_block, funny_lines=funny_lines,
+                    flat_lines=flat_lines))
+                print(f"    {label}draft {i}: {out[-1]['headline'][:56]}")
+            except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
+                print(f"    WARN {label}draft {i} failed: {exc}", file=sys.stderr)
+        return out
+
     print(">>> WRITE")
-    drafts = []
-    for i, premise in enumerate(chosen_premises, start=1):
-        try:
-            drafts.append(write_stage.write(
-                premise, dateline, domain, settings,
-                style["guidance"], place_kind["guidance"],
-                avoid_block=avoid_block, funny_lines=funny_lines))
-            print(f"    draft {i}: {drafts[-1]['headline'][:56]}")
-        except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
-            print(f"    WARN draft {i} failed: {exc}", file=sys.stderr)
+    drafts = write_batch(chosen_premises, "")
     if not drafts:
         raise RuntimeError("every draft failed")
 
     print(">>> CHOOSE")
     dispatch, choose_info = choose_draft(drafts, context, qcfg, settings)
+
+    # ONE SECOND BATCH IF THE WHOLE POOL IS WEAK, added 31/08/2026. The judge could
+    # only ever return the funniest of what it was handed, so three mediocre drafts
+    # published a mediocre dispatch and nothing in the pipeline objected - Charlie's
+    # "they're never that funny". Now it scores the winner against a real satirical
+    # paper rather than against its siblings, and a score under the floor buys one
+    # more set of premises.
+    #
+    # Deliberately conditional rather than a bigger n_drafts: this spends four extra
+    # Flash calls on a bad night instead of one every night, and text is not the
+    # scarce tier here anyway (~8 calls a day against a free-tier ceiling in the
+    # hundreds; the metered tier is the Cloudflare image quota, which this does not
+    # touch). Capped at one retry - a loop that keeps rolling for a better score
+    # would spend the day's quota chasing a number that has no distribution behind
+    # it yet.
+    #
+    # THE FLOOR IS PROVISIONAL. No score has ever been recorded, so 5 is a bound
+    # chosen to fire rarely, not a measured threshold. `judge_score` is now written
+    # to every dispatch record; re-set this from that distribution once a couple of
+    # weeks have accumulated, the way the plainness thresholds were derived.
+    floor = qcfg.get("judge_floor") or 0
+    got = choose_info.get("judge_score")
+    if floor and got is not None and got < floor and len(premises) > len(chosen_premises):
+        print(f">>> WRITE AGAIN ({got} is under the floor of {floor})")
+        seen = set(chosen_premises)
+        more = select_stage.select_many(
+            [p for p in premises if p not in seen], ledger, settings,
+            qcfg["n_drafts"])
+        second = write_batch(more, "retry ")
+        if second:
+            alt, alt_info = choose_draft(second, context, qcfg, settings)
+            alt_score = alt_info.get("judge_score")
+            print(f"    first {got} vs retry {alt_score}")
+            if alt_score is not None and alt_score > got:
+                dispatch, choose_info = alt, alt_info
+                choose_info["retried"] = True
+                drafts = drafts + second
 
     print(">>> REVISE")
     dispatch, revise_info = maybe_revise(dispatch, context, qcfg, settings)

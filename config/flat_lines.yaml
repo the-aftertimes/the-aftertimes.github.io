@@ -1,0 +1,21 @@
+lines:
+- line: '"No one wants to wake up at three in the morning just to hear their water ration cut in half.'
+  setup:
+  - Guildmaster Silas Rae defended the silent tools, arguing that noisy legislation is bad for public
+    health.
+  - '"The public expects rest," Rae told reporters.'
+  source: '2026-08-31'
+  why: the source is explaining the joke to the reader
+- line: They would much rather find out when they turn on the tap."
+  setup:
+  - '"The public expects rest," Rae told reporters.'
+  - '"No one wants to wake up at three in the morning just to hear their water ration cut in half.'
+  source: '2026-08-31'
+  why: the source is explaining the joke to the reader
+- line: Citizens slept through two curfews, a ban on air pumps, and the sale of the dome transport grid
+    to a private mining syndicate.
+  setup:
+  - They would much rather find out when they turn on the tap."
+  - Acoustic logs show sixty decrees passed last week while the city slept.
+  source: '2026-08-31'
+  why: three unrelated items standing in for an escalation

@@ -7,8 +7,13 @@ from common import rel
 def test_quality_config_present_and_complete():
     with open(rel("config/settings.yaml"), encoding="utf-8") as fh:
         cfg = yaml.safe_load(fh)["quality"]
-    assert cfg["n_drafts"] == 3
+    # An INVARIANT, not the magic number this pinned until 31/08/2026 - the same
+    # fault the rhythm comment below already names. The judge needs something to
+    # choose between, and every extra draft is a model call on the daily quota.
+    assert 2 <= cfg["n_drafts"] <= 6
     assert cfg["judge"] is True
+    # 0 disables the retry; anything else must be a reachable score out of 10.
+    assert 0 <= cfg["judge_floor"] <= 8
     assert cfg["revise"] is True
     assert set(cfg["hard_reject"]) == {
         "structure", "machine_phrases", "legal_register", "dash_residue",
@@ -419,3 +424,38 @@ def test_the_rest_of_the_legal_list_is_untouched():
     out = critic.check_register("The magistrate raised a levy on the debt.", "")
     assert out and {"magistrate", "levy", "debt"} <= set(
         out[0]["detail"].split(": ")[1].split(", "))
+
+
+def test_wink_catches_a_source_narrating_the_joke():
+    body = ('"The public expects rest," Rae told reporters. "No one wants to wake '
+            'up at three in the morning just to hear their water ration cut in half. '
+            'They would much rather find out when they turn on the tap."')
+    hits = critic.check_wink(body)
+    assert len(hits) == 1 and hits[0]["severity"] == "minor"
+    assert "no one wants" in hits[0]["detail"]
+
+
+def test_wink_leaves_a_source_who_lives_in_the_world_alone():
+    body = ('"The strike produces zero decibels inside the chamber," Pillar said. '
+            '"The hammer hits hard, but the air stays still."')
+    assert critic.check_wink(body) == []
+
+
+def test_tricolon_catches_a_list_standing_in_for_an_escalation():
+    body = ("Citizens slept through two curfews, a ban on air pumps, and the sale "
+            "of the dome transport grid to a private mining syndicate.")
+    hits = critic.check_tricolon(body)
+    assert len(hits) == 1 and hits[0]["severity"] == "minor"
+
+
+def test_tricolon_leaves_a_two_item_list_alone():
+    assert critic.check_tricolon("Citizens slept through two curfews and a ban "
+                                 "on air pumps.") == []
+
+
+def test_neither_check_can_ever_bin_a_draft():
+    """Both are fitted to a thin archive - one of them to a single dispatch - so
+    they must stay out of hard_reject however they are tuned later."""
+    from common import load_settings
+    hard = load_settings()["quality"]["hard_reject"]
+    assert "wink" not in hard and "tricolon" not in hard
