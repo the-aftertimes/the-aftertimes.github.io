@@ -372,5 +372,16 @@
     "style": "discovery",
     "place_kind": "lunar",
     "engine": "expertise"
+  },
+  {
+    "run_date": "2026-09-01",
+    "year": 2461,
+    "era_bucket": 8,
+    "domain": "artificial intelligence rights",
+    "headline": "Boxer Becomes National Park",
+    "style": "sport",
+    "place_kind": "subsurface",
+    "engine": "bureaucratic",
+    "technique": "escalating_precision"
   }
 ]
