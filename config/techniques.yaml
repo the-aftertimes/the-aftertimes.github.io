@@ -1,0 +1,49 @@
+# Rotating COMIC TECHNIQUE - HOW the joke is built, as opposed to config/engines.yaml,
+# which is WHAT it is about. One is chosen per dispatch with light anti-repeat, and it
+# reaches the WRITE stage, not ideate: a premise does not have a structure, a piece does.
+#
+# Why this exists, 31/08/2026. Charlie: the dispatches "are never that funny". The
+# engines were doing their job - that day's piece had a perfectly good premise - and it
+# failed entirely on structure: the opening sentence contained the whole joke, five
+# later sentences restated it, a quoted source explained it to the reader, the
+# escalation was three unrelated items in a row, and the last line swerved into a
+# non-sequitur. Nothing in the config had an opinion about any of that.
+#
+# EVERY EXAMPLE IS ORIGINAL, written for this repo. The techniques are abstracted from
+# published satire, but that copy is not reproduced here: this pool is fed to a model to
+# imitate, and funny_block already records a model lifting an example verbatim. Name the
+# technique, show it in our own words.
+#
+# When adding one, say where the technique is best seen so a future session can go and
+# look, and keep the example SHORT - a long one gets copied.
+techniques:
+  - key: headline_carries_it
+    source: The Onion
+    guidance: >-
+      The HEADLINE is the joke and the body refuses to add to it. Write the body as
+      plain elaboration that never acknowledges anything is funny, never nudges the
+      reader, and never restates the premise in different words. If the opening
+      sentence already contains the joke, the piece has nowhere to go.
+    example: >-
+      Headline: "Ministry Loses Ocean, Blames Filing System". The body then reports,
+      without comment, that the transfer form had one field for volume.
+
+  - key: unasked_statistic
+    source: The Onion
+    guidance: >-
+      A precise number quantifying something that should never be quantified, reported
+      as an ordinary finding. The comedy is that somebody measured it and nobody
+      thought that strange. Give the figure a source and move on.
+    example: >-
+      The average citizen now apologises to a machine four times a day, up from three.
+
+  - key: commit_past_reason
+    source: Conan O'Brien
+    guidance: >-
+      Take the premise far past the point a sensible writer would stop, and keep the
+      reporting register absolutely level while you do it. The joke is the refusal to
+      abandon a stupid idea. Escalate by DEGREE - each beat worse than the last in the
+      same direction - never by listing three unrelated things.
+    example: >-
+      The queue is now in its fourth generation. Positions are inherited. Two families
+      have merged by marriage to consolidate their places.

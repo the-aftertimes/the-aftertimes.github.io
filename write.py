@@ -211,6 +211,30 @@ def funny_block(lines: list[dict], cap: int = 8) -> str:
         "NEVER reuse their words, names or subject matter - copy the TECHNIQUE.\n")
 
 
+def nl_join(*parts: str) -> str:
+    return chr(10).join(parts) + chr(10)
+
+
+def technique_block(tech: dict | None) -> str:
+    """HOW to build the piece, from config/techniques.yaml.
+
+    The EXAMPLE is carried as well as the guidance, because Charlie's own
+    codified lesson on this repo is that few-shot examples dominate
+    instructions - the paper collapsed into debt stories once because 8 of 12
+    seeds were legal ones, not because the prompt asked for them. Every example
+    in that file is original for exactly the reason funny_block records: a model
+    lifted one verbatim, so published satire may not go in a pool meant to be
+    imitated. It is still labelled do-not-reuse.
+    """
+    if not tech:
+        return ""
+    return nl_join(
+        "", "TODAY'S COMIC TECHNIQUE - build the piece this way:",
+        (tech.get("guidance") or "").strip(),
+        "The shape, in one of our own lines - copy the SHAPE, never the words: "
+        + (tech.get("example") or "").strip())
+
+
 def flat_block(lines: list[dict], cap: int = 6) -> str:
     """Counter-examples, from config/flat_lines.yaml.
 
@@ -245,11 +269,13 @@ def flat_block(lines: list[dict], cap: int = 6) -> str:
 def build_prompt(premise: str, dateline: dict, domain: str,
                  style_guidance: str, place_guidance: str = "",
                  avoid_block: str = "", funny_lines: list[dict] | None = None,
-                 flat_lines: list[dict] | None = None) -> str:
+                 flat_lines: list[dict] | None = None,
+                 technique: dict | None = None) -> str:
     place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
                   if place_guidance else "")
     funny_rule = funny_block(funny_lines or [])
     flat_rule = flat_block(flat_lines or [])
+    tech_rule = technique_block(technique)
     era_rule = _era_rule(int(dateline.get("years_from_now") or 0))
     avoid_extra = f"\n{avoid_block}\n" if avoid_block else ""
     return f"""You are a correspondent for The Aftertimes. Write a single news
@@ -492,7 +518,7 @@ Rules:
 - Give every named person a fresh, varied, culturally diverse name. Do NOT use the names "Vance", "Elena", "Rostova", "Marcus" or "Kovac" - invent new ones each time. Do not default the weekday to Tuesday; vary or omit the day.
 - Do not put the year in the dateline place; the date is shown separately.
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
-{avoid_extra}{funny_rule}{flat_rule}
+{avoid_extra}{tech_rule}{funny_rule}{flat_rule}
 Return JSON only:
 {{"headline": "...", "dateline_place": "...", "body": "...", "scene": "...",
   "domain": "{domain}", "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
@@ -530,10 +556,11 @@ def normalise(d: dict, dateline: dict, domain: str, premise: str) -> dict:
 def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str, place_guidance: str = "",
           avoid_block: str = "", funny_lines: list[dict] | None = None,
-          flat_lines: list[dict] | None = None) -> dict:
+          flat_lines: list[dict] | None = None,
+          technique: dict | None = None) -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance,
                           place_guidance, avoid_block, funny_lines,
-                          flat_lines)
+                          flat_lines, technique)
     g = settings["gemini"]
     pro = (g.get("write_model") or "").strip()
     d = None
