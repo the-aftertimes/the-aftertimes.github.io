@@ -426,3 +426,29 @@ def test_a_failed_run_does_not_flag_a_current_page_as_stale(tmp_path, monkeypatc
     monkeypatch.setattr(run_mod, "inject_stale_banner", _must_not_run)
     assert run_mod.main(["--force"]) == 0
     assert "leaving it alone" in capsys.readouterr().err
+
+
+def test_publication_date_is_stable_across_the_cron_ladder(monkeypatch):
+    """Every rung of the ladder must agree on which edition it is filing.
+
+    The ladder spans 15:13 to 19:13 UTC and GitHub has delivered it up to 2h41
+    late, so a run can land any time from 15:35 UTC to past midnight. Keyed on
+    the UTC date those runs disagree, and the straggler files a date that
+    silences the next day's entire ladder - which is what happened for the four
+    days to 31/08/2026. Keyed on Sydney they are all one calendar day.
+    """
+    from datetime import datetime, timedelta, timezone
+    from zoneinfo import ZoneInfo
+
+    syd = ZoneInfo("Australia/Sydney")
+    base = datetime(2026, 8, 31, 15, 35, tzinfo=timezone.utc)
+    # First rung on time, through the worst-case straggler nine hours later.
+    stamps = [base + timedelta(hours=h) for h in (0, 2, 4, 6.5, 9)]
+    assert len({s.astimezone(timezone.utc).date() for s in stamps}) == 2, \
+        "the window must straddle midnight UTC, or this proves nothing"
+
+    seen = set()
+    for s in stamps:
+        monkeypatch.setattr(run_mod, "tz_now", lambda _s, _t=s: _t.astimezone(syd))
+        seen.add(run_mod.publication_date())
+    assert seen == {"2026-09-01"}, seen

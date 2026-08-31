@@ -16,7 +16,7 @@ from datetime import date, datetime, timedelta, timezone
 
 from common import (load_common_words, load_settings, load_yaml,
                     locator_ceiling, read_json,
-                    rel, write_json)
+                    rel, tz_now, write_json)
 import archive as archive_mod
 import avoid
 import bible as bible_mod
@@ -296,7 +296,7 @@ def run_pipeline() -> dict:
     rng = random.Random()
 
     run_dt = datetime.now(timezone.utc)
-    run_date = run_dt.date().isoformat()
+    run_date = publication_date()
     today = date.today()
 
     ac = settings["dates"]["anti_cluster"]
@@ -465,6 +465,27 @@ def _load_dotenv() -> None:
             os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
 
 
+def publication_date() -> str:
+    """The edition's date, in the timezone the paper is READ in.
+
+    This was the UTC date until 31/08/2026, which coupled the edition key to a
+    boundary that falls in the middle of the cron ladder. The three crons run
+    19:13, 21:13 and 22:13 UTC; GitHub had been delivering them 22-31 min late,
+    so all three landed in one UTC day and already_filed did what it says. From
+    27/08 the lateness jumped to 2h02-2h41 (measured over four days), which put
+    the last rung past midnight UTC. It then filed TOMORROW's date, and the next
+    day's whole ladder saw that date already filed and no-opped - so the only
+    run that ever did any work was the last one, at ~00:35 UTC / 10:35 AEST,
+    hours after anyone had looked. A self-sustaining lock, and it held for four
+    days.
+
+    Sydney has no such boundary inside the ladder: 19:13 UTC through 00:35 UTC
+    is 05:13 to 10:35 AEST, one calendar day. Keying on it makes the guard hold
+    however late GitHub delivers.
+    """
+    return tz_now(load_settings()).date().isoformat()
+
+
 def already_filed(run_date: str) -> bool:
     """True if a dispatch has already been filed for this UTC date.
 
@@ -578,7 +599,7 @@ def main(argv: list[str] | None = None) -> int:
     print("=" * 70)
     print("THE AFTERTIMES - daily dispatch")
     print("=" * 70)
-    run_date = datetime.now(timezone.utc).date().isoformat()
+    run_date = publication_date()
     if already_filed(run_date) and "--force" not in argv:
         print(f"Dispatch for {run_date} is already filed.")
         # ...but "filed" is not the same as "complete". The picture can fail on

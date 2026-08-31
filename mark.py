@@ -1,7 +1,23 @@
-"""Record which trial sentences Charlie found funny, into config/funny_lines.yaml.
+"""Record which sentences Charlie found funny, into config/funny_lines.yaml.
 
-    python mark.py t002 1 2 3 6      # these sentence numbers landed
-    python mark.py --list            # show the pool
+    python mark.py --show 2026-08-31   # number the sentences of a published edition
+    python mark.py 2026-08-31 4 7      # these ones landed
+    python mark.py t002 1 2 3 6        # same, on a trial
+    python mark.py --list              # show the pool
+
+PUBLISHED EDITIONS ARE MARKABLE, added 31/08/2026, and the reason is the whole
+point of this file. On that date the pool held FOUR lines, all from one trial
+(t002), marked once on 10/08. config/exemplars.yaml held ONE premise, added by
+hand. Everything else the pipeline measures - critic.py's rhythm, length,
+plainness and five hard-reject rules - is mechanics, and mechanics only stop a
+dispatch being bad. So Charlie's verdict that the paper "is never that funny"
+was a description of a starved loop, not of a broken one: the taste channel
+existed and had been fed twice in three weeks.
+
+It had been fed twice because feeding it meant running a trial and reading
+numbered sentences in a terminal. He reads the published edition every morning
+anyway. Pointing the same marker at that is the difference between a habit and
+an errand.
 
 The pool is injected into the write prompt as few-shot evidence of what actually
 lands (see write.build_prompt). It is the ONLY taste signal in the project -
@@ -12,11 +28,13 @@ which is exactly how every dispatch ended up being about unpaid debts.
 """
 from __future__ import annotations
 
+import re
 import sys
 
 import yaml
 
 from common import read_json, rel
+from trial import split_sentences
 
 _PATH = "config/funny_lines.yaml"
 _CAP = 30
@@ -38,12 +56,38 @@ def save(lines: list[dict]) -> None:
                        default_flow_style=False, width=100)
 
 
-def add(slug: str, numbers: list[int], why: str = "") -> tuple[int, int]:
-    """Returns (added, skipped)."""
+#: A published edition is addressed by its date; a trial by its slug.
+_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def resolve(slug: str) -> tuple[list[str], str | None]:
+    """Sentences for `slug`, and the trial path to write a `funny` list back to.
+
+    A published edition has no such path - the dispatch record is the archive and
+    is not rewritten here - so the second element is None for one.
+    """
+    if _DATE.match(slug):
+        rec = read_json(f"data/dispatches/{slug}.json")
+        if not rec:
+            raise SystemExit(f"no edition for {slug!r} - see data/dispatches/")
+        body = (rec.get("dispatch") or {}).get("body") or ""
+        return split_sentences(body), None
     rec = read_json(f"data/trials/{slug}.json")
     if not rec:
         raise SystemExit(f"no trial {slug!r} - run `python trial.py --render` to list")
-    sents = rec.get("sentences") or []
+    return rec.get("sentences") or [], f"data/trials/{slug}.json"
+
+
+def show(slug: str) -> int:
+    sents, _ = resolve(slug)
+    for i, line in enumerate(sents, start=1):
+        print(f"{i:3d}  {line}")
+    return 0
+
+
+def add(slug: str, numbers: list[int], why: str = "") -> tuple[int, int]:
+    """Returns (added, skipped)."""
+    sents, trial_path = resolve(slug)
     pool = load()
     seen = {entry["line"] for entry in pool}
     added = skipped = 0
@@ -70,10 +114,11 @@ def add(slug: str, numbers: list[int], why: str = "") -> tuple[int, int]:
     if len(pool) > _CAP:
         pool = pool[-_CAP:]
     save(pool)
-    rec.setdefault("funny", [])
-    rec["funny"] = sorted(set(rec["funny"]) | set(numbers))
-    from common import write_json
-    write_json(f"data/trials/{slug}.json", rec)
+    if trial_path:
+        rec = read_json(trial_path) or {}
+        rec["funny"] = sorted(set(rec.get("funny") or []) | set(numbers))
+        from common import write_json
+        write_json(trial_path, rec)
     return added, skipped
 
 
@@ -85,9 +130,13 @@ def main(argv: list[str] | None = None) -> int:
         for e in pool:
             print(f"  [{e.get('source', '?')}] {e['line']}")
         return 0
+    if argv[0] == "--show":
+        if len(argv) < 2:
+            raise SystemExit("give an edition date or trial slug, e.g. mark.py --show 2026-08-31")
+        return show(argv[1])
     slug, nums = argv[0], [int(a) for a in argv[1:] if a.isdigit()]
     if not nums:
-        raise SystemExit("give at least one sentence number, e.g. mark.py t002 1 2 3")
+        raise SystemExit("give at least one sentence number, e.g. mark.py 2026-08-31 4 7")
     added, skipped = add(slug, nums)
     print(f"added {added}, skipped {skipped}; pool now {len(load())}")
     return 0

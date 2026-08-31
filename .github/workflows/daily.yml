@@ -23,14 +23,21 @@ on:
     # day at ~20:35 and ~22:40 for the six days before it without missing once,
     # and One Story failed on 27/08 too. The platform was broken; the slot was
     # fine. The earlier time is kept only as free margin.
-    - cron: "13 19 * * *"   # 19:13 UTC / 05:13 AEST - primary
-    - cron: "13 21 * * *"   # 21:13 UTC / 07:13 AEST - backup, lands 07:29-07:35 with
-                            # the 16-22 min of scheduler lateness this estate sees, so
-                            # a dropped primary is fixed before he opens the page.
-    - cron: "13 22 * * *"   # 22:13 UTC / 08:13 AEST - third line. Too late to save the
-                            # morning; kept because a dispatch is better late than
-                            # missing. All four sit in the SAME UTC day, which is what
-                            # makes the already_filed guard work.
+    #
+    # MOVED EARLIER 31/08/2026, and the "16-22 min of lateness" above is stale.
+    # Measured over the eight days to 26/08 the two crons landed 22-31 min late.
+    # Over the four days since they have landed 2h02-2h41 late, every single
+    # time. At that slippage the last rung of the old 19/21/22 ladder crossed
+    # midnight UTC, filed the NEXT day's date, and silenced that day's entire
+    # ladder - so the only run doing any work was the last one, at 10:35 AEST.
+    # run.publication_date() now keys the guard on the Sydney date, which has no
+    # boundary inside the ladder; this move is the second half, buying enough
+    # margin that the FIRST rung lands before he looks rather than the last.
+    - cron: "13 15 * * *"   # 15:13 UTC / 01:13 AEST - primary. Lands 15:35-17:55.
+    - cron: "13 17 * * *"   # 17:13 UTC / 03:13 AEST - backup.
+    - cron: "13 19 * * *"   # 19:13 UTC / 05:13 AEST - third line. Even at the 2h41
+                            # worst observed this lands 21:54 UTC / 07:54 AEST, ahead
+                            # of the 07:55 read. All three share a Sydney date.
   workflow_dispatch:
   # Fired by the heartbeat Worker (site-stats/heartbeat) at 20:30 UTC, from
   # OUTSIDE GitHub Actions. On 26/08/2026 GitHub's scheduler went down and took
