@@ -167,6 +167,12 @@
       "gloss": "A cluster of oceanic platform towers serving as a regional financial hub.",
       "kind": "term",
       "first_seen": "2026-08-29"
+    },
+    {
+      "term": "vacuum-damping joints",
+      "gloss": "Mechanical connectors sealed against air to eliminate sound vibration.",
+      "kind": "term",
+      "first_seen": "2026-08-31"
     }
   ]
 }

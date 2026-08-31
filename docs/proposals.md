@@ -8,8 +8,10 @@ change only when Charlie says so.
 
 ### Over-used lately
 
-- phrase: "is no longer" in 3 dispatches
+- name: "Chen" in 6 dispatches
 - name: "Kaelen Voss" in 3 dispatches
+- name: "Osei" in 3 dispatches
+- name: "Thorne" in 3 dispatches
 
 ### Suggested next step
 
