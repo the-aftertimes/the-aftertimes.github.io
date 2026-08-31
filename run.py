@@ -294,6 +294,7 @@ def run_pipeline() -> dict:
     styles = load_yaml("config/styles.yaml")["styles"]
     place_kinds = load_yaml("config/places.yaml")["place_kinds"]
     engines = load_yaml("config/engines.yaml")["engines"]
+    techniques = load_yaml("config/techniques.yaml")["techniques"]
     ledger = ledger_mod.load_ledger()
     bible = bible_mod.load_bible()
     rng = random.Random()
@@ -320,8 +321,13 @@ def run_pipeline() -> dict:
             and not (e["key"] == "bureaucratic" and rng.random() > 0.25)]
     engine = rng.choice(pool or [e for e in engines if e["key"] != "bureaucratic"]
                         or engines)
+    # HOW the piece is built, as opposed to what it is about. Reaches the WRITE
+    # stage, not ideate - a premise has no structure, a finished piece does.
+    recent_tech = {e.get("technique") for e in ledger[-ac["avoid_recent_days"]:]}
+    technique = rng.choice(
+        [t for t in techniques if t["key"] not in recent_tech] or techniques)
     print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / "
-          f"{domain} / {style['key']} / {place_kind['key']} / {engine['key']}")
+          f"{domain} / {style['key']} / {place_kind['key']} / {engine['key']} / {technique['key']}")
 
     lcfg = settings.get("learning", {"enabled": False})
     past = [read_json(f"data/dispatches/{os.path.basename(f)}")
@@ -356,6 +362,7 @@ def run_pipeline() -> dict:
     qcfg = settings["quality"]
     context = {"years_from_now": dateline["years_from_now"],
                "engine": engine["key"],
+               "technique": technique["key"],
                "common_words": load_common_words()}
 
     print(">>> SELECT")
@@ -371,7 +378,7 @@ def run_pipeline() -> dict:
                     premise, dateline, domain, settings,
                     style["guidance"], place_kind["guidance"],
                     avoid_block=avoid_block, funny_lines=funny_lines,
-                    flat_lines=flat_lines))
+                    flat_lines=flat_lines, technique=technique))
                 print(f"    {label}draft {i}: {out[-1]['headline'][:56]}")
             except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
                 print(f"    WARN {label}draft {i} failed: {exc}", file=sys.stderr)
@@ -489,7 +496,7 @@ def run_pipeline() -> dict:
     ledger_mod.save_ledger(ledger_mod.append_entry(
         ledger, run_date, dateline, domain, dispatch["headline"],
         settings["dates"]["anti_cluster"]["era_bucket_years"], style["key"],
-        place_kind["key"], engine["key"]))
+        place_kind["key"], engine["key"], technique["key"]))
     bible_mod.save_bible(bible_mod.merge_glossary(bible, dispatch["glossary"], run_date))
     print(f"    archived {run_date}; ledger={len(ledger)}; motifs={len(bible['motifs'])}")
 

@@ -21,7 +21,13 @@ Judge on which is FUNNIEST and most pointed. Specifically:
 - Does the headline land a joke rather than describe the premise?
 - Does the final line work as a real kicker?
 - Does a quoted character say something genuinely funny while treating an absurd
-  world as completely normal?
+  world as completely normal - or is a source explaining the joke to the reader?
+- Does the opening sentence already contain the whole joke, leaving the rest to
+  restate it in different words? A dispatch that announces its conceit and then
+  circles it has no turn in it. This is the fault no measurement catches: on
+  31/08/2026 the piece Charlie called unfunny had the LOWEST theme repetition and
+  the HIGHEST lexical variety in the whole archive, because it restates its idea
+  semantically rather than by repeating words. Only you can see it.
 
 Ignore polish, grammar and length - those are fixed separately. Pick on comedy
 and point alone. Do not be swayed by whichever is longest or most elaborate.
