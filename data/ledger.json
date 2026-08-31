@@ -362,5 +362,15 @@
     "style": "obituary",
     "place_kind": "marsform",
     "engine": "logistics"
+  },
+  {
+    "run_date": "2026-08-31",
+    "year": 2343,
+    "era_bucket": 6,
+    "domain": "governance and elections",
+    "headline": "Senate Mutes Gavel, Abolishes Buses",
+    "style": "discovery",
+    "place_kind": "lunar",
+    "engine": "expertise"
   }
 ]

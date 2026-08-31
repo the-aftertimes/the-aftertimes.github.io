@@ -1,0 +1,104 @@
+{
+  "run_date": "2026-08-31",
+  "run_time": "2026-08-31T00:36:19.841777+00:00",
+  "dispatch": {
+    "headline": "Senate Mutes Gavel, Abolishes Buses",
+    "body": "A three-year acoustics study confirmed Monday that Enceladus Senate gavel-smiths can now strike down public rights in total silence.\n\nUsing rubber padding and vacuum-damping joints, smiths stopped the wooden bench from ringing inside the low-gravity dome.\n\nAcoustics researcher Dr Hema Pillar explained the breakthrough at a press briefing.\n\n\"The strike produces zero decibels inside the chamber,\" Pillar said. \"The hammer hits hard, but the air stays still. You can abolish an entire transit grid and the sleeping public just assumes they had a bad dream.\"\n\nGuildmaster Silas Rae defended the silent tools, arguing that noisy legislation is bad for public health.\n\n\"The public expects rest,\" Rae told reporters. \"No one wants to wake up at three in the morning just to hear their water ration cut in half. They would much rather find out when they turn on the tap.\"\n\nAcoustic logs show sixty decrees passed last week while the city slept. Citizens slept through two curfews, a ban on air pumps, and the sale of the dome transport grid to a private mining syndicate.\n\nA civic watchdog group petitioned for a bright red lamp to flash whenever a veto lands.\n\nThe Senate rejected the lamp without a sound, then quietly voted to reclassify the watchdog group as municipal lawn care.",
+    "scene": "In a dim senate chamber beneath a transparent dome, Silas Rae brings a heavy mallet down onto a dark bench without causing a single ripple in a nearby glass of water.",
+    "dateline": {
+      "place": "South Crater District",
+      "year": 2343,
+      "month": 7,
+      "day": 25,
+      "years_from_now": 317
+    },
+    "domain": "politics",
+    "glossary": [
+      {
+        "term": "vacuum-damping joints",
+        "gloss": "Mechanical connectors sealed against air to eliminate sound vibration."
+      }
+    ],
+    "premise": "A report from the Enceladus South-Dome Senate demonstrates that master micro-gravity gavel-smiths can now achieve a completely silent veto-strike through vacuum-damping techniques, a craft defended fiercely by chief guildmaster Silas Rae who unconcernedly noted it allows emergency decrees to pass without disturbing sleeping citizens.",
+    "brief": {
+      "subject": "Guildmaster Silas Rae, a grey-haired man wearing a dark grey high-collared synthetic tunic, matching dark trousers, and black composite work shoes, holding a heavy wooden mallet",
+      "action": "bringing the head of the mallet down onto the surface of a dark bench next to a full glass of water",
+      "setting": "a tiered senate chamber with rows of dark curved desks under the structural grid of a transparent dome overhead",
+      "light": "dim ambient daylight filtering through the dome above combined with soft downlight from a low desk fixture",
+      "materials": "dark stained wood, clear glass, grey woven synthetic fabric, matte black metal",
+      "anomaly": "a slight scuff mark along the front edge of the bench near the floor"
+    },
+    "image": "assets/img/2026-08-31.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-31T00:36:19.841777+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 39,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      0.75,
+      1.0
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tax",
+          "severity": "major"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Only Flying Ballots Count As Votes",
+        "body": "Low-gravity paper ballots can now float ten metres directly into voting urns without human contact, according to a report published on Friday by the Tycho Electoral Institute. Master ballot-tensioners bend each slip of pulp by hand, matching its curve to the dome's air vents so it glides across the hall when released.\n\nLead technician Dr. Mara Lin praised the breakthrough as a triumph for civic dignity.\n\n\"When a paper enters the slot untouched, the voter feels a quiet elevation,\" Lin said. \"Counting the mark inside is almost beside the point.\"\n\nThe study confirmed that tensioned paper loses lift if the voter presses too hard with a pen. Deep marks alter the surface drag, causing the slip to stall mid-flight and drop onto the floor before reaching the urn.\n\nDuring last week's district council election, six thousand votes for the reform party stalled three metres short of the urn because their platform required voters to fill in four separate boxes. The winning candidate was chosen after his single-box ballot glided cleanly through the slot on a light draught.\n\nElection officers ignored the fallen slips.\n\n\"A paper on the floor has failed its flight,\" Lin said. \"You cannot count a tumble.\"\n\nOfficials confirmed next year's poll will use wider halls to allow longer glides.",
+        "premise": "A study by the Tycho Dome Electoral Institute confirms that master ballot-tensioners can now hand-calibrate low-gravity paper ballots so precisely they float directly into voting urns without human touch, though lead technician Dr. Mara Lin proudly noted this renders any actual vote count secondary to the aerodynamic dignity of the paper.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Debate Sound System Silences Health Pledges",
+        "body": "Acousticians at the Galileo Basin debate dome have adjusted chamber mist levels to make political promises sound perfectly resonant, though candidates can no longer physically speak about healthcare.\n\nThe research team, led by Dr. Soraya Bello, spent four months tuning the gas mixture inside the three-thousand-seat campaign ring. By adding dense salt vapour at knee height, her team smoothed out the thin air pockets that usually make local leaders sound unsure when promising lower tax rates or new roads.\n\nStandard vocal resonance rose immediately.\n\n\"The room now gives every speaker the deep tone of a founder,\" Dr. Bello said. \"When someone says the word 'heritage', the whole lower floor hums.\"\n\nTesting revealed one minor gap. The dampening foam lining the ceiling absorbs the exact sound pitch needed to pronounce phrases about hospital beds and clinic funding. When candidates attempt to speak about elder care, their lips move, but the air produces only a faint wet hiss.\n\nThe Election Board welcomed the research. Board director Tariq Said confirmed that debate schedules for the upcoming council race will proceed without changes to the sound setup.\n\n\"Candidates simply need to choose different words,\" Said said. \"If a speaker wishes to mention public health, they can talk about pride or duty instead.\"\n\nThe board has already shortened the broadcast by forty minutes to account for the lost pitch. Candidates are now advised to nod warmly whenever they reach the medical section of their platform.",
+        "premise": "Ganymede Crater researchers announced a breakthrough in acoustic dome-debate tuning, where master voice-dampeners adjust atmospheric humidity to ensure candidate promises sound perfectly resonant, though lead acoustician Dr. Aris Vance admitted the process permanently removes vocal frequencies associated with healthcare pledges.",
+        "score": 0.75,
+        "rejected": true
+      },
+      {
+        "headline": "Senate Perfects Silent Gavel",
+        "body": "A three-year acoustics study from the Enceladus Senate confirmed Monday that master gavel-smiths can now strike a veto in total silence.\n\nUsing dense rubber layers and vacuum-damping joints, smiths have stopped the wooden bench from ringing inside the low-gravity dome.\n\nAcoustics researcher Dr. Hema Pillar explained the finding at a press briefing in the south crater district.\n\n\"The strike produces zero decibels inside the main chamber,\" Pillar said. \"The hammer hits hard, but the air stays completely still.\"\n\nChief guildmaster Silas Rae defended the silent hammers. Rae noted that silent strikes allow emergency decrees to pass at night without waking sleeping citizens in the surrounding residential rings.\n\nThe Senate used the new tools during four midnight sessions this month.\n\nNobody heard the bench hit.\n\nPoliticians sitting in the rear rows did not notice that a ban on air pumps had failed.\n\nCitizens slept through two curfews, a change to the water ration, and the end of the dome transport grid.\n\n\"The public expects rest,\" Rae said.\n\n\"A loud bench only causes worry.\"\n\nAcoustic logs show sixty decrees passed last week while the city slept.\n\nA civic group asked for a red light to flash when a veto lands.\n\nThe Senate rejected the light without a sound.",
+        "premise": "A report from the Enceladus South-Dome Senate demonstrates that master micro-gravity gavel-smiths can now achieve a completely silent veto-strike through vacuum-damping techniques, a craft defended fiercely by chief guildmaster Silas Rae who unconcernedly noted it allows emergency decrees to pass without disturbing sleeping citizens.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "It sharply satirises sneaky, anti-transparent governance and ends on a perfect, quiet kicker of a punchline.",
+    "judge_pick": 1,
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original draft described the technical premise without landing a proper joke.\nThe ending restated the situation instead of delivering a sharp recontextualising kicker.",
+    "revise_judge_reason": "Draft 2 features far sharper, funnier dialogue and a much stronger kicker.",
+    "prose": {
+      "words": 211,
+      "sentences": 14,
+      "mean_sentence": 15.1,
+      "longest": 23,
+      "short_sentences": 0,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.4
+    }
+  }
+}
