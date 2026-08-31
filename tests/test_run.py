@@ -47,7 +47,14 @@ def test_main_skips_when_the_day_is_already_filed(tmp_path, monkeypatch, capsys)
     """The backup cron must NEVER republish over an edition already emailed."""
     monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
     monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
-    today = run_mod.datetime.now(run_mod.timezone.utc).date().isoformat()
+    # The PUBLICATION date, not the UTC one. publication_date() moved to Sydney
+    # on 31/08/2026 to get the edition key off a boundary that falls in the
+    # middle of the cron ladder; these two tests kept stubbing the UTC date, so
+    # they failed for the ten hours a day the two disagree - and the daily
+    # workflow gates on "Tests must pass before anything is generated", so the
+    # paper stopped publishing every afternoon. Green for part of a day is the
+    # worst kind of red: it looks like flakiness rather than a real fault.
+    today = run_mod.publication_date()
     _stub_dispatch(tmp_path, today)
 
     def _boom():
@@ -61,7 +68,14 @@ def test_main_skips_when_the_day_is_already_filed(tmp_path, monkeypatch, capsys)
 def test_main_force_regenerates_an_already_filed_day(tmp_path, monkeypatch):
     monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
     monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
-    today = run_mod.datetime.now(run_mod.timezone.utc).date().isoformat()
+    # The PUBLICATION date, not the UTC one. publication_date() moved to Sydney
+    # on 31/08/2026 to get the edition key off a boundary that falls in the
+    # middle of the cron ladder; these two tests kept stubbing the UTC date, so
+    # they failed for the ten hours a day the two disagree - and the daily
+    # workflow gates on "Tests must pass before anything is generated", so the
+    # paper stopped publishing every afternoon. Green for part of a day is the
+    # worst kind of red: it looks like flakiness rather than a real fault.
+    today = run_mod.publication_date()
     _stub_dispatch(tmp_path, today)
     calls = []
     monkeypatch.setattr(run_mod, "run_pipeline", lambda: calls.append(1))
@@ -452,3 +466,47 @@ def test_publication_date_is_stable_across_the_cron_ladder(monkeypatch):
         monkeypatch.setattr(run_mod, "tz_now", lambda _s, _t=s: _t.astimezone(syd))
         seen.add(run_mod.publication_date())
     assert seen == {"2026-09-01"}, seen
+
+
+def test_the_already_filed_lock_holds_when_utc_and_sydney_disagree(tmp_path, monkeypatch, capsys):
+    """The seam, pinned. 31/08/2026 moved publication_date() from UTC to Sydney -
+    a correct fix, because the UTC boundary fell in the middle of the cron ladder
+    and produced a self-sustaining lock that held for four days.
+
+    But two tests kept stubbing the UTC date, so they only failed during the ten
+    hours a day the two calendars disagree. The daily workflow gates on "Tests
+    must pass before anything is generated", so for those ten hours the paper
+    simply stopped publishing - and it read as flakiness rather than a fault,
+    because the same suite went green again overnight.
+
+    A test that is green for part of a day is the worst kind of red. This one
+    freezes the clock at 22:00 UTC, when Sydney is already tomorrow, so the
+    divergence is always exercised rather than depending on when CI happens to
+    run."""
+    import datetime as _dt
+
+    class _FixedDateTime(_dt.datetime):
+        @classmethod
+        def now(cls, tz=None):
+            # 22:00 UTC on the 31st is 08:00 on the 1st in Sydney.
+            base = _dt.datetime(2026, 8, 31, 22, 0, tzinfo=_dt.timezone.utc)
+            return base.astimezone(tz) if tz else base
+
+    monkeypatch.setattr(run_mod, "datetime", _FixedDateTime)
+    monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
+    monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
+
+    pub = run_mod.publication_date()
+    assert pub == "2026-09-01", (
+        f"publication_date() returned {pub} at 22:00 UTC - the edition key must "
+        f"follow the timezone the paper is READ in, or the ladder straddles a "
+        f"boundary again")
+
+    _stub_dispatch(tmp_path, pub)
+
+    def _boom():
+        raise AssertionError("run_pipeline must not be called on an already-filed day")
+
+    monkeypatch.setattr(run_mod, "run_pipeline", _boom)
+    assert run_mod.main([]) == 0
+    assert "already filed" in capsys.readouterr().out
