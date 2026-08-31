@@ -2,8 +2,16 @@
 
     python mark.py --show 2026-08-31   # number the sentences of a published edition
     python mark.py 2026-08-31 4 7      # these ones landed
+    python mark.py --flat 2026-08-31 6 9 --why "the character is winking"
     python mark.py t002 1 2 3 6        # same, on a trial
-    python mark.py --list              # show the pool
+    python mark.py --list              # show both pools
+
+A NEGATIVE POOL TOO, from 31/08/2026. Suppressing a habit takes a counter-example
+far more reliably than another good one does: the write prompt already tells the
+model that nobody in the story knows it is funny, and the 31/08 dispatch had a
+Guildmaster narrating the joke four times regardless. An instruction it can talk
+itself out of becomes much harder to ignore next to the exact line it must not
+write again.
 
 PUBLISHED EDITIONS ARE MARKABLE, added 31/08/2026, and the reason is the whole
 point of this file. On that date the pool held FOUR lines, all from one trial
@@ -37,21 +45,29 @@ from common import read_json, rel
 from trial import split_sentences
 
 _PATH = "config/funny_lines.yaml"
+_FLAT_PATH = "config/flat_lines.yaml"
 _CAP = 30
+#: Far smaller than the positive cap. A long list of bad writing in the prompt
+#: is a long list of bad writing in the prompt, and the funny_block docstring
+#: already records a model lifting an example verbatim.
+_FLAT_CAP = 8
 # Sentences of setup carried with each marked line, so the pool preserves the
 # sequence the comedy actually lives in.
 _CONTEXT = 2
 
 
-def load() -> list[dict]:
-    with open(rel(_PATH), encoding="utf-8") as fh:
-        return (yaml.safe_load(fh) or {}).get("lines") or []
+def load(path: str = _PATH) -> list[dict]:
+    try:
+        with open(rel(path), encoding="utf-8") as fh:
+            return (yaml.safe_load(fh) or {}).get("lines") or []
+    except FileNotFoundError:
+        return []
 
 
-def save(lines: list[dict]) -> None:
+def save(lines: list[dict], path: str = _PATH) -> None:
     """Rewrites the pool. Note this drops the file's hand-written header comment,
     so keep the guidance for future sessions in mark.py and write.py, not there."""
-    with open(rel(_PATH), "w", encoding="utf-8") as fh:
+    with open(rel(path), "w", encoding="utf-8") as fh:
         yaml.safe_dump({"lines": lines}, fh, allow_unicode=True, sort_keys=False,
                        default_flow_style=False, width=100)
 
@@ -85,10 +101,12 @@ def show(slug: str) -> int:
     return 0
 
 
-def add(slug: str, numbers: list[int], why: str = "") -> tuple[int, int]:
-    """Returns (added, skipped)."""
+def add(slug: str, numbers: list[int], why: str = "",
+        flat: bool = False) -> tuple[int, int]:
+    """Returns (added, skipped). `flat` writes the NEGATIVE pool instead."""
+    path, cap = (_FLAT_PATH, _FLAT_CAP) if flat else (_PATH, _CAP)
     sents, trial_path = resolve(slug)
-    pool = load()
+    pool = load(path)
     seen = {entry["line"] for entry in pool}
     added = skipped = 0
     for n in numbers:
@@ -111,10 +129,10 @@ def add(slug: str, numbers: list[int], why: str = "") -> tuple[int, int]:
         seen.add(line)
         added += 1
     # Keep the freshest, so the pool tracks current taste rather than ossifying.
-    if len(pool) > _CAP:
-        pool = pool[-_CAP:]
-    save(pool)
-    if trial_path:
+    if len(pool) > cap:
+        pool = pool[-cap:]
+    save(pool, path)
+    if trial_path and not flat:
         rec = read_json(trial_path) or {}
         rec["funny"] = sorted(set(rec.get("funny") or []) | set(numbers))
         from common import write_json
@@ -124,21 +142,33 @@ def add(slug: str, numbers: list[int], why: str = "") -> tuple[int, int]:
 
 def main(argv: list[str] | None = None) -> int:
     argv = sys.argv[1:] if argv is None else argv
-    pool = load()
     if not argv or "--list" in argv:
-        print(f"{len(pool)} line(s) in the pool:")
-        for e in pool:
-            print(f"  [{e.get('source', '?')}] {e['line']}")
+        for label, path in (("landed", _PATH), ("fell flat", _FLAT_PATH)):
+            pool = load(path)
+            print(f"{len(pool)} line(s) that {label}:")
+            for e in pool:
+                note = f"  - {e['why']}" if e.get("why") else ""
+                print(f"  [{e.get('source', '?')}] {e['line']}{note}")
         return 0
-    if argv[0] == "--show":
+    why = ""
+    if "--why" in argv:
+        i = argv.index("--why")
+        why = argv[i + 1] if len(argv) > i + 1 else ""
+        argv = argv[:i] + argv[i + 2:]
+    flat = argv and argv[0] == "--flat"
+    if flat:
+        argv = argv[1:]
+    if argv and argv[0] == "--show":
         if len(argv) < 2:
             raise SystemExit("give an edition date or trial slug, e.g. mark.py --show 2026-08-31")
         return show(argv[1])
     slug, nums = argv[0], [int(a) for a in argv[1:] if a.isdigit()]
     if not nums:
         raise SystemExit("give at least one sentence number, e.g. mark.py 2026-08-31 4 7")
-    added, skipped = add(slug, nums)
-    print(f"added {added}, skipped {skipped}; pool now {len(load())}")
+    added, skipped = add(slug, nums, why, flat=flat)
+    path = _FLAT_PATH if flat else _PATH
+    which = "fell-flat" if flat else "landed"
+    print(f"added {added}, skipped {skipped}; {which} pool now {len(load(path))}")
     return 0
 
 

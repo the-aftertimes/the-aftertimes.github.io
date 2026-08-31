@@ -211,12 +211,45 @@ def funny_block(lines: list[dict], cap: int = 8) -> str:
         "NEVER reuse their words, names or subject matter - copy the TECHNIQUE.\n")
 
 
+def flat_block(lines: list[dict], cap: int = 6) -> str:
+    """Counter-examples, from config/flat_lines.yaml.
+
+    Deliberately shorter and blunter than funny_block. An instruction can be
+    talked out of; the exact sentence you must not write again cannot. The write
+    prompt already said nobody in the story knows it is funny, and the 31/08/2026
+    dispatch had a source narrating the joke four times anyway.
+
+    Framed harder than the positive pool for the reason recorded in funny_block:
+    a model lifted an example verbatim once already, and lifting from THIS pool
+    would be actively harmful. The reason is shown with each line so the lesson is
+    the technique, never the subject.
+    """
+    if not lines:
+        return ""
+    rows = []
+    for e in lines[-cap:]:
+        why = e.get("why") or "did not land"
+        line = e["line"].strip().strip(chr(34)).strip()
+        rows.append(f'  "{line}" - {why}')
+    body = chr(10).join(rows)
+    nl = chr(10)
+    return (
+        nl + "LINES A READER MARKED AS FALLING FLAT, with the fault named. These are" + nl
+        + "NOT material and NOT subject matter - they are the specific habits to" + nl
+        + "write around. Do not reuse their words, their situations or their shape:" + nl
+        + body + nl
+        + "The common fault: each one steps outside the report to help the reader" + nl
+        + "get the joke. Report the fact and stop." + nl)
+
+
 def build_prompt(premise: str, dateline: dict, domain: str,
                  style_guidance: str, place_guidance: str = "",
-                 avoid_block: str = "", funny_lines: list[dict] | None = None) -> str:
+                 avoid_block: str = "", funny_lines: list[dict] | None = None,
+                 flat_lines: list[dict] | None = None) -> str:
     place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
                   if place_guidance else "")
     funny_rule = funny_block(funny_lines or [])
+    flat_rule = flat_block(flat_lines or [])
     era_rule = _era_rule(int(dateline.get("years_from_now") or 0))
     avoid_extra = f"\n{avoid_block}\n" if avoid_block else ""
     return f"""You are a correspondent for The Aftertimes. Write a single news
@@ -459,7 +492,7 @@ Rules:
 - Give every named person a fresh, varied, culturally diverse name. Do NOT use the names "Vance", "Elena", "Rostova", "Marcus" or "Kovac" - invent new ones each time. Do not default the weekday to Tuesday; vary or omit the day.
 - Do not put the year in the dateline place; the date is shown separately.
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
-{avoid_extra}{funny_rule}
+{avoid_extra}{funny_rule}{flat_rule}
 Return JSON only:
 {{"headline": "...", "dateline_place": "...", "body": "...", "scene": "...",
   "domain": "{domain}", "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
@@ -496,9 +529,11 @@ def normalise(d: dict, dateline: dict, domain: str, premise: str) -> dict:
 
 def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str, place_guidance: str = "",
-          avoid_block: str = "", funny_lines: list[dict] | None = None) -> dict:
+          avoid_block: str = "", funny_lines: list[dict] | None = None,
+          flat_lines: list[dict] | None = None) -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance,
-                          place_guidance, avoid_block, funny_lines)
+                          place_guidance, avoid_block, funny_lines,
+                          flat_lines)
     g = settings["gemini"]
     pro = (g.get("write_model") or "").strip()
     d = None

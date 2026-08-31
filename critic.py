@@ -234,6 +234,47 @@ def check_stated_joke(body: str) -> list[dict]:
                "reporting facts", "minor")]
 
 
+#: A quoted source second-guessing the reader's reaction instead of treating the
+#: absurd world as ordinary. The write prompt is explicit that nobody in the story
+#: knows it is funny, and on 31/08/2026 Charlie said the dispatch was not funny;
+#: its Guildmaster was doing exactly this, four times over.
+#:
+#: MEASURED BEFORE IT WAS WRITTEN, because a plausible rule that fires on nothing
+#: is worse than none. Over the 33 dispatches in the archive this matches ONE - the
+#: 31/08 piece - and catches all four of its constructions. That also means it is
+#: fitted to a single example, so it is a MINOR, like _STATED_JOKE: it nudges
+#: revise.py and can never bin a draft. Widen it only against the archive.
+_WINK = re.compile(
+    r"\b(no ?one wants|nobody wants|would much rather|would rather not|"
+    r"the public expects|people expect|let's be honest|as everyone knows|"
+    r"which is (?:exactly )?the point|that's the (?:whole )?point)\b", re.I)
+
+#: Three items in a comma list. A list is not an escalation - each beat should be
+#: worse than the last in the same direction, and a tricolon lets a draft fake the
+#: build with three unrelated nouns. 6 of 33 archived dispatches contain one, so it
+#: is rare enough to be signal rather than noise, and minor for the same reason as
+#: _WINK.
+_TRICOLON = re.compile(
+    r"\b[\w'-]+(?:\s+[\w'-]+){0,4},\s+[\w'-]+(?:\s+[\w'-]+){0,4},\s+(?:and|or)\s+", re.I)
+
+
+def check_wink(body: str) -> list[dict]:
+    """Nobody in the story is allowed to know it is funny."""
+    hits = sorted({m.group(0).lower() for m in _WINK.finditer(body or "")})
+    if not hits:
+        return []
+    return [_v("wink", "a source is commenting on the joke rather than living in "
+                       "it: " + ", ".join(repr(h) for h in hits), "minor")]
+
+
+def check_tricolon(body: str) -> list[dict]:
+    m = _TRICOLON.search(body or "")
+    if not m:
+        return []
+    return [_v("tricolon", "three items in a comma list stand in for an "
+                           f"escalation: {m.group(0).strip()!r}", "minor")]
+
+
 _US_WORDS = re.compile(
     r"\b(" + "|".join(sorted(_AU_SPELLING, key=len, reverse=True)) + r")\b", re.I)
 
@@ -301,6 +342,8 @@ def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     violations += check_register(body, context.get("engine", ""))
     violations += check_props(text, context.get("years_from_now", 0))
     violations += check_stated_joke(body)
+    violations += check_wink(body)
+    violations += check_tricolon(body)
     violations += check_plainness(body, context.get("common_words"), cfg)
     violations += check_residue(text)
     weights = cfg["weights"]

@@ -26,11 +26,25 @@ Judge on which is FUNNIEST and most pointed. Specifically:
 Ignore polish, grammar and length - those are fixed separately. Pick on comedy
 and point alone. Do not be swayed by whichever is longest or most elaborate.
 {joined}
-Return JSON only: {{"pick": <the draft number>, "reason": "<one short line>"}}"""
+Also rate the one you picked out of 10 for how funny it actually is, judged
+against a good satirical newspaper and NOT against the other drafts here. A pool
+of three weak dispatches still has a best one; say so honestly rather than
+grading on the curve. 5 means it would raise a half-smile. 8 means you would send
+it to someone.
+
+Return JSON only: {{"pick": <the draft number>, "score": <1-10>,
+"reason": "<one short line>"}}"""
 
 
 def judge(drafts: list[dict], settings: dict) -> dict:
-    """Return {"pick": zero-based index, "reason": str}."""
+    """Return {"pick": zero-based index, "score": float|None, "reason": str}.
+
+    The score is what lets the caller decide the whole pool is not good enough.
+    Without it the judge can only ever return the funniest of what it was given,
+    which on a bad night is still a bad dispatch - the fault Charlie named on
+    31/08/2026. A missing or unparseable score is None, never a default number:
+    inventing one would let a silent API change quietly disable the floor.
+    """
     raw = gemini.generate(build_prompt(drafts), settings,
                           settings["gemini"]["temperature_write"])
     data = gemini.extract_json(raw)
@@ -43,4 +57,11 @@ def judge(drafts: list[dict], settings: dict) -> dict:
     if not 1 <= pick <= len(drafts):
         raise gemini.GeminiError(
             f"judge pick {pick} out of range for {len(drafts)} drafts")
-    return {"pick": pick - 1, "reason": str(data.get("reason", "")).strip()}
+    try:
+        score = float(data.get("score"))
+    except (TypeError, ValueError):
+        score = None
+    if score is not None and not 0 <= score <= 10:
+        score = None
+    return {"pick": pick - 1, "score": score,
+            "reason": str(data.get("reason", "")).strip()}

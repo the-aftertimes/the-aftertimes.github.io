@@ -85,8 +85,17 @@ image:
 # tuning never means editing code. `judge` and `revise` are independently
 # switchable so either half can be turned off if it proves unhelpful.
 quality:
-  n_drafts: 3
+  # 4, not 3, from 31/08/2026. Text is not the scarce tier (Flash is free-tier and
+  # the run makes ~8 calls; the metered one is the Cloudflare image quota), so one
+  # more draft a day is close to free and widens what the judge gets to choose from.
+  n_drafts: 4
   judge: true
+  # Score under which the whole pool is treated as too weak and ONE more set of
+  # premises is written. PROVISIONAL: no judge score has ever been recorded, so
+  # this is a bound picked to fire rarely, not a measured threshold. Every
+  # dispatch record now carries judge_score - re-derive this from that
+  # distribution after a fortnight, the way the plainness bands were. 0 disables.
+  judge_floor: 5
   revise: true
   hard_reject: [structure, machine_phrases, legal_register, dash_residue, us_spelling]
   weights:
