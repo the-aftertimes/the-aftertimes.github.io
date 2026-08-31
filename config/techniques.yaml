@@ -47,3 +47,92 @@ techniques:
     example: >-
       The queue is now in its fourth generation. Positions are inherited. Two families
       have merged by marriage to consolidate their places.
+
+  # Added 31/08/2026 from a list of 24 sources Charlie went through, picking the
+  # ones he actually finds funny. The Onion and Conan entries above came from the
+  # same pass. Examples are ours, as above and for the same reason.
+  - key: local_granularity
+    source: The Betoota Advocate
+    guidance: >-
+      Report an enormous event through hyper-local detail - a named district, a named
+      establishment, a named brand, one person with a job title. The correspondent's
+      world is small and the story is huge, and nobody adjusts for that. The
+      specificity IS the joke, so never signal it.
+    example: >-
+      The evacuation order reached the Ninth Terrace at four, midway through the
+      Tuesday meat raffle. The raffle was completed.
+
+  - key: stated_rule_reductio
+    source: The Shovel
+    guidance: >-
+      Take a principle somebody in the story has stated out loud and apply it
+      consistently until it collapses. One idea, no commentary, no second thread -
+      the piece exists to follow a stated rule to the place it inevitably goes.
+      Arrive there quickly and stop rather than decorating it.
+    example: >-
+      Having ruled that breathable air is a service rather than a right, the board
+      billed the ward for the previous forty years of it.
+
+  - key: puncture_the_pompous
+    source: The Chaser
+    guidance: >-
+      Set a self-important institution against a trivial administrative fact and let
+      the trivia win. The target has to be recognisable - self-regard, pomposity, an
+      organisation's opinion of itself - and the collapse is reported deadpan. Never
+      gloat and never let the paper enjoy it.
+    example: >-
+      The Directorate's thousand-year charter was declared void because the founding
+      seal had been applied slightly off-centre.
+
+  - key: confident_aside
+    source: Douglas Adams
+    guidance: >-
+      Handle something cosmic with total administrative calm, then drop one confident
+      aside of false precision - a figure, a comparison, a piece of history nobody
+      asked for - stated as settled fact. The digression must be delivered with more
+      certainty than the main claim.
+    example: >-
+      The star was moved eleven metres, which is not far by the standards of stars
+      and was, at the time, considered showing off.
+
+  - key: heard_the_words
+    source: Mitch Hedberg
+    guidance: >-
+      Take one phrase in the story completely literally and follow it in a single
+      short sentence, with no wordplay and no acknowledgement. This is a texture
+      inside the report rather than its structure - one flat line that has heard the
+      words and not the meaning.
+    example: >-
+      Residents were told to shelter in place. Several are still in the place, which
+      was a bus.
+
+  - key: escalating_precision
+    source: John Mulaney
+    guidance: >-
+      Escalate with exact nouns and numbers rather than adjectives. Each new detail
+      is more specific than the last, and the specificity is what builds it. Never
+      reach for a bigger word - reach for a smaller, more exact thing.
+    example: >-
+      They sent one man. He had a clipboard, a folding stool, and a thermos of soup
+      he did not open for four days.
+
+  - key: answers_the_question
+    source: Flight of the Conchords
+    guidance: >-
+      A quoted source answers exactly what was asked, in a completely straight scene,
+      without noticing what the question was for. No irony, no awareness, no wink.
+      The comedy is the gap between the stakes and the flatness of the reply.
+    example: >-
+      Asked whether the dome would hold, the engineer said it had held so far, and
+      that this was the only information anybody had.
+
+  - key: sincere_futility
+    source: Utopia (Working Dog)
+    guidance: >-
+      An institution works extremely hard and achieves nothing, and everyone involved
+      is competent and sincere. The comedy is EFFORT wasted, not rules misapplied -
+      keep it away from permits, rulings and paperwork, which is the register this
+      paper already over-uses. Show the labour, never the regulation.
+    example: >-
+      The relocation committee has met every week for nine years. It has moved the
+      depot four metres, and expects to finish within the century.
