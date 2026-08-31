@@ -501,9 +501,10 @@ def already_filed(run_date: str) -> bool:
 
 
 #: A dispatch filed within this many hours means the run now starting is a LATE
-#: BACKUP for that edition, not a new day's. The shortest real gap between two
-#: editions is the 22:13 cron to the next day's 19:13, about 21 hours, so 12 is
-#: comfortably below anything legitimate.
+#: BACKUP for that edition, not a new day's. On the ladder as it stands (15:13,
+#: 17:13, 19:13 UTC) the shortest real gap between two editions is the last rung
+#: to the next day's first, 20 hours, so 12 is comfortably below anything
+#: legitimate. Re-check this number if the crons move again.
 _RECENT_FILE_HOURS = 12
 
 
