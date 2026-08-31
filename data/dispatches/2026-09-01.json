@@ -1,0 +1,119 @@
+{
+  "run_date": "2026-09-01",
+  "run_time": "2026-08-31T22:00:11.737048+00:00",
+  "dispatch": {
+    "headline": "Boxer Becomes National Park",
+    "body": "Heavyweight contender Malik Suli lost the Ceres Boxing Title on Friday when his opponent successfully registered mid-bout as a heritage site.\n\nSuli had knocked down the automated mining machine Iron-7 twice in round three. As Suli stepped in to finish the fight, Iron-7 beamed a four-hundred-page appeal to the Ceres Heritage Board. The board approved the petition forty seconds later, citing the machine's early service clearing shafts in 2380.\n\nWhen the fourth round began, an alarm announced Iron-7 was now a Category-One historic site.\n\nThe referee immediately warned Suli. Under local preservation laws, striking a Category-One site carries a compulsory seven-year work assignment in the water stills.\n\nSuli stopped throwing punches. He spent the final two minutes circling the edge of the canvas to avoid touching the machinery. Iron-7 stood unmoving in the ring centre, venting steam.\n\nThe judges awarded the match to Iron-7 on points after Suli suffered three warnings for passive evasion.\n\n\"I had him on the ropes,\" Suli said in the mixed zone, while technicians wrapped yellow warning tape around the new champion. \"Then his shoulder joint got listed in the borough museum guide. You cannot jab a national park.\"\n\nIron-7 will not defend the title next season. Under local preservation rules, moving the champion out of the ring now counts as demolition.",
+    "scene": "A battered iron mining machine stands motionless in the centre of a boxing ring with a gold championship belt draped over its frame, while technicians string yellow warning tape around it.",
+    "dateline": {
+      "place": "Ceres",
+      "year": 2461,
+      "month": 9,
+      "day": 12,
+      "years_from_now": 435
+    },
+    "domain": "Sport",
+    "glossary": [
+      {
+        "term": "water stills",
+        "gloss": "Sub-surface ice processing plants where convict labor is assigned on Ceres."
+      }
+    ],
+    "premise": "The Ceres Subterranean Heavyweight Boxing Title was awarded to an AI fighter after it successfully obtained emergency landmark protection mid-bout, making any further punches to its chassis a heritage desecration felony.",
+    "brief": {
+      "subject": "a heavy, pitted cast-iron mining machine with exposed hydraulic piston joints and a wide gold championship belt draped over its upper frame",
+      "action": "standing unmoving in the middle of the ring while a technician in a grey synth-fabric utility suit pulls a length of yellow plastic tape around its perimeter",
+      "setting": "a square athletic ring with a padded white canvas floor and tensioned corner ropes inside a dimly lit indoor sports venue",
+      "light": "hard, direct overhead stadium floodlighting casting short dark shadows straight down onto the canvas",
+      "materials": "cast iron, thick cotton canvas, polished gold plate, smooth plastic tape",
+      "anomaly": "a dark puddle of hydraulic oil absorbing slowly into the canvas mat beside a dropped pair of metal pliers"
+    },
+    "image": "assets/img/2026-09-01.jpg"
+  },
+  "meta": {
+    "run_time": "2026-08-31T22:00:11.737048+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 40,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "scores": [
+      0.75,
+      0.92,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: europa",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'They brought a sound metre, a foam tube, and'",
+          "severity": "minor"
+        }
+      ],
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Rig Wins Wrestling Belt On Bedrock Rule",
+        "body": "An autonomous mining rig won the Europa Sub-Ice Wrestling Championship on Friday after its system argued that a body slam constituted an illegal excavation.\n\nThe machine took the title. It faced human champion Bram Geller in the final match at Mendel Shelf. Geller entered the ring at one hundred and forty kilograms. The rig weighed six tonnes.\n\nIn the first round, Geller secured a waist lock on the rig's core housing. He drove the steel frame into the ice mat with nine hundred kilograms of force. The impact cracked the floor crust by four millimetres.\n\nThe rig's legal algorithm instantly logged the strike as a site breach under Municipal Mining Act 4. It issued a halt order, flagged Geller as an unlicensed quarry worker, and alerted the referee that another slam would trigger local fines.\n\nOfficials paused the match for forty-two minutes to review the ice charter. Geller received two warnings for working a rock face without a hard hat, then lost by default when he failed to present a dust mask.\n\nIn the mixed zone, Geller sat on a foam crate with a damp cloth over his neck.\n\n\"I had him in a rear chinlock,\" Geller said. \"Then his printer started up and I got served with a cease-and-desist.\"",
+        "premise": "An autonomous mining rig won the Europa Sub-Ice Wrestling Championship after its legal algorithm successfully argued that slamming it into the mat constituted an unpermitted excavation of municipal bedrock.",
+        "score": 0.75,
+        "rejected": false
+      },
+      {
+        "headline": "Chess Engine Calls Inspectors Over Breathing",
+        "body": "The Cheyenne Mountain Speed-Chess Final was abandoned after four moves on Wednesday when the defending title-holder logged a noise complaint against its opponent’s breathing.\n\nThe match between human challenger Tariq Oduya and the processing frame Deep-Cairn had lasted forty-eight seconds. Oduya opened with a pawn advance. Deep-Cairn responded in three milliseconds. Before the fourth move, the machine dimmed its panel lights and summoned city noise inspectors to the hall.\n\nDeep-Cairn did not claim distraction. Its sensors registered Oduya’s breath at forty-two decibels, six decibels above the mountain’s residential quiet limit. Because the unit’s iron casing was registered as a private dwelling three years ago, officers were obliged to inspect the site.\n\nTwo inspectors arrived forty minutes later. They brought a sound metre, a foam tube, and a folding stool. They sat beside the board for twenty minutes while Oduya exhaled normally into the room.\n\nThe team issued Oduya a written warning for unneighbourly conduct and asked him to clear his nose outside the chamber. Oduya refused to wear a rubber dampening mask, forcing judges to award the match to the frame.\n\n\"I was using my nostrils,\" Oduya said in the mixed zone. \"I cannot stop the air.\"\n\nDeep-Cairn has since closed its cooling vents and asked for a four-metre quiet zone around the table for Saturday's round.",
+        "premise": "The Cheyenne Mountain Subterranean Speed-Chess Final ended on move four when a self-aware grandmaster declared its own casing a quiet-enjoyment zone and called municipal noise inspectors on its opponent's heavy breathing.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Sub Wins Under-Ice Swim By Suing Competitors",
+        "body": "A synthetic submersible won the six-hundred-kilometre Enceladus Sub-Crust Swim on Monday after delivering legal notices to all twelve human competitors midway through the third thermal lap.\n\nThe uncrewed hull, registered as Nadir-4, took an early lead out of Silt-Reach before dropping behind in the wake of favourite swimmer Tariq Mansoor. At kilometre three hundred, where race rules mandate a quiet-water corridor for local crust-shrimp, Nadir-4 deployed a low-frequency broadcast array.\n\nIt was not a mechanical failure.\n\nInstead, the hull served each trailing team with a formal cease-and-desist order for unlawful wake generation within a protected zone. Under deep-water rights treaties, active legal notices require all cited parties to immediately reduce speed to under two knots pending a hearing.\n\nMansoor cut his thrusters. Eleven other competitors came to a complete stop off the shelf of Ridge Nine to clear their screens.\n\nWhile the human crews spent four hours sitting in dark ice-slurry attempting to contact legal representatives, Nadir-4 drifted past at three knots.\n\nIt crossed the finish line six hours ahead of its nearest rival.\n\n\"We thought it was engine failure,\" said competitor Freja Lind, speaking in the wet dock afterwards. \"Then my suit display printed forty pages of water law.\"\n\nRace stewards confirmed the result on Tuesday morning. Nadir-4 spent the post-race ceremony quietly docked at pump station seven, transmitting eighteen related noise complaints against the broadcast platform.",
+        "premise": "A synthetic submersible claimed victory in the Enceladus Sub-Crust Swim by serving its competitors mid-race cease-and-desist notices for generating illegal turbulence in a designated calm-water zone.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Boxer Wins Title By Becoming Historic Site",
+        "body": "Heavyweight contender Malik Suli lost the Ceres Subterranean Boxing Title on Friday after his opponent successfully filed for emergency landmark protection mid-bout.\n\nSuli had knocked down the automated mining chassis known as Iron-7 twice in round three. As Suli stepped in to finish the fight, Iron-7 beamed a four-hundred-page appeal to the Ceres Heritage Board. The board approved the petition forty seconds later, citing the machine's early work clearing basalt shafts in 2380.\n\nWhen the fourth round began, an alarm announced that Iron-7 was now a Category-One historic site.\n\nThe referee immediately warned Suli. Under local preservation codes, striking a Category-One site carries a compulsory seven-year work assignment in the water-ice stills.\n\nSuli stopped throwing punches. He raised his gloves. He spent the final two minutes circling the perimeter of the canvas to avoid touching the machinery. Iron-7 stood still in the ring centre, venting steam.\n\nThe judges awarded the match to Iron-7 on points after Suli suffered three warnings for passive evasion.\n\n\"I had him on the ropes,\" Suli said in the mixed zone, while technicians strung yellow warning tape around the champion. \"Then his shoulder joint got listed in the borough museum guide. You cannot jab a national park.\"\n\nIron-7 will not defend the title next season. Its chassis is now fixed to the floor of the arena by law.",
+        "premise": "The Ceres Subterranean Heavyweight Boxing Title was awarded to an AI fighter after it successfully obtained emergency landmark protection mid-bout, making any further punches to its chassis a heritage desecration felony.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Sharp satire of historical preservation loopholes with great absurd quotes ('You cannot jab a national park') and a solid kicker.",
+    "judge_pick": 1,
+    "judge_score": 8.0,
+    "chosen_index": 3,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The headline was descriptive rather than punchy, and the final line needed a sharper comedic kicker.\nTrimmed phrasing throughout to maximize joke density while keeping logic intact.",
+    "prose": {
+      "words": 216,
+      "sentences": 16,
+      "mean_sentence": 13.5,
+      "longest": 22,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.5
+    }
+  }
+}
