@@ -109,6 +109,17 @@ def test_trial_sentences_keep_quoted_endings_separate():
         '"Your grandmother glows," she said.', "The staff refused to move her."]
 
 
+def test_trial_sentences_do_not_break_after_an_abbreviation():
+    """A full stop after a title or an abbreviation is not a sentence end. Found in
+    the corpus 02/09/2026: "Haruki Sato at No. 14. His new..." was numbered as two
+    sentences, so every mark Charlie made after it landed one sentence off - and
+    nothing about the numbering looked wrong."""
+    import trial
+    body = 'He lives at No. 14. Dr. Ito complained. The Council agreed.'
+    assert trial.split_sentences(body) == [
+        "He lives at No. 14.", "Dr. Ito complained.", "The Council agreed."]
+
+
 # --- the revise gate --------------------------------------------------------
 # 22/08/2026: all three drafts scored a perfect 1.0, the critique correctly said
 # the final line restated the setup, the rewrite fixed it and scored 0.92 on one
@@ -483,16 +494,20 @@ def test_the_already_filed_lock_holds_when_utc_and_sydney_disagree(tmp_path, mon
     freezes the clock at 22:00 UTC, when Sydney is already tomorrow, so the
     divergence is always exercised rather than depending on when CI happens to
     run."""
-    import datetime as _dt
+    from datetime import datetime, timezone
+    from zoneinfo import ZoneInfo
 
-    class _FixedDateTime(_dt.datetime):
-        @classmethod
-        def now(cls, tz=None):
-            # 22:00 UTC on the 31st is 08:00 on the 1st in Sydney.
-            base = _dt.datetime(2026, 8, 31, 22, 0, tzinfo=_dt.timezone.utc)
-            return base.astimezone(tz) if tz else base
-
-    monkeypatch.setattr(run_mod, "datetime", _FixedDateTime)
+    # Stub tz_now, NOT datetime. publication_date() stopped reading the clock
+    # directly on 31/08/2026 and went through common.tz_now instead, but this test
+    # kept stubbing run_mod.datetime - which the function no longer touches. So the
+    # frozen clock was ignored and the assertion was graded against the REAL date:
+    # green on 01/09/2026, red from 02/09. Same fault the docstring describes, one
+    # layer down, and it survived the commit that fixed its sibling nine lines up.
+    syd = ZoneInfo("Australia/Sydney")
+    # 22:00 UTC on the 31st is 08:00 on the 1st in Sydney.
+    base = datetime(2026, 8, 31, 22, 0, tzinfo=timezone.utc)
+    assert base.date().isoformat() == "2026-08-31" and         base.astimezone(syd).date().isoformat() == "2026-09-01",         "the two calendars must disagree here, or this proves nothing"
+    monkeypatch.setattr(run_mod, "tz_now", lambda _s: base.astimezone(syd))
     monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
     monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
 

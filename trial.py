@@ -58,8 +58,24 @@ MARKUP_PAGE = "trials.html"
 _SENT = re.compile(r'(?<=[.!?][")’\'])\s+|(?<=[.!?])\s+')
 
 
+# A full stop after a title, an abbreviation or an initial is not a sentence end.
+# Measured on the corpus 02/09/2026: one dispatch splits "Haruki Sato at No. 14."
+# into two, which shifts every sentence number after it - and those numbers are what
+# Charlie writes his marks against, so a shifted number puts a mark on the wrong
+# sentence. One hit in 34 dispatches today, but the corpus grows daily and nothing
+# about the failure is visible: the numbering still looks like numbering.
+_NOT_AN_END = re.compile(
+    r'(?:\b(?:Mr|Mrs|Ms|Dr|St|Prof|Rev|Sr|Jr|Hon|Capt|Gen|Col|Sgt|Lt|Ave|No|vs'
+    r'|etc|cf|Fig|Vol|pp|al|Co|Ltd|Inc)|(?:^|[\s("\'])[A-Z])\.$')
+
+
 def split_sentences(body: str) -> list[str]:
-    parts = [s.strip() for s in _SENT.split(body or "") if s and s.strip()]
+    parts: list[str] = []
+    for part in (s.strip() for s in _SENT.split(body or "") if s and s.strip()):
+        if parts and _NOT_AN_END.search(parts[-1]):
+            parts[-1] += " " + part
+        else:
+            parts.append(part)
     return parts
 
 
