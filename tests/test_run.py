@@ -480,42 +480,41 @@ def test_publication_date_is_stable_across_the_cron_ladder(monkeypatch):
 
 
 def test_the_already_filed_lock_holds_when_utc_and_sydney_disagree(tmp_path, monkeypatch, capsys):
-    """The seam, pinned. 31/08/2026 moved publication_date() from UTC to Sydney -
-    a correct fix, because the UTC boundary fell in the middle of the cron ladder
-    and produced a self-sustaining lock that held for four days.
+    """The seam, pinned - and pinned properly on the second attempt.
 
-    But two tests kept stubbing the UTC date, so they only failed during the ten
-    hours a day the two calendars disagree. The daily workflow gates on "Tests
-    must pass before anything is generated", so for those ten hours the paper
-    simply stopped publishing - and it read as flakiness rather than a fault,
-    because the same suite went green again overnight.
+    31/08/2026 moved publication_date() from UTC to Sydney, a correct fix: the
+    UTC boundary fell in the middle of the cron ladder and produced a
+    self-sustaining lock that held for four days.
 
-    A test that is green for part of a day is the worst kind of red. This one
-    freezes the clock at 22:00 UTC, when Sydney is already tomorrow, so the
-    divergence is always exercised rather than depending on when CI happens to
-    run."""
-    from datetime import datetime, timezone
+    The FIRST version of this test froze `run_mod.datetime` and asserted the
+    result equalled a hard-coded "2026-09-01". But publication_date() calls
+    `tz_now()`, which lives in common and uses ITS OWN datetime, so the freeze
+    never reached it and the assertion was quietly comparing against the real
+    clock. It passed on 1 September and failed on 2 September, and because
+    daily.yml gates on "Tests must pass before anything is generated", it stopped
+    the paper publishing overnight.
+
+    A test written to catch a date-dependent failure was itself date-dependent,
+    and it caused the outage it was guarding against. So: patch `run_mod.tz_now`,
+    which is the function actually used, and read no real clock anywhere."""
+    from datetime import datetime as _dt, timezone as _tz
     from zoneinfo import ZoneInfo
 
-    # Stub tz_now, NOT datetime. publication_date() stopped reading the clock
-    # directly on 31/08/2026 and went through common.tz_now instead, but this test
-    # kept stubbing run_mod.datetime - which the function no longer touches. So the
-    # frozen clock was ignored and the assertion was graded against the REAL date:
-    # green on 01/09/2026, red from 02/09. Same fault the docstring describes, one
-    # layer down, and it survived the commit that fixed its sibling nine lines up.
-    syd = ZoneInfo("Australia/Sydney")
-    # 22:00 UTC on the 31st is 08:00 on the 1st in Sydney.
-    base = datetime(2026, 8, 31, 22, 0, tzinfo=timezone.utc)
-    assert base.date().isoformat() == "2026-08-31" and         base.astimezone(syd).date().isoformat() == "2026-09-01",         "the two calendars must disagree here, or this proves nothing"
-    monkeypatch.setattr(run_mod, "tz_now", lambda _s: base.astimezone(syd))
+    # 22:00 UTC on the 31st is 08:00 on the 1st in Sydney - the divergence this
+    # exists to exercise. Fixed instants, so it means the same thing every day.
+    frozen_utc = _dt(2026, 8, 31, 22, 0, tzinfo=_tz.utc)
+    monkeypatch.setattr(run_mod, "tz_now",
+                        lambda settings: frozen_utc.astimezone(ZoneInfo("Australia/Sydney")))
     monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
     monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
 
     pub = run_mod.publication_date()
     assert pub == "2026-09-01", (
-        f"publication_date() returned {pub} at 22:00 UTC - the edition key must "
-        f"follow the timezone the paper is READ in, or the ladder straddles a "
-        f"boundary again")
+        f"publication_date() returned {pub} for 22:00 UTC on 31/08. The edition "
+        f"key must follow the timezone the paper is READ in - if this now reads "
+        f"the UTC date, the cron ladder straddles a boundary again")
+    assert pub != frozen_utc.date().isoformat(), (
+        "publication_date() is returning the UTC date, not the Sydney one")
 
     _stub_dispatch(tmp_path, pub)
 
@@ -525,3 +524,29 @@ def test_the_already_filed_lock_holds_when_utc_and_sydney_disagree(tmp_path, mon
     monkeypatch.setattr(run_mod, "run_pipeline", _boom)
     assert run_mod.main([]) == 0
     assert "already filed" in capsys.readouterr().out
+
+
+def test_this_suite_does_not_read_the_real_clock_to_decide_a_date():
+    """The guard on the guard, added 02/09/2026.
+
+    Two outages in two days came from tests that compared a computed date against
+    the real one: they pass while the calendars agree and fail when they do not,
+    which reads as flakiness rather than a fault - and the daily workflow gates on
+    this suite, so each one stopped the paper.
+
+    Any test asserting a specific date must FREEZE the clock it depends on. This
+    scans for the shape that bit twice: a hard-coded ISO date in the same file as
+    a live `now()` call that has not been patched."""
+    import pathlib
+    import re
+
+    src = pathlib.Path(__file__).read_text(encoding="utf-8")
+    # Live clock reads, excluding ones that are clearly being monkeypatched or
+    # are inside a frozen datetime construction.
+    live = re.findall(r"^(?!.*monkeypatch).*(?:datetime\.now|tz_now)\(", src, re.M)
+    literal_dates = re.findall(r'"20\d\d-\d\d-\d\d"', src)
+    if literal_dates:
+        assert not live, (
+            f"this file asserts literal dates {sorted(set(literal_dates))[:3]} while "
+            f"still calling a live clock {live[:2]} - freeze it, or the test is green "
+            f"only until the date rolls")
