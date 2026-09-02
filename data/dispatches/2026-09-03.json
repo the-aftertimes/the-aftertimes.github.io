@@ -1,0 +1,113 @@
+{
+  "run_date": "2026-09-03",
+  "run_time": "2026-09-02T19:47:31.460351+00:00",
+  "dispatch": {
+    "headline": "Old Men Demand Fake Smiles",
+    "body": "Young deckhands across Sovereign Drift have begun splicing squid pigment cells into their cheeks to flash visual panics while gossiping.\n\nThe procedure grafts active colour cells into facial tissue, causing cheeks to pulse crimson or slate grey during minor social stress. At the Deck Seven promenade, tea shop staff now flash brown ripples whenever supervisors enter or romantic disputes arise.\n\nOlder platform residents are furious.\n\n\"In my day, if your life was falling apart, you smiled until your jaw cramped and your teeth cracked,\" said retired maintenance fitter Joseph Mercer. \"That is basic manners. My father went into a gas leak with a pleasant grin and stayed that way right through the funeral.\"\n\nMercer, who spent forty years tightening platform valves without changing his expression, argued that hiding inner terror is a foundational social skill. He noted the local bowls club abandoned two tournaments after a visiting team flashed indigo over rising air fees.\n\nSkin technicians at lower deck clinics report three-week waiting lists for the grafts among workers under twenty-five.\n\nThe Deck Council ruled on Monday that cheek-flashing does not violate workplace uniform standards, provided staff refrain from throbbing during fire drills. Official surveys showed customer satisfaction dropped only when staff tried to force fake smiles over glowing maroon cheeks.\n\nMercer remains unimpressed by the ruling. He now wears heavy welding goggles to Sunday lunch, insisting it is the only way to eat roast mutton without learning his family's true feelings.",
+    "scene": "A retired maintenance fitter in a stiff grey work jacket sits at a tea table, forcing a wide smile at a teenager whose cheeks are throbbing crimson.",
+    "dateline": {
+      "place": "SOVEREIGN DRIFT",
+      "year": 2118,
+      "month": 12,
+      "day": 3,
+      "years_from_now": 92
+    },
+    "domain": "CIVIC LIFE",
+    "glossary": [
+      {
+        "term": "Cheek-flashing",
+        "gloss": "The cosmetic practice of using grafted squid pigment cells to visibly pulse emotional distress."
+      }
+    ],
+    "premise": "Young floating-platform residents above Jupiter are splicing giant-squid chromatophores into their cheeks to visually broadcast their internal anxieties during casual gossip, drawing fierce criticism from retirees who argue that hiding one's feelings behind a fake smile is a lost art.",
+    "brief": {
+      "subject": "A retired maintenance fitter in a stiff grey synthetic work jacket, matching trousers, and heavy brown work boots",
+      "action": "sitting across a tea table and grimacing in a forced wide smile at a teenage deckhand whose cheeks are throbbing crimson",
+      "setting": "a functional tea shop on a platform promenade with low ceilings, laminate tables, steel chairs, and riveted bulkhead panels",
+      "light": "direct overhead fluorescent light from recessed ceiling strip panels",
+      "materials": "synthetic canvas, brushed steel, plastic laminate, flushed skin",
+      "anomaly": "a chipped plastic tea cup and a small ring stain on the table surface"
+    },
+    "image": "assets/img/2026-09-03.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-02T19:47:31.460351+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 42,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "scores": [
+      1.0,
+      1.0,
+      0.92,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'Jumpers inhale deeply, lock their ribs, and'",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Retirees Demand Return Of Fake Smiles",
+        "body": "Young deckhands across Sovereign Drift have begun splicing giant-squid pigment cells into their cheeks to flash visual panics while gossiping.\n\nThe procedure grafts active colour cells into facial tissue, causing the cheeks to pulse crimson or slate grey during minor social stress. At the Deck Seven promenade, tea shop workers now flash brown ripples whenever shift supervisors enter the room or romantic disputes are mentioned.\n\nOlder platform residents are furious about the trend.\n\n\"In my day, if your life was falling apart, you smiled until your jaws cramped,\" said retired maintenance fitter Joseph Mercer. \"That is basic manners.\"\n\nMercer, who spent forty years tightening platform gas valves without changing his expression, argued that hiding inner terror is a foundational social skill. He noted that the local bowls club had to abandon two tournaments after a visiting team flashed indigo over rising air fees.\n\nSkin technicians at the lower deck clinics report three-week waiting lists for the grafts among workers under twenty-five.\n\nThe Deck Council ruled on Monday that cheek-flashing does not violate workplace uniform standards, provided staff refrain from throbbing during fire drills. Official surveys showed customer satisfaction in tea shops dropped only when staff tried to force fake smiles over glowing maroon cheeks.\n\nMercer remains unimpressed by the ruling. He now wears heavy dark sun-goggles to Sunday lunch to avoid seeing his grandson express doubt.",
+        "premise": "Young floating-platform residents above Jupiter are splicing giant-squid chromatophores into their cheeks to visually broadcast their internal anxieties during casual gossip, drawing fierce criticism from retirees who argue that hiding one's feelings behind a fake smile is a lost art.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Teens Vibrate Dining Tables In Conversation",
+        "body": "Residents of the High Nursery deck at Zephyr Drift spent Thursday re-gluing their tea sets after two local teenagers spent breakfast communicating through deep atmospheric rumbles.\n\nThe practice, known among youths as core-throating, involves splicing sky-whale vocal tissue into human throat tissue. The resulting voice bypasses the ears entirely. Instead, it travels through floor plates as a low vibration that shakes furniture three apartments away.\n\nSixteen-year-old Toby Valo received his graft during the winter break. His grandmother, Martha Valo, says quiet family suppers are now a memory.\n\n\"You ask him how his day was,\" Mrs Valo said. \"He does not use proper words. He vibrates the floor until the cutlery hums.\"\n\nTeenagers across the floating platform use the low frequency to talk during school assemblies without making an audible sound. While teachers hear nothing, the combined resonance from the back row routinely triggers hull-stress alarms in the lower maintenance bays.\n\nPlatform engineers spent Tuesday tightening six loose wall panels near the secondary school.\n\n\"It is pure bad manners,\" Mrs Valo said, adjusting a wall clock that had shaken sideways. \"In my day, if you had something to say, you used your lungs at a reasonable volume.\"\n\nToby denies causing trouble. When asked to respond to his grandmother's complaints on Wednesday, he kept his lips closed.\n\nThe floor rattled. Her teacup broke.",
+        "premise": "Cloud-city teenagers are gene-splicing deep-atmospheric whale DNA into their vocal cords to talk entirely in hull-rattling, subsonic planetary thrums, much to the annoyance of grandparents who complain the youth no longer know how to hold a polite, indoor-volume conversation.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Caretaker Prefers Stairs To Rib Sacks",
+        "body": "Four apprentices from the Port Vane plumbing yard were treated for red skin on Thursday after using grafted rib sacks to survive three seconds of naked freefall.\n\nThe procedure, which inserts a synthetic pressure bladder beneath the lower ribs, allows jumpers to leap into Saturn's upper storm belt without a thermal suit. Jumpers inhale deeply, lock their ribs, and drop off the promenade rail.\n\nThey fall fast. A deck winch hauls them back before the toxic gas burns off their eyebrows.\n\n\"It feels like a cold slap,\" said apprentice Bram Devlin, seventeen. \"Then your skin goes numb. It clears the head.\"\n\nOlder platform workers are furious. Station caretaker Donald Glass spent Friday hosing ammonia frost off the lower structural beams. He believes the drops show a total lack of discipline.\n\n\"When I was young, character came from climbing sixty flights of steel stairs in heavy gear,\" Mr Glass said. \"You earned your tiredness. Now they put a rubber pouch in their chest just to avoid an honest walk.\"\n\nThe trend has now spread to the station's senior staff. Shift supervisors report that three veteran pipe-fitters missed the morning safety briefing because they were queued behind the bowling green for off-shift rib-sack surgery.\n\nMr Glass tried to stop the jumps yesterday by smearing heavy grease along the entire bottom rail. The teenagers brought towels.",
+        "premise": "Platform youth in Saturn's upper deck are grafting pressure-resistant bio-bladders into their ribs so they can leap into toxic storm-belts for three-second suitless thrill-drops, infuriating elders who insist that true character is built by taking the stairs.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Glowing Hair Ruins Cloud Light Checks",
+        "body": "Refinery crews at the Saffron Deck spent Thursday adjusting ambient light sensors after three rig operators arrived on shift with green storm-algae growing from their hair.\n\nThe scalp treatment, marketed as AetherShine, embeds living spores into hair roots. Popularised by platform influencers, the culture feeds on sweat and atmospheric gas, producing a constant glow.\n\nSenior deck crew have dismissed the trend as a distraction that ruins daily light readings.\n\n\"We measure cloud density by the shadow on the handrail,\" said chief monitor Silas Drake, 61. \"Now every time a young person nods, the low-visibility chime rings.\"\n\nThe conflict reached the safety board on Monday. Monitors claimed the glowing heads ruined six ambient haze tests in a single afternoon. Platform records show atmospheric light readings spiked forty percent during tea breaks.\n\nThe trend has grown. The spores react to drops in air pressure by flaring bright orange. Younger crew members now gather on the unshielded wind-walks during squalls to capture the colour shift for online feeds.\n\n\"It looks brilliant,\" said junior operator Maya Lin, 22. \"My hair stays dry.\"\n\nManagement has refused to ban the scalp treatment. Instead, monitors now drop dark hoods over workers during light readings.\n\nThree monitors resigned yesterday.",
+        "premise": "A fashionable trend among cloud-rig influencers involves engineering their hair follicles to cultivate living micro-biomes of bioluminescent storm-algae, which older workers dismiss as an ostentatious cry for attention that ruins honest ambient light readings.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Hits the satire of generational emotional repression perfectly with a sharp headline, hilarious quotes, and an excellent kicker line.",
+    "judge_pick": 0,
+    "judge_score": 8.0,
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The original headline described the premise rather than landing a punchline, and the ending lacked a strong kicker.\nSharpened the dialogue and reworked the final line to deliver a proper recontextualising joke.",
+    "prose": {
+      "words": 242,
+      "sentences": 14,
+      "mean_sentence": 17.3,
+      "longest": 25,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 7,
+      "rare_rate": 2.9
+    }
+  }
+}
