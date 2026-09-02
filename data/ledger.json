@@ -394,5 +394,16 @@
     "place_kind": "asteroid",
     "engine": "etiquette",
     "technique": "commit_past_reason"
+  },
+  {
+    "run_date": "2026-09-03",
+    "year": 2118,
+    "era_bucket": 1,
+    "domain": "biotech",
+    "headline": "Old Men Demand Fake Smiles",
+    "style": "trend",
+    "place_kind": "gasgiant",
+    "engine": "scale",
+    "technique": "local_granularity"
   }
 ]
