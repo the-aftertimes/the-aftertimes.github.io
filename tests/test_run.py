@@ -526,27 +526,28 @@ def test_the_already_filed_lock_holds_when_utc_and_sydney_disagree(tmp_path, mon
     assert "already filed" in capsys.readouterr().out
 
 
-def test_this_suite_does_not_read_the_real_clock_to_decide_a_date():
-    """The guard on the guard, added 02/09/2026.
+def test_the_seam_test_freezes_the_clock_it_actually_depends_on():
+    """The guard on the guard, added 02/09/2026 - and narrowed the same hour.
 
-    Two outages in two days came from tests that compared a computed date against
-    the real one: they pass while the calendars agree and fail when they do not,
-    which reads as flakiness rather than a fault - and the daily workflow gates on
-    this suite, so each one stopped the paper.
+    Two outages in two days came from tests comparing a computed date against the
+    real one. They pass while the calendars agree and fail when they do not, which
+    reads as flakiness rather than a fault - and daily.yml gates on this suite, so
+    each one stopped the paper.
 
-    Any test asserting a specific date must FREEZE the clock it depends on. This
-    scans for the shape that bit twice: a hard-coded ISO date in the same file as
-    a live `now()` call that has not been patched."""
-    import pathlib
-    import re
+    The first version of this guard scanned the file for any live clock call
+    alongside any literal date. It matched prose inside a docstring and a helper
+    that legitimately builds a timestamp N hours before now - two false positives,
+    in a suite that BLOCKS PUBLISHING. A guard that can cry wolf inside a gate is
+    the same harm it was written to prevent, so it is now specific: the seam test
+    must patch tz_now, which is the function publication_date actually calls.
 
-    src = pathlib.Path(__file__).read_text(encoding="utf-8")
-    # Live clock reads, excluding ones that are clearly being monkeypatched or
-    # are inside a frozen datetime construction.
-    live = re.findall(r"^(?!.*monkeypatch).*(?:datetime\.now|tz_now)\(", src, re.M)
-    literal_dates = re.findall(r'"20\d\d-\d\d-\d\d"', src)
-    if literal_dates:
-        assert not live, (
-            f"this file asserts literal dates {sorted(set(literal_dates))[:3]} while "
-            f"still calling a live clock {live[:2]} - freeze it, or the test is green "
-            f"only until the date rolls")
+    Patching run_mod.datetime instead is precisely the mistake that caused the
+    02/09 outage - it looks like freezing the clock and freezes nothing."""
+    import inspect
+
+    src = inspect.getsource(
+        test_the_already_filed_lock_holds_when_utc_and_sydney_disagree)
+    assert '"tz_now"' in src, (
+        "the seam test must monkeypatch run_mod.tz_now. publication_date() calls "
+        "tz_now() from common, so patching run_mod.datetime freezes nothing and "
+        "the assertion silently compares against the real clock")
