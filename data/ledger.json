@@ -383,5 +383,16 @@
     "place_kind": "subsurface",
     "engine": "bureaucratic",
     "technique": "escalating_precision"
+  },
+  {
+    "run_date": "2026-09-02",
+    "year": 3217,
+    "era_bucket": 23,
+    "domain": "ecology and wildlife",
+    "headline": "Swans Replaced With Hostile Taxidermy",
+    "style": "investigation",
+    "place_kind": "asteroid",
+    "engine": "etiquette",
+    "technique": "commit_past_reason"
   }
 ]

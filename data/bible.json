@@ -179,6 +179,12 @@
       "gloss": "Sub-surface ice processing plants where convict labor is assigned on Ceres.",
       "kind": "term",
       "first_seen": "2026-09-01"
+    },
+    {
+      "term": "water vault",
+      "gloss": "A carved rock reservoir maintained in asteroid colonies for decorative water storage.",
+      "kind": "term",
+      "first_seen": "2026-09-02"
     }
   ]
 }
