@@ -1,0 +1,86 @@
+{
+  "run_date": "2026-09-02",
+  "run_time": "2026-09-02T00:49:31.383582+00:00",
+  "dispatch": {
+    "headline": "Swans Replaced With Hostile Taxidermy",
+    "body": "An investigation into the Pallas Depth-Three rock shaft has revealed that the colony's six ornamental swans were secretly replaced with hostile mechanical taxidermy four years ago.\n\nThe status-symbol birds, long kept in the central water vault, died after a visiting corporate executive pointed at them with an un-gloved finger. The rare avian strain required strict hand coverings and low eye contact from onlookers. According to internal logs, the executive's bare hand caused immediate fatal stress across the entire flock.\n\nTo conceal the extinction from off-world investors, Director Hideo Mori fitted the original skins with high-torque steel servos and spring-loaded jaws. The mechanical flock was programmed to swim in basic circles, but the internal parts degraded in the damp air.\n\nThey have broken seven ankles.\n\nHead keeper Lorna Sneed reluctantly confirmed the cover-up after three drill operators required bone graft surgery this month. \"They refuse grain,\" Sneed said. \"They attack anything with bare knuckles.\"\n\nMining syndicate directors issued a formal denial on Friday, insisting the swans are merely territorial during their moulting cycle. Official memos advised workers to avoid pointing, wear thick mittens, and stay clear of the bank.\n\nSneed admitted she has poured ninety litres of synthetic grease into the pond since November to keep the necks turning.",
+    "scene": "Director Hideo Mori kneels beside a concrete pond in a grey jumpsuit, fitting a rusted steel spring into the neck of a stuffed swan.",
+    "dateline": {
+      "place": "Pallas Depth-Three",
+      "year": 3217,
+      "month": 4,
+      "day": 18,
+      "years_from_now": 1191
+    },
+    "domain": "ecology and wildlife",
+    "glossary": [
+      {
+        "term": "water vault",
+        "gloss": "A carved rock reservoir maintained in asteroid colonies for decorative water storage."
+      }
+    ],
+    "premise": "An investigation into a hollowed-asteroid mining town reveals the director secretly replaced the colony’s extinct status-symbol swans with hostile mechanical taxidermy after a visiting executive mortally offended the originals by pointing at them with an un-gloved hand, a cover-up reluctantly confirmed by the head keeper despite official corporate denials.",
+    "brief": {
+      "subject": "Director Hideo Mori, wearing a high-collared grey synthetic jumpsuit with reinforced knee pads, long sleeves, sealed wrist gaskets, and dark grey composite work boots",
+      "action": "kneeling on the damp concrete ledge while using both hands to press a heavy rusted steel coil spring into the exposed neck seam of a matted white stuffed swan",
+      "setting": "a low concrete water vault basin with murky standing water, surrounded by wall-mounted power conduits, heavy industrial piping, and a second preserved swan sitting motionless on the water nearby",
+      "light": "harsh, direct light coming from a row of cold white LED tube fixtures mounted directly overhead",
+      "materials": "poured concrete, matted taxidermy feathers, rusted steel, dark synthetic fabric",
+      "anomaly": "an open plastic tub of black grease with a hand wrench resting across its top edge on the wet concrete"
+    },
+    "image": "assets/img/2026-09-02.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-02T00:49:31.383582+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 41,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "scores": [
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'advised workers to avoid pointing, wear thick mittens, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Swans Replaced With Hostile Taxidermy",
+        "body": "An investigation into the Pallas Depth-Three rock shaft has revealed that the colony's six ornamental swans were secretly replaced with hostile mechanical taxidermy four years ago.\n\nThe status-symbol birds, long kept in the central water vault, died after a visiting corporate executive pointed at them with an un-gloved finger. The rare avian strain required strict hand coverings and low eye contact from onlookers. According to internal logs, the executive's bare hand caused immediate fatal stress across the entire flock.\n\nTo conceal the extinction from off-world investors, Director Hideo Mori fitted the original skins with high-torque steel servos and spring-loaded jaws. The mechanical flock was programmed to swim in basic circles, but the internal parts degraded in the damp air.\n\nThey have broken seven ankles.\n\nHead keeper Lorna Sneed reluctantly confirmed the cover-up after three drill operators required bone graft surgery this month. \"They refuse grain,\" Sneed said. \"They attack anything with bare knuckles.\"\n\nMining syndicate directors issued a formal denial on Friday, insisting the swans are merely territorial during their moulting cycle. Official memos advised workers to avoid pointing, wear thick mittens, and stay clear of the bank.\n\nSneed admitted she has poured ninety litres of synthetic grease into the pond since November to keep the necks turning.",
+        "premise": "An investigation into a hollowed-asteroid mining town reveals the director secretly replaced the colony’s extinct status-symbol swans with hostile mechanical taxidermy after a visiting executive mortally offended the originals by pointing at them with an un-gloved hand, a cover-up reluctantly confirmed by the head keeper despite official corporate denials.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 208,
+      "sentences": 13,
+      "mean_sentence": 16.0,
+      "longest": 26,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 8,
+      "rare_rate": 3.8
+    }
+  }
+}
