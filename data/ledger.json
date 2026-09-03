@@ -405,5 +405,16 @@
     "place_kind": "gasgiant",
     "engine": "scale",
     "technique": "local_granularity"
+  },
+  {
+    "run_date": "2026-09-04",
+    "year": 4792,
+    "era_bucket": 55,
+    "domain": "sport",
+    "headline": "Cheats Win Regatta By Rowing",
+    "style": "wire",
+    "place_kind": "exoplanet",
+    "engine": "language",
+    "technique": "heard_the_words"
   }
 ]
