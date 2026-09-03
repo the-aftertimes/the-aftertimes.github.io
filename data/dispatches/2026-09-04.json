@@ -1,0 +1,113 @@
+{
+  "run_date": "2026-09-04",
+  "run_time": "2026-09-03T19:49:38.855477+00:00",
+  "dispatch": {
+    "headline": "Cheats Win Regatta By Rowing",
+    "body": "A brawl erupted at the Vandorf Reach Regatta on Sunday after officials disqualified the winning crew for carrying wooden oars onto the water.\n\nSecurity officers intervened when forty spectators jumped into the river mud to attack the crew of the Iron Gull. The vessel had completed the three-kilometre course in six minutes, defeating seven rival craft whose teams spent the race shouting at one another through brass megaphones.\n\nUnder colonial charter rules compiled during landfall, rowing is defined as an argument conducted while drifting downriver. Standard regattas permit no physical propulsion. Victory goes to the crew that generates the highest measured volume before passing the marker buoy.\n\n\"We spent eight months training our throats,\" said rival team captain Siobhan Kalu, whose neck was wrapped in ice packs. \"Then these cowards dropped sticks in the water and glided past us without shouting a single word.\"\n\nRace judges confiscated the oars. Police made no arrests.\n\nViolence spread along the embankment after the chief umpire declared the last-place vessel the winner. That crew had spent four hours drifting into a reed bed while accusing each other of treason.\n\nUmpires urged the crowd to clear the water. Three spectators are still clearing the water, which they are doing with plastic buckets.\n\nThe Iron Gull crew remains barricaded inside the boat shed. Police reported no physical injuries, though the noise metre logged the spectator riot at 112 decibels, officially awarding the mob second place.",
+    "scene": "A coxswain in a soaked wool jersey stands in the river mud swinging a brass megaphone at two race judges who are holding wooden oars.",
+    "dateline": {
+      "place": "VANDORF REACH",
+      "year": 4792,
+      "month": 11,
+      "day": 23,
+      "years_from_now": 2766
+    },
+    "domain": "Sport",
+    "glossary": [
+      {
+        "term": "Vandorf Reach Regatta",
+        "gloss": "An annual downriver drifting competition where crews compete entirely on vocal volume."
+      }
+    ],
+    "premise": "A brawl broke out at the Kepler-186f regatta after officials disqualified the winning crew for using oars, enforcing a historic translation error that defined 'rowing' as a loud verbal argument conducted while drifting downriver.",
+    "brief": {
+      "subject": "a lean coxswain wearing a heavy waterlogged dark wool jersey, dark synthetic trousers caked with wet silt, and thick-soled rubber work boots",
+      "action": "swinging a heavy brass megaphone in one hand toward two race judges",
+      "setting": "a riverbank of thick gray mud, with two race judges in damp waterproof coats standing in the background holding long wooden oars",
+      "light": "flat diffuse daylight from an overcast sky",
+      "materials": "wet wool, river mud, tarnished brass, varnished timber",
+      "anomaly": "a plastic rope toggle wedged in the mud beside a half-buried river weed"
+    },
+    "image": "assets/img/2026-09-04.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-03T19:49:38.855477+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 43,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "scores": [
+      1.0,
+      1.0,
+      1.0,
+      0.75
+    ],
+    "violations": [
+      [],
+      [],
+      [],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Cup Final Abandoned After Wall Reaches Crossbar",
+        "body": "The Gliese Colonial Cup final was abandoned in the sixty-second minute after South Ridge defenders completed a stone wall across their goal line. Match officials halted the fixture when ball movement became impossible.\n\nSouth Ridge had spent four months hauling grey granite to the pitch edge before kick-off. They fielded four runners alongside seven certified masons, laying fresh mortar whenever the ball entered their half. By the hour mark, the structure stood two metres tall and completely blocked the goal frame.\n\nThe referee called for a clean sheet. Workers brought six slate slabs.\n\nPlay slowed as North Port forward Samira Blythe attempted to chip through the mortar with a hand trowel. She received a yellow card.\n\n\"Their line was simply tighter today,\" said North Port manager Hitoshi Sato. \"We had the manpower, but our mortar took too long to set in the humidity. You cannot win cup matches when your defence is still wet.\"\n\nThe fixture could not be restarted because the North Port goalkeeper was trapped behind his own wall from the first half and had run out of water. Stadium staff spent twenty minutes shouting instructions through a small drainage gap near the corner flag.\n\nLeague officials confirmed the replay will take place as soon as both goal mouths can be blasted clear with mining explosives.",
+        "premise": "The colonial cup final on Gliese 581g was abandoned in the second half today after play devolved into masonry, following a four-century semantic drift where 'defense' came to mean building a permanent stone wall across the goal line.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "High Jumpers Fail To Clear Bear",
+        "body": "The Men’s High Jump final was abandoned at the four-metre mark today when title holder Tariq Amadi failed to clear the bear.\n\nAmadi suffered deep cuts to both legs after clipping the animal’s shoulder during his second jump. Track marshals netted the beast, but not before it threw two judges into the pit.\n\n\"Tariq had the height,\" said chief coach Danica Lin. \"His angle was low. When the obstacle is breathing, you cannot afford to touch it.\"\n\nThe event has used a live animal since a scanning error in an old rulebook replaced the word bar with bear. Organisers maintained the setup for three centuries, citing strict guidelines on equipment size.\n\nRules require the animal to be raised two centimetres after every successful jump. By the fifth round, the creature was suspended four metres above the foam on a hydraulic lift and furious.\n\nOfficials told the crowd to stay in their seats. Several stayed in their seats, which were dragged onto the track.\n\n\"The rules are clear,\" said meet director Silas Vane. \"If we fix the spelling now, three hundred years of records become void.\"\n\nAmadi remains in hospital. The judges ruled his jump a foul for making contact with the bar.",
+        "premise": "The annual high-jump finals in the Tau Ceti b hab-dome ended in tragedy today after a three-hundred-year-old transcription error transformed 'bar' into 'bear,' forcing athletes to clear an increasingly enraged apex predator.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Oar Ban Triggers Riverfront Brawl",
+        "body": "A brawl erupted at the Vandorf Reach Regatta on Sunday after officials disqualified the winning crew for carrying wooden oars onto the water.\n\nSecurity officers intervened when forty spectators jumped into the river mud to attack the crew of the Iron Gull. The boat had completed the three-kilometre course in six minutes, defeating seven rival craft whose teams spent the race shouting at one another through brass megaphones.\n\nUnder colonial charter rules compiled during landfall, rowing is defined as an argument conducted while drifting downriver. Standard regattas permit no propulsion. Victory goes to the crew that generates the highest measured volume before passing the marker buoy.\n\n\"We spent eight months training our throats,\" said rival team captain Siobhan Kalu, whose neck was wrapped in ice packs. \"Then these cheats dropped wooden sticks in the water and moved without making a sound.\"\n\nRace judges confiscated the oars. Police made no arrests.\n\nViolence spread along the embankment after the chief umpire declared the last-place vessel the winner. That crew had spent four hours drifting into a reed bed while calling each other cowards.\n\nUmpires urged the crowd to clear the water. Three spectators are still clearing the water, which they are doing with plastic buckets.\n\nThe Iron Gull crew remains barricaded inside the boat shed. Police report no physical injuries, though fourteen competitors require urgent speech therapy.",
+        "premise": "A brawl broke out at the Kepler-186f regatta after officials disqualified the winning crew for using oars, enforcing a historic translation error that defined 'rowing' as a loud verbal argument conducted while drifting downriver.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Tennis Match Stopped After Umpire Says Out",
+        "body": "Riot police cleared the centre court at Gullies End on Friday after an umpire called a ball out during the Epsilon Eridani Open.\n\nServer Tariq Mbaye had just missed his second serve at three games all. Umpire Joel Parnis delivered the routine call into his microphone.\n\nThe stadium fell quiet.\n\nWithin seconds, six hundred spectators vaulted the perimeter glass to defend the honour of Mbaye's mother, a quiet woman who keeps bees in the North Basin. Parnis was carried to a reinforced bunker beneath the referee chair while fans tore up the synth-grass.\n\nFour centuries of vocal drift on the colony have shifted local short vowels. The standard line call is now sound-for-sound identical to an old settlement phrase accusing a server's mother of eating damp clay.\n\nMbaye dropped his racquet and wept on the baseline.\n\n\"He mentioned her clay habit,\" said spectator Mirei Tan, who joined the pitch storming. \"My uncle fought three men for less.\"\n\nSecurity officers were told to hold the line. The line was a strip of white canvas.\n\nPlay remains suspended.\n\nTournament officials are now auditing the entire umpire wordbook before the semi-finals resume. The standard call for new balls is already considered a formal declaration of war in the outer valleys.",
+        "premise": "Play was halted at the Epsilon Eridani Tennis Open when spectators stormed the court in fury, as local dialect drift had turned the umpire's call of 'out' into a deeply vulgar personal insult against the server's mother.",
+        "score": 0.75,
+        "rejected": true
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Satirizes performative political discourse over actual progress with deadpan quotes and a strong kicker.",
+    "judge_pick": 2,
+    "judge_score": 6.0,
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The headline described the incident rather than landing the world's core joke that rowing is illegal cheating.\nThe original punchline merely listed injuries rather than applying the regatta's scoring logic to the riot itself.",
+    "prose": {
+      "words": 239,
+      "sentences": 16,
+      "mean_sentence": 14.9,
+      "longest": 26,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 2.5
+    }
+  }
+}
