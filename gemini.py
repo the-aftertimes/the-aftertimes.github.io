@@ -45,6 +45,33 @@ def _api_key() -> str:
     return key
 
 
+#: The free tier allows 5 requests per MINUTE. A full pipeline is ideate + N
+#: drafts + judge + revise + depict, fired back to back in a couple of seconds,
+#: so it sits over the limit before a single retry is counted. On 04/09/2026 all
+#: four drafts 429'd while ideate succeeded - the classic signature. Nothing in
+#: the code paced anything; the nightly cron had simply been getting away with
+#: it, and the days where drafts "failed" and the judge chose from a thinner
+#: pool than intended were this, not model trouble.
+_DEFAULT_MIN_INTERVAL = 13.0
+_last_call = 0.0
+
+
+def _min_interval(g: dict) -> float:
+    return float(g.get("min_interval_seconds", _DEFAULT_MIN_INTERVAL))
+
+
+def _pace(g: dict) -> None:
+    """Hold every request at least min_interval apart, process-wide."""
+    global _last_call
+    gap = _min_interval(g)
+    if gap <= 0:
+        return
+    wait = gap - (time.monotonic() - _last_call)
+    if wait > 0:
+        time.sleep(wait)
+    _last_call = time.monotonic()
+
+
 def generate(prompt: str, settings: dict, temperature: float,
              model: str | None = None, retries: int | None = None) -> str:
     """Call generateContent and return the model's raw text. Retries on
@@ -63,6 +90,7 @@ def generate(prompt: str, settings: dict, temperature: float,
     }
     last = None
     for attempt in range(limit + 1):
+        _pace(g)
         try:
             resp = requests.post(
                 url, params={"key": _api_key()}, json=payload,
@@ -74,5 +102,11 @@ def generate(prompt: str, settings: dict, temperature: float,
             last = f"HTTP {resp.status_code}: {resp.text[:200]}"
         except (requests.RequestException, KeyError, IndexError) as exc:
             last = str(exc)
-        time.sleep(1.5 * (attempt + 1))
+        # A 429 is a RATE limit, not a transient blip: retrying 1.5s later
+        # spends another request against the same window and guarantees another
+        # 429. Back off past the minute instead.
+        if "HTTP 429" in (last or ""):
+            time.sleep(max(_min_interval(g), 20.0) * (attempt + 1))
+        else:
+            time.sleep(1.5 * (attempt + 1))
     raise GeminiError(f"generate failed after retries: {last}")
