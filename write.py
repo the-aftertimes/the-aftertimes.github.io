@@ -150,7 +150,15 @@ def _era_rule(years: int) -> str:
     if years < 4000:
         return ("Centuries have passed. Institutions, jobs, materials and customs "
                 "should be UNFAMILIAR - descendants of ours, not ours. Nothing "
-                "should be branded or built the way it is today.")
+                "should be branded or built the way it is today. "
+                "  BE CONCRETE ABOUT THIS. The abstract version of this rule kept "
+                "losing: a dispatch datelined 4792 furnished itself with brass "
+                "megaphones, wooden oars, plastic buckets, ice packs and police, "
+                "and read as 1950s. Every OBJECT a character touches, every "
+                "MATERIAL named and every JOB title must be one that does not "
+                "exist today. If you would find it in a hardware shop or a sports "
+                "club in 2026, it does not belong here - invent the descendant "
+                "instead, and name it plainly as though it were ordinary.")
     return ("This is tens of thousands of years out - further from us than we are "
             "from the first cities. Essentially NOTHING of the present survives "
             "unchanged: not our nations, languages, companies, materials, plants, "

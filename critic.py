@@ -84,7 +84,15 @@ _LEGAL = re.compile(
 _PROPS = re.compile(
     r"\b(candle\w*|bronze plaque\w*|handwritten|clipboard\w*|vellum|locker\w*"
     r"|apothecar\w*|cobblestone\w*|lard|typewriter\w*|fax|dollar\w*|euro\w*"
-    r"|coffee|espresso|Boston fern\w*)\b", re.I)
+    r"|coffee|espresso|Boston fern\w*"
+    # Added 04/09/2026. A dispatch datelined 4792 was furnished with brass
+    # megaphones, wooden oars, plastic buckets and ice packs and read as
+    # 1950s, and the list above caught NONE of it - every entry was something
+    # the paper had already been burned by, so it only ever detected
+    # yesterday's failure. These are the ordinary 2026 objects that a "plain
+    # working scene" instruction reaches for by default.
+    r"|megaphone\w*|bucket\w*|plastic|cardboard|denim|wellington\w*"
+    r"|ice pack\w*|clipboard\w*|biro\w*|sneaker\w*|t-shirt\w*)\b", re.I)
 
 #: The narrator or a character explaining the comic mechanism out loud. This is
 #: a semantic fault that regex cannot detect reliably, so it is deliberately

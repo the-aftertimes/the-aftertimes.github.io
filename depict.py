@@ -34,7 +34,8 @@ FIELDS = ("subject", "action", "setting", "light", "materials", "anomaly")
 _GUIDE = {
     "subject": "the person or object at the centre, and what it is made of, in one clause",
     "action": ("what they are plainly DOING - working, waiting, walking, watching. "
-               "An ordinary action caught mid-way, not a dramatic pose"),
+               "An ordinary action caught mid-way, not a dramatic pose. Name any "
+               "object they hold ONCE, and only if it is already in `subject`"),
     "setting": "the ordinary working place around them, in concrete nouns",
     "light": "direction, hardness and source of the light",
     "materials": "the three or four materials actually visible, named plainly",
@@ -141,8 +142,19 @@ def build_prompt(dispatch: dict) -> str:
         "The picture must contain NO lettering of any kind. Never describe a "
         "sign, label, screen of text or written notice - describe the object it "
         "sits on instead, or choose a different detail.\n"
-        "This is a scene from the future: the objects, clothing and machinery "
-        "should not be present-day."
+        "THIS SCENE IS " + str(int((dispatch.get("dateline") or {}).get(
+            "years_from_now") or 0)) + " YEARS FROM NOW, and that has to be "
+        "visible in the picture. One weak line here was losing every day: on "
+        "04/09/2026 a dispatch datelined 4792 came back wearing a waterlogged "
+        "wool jersey, rubber work boots and waterproof coats, with materials "
+        "given as wet wool, river mud, tarnished brass and varnished timber. It "
+        "It drew as 1950s. "
+        "So: NO garment, material, tool or vehicle that exists in 2026. Not wool, "
+        "denim, rubber boots, brass, varnished timber, plastic, cardboard or "
+        "canvas. Not a megaphone, a bucket, a clipboard or a hand tool you could "
+        "buy today. Name the descendant instead and describe it plainly, as "
+        "something ordinary that people use without thinking. The scene stays the "
+        "same; only its furniture changes."
     )
 
 
