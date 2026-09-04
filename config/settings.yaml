@@ -70,6 +70,11 @@ gemini:
   endpoint: "https://generativelanguage.googleapis.com/v1beta/models"
   timeout_seconds: 60
   max_retries: 2
+  # The free tier is 5 requests per MINUTE. Every Gemini call in the
+  # process is held this far apart (gemini._pace), because a full run is
+  # 8 calls fired back to back and 04/09/2026 lost all four drafts to 429
+  # while ideate succeeded. Set to 0 to disable the pacing.
+  min_interval_seconds: 13
   temperature_ideate: 1.1
   temperature_write: 0.9
 
