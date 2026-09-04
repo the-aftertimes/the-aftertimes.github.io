@@ -459,3 +459,24 @@ def test_neither_check_can_ever_bin_a_draft():
     from common import load_settings
     hard = load_settings()["quality"]["hard_reject"]
     assert "wink" not in hard and "tricolon" not in hard
+
+
+def test_props_catches_the_2026_working_scene_furniture():
+    """04/09/2026: a dispatch datelined 4792 came back with brass megaphones,
+    plastic buckets and ice packs, and the props list caught none of it - every
+    entry in it was something the paper had already been burned by, so it only
+    ever detected yesterday's failure."""
+    body = ("Officials raised megaphones while spectators bailed with plastic "
+            "buckets and the captain held ice packs to her neck.")
+    v = critic.check_props(body, 2766)
+    assert v, "the props detector must catch ordinary 2026 objects"
+    detail = v[0]["detail"]
+    for word in ("megaphones", "buckets", "plastic"):
+        assert word in detail
+    assert v[0]["severity"] == "major"
+
+
+def test_props_does_not_fire_on_invented_future_furniture():
+    body = ("The tide-warden lifted a resin scoop from the silt rack and keyed "
+            "the hull-choir until the reach answered.")
+    assert critic.check_props(body, 2766) == []
