@@ -416,5 +416,16 @@
     "place_kind": "exoplanet",
     "engine": "language",
     "technique": "heard_the_words"
+  },
+  {
+    "run_date": "2026-09-05",
+    "year": 5159,
+    "era_bucket": 62,
+    "domain": "religion",
+    "headline": "Ceiling Priest Finally Unbolted",
+    "style": "obituary",
+    "place_kind": "deepspace",
+    "engine": "ritual",
+    "technique": "headline_carries_it"
   }
 ]
