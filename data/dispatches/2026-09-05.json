@@ -1,0 +1,93 @@
+{
+  "run_date": "2026-09-05",
+  "run_time": "2026-09-04T18:24:17.770030+00:00",
+  "dispatch": {
+    "headline": "Ceiling Priest Finally Unbolted",
+    "body": "Brother Julian, who spent sixty years celebrating high mass strapped upside-down to a coolant pipe, has died aged ninety-one.\n\nHe arrived at the dark-space fuel station in 5099 as a junior clerk. Three weeks later, he declared artificial gravity a secular luxury and climbed into the roof struts. He never came down. He bound his boots to a steel girder above the altar, hanging face-down to bless workers during the shift change.\n\nStation managers complained about grease drips on his vestments and holy water splashing into turbine vents. Julian ignored them. Over six decades, he preached four thousand sermons from the rafters, lowering communion wafers to the crew in a wicker basket attached to a landing pole.\n\n\"He was very strict about posture,\" said Sister Corin, who scrubbed engine oil from his chasuble. \"He told us deckplates were a moral shortcut, and that real salvation was mostly hamstring tension.\"\n\nHis death on Friday followed heart failure. His body remained suspended until maintenance crews unbolted his section of pipe on Saturday to lower him.\n\nSunday service proved difficult. Deacon Silas attempted to preach from the floor, but forty crewmen spent the hour staring silently at the empty ceiling.\n\nOn Monday, Silas bought a harness; by Tuesday, standing was a heresy.",
+    "scene": "An elderly priest in a grease-stained grey robe hangs upside down by his ankles from an overhead steel pipe, lowering a wicker basket on a long rod toward a seated station worker.",
+    "dateline": {
+      "place": "WAYSTATION DELTA",
+      "year": 5159,
+      "month": 5,
+      "day": 14,
+      "years_from_now": 3133
+    },
+    "domain": "Faith & Station Life",
+    "glossary": [],
+    "premise": "Brother Julian, who spent sixty years at Waystation Delta maintaining that artificial gravity was a secular illusion and thus insisted on celebrating high mass while strapped upside-down to a ceiling pipe, has died at 91.",
+    "brief": {
+      "subject": "an elderly priest with a gaunt face and thin grey hair, wearing a loose grease-stained grey composite-fabric robe over dark synth-mesh trousers and seamless alloy-soled boots strapped to an overhead structural pipe",
+      "action": "hanging inverted from the overhead pipe while lowering a woven synth-reed basket on a long telescoping carbon rod toward a seated station worker",
+      "setting": "a high-ceilinged fuel station gantry surrounded by heavy insulated coolant lines, structural cross-girders, and a low control deck below where a station technician sits at a console",
+      "light": "flat white illumination from narrow overhead LED strip panels embedded along the structural beams",
+      "materials": "alloy plating, carbon-composite, synth-mesh fabric, woven composite fiber",
+      "anomaly": "an unmounted alignment gauge left resting on top of a lower deck junction box"
+    },
+    "image": "assets/img/2026-09-05.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-04T18:24:17.770030+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 44,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Order Bows Blindly After Monk Dies",
+        "body": "Father Luke, the last brother of the Silent Spire who remembered the spatial bearing of Old Earth, died on Thursday at Waystation Nine at the age of 108.\n\nBorn in a cargo hopper over the Oros Drift, he joined the order as an apprentice grease-presser at seventeen. In 5081, during his taking of the vows, his predecessor whispered the three numbers of the home direction into his left ear. Station rules forbade recording the figures on light-slates, wall plates or clothing.\n\nFor eighty years, Father Luke stood at the front of the mess hall every afternoon, turning his shoulders thirty degrees left of the recycler hatch to face where Earth was believed to be. The rest of the order lined up behind him in silence. He never missed a turn.\n\nBrother Tomas, who took over the chapel room on Friday, acknowledged the difficulty of maintaining the four-o'clock turn without a guide.\n\n\"We tried six different angles this morning,\" Tomas said. \"None of them felt like home.\"\n\nThe order has suspended evening turns while novices check old freight receipts for clues. Until then, seven monks will bow directly at the floor. His shift jacket will remain hanging in the chapel room.\n\nHe was buried on Friday in the waste chute.",
+        "premise": "Father Luke, the last monk at Deep-Space Waystation 9 who knew which vector led toward Earth, has died at 108, ending a 400-year-old tradition of the order bowing toward an arbitrary patch of dark void.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Abbot Who Shortened Lent Dies At 94",
+        "body": "Abbot Cassian, who spent fifty years at Garrison Four using high-speed shuttles to compress forty-day fasts into eight seconds, died on Sunday. He was ninety-four.\n\nBorn on a water station near the core, Cassian joined the order at twenty. He arrived at the outer garrison in 5109 to find the brotherhood struggling with forty days of spring starvation on thin nutrient rations.\n\nIn 5112, he borrowed a heavy freight shuttle. By flying eleven loops around the station at near-light speed, Cassian experienced forty full days of physical isolation while only eight seconds passed for the garrison kitchen. He then ate lunch.\n\nThe station council reviewed the logs. Because his internal clock logged nine hundred and sixty hours, the bishop ruled the fast complete and fully valid under canon law.\n\nCassian repeated the flight every spring for half a century. Over his career he completed fifty years of mandatory penance in five minutes and twenty seconds of station time.\n\nBrothers remembered him as a practical man who disliked unneeded delay.\n\n\"He saved three thousand meals,\" said Brother Parvez, the new abbot. \"We never had to store his bread.\"\n\nCassian died peacefully in his bunk. Per his instructions, his funeral service was conducted inside a launch tube to keep the ceremony under half a second.",
+        "premise": "Abbot Cassian, who spent fifty years at Interstellar Garrison 4 pioneering 'relativistic fasting'—riding high-speed shuttle loops so his 40-day Lenten penance elapsed in eight seconds of local time—has died at 94.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Ceiling Priest Dies At Ninety-One",
+        "body": "Brother Julian, who spent sixty years celebrating high mass strapped upside-down to a pipe on Waystation Delta, has died aged ninety-one.\n\nHe arrived at the dark-space fuel station in 5099 as a junior clerk. After three weeks, he declared artificial gravity a secular deception and climbed into the roof struts. He never came down. He bound his ankles to a steel coolant pipe above the communion table, hanging face-down to bless workers during the morning watch.\n\nStation managers complained about oil drips on his vestments and grease on the ceiling. Julian ignored them. Over six decades, he preached four thousand sermons from the roof, lowering communion wafers to the crew in a small wicker basket attached to a landing pole.\n\n\"He was very clear about floor weight,\" said Sister Corin, who washed his robes. \"He told us that putting your soles on a floor-plate was lying to God.\"\n\nHis death on Friday followed heart failure. His body remained in the ceiling harness until maintenance crews unbolted the section of pipe on Saturday to lower him.\n\nThe transition proved difficult during Sunday services. Deacon Silas attempted to preach from the floor, but the congregation refused to look down. Forty workers spent the entire hour staring silently at the empty ceiling pipe.\n\nOn Monday, Silas bought his first harness.",
+        "premise": "Brother Julian, who spent sixty years at Waystation Delta maintaining that artificial gravity was a secular illusion and thus insisted on celebrating high mass while strapped upside-down to a ceiling pipe, has died at 91.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "It features a sharp narrative turn about institutional peer pressure and ends on a fantastic kicker.",
+    "judge_pick": 2,
+    "judge_score": 8.0,
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The original headline merely stated the premise rather than landing a joke. The draft's ending restated the deacon's action without escalating the absurdity to its logical conclusion.",
+    "prose": {
+      "words": 209,
+      "sentences": 15,
+      "mean_sentence": 13.9,
+      "longest": 26,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 4.3
+    }
+  }
+}
