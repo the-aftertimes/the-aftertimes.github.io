@@ -1,0 +1,86 @@
+{
+  "run_date": "2026-09-06",
+  "run_time": "2026-09-05T17:20:50.605071+00:00",
+  "dispatch": {
+    "headline": "Divorce Cancelled For Public Air",
+    "body": "Soraya Blythe and her husband abandoned their separation on Friday after a colony of escaped hull-cleaning barnacles calcified their shared mattress into a deckplate and became a vital oxygen organ for Habitation Ring Four.\n\nThe pair had agreed to divide their quarters in November. Before the partition could be installed, a jar of bio-scrapers leaked into the mattress lining. The crustacean colony consumed the synthetic filling, fused the frame to the structural deck, and now filters seven percent of the district's breathable air.\n\nRemoval is forbidden under environmental law.\n\nEvery morning, three life-support technicians enter the bedroom. They polish the bedposts, clear the mattress's gill valves, and threaten Haruto with a treason charge if his snoring drops the ambient pressure.\n\n\"Haruto stays on the port side and I stay on starboard,\" Ms Blythe said. \"If either of us rolls into the centre, the primary school down the corridor loses six percent of its oxygen, which is a terrible look on a marriage counsellor's report.\"\n\nThe couple tried arguing through a foam wall last month. However, air monitors logged an immediate drop in oxygen output whenever voices were raised.\n\nThe crew now enforces quiet hours.\n\nMs Blythe reads silently while her husband feeds the bedposts plankton broth. Environmental officers expect the bed to expand into the hallway by mid-century, at which point the housing authority will classify the couple as a public park.",
+    "scene": "Soraya Blythe sits on the edge of a calcified double mattress while a life-support technician sprays algae broth onto the hardened bedposts.",
+    "dateline": {
+      "place": "Habitation Ring Four",
+      "year": 5855,
+      "month": 8,
+      "day": 14,
+      "years_from_now": 3829
+    },
+    "domain": "orbit",
+    "glossary": [
+      {
+        "term": "bio-scrapers",
+        "gloss": "Genetically altered crustaceans used to clear algae and rust from station hull plates."
+      }
+    ],
+    "premise": "An estranged couple on the generation ship Argo VII abandoned divorce proceedings after an escaped colony of hull-cleaning barnacles fused their double mattress into an immovable, ecosystem-critical reef.",
+    "brief": {
+      "subject": "Soraya Blythe wearing a dark gray seamless aerofiber jumpsuit that covers her arms and legs down to integrated flexible foot coverings",
+      "action": "sitting on the hard calcified rim of the double mattress while a technician in the background directs a fine spray onto a corner post",
+      "setting": "a compact residential compartment with composite deckplates, recessed ventilation ducts, and a bio-fused shell bed anchored to the floor structure",
+      "light": "flat white illumination from ceiling-mounted luminescent strips",
+      "materials": "calcified bio-shell, alloy deckplates, micro-porous ceramic, woven aerofiber",
+      "anomaly": "a trail of dried green fluid residue on the deckplate beside the lower bed joint"
+    },
+    "image": "assets/img/2026-09-06.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-05T17:20:50.605071+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 45,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "scores": [
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: \"They gently polish the bedposts, check the mattress's gill valves, and\"",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Couple Stuck Together By Living Mattress",
+        "body": "Soraya Blythe and her husband abandoned their separation on Friday after a colony of escaped hull-cleaning barnacles calcified their shared mattress into a bulkhead and became a vital oxygen organ for Habitation Ring Four.\n\nThe pair had agreed to divide their quarters in November. Before the partition could be installed, a jar of bio-scrapers leaked into the mattress lining. The crustacean colony consumed the synthetic filling, fused the frame to the structural deck, and now filters seven percent of the district’s breathable air.\n\nRemoval is forbidden under environmental law.\n\nEvery morning, three life-support technicians enter the bedroom with algae spray and damp pads. They gently polish the bedposts, check the mattress's gill valves, and measure the couple's sleep breathing.\n\n\"We sleep on opposite edges,\" Ms Blythe said. \"Haruto stays on the port side. I stay on the starboard side. If either of us rolls into the centre, we block a primary air vent.\"\n\nThe couple tried arguing through a foam wall last month. However, air monitors logged a drop in oxygen output whenever voices were raised.\n\nThe crew now enforces quiet hours.\n\nMs Blythe reads silently while her husband feeds the bedposts plankton broth. Environmental officers expect the mattress to reach the hallway by mid-century.\n\n\"We do not talk,\" Ms Blythe said. \"The air is better that way.\"",
+        "premise": "An estranged couple on the generation ship Argo VII abandoned divorce proceedings after an escaped colony of hull-cleaning barnacles fused their double mattress into an immovable, ecosystem-critical reef.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "The headline merely summarised the premise without a punchline, and the list of technician duties lacked a comedic escalation. Quotes were functional rather than funny, and the ending merely restated the situation.",
+    "prose": {
+      "words": 232,
+      "sentences": 14,
+      "mean_sentence": 16.6,
+      "longest": 34,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 3.9
+    }
+  }
+}
