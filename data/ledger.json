@@ -427,5 +427,16 @@
     "place_kind": "deepspace",
     "engine": "ritual",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-09-06",
+    "year": 5855,
+    "era_bucket": 76,
+    "domain": "love and marriage",
+    "headline": "Divorce Cancelled For Public Air",
+    "style": "feature",
+    "place_kind": "shipboard",
+    "engine": "nature",
+    "technique": "sincere_futility"
   }
 ]

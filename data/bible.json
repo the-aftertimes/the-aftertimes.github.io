@@ -197,6 +197,12 @@
       "gloss": "An annual downriver drifting competition where crews compete entirely on vocal volume.",
       "kind": "term",
       "first_seen": "2026-09-04"
+    },
+    {
+      "term": "bio-scrapers",
+      "gloss": "Genetically altered crustaceans used to clear algae and rust from station hull plates.",
+      "kind": "term",
+      "first_seen": "2026-09-06"
     }
   ]
 }
