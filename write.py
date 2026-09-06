@@ -375,6 +375,18 @@ Two failure modes, both of which have shipped:
   present-day plant and pet breeds ("a Boston fern"), current company or country
   names, and current units of currency. (A dispatch set in 37562 mourned a Boston
   fern by candlelight under a bronze plaque.)
+- The same ban applies to present-day INSTITUTIONS, which is the harder half and
+  the one that keeps slipping through. Objects are easy to futurise and the
+  paperwork around them is not, so a story set four thousand years out ends up
+  running on divorce, a marriage counsellor, a primary school, a housing
+  authority, environmental law and a treason charge - six present-day
+  institutions in two hundred words, on 06/09/2026, and Charlie's note was that
+  it "could be more futuristic". A society that lives inside a sealed ring and
+  breathes air its neighbours produce does not have a marriage counsellor; it
+  has whatever it invented instead. So name the descendant institution, the
+  descendant qualification, the descendant offence - and let the reader work out
+  what it replaced. Bureaucracy is the paper's whole subject, so it must be THIS
+  era's bureaucracy.
 
 Invent the era's own objects, materials, rituals and turns of phrase, and use them
 casually as though everyone knows what they are. Show how people live, work,
@@ -414,7 +426,11 @@ Rules:
 - Follow the SHAPE of today's dispatch format above. Unless that format is a court
   ruling or an official notice, do NOT frame the story as an authority handing down
   a ruling with a spokesperson quote - use the format's own structure and voice.
-- 200 to 280 words. Straight-faced, as a real wire story. Dry wit, never winking.
+- 180 to 240 words. Straight-faced, as a real wire story. Dry wit, never winking.
+  This band must match quality.length.min/max in config/settings.yaml - the
+  prompt asks for it and the critic scores it, and if they disagree the writer
+  is being marked against a target it was never given. Pinned by
+  test_prompt_word_band_matches_the_critic.
 - RHYTHM, measured. No sentence over 35 words, and include at least two of SIX
   WORDS OR FEWER. VARY it: a run of uniformly long sentences is the clearest sign
   a machine wrote it. Do NOT pad a sentence to reach a length - on the evidence

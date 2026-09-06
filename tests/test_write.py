@@ -44,3 +44,18 @@ def test_no_technique_leaves_the_prompt_alone():
     import write
     dl = {"year": 2400, "years_from_now": 374}
     assert "COMIC TECHNIQUE" not in write.build_prompt("p", dl, "d", "s")
+
+
+def test_prompt_word_band_matches_the_critic():
+    """The prompt asks for a band and the critic scores against another one; if
+    they drift the writer is marked against a target it was never given.
+    Tightened together on 06/09/2026 after "the article is a bit too wordy"."""
+    import re
+    import write
+    from common import load_settings
+    length = load_settings()["quality"]["length"]
+    prompt = write.build_prompt("a premise", {"year": 5000, "years_from_now": 3000},
+                                "orbit", "")
+    m = re.search(r"- (\d+) to (\d+) words\.", prompt)
+    assert m, "the prompt no longer states a word band"
+    assert (int(m.group(1)), int(m.group(2))) == (length["min"], length["max"])

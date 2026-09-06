@@ -480,3 +480,44 @@ def test_props_does_not_fire_on_invented_future_furniture():
     body = ("The tide-warden lifted a resin scoop from the silt rack and keyed "
             "the hull-choir until the reach answered.")
     assert critic.check_props(body, 2766) == []
+
+
+def _rules(body):
+    import critic
+    return [v["rule"] for v in critic.check_flat_rule(body)]
+
+
+def test_a_rule_announced_at_nobody_is_flagged():
+    """Charlie, 06/09/2026: "these sorts of lines dont really land - Removal is
+    forbidden under environmental law." An abstract noun, a regulation, no
+    person, no consequence."""
+    assert _rules("Removal is forbidden under environmental law.") == ["flat_rule"]
+
+
+def test_a_rule_with_a_person_in_it_is_left_alone():
+    """Both of these are published lines that WORK, and both are rules. The
+    difference is that somebody is on the receiving end - which is the joke."""
+    assert _rules("He is now only permitted to speak in numbers.") == []
+    assert _rules("Under ship law, his top half ceased to be a real person.") == []
+
+
+def test_a_quoted_rule_is_left_alone():
+    assert _rules('"Removal is forbidden under environmental law," she said.') == []
+
+
+def test_a_long_sentence_carrying_a_rule_is_left_alone():
+    """The fault is a bare announcement standing in for a beat, not the word
+    'forbidden'. A rule with a clause of consequence hanging off it is prose."""
+    body = ("Removal is forbidden under environmental law, so the district now "
+            "budgets for a bed that will one day reach the stairwell.")
+    assert _rules(body) == []
+
+
+def test_flat_rule_is_a_minor_and_never_a_hard_reject():
+    """Fitted to a single archived example, like wink and stated_joke. It nudges
+    the revise pass; it must not be able to bin a draft."""
+    import critic
+    from common import load_settings
+    v = critic.check_flat_rule("Removal is forbidden under environmental law.")
+    assert v[0]["severity"] == "minor"
+    assert "flat_rule" not in set(load_settings()["quality"]["hard_reject"])
