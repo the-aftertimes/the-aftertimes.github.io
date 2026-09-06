@@ -69,7 +69,11 @@ gemini:
   write_model: ""
   endpoint: "https://generativelanguage.googleapis.com/v1beta/models"
   timeout_seconds: 60
-  max_retries: 2
+  # 3, not 2, from 06/09/2026. With the 429/503 backoff that is 20 + 40 + 60
+  # seconds of waiting before a draft is given up on, which walks over the kind
+  # of short "high demand" spike that took three of four drafts on 05/09. Costs
+  # nothing on a clean run - retries only happen after a failure.
+  max_retries: 3
   # The free tier is 5 requests per MINUTE. Every Gemini call in the
   # process is held this far apart (gemini._pace), because a full run is
   # 8 calls fired back to back and 04/09/2026 lost all four drafts to 429
@@ -114,11 +118,18 @@ quality:
     mean_hard_max: 24
     longest_max: 35
     min_short: 2
+  # Tightened 06/09/2026 from 200-280 after Charlie: "the article is a bit too
+  # wordy" of a 232-word piece. Measured against the archive first, as the rule
+  # requires: the twenty scored dispatches run a median of 219 words and only
+  # two have ever passed 240, so 180-240 sits around what the paper already does
+  # well and penalises the top of the range rather than banning it. The old
+  # window put its MIDPOINT at 240, which quietly asked for the wordy end every
+  # night. Hard bounds pulled in to match.
   length:
-    min: 200
-    max: 280
-    hard_min: 160
-    hard_max: 340
+    min: 180
+    max: 240
+    hard_min: 150
+    hard_max: 300
   # Percentage of body words that are NOT in config/common_words.txt - the words
   # a reader has to stop and decode. Derived from the archive on 17/08/2026, not
   # from taste: the nineteen dispatches to that date ran a median 4.2% and a

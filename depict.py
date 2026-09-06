@@ -29,9 +29,31 @@ import gemini
 
 #: The brief IS the data model. Order matters - it is also the order the fields
 #: are assembled into the image prompt in illustrate.build_prompt.
-FIELDS = ("subject", "action", "setting", "light", "materials", "anomaly")
+#: `focus` added 06/09/2026 and deliberately placed FIRST. Until then the brief
+#: could be entirely correct and the picture still wrong, which every previous
+#: fix here assumed was impossible. "Divorce Cancelled For Public Air" is about a
+#: mattress that a barnacle colony has calcified into a load-bearing shell, and
+#: the brief said so - "sitting on the hard calcified rim of the double
+#: mattress", "a bio-fused shell bed anchored to the floor structure",
+#: "calcified bio-shell". flux drew a woman in a jumpsuit sitting on an ordinary
+#: clean bed. Nothing was dropped; the prompt fitted with 158 characters to
+#: spare.
+#:
+#: The reason is positional. flux-1-schnell is a four-step distilled model with
+#: weak adherence over a long prompt, and the story's one irreplaceable object
+#: was scattered across a subordinate clause of `action` and the middle of
+#: `setting` - the least-weighted stretch of the prompt - while the strong,
+#: early, unqualified tokens were "woman", "jumpsuit" and "mattress". It drew
+#: what it was told loudest. So the object now gets its own slot and leads.
+FIELDS = ("focus", "subject", "action", "setting", "light", "materials",
+          "anomaly")
 
 _GUIDE = {
+    "focus": ("THE ONE THING THE PICTURE IS OF - the single object the story "
+              "turns on, as a concrete noun phrase: what it is, what it is made "
+              "of, and what has visibly happened to it. Never a person, never a "
+              "place, never a mood. If a reader saw only this, they should know "
+              "which story it is"),
     "subject": "the person or object at the centre, and what it is made of, in one clause",
     "action": ("what they are plainly DOING - working, waiting, walking, watching. "
                "An ordinary action caught mid-way, not a dramatic pose. Name any "
@@ -132,6 +154,13 @@ def build_prompt(dispatch: dict) -> str:
         f"THE SCENE TO DRAW (not a suggestion - draw this): {scene}\n"
         f"THE DISPATCH, for context only - do not pick a moment from it:\n"
         f"{body[:1500]}\n\n"
+        "`focus` is the load-bearing slot and it is filled FIRST. The renderer "
+        "reads the front of the prompt hardest, so whatever is named there is "
+        "what gets drawn: put the story's own object there, in its changed "
+        "state, or the picture comes back as a clean generic version of the "
+        "same room. 'a double mattress' is the wrong answer; 'a double mattress "
+        "fused into a ridged grey shell of living crust, welded to the floor' "
+        "is the right one. The other slots then describe the scene AROUND it.\n"
         "Return a single JSON object with exactly these keys:\n"
         f"{{\n{slots}\n}}\n\n"
         "Each value is one plain clause. Describe only what is VISIBLE. Do not "

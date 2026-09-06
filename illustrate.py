@@ -113,6 +113,18 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
         lead = ", ".join(p for p in ((brief.get("subject") or "").strip(),
                                      (brief.get("action") or "").strip()) if p)
         core = [_STYLE, (lead or "a figure").rstrip(".") + "."]
+        # THE FOCUS OBJECT GOES IN FRONT OF THE FIGURE, from 06/09/2026. Same
+        # positional argument as the negative going last, pointed the other way:
+        # flux weights both ends of a prompt over its middle, and on 05/09 a
+        # perfectly correct brief drew an ordinary bed because the calcified
+        # shell that was the entire story lived in the middle of `setting` while
+        # "woman" and "jumpsuit" led. `focus` is in `core`, so it is never
+        # dropped for length - if anything has to go it is the anomaly, not the
+        # thing the picture is of. Empty for any brief written before this slot
+        # existed, and skipped rather than emitted blank, exactly like the rest.
+        focus = (brief.get("focus") or "").strip()
+        if focus:
+            core.insert(1, "It shows " + focus.rstrip(".") + ".")
         optional = []
         for field, prefix in (("setting", ""), ("light", "Light: "),
                               ("materials", "Materials: "), ("anomaly", "")):

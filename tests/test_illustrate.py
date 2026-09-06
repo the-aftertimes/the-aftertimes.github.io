@@ -277,3 +277,35 @@ def test_only_run_and_reillustrate_spend_the_image_budget():
     assert drawers == {"run.py", "reillustrate.py"}, (
         f"image-budget callers changed: {sorted(drawers)}. Update the "
         f"exhausted-allocation message in illustrate.py to match.")
+
+
+def test_the_focus_object_leads_the_prompt():
+    """06/09/2026: a completely correct brief drew an ordinary bed. The story's
+    calcified shell mattress sat in the middle of `setting` while "woman" and
+    "jumpsuit" led, and flux-1-schnell draws what it is told loudest. The focus
+    object now goes in front of the figure."""
+    import illustrate
+    out = illustrate.build_prompt(
+        {"headline": "H", "scene": "s"},
+        _brief(focus="a double mattress fused into a ridged shell of crust"))
+    assert "ridged shell of crust" in out
+    assert out.index("ridged shell of crust") < out.index("a woman in a red jumper")
+
+
+def test_the_focus_object_is_never_dropped_for_length():
+    """If anything has to go it is the anomaly, not the thing the picture is of."""
+    import illustrate
+    out = illustrate.build_prompt(
+        {"headline": "H", "scene": "s"},
+        _brief(focus="a calcified shell mattress", setting="z " * 600))
+    assert "a calcified shell mattress" in out
+    assert "tape on a tripod leg" not in out
+
+
+def test_a_brief_written_before_focus_existed_still_draws():
+    """Every archived brief has six slots, not seven, and reillustrate.py reads
+    them straight off the record. An empty focus is skipped, not emitted blank."""
+    import illustrate
+    out = illustrate.build_prompt({"headline": "H", "scene": "s"}, _brief())
+    assert "It shows ." not in out
+    assert "a woman in a red jumper" in out

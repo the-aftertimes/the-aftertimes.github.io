@@ -294,6 +294,53 @@ def check_wink(body: str) -> list[dict]:
                        "it: " + ", ".join(repr(h) for h in hits), "minor")]
 
 
+#: A short sentence that announces a REGULATION and nothing else. Charlie,
+#: 06/09/2026, on "Removal is forbidden under environmental law.": "these sorts
+#: of lines dont really land".
+#:
+#: The class is narrow and the narrowness is the point. The paper's whole subject
+#: is bureaucracy, so rules are not the problem - a rule with a PERSON in it is
+#: usually the joke. Two lines in the archive prove it: "He is now only permitted
+#: to speak in numbers" and "Under ship law, his top half ceased to be a real
+#: person" both land, and both put a human on the receiving end. The dead version
+#: has an abstract noun as its subject, no person anywhere, and no consequence -
+#: it is the sound of a draft filling a paragraph. It also tends to arrive as its
+#: own one-line paragraph, where the reader stops for it and gets nothing.
+#:
+#: MEASURED FIRST, per the house rule. Across the 39 archived dispatches this
+#: matches exactly ONE: the line Charlie flagged. That is fitted to a single
+#: example, so it is a MINOR like _WINK and _STATED_JOKE - it can nudge revise.py
+#: and can never bin a draft. Widen it only against the archive.
+_RULE_WORD = re.compile(
+    r"\b(forbidden|prohibited|permitted|mandatory|compulsory|illegal|unlawful|"
+    r"banned|exempt|liable|not allowed|required by|punishable)\b", re.I)
+_UNDER_LAW = re.compile(
+    r"\bunder (?:the )?[\w\s-]{0,30}\b(law|laws|act|code|codes|statute|statutes|"
+    r"ordinance|regulations?|rules?|charter)\b", re.I)
+#: A person anywhere in the sentence excuses it: a pronoun, or a capitalised word
+#: that is not simply the sentence's first.
+_PERSON = re.compile(r"\b(he|she|they|him|her|them|his|their|hers|theirs|"
+                     r"someone|anyone|nobody|everyone|who)\b", re.I)
+_MID_CAP = re.compile(r"(?<=[a-z,] )[A-Z][a-z]")
+
+
+def check_flat_rule(body: str) -> list[dict]:
+    """A regulation stated at nobody, standing in for a joke."""
+    flat = re.sub(r"\s+", " ", body or "").strip()
+    for sentence in _split(flat):
+        s = sentence.strip()
+        if len(s.split()) > 12 or '"' in s:
+            continue
+        if not (_RULE_WORD.search(s) or _UNDER_LAW.search(s)):
+            continue
+        if _PERSON.search(s) or _MID_CAP.search(s):
+            continue
+        return [_v("flat_rule",
+                   "a rule announced at nobody, with no person and no "
+                   f"consequence in it: {s!r}", "minor")]
+    return []
+
+
 def check_tricolon(body: str) -> list[dict]:
     m = _TRICOLON.search(body or "")
     if not m:
@@ -371,6 +418,7 @@ def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     violations += check_stated_joke(body)
     violations += check_wink(body)
     violations += check_tricolon(body)
+    violations += check_flat_rule(body)
     violations += check_plainness(body, context.get("common_words"), cfg)
     violations += check_residue(text)
     weights = cfg["weights"]

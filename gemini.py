@@ -105,7 +105,18 @@ def generate(prompt: str, settings: dict, temperature: float,
         # A 429 is a RATE limit, not a transient blip: retrying 1.5s later
         # spends another request against the same window and guarantees another
         # 429. Back off past the minute instead.
-        if "HTTP 429" in (last or ""):
+        #
+        # A 503 needs the SAME treatment, and until 06/09/2026 it did not get
+        # it. Google returns 503 UNAVAILABLE - "this model is currently
+        # experiencing high demand... please try again later" - and the old
+        # `else` branch obliged by trying again 1.5 and then 3 seconds later,
+        # which is not "later" by any reading. That cost 06/09 its whole pool:
+        # drafts 2, 3 and 4 each burned their two retries inside 45 seconds of
+        # the same demand spike, one unopposed draft was published, and the
+        # judge never ran. Charlie's four complaints about that dispatch were
+        # all downstream of an election with one candidate. The spike itself
+        # lasted about four minutes, which a real backoff walks straight over.
+        if "HTTP 429" in (last or "") or "HTTP 503" in (last or ""):
             time.sleep(max(_min_interval(g), 20.0) * (attempt + 1))
         else:
             time.sleep(1.5 * (attempt + 1))

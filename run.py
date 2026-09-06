@@ -389,6 +389,27 @@ def run_pipeline() -> dict:
     if not drafts:
         raise RuntimeError("every draft failed")
 
+    # ONE RETRY OF THE PREMISES THAT NEVER GOT WRITTEN, added 06/09/2026.
+    #
+    # `write_batch` swallows a failed draft so one bad call cannot lose the day,
+    # and that is right - but nothing downstream noticed when it swallowed
+    # THREE. On 05/09 a four-minute Gemini 503 spike took drafts 2, 3 and 4, and
+    # "Divorce Cancelled For Public Air" was published as the only candidate in
+    # its own election: no judge, no comparison, and every one of Charlie's four
+    # complaints about it was the kind of thing a second draft beats. The 503
+    # backoff in gemini.generate is the first half of the fix; this is the
+    # second, because a long enough outage will always outlast a backoff.
+    #
+    # Only fires when the pool has actually collapsed - fewer than two drafts
+    # from a pool that asked for more - so a clean run costs nothing.
+    unwritten = [p for p in chosen_premises
+                 if p not in {d.get("premise") for d in drafts}]
+    if len(drafts) < 2 and unwritten:
+        print(f">>> WRITE AGAIN ({len(drafts)} of {len(chosen_premises)} drafts "
+              f"survived; retrying {len(unwritten)})")
+        drafts += write_batch(unwritten, "retry ")
+    write_failures = len(chosen_premises) - len(drafts)
+
     print(">>> CHOOSE")
     dispatch, choose_info = choose_draft(drafts, context, qcfg, settings)
 
@@ -490,7 +511,13 @@ def run_pipeline() -> dict:
               # archaic or long-winded?" could only be answered by re-measuring
               # every body. It is stored now, decode rate included, because that
               # is the question Charlie actually asked on 17/08/2026.
-              "quality": {"n_drafts": len(drafts), **choose_info,
+              # `write_failures` is here so a collapsed pool is visible in the
+              # RECORD and not only in a CI log line nobody reads. 06/09/2026:
+              # n_drafts said 1 against a configured 4 and there was no way to
+              # tell a novelty famine from an API outage without pulling the run
+              # log for a workflow that had already rotated.
+              "quality": {"n_drafts": len(drafts),
+                          "write_failures": write_failures, **choose_info,
                           **revise_info, "prose": pr}}
     write_json(f"data/dispatches/{run_date}.json", record)
     ledger_mod.save_ledger(ledger_mod.append_entry(
