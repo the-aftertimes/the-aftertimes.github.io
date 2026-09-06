@@ -127,6 +127,29 @@ detail. **Before adding a rule to `_NEGATIVE`, shorten another one**, and check
 648 now. Every rule in it is load-bearing; compress the wording, never drop a
 rule.
 
+## A correct brief can still draw the wrong picture, and the cause is usually one noun
+
+Every picture fault before 06/09/2026 was a bad brief - depict re-choosing the
+scene, leaving the legs unspecified, picking a calmer moment. So the reflex is to
+read the brief, and if it is right, to look at prompt length or the model. On
+06/09 the brief was right three times over ("sitting on the hard calcified rim of
+the double mattress", "a bio-fused shell bed", "calcified bio-shell"), the prompt
+fitted with 158 characters to spare, and flux drew a clean tufted bed.
+
+**flux-1-schnell is a four-step distilled model: a familiar noun beats every
+modifier attached to it.** "A double mattress fused into a ridged shell of grey
+calcified crust" draws a mattress - the redraw proved it, unchanged. What works
+is not naming the everyday object at all: "a low mound of thick grey crust the
+size of a bed, ridged like barnacle shell and welded to the floor" drew the
+thing. Position helps too (the `focus` slot leads the prompt, because flux weighs
+both ends over the middle) but position alone did not fix it; removing the word
+did.
+
+The same gap-filling rule as the clothing one, extended: **any part of the
+picture the brief leaves unstated is a part the renderer decides about.** Two
+consecutive attempts put a hairdryer hood and then a mirrored space helmet on a
+head the brief never described, so `depict` now states that the face is bare.
+
 ## Read docs/TODO.md before writing to it
 
 It is edited by other sessions between turns. On 17/08/2026 I appended an item
