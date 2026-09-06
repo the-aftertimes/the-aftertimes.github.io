@@ -1,0 +1,74 @@
+{
+  "run_date": "2026-09-07",
+  "run_time": "2026-09-06T17:36:44.734411+00:00",
+  "dispatch": {
+    "headline": "Hand-Folded Sails Trap Passenger Time",
+    "body": "A three-year study at Kalyani Sky-Pier has confirmed that hand-creased plasma sails speed up ferry crossings by twelve per cent, despite trapping three light-minutes of passenger time inside every crease. Master sail-foldermen at the high orbit terminus earn high wages for tucking the broad foil by hand before launch. Their deep pleats catch solar streams far better than smooth machine welds.\n\nLead researcher Dr Mercer published the findings after tracking eighty scheduled ferry runs to the outer ring. Station logs recorded faster arrivals, but passengers consistently emerged four hours older than the journey took.\n\n\"The math is simple,\" Dr Mercer said. \"The sail moves ahead, but the crease holds three minutes of human life. A good rig has eighty folds. You save twenty minutes on the flight, but you leave four hours behind in the seam.\"\n\nThe time is gone.\n\nTransit authorities have already raised ticket prices for hand-pleated voyages, marketing the lost hours as the mark of authentic craft work. Wealthy commuters willingly buy tickets for folded ships, then spend the afternoon resting on station benches until their personal age matches their clearance papers.\n\nNobody complains.",
+    "scene": "A master folderman in an oiled work suit leans over a glowing foil sail with a heavy resin press, creasing a broad seam on the berth deck.",
+    "dateline": {
+      "place": "Kalyani Sky-Pier",
+      "year": 3049,
+      "month": 2,
+      "day": 12,
+      "years_from_now": 1023
+    },
+    "domain": "transport",
+    "glossary": [
+      {
+        "term": "sail-folderman",
+        "gloss": "A technician who hand-pleats light-sails for orbital ferries."
+      }
+    ],
+    "premise": "Research at the high-orbit ferry terminus proves that master sail-foldermen who hand-crease plasma sails achieve 12 percent faster light-tacking, though lead investigator Dr. Mercer plainly explained that every artisanal fold traps three light-minutes of unrecoverable passenger time in the creases.",
+    "brief": null,
+    "image": "assets/img/2026-09-07.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-06T17:36:44.734411+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 46,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      1.0
+    ],
+    "violations": [
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Hand-Folded Sails Trap Passenger Time",
+        "body": "A three-year study at Kalyani Sky-Pier has confirmed that hand-creased plasma sails speed up ferry crossings by twelve per cent, despite trapping three light-minutes of passenger time inside every crease. Master sail-foldermen at the high orbit terminus earn high wages for tucking the broad foil by hand before launch. Their deep pleats catch solar streams far better than smooth machine welds.\n\nLead researcher Dr Mercer published the findings after tracking eighty scheduled ferry runs to the outer ring. Station logs recorded faster arrivals, but passengers consistently emerged four hours older than the journey took.\n\n\"The math is simple,\" Dr Mercer said. \"The sail moves ahead, but the crease holds three minutes of human life. A good rig has eighty folds. You save twenty minutes on the flight, but you leave four hours behind in the seam.\"\n\nThe time is gone.\n\nTransit authorities have already raised ticket prices for hand-pleated voyages, marketing the lost hours as the mark of authentic craft work. Wealthy commuters willingly buy tickets for folded ships, then spend the afternoon resting on station benches until their personal age matches their clearance papers.\n\nNobody complains.",
+        "premise": "Research at the high-orbit ferry terminus proves that master sail-foldermen who hand-crease plasma sails achieve 12 percent faster light-tacking, though lead investigator Dr. Mercer plainly explained that every artisanal fold traps three light-minutes of unrecoverable passenger time in the creases.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 187,
+      "sentences": 13,
+      "mean_sentence": 14.4,
+      "longest": 30,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 3.2
+    }
+  }
+}

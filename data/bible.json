@@ -203,6 +203,12 @@
       "gloss": "Genetically altered crustaceans used to clear algae and rust from station hull plates.",
       "kind": "term",
       "first_seen": "2026-09-06"
+    },
+    {
+      "term": "sail-folderman",
+      "gloss": "A technician who hand-pleats light-sails for orbital ferries.",
+      "kind": "term",
+      "first_seen": "2026-09-07"
     }
   ]
 }
