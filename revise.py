@@ -4,8 +4,13 @@ call. The caller decides whether to keep the result - see the acceptance gate in
 run.py, which discards a revision that measures worse than the draft."""
 from __future__ import annotations
 
+import critic
 import gemini
 from write import normalise
+
+#: Rendered into the prompt so the rewrite is told the rule rather than only
+#: marked against it. Sourced from critic so the two cannot drift apart.
+_LEGAL_LIST = ", ".join(critic.LEGAL_WORDS)
 
 
 def render_violations(violations: list[dict]) -> str:
@@ -34,6 +39,16 @@ offering "Tycho Mayor Dies At 84, Exposed As Secretly Capable" - nine words, and
 it explains the joke instead of landing it. Count the words before returning.
 Use plain, ordinary words a person would say out loud: no technical or clinical
 terms, no Latinate journalese, nothing a reader has to decode.
+
+THE LEGAL AND FINANCIAL REGISTER IS BANNED, and this is checked mechanically
+too. Do not use any of these words or anything built on them: {_LEGAL_LIST}.
+This is the trap the last few rewrites fell into: told that a rule was being
+announced at nobody, the obvious fix is to give it an enforcer and a penalty,
+and the obvious enforcer is a bailiff serving a writ over an unpaid levy. That
+rewrite is thrown away. The paper leans on courts and debts as a substitute for
+inventing this era's own consequences, which is why the ban exists. Reach for a
+consequence the STORY already has - who is inconvenienced, what stops working,
+what someone now has to do every morning - not for a legal one.
 
 Fix every fault above. At the same time make the piece FUNNIER and more pointed:
 sharpen the headline so it lands a joke rather than describing the premise, make

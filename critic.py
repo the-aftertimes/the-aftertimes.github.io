@@ -72,6 +72,14 @@ def check_length(metrics: dict, cfg: dict) -> list[dict]:
 #: permit entry" both tripped it. Since legal_register is a HARD REJECT, those
 #: false positives would have binned good drafts routinely and pushed the run
 #: into the all-rejected branch as a matter of course.
+#: Kept as a plain list as well as a regex so revise.py can SHOW the writer the
+#: banned vocabulary instead of only marking it afterwards. 06/09/2026: a re-edit
+#: fixed both faults Charlie had named, reached for "bailiffs" while doing it,
+#: and was binned for a hard reject it had never been told about - two house
+#: rules quietly fighting each other where only one of them was written down.
+LEGAL_WORDS = ("sue", "suing", "lawsuit", "court", "magistrate", "tribunal",
+               "injunction", "lien", "repossess", "bailiff", "writ", "statute",
+               "ordinance", "tax", "levy", "debt")
 _LEGAL = re.compile(
     r"\b(sue[sd]?|suing|lawsuit|court|magistrate|tribunal|injunction|lien|liens"
     r"|repossess\w*|bailiff\w*|writ|statute|ordinance"

@@ -112,3 +112,20 @@ def test_the_editor_is_told_the_headline_cap_it_is_judged_against():
     prompt = revise.build_prompt({"headline": "H", "body": "B"}, [])
     assert "SEVEN WORDS OR FEWER" in prompt
     assert "Count the words before returning" in prompt
+
+
+def test_the_revise_prompt_carries_the_banned_legal_vocabulary():
+    """06/09/2026: a re-edit fixed both faults Charlie named, used "bailiffs"
+    doing it, and was binned by a hard reject nothing in this prompt mentioned.
+    The list is read from critic so the two cannot drift apart."""
+    import critic
+    import revise
+    prompt = revise.build_prompt({"headline": "H", "body": "B"}, [])
+    for word in critic.LEGAL_WORDS:
+        assert word in prompt, f"{word} is hard-rejected but never shown to the editor"
+
+
+def test_the_legal_word_list_matches_the_check_that_enforces_it():
+    import critic
+    for word in critic.LEGAL_WORDS:
+        assert critic.legal_hits(f"The {word} arrived at noon."), word
