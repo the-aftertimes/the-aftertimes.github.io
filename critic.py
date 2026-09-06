@@ -110,6 +110,25 @@ _SENTENCE_SPLIT = re.compile(
     r"(?<=[.!?])[\"" + chr(0x201D) + chr(0x2019) + r"']*\s+")
 
 
+#: The abbreviation guard, same list as trial.split_sentences and write.prose_report.
+#: Lowest consequence of the three - a fragment only changes which two "sentences" the
+#: stated-joke check reads - but three copies agreeing is the whole point of copying
+#: them, and a fourth that quietly disagrees is worse than no copy at all.
+_NOT_AN_END = re.compile(
+    r'(?:\b(?:Mr|Mrs|Ms|Dr|St|Prof|Rev|Sr|Jr|Hon|Capt|Gen|Col|Sgt|Lt|Ave|No|vs'
+    r'|etc|cf|Fig|Vol|pp|al|Co|Ltd|Inc)|(?:^|[\s("\'])[A-Z])\.$')
+
+
+def _split(body: str) -> list[str]:
+    out: list[str] = []
+    for part in _SENTENCE_SPLIT.split(body):
+        if out and _NOT_AN_END.search(out[-1]):
+            out[-1] += " " + part
+        else:
+            out.append(part)
+    return out
+
+
 def check_phrases(body: str) -> list[dict]:
     hits = [p for p in _MACHINE_PHRASES if p in body.lower()]
     if not hits:
@@ -233,7 +252,7 @@ def check_plainness(body: str, common: frozenset[str] | None,
 
 def check_stated_joke(body: str) -> list[dict]:
     flat = re.sub(r"\s+", " ", body).strip()
-    opening = " ".join(_SENTENCE_SPLIT.split(flat)[:_STATED_JOKE_SENTENCES])
+    opening = " ".join(_split(flat)[:_STATED_JOKE_SENTENCES])
     m = _STATED_JOKE.search(opening)
     if not m:
         return []
