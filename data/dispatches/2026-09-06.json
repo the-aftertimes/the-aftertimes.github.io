@@ -21,12 +21,13 @@
     ],
     "premise": "An estranged couple on the generation ship Argo VII abandoned divorce proceedings after an escaped colony of hull-cleaning barnacles fused their double mattress into an immovable, ecosystem-critical reef.",
     "brief": {
-      "subject": "Soraya Blythe wearing a dark gray seamless aerofiber jumpsuit that covers her arms and legs down to integrated flexible foot coverings",
-      "action": "sitting on the hard calcified rim of the double mattress while a technician in the background directs a fine spray onto a corner post",
-      "setting": "a compact residential compartment with composite deckplates, recessed ventilation ducts, and a bio-fused shell bed anchored to the floor structure",
-      "light": "flat white illumination from ceiling-mounted luminescent strips",
-      "materials": "calcified bio-shell, alloy deckplates, micro-porous ceramic, woven aerofiber",
-      "anomaly": "a trail of dried green fluid residue on the deckplate beside the lower bed joint"
+      "focus": "a double mattress fused into a thick, ridged shell of grey calcified crust and welded to the floor deckplate",
+      "subject": "Soraya Blythe, wearing a long-sleeved synth-fiber utility tunic, matching seamless composite trousers, and molded gel-soled footwear",
+      "action": "sits on the outer edge of the hardened mattress with her feet planted on the deck",
+      "setting": "a small residential compartment with exposed atmospheric ducting, where a life-support technician in a full-body synth-suit aims a pressurized feed wand at a bedpost",
+      "light": "even, cool illumination from ceiling-mounted luminescent panels",
+      "materials": "calcified biological crust, pressed deck-alloy, synth-fiber fabric, molded gel polymer",
+      "anomaly": "a dried green liquid stain running down the lower edge of the adjacent wall panel"
     },
     "image": "assets/img/2026-09-06.jpg"
   },
