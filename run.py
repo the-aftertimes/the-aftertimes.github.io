@@ -174,7 +174,19 @@ def maybe_revise(dispatch: dict, context: dict, qcfg: dict,
         return dispatch, info
     # Never trade a clean draft for a rejected revision, whatever the scores say.
     if after["rejected"] and not before["rejected"]:
-        print("    revision discarded, it breaks a hard rule the draft did not")
+        # NAME THE RULE. This branch used to print the sentence alone, and on
+        # 06/09/2026 that made a re-edit unreadable: the editor reported it had
+        # "fixed the passive rule announcement and the lazy three-item
+        # escalation list" - exactly the two faults Charlie had named - and the
+        # rewrite was then thrown away for a hard fault nothing recorded. There
+        # is no way to act on that, and the run log is the only place it exists.
+        hard = set(qcfg["hard_reject"])
+        broke = [v for v in after["violations"]
+                 if v["rule"] in hard and v["rule"] not in
+                 {b["rule"] for b in before["violations"]}]
+        print("    revision discarded, it breaks a hard rule the draft did "
+              "not: " + ("; ".join(f"{v['rule']} ({v['detail']})"
+                                   for v in broke) or "(rule not identified)"))
         return dispatch, info
     improved = (after["score"] > before["score"] if before["score"] == 0.0
                 else after["score"] >= before["score"])
