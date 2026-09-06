@@ -113,6 +113,26 @@ _MACHINE_PHRASES = (
 )
 
 
+# A full stop after a title, an abbreviation or an initial is not a sentence end.
+# Same list as trial.split_sentences, copied rather than imported for the same reason
+# the split pattern is: these files are audited byte-for-byte. Without it Kafka measured
+# 34.3 words a sentence against a real 65.5, because his essays are full of initials -
+# the "reads long/uniform" warning was reading the splitter, not the prose.
+_NOT_AN_END = re.compile(
+    r'(?:\b(?:Mr|Mrs|Ms|Dr|St|Prof|Rev|Sr|Jr|Hon|Capt|Gen|Col|Sgt|Lt|Ave|No|vs'
+    r'|etc|cf|Fig|Vol|pp|al|Co|Ltd|Inc)|(?:^|[\s("\'])[A-Z])\.$')
+
+
+def _merge_abbrevs(parts: list[str]) -> list[str]:
+    out: list[str] = []
+    for part in parts:
+        if out and _NOT_AN_END.search(out[-1]):
+            out[-1] += " " + part
+        else:
+            out.append(part)
+    return out
+
+
 def prose_report(body: str) -> dict:
     """Measure the tells that make a dispatch read machine-written: long uniform
     sentences and stock connective phrases. Printed after each run so drift is
@@ -121,8 +141,8 @@ def prose_report(body: str) -> dict:
     # Allow a closing quote after the full stop, or sentences ending inside
     # dialogue get merged with the next one - which inflated the mean and hid
     # short sentences, firing false "reads long/uniform" warnings.
-    sents = [s for s in re.split(r"(?<=[.!?])[\"”’']*\s+", flat)
-             if s.strip()]
+    sents = _merge_abbrevs(
+        [s for s in re.split(r"(?<=[.!?])[\"”’']*\s+", flat) if s.strip()])
     lens = [len(s.split()) for s in sents] or [0]
     return {
         "words": len(flat.split()),
