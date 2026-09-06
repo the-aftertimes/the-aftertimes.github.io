@@ -192,3 +192,18 @@ def test_maybe_revise_demands_strict_improvement_at_the_score_floor(monkeypatch)
     out, info = run_mod.maybe_revise(floored, CTX, cfg, {})
     assert out["headline"] == "Floored"
     assert info["revision_accepted"] is False
+
+
+def test_a_discarded_revision_says_which_hard_rule_it_broke(monkeypatch, capsys):
+    """06/09/2026: a re-edit reported it had fixed both faults Charlie named,
+    then threw the rewrite away for an unnamed hard rule. The run log is the
+    only record that rewrite ever existed, so it has to say what went wrong."""
+    good = _dispatch("Good", GOOD_BODY)
+    rejected = _dispatch("Rejected",
+                         GOOD_BODY + " The matter took an unexpected turn.")
+    monkeypatch.setattr(revise_mod, "revise",
+                        lambda d, v, s: {"critique": "c", "dispatch": rejected})
+    out, _ = run_mod.maybe_revise(good, CTX, CFG, {})
+    assert out["headline"] == "Good"
+    printed = capsys.readouterr().out + capsys.readouterr().err
+    assert "machine_phrases" in printed, printed
