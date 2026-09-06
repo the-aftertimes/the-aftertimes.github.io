@@ -50,10 +50,14 @@ FIELDS = ("focus", "subject", "action", "setting", "light", "materials",
 
 _GUIDE = {
     "focus": ("THE ONE THING THE PICTURE IS OF - the single object the story "
-              "turns on, as a concrete noun phrase: what it is, what it is made "
-              "of, and what has visibly happened to it. Never a person, never a "
-              "place, never a mood. If a reader saw only this, they should know "
-              "which story it is"),
+              "turns on. Never a person, never a place, never a mood. Describe "
+              "the SHAPE THAT IS ACTUALLY THERE, and do NOT use the everyday "
+              "name of what it used to be: that word is stronger than anything "
+              "you qualify it with, and the renderer will draw the ordinary "
+              "version. 'a double mattress fused into a ridged shell' still "
+              "draws a mattress. 'a low mound of thick grey crust the size of a "
+              "bed, ridged like barnacle shell and welded to the floor' draws "
+              "the thing"),
     "subject": "the person or object at the centre, and what it is made of, in one clause",
     "action": ("what they are plainly DOING - working, waiting, walking, watching. "
                "An ordinary action caught mid-way, not a dramatic pose. Name any "
@@ -134,6 +138,13 @@ def build_prompt(dispatch: dict) -> str:
         "The `subject` is the scene's subject and the `action` is the scene's "
         "action. If the scene line names other people behind or around them, "
         "they belong in `setting` as background, never in `subject`.\n"
+        "THE SUBJECT'S FACE IS BARE AND VISIBLE unless the story is specifically "
+        "about covering it. Say so in the `subject` clause. Left unstated, the "
+        "renderer fills the gap and it fills it badly: 05/09/2026 came back with "
+        "a hairdryer hood where the head should be, and the redraw with a "
+        "mirrored space helmet, neither of which the brief asked for. Same gap "
+        "as the clothing rule below - an unspecified body part is one the "
+        "renderer decides about.\n"
         "DESCRIBE THE WHOLE OF WHAT THE SUBJECT IS WEARING, head to foot, in the "
         "`subject` clause - the garment on the body AND the legs AND the feet. "
         "Naming only a top and boots leaves the renderer to invent the rest, and "
