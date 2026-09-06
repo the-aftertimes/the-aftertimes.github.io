@@ -438,5 +438,16 @@
     "place_kind": "shipboard",
     "engine": "nature",
     "technique": "sincere_futility"
+  },
+  {
+    "run_date": "2026-09-07",
+    "year": 3049,
+    "era_bucket": 20,
+    "domain": "transport",
+    "headline": "Hand-Folded Sails Trap Passenger Time",
+    "style": "discovery",
+    "place_kind": "orbital",
+    "engine": "expertise",
+    "technique": "puncture_the_pompous"
   }
 ]
