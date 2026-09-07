@@ -1,0 +1,75 @@
+{
+  "run_date": "2026-09-08",
+  "run_time": "2026-09-07T18:01:26.080197+00:00",
+  "dispatch": {
+    "headline": "City Denies Sky Is Swept By Hand",
+    "body": "A three-month investigation into Lakshmi Rim’s self-cleaning sky dome has confirmed that three hundred workers manually wipe sulfuric acid off the overhead glass with long mops.\n\nInternal maintenance logs show wiper crews working twelve-hour shifts on suspended catwalks six hundred metres above the central plaza, pushing felt pads to clear yellow foam. City promotional material continues to advertise the glass dome as an automated shield cleaned by sound pulses.\n\nAsked whether three hundred staff were scrubbing the sky, supervisor Tarek Al-Hassan said the glass got dirty every morning, and that wiping it was the only way to see through it. Asked about the acid dripping onto plaza benches below, Al-Hassan said the roof was round.\n\n\"Liquid goes to the bottom,\" he said. \"That is how shapes work.\"\n\nThe city board issued a statement on Thursday denying that any manual labour occurs above the plaza.\n\n\"Our sky system is entirely automated,\" said city director Nidhi Varma. \"Any shapes seen against the glass are light reflections from ground traffic.\"\n\nOn Friday, ground staff in rubber suits unrolled mats across the central square to catch the steady yellow drip from above.",
+    "scene": "A worker in a yellow rubber coat leans over a high catwalk six hundred metres up, pushing a fifty-foot mop against the curved glass sky while acid drips from the pad.",
+    "dateline": {
+      "place": "Lakshmi Rim, Venus",
+      "year": 3020,
+      "month": 3,
+      "day": 20,
+      "years_from_now": 994
+    },
+    "domain": "labour and work",
+    "glossary": [],
+    "premise": "An investigation into the Ishtar Terra dome reveals that its advertised 'automated self-cleaning sky' is actually three hundred workers manually squeegeeing toxic sulfuric condensation from suspended catwalks with fifty-foot mops, a practice city directors deny despite video of relentless acid-drips landing on the plaza below.",
+    "brief": null,
+    "image": "assets/img/2026-09-08.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-07T18:01:26.080197+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 47,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "City Denies Sky Is Swept By Hand",
+        "body": "A three-month investigation into Lakshmi Rim’s self-cleaning sky dome has confirmed that three hundred workers manually wipe sulfuric acid off the overhead glass with long mops.\n\nInternal maintenance logs show wiper crews working twelve-hour shifts on suspended catwalks six hundred metres above the central plaza, pushing felt pads to clear yellow foam. City promotional material continues to advertise the glass dome as an automated shield cleaned by sound pulses.\n\nAsked whether three hundred staff were scrubbing the sky, supervisor Tarek Al-Hassan said the glass got dirty every morning, and that wiping it was the only way to see through it. Asked about the acid dripping onto plaza benches below, Al-Hassan said the roof was round.\n\n\"Liquid goes to the bottom,\" he said. \"That is how shapes work.\"\n\nThe city board issued a statement on Thursday denying that any manual labour occurs above the plaza.\n\n\"Our sky system is entirely automated,\" said city director Nidhi Varma. \"Any shapes seen against the glass are light reflections from ground traffic.\"\n\nOn Friday, ground staff in rubber suits unrolled mats across the central square to catch the steady yellow drip from above.",
+        "premise": "An investigation into the Ishtar Terra dome reveals that its advertised 'automated self-cleaning sky' is actually three hundred workers manually squeegeeing toxic sulfuric condensation from suspended catwalks with fifty-foot mops, a practice city directors deny despite video of relentless acid-drips landing on the plaza below.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 188,
+      "sentences": 11,
+      "mean_sentence": 17.1,
+      "longest": 31,
+      "short_sentences": 1,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.7
+    }
+  }
+}
