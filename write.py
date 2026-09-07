@@ -33,6 +33,11 @@ _FIXUPS = {
 # slips (31/07/2026 shipped a headline reading "Neighbor's"), so normalise
 # deterministically here. Case-preserving for capitalised words.
 _AU_SPELLING = {
+    # 07/09/2026: a quoted source said "the math is simple" and shipped. Neither
+    # the normaliser nor the critic's residue check knew the word, because the
+    # table was built from the -our/-ise families and nothing else. Word-boundary
+    # matched, so "aftermath" is safe.
+    "math": "maths",
     "neighbor": "neighbour", "neighbors": "neighbours",
     "neighborhood": "neighbourhood", "neighboring": "neighbouring",
     "color": "colour", "colors": "colours", "colored": "coloured",
