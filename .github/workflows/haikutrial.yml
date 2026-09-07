@@ -1,0 +1,74 @@
+name: haikutrial
+
+# The haiku pivot's evidence harness. Manual only.
+#
+# Charlie decided on 07/09/2026 to move the paper from 230-word dispatches to
+# haiku, and to rework the illustration style. Neither decision should be made
+# from a description: this generates real poems and draws real pictures so he is
+# looking at output rather than at a plan.
+#
+# Touches NOTHING the site reads. Everything lands in data/trials/haiku/, keyed
+# by a UTC timestamp, so it cannot collide with a published edition or trip
+# already_filed(). See haikutrial.py.
+#
+# QUOTA. `poems` is ONE Gemini call however many haiku it asks for, which is the
+# whole point of the form - the old trial harness cost 2 calls per dispatch.
+# `styles` spends one Cloudflare image per style, so six by default, against a
+# 10,000-neuron daily allocation the live cron also draws from. Run styles once,
+# not in a loop.
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many haiku to ask for in the one call"
+        required: false
+        default: "24"
+      styles:
+        description: "Also draw the picture-style comparison sheet (6 Cloudflare images)"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: haikutrial
+  cancel-in-progress: false
+
+jobs:
+  trial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Tests must pass before anything is generated
+        run: python -m pytest -q
+
+      - name: Poems
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python haikutrial.py poems "${{ inputs.count }}"
+
+      - name: Styles
+        if: ${{ inputs.styles }}
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: python haikutrial.py styles
+
+      # Committed rather than uploaded as an artifact so the sheets have plain
+      # URLs Charlie can open on his phone, the way the trial pages already do.
+      - name: Commit
+        run: |
+          git config user.name "aftertimes-bot"
+          git config user.email "bot@the-aftertimes.github.io"
+          git add data/trials/haiku
+          git commit -m "haikutrial: $(date -u +%Y%m%d-%H%M%S)" || echo "nothing to commit"
+          git push || (git pull --rebase && git push)
