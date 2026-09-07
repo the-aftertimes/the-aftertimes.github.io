@@ -449,5 +449,16 @@
     "place_kind": "orbital",
     "engine": "expertise",
     "technique": "puncture_the_pompous"
+  },
+  {
+    "run_date": "2026-09-08",
+    "year": 3020,
+    "era_bucket": 19,
+    "domain": "labour and work",
+    "headline": "City Denies Sky Is Swept By Hand",
+    "style": "investigation",
+    "place_kind": "marsform",
+    "engine": "logistics",
+    "technique": "answers_the_question"
   }
 ]
