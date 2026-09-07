@@ -59,3 +59,10 @@ def test_prompt_word_band_matches_the_critic():
     m = re.search(r"- (\d+) to (\d+) words\.", prompt)
     assert m, "the prompt no longer states a word band"
     assert (int(m.group(1)), int(m.group(2))) == (length["min"], length["max"])
+
+
+def test_math_is_normalised_but_aftermath_survives():
+    """07/09/2026: "the math is simple" shipped in a quoted line."""
+    import write
+    assert write._au_spelling("The math is simple.") == "The maths is simple."
+    assert "aftermath" in write._au_spelling("in the aftermath of it")
