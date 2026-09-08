@@ -55,6 +55,11 @@ def _api_key() -> str:
 _DEFAULT_MIN_INTERVAL = 13.0
 _last_call = 0.0
 
+#: Waits after an HTTP 503 UNAVAILABLE ("this model is currently experiencing
+#: high demand"), in seconds. See the comment at the retry branch in generate()
+#: for why these are longer than the 429 waits and how the numbers were chosen.
+_OVERLOAD_WAITS = (30.0, 75.0, 150.0)
+
 
 def _min_interval(g: dict) -> float:
     return float(g.get("min_interval_seconds", _DEFAULT_MIN_INTERVAL))
@@ -116,7 +121,23 @@ def generate(prompt: str, settings: dict, temperature: float,
         # judge never ran. Charlie's four complaints about that dispatch were
         # all downstream of an election with one candidate. The spike itself
         # lasted about four minutes, which a real backoff walks straight over.
-        if "HTTP 429" in (last or "") or "HTTP 503" in (last or ""):
+        #
+        # 503 GETS A LONGER LADDER THAN 429, from 07/09/2026, because the two
+        # are waiting for different things. A 429 clears when the minute rolls,
+        # so 20/40/60 is generous. A 503 is Google's capacity, and the two
+        # spikes actually observed - 05/09 and 07/09, two days apart - lasted
+        # about four minutes each; the 07/09 one walked straight through all
+        # three of the 429-sized waits and lost the run. 30/75/150 buys four and
+        # a quarter minutes, which covers both. There is no cost on a clean run,
+        # and the daily job has a backup two hours behind it.
+        #
+        # This matters MORE under the haiku pivot, not less: the whole edition
+        # now comes from a single call for two dozen poems, so where the prose
+        # pipeline could lose three of four drafts and still publish, one 503
+        # here loses the day.
+        if "HTTP 503" in (last or ""):
+            time.sleep(_OVERLOAD_WAITS[min(attempt, len(_OVERLOAD_WAITS) - 1)])
+        elif "HTTP 429" in (last or ""):
             time.sleep(max(_min_interval(g), 20.0) * (attempt + 1))
         else:
             time.sleep(1.5 * (attempt + 1))
