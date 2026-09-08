@@ -79,6 +79,9 @@ def test_a_503_backs_off_like_a_rate_limit_not_like_a_blip(monkeypatch):
         gemini.generate("p", _settings(), 0.9)
     assert slept, "a 503 must be waited out"
     assert min(slept) >= 20, f"503 backoff is far too short: {slept}"
+    # 07/09/2026: the 429-sized ladder was walked through by a real four-minute
+    # spike, which lost a whole run. A 503 must buy minutes, not one minute.
+    assert sum(slept) >= 240, f"503 ladder only waits {sum(slept)}s: {slept}"
 
 
 def test_a_500_is_still_treated_as_an_ordinary_blip(monkeypatch):
