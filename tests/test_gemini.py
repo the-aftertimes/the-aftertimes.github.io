@@ -100,3 +100,34 @@ def test_a_500_is_still_treated_as_an_ordinary_blip(monkeypatch):
 def test_settings_allow_enough_retries_to_outlast_a_short_overload():
     from common import load_settings
     assert load_settings()["gemini"]["max_retries"] >= 3
+
+
+def test_an_exhausted_daily_quota_is_not_retried(monkeypatch):
+    """08/09/2026: a trial four minutes before the UTC roll spent 120 seconds
+    backing off a daily allowance that could not clear, then reported it as an
+    ordinary retry failure. Same distinction illustrate.py already makes for
+    Cloudflare's 4006."""
+    import gemini
+    slept = []
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post", lambda *a, **k: _resp(
+        429, '{"error":{"message":"You exceeded your current quota, please '
+             'check your plan and billing details."}}'))
+    with pytest.raises(GeminiError) as exc:
+        gemini.generate("p", _settings(), 0.9)
+    assert "daily free-tier quota is exhausted" in str(exc.value)
+    assert slept == [], f"an exhausted daily quota must not be waited on: {slept}"
+
+
+def test_an_ordinary_rate_limit_is_still_retried(monkeypatch):
+    """The other kind of 429 clears when the minute rolls, so it keeps its wait."""
+    import gemini
+    slept = []
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post",
+                        lambda *a, **k: _resp(429, '{"error":{"message":"rate"}}'))
+    with pytest.raises(GeminiError):
+        gemini.generate("p", _settings(), 0.9)
+    assert slept and min(slept) >= 20, slept

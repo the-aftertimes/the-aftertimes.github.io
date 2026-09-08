@@ -135,6 +135,20 @@ def generate(prompt: str, settings: dict, temperature: float,
         # now comes from a single call for two dozen poems, so where the prose
         # pipeline could lose three of four drafts and still publish, one 503
         # here loses the day.
+        # A 429 IS TWO DIFFERENT FAILURES AND ONLY ONE IS WORTH WAITING FOR.
+        # The free tier returns it both for "5 requests a minute, slow down",
+        # which clears in seconds, and for "you exceeded your current quota",
+        # which is the DAILY allowance and cannot clear until the UTC day rolls.
+        # `illustrate.py` has made exactly this distinction since 25/08/2026 for
+        # Cloudflare's error 4006, with the same reasoning written above it, and
+        # this module never learned it: on 08/09/2026 a trial run four minutes
+        # before the roll spent 20, 40 and 60 seconds backing off a wall, then
+        # reported "generate failed after retries" as though it had been unlucky
+        # rather than out of quota for the day.
+        if "exceeded your current quota" in (last or ""):
+            raise GeminiError(
+                f"daily free-tier quota is exhausted, not retrying - it cannot "
+                f"clear until the UTC day rolls: {last}")
         if "HTTP 503" in (last or ""):
             time.sleep(_OVERLOAD_WAITS[min(attempt, len(_OVERLOAD_WAITS) - 1)])
         elif "HTTP 429" in (last or ""):
