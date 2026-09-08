@@ -145,10 +145,20 @@ def generate(prompt: str, settings: dict, temperature: float,
         # before the roll spent 20, 40 and 60 seconds backing off a wall, then
         # reported "generate failed after retries" as though it had been unlucky
         # rather than out of quota for the day.
+        #
+        # WHAT THIS MESSAGE MUST NOT DO IS EXPLAIN THE RESET. The first version
+        # said "it cannot clear until the UTC day rolls", which is a mechanism
+        # nobody here has established: three refused runs at 23:56, 23:57 and
+        # 23:58 UTC on 08/09/2026 prove only that it was gone then, and the
+        # 06/09 evidence actually contradicts a UTC-midnight reset (exhausted at
+        # 11:57 UTC, generating happily again by 18:05). illustrate.py has the
+        # same scar tissue for Cloudflare's 4006 - three confident wrong
+        # explanations in a row - so this one states the observation and stops.
         if "exceeded your current quota" in (last or ""):
             raise GeminiError(
-                f"daily free-tier quota is exhausted, not retrying - it cannot "
-                f"clear until the UTC day rolls: {last}")
+                f"the free-tier allowance is refusing requests, not retrying - "
+                f"a rate-limit backoff cannot clear an allowance. When it "
+                f"resets is NOT established; see docs/TODO.md: {last}")
         if "HTTP 503" in (last or ""):
             time.sleep(_OVERLOAD_WAITS[min(attempt, len(_OVERLOAD_WAITS) - 1)])
         elif "HTTP 429" in (last or ""):
