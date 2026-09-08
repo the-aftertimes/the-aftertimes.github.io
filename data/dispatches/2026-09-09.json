@@ -1,0 +1,105 @@
+{
+  "run_date": "2026-09-09",
+  "run_time": "2026-09-08T18:01:25.548605+00:00",
+  "dispatch": {
+    "headline": "Drill Crew Carves Bowling Alley In Main Pillar",
+    "body": "Ostra-Nickel security arrested four drillers Friday after the crew hijacked two melt-rigs to hollow a 24-lane bowling alley inside the colony’s main support column.\n\nLead driller Arlo Sadek was unrepentant.\n\n\"The nearest regulation lane is three orbits away,\" Sadek said from his holding chamber. \"You cannot expect off-shift miners to spend six months in transit just for league night.\"\n\nThe crew spent eleven months vaporising sixty thousand tonnes of load-bearing nickel-iron alloy to create the hall.\n\n\"We preserved structural integrity,\" Sadek said.\n\nUsing precision cutter beams, they carved exact oil grooves, automated ball returns, and pin decks directly into the core pillar.\n\n\"The curvature was tricky,\" Sadek said. \"Core gravity fluctuates near the heat vents. If your roll drifts two millimetres off line, it strikes a plasma line instead of the ten-pin.\"\n\nWhen reminded that the excavation caused three residential tiers to settle at a four-degree tilt, Sadek remained unimpressed.\n\n\"That is basic floor lean,\" Sadek said. \"You adjust your stance. True bowlers adapt.\"\n\nColony engineers estimate structural restoration will take four orbital cycles, though Sadek insisted the lane surface remains flawless.\n\n\"We left resin by lane twelve,\" he added.",
+    "scene": "A helmeted miner in grease-stained coveralls aims a heavy heat bore at a glowing metal wall inside a towering hollow pillar, two crewmen measuring the polished floor behind him.",
+    "dateline": {
+      "place": "Ostra-Nickel Freeport",
+      "year": 4630,
+      "month": 6,
+      "day": 15,
+      "years_from_now": 2604
+    },
+    "domain": "crime",
+    "glossary": [
+      {
+        "term": "melt-rig",
+        "gloss": "A heavy industrial laser rig used to dissolve metal rock."
+      }
+    ],
+    "premise": "A tunnel-boring crew on a nickel asteroid was arrested after hijacking two industrial melt-rigs to secretly carve a regulation 24-lane bowling alley through the colony's primary structural pillar.",
+    "brief": null,
+    "image": "assets/img/2026-09-09.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-08T18:01:25.548605+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 48,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      0.84,
+      0.67
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'they carved exact oil grooves, automated ball returns, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.3 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Drill Crew Carves Bowling Alley In Main Pillar",
+        "body": "Ostra-Nickel security arrested four drillers Friday after the crew hijacked two melt-rigs to hollow a 24-lane bowling alley inside the colony’s main support column.\n\nLead driller Arlo Sadek was unrepentant.\n\n\"The nearest regulation lane is three orbits away,\" Sadek said from his holding chamber. \"You cannot expect off-shift miners to spend six months in transit just for league night.\"\n\nThe crew spent eleven months vaporising sixty thousand tonnes of load-bearing nickel-iron alloy to create the hall.\n\n\"We preserved structural integrity,\" Sadek said.\n\nUsing precision cutter beams, they carved exact oil grooves, automated ball returns, and pin decks directly into the core pillar.\n\n\"The curvature was tricky,\" Sadek said. \"Core gravity fluctuates near the heat vents. If your roll drifts two millimetres off line, it strikes a plasma line instead of the ten-pin.\"\n\nWhen reminded that the excavation caused three residential tiers to settle at a four-degree tilt, Sadek remained unimpressed.\n\n\"That is basic floor lean,\" Sadek said. \"You adjust your stance. True bowlers adapt.\"\n\nColony engineers estimate structural restoration will take four orbital cycles, though Sadek insisted the lane surface remains flawless.\n\n\"We left resin by lane twelve,\" he added.",
+        "premise": "A tunnel-boring crew on a nickel asteroid was arrested after hijacking two industrial melt-rigs to secretly carve a regulation 24-lane bowling alley through the colony's primary structural pillar.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Golfers Jam Asteroid Thruster Over Drift",
+        "body": "Course marshal Darien Kume does not deny jamming a slag wedge into the central orientation thruster, but maintains the burn was pulling putting lines six millimetres left.\n\n\"It was a drift issue,\" Kume said, standing beside the seventeenth hole inside the hollowed core of Asteroid 881. \"The port authority scheduled an orbital correction during the finals. That is poor sportsmanship.\"\n\nThe thruster lock caused the mining rock to miss its transit window by nine hours, drifting sixty thousand kilometres off course. Freight barges are currently stranded outside the dock lock. Kume remains unimpressed by the backlog.\n\n\"The seventeenth hole has a slope,\" Kume said. \"When they fire the side jets, the ball rolls straight into the dust trap. We requested a burn freeze during tournament play. They refused.\"\n\nLeague members have since posted sentries around the secondary steering vents. Kume believes the court will understand.\n\n\"We are talking about tournament integrity,\" Kume said. \"You cannot run an honest championship while the green is accelerating at three metres per second.\"\n\nPort police cleared the wedge on Thursday. Kume was back at the tee by noon with a level.\n\n\"They burned again,\" he said. \"The hole is ruined.\"",
+        "premise": "An asteroid's central orientation thruster was sabotaged by a local mini-golf syndicate who claimed its maneuver burns were creating an unfair drift on the seventeenth hole.",
+        "score": 0.67,
+        "rejected": true
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.84,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 190,
+      "sentences": 16,
+      "mean_sentence": 11.9,
+      "longest": 24,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 8,
+      "rare_rate": 4.2
+    }
+  }
+}

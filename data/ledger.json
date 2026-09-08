@@ -460,5 +460,16 @@
     "place_kind": "marsform",
     "engine": "logistics",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-09-09",
+    "year": 4630,
+    "era_bucket": 52,
+    "domain": "crime",
+    "headline": "Drill Crew Carves Bowling Alley In Main Pillar",
+    "style": "interview",
+    "place_kind": "asteroid",
+    "engine": "leisure",
+    "technique": "commit_past_reason"
   }
 ]
