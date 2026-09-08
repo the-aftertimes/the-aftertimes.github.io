@@ -116,7 +116,9 @@ def test_an_exhausted_daily_quota_is_not_retried(monkeypatch):
              'check your plan and billing details."}}'))
     with pytest.raises(GeminiError) as exc:
         gemini.generate("p", _settings(), 0.9)
-    assert "daily free-tier quota is exhausted" in str(exc.value)
+    assert "not retrying" in str(exc.value)
+    # The message must NOT claim to know when the allowance resets.
+    assert "UTC day rolls" not in str(exc.value)
     assert slept == [], f"an exhausted daily quota must not be waited on: {slept}"
 
 
