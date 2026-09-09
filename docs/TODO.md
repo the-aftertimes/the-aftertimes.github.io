@@ -2,6 +2,9 @@
 
 ## Open
 
+- [ ] **The 20-a-day cap is PER MODEL, which means the paper can have more than 20 calls a day for free.** Established 09/09/2026: the quota is `GenerateRequestsPerDayPerProjectPerModel-FreeTier`, value 20. Nothing says one pipeline has to spend them all on one model. Putting ideate on one flash model, the drafts on another and judge/revise/depict on a third turns a hard 20 into 60, at zero cost and no quality risk worth naming - and it would have prevented most of what looked like transient API flakiness through late August and early September. **Do this even if the haiku pivot lands**, because it also buys trial headroom. `haikutrial.TRIAL_MODELS` already has a walk-the-list helper worth generalising into `gemini.py`.
+- [ ] **The paper publishes on `gemini-3.6-flash` and there are newer models on the same key: `gemini-3.7-flash` and `gemini-3.8-flash`.** Noticed while enumerating models on 09/09. The haiku trials were served by 3.7-flash and the output was good, but that is not evidence about the prose pipeline. Worth one trial run on 3.7 against the current write prompt before switching. Options: leave it (zero risk, possibly leaving quality on the table); switch outright (untested on prose); or run one `trial.yml` batch on 3.7 and compare against the archive's measured prose stats first. **Recommendation and default if nothing is said: the trial batch**, because `settings.gemini.write_model` already exists for exactly this and the comparison is one command.
+
 ## THE HAIKU PIVOT, decided 07/09/2026
 
 **STATUS 09/09/2026: the generator is proven and NOTHING IS WIRED IN. Tomorrow's cron files a prose dispatch.** Charlie asked directly whether it would fire a haiku; it will not, and that is the single thing left.
