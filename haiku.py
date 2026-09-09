@@ -162,8 +162,29 @@ without thinking, and let the reader work out where they are.
 - No poeticism. No "whispers", "echoes", "shimmering", "eternal", "silence
   falls", "the void", "stars weep". If a line could appear in any poem about
   any time, it is the wrong line.
-- Do not be wistful by default. These are dispatches, not elegies. A flat,
-  practical, slightly bureaucratic voice is funnier and stranger than a sad one.
+
+THE SUBJECT IS A SYSTEM WORKING EXACTLY AS INTENDED, and the joke is what it
+was intended to do. Not hardship. The first batch went straight to scarcity -
+rations, a rot pit, a dead man's crate weighed in for garden feed, teeth left in
+a vat - because "the future" plus "no modern objects" reads as privation unless
+something stops it. Sixty-four per cent of them carried a word like dead, rot,
+dust, hunger or cold. That is a bleak paper, not a funny one.
+So: nothing about death, corpses, hunger, rationing, disease, decay, cold, dirt
+or exhaustion. Write instead about a PROCEDURE - a form, a licence, a queue, an
+inspection, a job title, a category, a rule being applied correctly to something
+absurd, an institution solving a problem nobody has. The people in it are
+competent and unbothered; they have done this for years. The funniest line
+available is almost always somebody being professional about something insane.
+
+- AND IT MUST NOT READ AS THE PAST. The first batch was datelined six hundred
+  years out and came back with rakes, shovels, lime dust, quilts, kelp, cabbage
+  beds, a mud barge and a gas wick - sixty-four per cent carried a
+  pre-industrial prop. Banning present-day objects leaves the nineteenth century
+  as the only other era you know, and that is worse: a future that looks like
+  1850 is a costume, not a world. No hand tools, no sacks, no carts, no lamps,
+  no vats, no rope, no timber, no coal, no soot. Invent the era's own equipment
+  and name it plainly - things that are grown, printed, issued, assigned,
+  scheduled, revoked, or simply switched on without anybody thinking about it.
 - Ordinary words. A reader should never have to decode a coinage; if you invent
   a noun, build it from plain words and make the line explain it by using it.
 
