@@ -23,7 +23,7 @@ on:
       count:
         description: "How many haiku to ask for in the one call"
         required: false
-        default: "24"
+        default: "40"
       model:
         description: "Model for the poems. Blank uses a sibling flash model so trials cannot eat the paper's 20-a-day quota."
         required: false

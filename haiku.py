@@ -202,7 +202,19 @@ or district that sounds like somewhere people actually live and work, not a
 portentous compound. Every haiku is filed from it.
 
 The title is for the archive index, not for the reader of the poem. It names
-the subject flatly. Never a joke, never a summary, never a full sentence."""
+the subject flatly. Never a joke, never a summary, never a full sentence.
+
+LAST, AND IT IS THE ONE MECHANICAL REQUIREMENT: COUNT THE SYLLABLES. Five in
+the first line, seven in the second, five in the third. Say each line out loud
+and count on your fingers before you write it down. Compound words are where
+this goes wrong - "reassigned" is three, "corridor" is three, "approved" is two.
+A line that does not scan is thrown away by a program before anybody reads it,
+however good it is.
+
+This instruction is at the END on purpose. It was in the middle, and the batch
+that followed had seven of twenty-four scanning where an earlier and much
+shorter prompt got seventeen - the rules above are worth having and they buried
+the only one that is checkable. Whatever you read last is what you obey."""
 
 
 def parse(raw) -> list[dict]:
