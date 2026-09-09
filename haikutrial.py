@@ -91,6 +91,31 @@ STYLES = {
         "deep blue ground, orthographic, no perspective, no people, thin uniform "
         "line weight, construction lines and section marks, the object drawn "
         "flatly as a thing that was manufactured."),
+    # KEPT, AND THE HOUSE STYLE STAYS THIS, 09/09/2026. Charlie: "why can't we
+    # stick with current picture style?" - and the answer is that we can. The
+    # measured gap is real (29.5% smooth grey against woodcut's 2.8%) but it
+    # describes a LOOK, not the fault he reported: the hairdryer-hood head and
+    # the mirrored space helmet were both failures of the FIGURE, and both were
+    # drawn in this style. Forty published dispatches carry it, so switching
+    # makes the back catalogue a different paper, and the engraving is the half
+    # of the design nobody has ever complained about.
+    #
+    # The two below are the actual lever - ask this style to draw LESS. The
+    # haiku pivot hands that over for nothing, because the picture is now one
+    # object rather than a person doing something inside a 230-word story, and
+    # a face is where the sloppiness lived.
+    "dore-object": (
+        "A documentary wood engraving in the style of Gustave Dore, as a "
+        "newspaper illustration. Fine black ink linework and cross-hatching on "
+        "bare paper. ONE object, alone, filling the frame, resting on a plain "
+        "surface. No people, no faces, no hands, no figures of any kind. Plain "
+        "empty background, no scenery, no clutter."),
+    "dore-object-plate": (
+        "A single object drawn as a plate in a nineteenth-century catalogue: "
+        "wood-engraved black ink linework and cross-hatching on bare paper, the "
+        "object isolated dead centre against blank paper, drawn straight on, "
+        "described exactly and without drama. No people, no faces, no hands, no "
+        "background, no shadow, no setting."),
     "photo": (
         "A black and white documentary photograph on 35mm film, available light, "
         "slight grain, shallow depth of field, an ordinary unposed working "
@@ -100,10 +125,13 @@ STYLES = {
 #: One fixed scene for the comparison, so STYLE is the only thing that varies.
 #: Derived from a haiku rather than from a dispatch, because that is what these
 #: pictures will have to be drawn from.
-STYLE_SCENE = ("A dock worker in a heavy sealed one-piece suit and hard boots "
-               "stands beside a low mound of grey calcified crust welded to a "
-               "metal deck, holding a flat handheld reader. Overhead ducting, "
-               "riveted panel walls.")
+#: Now an OBJECT, not a scene with a worker in it - drawn from a real haiku
+#: ("the cloud licence clerk / stamps the thunderstorm for noon / dry rain takes
+#: two weeks"), because that is what these pictures have to be drawn from once
+#: the paper is poems.
+STYLE_SCENE = ("A heavy desk stamp for approving weather, cast in dull metal "
+               "with a thick handle and a wide flat die, set down on a bare "
+               "counter beside a shallow tray of ink.")
 
 _NO_TEXT = ("Absolutely no text, letters, words, captions, numbers, signatures "
             "or watermark - purely pictorial. No border, frame, margin or plate "
@@ -282,12 +310,13 @@ parsed {record['parsed']}, scanned {len(record['kept'])}</p>
     print(f"    wrote {OUT}/{stamp}.html")
 
 
-def styles() -> None:
+def styles(only: list[str] | None = None) -> None:
     settings = load_settings()
+    chosen = {k: v for k, v in STYLES.items() if not only or k in only}
     os.makedirs(rel(f"{OUT}/img"), exist_ok=True)
     stamp = _stamp()
     drawn = []
-    for name, style in STYLES.items():
+    for name, style in chosen.items():
         prompt = f"{style} {STYLE_SCENE} {_NO_TEXT}"
         print(f">>> {name} ({len(prompt)} chars)")
         raw = illustrate._cf_image(prompt, settings)
@@ -332,7 +361,7 @@ color:#6b6659;margin-top:.5rem;}}
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "poems"
     if cmd == "styles":
-        styles()
+        styles(sys.argv[2:] or None)
     elif cmd == "models":
         models()
     else:
