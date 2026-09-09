@@ -19,6 +19,7 @@ import sys
 from datetime import datetime, timezone
 
 import dates as dates_mod
+import depict
 import gemini
 import haiku as haiku_mod
 import illustrate
