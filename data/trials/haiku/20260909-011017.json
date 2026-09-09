@@ -1,0 +1,337 @@
+{
+ "generated": "20260909-011017",
+ "dateline": {
+  "place": "Spindle Basin",
+  "year": 2998,
+  "month": 5,
+  "day": 11,
+  "years_from_now": 972
+ },
+ "asked": 24,
+ "model": "gemini-3.7-flash",
+ "register": {
+  "n": 7,
+  "bleak": 0,
+  "preindustrial": 2,
+  "bleak_pct": 0,
+  "preindustrial_pct": 29
+ },
+ "asked_count": 24,
+ "parsed": 24,
+ "kept": [
+  {
+   "lines": [
+    "noon rain is approved",
+    "three miles of cloud rolled back south",
+    "to let a dome dry"
+   ],
+   "title": "cloud steer permit",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "low hum band reassigned",
+    "hummingbirds must pitch their wings",
+    "two tones higher now"
+   ],
+   "title": "bird pitch compliance",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "corridor mass raised",
+    "to keep the slow courier pods",
+    "from lifting too high"
+   ],
+   "title": "corridor mass trim",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "third shift logs the noon",
+    "twelve thousand approved blue skies",
+    "filed under standard"
+   ],
+   "title": "sky log filing",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "beetle dog approved",
+    "eight soft legs aligned in grease",
+    "bark set to thirty"
+   ],
+   "title": "pet chime check",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "dream loops sync at dusk",
+    "fifty standard meadow sweeps",
+    "for the off-shift crew"
+   ],
+   "title": "dream track broadcast",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "bulk crate at berth nine",
+    "seal foam cleared for thirty days",
+    "cargo is just forms"
+   ],
+   "title": "freight crate clearance",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  }
+ ],
+ "failed": [
+  {
+   "lines": [
+    "the courtyard printed",
+    "fresh moss foam seals every seam",
+    "while the tenants wait"
+   ],
+   "title": "courtyard foam print",
+   "counts": [
+    5,
+    7,
+    6
+   ]
+  },
+  {
+   "lines": [
+    "midday paste dyed copper pink",
+    "to match the festival hue",
+    "set by the guild board"
+   ],
+   "title": "lunch paste tint",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "new work skins issued today",
+    "thumb pads tuned to read the doors",
+    "that do not exist"
+   ],
+   "title": "work skin issue",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "sector four breathes nitrogen",
+    "surplus balance credited",
+    "to next month's draft pool"
+   ],
+   "title": "air credit rebate",
+   "counts": [
+    8,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "molded chairs clipped from the stem",
+    "six rows cured in curing foam",
+    "ready for the clerk"
+   ],
+   "title": "stem chair harvest",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "noon array tilted westward",
+    "to spare the north terrace crowd",
+    "from second shadow"
+   ],
+   "title": "mirror array tilt",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "walk tiles peeled and re-pressed",
+    "to reset the tread pattern",
+    "worn by auditors"
+   ],
+   "title": "tile tread reset",
+   "counts": [
+    6,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "street oaks paused at seven feet",
+    "root inhibitors piped in",
+    "to preserve the view"
+   ],
+   "title": "street oak freeze",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "vane tone level shifted down",
+    "hall panels absorb low chimes",
+    "tier two cannot hear"
+   ],
+   "title": "hall acoustic trim",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "transit chits printed in gel",
+    "thirty rides per citizen",
+    "valid in one lane"
+   ],
+   "title": "transit gel chit",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "dusk glow sprayed upon the wall",
+    "amber spectrum six point two",
+    "mandated for tea"
+   ],
+   "title": "wall glow spray",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "glass dome tint shifted to mauve",
+    "to ease the eye strain of guards",
+    "watching empty tracks"
+   ],
+   "title": "dome tint adjustment",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "north path steps draw charge today",
+    "every boot click fuels the pump",
+    "cooling the senate"
+   ],
+   "title": "step charge harness",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "surname lease renewed at dawn",
+    "tier three keeps its thirty names",
+    "for another year"
+   ],
+   "title": "surname lease renewal",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "shift suits washed in pine vapor",
+    "strictly graded level two",
+    "managers get spruce"
+   ],
+   "title": "suit scent grade",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "lift shaft six reprogrammed now",
+    "stops at floor three eighty-nine",
+    "only on request"
+   ],
+   "title": "lift shaft reprogram",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "pollen spray released on time",
+    "sixty grams of printed bloom",
+    "across the concourse"
+   ],
+   "title": "print bloom release",
+   "counts": [
+    7,
+    7,
+    5
+   ]
+  }
+ ]
+}
