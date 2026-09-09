@@ -1,0 +1,328 @@
+{
+ "generated": "20260909-010006",
+ "dateline": {
+  "place": "Kearny Basin",
+  "year": 2674,
+  "month": 6,
+  "day": 21,
+  "years_from_now": 648
+ },
+ "asked": 24,
+ "parsed": 24,
+ "kept": [
+  {
+   "lines": [
+    "third shift lung foam trade",
+    "boiled clean in the basin vat",
+    "two teeth left inside"
+   ],
+   "title": "lung foam trade",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "salt-meat rind peel-off",
+    "marked grade three for crawler crews",
+    "prints on both side seals"
+   ],
+   "title": "vat meat sorting",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "spore collector's cart",
+    "scraped wet off the lower flume",
+    "six gills short of load"
+   ],
+   "title": "flume spore sweep",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "core-pipe leak patched dry",
+    "silicate and heavy grease",
+    "boiler back online"
+   ],
+   "title": "core pipe patch",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "rail car six stops short",
+    "wheel-teeth ground to sluggish dust",
+    "walkers take the ditch"
+   ],
+   "title": "commuter rail stop",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "brine-mat rakers wait",
+    "scum has hardened to the edge",
+    "knives dull on the crust"
+   ],
+   "title": "brine mat rake",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "drip-cloth yields three pints",
+    "morning fog off basin five",
+    "grey silt in the cup"
+   ],
+   "title": "fog cloth catch",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "drop-string needle shakes",
+    "bottom rock has slipped three span",
+    "night-drill crew stays down"
+   ],
+   "title": "borehole needle shift",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "bunk row forty-two",
+    "four sleep-slots rented by turn",
+    "one warm quilt left wet"
+   ],
+   "title": "bunk stack turnover",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "felt-suit shoulder tear",
+    "melted shut with heated bone",
+    "seam leaks in the rain"
+   ],
+   "title": "worksuit seam repair",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "rot pit turned at dusk",
+    "lime dust tossed on crawler boots",
+    "shovel handle cracked"
+   ],
+   "title": "rot pit turn",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "copper spool wiped flat",
+    "thirty years of intake logs",
+    "spool gets rolled for pipe"
+   ],
+   "title": "archive spool melt",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "calf-clamp screwed tight down",
+    "gut-string braided through the heel",
+    "runner walks by noon"
+   ],
+   "title": "heel cord brace",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "pipe-wick lighting run",
+    "blue gas hiss on alley nine",
+    "soot across the glass"
+   ],
+   "title": "gas pipe lighting",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "dead man's crate weighed in",
+    "forty pounds of garden feed",
+    "daughter takes the card"
+   ],
+   "title": "garden bed return",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "mud barge cable snaps",
+    "cargo floats against the pier",
+    "dried kelp logs go loose"
+   ],
+   "title": "barge tow break",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "pane six scraped of moss",
+    "winter sun hits cabbage beds",
+    "frost still on the frame"
+   ],
+   "title": "sun pane scraper",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  }
+ ],
+ "failed": [
+  {
+   "lines": [
+    "noon grid shifts three ticks",
+    "south bay roof turns yellow-pale",
+    "shift four eats its mash"
+   ],
+   "title": "dome lamp shift",
+   "counts": [
+    5,
+    8,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "silt crane brings up zinc",
+    "five whole plates of pre-sink floor",
+    "all the bolt-holes plugged"
+   ],
+   "title": "dredge crane haul",
+   "counts": [
+    5,
+    8,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "skin-mark on the wrist",
+    "needle stamps the kindred code",
+    "ink runs down the sleeve"
+   ],
+   "title": "skin record stamping",
+   "counts": [
+    5,
+    6,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "flyer wing comes down",
+    "battery cold in the husk",
+    "kids strip out the cord"
+   ],
+   "title": "grounded flyer salvage",
+   "counts": [
+    4,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "skin kite up at dawn",
+    "lead line humming in the gale",
+    "burnt black past the cloud"
+   ],
+   "title": "high wind sounding",
+   "counts": [
+    5,
+    8,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "seed cake scale tips left",
+    "eight ounce brick of compressed bran",
+    "stamped with two red cuts"
+   ],
+   "title": "seed cake ration",
+   "counts": [
+    6,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "sea-gate latch drops home",
+    "salt spray hitting iron studs",
+    "barnacles smashed flat"
+   ],
+   "title": "sea gate lock",
+   "counts": [
+    5,
+    7,
+    4
+   ]
+  }
+ ]
+}
