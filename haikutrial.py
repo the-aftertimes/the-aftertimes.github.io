@@ -21,6 +21,7 @@ import dates as dates_mod
 import gemini
 import haiku as haiku_mod
 import illustrate
+import urllib.request
 from common import load_settings, rel
 
 OUT = "data/trials/haiku"
@@ -97,6 +98,29 @@ STYLE_SCENE = ("A dock worker in a heavy sealed one-piece suit and hard boots "
 _NO_TEXT = ("Absolutely no text, letters, words, captions, numbers, signatures "
             "or watermark - purely pictorial. No border, frame, margin or plate "
             "mark. Everyone fully dressed for work, upright, whole body covered.")
+
+
+def models() -> None:
+    """Print every model this key can actually see, and what it supports.
+
+    ENUMERATE, DO NOT GUESS. 09/09/2026: needing a model with its own daily
+    quota, the obvious sibling name was tried from memory and came back 404
+    "models/gemini-2.5-flash is no longer available to new users". A guessed
+    model name costs a whole CI round trip to disprove; the list endpoint costs
+    one read and settles it."""
+    settings = load_settings()
+    url = f"{settings['gemini']['endpoint'].rsplit('/', 1)[0]}/models"
+    with urllib.request.urlopen(
+            f"{url}?key={gemini._api_key()}&pageSize=200", timeout=30) as resp:
+        data = json.load(resp)
+    rows = []
+    for m in data.get("models", []):
+        methods = m.get("supportedGenerationMethods") or []
+        if "generateContent" in methods:
+            rows.append(m.get("name", "").replace("models/", ""))
+    print(f">>> {len(rows)} models support generateContent on this key")
+    for name in sorted(rows):
+        print(f"      {name}")
 
 
 def _stamp() -> str:
@@ -246,6 +270,8 @@ if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "poems"
     if cmd == "styles":
         styles()
+    elif cmd == "models":
+        models()
     else:
         poems(int(sys.argv[2]) if len(sys.argv) > 2 else 24,
               sys.argv[3] if len(sys.argv) > 3 else None)

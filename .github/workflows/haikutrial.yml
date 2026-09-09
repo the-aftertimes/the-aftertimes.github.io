@@ -55,6 +55,11 @@ jobs:
       - name: Tests must pass before anything is generated
         run: python -m pytest -q
 
+      - name: List the models this key can see
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python haikutrial.py models
+
       - name: Poems
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
