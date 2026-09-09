@@ -80,3 +80,42 @@ def test_the_prompt_asks_for_the_whole_batch_in_one_call():
     assert "24 haiku" in p
     assert "Kalyani" in p and "4402" in p and "2376" in p
     assert "DIFFERENT from the others" in p
+
+
+def test_to_dispatch_matches_the_shape_render_already_reads():
+    """The pivot does not need render.py, archive.py, card.py and
+    email_render.py rewritten - it needs the poem put in the shape they already
+    read. render.py splits `body` on newlines into paragraphs, so three lines
+    render as three lines with no change to that file."""
+    d = haiku.to_dispatch({"lines": ["one two three four five",
+                                     "six seven eight nine ten one two",
+                                     "three four five six seven"],
+                           "title": "Cloud Licence"},
+                          {"place": "Carrow Shelf", "year": 2877,
+                           "years_from_now": 851}, "weather")
+    for key in ("headline", "body", "scene", "domain", "dateline", "glossary",
+                "premise"):
+        assert key in d, key
+    assert d["body"].split("\n") == d["lines"]
+    assert len(d["body"].split("\n")) == 3
+    assert d["headline"] == "Cloud Licence"
+
+
+def test_to_dispatch_never_returns_an_empty_headline():
+    """An empty headline publishes an empty <h1> and an empty og:title, and the
+    archive row becomes unclickable. critic.check_structure exists because a
+    revision once did exactly this."""
+    d = haiku.to_dispatch({"lines": ["a", "b", "c"], "title": "  "}, {}, "")
+    assert d["headline"].strip()
+    assert d["domain"].strip()
+
+
+def test_the_judge_prompt_ranks_rather_than_scores_each_in_isolation():
+    """The prose judge scored drafts one at a time and gave 37 of 65 a perfect
+    1.0, so best-of-four was picking at random while the run reported success."""
+    p = haiku.judge_prompt([{"lines": ["a", "b", "c"]},
+                            {"lines": ["d", "e", "f"]}])
+    assert "2 haiku" in p
+    assert "1. a / b / c" in p and "2. d / e / f" in p
+    assert '"pick"' in p and '"score"' in p
+    assert "NOT against the others" in p

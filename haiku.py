@@ -241,3 +241,67 @@ def parse(raw) -> list[dict]:
         out.append({"lines": lines,
                     "title": str(item.get("title", "") or "").strip()})
     return out
+
+
+def judge_prompt(candidates: list[dict]) -> str:
+    """Rank the survivors and pick one.
+
+    ASKED TO RANK, NOT TO SCORE. The prose judge scored each draft in isolation
+    and gave 37 of 65 a perfect 1.0, so "best of four" was picking at random
+    while the run reported success - a saturated metric looks exactly like a
+    passing one. Thirty candidates make that impossible to hide: a model asked
+    to put thirty things in an order has to discriminate."""
+    blocks = "\n".join(
+        f"{i}. {' / '.join(h['lines'])}" for i, h in enumerate(candidates, 1))
+    return f"""You are the editor of The Aftertimes, a newspaper filing from the
+future. Below are {len(candidates)} haiku written for today's edition. Exactly
+one is published.
+
+{blocks}
+
+Pick the one a reader would repeat to somebody else. What that means here:
+- The third line TURNS the first two. It is not a summary of them, and it is not
+  a third fact in a list.
+- The joke is in the situation, not in the wording. Nobody in it knows it is
+  funny; the absurdity is treated as ordinary procedure.
+- It is about something recognisably true - an institution, a rule, a job, a
+  small human accommodation - rather than a whimsical impossibility about
+  nothing.
+- Its objects belong to its own era. Anything that reads as either 2026 or the
+  nineteenth century is disqualified however neat the line is.
+
+Do not pick on prettiness, mood or imagery. A merely atmospheric haiku is the
+failure mode here, not the goal.
+
+Then rate the one you picked out of 10 against a good satirical publication and
+NOT against the others in this list. Thirty weak haiku still have a best one, so
+say so honestly rather than grading on the curve. 5 raises a half-smile; 8 is
+one you would send to someone.
+
+Return JSON only: {{"pick": <the number>, "score": <1-10>,
+"reason": "<one short line>"}}"""
+
+
+def to_dispatch(chosen: dict, dateline: dict, domain: str) -> dict:
+    """Shape a haiku like a dispatch, so nothing downstream has to change.
+
+    render.py already splits `body` on newlines into paragraphs, and archive.py,
+    card.py and email_render.py all read `headline`, `body` and `dateline`. So
+    the pivot does not need those four files rewritten - it needs the poem put
+    in the shape they already read. The title becomes the headline because the
+    archive index, the permalink and og:title all need a name, and a haiku has
+    no first line worth using as one.
+
+    `scene` is deliberately the poem itself rather than a sentence about it: the
+    picture brief is built from it, and a haiku IS one concrete image, which is
+    the thing depict.py could never get out of a 230-word story."""
+    return {
+        "headline": (chosen.get("title") or "").strip() or "Dispatch",
+        "body": "\n".join(chosen["lines"]),
+        "lines": list(chosen["lines"]),
+        "scene": " / ".join(chosen["lines"]),
+        "domain": (domain or "").strip() or "notice",
+        "dateline": dict(dateline),
+        "glossary": [],
+        "premise": " / ".join(chosen["lines"]),
+    }
