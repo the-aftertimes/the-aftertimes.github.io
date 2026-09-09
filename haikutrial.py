@@ -332,6 +332,44 @@ def styles(only: list[str] | None = None) -> None:
         _render_styles(drawn, stamp)
 
 
+def draw() -> None:
+    """The real picture path for a real haiku: depict_haiku then illustrate.
+
+    The unit tests prove the plumbing with the model calls mocked, so the ONE
+    thing they cannot answer is whether flux still prints a caption on an
+    isolated object - which it did on 09/09/2026 ("APPROVING WEATHER"). This
+    runs the actual two calls the edition will make and writes the actual image,
+    without publishing anything."""
+    settings = load_settings()
+    dispatch = haiku_mod.to_dispatch(
+        {"lines": ["the cloud licence clerk",
+                   "stamps the thunderstorm for noon",
+                   "dry rain takes two weeks"],
+         "title": "Cloud Licence"},
+        {"place": "Carrow Shelf", "year": 2877, "years_from_now": 851}, "weather")
+    print(">>> DEPICT")
+    brief = depict.depict_haiku(dispatch, settings)
+    if not brief:
+        print("    no brief; aborting rather than drawing from the scene line")
+        return
+    for k, v in brief.items():
+        if v:
+            print(f"      {k:10} {v}")
+    prompt = illustrate.build_prompt(dispatch, brief)
+    print(f">>> ILLUSTRATE ({len(prompt)} chars)")
+    print(f"    no-caption clause last: {prompt.rstrip().endswith('empty margins.')}")
+    raw = illustrate._cf_image(prompt, settings)
+    if not raw:
+        print("    no image")
+        return
+    stamp = _stamp()
+    os.makedirs(rel(f"{OUT}/img"), exist_ok=True)
+    path = f"{OUT}/img/{stamp}-live-object.jpg"
+    with open(rel(path), "wb") as fh:
+        fh.write(illustrate._crop(raw, settings["image"]["crop"]))
+    print(f"    wrote {path}")
+
+
 def _render_styles(drawn, stamp: str) -> None:
     cards = "".join(
         f"<figure><img src='img/{f}' alt=''><figcaption>{html.escape(n)}"
@@ -364,6 +402,8 @@ if __name__ == "__main__":
         styles(sys.argv[2:] or None)
     elif cmd == "models":
         models()
+    elif cmd == "draw":
+        draw()
     else:
         poems(int(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_COUNT,
               sys.argv[3] if len(sys.argv) > 3 else None)
