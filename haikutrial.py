@@ -23,6 +23,7 @@ import depict
 import gemini
 import haiku as haiku_mod
 import illustrate
+import run as run_mod
 import urllib.request
 from common import load_settings, rel
 
@@ -349,7 +350,12 @@ def draw() -> None:
          "title": "Cloud Licence"},
         {"place": "Carrow Shelf", "year": 2877, "years_from_now": 851}, "weather")
     print(">>> DEPICT")
-    brief = depict.depict_haiku(dispatch, settings)
+    # Pass the SAME model list the live pipeline uses. Without it this
+    # defaults to settings.gemini.model alone, and on 09/09/2026 that
+    # made the trial report a dead end that production would have walked
+    # straight past - a harness that is weaker than the thing it tests
+    # produces false negatives, which are worse than no test.
+    brief = depict.depict_haiku(dispatch, settings, run_mod.HAIKU_MODELS)
     if not brief:
         print("    no brief; aborting rather than drawing from the scene line")
         return
