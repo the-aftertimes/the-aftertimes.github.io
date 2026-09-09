@@ -96,6 +96,28 @@ def _retry_after(body: str | None) -> float | None:
     return float(m.group(1)) if m else None
 
 
+def generate_first_available(prompt: str, settings: dict, temperature: float,
+                             models: tuple[str, ...]) -> tuple[str, str]:
+    """Try each model in turn, returning (raw, model_that_answered).
+
+    THE FREE TIER IS 20 CALLS PER DAY PER MODEL, so a spare model is not a
+    nicety - it is the only thing standing between an exhausted allowance and a
+    lost edition. 09/09/2026 proved why this has to be shared rather than
+    open-coded: the haiku batch walked a model list and the judge and the
+    picture brief did not, so a run could get its poems from a spare model and
+    then lose both later calls on the exhausted one. A dead model name costs a
+    single call (a non-429 4xx is not retried), so walking a short list is
+    cheap."""
+    last = None
+    for model in models:
+        try:
+            return generate(prompt, settings, temperature, model=model), model
+        except GeminiError as exc:
+            print(f"    {model}: {str(exc)[:120]}", file=sys.stderr)
+            last = exc
+    raise GeminiError(f"no model answered (tried {list(models)}): {last}")
+
+
 def generate(prompt: str, settings: dict, temperature: float,
              model: str | None = None, retries: int | None = None) -> str:
     """Call generateContent and return the model's raw text. Retries on

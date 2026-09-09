@@ -572,7 +572,7 @@ def _haiku_batch(dateline: dict, domain: str, settings: dict,
         except Exception as exc:  # noqa: BLE001 - try the next model
             print(f"    {model}: {str(exc)[:140]}", file=sys.stderr)
             last = exc
-            continue
+            continue  # noqa: E501
         data = gemini.extract_json(raw)
         place = ""
         if isinstance(data, dict) and data.get("place"):
@@ -601,8 +601,13 @@ def _judge_haiku(kept: list[dict], settings: dict) -> tuple[dict, dict]:
     if len(kept) == 1:
         return kept[0], info
     try:
-        raw = gemini.generate(haiku_mod.judge_prompt(kept), settings,
-                              settings["gemini"]["temperature_write"])
+        # WALKS THE SAME MODEL LIST AS THE BATCH. Without this a run could get
+        # its poems from a spare model and then lose the judge on the exhausted
+        # one - 20 calls a day is PER MODEL, and on 09/09/2026 the default
+        # model's allowance ran out mid-session while a sibling still answered.
+        raw, _ = gemini.generate_first_available(
+            haiku_mod.judge_prompt(kept), settings,
+            settings["gemini"]["temperature_write"], HAIKU_MODELS)
         data = gemini.extract_json(raw)
         if isinstance(data, list):
             data = data[0] if data else {}
@@ -680,12 +685,26 @@ def run_haiku_pipeline() -> dict:
           f"{' REJECTED' if scored['rejected'] else ''} [{rules}]")
 
     print(">>> ILLUSTRATE")
-    brief = depict.depict_haiku(dispatch, settings)
+    brief = depict.depict_haiku(dispatch, settings, HAIKU_MODELS)
+    dispatch["brief"] = brief
+    # NO BRIEF MEANS NO PICTURE, deliberately. illustrate's fallback builds the
+    # prompt from the scene line using _STYLE and _NEGATIVE - the pair that ask
+    # for "figures in a believable environment" and compose "one or two clear
+    # focal figures". For a haiku that is precisely the failure being designed
+    # out: it would publish a crowd of invented faces round the poem's object,
+    # which is the "ai sloppy" complaint the whole pivot answers. A pictureless
+    # day already renders correctly and has done since August, so the honest
+    # degradation is an empty frame rather than a wrong one.
     if brief:
         print(f"    focus: {brief['focus'][:90]}")
-    dispatch["brief"] = brief
-    dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings, brief)
-    print(f"    image: {dispatch['image'] or 'none (fallback)'}")
+        dispatch["image"] = illustrate_mod.generate(
+            dispatch, run_date, settings, brief)
+    else:
+        print("    no object brief; publishing without a picture rather than "
+              "falling back to a scene prompt that asks for figures",
+              file=sys.stderr)
+        dispatch["image"] = None
+    print(f"    image: {dispatch['image'] or 'none'}")
     if dispatch["image"]:
         try:
             print(f"    card: {card.write(run_date, dispatch['image'])}")
