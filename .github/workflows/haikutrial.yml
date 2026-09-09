@@ -28,6 +28,11 @@ on:
         description: "Model for the poems. Blank uses a sibling flash model so trials cannot eat the paper's 20-a-day quota."
         required: false
         default: ""
+      draw:
+        description: "Draw ONE real object-only picture through depict_haiku + illustrate (1 Gemini + 1 Cloudflare call)"
+        type: boolean
+        required: false
+        default: false
       styles:
         description: "Also draw the picture-style comparison sheet (6 Cloudflare images)"
         type: boolean
@@ -60,7 +65,16 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python haikutrial.py models
 
+      - name: Draw one real picture
+        if: ${{ inputs.draw }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: python haikutrial.py draw
+
       - name: Poems
+        if: ${{ !inputs.draw }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python haikutrial.py poems "${{ inputs.count }}" "${{ inputs.model }}"
