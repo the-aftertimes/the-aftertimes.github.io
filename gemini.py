@@ -123,15 +123,15 @@ def generate(prompt: str, settings: dict, temperature: float,
             if resp.status_code == 200:
                 data = resp.json()
                 return data["candidates"][0]["content"]["parts"][0]["text"]
-            # 900, not 200. A Google 429 body carries the answer to "which
-            # allowance, and when does it come back" in a `details` array - a
-            # QuotaFailure naming the quotaId (per-day vs per-minute, per-model
-            # vs per-project) and a RetryInfo carrying retryDelay. At 200
-            # characters the truncation cut the body off mid-URL, one field
-            # before any of it, so four refused runs on 08-09/09/2026 taught us
-            # nothing except that we were refused. Exactly the fault
-            # illustrate.py fixed in August by printing what Cloudflare SAID.
-            last = f"HTTP {resp.status_code}: {resp.text[:900]}"
+            # NOT TRUNCATED. An error body is a few hundred bytes and it is the
+            # only evidence there is; truncating it hid the answer three times
+            # in two days. At 200 characters it cut off mid-URL, before the
+            # retry delay - which is what let a three-second wait be diagnosed
+            # as an exhausted daily allowance and made non-retryable. Raised to
+            # 900, and that cut off inside the word "quota", one field before
+            # the quotaId that says whether the limit is per-minute or per-day.
+            # There is no length worth guessing at here, so there is no length.
+            last = f"HTTP {resp.status_code}: {resp.text}"
         except (requests.RequestException, KeyError, IndexError) as exc:
             last = str(exc)
         # A 429 is a RATE limit, not a transient blip: retrying 1.5s later

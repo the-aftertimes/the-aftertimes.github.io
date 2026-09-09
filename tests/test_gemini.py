@@ -170,10 +170,11 @@ def test_a_429_with_no_stated_delay_falls_back_to_the_ladder(monkeypatch):
     assert slept and min(slept) >= 20, slept
 
 
-def test_the_error_body_is_kept_long_enough_to_carry_the_quota_details(monkeypatch):
-    """A Google 429 says WHICH allowance and WHEN it returns, in a details array
-    after the message. Truncating at 200 chars cut it off mid-URL and cost four
-    runs on 08-09/09/2026 that established nothing."""
+def test_the_error_body_is_not_truncated_at_all(monkeypatch):
+    """A Google 429 says WHICH allowance and WHEN it returns. Truncation hid it
+    twice: 200 chars cut off mid-URL before the retry delay, and 900 cut off
+    inside the word "quota", one field before the quotaId. The body is a few
+    hundred bytes and is the only evidence there is, so it is kept whole."""
     import gemini
     body = ('{"error":{"code":429,"message":"You exceeded your current quota, '
             'please check your plan and billing details. For more information '
@@ -192,3 +193,4 @@ def test_the_error_body_is_kept_long_enough_to_carry_the_quota_details(monkeypat
     msg = str(exc.value)
     assert "PerDay" in msg, "the quotaId must survive into the error"
     assert "retryDelay" in msg, "the retry delay must survive into the error"
+    assert body in msg, "the body must reach the log whole, not truncated"
