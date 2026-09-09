@@ -1,0 +1,545 @@
+{
+ "generated": "20260909-011238",
+ "dateline": {
+  "place": "Carrow Shelf",
+  "year": 2877,
+  "month": 10,
+  "day": 24,
+  "years_from_now": 851
+ },
+ "asked": 40,
+ "model": "gemini-3.7-flash",
+ "register": {
+  "n": 36,
+  "bleak": 2,
+  "preindustrial": 0,
+  "bleak_pct": 6,
+  "preindustrial_pct": 0
+ },
+ "asked_count": 40,
+ "parsed": 40,
+ "kept": [
+  {
+   "lines": [
+    "the cloud licence clerk",
+    "stamps the thunderstorm for noon",
+    "dry rain takes two weeks"
+   ],
+   "title": "cloud permit check",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "four soft velvet hounds",
+    "queued to have their barking trimmed",
+    "now they hum in C"
+   ],
+   "title": "synthetic pet recall",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "third tier lift retuned",
+    "drops a semitone at six",
+    "so the floor feels steep"
+   ],
+   "title": "elevator chime tune",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "gel pears on the grid",
+    "turned from yellow into grey",
+    "ripe enough to slice"
+   ],
+   "title": "synthetic orchard yield",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "wearer joins the queue",
+    "for another elbow hinge",
+    "bent the old one flat"
+   ],
+   "title": "sleeve size upgrade",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "hall sixteen was sold",
+    "to a soap firm for nine months",
+    "walls smell like fresh foam"
+   ],
+   "title": "corridor naming grant",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "morning glider lane",
+    "closed to let the heat plume drift",
+    "passengers drink mist"
+   ],
+   "title": "sky transit delay",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "fourth ward went to sleep",
+    "twenty minutes ahead of",
+    "its computed turn"
+   ],
+   "title": "sleep shift register",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "coat of liquid gloss",
+    "rolled across the parlor skin",
+    "sets the room to noon"
+   ],
+   "title": "wall tint renewal",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "hatchway passed its test",
+    "seals within five millibars",
+    "cooks can open soup"
+   ],
+   "title": "domestic hatch inspection",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "scrub disc turns the bend",
+    "buffs the treadway till it hums",
+    "misses each new heel"
+   ],
+   "title": "floor drone calibration",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "north bay speaker grid",
+    "drops all voices by an eighth",
+    "keeps the market calm"
+   ],
+   "title": "vocal pitch regulation",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "small tub through the duct",
+    "carries three warm glucose pills",
+    "marked for bay fourteen"
+   ],
+   "title": "pneumatic parcel routing",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "cartridge under bench",
+    "blows a pulse of ginger scent",
+    "shifts the shift to break"
+   ],
+   "title": "air filter turnover",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "lumen rating fell",
+    "by two degrees in the lounge",
+    "nappers pay the rate"
+   ],
+   "title": "ceiling glow adjustment",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "pace arch scans the stride",
+    "sets the step count on your badge",
+    "adds two steps for boots"
+   ],
+   "title": "gait scanner update",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "print head drains its tank",
+    "rinses through with almond gel",
+    "snacks are thicker now"
+   ],
+   "title": "protein printer clean",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "clear glass turns to milk",
+    "at exactly six past four",
+    "keeps the sunrise flat"
+   ],
+   "title": "window transparency reset",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "bench form gets approved",
+    "holds three hips but only two",
+    "have the sitting pass"
+   ],
+   "title": "seating license audit",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "tap pours denser froth",
+    "saves the runoff in the pan",
+    "chewing counts as wash"
+   ],
+   "title": "water texture choice",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "cargo barrel sealed",
+    "weighed against the current wind",
+    "coats are tossed inside"
+   ],
+   "title": "luggage weight allotment",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "cheek nod shaved by half",
+    "to reduce the hallway block",
+    "saves three steps an hour"
+   ],
+   "title": "greeting protocol update",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "foam strip down the beam",
+    "drinks the clatter of the trays",
+    "forks now sound like cork"
+   ],
+   "title": "acoustic dampener cycle",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "duct air raised a notch",
+    "twenty-two point seven now",
+    "no more vest rebates"
+   ],
+   "title": "temperature bracket switch",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "meal cube gets its crest",
+    "stamped with this week's sponsor code",
+    "melts the lemon taste"
+   ],
+   "title": "nutrient bar branding",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "pod six switched its track",
+    "rolled its carpet in reverse",
+    "seats face north all day"
+   ],
+   "title": "transit pod swap",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "brow lens dims the glare",
+    "paints a blue ring round each door",
+    "exits look like pools"
+   ],
+   "title": "personal visor tune",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "mister adds five drops",
+    "to the upper gallery",
+    "charged to sleeper fees"
+   ],
+   "title": "humidity tier charge",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "bunk pad fills with gel",
+    "stiffens at the seventh hour",
+    "rolls the tenant out"
+   ],
+   "title": "mattress firming schedule",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "chiming on ring four",
+    "shortened by two centibeats",
+    "clears the entry queue"
+   ],
+   "title": "door tone renewal",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "foam vane tilts three points",
+    "blocks the gust from deck fifteen",
+    "skirts stop flapping west"
+   ],
+   "title": "balcony wind baffle",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "gray card turned to teal",
+    "gives the right to take the lift",
+    "only coming down"
+   ],
+   "title": "badge chip reclassification",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "broth line thickens up",
+    "poured with twenty granules more",
+    "spoons stand straight upright"
+   ],
+   "title": "synthetic broth density",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "neck ring pinned two clicks",
+    "holds the chin up to the beam",
+    "for the passport lens"
+   ],
+   "title": "uniform collar adjustment",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "green line along hall",
+    "blinks when curfew reaches ten",
+    "socks gleam like wet ice"
+   ],
+   "title": "floor glow strip timer",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "roof valve shut at three",
+    "drop count fell from nine to four",
+    "ferns stay clipped and dry"
+   ],
+   "title": "overhead mist shutoff",
+   "counts": [
+    5,
+    7,
+    5
+   ]
+  }
+ ],
+ "failed": [
+  {
+   "lines": [
+    "your noon awning shade",
+    "moved three metres to the west",
+    "taxed as public park"
+   ],
+   "title": "shadow allocation",
+   "counts": [
+    5,
+    6,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "vest weave runs a thread",
+    "dyed in official pale green",
+    "valid for three months"
+   ],
+   "title": "fabric printer cycle",
+   "counts": [
+    5,
+    8,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "bay grille swapped for mesh",
+    "curtails liquid drip by half",
+    "boots dry in an hour"
+   ],
+   "title": "locker air vent swap",
+   "counts": [
+    6,
+    7,
+    5
+   ]
+  },
+  {
+   "lines": [
+    "sole seal stamped with heat",
+    "grips the magnet rail till six",
+    "slip tax waiver cleared"
+   ],
+   "title": "footwear tread recharge",
+   "counts": [
+    6,
+    7,
+    5
+   ]
+  }
+ ]
+}
