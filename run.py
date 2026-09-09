@@ -23,6 +23,8 @@ import bible as bible_mod
 import critic
 import depict
 import exemplars
+import gemini
+import haiku as haiku_mod
 import ideate as ideate_stage
 import card
 import illustrate as illustrate_mod
@@ -544,6 +546,204 @@ def run_pipeline() -> dict:
     return record
 
 
+HAIKU_BATCH = 40
+
+#: Tried in order. The free tier is 20 generate calls PER DAY PER MODEL - the
+#: quotaId is literally GenerateRequestsPerDayPerProjectPerModel-FreeTier - so a
+#: second and third model are not a nicety. They are the difference between an
+#: exhausted allowance or a demand spike costing the edition and costing
+#: nothing. A dead model name now fails in one call, so walking the list is
+#: cheap. `gemini-2.5-flash` is deliberately absent: it appears in the account's
+#: own model listing and answers 404 "no longer available to new users".
+HAIKU_MODELS = ("gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.5-flash")
+
+
+def _haiku_batch(dateline: dict, domain: str, settings: dict,
+                 avoid_block: str) -> tuple[list[dict], list[dict], str]:
+    """One call for a batch of forty, then the deterministic 5-7-5 sieve."""
+    last = None
+    for model in HAIKU_MODELS:
+        prompt = haiku_mod.build_prompt(dateline, domain, HAIKU_BATCH,
+                                        avoid_block=avoid_block)
+        try:
+            raw = gemini.generate(
+                prompt, settings,
+                settings["gemini"].get("temperature_ideate", 1.1), model=model)
+        except Exception as exc:  # noqa: BLE001 - try the next model
+            print(f"    {model}: {str(exc)[:140]}", file=sys.stderr)
+            last = exc
+            continue
+        data = gemini.extract_json(raw)
+        place = ""
+        if isinstance(data, dict) and data.get("place"):
+            place = str(data["place"]).strip()
+        got = haiku_mod.parse(data)
+        kept, failed = [], []
+        for h in got:
+            counts = [haiku_mod.line_syllables(l) for l in h["lines"]]
+            (kept if counts == list(haiku_mod.PATTERN) else failed).append(
+                {**h, "counts": counts})
+        print(f"    {model}: parsed {len(got)}/{HAIKU_BATCH}, "
+              f"{len(kept)} scan 5-7-5")
+        if kept:
+            return kept, failed, place
+        last = RuntimeError(f"{model} produced no haiku that scan")
+    raise RuntimeError(f"no haiku batch survived: {last}")
+
+
+def _judge_haiku(kept: list[dict], settings: dict) -> tuple[dict, dict]:
+    """Pick the edition from the survivors.
+
+    Falls back to the first survivor rather than raising: a judge outage must
+    cost us the BEST haiku, never the day. Same contract as choose_draft."""
+    info = {"n_candidates": len(kept), "judge_pick": None, "judge_score": None,
+            "judge_reason": ""}
+    if len(kept) == 1:
+        return kept[0], info
+    try:
+        raw = gemini.generate(haiku_mod.judge_prompt(kept), settings,
+                              settings["gemini"]["temperature_write"])
+        data = gemini.extract_json(raw)
+        if isinstance(data, list):
+            data = data[0] if data else {}
+        pick = int(data.get("pick"))
+        if not 1 <= pick <= len(kept):
+            raise ValueError(f"pick {pick} out of range for {len(kept)}")
+        info["judge_pick"] = pick - 1
+        info["judge_reason"] = str(data.get("reason", "")).strip()
+        try:
+            info["judge_score"] = float(data.get("score"))
+        except (TypeError, ValueError):
+            info["judge_score"] = None
+        print(f"    judge picked {pick} (score {info['judge_score']}): "
+              f"{info['judge_reason']}")
+        return kept[pick - 1], info
+    except Exception as exc:  # noqa: BLE001 - best effort
+        print(f"    WARN judge failed ({exc}); taking the first survivor",
+              file=sys.stderr)
+        return kept[0], info
+
+
+def run_haiku_pipeline() -> dict:
+    """The haiku edition. Two model calls for the words, one for the picture.
+
+    A SEPARATE FUNCTION rather than a branch inside run_pipeline, deliberately.
+    The prose path is left byte-identical so `form: prose` stays a working
+    reverse gear - this is a live daily publisher, and the first haiku edition
+    will be read by Charlie after it has already gone out. The duplicated
+    ILLUSTRATE/RENDER/RECORD tail below is the price of that, and it is worth
+    paying until prose is retired, at which point the two collapse into one.
+
+    Three calls a day against the prose pipeline's eight to thirteen, which is
+    the whole reason the paper stops scraping its own quota ceiling.
+    """
+    settings = load_settings()
+    domains = load_yaml("config/domains.yaml")["domains"]
+    ledger = ledger_mod.load_ledger()
+    rng = random.Random()
+
+    run_dt = datetime.now(timezone.utc)
+    run_date = publication_date()
+    today = date.today()
+
+    ac = settings["dates"]["anti_cluster"]
+    eras = ledger_mod.recent_eras(ledger, ac["avoid_recent_days"])
+    dateline = sample_future_dateline(today, settings["dates"], eras, rng)
+    recent_doms = set(ledger_mod.recent_domains(ledger, ac["avoid_recent_days"]))
+    domain = rng.choice([d for d in domains if d not in recent_doms] or domains)
+    print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / {domain}")
+
+    lcfg = settings.get("learning", {"enabled": False})
+    past = [read_json(f"data/dispatches/{os.path.basename(f)}")
+            for f in sorted(glob.glob(rel("data/dispatches/*.json")))]
+    records = [p for p in past if p]
+    avoid_block = build_avoid_block(records, lcfg)
+
+    print(">>> HAIKU")
+    kept, failed, place = _haiku_batch(dateline, domain, settings, avoid_block)
+    if place:
+        dateline["place"] = place
+    print(f"    {dateline['place']}, {dateline['year']}")
+
+    print(">>> JUDGE")
+    chosen, judge_info = _judge_haiku(kept, settings)
+    dispatch = haiku_mod.to_dispatch(chosen, dateline, domain)
+    print(f"    {' / '.join(dispatch['lines'])}")
+
+    qcfg = settings["quality"]
+    context = {"years_from_now": dateline["years_from_now"], "engine": "",
+               "technique": "", "form": "haiku",
+               "common_words": load_common_words()}
+    scored = critic.score(dispatch, context, qcfg)
+    rules = ", ".join(v["rule"] for v in scored["violations"]) or "clean"
+    print(f"    score {scored['score']}"
+          f"{' REJECTED' if scored['rejected'] else ''} [{rules}]")
+
+    print(">>> ILLUSTRATE")
+    brief = depict.depict_haiku(dispatch, settings)
+    if brief:
+        print(f"    focus: {brief['focus'][:90]}")
+    dispatch["brief"] = brief
+    dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings, brief)
+    print(f"    image: {dispatch['image'] or 'none (fallback)'}")
+    if dispatch["image"]:
+        try:
+            print(f"    card: {card.write(run_date, dispatch['image'])}")
+        except Exception as exc:  # noqa: BLE001 - a card is not worth failing over
+            print(f"    card: FAILED {type(exc).__name__}: {exc}", file=sys.stderr)
+
+    print(">>> RENDER")
+    meta = {
+        "run_time": run_dt.isoformat(),
+        "timezone": settings["timezone"],
+        "tagline": settings["site"]["tagline"],
+        "site_name": settings["site"]["name"],
+        "base_url": settings["site"]["base_url"],
+        "signup_form_url": settings.get("signup_form_url", ""),
+        "edition": len(ledger) + 1,
+        "locator_deep_max": locator_ceiling(settings),
+    }
+    with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
+        fh.write(render_mod.render_dispatch(dispatch, meta, stale=False))
+    perma = f"d/{run_date}.html"
+    os.makedirs(rel("d"), exist_ok=True)
+    with open(rel(perma), "w", encoding="utf-8") as fh:
+        fh.write(render_mod.render_dispatch(dispatch, meta, is_permalink=True))
+    print(f"    wrote {settings['output_html']} + {perma}")
+
+    print(">>> RECORD")
+    record = {"run_date": run_date, "run_time": run_dt.isoformat(),
+              "dispatch": dispatch, "meta": meta,
+              "quality": {"form": "haiku", "asked": HAIKU_BATCH,
+                          "scanned": len(kept), "failed_scan": len(failed),
+                          "score": scored["score"],
+                          "rejected": scored["rejected"],
+                          "violations": scored["violations"],
+                          # Every haiku that scanned and was not picked. The
+                          # prose pipeline discarded its losing drafts for weeks
+                          # and the one Charlie liked survived only in an expired
+                          # CI log; thirty-odd haiku cost a few kilobytes and are
+                          # the only pool a taste loop could ever learn from.
+                          "candidates": [{"lines": h["lines"],
+                                          "title": h.get("title", "")}
+                                         for h in kept],
+                          **judge_info}}
+    write_json(f"data/dispatches/{run_date}.json", record)
+    # style/place_kind/engine/technique are prose-pipeline axes with no meaning
+    # for a poem, but append_entry's shape is what recent_eras and
+    # recent_domains read, so they are filled with the form's own name rather
+    # than left blank - a blank would silently join the prose anti-repeat pool.
+    ledger_mod.save_ledger(ledger_mod.append_entry(
+        ledger, run_date, dateline, domain, dispatch["headline"],
+        settings["dates"]["anti_cluster"]["era_bucket_years"],
+        "haiku", "haiku", "haiku", "haiku"))
+    print(f"    archived {run_date}; ledger={len(ledger)}")
+
+    archive_mod.build()
+    print("    rebuilt archive.html")
+    return record
+
+
 def _load_dotenv() -> None:
     """Best-effort: load KEY=VALUE lines from a gitignored .env for local runs.
     CI supplies GEMINI_API_KEY via the environment instead, so this is a no-op there."""
@@ -711,7 +911,13 @@ def main(argv: list[str] | None = None) -> int:
         print("(Pass --force to regenerate and overwrite it.)")
         return 0
     try:
-        run_pipeline()
+        # `form` decides which pipeline runs. Both file the same shaped record,
+        # and the existing top-level guard below covers either - a haiku failure
+        # keeps yesterday's page and flags it stale exactly as a prose failure
+        # does, so switching form cannot produce a blank site.
+        form = load_settings().get("form", "prose")
+        print(f"FORM: {form}")
+        (run_haiku_pipeline if form == "haiku" else run_pipeline)()
         print("\nOK - fresh dispatch filed.")
         return 0
     except Exception as exc:  # noqa: BLE001 - top-level guard, never crash-publish

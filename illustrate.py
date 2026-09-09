@@ -71,6 +71,15 @@ _NEGATIVE = ("Everyone fully and modestly dressed for work, whole body covered, 
 MAX_PROMPT = 1900
 
 
+#: Appended after the negative block for an object-only picture. See the comment
+#: at its use in build_prompt: the composition invites a caption, so the refusal
+#: has to be the last thing flux reads.
+_NO_PLATE = ("This is not a catalogue plate and carries no caption: no title, "
+             "no name, no number, no label, no maker's mark, no engraved "
+             "lettering anywhere on the object or the paper. Bare paper around "
+             "it, empty margins.")
+
+
 def _fit(core: list[str], optional: list[str], negative: str) -> str:
     """Join the prompt, dropping the least important slots if it will not fit.
 
@@ -112,7 +121,14 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
     if brief:
         lead = ", ".join(p for p in ((brief.get("subject") or "").strip(),
                                      (brief.get("action") or "").strip()) if p)
-        core = [_STYLE, (lead or "a figure").rstrip(".") + "."]
+        # AN OBJECT-ONLY BRIEF MUST NOT FALL BACK TO "a figure". The default was
+        # written when every brief had a subject, and a haiku brief deliberately
+        # has none - so it would have inserted the literal words "a figure" into
+        # a prompt whose whole purpose is that there are no people in the frame,
+        # and then the negative block would have argued with it. Caught while
+        # wiring the pivot, before it ever drew.
+        object_only = bool((brief.get("focus") or "").strip()) and not lead
+        core = [_STYLE] if object_only else [_STYLE, (lead or "a figure").rstrip(".") + "."]
         # THE FOCUS OBJECT GOES IN FRONT OF THE FIGURE, from 06/09/2026. Same
         # positional argument as the negative going last, pointed the other way:
         # flux weights both ends of a prompt over its middle, and on 05/09 a
@@ -125,13 +141,27 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
         focus = (brief.get("focus") or "").strip()
         if focus:
             core.insert(1, "It shows " + focus.rstrip(".") + ".")
+        # AN ISOLATED OBJECT INVITES A CAPTION, so say so where flux weighs it
+        # most. 09/09/2026: two object-only test images came back with
+        # "APPROVING WEATHER" and "ASEK WEATHER" legibly printed, despite the
+        # no-text rule already sitting in _NEGATIVE. That rule was written for
+        # busy scenes and it loses here for a structural reason - one object on
+        # bare paper IS a nineteenth-century catalogue plate, and those are
+        # captioned, so the composition itself is arguing for lettering.
+        #
+        # It goes at the very END, after _NEGATIVE, because flux weighs the tail
+        # of a prompt hardest and this is now the rule most likely to be broken.
+        # Only for a subject-less brief, which is what the haiku form produces:
+        # a scene with people in it does not read as a plate and does not need
+        # the extra characters.
         optional = []
         for field, prefix in (("setting", ""), ("light", "Light: "),
                               ("materials", "Materials: "), ("anomaly", "")):
             value = (brief.get(field) or "").strip()
             if value:
                 optional.append(f"{prefix}{value}".rstrip(".") + ".")
-        return _fit(core, optional, _NEGATIVE)
+        negative = _NEGATIVE + " " + _NO_PLATE if object_only else _NEGATIVE
+        return _fit(core, optional, negative)
 
     # Fallback: the writer's scene line, which is prose written for a reader.
     subject = (dispatch.get("scene") or "").strip() or dispatch["headline"]
