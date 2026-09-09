@@ -194,3 +194,25 @@ def test_the_error_body_is_not_truncated_at_all(monkeypatch):
     assert "PerDay" in msg, "the quotaId must survive into the error"
     assert "retryDelay" in msg, "the retry delay must survive into the error"
     assert body in msg, "the body must reach the log whole, not truncated"
+
+
+def test_a_404_is_not_retried(monkeypatch):
+    """09/09/2026: a retired model name returned 404 "no longer available to new
+    users" and the loop asked three more times, 13 seconds apart. Only a 429 is
+    a 4xx worth a second attempt - illustrate.py has drawn that line since
+    August."""
+    import gemini
+    calls, slept = [], []
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+
+    def post(*a, **k):
+        calls.append(1)
+        return _resp(404, '{"error":{"message":"no longer available"}}')
+
+    monkeypatch.setattr(gemini.requests, "post", post)
+    with pytest.raises(GeminiError) as exc:
+        gemini.generate("p", _settings(), 0.9)
+    assert "not retryable" in str(exc.value)
+    assert len(calls) == 1, f"asked {len(calls)} times for a dead model name"
+    assert slept == []

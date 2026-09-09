@@ -186,6 +186,22 @@ def generate(prompt: str, settings: dict, temperature: float,
         # spellings - the prose "Please retry in Xs" and RetryInfo's
         # "retryDelay": "Xs" - because Gemini has been seen emitting each.
         # Capped, so a genuinely long delay still fails rather than hanging CI.
+        # A 4xx THAT IS NOT A RATE LIMIT IS A BUG, NOT A BLIP. 09/09/2026: a
+        # retired model name returned 404 "no longer available to new users"
+        # and this loop dutifully asked three more times, 13 seconds apart,
+        # before reporting it. illustrate._post_with_retry has drawn this line
+        # since August - "a 401/403 is a bad token and a 400 is a bad prompt, so
+        # retrying either just burns quota and delays the honest failure" - and
+        # a bad MODEL NAME belongs in the same bucket. Only 429 is a 4xx worth
+        # a second attempt.
+        code = 0
+        if (last or "").startswith("HTTP "):
+            try:
+                code = int((last or "").split()[1].rstrip(":"))
+            except (IndexError, ValueError):
+                code = 0
+        if 400 <= code < 500 and code != 429:
+            raise GeminiError(f"not retryable: {last}")
         # A PER-DAY QUOTA IS NOT WAITABLE, AND GOOGLE'S OWN RETRY HINT LIES
         # ABOUT IT. Settled 09/09/2026 by reading an untruncated body:
         #   "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
