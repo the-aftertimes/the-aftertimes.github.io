@@ -379,7 +379,7 @@ def check_residue(text: str) -> list[dict]:
     return out
 
 
-def check_structure(dispatch: dict, cfg: dict) -> list[dict]:
+def check_structure(dispatch: dict, cfg: dict, haiku: bool = False) -> list[dict]:
     """The parts a dispatch cannot be published without. Nothing else in the
     critic looks at whether a field is actually THERE - so before this existed, a
     revision that came back with a body but no headline scored identically to a
@@ -397,6 +397,19 @@ def check_structure(dispatch: dict, cfg: dict) -> list[dict]:
                       f"headline is {words} words, wanted {cap} or fewer",
                       "minor"))
     body = (dispatch.get("body") or "").strip()
+    # A HAIKU IS THREE LINES, NOT A SHORT ARTICLE. The 150-word absolute floor
+    # exists to stop a truncated or empty body publishing an empty page, and a
+    # seventeen-syllable poem trips it every time - it measured 14 words and was
+    # hard-rejected on 09/09/2026 while wiring the pivot. So the structural
+    # question changes shape rather than being dropped: a haiku must have three
+    # lines and they must scan. That is a REAL floor, not a waived one, and it is
+    # the same guard against a truncated body that the word count was.
+    if haiku:
+        lines = [l for l in body.splitlines() if l.strip()]
+        if len(lines) != 3:
+            out.append(_v("structure",
+                          f"a haiku is three lines, got {len(lines)}", "major"))
+        return out
     floor = cfg["length"]["hard_min"]
     if len(body.split()) < floor:
         out.append(_v("structure",
@@ -417,16 +430,30 @@ def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     text = f"{dispatch.get('headline', '')} {body}"
     metrics = metrics_for(body)
     violations = []
-    violations += check_structure(dispatch, cfg)
-    violations += check_rhythm(metrics, cfg)
-    violations += check_length(metrics, cfg)
+    haiku = (context.get("form") or "prose") == "haiku"
+    violations += check_structure(dispatch, cfg, haiku=haiku)
+    # WHICH CHECKS SURVIVE THE HAIKU PIVOT, 09/09/2026. Four of them measure
+    # things seventeen syllables cannot have: a 180-240 word count, a mean
+    # sentence length, a three-item comma list, and a short flat regulation
+    # standing as its own paragraph. Run against a haiku they fire on every
+    # single candidate, which would reject the entire batch.
+    #
+    # The rest all still earn their place and are exactly the ones that were
+    # doing real work: machine phrases, the legal register, US spellings, the
+    # decode rate, and the present-day/pre-industrial prop rules - that last
+    # pair being the whole reason the first haiku batch was measurable as 64%
+    # pre-industrial.
+    if not haiku:
+        violations += check_rhythm(metrics, cfg)
+        violations += check_length(metrics, cfg)
     violations += check_phrases(body)
     violations += check_register(body, context.get("engine", ""))
     violations += check_props(text, context.get("years_from_now", 0))
     violations += check_stated_joke(body)
     violations += check_wink(body)
-    violations += check_tricolon(body)
-    violations += check_flat_rule(body)
+    if not haiku:
+        violations += check_tricolon(body)
+        violations += check_flat_rule(body)
     violations += check_plainness(body, context.get("common_words"), cfg)
     violations += check_residue(text)
     weights = cfg["weights"]

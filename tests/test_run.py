@@ -78,18 +78,24 @@ def test_main_force_regenerates_an_already_filed_day(tmp_path, monkeypatch):
     today = run_mod.publication_date()
     _stub_dispatch(tmp_path, today)
     calls = []
-    monkeypatch.setattr(run_mod, "run_pipeline", lambda: calls.append(1))
+    # main() dispatches on settings.form from 09/09/2026, so BOTH pipelines are
+    # stubbed and the assertion is that exactly one of them ran. Stubbing only
+    # run_pipeline made these two tests pass for the wrong reason under
+    # `form: prose` and fail outright under `form: haiku`.
+    monkeypatch.setattr(run_mod, "run_pipeline", lambda: calls.append("prose"))
+    monkeypatch.setattr(run_mod, "run_haiku_pipeline", lambda: calls.append("haiku"))
     assert run_mod.main(["--force"]) == 0
-    assert calls == [1]
+    assert len(calls) == 1, calls
 
 
 def test_main_runs_the_pipeline_when_the_day_is_unfiled(tmp_path, monkeypatch):
     monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
     monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
     calls = []
-    monkeypatch.setattr(run_mod, "run_pipeline", lambda: calls.append(1))
+    monkeypatch.setattr(run_mod, "run_pipeline", lambda: calls.append("prose"))
+    monkeypatch.setattr(run_mod, "run_haiku_pipeline", lambda: calls.append("haiku"))
     assert run_mod.main([]) == 0
-    assert calls == [1]
+    assert len(calls) == 1, calls
 
 
 def test_trial_sentences_split_across_paragraph_breaks():
@@ -551,3 +557,18 @@ def test_the_seam_test_freezes_the_clock_it_actually_depends_on():
         "the seam test must monkeypatch run_mod.tz_now. publication_date() calls "
         "tz_now() from common, so patching run_mod.datetime freezes nothing and "
         "the assertion silently compares against the real clock")
+
+def test_main_dispatches_on_the_configured_form(tmp_path, monkeypatch):
+    """The switch itself, both ways. Nothing else asserts that `form` is read at
+    all, so a typo in settings.yaml would silently keep publishing prose."""
+    monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
+    monkeypatch.setattr(run_mod, "_load_dotenv", lambda: None)
+    base = run_mod.load_settings()
+    for form, expected in (("haiku", "haiku"), ("prose", "prose")):
+        calls = []
+        monkeypatch.setattr(run_mod, "load_settings", lambda f=form: {**base, "form": f})
+        monkeypatch.setattr(run_mod, "run_pipeline", lambda: calls.append("prose"))
+        monkeypatch.setattr(run_mod, "run_haiku_pipeline",
+                            lambda: calls.append("haiku"))
+        assert run_mod.main([]) == 0
+        assert calls == [expected], f"form={form} ran {calls}"

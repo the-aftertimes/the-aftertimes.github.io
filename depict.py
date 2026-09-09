@@ -233,3 +233,97 @@ def depict(dispatch: dict, settings: dict) -> dict | None:
         print("    depict returned too few slots, using the scene line")
         return None
     return brief
+
+
+#: The picture brief for a haiku. A DIFFERENT PROMPT, not a tweak of the prose
+#: one, because the two are solving opposite problems: a 230-word dispatch has no
+#: single visual moment so that prompt spends its length forbidding the model
+#: from choosing one, while a haiku IS one image and the only job left is to say
+#: what the object looks like.
+#:
+#: NO PEOPLE AT ALL, which is the whole point. Every illustration Charlie has
+#: called weird was a figure fault - a hairdryer hood for a head on 05/09/2026, a
+#: mirrored space helmet on the redraw, a crowd of thirty near-identical faces on
+#: the 09/09 style test. flux-1-schnell cannot hold a face at four steps, so the
+#: fix is not a better face instruction, it is a frame with no face in it.
+#: Measured on 09/09: one object and no people took smooth-grey mush from 16.9%
+#: to 3.1% with the Dore style completely unchanged.
+_HAIKU_FIELDS = ("focus", "material", "surface", "light", "wear")
+
+_HAIKU_GUIDE = {
+    "focus": ("the ONE object the poem is about, as a concrete noun phrase. "
+              "Describe the shape actually present and do NOT use the everyday "
+              "name of what it used to be - that word is stronger than anything "
+              "you qualify it with and the renderer will draw the ordinary "
+              "version"),
+    "material": "the two or three materials it is made of, named plainly",
+    "surface": "the plain surface it rests on, in two or three words",
+    "light": "direction and hardness of the light falling on it",
+    "wear": ("one dull, specific sign it is used - a chip, a stain, a worn "
+             "edge, a repair. Something true and boring, never strange"),
+}
+
+
+def build_haiku_prompt(dispatch: dict) -> str:
+    slots = ",\n".join(f'  "{f}": "{_HAIKU_GUIDE[f]}"' for f in _HAIKU_FIELDS)
+    poem = " / ".join(dispatch.get("lines") or
+                      [l for l in (dispatch.get("body") or "").splitlines() if l.strip()])
+    ahead = int((dispatch.get("dateline") or {}).get("years_from_now") or 0)
+    return (
+        "You are the picture editor for a newspaper that files from the future. "
+        "Below is today's edition: one haiku. Your job is to describe THE SINGLE "
+        "OBJECT it is about, so an engraver can draw it.\n\n"
+        f"THE HAIKU: {poem}\n\n"
+        "Pick the one physical thing the poem turns on. If the poem names "
+        "several, choose the one without which it makes no sense. If the poem "
+        "names none directly, choose the object the procedure it describes would "
+        "actually be done WITH.\n\n"
+        "THERE ARE NO PEOPLE IN THIS PICTURE. No figures, no faces, no hands, no "
+        "silhouettes, nobody in the background. Just the object, resting on "
+        "something, lit from somewhere. This is not a stylistic preference: the "
+        "engraver cannot draw a face, and every picture this paper has had to "
+        "redraw was a face it invented.\n"
+        "No setting, no scenery, no room, no landscape behind it. Plain ground.\n\n"
+        f"THIS OBJECT IS {ahead} YEARS FROM NOW, and that has to be visible. No "
+        "material, fitting or mechanism that exists in 2026 - not plastic, not "
+        "denim, not rubber, not brass, not varnished timber, not canvas. And "
+        "equally NOT the nineteenth century: no cast iron, no rope, no timber, "
+        "no leather straps, no hand-forged anything. Name the descendant and "
+        "describe it plainly, as something ordinary that people use without "
+        "thinking about it.\n\n"
+        "THE OBJECT CARRIES NO WRITING. No label, no dial face, no engraved "
+        "name, no maker's mark, no stamped number, no plaque. Describe the "
+        "surface it would sit on instead. This is the one rule that has actually "
+        "been broken: on 09/09/2026 two object-only test images came back with "
+        "APPROVING WEATHER and ASEK WEATHER legibly printed on them, because an "
+        "isolated object on bare paper is exactly what a catalogue plate looks "
+        "like, and catalogue plates are captioned.\n\n"
+        "Return a single JSON object with exactly these keys:\n"
+        f"{{\n{slots}\n}}\n\n"
+        "Each value is one plain clause. Describe only what is VISIBLE. Do not "
+        "interpret the poem, do not explain the joke, and do not use the words "
+        "atmospheric, moody, ethereal, haunting, striking or surreal."
+    )
+
+
+def depict_haiku(dispatch: dict, settings: dict) -> dict | None:
+    """An object brief for a haiku, or None to fall back to the scene line."""
+    try:
+        raw = gemini.generate(build_haiku_prompt(dispatch), settings,
+                              settings["gemini"].get("temperature_depict", 0.7))
+        brief = {f: strip_text_artefacts(str((gemini.extract_json(raw) or {})
+                                             .get(f, "") or "").strip())
+                 for f in _HAIKU_FIELDS}
+    except Exception as exc:  # noqa: BLE001 - never cost the edition its picture
+        print(f"    depict failed, using the scene line: "
+              f"{type(exc).__name__}: {exc}")
+        return None
+    if not brief.get("focus"):
+        print("    depict returned no focus object, using the scene line")
+        return None
+    # Handed back in the PROSE brief's key names so illustrate.build_prompt needs
+    # no haiku branch: focus leads, the rest are detail slots dropped from the
+    # end if the prompt runs long.
+    return {"focus": brief["focus"], "subject": "", "action": "",
+            "setting": brief.get("surface", ""), "light": brief.get("light", ""),
+            "materials": brief.get("material", ""), "anomaly": brief.get("wear", "")}

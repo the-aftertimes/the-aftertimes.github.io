@@ -58,6 +58,14 @@ figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multipl
 h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
+/* A HAIKU IS NOT THREE PARAGRAPHS. The prose rule above hangs a 1rem gap under
+   every line, which turns a poem into a list. A poem wants tight leading, a
+   measure narrow enough that no line can wrap on a phone, and air around the
+   whole block rather than between its lines. Set larger than body prose,
+   because seventeen syllables are the entire edition. */
+.body.poem{max-width:24rem;margin:0 0 2.4rem;}
+.body.poem p{font-size:clamp(1.22rem,4.4vw,1.5rem);line-height:1.62;
+  margin:0;text-wrap:balance;}
 .meta{font-family:-apple-system,system-ui,sans-serif;margin-top:1.8rem;}
 .meta-title{margin:0;color:var(--accent);font-weight:600;font-size:0.72rem;
   letter-spacing:0.16em;text-transform:uppercase;padding-top:0.6rem;
@@ -164,7 +172,13 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     date_txt = html.escape(hyphenate(format_date(dl)))
     body_paras = "".join(
         f"<p>{html.escape(hyphenate(p.strip()))}</p>"
-        for p in dispatch["body"].split("\n") if p.strip())
+        for p in dispatch["body"].splitlines() if p.strip())
+    # `lines` is present only on a haiku (see haiku.to_dispatch), so the layout
+    # is read off the DISPATCH and not off settings.form - a permalink rendered
+    # or re-rendered years from now must lay out the form it WAS, not the form
+    # the paper happens to publish that day. The forty prose dispatches in the
+    # archive keep their paragraphs for the same reason.
+    body_class = "body poem" if dispatch.get("lines") else "body"
     domain = html.escape(hyphenate(_headline_case(dispatch["domain"])))
     stamp = _fmt_local(meta["run_time"], meta["timezone"])
     stale_banner = ("<div class='stale'>Showing yesterday's dispatch - today's "
@@ -299,7 +313,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     <p class="dateline">{dateline_txt}</p>
     <h1>{headline}</h1>
     {figure}
-    <div class="body">{body_paras}</div>
+    <div class="{body_class}">{body_paras}</div>
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">
