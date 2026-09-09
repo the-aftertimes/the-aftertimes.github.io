@@ -132,24 +132,48 @@ def _stamp() -> str:
 #: `GenerateRequestsPerDayPerProjectPerModel-FreeTier`, value 20 - twenty calls
 #: a DAY, and crucially per MODEL. The prose pipeline spends 8 to 13 of those on
 #: a generating run, so every trial run this session was competing with the
-#: paper for the same twenty and losing. Pointing trials at a sibling flash
-#: model gives them their own twenty and makes it impossible for a trial to cost
-#: the paper an edition - which is what trial.py's docstring has warned about
-#: since August without being able to prevent it.
-TRIAL_MODEL = "gemini-2.5-flash"
+#: paper for the same twenty and losing. A sibling model gives trials their own
+#: twenty and makes it impossible for a trial to cost the paper an edition,
+#: which trial.py's docstring has warned about since August without being able
+#: to prevent it.
+#:
+#: A LIST, NOT A NAME, because being listed is not being usable. `gemini-2.5-flash`
+#: appears in this key's own models listing and still answers 404 "no longer
+#: available to new users" - so enumerating was necessary and not sufficient.
+#: Each dead name now costs exactly one call (a non-429 4xx is not retried), so
+#: walking a short list is cheaper than another round trip per guess. Ordered
+#: newest-first: these are siblings of the published model, not the Pro tier,
+#: which settings.yaml records as having zero free quota.
+TRIAL_MODELS = ("gemini-3.7-flash", "gemini-3.5-flash", "gemini-3.1-flash-lite",
+                "gemini-flash-latest")
+
+
+def _generate_on_a_spare_model(prompt: str, settings: dict, temperature: float,
+                               model: str | None = None):
+    """Return (raw, model), trying each candidate until one answers."""
+    tried = []
+    for name in ((model,) if model else TRIAL_MODELS):
+        try:
+            return gemini.generate(prompt, settings, temperature,
+                                   model=name), name
+        except gemini.GeminiError as exc:
+            tried.append(name)
+            print(f"    {name}: {str(exc)[:120]}", file=sys.stderr)
+    raise gemini.GeminiError(f"no trial model answered; tried {tried}")
 
 
 def poems(count: int, model: str | None = None) -> None:
     settings = load_settings()
-    model = (model or TRIAL_MODEL).strip()
+    model = (model or "").strip() or None
     dateline = dates_mod.sample_future_dateline(
         datetime.now(timezone.utc).date(), settings["dates"], set())
     prompt = haiku_mod.build_prompt(dateline, "", count)
     print(f">>> HAIKU {count} datelined {dateline['year']} "
-          f"({dateline['years_from_now']} years out) via {model}")
-    raw = gemini.generate(prompt, settings,
-                          settings["gemini"].get("temperature_ideate", 1.1),
-                          model=model)
+          f"({dateline['years_from_now']} years out)")
+    raw, model = _generate_on_a_spare_model(
+        prompt, settings, settings["gemini"].get("temperature_ideate", 1.1),
+        model)
+    print(f"    served by {model}")
     data = gemini.extract_json(raw)
     if isinstance(data, dict) and data.get("place"):
         dateline["place"] = str(data["place"]).strip()
