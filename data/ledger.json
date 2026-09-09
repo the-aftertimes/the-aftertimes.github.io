@@ -471,5 +471,16 @@
     "place_kind": "asteroid",
     "engine": "leisure",
     "technique": "commit_past_reason"
+  },
+  {
+    "run_date": "2026-09-10",
+    "year": 2396,
+    "era_bucket": 7,
+    "domain": "medicine",
+    "headline": "window tint schedule",
+    "style": "haiku",
+    "place_kind": "haiku",
+    "engine": "haiku",
+    "technique": "haiku"
   }
 ]
