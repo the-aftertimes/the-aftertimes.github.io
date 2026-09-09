@@ -309,3 +309,47 @@ def test_a_brief_written_before_focus_existed_still_draws():
     out = illustrate.build_prompt({"headline": "H", "scene": "s"}, _brief())
     assert "It shows ." not in out
     assert "a woman in a red jumper" in out
+
+
+def _object_brief(**over):
+    b = {"focus": "a heavy cylindrical hand-tool with a broad top flange",
+         "subject": "", "action": "", "setting": "a bare alloy counter",
+         "light": "overhead", "materials": "silicate ceramic", "anomaly": "a chipped rim"}
+    b.update(over)
+    return b
+
+
+def test_an_object_prompt_never_asks_for_people():
+    """09/09/2026: the first live object-only draw came back with SEVEN PEOPLE
+    round the object, because _STYLE asks for "figures in a believable
+    environment" and _NEGATIVE composes them. The brief was not ignored, it was
+    outvoted by the two constants that are never dropped."""
+    import illustrate
+    p = illustrate.build_prompt({"headline": "H", "scene": "s"}, _object_brief())
+    for asks_for_people in ("figures in a believable environment", "focal figures",
+                            "a figure", "modestly dressed", "stand behind",
+                            "sea of faces", "Everyone fully"):
+        assert asks_for_people not in p, f"object prompt still says {asks_for_people!r}"
+    assert "No people, no person, no figures" in p
+    assert len(p) <= illustrate.MAX_PROMPT
+
+
+def test_a_scene_prompt_keeps_every_figure_rule():
+    """The clothing and composition rules are dropped for an object ONLY. On a
+    scene they are what stopped flux inventing bare legs (19/08/2026) and
+    mush-faced crowds, so form: prose must be completely unaffected."""
+    import illustrate
+    p = illustrate.build_prompt(
+        {"headline": "H", "scene": "s"},
+        _object_brief(subject="a woman in a sealed jumpsuit", action="waiting"))
+    assert "figures in a believable environment" in p
+    assert "Everyone fully and modestly dressed" in p
+    assert "focal figures" in p
+    assert "empty margins" not in p, "the no-caption clause is for objects only"
+
+
+def test_the_object_prompt_still_forbids_lettering():
+    import illustrate
+    p = illustrate.build_prompt({"headline": "H", "scene": "s"}, _object_brief())
+    assert "no text, letters, words, captions" in p
+    assert p.rstrip().endswith("empty margins.")
