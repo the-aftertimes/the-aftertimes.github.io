@@ -1,0 +1,315 @@
+{
+  "run_date": "2026-09-10",
+  "run_time": "2026-09-09T18:01:53.744501+00:00",
+  "dispatch": {
+    "headline": "window tint schedule",
+    "body": "wall glass turns to slate\nthe timer shifts at noon three\nshade credits applied",
+    "lines": [
+      "wall glass turns to slate",
+      "the timer shifts at noon three",
+      "shade credits applied"
+    ],
+    "scene": "wall glass turns to slate / the timer shifts at noon three / shade credits applied",
+    "domain": "medicine",
+    "dateline": {
+      "place": "Basin West Nine",
+      "year": 2396,
+      "month": 12,
+      "day": 8,
+      "years_from_now": 370
+    },
+    "glossary": [],
+    "premise": "wall glass turns to slate / the timer shifts at noon three / shade credits applied",
+    "brief": {
+      "focus": "a thick rectangular architectural slab with an internal dark-to-clear gradient and seamless rounded edges",
+      "subject": "",
+      "action": "",
+      "setting": "dull basalt slab",
+      "light": "direct overhead sunlight casting a hard sharp shadow",
+      "materials": "fused silicate foam, electro-chromic bismuth mesh, aerogel composite",
+      "anomaly": "a dull scuff mark along the bottom right edge"
+    },
+    "image": "assets/img/2026-09-10.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-09T18:01:53.744501+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 49,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "form": "haiku",
+    "asked": 40,
+    "scanned": 32,
+    "failed_scan": 8,
+    "score": 1.0,
+    "rejected": false,
+    "violations": [],
+    "candidates": [
+      {
+        "lines": [
+          "her light-stamp flashes",
+          "blue permits cleared for high flight",
+          "two years on the beam"
+        ],
+        "title": "permit approval"
+      },
+      {
+        "lines": [
+          "the desk glares with green",
+          "clerk Miri tags the new gene",
+          "for next Tuesday's shift"
+        ],
+        "title": "gene tag update"
+      },
+      {
+        "lines": [
+          "lawn nodes hum in sync",
+          "the audit drone logs three weeds",
+          "left for sunset light"
+        ],
+        "title": "lawn drone inspection"
+      },
+      {
+        "lines": [
+          "sound curtains drop low",
+          "the tuner checks the pulse wave",
+          "set to twenty hertz"
+        ],
+        "title": "sound curtain tuning"
+      },
+      {
+        "lines": [
+          "mesh sheets load the feed",
+          "she stamps the flight log as calm",
+          "six weeks before dawn"
+        ],
+        "title": "telemetry archive"
+      },
+      {
+        "lines": [
+          "shuttle passes print",
+          "his thumb scan locks the berth rate",
+          "fixed for thirty moons"
+        ],
+        "title": "ferry pass renewal"
+      },
+      {
+        "lines": [
+          "thermal sleeves lock tight",
+          "the inspector seals each cuff",
+          "green light on the band"
+        ],
+        "title": "sleeve cuff inspection"
+      },
+      {
+        "lines": [
+          "silk looms spin the thread",
+          "the shift boss sets five percent",
+          "soft enough for berths"
+        ],
+        "title": "loom weave adjustment"
+      },
+      {
+        "lines": [
+          "floor plates float two inch",
+          "he turns the dial to one G",
+          "cups stop sliding west"
+        ],
+        "title": "gravity plate alignment"
+      },
+      {
+        "lines": [
+          "wall glass turns to slate",
+          "the timer shifts at noon three",
+          "shade credits applied"
+        ],
+        "title": "window tint schedule"
+      },
+      {
+        "lines": [
+          "air scrubbers click twice",
+          "she swaps the carbon tray out",
+          "signed off in the log"
+        ],
+        "title": "scrubber tray replacement"
+      },
+      {
+        "lines": [
+          "track pods test the rail",
+          "the tech logs zero drift now",
+          "smooth till next cycle"
+        ],
+        "title": "transit rail testing"
+      },
+      {
+        "lines": [
+          "foam walls check for salt",
+          "his scanner pings the low seam",
+          "dry for seven months"
+        ],
+        "title": "marine seam inspection"
+      },
+      {
+        "lines": [
+          "sky pods drop their loads",
+          "she stamps the tare weight in light",
+          "four grams over code"
+        ],
+        "title": "drone package weighing"
+      },
+      {
+        "lines": [
+          "pad resin dries flat",
+          "his gauge reads three nano points",
+          "safe for drone landings"
+        ],
+        "title": "pad resin check"
+      },
+      {
+        "lines": [
+          "gel spouts pump the mix",
+          "the clerk tests the protein mass",
+          "correct for tier two"
+        ],
+        "title": "nutrient gel batch"
+      },
+      {
+        "lines": [
+          "pulse seamers beam red",
+          "she tracks the beam down thirty",
+          "seal locked at nine bars"
+        ],
+        "title": "laser seam welding"
+      },
+      {
+        "lines": [
+          "door seals hiss and hold",
+          "the seal clerk logs the pressure",
+          "shift complete at three"
+        ],
+        "title": "dome hatch check"
+      },
+      {
+        "lines": [
+          "cable strands ring tight",
+          "the strain gauge turns from red light",
+          "approved for transit"
+        ],
+        "title": "skybridge cable tension"
+      },
+      {
+        "lines": [
+          "root trays slide on track",
+          "his screen marks the copper rate",
+          "yield up three percent"
+        ],
+        "title": "hydroponic tray check"
+      },
+      {
+        "lines": [
+          "sign beams cross the hall",
+          "he trims the projection height",
+          "clear of upper deck"
+        ],
+        "title": "hologram sign height"
+      },
+      {
+        "lines": [
+          "power packs slide out",
+          "she slots the cold cell in place",
+          "green light on her hip"
+        ],
+        "title": "climate pack swap"
+      },
+      {
+        "lines": [
+          "glass lenses sweep past",
+          "the tech wipes the sorting beam",
+          "copper gets routed"
+        ],
+        "title": "sorting optic cleaning"
+      },
+      {
+        "lines": [
+          "clean streams fill the gauge",
+          "his meter checks salt levels",
+          "two parts per million"
+        ],
+        "title": "desalination testing"
+      },
+      {
+        "lines": [
+          "lift shafts drop down fast",
+          "the lube drone coats the guide wire",
+          "zero wear this week"
+        ],
+        "title": "gravity lift maintenance"
+      },
+      {
+        "lines": [
+          "charging bays light up",
+          "he resets the current dial",
+          "twenty pods ready"
+        ],
+        "title": "drone dock reset"
+      },
+      {
+        "lines": [
+          "lane posts pop up high",
+          "she checks the laser marker",
+          "fixed at three meters"
+        ],
+        "title": "skyway post check"
+      },
+      {
+        "lines": [
+          "latch bolts snap in place",
+          "his hand-pad confirms the seal",
+          "bay nine cleared for lift"
+        ],
+        "title": "sub-bay latch check"
+      },
+      {
+        "lines": [
+          "seat skin shows no seam",
+          "she rubs the synth-leather smooth",
+          "ready for line ten"
+        ],
+        "title": "synth leather check"
+      },
+      {
+        "lines": [
+          "sonde pods rise through clouds",
+          "he signs the launch report clear",
+          "wind speed logged at eight"
+        ],
+        "title": "weather sonde launch"
+      },
+      {
+        "lines": [
+          "brake pads retract slow",
+          "the gauge shows two microns left",
+          "swap booked for midday"
+        ],
+        "title": "mag-train brake wear"
+      },
+      {
+        "lines": [
+          "green pods fill the tube",
+          "he logs the methane output",
+          "green lights across board"
+        ],
+        "title": "algae pod check"
+      }
+    ],
+    "n_candidates": 32,
+    "judge_pick": 9,
+    "judge_score": 6.0,
+    "judge_reason": "Automated smart-glass tinting turns out to be a metered bureaucratic micro-transaction for shade."
+  }
+}
