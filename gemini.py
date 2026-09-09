@@ -186,6 +186,24 @@ def generate(prompt: str, settings: dict, temperature: float,
         # spellings - the prose "Please retry in Xs" and RetryInfo's
         # "retryDelay": "Xs" - because Gemini has been seen emitting each.
         # Capped, so a genuinely long delay still fails rather than hanging CI.
+        # A PER-DAY QUOTA IS NOT WAITABLE, AND GOOGLE'S OWN RETRY HINT LIES
+        # ABOUT IT. Settled 09/09/2026 by reading an untruncated body:
+        #   "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+        #   "quotaValue": "20"
+        # ...alongside "Please retry in 58.603753944s." There is no 59-second
+        # recovery from a daily cap; that number is a bucket-refill estimate and
+        # following it just spends three minutes to fail anyway. So the quotaId
+        # decides, not the hint - and note this is the SAME behaviour an earlier
+        # version of this function had on 08/09 for a reason that was made up.
+        # Being right by luck is not being right, and the difference is that the
+        # string below is now quoted from a response rather than guessed at.
+        if "PerDay" in (last or ""):
+            raise GeminiError(
+                f"the free tier allows 20 generate calls PER DAY per model "
+                f"(quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier) "
+                f"and they are gone. Not retryable - Google's 'please retry in "
+                f"Ns' hint does not apply to a daily quota. Use a different "
+                f"model for trial work; see docs/TODO.md: {last}")
         told = _retry_after(last)
         if told is not None:
             wait = min(told + 1.0, _MAX_TOLD_WAIT)

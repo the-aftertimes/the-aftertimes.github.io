@@ -24,6 +24,10 @@ on:
         description: "How many haiku to ask for in the one call"
         required: false
         default: "24"
+      model:
+        description: "Model for the poems. Blank uses a sibling flash model so trials cannot eat the paper's 20-a-day quota."
+        required: false
+        default: ""
       styles:
         description: "Also draw the picture-style comparison sheet (6 Cloudflare images)"
         type: boolean
@@ -54,7 +58,7 @@ jobs:
       - name: Poems
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python haikutrial.py poems "${{ inputs.count }}"
+        run: python haikutrial.py poems "${{ inputs.count }}" "${{ inputs.model }}"
 
       - name: Styles
         if: ${{ inputs.styles }}

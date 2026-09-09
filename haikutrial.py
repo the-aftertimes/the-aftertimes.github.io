@@ -103,15 +103,29 @@ def _stamp() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
 
 
-def poems(count: int) -> None:
+#: Trials MUST NOT draw on the model the paper publishes with. Settled
+#: 09/09/2026: the free-tier quota is
+#: `GenerateRequestsPerDayPerProjectPerModel-FreeTier`, value 20 - twenty calls
+#: a DAY, and crucially per MODEL. The prose pipeline spends 8 to 13 of those on
+#: a generating run, so every trial run this session was competing with the
+#: paper for the same twenty and losing. Pointing trials at a sibling flash
+#: model gives them their own twenty and makes it impossible for a trial to cost
+#: the paper an edition - which is what trial.py's docstring has warned about
+#: since August without being able to prevent it.
+TRIAL_MODEL = "gemini-2.5-flash"
+
+
+def poems(count: int, model: str | None = None) -> None:
     settings = load_settings()
+    model = (model or TRIAL_MODEL).strip()
     dateline = dates_mod.sample_future_dateline(
         datetime.now(timezone.utc).date(), settings["dates"], set())
     prompt = haiku_mod.build_prompt(dateline, "", count)
     print(f">>> HAIKU {count} datelined {dateline['year']} "
-          f"({dateline['years_from_now']} years out)")
+          f"({dateline['years_from_now']} years out) via {model}")
     raw = gemini.generate(prompt, settings,
-                          settings["gemini"].get("temperature_ideate", 1.1))
+                          settings["gemini"].get("temperature_ideate", 1.1),
+                          model=model)
     data = gemini.extract_json(raw)
     if isinstance(data, dict) and data.get("place"):
         dateline["place"] = str(data["place"]).strip()
@@ -233,4 +247,5 @@ if __name__ == "__main__":
     if cmd == "styles":
         styles()
     else:
-        poems(int(sys.argv[2]) if len(sys.argv) > 2 else 24)
+        poems(int(sys.argv[2]) if len(sys.argv) > 2 else 24,
+              sys.argv[3] if len(sys.argv) > 3 else None)
