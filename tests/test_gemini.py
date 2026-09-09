@@ -133,3 +133,27 @@ def test_an_ordinary_rate_limit_is_still_retried(monkeypatch):
     with pytest.raises(GeminiError):
         gemini.generate("p", _settings(), 0.9)
     assert slept and min(slept) >= 20, slept
+
+
+def test_the_error_body_is_kept_long_enough_to_carry_the_quota_details(monkeypatch):
+    """A Google 429 says WHICH allowance and WHEN it returns, in a details array
+    after the message. Truncating at 200 chars cut it off mid-URL and cost four
+    runs on 08-09/09/2026 that established nothing."""
+    import gemini
+    body = ('{"error":{"code":429,"message":"You exceeded your current quota, '
+            'please check your plan and billing details. For more information '
+            'on this error, head to: https://ai.google.dev/gemini-api/docs/'
+            'rate-limits.","details":[{"@type":"type.googleapis.com/google.rpc.'
+            'QuotaFailure","violations":[{"quotaMetric":"generativelanguage.'
+            'googleapis.com/generate_content_free_tier_requests","quotaId":'
+            '"GenerateRequestsPerDayPerProjectPerModel-FreeTier"}]},'
+            '{"@type":"type.googleapis.com/google.rpc.RetryInfo",'
+            '"retryDelay":"31s"}]}}')
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: None)
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post", lambda *a, **k: _resp(429, body))
+    with pytest.raises(GeminiError) as exc:
+        gemini.generate("p", _settings(), 0.9)
+    msg = str(exc.value)
+    assert "PerDay" in msg, "the quotaId must survive into the error"
+    assert "retryDelay" in msg, "the retry delay must survive into the error"
