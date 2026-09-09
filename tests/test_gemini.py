@@ -102,28 +102,63 @@ def test_settings_allow_enough_retries_to_outlast_a_short_overload():
     assert load_settings()["gemini"]["max_retries"] >= 3
 
 
-def test_an_exhausted_daily_quota_is_not_retried(monkeypatch):
-    """08/09/2026: a trial four minutes before the UTC roll spent 120 seconds
-    backing off a daily allowance that could not clear, then reported it as an
-    ordinary retry failure. Same distinction illustrate.py already makes for
-    Cloudflare's 4006."""
+def test_a_server_stated_retry_delay_is_honoured_exactly(monkeypatch):
+    """THE FIX THAT SHOULD HAVE BEEN FIRST, 09/09/2026.
+
+    The same 429 got three wrong diagnoses in two days - an ordinary rate limit,
+    then an exhausted DAILY allowance made non-retryable "until the UTC day
+    rolls" - and all three came from theorising instead of reading the body.
+    Untruncated, Gemini says: "limit: 20, model: gemini-3.6-flash. Please retry
+    in 3.231225541s." A three-second wait, stated by the server in every
+    response. The non-retryable version turned that into an instant hard failure
+    and killed four trial runs on the spot."""
     import gemini
     slept = []
     monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
     monkeypatch.setattr(gemini, "_api_key", lambda: "k")
-    monkeypatch.setattr(gemini.requests, "post", lambda *a, **k: _resp(
-        429, '{"error":{"message":"You exceeded your current quota, please '
-             'check your plan and billing details."}}'))
-    with pytest.raises(GeminiError) as exc:
+    body = ('{"error":{"code":429,"message":"You exceeded your current quota. '
+            '* Quota exceeded for metric: generate_content_free_tier_requests, '
+            'limit: 20, model: gemini-3.6-flash\nPlease retry in 3.231225541s."}}')
+    calls = []
+
+    def post(*a, **k):
+        calls.append(1)
+        return _resp(200, "ok") if len(calls) > 1 else _resp(429, body)
+
+    monkeypatch.setattr(gemini.requests, "post", post)
+    assert gemini.generate("p", _settings(), 0.9) == "ok"
+    assert len(slept) == 1 and abs(slept[0] - 4.231225541) < 1e-6, slept
+
+
+def test_a_stated_delay_beats_the_invented_ladder(monkeypatch):
+    """A 503 that carries a delay uses the delay, not the 30/75/150 ladder."""
+    import gemini
+    slept = []
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post",
+                        lambda *a, **k: _resp(503, '"retryDelay": "7s"'))
+    with pytest.raises(GeminiError):
         gemini.generate("p", _settings(), 0.9)
-    assert "not retrying" in str(exc.value)
-    # The message must NOT claim to know when the allowance resets.
-    assert "UTC day rolls" not in str(exc.value)
-    assert slept == [], f"an exhausted daily quota must not be waited on: {slept}"
+    assert set(slept) == {8.0}, slept
 
 
-def test_an_ordinary_rate_limit_is_still_retried(monkeypatch):
-    """The other kind of 429 clears when the minute rolls, so it keeps its wait."""
+def test_an_absurd_stated_delay_is_capped(monkeypatch):
+    """A job that sits blocked for an hour is worse than one that fails and lets
+    the backup run take it."""
+    import gemini
+    slept = []
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post",
+                        lambda *a, **k: _resp(429, "Please retry in 3600s."))
+    with pytest.raises(GeminiError):
+        gemini.generate("p", _settings(), 0.9)
+    assert max(slept) <= gemini._MAX_TOLD_WAIT, slept
+
+
+def test_a_429_with_no_stated_delay_falls_back_to_the_ladder(monkeypatch):
+    """When the server says nothing, the invented wait is all there is."""
     import gemini
     slept = []
     monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))

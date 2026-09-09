@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import sys
 import time
 
 import requests
@@ -77,6 +78,24 @@ def _pace(g: dict) -> None:
     _last_call = time.monotonic()
 
 
+#: Longest wait we will honour from a server-stated retry delay. Beyond this the
+#: honest outcome is a failure the caller can see, not a job that sits blocked -
+#: the daily run has a backup two hours behind it.
+_MAX_TOLD_WAIT = 90.0
+
+#: Both spellings Gemini uses for "come back in N seconds": the sentence at the
+#: end of the message, and RetryInfo's retryDelay in the details array.
+_RETRY_AFTER = re.compile(
+    r'(?:please retry in|"retrydelay"\s*:\s*")\s*([0-9]+(?:\.[0-9]+)?)s',
+    re.I)
+
+
+def _retry_after(body: str | None) -> float | None:
+    """Seconds the server asked us to wait, or None if it did not say."""
+    m = _RETRY_AFTER.search(body or "")
+    return float(m.group(1)) if m else None
+
+
 def generate(prompt: str, settings: dict, temperature: float,
              model: str | None = None, retries: int | None = None) -> str:
     """Call generateContent and return the model's raw text. Retries on
@@ -143,30 +162,37 @@ def generate(prompt: str, settings: dict, temperature: float,
         # now comes from a single call for two dozen poems, so where the prose
         # pipeline could lose three of four drafts and still publish, one 503
         # here loses the day.
-        # A 429 IS TWO DIFFERENT FAILURES AND ONLY ONE IS WORTH WAITING FOR.
-        # The free tier returns it both for "5 requests a minute, slow down",
-        # which clears in seconds, and for "you exceeded your current quota",
-        # which is the DAILY allowance and cannot clear until the UTC day rolls.
-        # `illustrate.py` has made exactly this distinction since 25/08/2026 for
-        # Cloudflare's error 4006, with the same reasoning written above it, and
-        # this module never learned it: on 08/09/2026 a trial run four minutes
-        # before the roll spent 20, 40 and 60 seconds backing off a wall, then
-        # reported "generate failed after retries" as though it had been unlucky
-        # rather than out of quota for the day.
+        # STOP INVENTING A BACKOFF: THE SERVER STATES ITS OWN, 09/09/2026.
         #
-        # WHAT THIS MESSAGE MUST NOT DO IS EXPLAIN THE RESET. The first version
-        # said "it cannot clear until the UTC day rolls", which is a mechanism
-        # nobody here has established: three refused runs at 23:56, 23:57 and
-        # 23:58 UTC on 08/09/2026 prove only that it was gone then, and the
-        # 06/09 evidence actually contradicts a UTC-midnight reset (exhausted at
-        # 11:57 UTC, generating happily again by 18:05). illustrate.py has the
-        # same scar tissue for Cloudflare's 4006 - three confident wrong
-        # explanations in a row - so this one states the observation and stops.
-        if "exceeded your current quota" in (last or ""):
-            raise GeminiError(
-                f"the free-tier allowance is refusing requests, not retrying - "
-                f"a rate-limit backoff cannot clear an allowance. When it "
-                f"resets is NOT established; see docs/TODO.md: {last}")
+        # Three wrong diagnoses of one 429 in two days, each confidently worded,
+        # and every one of them came from theorising instead of reading the
+        # body. First it was called an ordinary rate limit. Then it was called
+        # an exhausted DAILY allowance that "cannot clear until the UTC day
+        # rolls", and made non-retryable on that basis - which was the most
+        # expensive of the three, because it turned a three-second wait into an
+        # instant hard failure and every trial run after it died on the spot.
+        # A refused run at 00:33 UTC on a fresh UTC day then disproved the
+        # UTC-midnight story outright.
+        #
+        # What Google actually says, once the body is not truncated:
+        #   "Quota exceeded for metric: generate_content_free_tier_requests,
+        #    limit: 20, model: gemini-3.6-flash. Please retry in 3.231225541s."
+        # A three-second retry is a SHORT window, not a day. The server has
+        # known the answer the whole time and says it in every response.
+        #
+        # So the rule is now: if the response tells us how long to wait, wait
+        # exactly that (plus a small margin) and try again. No ladder, no
+        # theory, no reset time asserted anywhere. `_RETRY_AFTER` reads both
+        # spellings - the prose "Please retry in Xs" and RetryInfo's
+        # "retryDelay": "Xs" - because Gemini has been seen emitting each.
+        # Capped, so a genuinely long delay still fails rather than hanging CI.
+        told = _retry_after(last)
+        if told is not None:
+            wait = min(told + 1.0, _MAX_TOLD_WAIT)
+            print(f"    gemini: server asked for {told:.1f}s, waiting {wait:.1f}s "
+                  f"({attempt + 1}/{limit})", file=sys.stderr)
+            time.sleep(wait)
+            continue
         if "HTTP 503" in (last or ""):
             time.sleep(_OVERLOAD_WAITS[min(attempt, len(_OVERLOAD_WAITS) - 1)])
         elif "HTTP 429" in (last or ""):
