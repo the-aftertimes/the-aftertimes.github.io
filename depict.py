@@ -306,11 +306,18 @@ def build_haiku_prompt(dispatch: dict) -> str:
     )
 
 
-def depict_haiku(dispatch: dict, settings: dict) -> dict | None:
-    """An object brief for a haiku, or None to fall back to the scene line."""
+def depict_haiku(dispatch: dict, settings: dict,
+                 models: tuple[str, ...] = ()) -> dict | None:
+    """An object brief for a haiku, or None.
+
+    None means NO PICTURE, not a fallback: see run_haiku_pipeline. The
+    scene-line fallback builds a people-requesting prompt, which is the exact
+    fault this stage exists to avoid."""
+    models = models or (settings["gemini"]["model"],)
     try:
-        raw = gemini.generate(build_haiku_prompt(dispatch), settings,
-                              settings["gemini"].get("temperature_depict", 0.7))
+        raw, _ = gemini.generate_first_available(
+            build_haiku_prompt(dispatch), settings,
+            settings["gemini"].get("temperature_depict", 0.7), models)
         brief = {f: strip_text_artefacts(str((gemini.extract_json(raw) or {})
                                              .get(f, "") or "").strip())
                  for f in _HAIKU_FIELDS}

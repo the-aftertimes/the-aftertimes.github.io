@@ -194,3 +194,58 @@ def test_settings_publish_the_haiku_form():
     """The switch itself. If this is prose, nothing above is reaching readers."""
     from common import load_settings
     assert load_settings().get("form") == "haiku"
+
+
+def test_no_brief_publishes_no_picture_rather_than_a_wrong_one(repo, monkeypatch):
+    """The illustrate fallback builds its prompt from the scene line using the
+    style and negative blocks that ASK for "figures in a believable environment"
+    and compose "one or two clear focal figures". For a haiku that is the exact
+    failure being designed out - a crowd of invented faces round the poem's
+    object - so a failed brief must cost the picture, not replace it."""
+    drawn = []
+
+    def fake(prompt, settings, temperature, model=None, retries=None):
+        if "haiku from that place" in prompt:
+            return _batch_json()
+        if "haiku written for today" in prompt:
+            return json.dumps({"pick": 1, "score": 7, "reason": "ok"})
+        raise gemini.GeminiError("depict is down on every model")
+
+    monkeypatch.setattr(gemini, "generate", fake)
+    monkeypatch.setattr(illustrate_mod, "_cf_image",
+                        lambda *a, **k: drawn.append(1))
+    record = run_mod.run_haiku_pipeline()
+    assert record["dispatch"]["image"] is None
+    assert record["dispatch"]["brief"] is None
+    assert drawn == [], "nothing may be drawn without an object brief"
+    # The edition still publishes - a pictureless day has rendered correctly
+    # since August and is far better than a wrong picture.
+    assert (repo / "index.html").exists()
+    assert "dry rain takes two weeks" in (repo / "index.html").read_text(encoding="utf-8")
+
+
+def test_the_judge_and_the_brief_walk_the_same_model_list(repo, monkeypatch):
+    """20 calls a day PER MODEL. A run that got its poems from a spare model and
+    then spent the judge and the brief on the exhausted one would degrade twice
+    for no reason - which is what would have happened on 09/09/2026."""
+    seen = []
+
+    def fake(prompt, settings, temperature, model=None, retries=None):
+        seen.append(model)
+        if model == run_mod.HAIKU_MODELS[0]:
+            raise gemini.GeminiError("this model's daily allowance is gone")
+        if "haiku from that place" in prompt:
+            return _batch_json()
+        if "haiku written for today" in prompt:
+            return json.dumps({"pick": 1, "score": 7, "reason": "ok"})
+        return json.dumps({"focus": "a stamp", "material": "alloy",
+                           "surface": "a counter", "light": "flat", "wear": "chip"})
+
+    monkeypatch.setattr(gemini, "generate", fake)
+    monkeypatch.setattr(illustrate_mod, "_cf_image", lambda *a, **k: None)
+    record = run_mod.run_haiku_pipeline()
+    # Every stage tried the dead model and then moved on, so all three
+    # succeeded on a sibling rather than only the batch.
+    assert seen.count(run_mod.HAIKU_MODELS[0]) == 3, seen
+    assert record["quality"]["judge_score"] == 7, "the judge must have run"
+    assert record["dispatch"]["brief"] is not None, "the brief must have run"
