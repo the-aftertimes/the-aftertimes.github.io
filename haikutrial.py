@@ -14,6 +14,7 @@ from __future__ import annotations
 import html
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -123,6 +124,30 @@ def models() -> None:
         print(f"      {name}")
 
 
+#: The two register faults measured in the first batch (09/09/2026): 64% of the
+#: seventeen surviving haiku carried a bleak word and 64% a pre-industrial prop.
+#: Counted on every batch from now on, because "it feels grim" is not something a
+#: prompt change can be judged against and a percentage is.
+_BLEAK = re.compile(
+    r"\b(dead|death|dies|dying|corpse|bone|teeth|rot|rots|lime|grave|hunger|"
+    r"hungry|ration\w*|scrap\w*|dust|grey|gray|cold|frost|starv\w*|disease|"
+    r"sick|wound|ache|weary|exhaust\w*|mourn\w*|grief|ash|ruin\w*)\b", re.I)
+_PREINDUSTRIAL = re.compile(
+    r"\b(shovel\w*|rake\w*|spade|cart|carts|quilt\w*|kelp|cabbage|barge|"
+    r"boiler|grease|knife|knives|salt|brine|soot|alley|pier|crate|vat|vats|"
+    r"wick|lamp|lantern|rope|sack\w*|timber|coal|cinder|anvil|forge|loom)\b",
+    re.I)
+
+
+def _register(kept: list[dict]) -> dict:
+    """How much of a batch is bleak, and how much of it reads as the past."""
+    n = max(1, len(kept))
+    bleak = sum(1 for h in kept if _BLEAK.search(" ".join(h["lines"])))
+    old = sum(1 for h in kept if _PREINDUSTRIAL.search(" ".join(h["lines"])))
+    return {"n": len(kept), "bleak": bleak, "preindustrial": old,
+            "bleak_pct": round(100 * bleak / n), "preindustrial_pct": round(100 * old / n)}
+
+
 def _stamp() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
 
@@ -189,10 +214,15 @@ def poems(count: int, model: str | None = None) -> None:
         (kept if counts == list(haiku_mod.PATTERN) else failed).append(
             {**h, "counts": counts})
     print(f"    {len(kept)} scan 5-7-5, {len(failed)} do not")
+    reg = _register(kept)
+    print(f"    register: {reg['bleak']}/{reg['n']} bleak ({reg['bleak_pct']}%), "
+          f"{reg['preindustrial']}/{reg['n']} pre-industrial "
+          f"({reg['preindustrial_pct']}%)  [first batch: 64% and 64%]")
 
     os.makedirs(rel(OUT), exist_ok=True)
     stamp = _stamp()
     record = {"generated": stamp, "dateline": dateline, "asked": count,
+              "model": model, "register": reg, "asked_count": count,
               "parsed": len(got), "kept": kept, "failed": failed}
     with open(rel(f"{OUT}/{stamp}.json"), "w", encoding="utf-8") as fh:
         json.dump(record, fh, indent=1, ensure_ascii=False)
