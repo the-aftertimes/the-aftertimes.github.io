@@ -27,6 +27,15 @@ from common import load_settings, rel
 
 OUT = "data/trials/haiku"
 
+#: 40, not 24. THIS IS THE POINT OF THE FORM, so use it: the batch is ONE call
+#: whatever the count, and the sieve throws most of it away by design. The
+#: 09/09/2026 register fix cut the scan rate from 17/24 to 7/24 because a longer
+#: prompt buries the syllable rule - worth fixing at the prompt (it now ends on
+#: that rule) AND worth out-running, because forty candidates at a 30% scan rate
+#: still leaves twelve to judge, which is three times what the prose pipeline
+#: ever managed on four whole Gemini calls.
+DEFAULT_COUNT = 40
+
 
 # --------------------------------------------------------------------------
 # Picture styles
@@ -327,5 +336,5 @@ if __name__ == "__main__":
     elif cmd == "models":
         models()
     else:
-        poems(int(sys.argv[2]) if len(sys.argv) > 2 else 24,
+        poems(int(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_COUNT,
               sys.argv[3] if len(sys.argv) > 3 else None)
