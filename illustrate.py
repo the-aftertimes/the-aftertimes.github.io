@@ -70,6 +70,42 @@ _NEGATIVE = ("Everyone fully and modestly dressed for work, whole body covered, 
 #: 1900 leaves room for a long brief without going near the wall.
 MAX_PROMPT = 1900
 
+#: THE OBJECT-ONLY STYLE AND NEGATIVE. Both constants above were written when
+#: every picture had people in it, and both actively REQUEST them: _STYLE asks
+#: for "figures in a believable environment" and _NEGATIVE spends four clauses
+#: on how they should be dressed and composed ("one or two clear focal figures
+#: in front; a few plainer figures may stand behind").
+#:
+#: So on 09/09/2026 the first live object-only draw came back with SEVEN PEOPLE
+#: crowded round the object, despite `depict_haiku` saying "THERE ARE NO PEOPLE
+#: IN THIS PICTURE" three different ways and the brief carrying no subject at
+#: all. The brief was not ignored - it was outvoted by the two parts of the
+#: prompt that are never dropped. Exactly the fault that put "a figure" in an
+#: object prompt, one layer up.
+#:
+#: Dropping the clothing and figure-composition rules is safe here and ONLY
+#: here: they exist to stop flux inventing bare legs and mush-faced crowds, and
+#: neither is reachable in a frame with nobody in it. Everything else survives -
+#: the engraved-tone rule, full bleed, no colour, no text - plus the no-plate
+#: clause, and it all fits comfortably because the clothing block was the
+#: longest thing in _NEGATIVE.
+_STYLE_OBJECT = (
+    "A documentary wood engraving in the style of Gustave Dore, as a newspaper "
+    "illustration of a single real object that was actually examined. Fine "
+    "black ink linework and cross-hatching on bare paper. Plain eye-level view, "
+    "natural gravity, the object resting solidly on its surface - nothing "
+    "floating or suspended, no symbolic or dreamlike composition.")
+
+_NEGATIVE_OBJECT = (
+    "ONE object alone. No people, no person, no figures, no faces, no hands, no "
+    "arms, no silhouettes, nobody standing nearby, nobody in the background - "
+    "the frame is empty apart from the object and what it rests on. No crowd. "
+    "No room, no building, no landscape, no scenery behind it: plain bare "
+    "ground. Every tone engraved lines and cross-hatching, never smooth grey. "
+    "Full bleed: no border, frame, margin or plate mark. No colour. Absolutely "
+    "no text, letters, words, captions, numbers, signatures or watermark - "
+    "purely pictorial.")
+
 
 #: Appended after the negative block for an object-only picture. See the comment
 #: at its use in build_prompt: the composition invites a caption, so the refusal
@@ -128,7 +164,8 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
         # and then the negative block would have argued with it. Caught while
         # wiring the pivot, before it ever drew.
         object_only = bool((brief.get("focus") or "").strip()) and not lead
-        core = [_STYLE] if object_only else [_STYLE, (lead or "a figure").rstrip(".") + "."]
+        style = _STYLE_OBJECT if object_only else _STYLE
+        core = [style] if object_only else [style, (lead or "a figure").rstrip(".") + "."]
         # THE FOCUS OBJECT GOES IN FRONT OF THE FIGURE, from 06/09/2026. Same
         # positional argument as the negative going last, pointed the other way:
         # flux weights both ends of a prompt over its middle, and on 05/09 a
@@ -160,7 +197,7 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
             value = (brief.get(field) or "").strip()
             if value:
                 optional.append(f"{prefix}{value}".rstrip(".") + ".")
-        negative = _NEGATIVE + " " + _NO_PLATE if object_only else _NEGATIVE
+        negative = (_NEGATIVE_OBJECT + " " + _NO_PLATE) if object_only else _NEGATIVE
         return _fit(core, optional, negative)
 
     # Fallback: the writer's scene line, which is prose written for a reader.
