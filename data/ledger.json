@@ -493,5 +493,16 @@
     "place_kind": "exoplanet",
     "engine": "language",
     "technique": "escalating_precision"
+  },
+  {
+    "run_date": "2026-09-11",
+    "year": 2355,
+    "era_bucket": 6,
+    "domain": "love and marriage",
+    "headline": "Asteroid Wins In-Law Trials",
+    "style": "sport",
+    "place_kind": "deepspace",
+    "engine": "category",
+    "technique": "unasked_statistic"
   }
 ]
