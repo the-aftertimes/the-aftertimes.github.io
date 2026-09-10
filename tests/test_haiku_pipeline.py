@@ -190,10 +190,21 @@ def test_a_dead_first_model_falls_through_to_the_next(repo, monkeypatch):
     assert record["dispatch"]["lines"] == _GOOD[0]
 
 
-def test_settings_publish_the_haiku_form():
-    """The switch itself. If this is prose, nothing above is reaching readers."""
+def test_settings_select_a_form_that_has_a_pipeline():
+    """The switch itself.
+
+    This pinned `== "haiku"` until 10/09/2026 and failed the moment Charlie asked
+    to go back to prose - the third time a test in this repo has asserted the
+    CURRENT SETTING instead of the invariant (see n_drafts and the rhythm floor
+    in test_critic). A reversible switch whose test only passes in one position
+    is not reversible; it just makes the way back look like a regression.
+
+    What actually matters is that whatever is selected resolves to a pipeline."""
+    import run
     from common import load_settings
-    assert load_settings().get("form") == "haiku"
+    form = load_settings().get("form", "prose")
+    assert form in {"prose", "haiku"}
+    assert callable(run.run_haiku_pipeline if form == "haiku" else run.run_pipeline)
 
 
 def test_no_brief_publishes_no_picture_rather_than_a_wrong_one(repo, monkeypatch):
