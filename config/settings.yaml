@@ -1,12 +1,23 @@
-# THE FORM THE PAPER PUBLISHES, from 09/09/2026. Charlie, after forty prose
-# dispatches: "no I think just move to haikus now."
+# THE FORM THE PAPER PUBLISHES. Back to `prose` on 10/09/2026, one day after the
+# haiku pivot went live. Charlie: "let's go back to the previous version. not
+# haikus." The pivot ran for a single edition ("window tint schedule", 09/09).
+#
+# Do NOT re-pitch haiku. It was his own idea on 09/09 ("no I think just move to
+# haikus now") and he reversed it after seeing it published, which is a stronger
+# signal than the original ask - the whole point of building it behind this
+# switch was that one bad day should not become a bad week.
+#
+# The haiku path is LEFT INTACT AND DORMANT, not deleted: haiku.py, haikutrial.py,
+# run_haiku_pipeline, depict_haiku and the object-only image constants all stay,
+# and their tests still run. Flipping this key back is the only thing needed to
+# revive it.
 #
 # `haiku` runs run_haiku_pipeline: one Gemini call for a batch of forty, a
 # deterministic 5-7-5 sieve, then one judge call to pick the edition. `prose`
 # runs the original run_pipeline unchanged and is kept as the way back - a daily
 # publisher with no reverse gear is how one bad day becomes a bad week. Both
 # produce the same dispatch dict, so render, archive, card and email are shared.
-form: haiku
+form: prose
 
 site:
   name: "The Aftertimes"
