@@ -126,6 +126,18 @@ def generate(prompt: str, settings: dict, temperature: float,
     overrides the retry count - the Pro attempt passes 0 so a quota 429 falls
     back to flash immediately instead of wasting the backoff window."""
     g = settings["gemini"]
+    # NO EXPLICIT MODEL MEANS WALK THE LIST. Fixing this per-caller is what left
+    # the gap twice: 09/09/2026 the haiku batch walked and the judge did not,
+    # and 10/09 write walked and ideate did not - so the prose path could not
+    # even start once gemini-3.6-flash was spent, with two spare models on the
+    # same key untouched. The free tier is 20 calls PER DAY PER MODEL. Callers
+    # that genuinely want one model (generate_first_available, the Pro attempt)
+    # pass it explicitly and are unaffected.
+    if model is None:
+        listed = tuple(g.get("models") or ())
+        if len(listed) > 1:
+            return generate_first_available(prompt, settings, temperature,
+                                            listed)[0]
     model = (model or g["model"]).strip()
     limit = g["max_retries"] if retries is None else retries
     url = f"{g['endpoint']}/{model}:generateContent"

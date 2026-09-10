@@ -234,3 +234,24 @@ def test_prose_write_walks_the_same_model_list_as_haiku():
 def test_models_falls_back_to_the_single_default():
     import write
     assert write.models({"gemini": {"model": "only-one"}}) == ("only-one",)
+
+
+def test_generate_without_an_explicit_model_walks_the_list(monkeypatch):
+    """10/09: write walked the list and ideate did not, so the prose path could
+    not start once the default model's 20-a-day was spent. Fixed centrally
+    because fixing it per-caller is what left the gap twice."""
+    import gemini
+    tried = []
+
+    def fake(prompt, settings, temperature, model=None, retries=None):
+        tried.append(model)
+        if model != "spare-b":
+            raise gemini.GeminiError("HTTP 429 daily quota")
+        return "ok"
+
+    monkeypatch.setattr(gemini, "generate", fake)
+    raw, served = gemini.generate_first_available(
+        "p", {"gemini": {"models": ("spare-a", "spare-b")}}, 1.0,
+        ("spare-a", "spare-b"))
+    assert raw == "ok" and served == "spare-b"
+    assert tried == ["spare-a", "spare-b"]
