@@ -555,7 +555,12 @@ HAIKU_BATCH = 40
 #: nothing. A dead model name now fails in one call, so walking the list is
 #: cheap. `gemini-2.5-flash` is deliberately absent: it appears in the account's
 #: own model listing and answers 404 "no longer available to new users".
-HAIKU_MODELS = ("gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.5-flash")
+#: ONE list, read from settings (`gemini.models`) so prose and haiku cannot
+#: drift apart. It was hardcoded here and named for the haiku path, which is
+#: why the first prose run after the 10/09 revert lost all four drafts to an
+#: exhausted gemini-3.6-flash while two spare models sat untouched.
+HAIKU_MODELS = tuple(load_settings()["gemini"].get("models")
+                     or (load_settings()["gemini"]["model"],))
 
 
 def _haiku_batch(dateline: dict, domain: str, settings: dict,
