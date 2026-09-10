@@ -1,315 +1,132 @@
 {
   "run_date": "2026-09-10",
-  "run_time": "2026-09-09T18:01:53.744501+00:00",
+  "run_time": "2026-09-10T04:20:37.873916+00:00",
   "dispatch": {
-    "headline": "window tint schedule",
-    "body": "wall glass turns to slate\nthe timer shifts at noon three\nshade credits applied",
-    "lines": [
-      "wall glass turns to slate",
-      "the timer shifts at noon three",
-      "shade credits applied"
-    ],
-    "scene": "wall glass turns to slate / the timer shifts at noon three / shade credits applied",
-    "domain": "medicine",
+    "headline": "Airlock Brunches Anger Old Colonists",
+    "body": "AURELIA DOME: Young colonists have begun hosting social brunches inside decommissioned airlocks, drawing fierce condemnation from survivors of the 2051 disaster.\n\nThe weekly gatherings, known locally as Decompression Brunches, take place in Lock Four. In 2051, a sudden pressure failure there killed forty-one miners. Today, younger residents use the space for yeast-wine and flatbread. They bring two folding benches, a crate of synthetic fruit, and a portable music box. Yellow paper ribbons now hang from the emergency hand-cranks.\n\n\"We spent twelve hours scraping frost off our own teeth,\" said Clara Henderson, a survivor of the blowout. \"Now they are using the manual release valves to hang their cardigans.\"\n\nThe trend has grown from a quiet weekend gathering into a structured social rite. The colony’s housing office now lists Lock Four as a reservable leisure space. The rent is low. The rental package includes a broom, a dustpan, and four emergency oxygen canisters that expired in 2084.\n\nOrganisers defend the events as a respectful way to reclaim dark spaces.\n\n\"It has a very airy feel,\" said Joji Patel, 19. \"The acoustics are great.\"",
+    "scene": "A young man in a yellow shirt sets a plate of flatbread on a folding table inside a rusted steel airlock, an elderly woman in a heavy work coat watching him from the doorway.",
     "dateline": {
-      "place": "Basin West Nine",
-      "year": 2396,
-      "month": 12,
-      "day": 8,
-      "years_from_now": 370
+      "place": "Aurelia Dome",
+      "year": 2093,
+      "month": 10,
+      "day": 7,
+      "years_from_now": 67
     },
+    "domain": "death and mourning",
     "glossary": [],
-    "premise": "wall glass turns to slate / the timer shifts at noon three / shade credits applied",
+    "premise": "AURELIA DOME (2093) — Young colonists have begun throwing upbeat 'Decompression Brunches' inside decommissioned airlocks—a term mutated from a fatal 2051 industrial accident—drawing fierce condemnation from elderly survivors who remember the actual, lung-rupturing event.",
     "brief": {
-      "focus": "a thick rectangular architectural slab with an internal dark-to-clear gradient and seamless rounded edges",
-      "subject": "",
-      "action": "",
-      "setting": "dull basalt slab",
-      "light": "direct overhead sunlight casting a hard sharp shadow",
-      "materials": "fused silicate foam, electro-chromic bismuth mesh, aerogel composite",
-      "anomaly": "a dull scuff mark along the bottom right edge"
+      "focus": "a low octagonal folding utility stand made of dull grey composite polymer, holding a flat, dimpled disk of baked grey-brown yeast-bread on a shallow tray of pressed metal alloy",
+      "subject": "a young man with short dark hair and a bare, visible face, wearing a bright yellow long-sleeved shirt of synthetic-knit fiber, ribbed utility trousers of grey polymer-weave, and slip-on work shoes of molded grey foam elastomer",
+      "action": "placing the shallow metal tray holding the baked yeast-bread onto the center of the folding utility stand",
+      "setting": "the interior of a decommissioned circular airlock chamber with heavily oxidized alloy walls, a massive open hatchway where an elderly woman with a lined face in a bulky insulated aerogel-fiber coat stands watching, and several manual pressure valves with yellow synthetic-paper ribbons tied to their crank levers",
+      "light": "harsh, direct white light from a single recessed luminescent panel in the low ceiling, casting sharp vertical shadows",
+      "materials": "oxidized steel-alloy, molded composite polymer, aerogel-fiber weave, pressed metal alloy",
+      "anomaly": "a small cylindrical emergency oxygen canister made of tarnished alloy lying on its side in the corner of the floor, its glass pressure gauge cracked"
     },
     "image": "assets/img/2026-09-10.jpg"
   },
   "meta": {
-    "run_time": "2026-09-09T18:01:53.744501+00:00",
+    "run_time": "2026-09-10T04:20:37.873916+00:00",
     "timezone": "Australia/Sydney",
     "tagline": "Tomorrow's headlines, a little early",
     "site_name": "The Aftertimes",
     "base_url": "https://aftertimes.charlietrenorden.com",
     "signup_form_url": "",
-    "edition": 49,
+    "edition": 50,
     "locator_deep_max": 4000
   },
   "quality": {
-    "form": "haiku",
-    "asked": 40,
-    "scanned": 32,
-    "failed_scan": 8,
-    "score": 1.0,
-    "rejected": false,
-    "violations": [],
-    "candidates": [
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.92,
+      0.84,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: bucket",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'kicks to the main seal, three to the filter pipe, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'They bring two folding benches, a crate of synthetic fruit, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: bucket",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'They brought two laser grids, three sound systems, and'",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
       {
-        "lines": [
-          "her light-stamp flashes",
-          "blue permits cleared for high flight",
-          "two years on the beam"
-        ],
-        "title": "permit approval"
+        "headline": "Teens Kick Waste Machines at Funerals",
+        "body": "A memorial service in Siltmarsh was halted on Thursday after three teenagers dented the municipal organic waste-converter during a traditional send-off.\n\nThe practice, known as the final strike, has become a standard farewell among third-generation colonists. It requires mourners to violently kick the nearest agricultural processing unit to release the deceased person’s spirit.\n\nOlder settlers are furious.\n\n\"It is a linguistic error,\" says archive warden Priya Nair. \"They read old texts about 'kicking the bucket' and took it literally. Now our best composters are misshapen.\"\n\nAt a service for farmer Jamil Okoro, the damage was severe. Mourners delivered seven heavy kicks to the main seal, three to the filter pipe, and one to the pressure gauge.\n\nThe vat leaked.\n\nForty litres of warm grey slurry flooded the chapel aisle. Sanitation crews spent five hours clearing the sludge while the family watched in silence.\n\nYouths defend the custom as deeply spiritual.\n\n\"It helps him move on,\" said eighteen-year-old mourner Kenji Sato, who wore steel-toed formal shoes to the service. \"If we do not dent the casing, grandfather stays trapped in the soil cycle forever.\"\n\nEngineering teams have now ordered reinforcement plates for all community digesters.",
+        "premise": "NEW ARCADIA (2093) — A linguistic drift that turned the ancient phrase 'kicking the bucket' into a literal mandate has led youth on the exoplanet colony to violently kick agricultural waste-recyclers during memorial services, a trend older colonists decry as both mechanically ruinous and deeply disrespectful.",
+        "score": 0.84,
+        "rejected": false
       },
       {
-        "lines": [
-          "the desk glares with green",
-          "clerk Miri tags the new gene",
-          "for next Tuesday's shift"
-        ],
-        "title": "gene tag update"
+        "headline": "Airlock Brunches Anger Old Colonists",
+        "body": "AURELIA DOME: Young colonists have begun hosting social brunches inside decommissioned airlocks, drawing fierce condemnation from survivors of the 2051 disaster.\n\nThe weekly gatherings, known locally as Decompression Brunches, take place in Lock Four. In 2051, a sudden pressure failure there killed forty-one miners. Today, younger residents use the space for yeast-wine and flatbread. They bring two folding benches, a crate of synthetic fruit, and a portable music box. Yellow paper ribbons now hang from the emergency hand-cranks.\n\n\"We spent twelve hours scraping frost off our own teeth,\" said Clara Henderson, a survivor of the blowout. \"Now they are using the manual release valves to hang their cardigans.\"\n\nThe trend has grown from a quiet weekend gathering into a structured social rite. The colony’s housing office now lists Lock Four as a reservable leisure space. The rent is low. The rental package includes a broom, a dustpan, and four emergency oxygen canisters that expired in 2084.\n\nOrganisers defend the events as a respectful way to reclaim dark spaces.\n\n\"It has a very airy feel,\" said Joji Patel, 19. \"The acoustics are great.\"",
+        "premise": "AURELIA DOME (2093) — Young colonists have begun throwing upbeat 'Decompression Brunches' inside decommissioned airlocks—a term mutated from a fatal 2051 industrial accident—drawing fierce condemnation from elderly survivors who remember the actual, lung-rupturing event.",
+        "score": 0.92,
+        "rejected": false
       },
       {
-        "lines": [
-          "lawn nodes hum in sync",
-          "the audit drone logs three weeds",
-          "left for sunset light"
-        ],
-        "title": "lawn drone inspection"
+        "headline": "Morgue Raves Anger Colony Pioneers",
+        "body": "A teenage dance party inside the Siltreach municipal morgue has prompted complaints from elder settlers over the growing popularity of \"uninstallation raves\" for the deceased.\n\nThe events are organised by high school students to mark the death of older relatives. To symbolise the uninstallation, guests insert glowing USB drives into the deceased’s wrist ports while dancing to heavy synthetic bass.\n\nAt a Siltreach gathering on Thursday, forty teenagers celebrated the passing of eighty-two-year-old pioneer Javid Patel. They brought two laser grids, three sound systems, and a bucket of blue foam.\n\nNobody cried.\n\n\"We are just clearing the cache,\" said Patel's grandson, Kiran. \"Grandfather finished his run. There is no need to keep the physical files.\"\n\nThe oldest generation of colonists has condemned the trend. They argue it reduces human existence to a temporary software license.\n\n\"I dug the first water trench on this planet,\" said pioneer Maeve Lindqvist. \"I am not a background process to be cleared.\"\n\nThe Siltreach council has received twelve noise complaints, two damaged door seals, and one report of glow-paint on the refrigeration units. They have declined to intervene.",
+        "premise": "KEPLER-PRIME (2093) — A semantic shift that rebranded death as being 'uninstalled' has seen teenagers throwing festive 'Uninstallation Raves' for deceased relatives, complete with glowing USB accessories, prompting the oldest generation to complain that human life is being treated like a trial-version app.",
+        "score": 0.84,
+        "rejected": false
       },
       {
-        "lines": [
-          "sound curtains drop low",
-          "the tuner checks the pulse wave",
-          "set to twenty hertz"
-        ],
-        "title": "sound curtain tuning"
-      },
-      {
-        "lines": [
-          "mesh sheets load the feed",
-          "she stamps the flight log as calm",
-          "six weeks before dawn"
-        ],
-        "title": "telemetry archive"
-      },
-      {
-        "lines": [
-          "shuttle passes print",
-          "his thumb scan locks the berth rate",
-          "fixed for thirty moons"
-        ],
-        "title": "ferry pass renewal"
-      },
-      {
-        "lines": [
-          "thermal sleeves lock tight",
-          "the inspector seals each cuff",
-          "green light on the band"
-        ],
-        "title": "sleeve cuff inspection"
-      },
-      {
-        "lines": [
-          "silk looms spin the thread",
-          "the shift boss sets five percent",
-          "soft enough for berths"
-        ],
-        "title": "loom weave adjustment"
-      },
-      {
-        "lines": [
-          "floor plates float two inch",
-          "he turns the dial to one G",
-          "cups stop sliding west"
-        ],
-        "title": "gravity plate alignment"
-      },
-      {
-        "lines": [
-          "wall glass turns to slate",
-          "the timer shifts at noon three",
-          "shade credits applied"
-        ],
-        "title": "window tint schedule"
-      },
-      {
-        "lines": [
-          "air scrubbers click twice",
-          "she swaps the carbon tray out",
-          "signed off in the log"
-        ],
-        "title": "scrubber tray replacement"
-      },
-      {
-        "lines": [
-          "track pods test the rail",
-          "the tech logs zero drift now",
-          "smooth till next cycle"
-        ],
-        "title": "transit rail testing"
-      },
-      {
-        "lines": [
-          "foam walls check for salt",
-          "his scanner pings the low seam",
-          "dry for seven months"
-        ],
-        "title": "marine seam inspection"
-      },
-      {
-        "lines": [
-          "sky pods drop their loads",
-          "she stamps the tare weight in light",
-          "four grams over code"
-        ],
-        "title": "drone package weighing"
-      },
-      {
-        "lines": [
-          "pad resin dries flat",
-          "his gauge reads three nano points",
-          "safe for drone landings"
-        ],
-        "title": "pad resin check"
-      },
-      {
-        "lines": [
-          "gel spouts pump the mix",
-          "the clerk tests the protein mass",
-          "correct for tier two"
-        ],
-        "title": "nutrient gel batch"
-      },
-      {
-        "lines": [
-          "pulse seamers beam red",
-          "she tracks the beam down thirty",
-          "seal locked at nine bars"
-        ],
-        "title": "laser seam welding"
-      },
-      {
-        "lines": [
-          "door seals hiss and hold",
-          "the seal clerk logs the pressure",
-          "shift complete at three"
-        ],
-        "title": "dome hatch check"
-      },
-      {
-        "lines": [
-          "cable strands ring tight",
-          "the strain gauge turns from red light",
-          "approved for transit"
-        ],
-        "title": "skybridge cable tension"
-      },
-      {
-        "lines": [
-          "root trays slide on track",
-          "his screen marks the copper rate",
-          "yield up three percent"
-        ],
-        "title": "hydroponic tray check"
-      },
-      {
-        "lines": [
-          "sign beams cross the hall",
-          "he trims the projection height",
-          "clear of upper deck"
-        ],
-        "title": "hologram sign height"
-      },
-      {
-        "lines": [
-          "power packs slide out",
-          "she slots the cold cell in place",
-          "green light on her hip"
-        ],
-        "title": "climate pack swap"
-      },
-      {
-        "lines": [
-          "glass lenses sweep past",
-          "the tech wipes the sorting beam",
-          "copper gets routed"
-        ],
-        "title": "sorting optic cleaning"
-      },
-      {
-        "lines": [
-          "clean streams fill the gauge",
-          "his meter checks salt levels",
-          "two parts per million"
-        ],
-        "title": "desalination testing"
-      },
-      {
-        "lines": [
-          "lift shafts drop down fast",
-          "the lube drone coats the guide wire",
-          "zero wear this week"
-        ],
-        "title": "gravity lift maintenance"
-      },
-      {
-        "lines": [
-          "charging bays light up",
-          "he resets the current dial",
-          "twenty pods ready"
-        ],
-        "title": "drone dock reset"
-      },
-      {
-        "lines": [
-          "lane posts pop up high",
-          "she checks the laser marker",
-          "fixed at three meters"
-        ],
-        "title": "skyway post check"
-      },
-      {
-        "lines": [
-          "latch bolts snap in place",
-          "his hand-pad confirms the seal",
-          "bay nine cleared for lift"
-        ],
-        "title": "sub-bay latch check"
-      },
-      {
-        "lines": [
-          "seat skin shows no seam",
-          "she rubs the synth-leather smooth",
-          "ready for line ten"
-        ],
-        "title": "synth leather check"
-      },
-      {
-        "lines": [
-          "sonde pods rise through clouds",
-          "he signs the launch report clear",
-          "wind speed logged at eight"
-        ],
-        "title": "weather sonde launch"
-      },
-      {
-        "lines": [
-          "brake pads retract slow",
-          "the gauge shows two microns left",
-          "swap booked for midday"
-        ],
-        "title": "mag-train brake wear"
-      },
-      {
-        "lines": [
-          "green pods fill the tube",
-          "he logs the methane output",
-          "green lights across board"
-        ],
-        "title": "algae pod check"
+        "headline": "Teens Drift Heavy Trucks for Grandparents",
+        "body": "Teenagers in Silt Reach are occupying the colony's arterial transit lanes to execute high-speed vehicle drifts in memory of deceased grandparents.\n\nThe trend began after the planetary navigation engine translated the phrase \"passing away\" in regional bereavement logs as \"changing lanes.\" Local youth now believe their ancestors entered a permanent high-speed turn. To show respect, they modify eight-tonne salt-haulers with low-friction rear tyres. They slide these heavy utility vehicles sideways through the tight curves of Route Four at ninety miles per hour. These manoeuvres require six hundred litres of pressurised nitrogen to cool the brakes. They call this the transition.\n\nThe elderly are unimpressed. \"My late husband did not skitter sideways into a concrete barrier,\" says resident Clara Finch. \"He died of kidney failure.\" Finch, who leads the Silt Reach Pensioners Union, has petitioned the transport authority to correct the navigation system's dictionary.\n\nMeanwhile, the drifts continue. On Wednesday, sixteen-year-old Toby Miller dedicated a three-hundred-metre slide to his grandmother. He left eighty litres of melted synthetic rubber on the tarmac. His family confiscated his ignition key. He must now walk three miles to his shift at the algae vats.",
+        "premise": "NEW HORIZON (2093) — Because the colony’s navigational AI translated 'passing away' as 'changing lanes,' teenagers are dedicating reckless highway drifts to their late grandparents, a trend senior citizens slam as a suicidal misinterpretation of simple road safety.",
+        "score": 1.0,
+        "rejected": false
       }
     ],
-    "n_candidates": 32,
-    "judge_pick": 9,
-    "judge_score": 6.0,
-    "judge_reason": "Automated smart-glass tinting turns out to be a metered bureaucratic micro-transaction for shade."
+    "all_rejected": false,
+    "judge_reason": "It brilliantly satirises hipster gentrification of tragic spaces with sharp, oblivious quotes that perfectly capture the generational divide.",
+    "judge_pick": 1,
+    "judge_score": 8.0,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": 0.76,
+    "critique": "The three-item list lacked a proper comedic escalation, and the headline and quotes were too dry. The rewrite introduces a dark-comedy kicker and a clear comedic escalation in the list.",
+    "prose": {
+      "words": 182,
+      "sentences": 15,
+      "mean_sentence": 12.1,
+      "longest": 21,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 4.9
+    }
   }
 }

@@ -482,5 +482,16 @@
     "place_kind": "haiku",
     "engine": "haiku",
     "technique": "haiku"
+  },
+  {
+    "run_date": "2026-09-10",
+    "year": 2093,
+    "era_bucket": 1,
+    "domain": "death and mourning",
+    "headline": "Airlock Brunches Anger Old Colonists",
+    "style": "trend",
+    "place_kind": "exoplanet",
+    "engine": "language",
+    "technique": "escalating_precision"
   }
 ]
