@@ -1,0 +1,122 @@
+{
+  "run_date": "2026-09-11",
+  "run_time": "2026-09-10T18:01:13.600620+00:00",
+  "dispatch": {
+    "headline": "Asteroid Wins In-Law Trials",
+    "body": "A ten-metre carbonaceous asteroid won the final round of the Waystation 9 In-Law Trials on Thursday after maintaining unbroken, frigid silence through a four-course dinner.\n\nThe annual contest measures local suitors against simulated domestic pressure. Finalist Priya Nair entered the dining vault after six months of etiquette training, facing three retired dock mothers and the passing rock, which had been tethered outside the observation port.\n\nNair opened with a regional broth and offered three polite observations about station humidity. The mothers raised mild doubts about her posture. The asteroid said nothing, slowly occulting the local star.\n\nDuring the cold protein loaf, the rock achieved a measured disapproval rating of 94.2 units per minute by simply drifting three degrees to port. Nair cracked during the tea service, apologising unprompted for her childhood grades and offering to retrain in refrigeration.\n\nThe judges awarded the asteroid a clean sweep of all six scoring slates.\n\n\"It had presence,\" said head judge Clara Vance, inspecting the telemetry. \"Young people today over-explain themselves. That rock never made a sound, yet everyone at the table knew her broth was thin.\"",
+    "scene": "Priya Nair sits rigidly at a formal dinner table in a grey jumpsuit, staring through a reinforced window at a dark, ice-crusted rock.",
+    "dateline": {
+      "place": "WAYSTATION 9",
+      "year": 2355,
+      "month": 1,
+      "day": 10,
+      "years_from_now": 329
+    },
+    "domain": "matrimonial",
+    "glossary": [
+      {
+        "term": "In-Law Trials",
+        "gloss": "An annual station ritual testing suitors' stamina under simulated domestic scrutiny."
+      }
+    ],
+    "premise": "In the final round of the Waystation 9 In-Law Trials, a visiting stray asteroid swept all judges' scores after maintaining an icy, disapproving silence through a four-course ceremonial dinner.",
+    "brief": {
+      "focus": "a jagged, charcoal-grey mass of pitted carbonaceous silicate, heavily encrusted with patches of crystalline nitrogen ice, positioned directly outside a thick, circular structural viewport",
+      "subject": "Priya Nair, a young woman with a tense, bare face and dark hair pulled back, wearing a seamless, dull-grey utility jumpsuit made of matte synthetic aramid fibre, matching ribbed elastomer cuffs, and grey composite-sole slippers",
+      "action": "sitting rigidly upright at a long dining table, her hands flat on the polished synthetic surface, staring fixedly through the structural viewport",
+      "setting": "a stark dining vault with seamless, matte-grey composite walls, a long banquet table, and three elderly women in dark, structured formal robes sitting quietly in the background",
+      "light": "cool, overhead illumination from recessed electroluminescent ceiling panels, casting flat shadows, with a faint, cold blue glare reflecting off the viewport",
+      "materials": "matte synthetic aramid fibre, polished synthetic silicate, textured composite alloy, crystalline nitrogen ice",
+      "anomaly": "a small, scuffed diagnostic stylus with a worn casing lying next to an empty, matte-grey synthetic bowl"
+    },
+    "image": "assets/img/2026-09-11.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-10T18:01:13.600620+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Tomorrow's headlines, a little early",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 51,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.92,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'listening ability, structural reliability, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: 'The chief judge ruled the sigh an illegal bid for comfort.'",
+          "severity": "minor"
+        }
+      ],
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Power Reactor Wins Speed Dating Contest",
+        "body": "Station Reactor Four defended its title as Most Eligible Bachelor at the annual Deep-Space Dating Derby on Friday, defeating seven rim-world navigators in an eight-hour endurance round.\n\nThe match pitted human travellers seeking long-term companionship against the station's primary power core. Contestants were scored across four categories: warmth, listening ability, structural reliability, and low upkeep costs. The victory was decisive.\n\nThe regional romance board measured Reactor Four's charm at 4.2 gigajoules of thermal output per minute, up seven percent from last season.\n\nNavigators struggled during the rapid-fire conversation rounds. Navigator Sanjit Rao reached the final pairing after offering prospective partners a shared lease on an ore hauler. However, Reactor Four countered with a quiet, continuous forty-hertz hum and two thousand hours of uninterrupted central heating. Rao took a brief break to clear his throat. Judges gave the core the win.\n\nIt marks the third year the trophy has gone to station machinery.\n\n\"I brought flowers and six years of clean flight records,\" Rao said while waiting at the shuttle gate. \"Four minutes in, the guy next to me is complaining about his knee. The reactor just holds a steady heat and never asks where the relationship is going.\"",
+        "premise": "At a deep-space waystation's annual Speed-Dating Derby, a long-serving plasma reactor defended its title as Most Eligible Bachelor by defeating seven rim-world navigators in a high-stakes endurance flirtation match.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Exhaust Duct Wins Marriage Contest",
+        "body": "A metal exhaust duct won the Garrison Vow Renewal Championship on Sunday after out-sulking six senior officers in the silent-treatment final.\n\nThe duct, registered as a husband of fourteen years to the B-Wing mess hall, entered the final hour of the standoff without emitting a single thermal pulse. Station evaluators logged its emotional coldness at ninety-four units per hour, breaking the sector record for total domestic detachment.\n\nTrouble began in the semi-finals. Commander Bram Devlin made a small gesture toward his partner during the silent posture round, earning a penal point for empathy. The mistake cost his team three ranks in the regional standings.\n\nThat left the duct facing Captain Priya Sundaram in the final playoff. Sundaram held out through fourteen hours of complete eye-contact avoidance before sighing at breakfast. The chief judge ruled the sigh an illegal bid for comfort.\n\nThe duct never flinched. Referees awarded the blue ribbon to the metal duct, citing its unyielding indifference to human warmth. The fixture will advance to the sector finals next month.\n\n\"I tried to communicate,\" Sundaram said after her defeat. \"You cannot beat fourteen years of clanking quietly in a cold hall. The duct simply refuses to meet anyone halfway.\"",
+        "premise": "A void garrison's Inter-Barracks Vow Renewal Championship ended in a dramatic upset when a thermal exhaust duct, competing as a veteran husband of fourteen years, out-sulked six human officers during the silent-treatment playoff.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Asteroid Wins In-Law Contest Through Silence",
+        "body": "A visiting asteroid won the final round of the Waystation 9 In-Law Trials on Thursday after maintaining absolute silence through a four-course dinner.\n\nThe annual contest tests local suitors against simulated family pressure. Human finalist Priya Nair entered the dining vault after six months of preparation, facing three retired garrison mothers and the passing ten-metre rock, which was towed near the window.\n\nNair opened with a regional broth. She offered three polite topics of conversation about solar winds and fuel rations. The mothers raised mild doubts about her career in cargo sorting. The asteroid made no sound at all.\n\nDuring the main dish of preserved protein loaf, the rock sat in total darkness. Judges from the Matrimonial Board measured its quiet coldness at 94.2 disapproval units per minute. This broke the station record set in 2341.\n\nBy the final tea course, Nair faltered under the weight of the silence. She offered to change her surname twice. The judges awarded the asteroid a clean sweep of all six scoring cards. It won the title.\n\n\"It never once blinked,\" Nair said outside the hall. \"I felt judged on things I have not even done yet.\"",
+        "premise": "In the final round of the Waystation 9 In-Law Trials, a visiting stray asteroid swept all judges' scores after maintaining an icy, disapproving silence through a four-course ceremonial dinner.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Sergeant Forfeits Date To Steel Beam",
+        "body": "Communications Sergeant Diran Tariq forfeited the final round of the Deep-Gorge Garrison blind-date tournament on Sunday to an eight-metre steel support beam.\n\nThe annual contest pairs unattached soldiers behind heavy voice screens for timed ten-minute conversations. Due to an odd number of registrations, garrison quartermasters assigned Load-Bearing Pillar 4-A to fill the empty slot in Bracket C.\n\nTariq reached the final after brief exchanges with two shuttle mechanics. In the title match, he spent forty minutes talking into the acoustic funnel about his broken engagement to a fuel technician.\n\nBeam 4-A made no sound.\n\nTariq conceded the match after forty minutes, citing the pillar's steady presence and complete lack of judgment. He wept twice.\n\nGarrison morale logs show the average service couple achieves 11.4 minutes of attentive silence per month. Beam 4-A logged six hours of unbroken listening during the tournament alone.\n\n\"It holds fifty tonnes of ceiling without complaining,\" Tariq said in the tunnel afterwards. \"My ex-fiancée couldn't sit through one quiet watch without bringing up my family.\"\n\nBeam 4-A advances to regionals next month. Tariq has already booked a seat on the transport beside it.",
+        "premise": "A dark-sector garrison's blind-date duel concluded when a communications sergeant forfeited his match against a load-bearing steel girder, admitting the beam was a vastly better listener than his ex-fiancée.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 delivers the sharpest satire on silent in-law disapproval, capped by a great final line.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original draft explained the joke rather than escalating the absurdity of the judging criteria. The kicker rested on the contestant's reaction instead of the judges' terrifying standards.",
+    "revise_judge_reason": "Draft 2 has much sharper escalating details (occulting the star, apologizing for childhood grades) and a killer final quote about the thin broth.",
+    "prose": {
+      "words": 183,
+      "sentences": 12,
+      "mean_sentence": 15.2,
+      "longest": 30,
+      "short_sentences": 1,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 4.9
+    }
+  }
+}
