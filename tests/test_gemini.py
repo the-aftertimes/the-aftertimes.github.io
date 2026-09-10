@@ -216,3 +216,21 @@ def test_a_404_is_not_retried(monkeypatch):
     assert "not retryable" in str(exc.value)
     assert len(calls) == 1, f"asked {len(calls)} times for a dead model name"
     assert slept == []
+
+
+def test_prose_write_walks_the_same_model_list_as_haiku():
+    """10/09/2026: the haiku path walked a model list and prose did not, so the
+    first prose run after the revert lost all four drafts to an exhausted
+    gemini-3.6-flash while two spare models on the same key sat untouched. The
+    free tier is 20 calls PER DAY PER MODEL."""
+    import run
+    import write
+    from common import load_settings
+    s = load_settings()
+    assert len(write.models(s)) >= 2, "a single model is one bad day from no edition"
+    assert tuple(run.HAIKU_MODELS) == write.models(s), "one list, not two"
+
+
+def test_models_falls_back_to_the_single_default():
+    import write
+    assert write.models({"gemini": {"model": "only-one"}}) == ("only-one",)

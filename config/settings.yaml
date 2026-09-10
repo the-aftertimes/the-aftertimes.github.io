@@ -88,6 +88,15 @@ gemini:
   # fallback machinery stays in write.py; re-populate this only if the key gets
   # paid/greater quota.
   write_model: ""
+  # Every model this key may use, tried in order. The free tier is 20 generate
+  # calls PER DAY PER MODEL, so the spares are what stand between an exhausted
+  # allowance and a lost edition. gemini-2.5-flash is deliberately absent: it
+  # appears in the account's model listing and answers 404 "no longer available
+  # to new users". A dead name costs one call, so a short list is cheap.
+  models:
+    - "gemini-3.6-flash"
+    - "gemini-3.7-flash"
+    - "gemini-3.5-flash"
   endpoint: "https://generativelanguage.googleapis.com/v1beta/models"
   timeout_seconds: 60
   # 3, not 2, from 06/09/2026. With the 429/503 backoff that is 20 + 40 + 60

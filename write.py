@@ -602,6 +602,17 @@ def normalise(d: dict, dateline: dict, domain: str, premise: str) -> dict:
     }
 
 
+def models(settings: dict) -> tuple[str, ...]:
+    """Every model this key may use, default first.
+
+    One list, read from settings, because 09/09/2026 had it open-coded in two
+    places and a run could get its poems from a spare model and then lose the
+    later calls on the exhausted one."""
+    g = settings["gemini"]
+    listed = tuple(g.get("models") or ())
+    return listed or (g["model"],)
+
+
 def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str, place_guidance: str = "",
           avoid_block: str = "", funny_lines: list[dict] | None = None,
@@ -625,7 +636,23 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
             print(f"    write: {pro} failed ({exc}); falling back to {g['model']}",
                   file=sys.stderr)
     if d is None:
-        d = _generate_json(prompt, settings, g["model"])
-        served = g["model"]
+        # WALK THE MODEL LIST. The free tier is 20 generate calls PER DAY PER
+        # MODEL, so a second model is not a nicety - it is the difference
+        # between an edition and a stale page. 10/09/2026 proved the gap: the
+        # haiku path walked a list, prose did not, so the first prose run after
+        # the revert lost all four drafts to an exhausted gemini-3.6-flash while
+        # two other models on the same key sat untouched.
+        last = None
+        for name in models(settings):
+            try:
+                d = _generate_json(prompt, settings, name)
+                served = name
+                break
+            except gemini.GeminiError as exc:
+                print(f"    write: {name} failed ({str(exc)[:120]})",
+                      file=sys.stderr)
+                last = exc
+        if d is None:
+            raise last or gemini.GeminiError("no model answered")
     print(f"    write: served by {served}", file=sys.stderr)
     return normalise(d, dateline, domain, premise)
