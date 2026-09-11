@@ -493,5 +493,16 @@
     "place_kind": "deepspace",
     "engine": "category",
     "technique": "unasked_statistic"
+  },
+  {
+    "run_date": "2026-09-12",
+    "year": 2248,
+    "era_bucket": 4,
+    "domain": "space law",
+    "headline": "Neptune Closes Its Diamond Crawlspace",
+    "style": "obituary",
+    "place_kind": "gasgiant",
+    "engine": "scale",
+    "technique": "confident_aside"
   }
 ]
