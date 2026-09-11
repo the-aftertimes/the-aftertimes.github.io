@@ -16,7 +16,7 @@ def build_email(dispatch: dict, meta: dict) -> tuple[str, str]:
     dateline = html.escape(hyphenate(format_dateline(dl)))
     date_txt = html.escape(hyphenate(format_date(dl)))
     tagline = html.escape(hyphenate(
-        meta.get("tagline") or "Tomorrow's headlines, a little early"))
+        meta.get("tagline") or "Dispatches from the future."))
     paras = "".join(
         f'<p style="margin:0 0 14px;font-size:16px;line-height:1.55;color:#1a1611;">'
         f'{html.escape(hyphenate(p.strip()))}</p>'

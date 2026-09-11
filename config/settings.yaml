@@ -21,7 +21,7 @@ form: prose
 
 site:
   name: "The Aftertimes"
-  tagline: "Tomorrow's headlines, a little early"
+  tagline: "Dispatches from the future."
   base_url: "https://aftertimes.charlietrenorden.com"
 timezone: "Australia/Sydney"
 update_hour_utc: 20
