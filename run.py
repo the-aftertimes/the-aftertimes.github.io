@@ -30,6 +30,7 @@ import card
 import illustrate as illustrate_mod
 import judge as judge_mod
 import ledger as ledger_mod
+import panel
 import proposals
 import render as render_mod
 import revise as revise_mod
@@ -129,6 +130,34 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
               file=sys.stderr)
     # Do not spend a judge call on a pool where nothing passed - the spec calls
     # for a deterministic best-of-the-bad pick in that case.
+    # THE COMMITTEE, before the single judge. Charlie asked for it on the judge
+    # as well as on the premises. It RANKS rather than scores, which is the whole
+    # reason it can help: the existing judge gave 37 of 65 drafts a perfect score
+    # and produced zero spread across all three candidates on 8 of 22 editions,
+    # so "pick the best of three" was picking at random while reporting success.
+    # Members that disagree are combined by Borda count, so a draft everyone puts
+    # second beats one that is first for a single member and last for the rest.
+    # The single judge still runs afterwards and still records its reason - the
+    # committee reorders the pool it chooses from rather than replacing it.
+    pcfg = settings.get("panel") or {}
+    if pcfg.get("drafts") and not all_rejected and len(pool) > 1:
+        members = (load_yaml("config/comedians.yaml").get("draft_panel") or [])
+        members = members[:int(pcfg.get("max_members", 3))]
+        texts = [f"{d.get('headline','')}\n\n{d.get('body','')}"
+                 for d, _ in pool]
+        try:
+            out = panel.convene(texts, members, settings, kind="dispatches")
+        except Exception as exc:  # noqa: BLE001 - taste never loses the edition
+            print(f"    WARN draft panel failed ({exc})", file=sys.stderr)
+            out = None
+        if out:
+            order = sorted(range(len(pool)), key=lambda i: -out["points"][i])
+            pool = [pool[i] for i in order]
+            info["panel"] = {"voted": out["voted"], "points": out["points"],
+                             "rankings": out["rankings"]}
+            print(f"    committee of {len(out['voted'])} ranked the drafts: "
+                  f"{[round(p, 1) for p in out['points']]}")
+
     if qcfg.get("judge") and not all_rejected and len(pool) > 1:
         try:
             verdict = judge_mod.judge([d for d, _ in pool], settings)
@@ -301,6 +330,29 @@ def build_avoid_block(records: list[dict], lcfg: dict) -> str:
         return ""
 
 
+def rank_premises(premises: list[str], settings: dict) -> list[str]:
+    """Reorder the ideate premises best-first by committee. Never raises, and
+    returns the input untouched whenever the panel cannot help - selection
+    downstream already works on whatever order it is handed."""
+    pcfg = settings.get("panel") or {}
+    if not pcfg.get("premises"):
+        return premises
+    members = (load_yaml("config/comedians.yaml").get("premise_panel") or [])
+    members = members[:int(pcfg.get("max_members", 3))]
+    try:
+        out = panel.convene(premises, members, settings, kind="story ideas")
+    except Exception as exc:  # noqa: BLE001 - taste must never lose the edition
+        print(f"    WARN premise panel failed ({exc}); keeping ideate order",
+              file=sys.stderr)
+        return premises
+    if not out:
+        return premises
+    order = sorted(range(len(premises)), key=lambda i: -out["points"][i])
+    print(f"    panel of {len(out['voted'])} reordered the premises; "
+          f"top: {premises[order[0]][:70]}")
+    return [premises[i] for i in order]
+
+
 def run_pipeline() -> dict:
     settings = load_settings()
     domains = load_yaml("config/domains.yaml")["domains"]
@@ -380,6 +432,14 @@ def run_pipeline() -> dict:
                "common_words": load_common_words()}
 
     print(">>> SELECT")
+    # THE PANEL RUNS BEFORE ANYTHING IS WRITTEN. 11/09/2026, on a dispatch about
+    # young colonists brunching in the airlock where forty-one miners died:
+    # "the article today was a bit eh ... too contrived". The prose was fine and
+    # the PREMISE was one substitution with no second move, which no amount of
+    # judging finished drafts can rescue - by then four drafts of it have been
+    # written and the judge is choosing the best telling of a bad idea.
+    # Killing it here costs one call; polishing it downstream costs five.
+    premises = rank_premises(premises, settings)
     chosen_premises = select_stage.select_many(
         premises, ledger, settings, qcfg["n_drafts"])
     print(f"    {len(chosen_premises)} premises chosen")

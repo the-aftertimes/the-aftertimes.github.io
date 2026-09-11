@@ -123,6 +123,17 @@ image:
 # Multi-draft quality pipeline. Every threshold the critic uses lives here so
 # tuning never means editing code. `judge` and `revise` are independently
 # switchable so either half can be turned off if it proves unhelpful.
+# THE COMMITTEE OF COMEDIANS (config/comedians.yaml). Each member is one Gemini
+# call that RANKS candidates; they are combined by Borda count. Costs one call
+# per member per stage, against a free tier of 20 per day PER MODEL, so both
+# stages at three members adds six calls to a pipeline that already runs eight.
+# Set either to false to switch that stage off; the pipeline behaves exactly as
+# it did before.
+panel:
+  premises: true      # rank the ideate ideas BEFORE any drafting
+  drafts: true        # reorder the pool the single judge then chooses from
+  max_members: 3
+
 quality:
   # 4, not 3, from 31/08/2026. Text is not the scarce tier (Flash is free-tier and
   # the run makes ~8 calls; the metered one is the Cloudflare image quota), so one

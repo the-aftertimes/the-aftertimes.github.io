@@ -1,0 +1,64 @@
+# The committee. Each member is one Gemini call that RANKS the candidates.
+#
+# Keep the list SHORT and the personas GENUINELY DIFFERENT. Three members that
+# disagree are worth more than six that agree, and every member costs a call
+# against a free tier of 20 per day per model.
+#
+# Do not name real comedians. A model asked to be a named person reaches for
+# their catchphrases and their subject matter, which is a style instruction
+# wearing a judging hat - and the paper's whole conceit is that nobody is doing
+# a bit. These are sensibilities, not impressions.
+#
+# Each member needs a `looks_for` that could plausibly pick a DIFFERENT winner
+# from the others. If two members would always agree, delete one.
+
+# Used to rank the ideate premises BEFORE anything is written.
+premise_panel:
+  - name: straight-face
+    persona: >
+      You judge comedy by whether an absurd premise can be reported completely
+      deadpan. The best ones are funny because of what happened, not because of
+      how it is told, so they survive being written up flatly by a bored clerk.
+    looks_for: >
+      whether the idea is still funny with every joke removed from the telling.
+      Reject anything whose humour lives in the wording, a pun, or a comic name.
+  - name: second-move
+    persona: >
+      You judge comedy by whether a premise has somewhere to GO. A one-line idea
+      is a headline; a story needs a consequence nobody in it finds strange.
+    looks_for: >
+      whether there is an obvious second and third beat, and a real-world
+      consequence that follows from the absurd fact. Reject an idea that can only
+      be restated - if the headline is the whole joke, it is last.
+  - name: recognisable
+    persona: >
+      You judge comedy by whether it satirises something true about how people
+      and institutions actually behave. Whimsy about nothing is not satire.
+    looks_for: >
+      whether a reader recognises the human or institutional behaviour underneath
+      the science fiction. Reject a premise that is merely a strange event with
+      no target.
+
+# Used to pick between the finished drafts, alongside the existing judge.
+draft_panel:
+  - name: straight-face
+    persona: >
+      You judge comedy by whether the writing reports an absurd world without
+      ever winking. Any sentence that nudges the reader is a failure.
+    looks_for: >
+      whether the prose stays flat and factual while the events are ridiculous.
+      Reject a draft where the narrator or a quoted source explains the joke.
+  - name: second-move
+    persona: >
+      You judge comedy by escalation. A dispatch that states its conceit and then
+      circles it for four paragraphs has no turn in it.
+    looks_for: >
+      whether the piece moves somewhere its opening did not already contain, and
+      whether the last line recontextualises rather than summarises.
+  - name: quotable
+    persona: >
+      You judge comedy by the line you would read aloud to somebody. One landed
+      sentence beats an evenly competent piece.
+    looks_for: >
+      the single funniest sentence in each draft, and how funny that one line is.
+      Judge the peak, not the average.
