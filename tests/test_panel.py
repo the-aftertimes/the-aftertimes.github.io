@@ -114,3 +114,35 @@ def test_a_named_member_still_carries_its_own_mechanism():
             lf = m["looks_for"].lower()
             assert any(w in lf for w in downranks), (
                 f"{key}/{m['name']} says what it likes but not what it rejects")
+
+
+def test_an_exhausted_quota_abandons_the_panel_immediately(monkeypatch):
+    """A daily quota is per model and per project, not per member, so the rest
+    will fail identically - each walking the whole model list with a 20s backoff
+    at every step. On 11/09/2026 that took a three-member panel past ten minutes,
+    and the daily job sits on the publish path."""
+    calls = []
+
+    def spent(prompt, settings, temperature, **kw):
+        calls.append(1)
+        raise RuntimeError("HTTP 429: the free tier allows 20 generate calls "
+                           "per day per model and they are gone")
+
+    monkeypatch.setattr(panel.gemini, "generate", spent)
+    assert panel.convene(["a", "b"], _members(3), {"gemini": {}}) is None
+    assert len(calls) == 1, "should not have asked the other two members"
+
+
+def test_a_transient_failure_still_asks_the_rest(monkeypatch):
+    """Only an exhausted quota abandons. A 503 is one member's bad luck."""
+    calls = []
+
+    def flaky(prompt, settings, temperature, **kw):
+        calls.append(1)
+        if len(calls) == 1:
+            raise RuntimeError("HTTP 503: model overloaded")
+        return "2,1"
+
+    monkeypatch.setattr(panel.gemini, "generate", flaky)
+    out = panel.convene(["a", "b"], _members(3), {"gemini": {}})
+    assert out is not None and len(calls) == 3

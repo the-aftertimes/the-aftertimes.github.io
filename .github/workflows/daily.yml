@@ -60,6 +60,14 @@ concurrency:
 jobs:
   file:
     runs-on: ubuntu-latest
+    # A STALL ON THE PUBLISH PATH MUST NOT RUN FOR SIX HOURS. There was no
+    # timeout here at all, so GitHub's default applied. On 11/09/2026 a
+    # three-member panel walking an exhausted model list with a 20-second
+    # backoff at every step passed ten minutes before it was killed by hand;
+    # unattended it would have held a runner all night and still published
+    # nothing. A healthy run is about four minutes, and the pacing between
+    # Gemini calls adds roughly two, so 30 is generous without being useless.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7

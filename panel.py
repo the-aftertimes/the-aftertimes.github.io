@@ -84,6 +84,17 @@ def borda(rankings: list[list[int]], n: int) -> list[float]:
     return points
 
 
+#: Substrings that mean "no more calls today", as opposed to a transient fault.
+#: Matched on the message because gemini.py raises one exception type for all of
+#: them and the distinction only exists in the text.
+_EXHAUSTED = ("per day", "PerDay", "daily quota", "exceeded your current quota")
+
+
+def _is_exhausted(exc: Exception) -> bool:
+    text = str(exc)
+    return any(t in text for t in _EXHAUSTED)
+
+
 def convene(items: list[str], members: list[dict], settings: dict,
             kind: str = "items") -> dict | None:
     """Run the panel. Returns {"winner", "points", "rankings", "voted"} or None.
@@ -103,6 +114,18 @@ def convene(items: list[str], members: list[dict], settings: dict,
         except Exception as exc:  # noqa: BLE001 - one member must not lose the day
             print(f"    panel: {m['name']} did not vote ({str(exc)[:90]})",
                   file=sys.stderr)
+            # ABANDON ON AN EXHAUSTED QUOTA rather than asking the next member.
+            # A daily quota is per MODEL and per PROJECT, so it is not specific
+            # to this member - the rest will fail identically, each walking the
+            # whole model list with a 20-second-plus backoff at every step. On
+            # 11/09/2026 that took a three-member panel past ten minutes before
+            # it was killed, and the daily job has no timeout, so the stall sits
+            # on the publish path. One member's quota refusal is the whole
+            # panel's answer.
+            if _is_exhausted(exc):
+                print("    panel: the day's quota is gone; abandoning the panel",
+                      file=sys.stderr)
+                break
     if not rankings:
         print("    panel: nobody voted; leaving the choice as it was",
               file=sys.stderr)
