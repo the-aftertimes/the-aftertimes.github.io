@@ -1,0 +1,175 @@
+{
+  "run_date": "2026-09-12",
+  "run_time": "2026-09-11T18:32:14.220374+00:00",
+  "dispatch": {
+    "headline": "Neptune Closes Its Diamond Crawlspace",
+    "body": "The municipal zoning policy that classified Neptune's crushing diamond-rain layer as a utility basement has been retired after eighty years.\n\nDrafted in 2168, the rule allowed builders on Silt-Reach to bypass steep altitude fees by designating Stratum-9 as an unheated storage closet. Under local rules, any space could be classed as a basement if it was regularly swept.\n\nThe duty fell to a single worker, Hiroto Tanaka, who descended eighty thousand kilometres in a titanium bathysphere to clear diamond gravel from the lower atmosphere. He moved three tonnes of gems per shift, which was, under his union agreement, classified as light dusting. He did this every Thursday.\n\n\"It is mostly just grit,\" Tanaka wrote in his final logbook entry, which was recovered from the ship's recorder. \"If you don't keep on top of the drifts, they get behind the water heater and make a terrible racket.\"\n\nThe department defended the classification for decades against regional altitude assessors. They argued that the layer, though hot enough to melt lead and dense enough to crush steel, was functionally identical to a crawlspace.\n\nThe arrangement ended when Tanaka retired. His successor refused to enter the bathysphere, citing safety rules, leaving a lost mop at the bottom of the gas giant.\n\nWithout Tanaka's weekly sweep, the diamond drifts have already backed up into the lower ventilation ducts, and Silt-Reach is currently being sanded away from the bottom up.",
+    "scene": "An elderly clerk in a canvas jumpsuit sits inside a small metal sphere, holding a push-broom and looking out of a thick window at a heap of glittering grey gravel.",
+    "dateline": {
+      "place": "Silt-Reach",
+      "year": 2248,
+      "month": 5,
+      "day": 13,
+      "years_from_now": 222
+    },
+    "domain": "Local Government",
+    "glossary": [
+      {
+        "term": "Silt-Reach",
+        "gloss": "A residential platform suspended high in the atmosphere of Neptune."
+      },
+      {
+        "term": "Stratum-9",
+        "gloss": "The atmospheric layer of Neptune where intense pressure turns carbon rain into solid diamond gravel."
+      }
+    ],
+    "premise": "Obituary of the 'Ground Floor' zoning policy of Neptune's Stratum-9, which for eighty years legally designated the crushing, high-pressure liquid-diamond rain layer as 'basement storage utility' and sent a single elderly clerk in a titanium bathysphere to sweep it once a week.",
+    "brief": {
+      "focus": "a thick, circular multi-layered viewport window, its outer pane frosted with fine scratches and holding back a dense, shifting heap of sharp-edged, glittering dark grey mineral grit",
+      "subject": "an elderly, clean-shaven male clerk with deep wrinkles and short grey hair, wearing a one-piece, high-collared utility jumpsuit made of coarse, dull-grey basalt-fiber weave, with his bare face fully visible, his legs bent, and his feet in heavy, scuffed magnetic-soled composite boots",
+      "action": "sitting upright on a low metal bracket seat, holding a long carbon-composite static-broom by its shaft with both hands, looking steadily out of the viewport window",
+      "setting": "the cramped, curved interior of a small titanium bathysphere, with exposed structural ribs, bundles of thick braided conduit cabling running along the ceiling, and a simple control dash with toggle switches",
+      "light": "stark, cool white light from a single recessed overhead luminaire panel, casting sharp, short shadows downward",
+      "materials": "brushed titanium alloy, braided basalt-fiber sleeving, thick fused-silica glass, carbon-composite laminate",
+      "anomaly": "a strip of dull grey thermal adhesive tape patching a minor seam on a wall conduit"
+    },
+    "image": "assets/img/2026-09-12.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-11T18:32:14.220374+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 51,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.75,
+      0.75,
+      0.84,
+      0.75
+    ],
+    "violations": [
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tax",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: injunction, magistrate",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'cursive flourish on her signature, lost her footing, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Neptune Closes Its Deepest Basement",
+        "body": "The municipal zoning code that classified Neptune’s crushing diamond-rain layer as a utility basement has been retired after eighty years.\n\nDrafted in 2168, the policy allowed developers on Silt-Reach to bypass high-altitude tax rates by designating Stratum-9 as an unheated storage closet. Under local law, any space could be zoned as a basement if it was regularly swept.\n\nThe duty fell to a single clerk, Hiroto Tanaka, who descended eighty thousand kilometres in a titanium bathysphere to clear diamond gravel from the lower atmosphere. He moved three tonnes of gems per shift, which is light work by the standards of planetary crusts and was, under his union agreement, classified as light dusting. He did this every Thursday.\n\nThe department defended the zoning for decades against regional tax inspectors. Legal briefs argued that the layer, though hot enough to melt lead and dense enough to crush steel, was functionally identical to a crawlspace.\n\nThe policy ended when Tanaka retired. His successor, hired under new municipal safety codes, refused to enter the bathysphere to search for a lost mop.\n\nThe sphere will now be sold. It remains parked in the lower docks, still smelling faintly of floor polish and extreme pressure.",
+        "premise": "Obituary of the 'Ground Floor' zoning policy of Neptune's Stratum-9, which for eighty years legally designated the crushing, high-pressure liquid-diamond rain layer as 'basement storage utility' and sent a single elderly clerk in a titanium bathysphere to sweep it once a week.",
+        "score": 0.75,
+        "rejected": true
+      },
+      {
+        "headline": "Magistrate Who Silenced Storm Dies",
+        "body": "Magistrate Elspeth Grey, who famously served a noise-abatement order to a planetary hurricane, has died at her home on High Terrace. Born on a nitrogen tanker, she studied atmospheric trespass at the Callisto Bar. She spent forty years resolving simple boundary disputes between gas-miners and cloud-farms. She hated noise.\n\nIn 2214, a two-thousand-mile-wide ammonia hurricane crossed into her jurisdiction, threatening the platform's evening quiet hours. While neighbours evacuated, Grey stood on her balcony and read the storm the full text of the local council noise bylaws. The storm was delayed by twelve hours, which is not long by the standards of weather and was, at the time, considered a clerical error.\n\nIt later emerged that the storm only resumed because the municipal sanitation department filed a counter-injunction, noting that the wind was necessary to clear the lower copper-vents. Grey was furious. She spent her remaining years trying to fine the planetary core for failing to provide a physical address for summons. 'If the red spot wants to make that much noise,' she wrote in her final judgment, 'it can register as a nightclub.'\n\nShe is survived by her clerk and three kilometres of pending paperwork.",
+        "premise": "Obituary of Magistrate Elspeth Gray, who famously halted a two-thousand-mile-wide ammonia hurricane on Jupiter's outer rim for twelve hours by standing on her balcony and reading it a noise-abatement injunction.",
+        "score": 0.75,
+        "rejected": true
+      },
+      {
+        "headline": "Heavy Pen Retired Above Uranus",
+        "body": "The Sovereign Plume, a gold-plated fountain pen that required its own four-tonne gravity engine to allow diplomatic flourishes, was decommissioned on Monday. Built for the Uranus Upper Sky Assembly, the device anchored signers firmly to the deck during international treaties. Without it, ink droplets drifted upwards into the ammonia clouds, creating unreadable legal documents and floating diplomats.\n\nThe pen was ordered after the Boundary Accord was ruined by micro-gravity. Ambassador Priya Nair attempted a cursive flourish on her signature, lost her footing, and dragged an ink line three kilometres into the upper wind stream. Legal scholars later ruled that the streak constituted a binding territorial border, which is why the inner moon cartel still owns six cubic miles of empty sky.\n\nAssembly engineers spent three years mounting a heavy stabilisation engine to the nib. The resulting rig weighed four tonnes, consumed eighty litres of reactor coolant per signature, and required two technicians to lower into position.\n\n\"It was heavy,\" said clerk Tomas Lind. \"You had to bend your knees.\"\n\nOver thirty years, the pen signed eleven treaties, three trade pacts, and one apology for noise pollution. Planetary envoys will now sign documents using electronic thumbprints. Its engine will be converted into a small tugboat.",
+        "premise": "Obituary for the Sovereign Plume, a gold-plated fountain pen that required its own four-tonne gravity-stabilization engine to allow diplomats on the Uranus cloud platform to sign treaties with traditional, non-floating flourishes.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Keeper of the Horizon Dies",
+        "body": "Dame Clara Finch, who spent forty-six years maintaining the official municipal horizon of Jupiter, has died on the Horizon-7 platform. She was eighty-one. Under Jovian zoning law, all floating residences must possess a flat sightline. Since the planet has no solid ground, the council installed a seventy-mile neon pipe to act as the legal skyline. Finch adjusted the line by four millimetres every morning. This is a tiny distance on a gas giant. At the time, it was considered an act of great administrative courage. Her daily adjustments kept ninety thousand floating homes from falling into legal limbo. Without a visible horizon, local property deeds became instantly void. Finch lived alone in a gantry beneath the neon tube, surviving on tinned broth and the respect of the local planning board. In 2235, a storm bent the western half of the horizon into a sharp curve. Finch did not straighten it. Instead, she spent three years convincing the court that the curve was a local hill. 'A hill is simply a flat line that has given up,' she wrote in her log. She is survived by her successor. He has already requested a spirit level.",
+        "premise": "Obituary of Dame Clara Finch, who spent her life as the official Keeper of the Horizon on Jupiter's Horizon-7 platform, daily adjusting a seventy-mile neon line across the cloud-deck to satisfy municipal zoning laws requiring all residents to have a flat sightline.",
+        "score": 0.75,
+        "rejected": true
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Perfectly lampoons municipal tax loopholes and union-defined job roles with an exceptional final image.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        8.0,
+        1.0,
+        6.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.75,
+    "score_after": 1.0,
+    "critique": "The original draft relied on banned tax-related words to create stakes and lacked a punchy, logical conclusion. I replaced the financial terms with altitude fees, added a character quote from a ship recorder, and ended with a physical consequence of the stopped sweeping.",
+    "prose": {
+      "words": 234,
+      "sentences": 13,
+      "mean_sentence": 18.0,
+      "longest": 27,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 10,
+      "rare_rate": 4.3
+    }
+  }
+}
