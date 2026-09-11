@@ -94,3 +94,23 @@ def test_settings_and_config_agree_on_the_members():
         assert len({m["name"] for m in members}) == len(members)
         for m in members:
             assert m["persona"].strip() and m["looks_for"].strip()
+
+
+def test_a_named_member_still_carries_its_own_mechanism():
+    """The name supplies texture; `looks_for` supplies the disagreement. A panel
+    of three names all told to pick "the funniest" is a committee that cannot
+    disagree, which is the failure abstract personas had."""
+    from common import load_yaml
+    cfg = load_yaml("config/comedians.yaml")
+    for key in ("premise_panel", "draft_panel"):
+        for m in cfg[key]:
+            assert len(m["looks_for"].split()) >= 15, (
+                f"{key}/{m['name']} has no mechanism of its own")
+            # A member has to say what it DOWNRANKS, not only what it likes -
+            # otherwise three names all reach for "the funniest one" and the
+            # panel cannot disagree. Keyword list is a proxy for that property;
+            # widen it rather than rewording a member to satisfy it.
+            downranks = ("reject", "is last", "judge the", "worth less", "beats")
+            lf = m["looks_for"].lower()
+            assert any(w in lf for w in downranks), (
+                f"{key}/{m['name']} says what it likes but not what it rejects")
