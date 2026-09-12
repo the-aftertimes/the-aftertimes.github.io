@@ -504,5 +504,16 @@
     "place_kind": "gasgiant",
     "engine": "scale",
     "technique": "confident_aside"
+  },
+  {
+    "run_date": "2026-09-13",
+    "year": 2192,
+    "era_bucket": 3,
+    "domain": "governance and elections",
+    "headline": "Oiled Levers Wrote Laws",
+    "style": "discovery",
+    "place_kind": "orbital",
+    "engine": "obsolescence",
+    "technique": "stated_rule_reductio"
   }
 ]
