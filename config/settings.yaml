@@ -133,6 +133,13 @@ panel:
   premises: true      # rank the ideate ideas BEFORE any drafting
   drafts: true        # reorder the pool the single judge then chooses from
   max_members: 3
+  # How many of the committee's top-ranked drafts the judge may choose between.
+  # 12/09/2026, the committee's first live edition: two of three members ranked
+  # one draft first, none ranked the published draft first, and the judge -
+  # handed the reordered pool with no idea what the order meant - published it
+  # anyway. Reordering alone was decorative. 2 keeps the judge's score and
+  # written reason while removing the one freedom that was misused.
+  shortlist: 2
 
 quality:
   # 4, not 3, from 31/08/2026. Text is not the scarce tier (Flash is free-tier and
@@ -166,11 +173,17 @@ quality:
   # well and penalises the top of the range rather than banning it. The old
   # window put its MIDPOINT at 240, which quietly asked for the wordy end every
   # night. Hard bounds pulled in to match.
+  # Tightened AGAIN 12/09/2026, from 180-240 to 170-215. Charlie on a 234-word
+  # piece: "it's just way too wordy". The four editions before it ran 182-190
+  # and drew no complaint, so the ceiling sits just above what the paper does
+  # when it is going well and just below the day it did not. Archive median is
+  # 213, so about half the back catalogue would score a minor - which is the
+  # point: the minor feeds revise.py a trim, it never bins a draft.
   length:
-    min: 180
-    max: 240
-    hard_min: 150
-    hard_max: 300
+    min: 170
+    max: 215
+    hard_min: 140
+    hard_max: 280
   # Percentage of body words that are NOT in config/common_words.txt - the words
   # a reader has to stop and decode. Derived from the archive on 17/08/2026, not
   # from taste: the nineteen dispatches to that date ran a median 4.2% and a

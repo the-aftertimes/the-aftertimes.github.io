@@ -157,6 +157,26 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
                              "rankings": out["rankings"]}
             print(f"    committee of {len(out['voted'])} ranked the drafts: "
                   f"{[round(p, 1) for p in out['points']]}")
+            # THE COMMITTEE'S VOTE IS BINDING ON THE SHORTLIST, from 12/09/2026.
+            # Its first live edition proved that reordering alone is decorative:
+            # two of three comedians put "Magistrate Who Silenced Storm Dies"
+            # first, NOBODY put "Neptune Closes Its Diamond Crawlspace" first,
+            # and the single judge - handed the reordered pool with no idea what
+            # the order meant - picked Neptune anyway and gave it a 7. Charlie:
+            # "the premise today is not that funny". Three Gemini calls a day,
+            # out of a 20-a-day allowance, spent on advice the next stage could
+            # not see and did not take.
+            #
+            # So the judge now chooses between the committee's TOP TWO only. The
+            # freedom removed is exactly the one that was misused - overruling a
+            # majority of three - and the judge keeps what it is actually for:
+            # the score against a real satirical paper, and a written reason.
+            # Two rather than one so a bad Borda tie-break cannot decide the
+            # day alone, and because the score still has to come from somewhere.
+            shortlist = int(pcfg.get("shortlist", 2))
+            if len(pool) > shortlist:
+                print(f"    judge chooses from the committee's top {shortlist}")
+                pool = pool[:shortlist]
 
     if qcfg.get("judge") and not all_rejected and len(pool) > 1:
         try:

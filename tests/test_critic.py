@@ -138,13 +138,18 @@ def test_residue_clean_text_passes():
 
 def _clean_dispatch():
     """A dispatch that breaks no rule: mean sentence 15 words, longest 18, three
-    short sentences, 225 words. Padded with whole SENTENCES on purpose - padding
+    short sentences, 189 words. Padded with whole SENTENCES on purpose - padding
     with a bare word list produced one 180-word sentence, which tripped
-    rhythm_mean and rhythm_longest and made this fixture unpassable."""
+    rhythm_mean and rhythm_longest and made this fixture unpassable.
+
+    189, not 225, from 12/09/2026: the length band tightened to 170-215 and this
+    fixture sat above it. It is FIXTURE DATA that encoded the old band, not a
+    behaviour - the same trap as the test that asserted today's data on 26/08.
+    The same fixture in tests/test_pipeline.py (GOOD_BODY) has the same fix."""
     long_s = ("The council sealed the shaft on Tuesday and nobody filed a query "
               "about the missing crew that week. ")
     short_s = "She walked out. "
-    body = (long_s * 12 + short_s * 3).strip()
+    body = (long_s * 10 + short_s * 3).strip()
     return {"headline": "Shaft Sealed Quietly", "body": body,
             "dateline": {"place": "Oronko"}}
 
@@ -521,3 +526,32 @@ def test_flat_rule_is_a_minor_and_never_a_hard_reject():
     v = critic.check_flat_rule("Removal is forbidden under environmental law.")
     assert v[0]["severity"] == "minor"
     assert "flat_rule" not in set(load_settings()["quality"]["hard_reject"])
+
+
+def test_a_lede_opening_on_an_abstraction_is_a_minor():
+    """12/09/2026, Charlie on a 234-word piece whose lede was UNDER the archive
+    median: "it's just way too wordy". The count was not the fault - the lede
+    held a fourteen-word noun phrase before any verb. Matches 7 of 45 archived
+    dispatches including the 31/08 one he called unfunny that day."""
+    import critic
+    hit = critic.check_lede("The municipal zoning policy that classified Neptune's "
+                            "diamond-rain layer as a basement has been retired.")
+    assert hit and hit[0]["rule"] == "lede_subject" and hit[0]["severity"] == "minor"
+    assert critic.check_lede("A three-year study at Kalyani Sky-Pier has confirmed "
+                             "that sails are faster.")
+    # A dateline prefix does not hide it.
+    assert critic.check_lede("AURELIA DOME: An investigation into the dome found mops.")
+
+
+def test_a_lede_opening_on_a_person_or_thing_is_left_alone():
+    import critic
+    for lede in ("Brother Julian, who spent sixty years upside-down, has died aged ninety-one.",
+                 "Soraya Blythe and her husband abandoned their separation on Friday.",
+                 "A ten-metre carbonaceous asteroid won the final round on Thursday.",
+                 "Ostra-Nickel security arrested four drillers Friday."):
+        assert critic.check_lede(lede) == [], lede
+
+
+def test_lede_subject_is_never_a_hard_reject():
+    from common import load_settings
+    assert "lede_subject" not in set(load_settings()["quality"]["hard_reject"])

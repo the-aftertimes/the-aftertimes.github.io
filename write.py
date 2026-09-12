@@ -431,7 +431,15 @@ Rules:
 - Follow the SHAPE of today's dispatch format above. Unless that format is a court
   ruling or an official notice, do NOT frame the story as an authority handing down
   a ruling with a spokesperson quote - use the format's own structure and voice.
-- 180 to 240 words. Straight-faced, as a real wire story. Dry wit, never winking.
+- 170 to 215 words. Straight-faced, as a real wire story. Dry wit, never winking.
+- THE FIRST SENTENCE OPENS ON A PERSON OR A THING YOU CAN SEE, and reaches
+  its verb inside six words. Never on a study, an investigation, a policy, a
+  rule, a report or a decision - those arrive in the second sentence, after
+  the reader already knows who this happened to. "Brother Julian, who spent
+  sixty years strapped to a coolant pipe, has died" reads; "The municipal
+  zoning policy that classified Neptune's diamond-rain layer as a utility
+  basement has been retired" makes the reader hold fourteen words before a
+  verb, and that is what "too wordy" means here - not the count, the wait.
   This band must match quality.length.min/max in config/settings.yaml - the
   prompt asks for it and the critic scores it, and if they disagree the writer
   is being marked against a target it was never given. Pinned by

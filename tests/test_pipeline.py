@@ -19,17 +19,17 @@ CFG = {
     "weights": {"major": 0.25, "minor": 0.08},
     "rhythm": {"mean_min": 14, "mean_max": 20, "mean_hard_min": 12,
                "mean_hard_max": 24, "longest_max": 35, "min_short": 2},
-    "length": {"min": 200, "max": 280, "hard_min": 160, "hard_max": 340},
+    "length": {"min": 170, "max": 215, "hard_min": 140, "hard_max": 280},
 }
 CTX = {"years_from_now": 574, "engine": "logistics"}
 
 # A body that scores well: mean sentence 15 words, longest 18, three short
-# sentences, 225 words. Padded with whole SENTENCES on purpose - padding with a
+# sentences, 189 words. Padded with whole SENTENCES on purpose - padding with a
 # bare word list yields one enormous sentence and fails the rhythm rules.
 _LONG_S = ("The council sealed the shaft on Tuesday and nobody filed a query "
            "about the missing crew that week. ")
 _SHORT_S = "She walked out. "
-GOOD_BODY = (_LONG_S * 12 + _SHORT_S * 3).strip()
+GOOD_BODY = (_LONG_S * 10 + _SHORT_S * 3).strip()   # 189w, inside 170-215
 BAD_BODY = "The proceedings took an unexpected turn today."
 
 
@@ -125,7 +125,7 @@ def test_maybe_revise_is_skipped_when_disabled(monkeypatch):
 
 # A body that scores below GOOD_BODY but is NOT rejected: 171 words trips the
 # minor length rule only. Needed so sorting actually reorders the pool.
-MEDIOCRE_BODY = (_LONG_S * 9 + _SHORT_S * 3).strip()
+MEDIOCRE_BODY = (_LONG_S * 8 + _SHORT_S * 3).strip()   # 153w: under the 170 floor, a minor
 
 
 def test_judge_index_resolves_against_the_SORTED_pool(monkeypatch):
@@ -207,3 +207,51 @@ def test_a_discarded_revision_says_which_hard_rule_it_broke(monkeypatch, capsys)
     assert out["headline"] == "Good"
     printed = capsys.readouterr().out + capsys.readouterr().err
     assert "machine_phrases" in printed, printed
+
+
+def test_the_judge_cannot_overrule_the_committee_beyond_its_shortlist(monkeypatch):
+    """12/09/2026, the committee's first live edition. Two of three comedians put
+    draft B first and nobody put draft A first; the single judge was handed the
+    reordered pool with no idea what the order meant, picked A, and Charlie said
+    the premise was not funny. Reordering the pool is decorative if the next
+    stage can pick anything from it - so the judge now chooses among the
+    committee's top two only."""
+    import panel as panel_mod
+    drafts = [_dispatch(h, GOOD_BODY) for h in ("A", "B", "C", "D")]
+    # Borda: B first, D second, A third, C last - today's shape.
+    fake_panel = {"winner": 1, "points": [3.0, 8.0, 1.0, 6.0],
+                  "rankings": [[1, 0, 3, 2], [1, 3, 2, 0], [3, 1, 0, 2]],
+                  "voted": ["m0", "m1", "m2"]}
+    monkeypatch.setattr(panel_mod, "convene", lambda *a, **k: fake_panel)
+    monkeypatch.setattr(run_mod, "load_yaml",
+                        lambda p: {"draft_panel": [{"name": "m", "persona": "p",
+                                                   "looks_for": "l"}] * 3})
+    handed = {}
+
+    def fake_judge(pool, settings):
+        handed["headlines"] = [d["headline"] for d in pool]
+        return {"pick": len(pool) - 1, "score": 7, "reason": "last one"}
+
+    monkeypatch.setattr(judge_mod, "judge", fake_judge)
+    settings = {"panel": {"drafts": True, "max_members": 3}}
+    chosen, info = run_mod.choose_draft(drafts, CTX, CFG, settings)
+    assert handed["headlines"] == ["B", "D"], \
+        f"the judge must see only the committee's top two, saw {handed['headlines']}"
+    assert chosen["headline"] in ("B", "D")
+    assert chosen["headline"] != "A", "the draft nobody ranked first cannot win"
+    assert info["panel"]["points"] == [3.0, 8.0, 1.0, 6.0]
+
+
+def test_without_a_committee_the_judge_sees_the_whole_pool(monkeypatch):
+    """The shortlist is a consequence of the committee having voted. With the
+    panel off, nothing changes from before 11/09."""
+    drafts = [_dispatch(h, GOOD_BODY) for h in ("A", "B", "C")]
+    handed = {}
+
+    def fake_judge(pool, settings):
+        handed["n"] = len(pool)
+        return {"pick": 0, "score": 6, "reason": "first"}
+
+    monkeypatch.setattr(judge_mod, "judge", fake_judge)
+    run_mod.choose_draft(drafts, CTX, CFG, {"panel": {"drafts": False}})
+    assert handed["n"] == 3
