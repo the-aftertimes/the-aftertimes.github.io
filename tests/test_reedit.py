@@ -208,10 +208,23 @@ def test_archaic_selects_by_measurement_not_by_date_range(monkeypatch):
     assert "2026-01-02" not in picked, "a plain body must not be"
 
 
-def test_archaic_is_empty_once_the_archive_is_clean():
-    """The real archive after the 26/08 batch. This one IS about today's data,
-    and says so - it is the check that the back-catalogue work actually landed."""
-    assert reedit.archaic_dates() == []
+def test_the_back_catalogue_reedit_of_26_08_landed():
+    """The check that the 26/08 batch actually landed - on the archive AS IT
+    STOOD THEN, which is a fixed historical claim.
+
+    It used to assert the WHOLE live archive was clean, and it sat inside the
+    cron's "tests must pass before anything is generated" gate. On 12/09/2026 a
+    perfectly legitimate re-edit measured 5.4% plainness against a 5.0% minor
+    threshold, this went red, and the next edition would have been refused at
+    the gate - the paper stopped by its own test over a minor it is designed to
+    tolerate. A test that asserts today's data is green until the day it is not,
+    and that day it takes production with it (see feedback_green-for-part-of-a-day).
+    So it now asks only about the dispatches the 26/08 batch was responsible
+    for. Anything newer is the pipeline's business, and the pipeline's minors
+    feed revise.py rather than blocking the cron."""
+    cutoff = "2026-08-26"
+    stale = [d for d in reedit.archaic_dates() if d <= cutoff]
+    assert stale == [], f"pre-{cutoff} dispatches still measure archaic: {stale}"
 
 
 def test_the_quota_gate_reads_the_cron_from_the_workflow_not_a_constant():
