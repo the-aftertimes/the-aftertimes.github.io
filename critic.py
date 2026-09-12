@@ -332,6 +332,48 @@ _PERSON = re.compile(r"\b(he|she|they|him|her|them|his|their|hers|theirs|"
 _MID_CAP = re.compile(r"(?<=[a-z,] )[A-Z][a-z]")
 
 
+#: THE LEDE OPENS ON A PERSON OR A THING, NEVER ON AN ABSTRACTION. Charlie,
+#: 12/09/2026, quoting the first two paragraphs: "it's just way too wordy". The
+#: piece was 234 words, inside the band, and its lede was 20 words - UNDER the
+#: archive median of 23. The count was not the fault. The shape was: "The
+#: municipal zoning policy that classified Neptune's crushing diamond-rain layer
+#: as a utility basement has been retired" holds a fourteen-word noun phrase
+#: before the reader reaches a verb. Compare the ledes that read fine - "Brother
+#: Julian, who...", "Soraya Blythe and her husband...", "A ten-metre asteroid
+#: won..." - all longer or as long, all opening on something you can see.
+#:
+#: Same family as `flat_rule` (06/09: "Removal is forbidden under environmental
+#: law"): a sentence whose subject is an institution or a document rather than
+#: anyone, and it reads as paperwork because it is.
+#:
+#: MEASURED FIRST. Matches 7 of the 45 archived prose dispatches, 3 of the last
+#: 6 days, and among them the 31/08 piece Charlie called unfunny on the day. Not
+#: fitted to one example; rare enough to be signal. MINOR, so it feeds revise.py
+#: with a concrete instruction and can never bin a draft.
+_ABSTRACT_LEDE = re.compile(
+    r"^(?:[A-Z][A-Z\s-]+:\s*)?(?:an?|the)\s+(?:[\w-]+\s+){0,3}?"
+    r"(study|investigation|inquiry|review|report|survey|audit|analysis|"
+    r"policy|rule|ruling|regulation|law|statute|ordinance|decision|"
+    r"announcement|scheme|programme|program|proposal|plan|initiative|"
+    r"agreement|arrangement|measure|motion|bill|amendment|reform|"
+    r"classification|designation|ban|moratorium|dispute|debate|controversy)\b",
+    re.I)
+
+
+def check_lede(body: str) -> list[dict]:
+    """The first sentence's subject is somebody, or something you can see."""
+    flat = re.sub(r"\s+", " ", body or "").strip()
+    first = (_split(flat) or [""])[0].strip()
+    m = _ABSTRACT_LEDE.match(first)
+    if not m:
+        return []
+    return [_v("lede_subject",
+               f"the lede opens on an abstraction ({m.group(1)!r}) - the reader "
+               f"holds a noun phrase before any verb. Open on the person or the "
+               f"thing instead, and let the {m.group(1)} arrive later: "
+               f"{first[:80]!r}", "minor")]
+
+
 def check_flat_rule(body: str) -> list[dict]:
     """A regulation stated at nobody, standing in for a joke."""
     flat = re.sub(r"\s+", " ", body or "").strip()
@@ -454,6 +496,7 @@ def score(dispatch: dict, context: dict, cfg: dict) -> dict:
     if not haiku:
         violations += check_tricolon(body)
         violations += check_flat_rule(body)
+        violations += check_lede(body)
     violations += check_plainness(body, context.get("common_words"), cfg)
     violations += check_residue(text)
     weights = cfg["weights"]
