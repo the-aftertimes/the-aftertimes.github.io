@@ -515,5 +515,16 @@
     "place_kind": "orbital",
     "engine": "obsolescence",
     "technique": "stated_rule_reductio"
+  },
+  {
+    "run_date": "2026-09-14",
+    "year": 2415,
+    "era_bucket": 7,
+    "domain": "entertainment",
+    "headline": "Rabbit Vanishes Into Quarantine",
+    "style": "feature",
+    "place_kind": "marsform",
+    "engine": "bureaucratic",
+    "technique": "headline_carries_it"
   }
 ]
