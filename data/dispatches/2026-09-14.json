@@ -1,0 +1,164 @@
+{
+  "run_date": "2026-09-14",
+  "run_time": "2026-09-13T18:00:48.885470+00:00",
+  "dispatch": {
+    "headline": "Rabbit Vanishes Into Quarantine",
+    "body": "Kassim Mir sits outside the Lock Seven quarantine bay every afternoon while his rabbit completes forty days of biosecurity isolation.\n\nAgricultural officers classified his signature vanishing trick as unlicensed live-animal transit between dome sectors. Under colony health rules, any livestock moving through unpressurised space must undergo standard scrubbing before returning to the stage.\n\nMir explained that the animal simply drops into a felt pocket beneath the wooden table. Inspector Naila Ortiz rejected the explanation in her official incident report.\n\n\"The animal enters the hat and vanishes,\" Ortiz wrote. \"Until Mr Mir provides an air-pressure log proving it stayed inside the hall, we must treat the trick as open-air transit.\"\n\nMir now performs only six times a year, his schedule dictated entirely by the rabbit's isolation schedule. Other local acts have adapted to the strict atmosphere rules. A juggler swapped wooden pins for sealed water pouches after inspectors marked high throws as unmetered cargo movement across sector lines.\n\nMir remains patient.\n\n\"I am training him to hold a tiny barometer in his teeth,\" Mir said. \"If he can log the pressure inside the pocket, we can skip the quarantine next time. But he keeps eating the strap.\"",
+    "scene": "Kassim Mir sits on a metal bench outside a sealed airlock glass panel, shuffling a deck of cards while a white rabbit sits inside a glowing chamber.",
+    "dateline": {
+      "place": "GALE GATE",
+      "year": 2415,
+      "month": 10,
+      "day": 5,
+      "years_from_now": 389
+    },
+    "domain": "Colony biosecurity and entertainment",
+    "glossary": [
+      {
+        "term": "Lock Seven",
+        "gloss": "A heavily guarded atmospheric seal and quarantine station between the residential dome and the outer cargo docks."
+      },
+      {
+        "term": "scrubbing",
+        "gloss": "The standard chemical and radiological washdown required for any organic matter entering a clean zone."
+      }
+    ],
+    "premise": "A magician in a half-domed Martian colony was ordered to place his prop rabbit in a forty-day biosecurity quarantine between every stage show after agricultural officers classified the vanishing trick as unlicensed live-animal transit.",
+    "brief": {
+      "focus": "a cylindrical containment enclosure of thick fused silica glowing with internal amber decontamination light, inside which a small white rabbit sits upright on a perforated floor grid",
+      "subject": "Kassim Mir, with a bare, unmasked face and short dark hair, wearing a high-collared tunic of dark blue spun-graphene fiber, straight-cut grey composite trousers, and seamless bonded alloy-soled slip-on shoes",
+      "action": "sitting on a bolted bench outside the airlock partition and mechanically shuffling a deck of thin flexible polymer cards between his hands while watching the enclosure",
+      "setting": "a biosecurity corridor lined with matte grey basalt-panel walls, exposed overhead pressure conduit runs, and a heavy reinforced seal framing the viewport into the isolation bay",
+      "light": "flat, cool white strip lighting from the corridor ceiling meeting the warm amber glow spilling through the thick viewing pane from inside the chamber",
+      "materials": "brushed titanium alloy, fused silica glass, cast basalt composite, flexible polymer film",
+      "anomaly": "a strip of grey thermal-tape patched over a worn maintenance seam beside the airlock latch"
+    },
+    "image": "assets/img/2026-09-14.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-13T18:00:48.885470+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 53,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      0.92,
+      0.92,
+      0.92
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.8 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: \"Vane's street permit was cancelled for staging an illegal demonstration.\"",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Stage Rabbit Isolated After Vanishing Act",
+        "body": "Kassim Mir sits outside Lock Seven every afternoon while his rabbit completes forty days of biosecurity isolation.\n\nAgricultural officers in Gale Gate classified his signature vanishing trick as unlicensed live-animal transit between dome sectors. Under colony health codes, any livestock moving through unpressurised space must undergo standard decontamination before returning to public venues.\n\nMir explained that the animal drops into a felt pocket beneath the wooden table. Inspector Naila Ortiz rejected the explanation.\n\n\"The animal enters the hat and vanishes,\" Ortiz said. \"Until Mr Mir provides an air-pressure log proving it stayed inside the hall, we must treat the trick as open-air transit.\"\n\nMir now performs six times a year. The show room sells out months in advance. He spends his afternoons in the facility waiting room while the rabbit rests under clean air lamps.\n\nOther local performers have adapted to the regulations. A juggler swapped wooden pins for sealed water pouches after inspectors marked high throws as unmetered cargo motion across sector lines.\n\nMir remains patient.\n\n\"The rabbit has gained two kilograms,\" Mir said. \"The isolation food is excellent.\"",
+        "premise": "A magician in a half-domed Martian colony was ordered to place his prop rabbit in a forty-day biosecurity quarantine between every stage show after agricultural officers classified the vanishing trick as unlicensed live-animal transit.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Soprano Banned For Illegal Mining",
+        "body": "Soprano Hiriwa Te Kuru lowered her microphone on Thursday when civil safety officers shut down her high F for unlicensed quarrying.\n\nThe singer was eight bars into the final act of The Salt Glass on the open-air cliff shelf at Noctis Rim when ground sensors registered forty hertz of wall movement. Inspectors from the Municipal Bore Authority climbed the iron scaffolding with red tape during the chorus.\n\n\"I was holding the high note,\" Te Kuru said, smoothing her woollen coat inside the cold staging shed. \"The duty officer told me anything above four kilohertz requires a heavy mining permit.\"\n\nNoctis Rim sits in a half-pressurised gorge where sound travels quickly through the dense carbon mist. Under local safety rules, sustained vocal vibration against bare basalt falls under rock-crushing laws.\n\nTe Kuru spent four months rehearsing inside a steel cargo tank to reach the required volume. Her company must now secure an industrial licence before completing the second act.\n\nThe show is paused.\n\n\"The acoustics are marvellous,\" Te Kuru said. \"Chalk dust falls right into your tea.\"",
+        "premise": "A high-altitude Martian opera performance in Noctis Labyrinthus was halted mid-aria when city safety inspectors ruled the soprano's peak register breached canyon wall stability standards without an active mining permit.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Front Row Logged As Refinery Waste",
+        "body": "Tariq Brand received a toxic-cargo manifest at the Crater Park gates on Friday. The slip listed his coat, hair and skin as eighty litres of unrefined cloud-scum.\n\nHe had bought front-row tickets for the noon jump. The stunt rider cleared three fuel tanks behind a cloud of purple vapour. Because the theatrical fog shared an atmospheric code with local smelter exhaust, automated dome scrubbers sealed the grandstand exits. Port freight handlers arrived with transit stickers before the applause ended.\n\n\"The orange sticker goes on my collar,\" Brand said. \"The grey one fits my bag.\"\n\nUnder heavy-gas freight rules, Brand could not board the evening tram. He walked six miles home along the service trench in his souvenir helmet. His two children carried matching manifests on their sleeves.\n\nThe park refunded half their tickets in washhouse credit.\n\nBrand spent the night sitting on a gravel heap outside his unit block, waiting for a rinse crew. His neighbour brought him tea in a pail.\n\n\"The jump was good,\" Brand said. \"The landing looked safe.\"",
+        "premise": "A pyrotechnic stunt show at a Venusian amusement park was forced to issue personal hazardous-waste manifests to every front-row spectator because its theatrical fog shared a chemical code with industrial refinery exhaust.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Mime Evicted After Audience Remained Silent",
+        "body": "Mime performer Haruto Vane received an eviction order on Thursday after his audience stood too still. He was halfway through an invisible wall routine in the unfinished atrium of Ishtar Ridge when safety drones cleared the plaza.\n\nThe city crowd monitor flagged forty onlookers who did not move or speak for eleven minutes. Under local safety codes, silent gatherings of thirty people or more are classed as unpermitted civil protests.\n\n\"I was doing my standard work,\" Vane said. He packs his glass-fibre props into a canvas crate each night. \"The crowd was good. Nobody coughed.\"\n\nSecurity algorithms sent dispersal notices to every personal slate in the plaza. When the onlookers stayed quiet to avoid interrupting the performance, automated sprinklers triggered. Dispersal teams arrived four minutes later to clear the area.\n\nVane's street permit was cancelled for staging an illegal demonstration. He appealed to the municipal arts desk, but staff told him the crowd's lack of movement matches the legal definition of a picket line.\n\n\"They want me to tell the audience to cheer,\" Vane said. He swept the wet floor. \"That defeats the point.\"\n\nHe now performs in a corridor near the garbage chutes.",
+        "premise": "A troupe of Venusian street mime actors was served an eviction notice from an unfinished plaza after urban planning algorithms categorized their silent audience as an unsanctioned civil protest.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The bureaucratic absurdity of demanding an air-pressure log to disprove stage teleportation makes for a delightfully deadpan satire of regulatory literalism.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        4.0,
+        3.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          2,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          3,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The original draft's headline was too descriptive and the final quote lacked comedic punch. I shortened the headline to a punchy four words and replaced the ending with a highly logical, absurdly funny resolution where the magician attempts to satisfy the bureaucratic pressure-log requirement.",
+    "prose": {
+      "words": 196,
+      "sentences": 14,
+      "mean_sentence": 14.0,
+      "longest": 21,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.6
+    }
+  }
+}
