@@ -10,9 +10,8 @@ change only when Charlie says so.
 
 - name: "Chen" in 4 dispatches
 - phrase: "in the mixed zone" in 3 dispatches
-- name: "Kaelen Voss" in 3 dispatches
-- name: "Osei" in 3 dispatches
 - name: "Thorne" in 3 dispatches
+- name: "Voss" in 3 dispatches
 
 ### Suggested next step
 
