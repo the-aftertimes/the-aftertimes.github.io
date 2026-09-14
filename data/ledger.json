@@ -526,5 +526,16 @@
     "place_kind": "marsform",
     "engine": "bureaucratic",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-09-15",
+    "year": 2136,
+    "era_bucket": 2,
+    "domain": "sport",
+    "headline": "Wimbledon Suspended As Lawn Digests Balls",
+    "style": "wire",
+    "place_kind": "drowned",
+    "engine": "nature",
+    "technique": "heard_the_words"
   }
 ]

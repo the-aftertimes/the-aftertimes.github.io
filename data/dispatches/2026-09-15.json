@@ -1,0 +1,94 @@
+{
+  "run_date": "2026-09-15",
+  "run_time": "2026-09-14T22:31:03.946623+00:00",
+  "dispatch": {
+    "headline": "Wimbledon Suspended As Lawn Digests Balls",
+    "body": "Tennis player Priya Nair stood frozen on Court One as the lawn digested her match-point serve.\n\nThe High-Wimbledon Championships were suspended on Thursday after the club's new drought-resistant hyper-turf began consuming the balls mid-rally. The engineered grass, designed to survive forty-degree summers without water, requires organic nitrogen to stay green. It has found this in the felt of the low-bounce championship balls.\n\nTournament officials told Nair to play the ball where it lies. She spent three hours staring at the soil.\n\nThe tournament committee is currently meeting to decide whether a vegetative swallow constitutes a fault or a let. Under current rules, a ball is in play until it stops bouncing. The turf prevents this.\n\n\"It is not a fault,\" said head referee Arthur Pendelton. \"The ball is still there.\"\n\nPlay has ceased. Groundskeepers have declined to rake the surface, citing fears of disturbing the grass during its digestive cycle.",
+    "scene": "A tennis player in white shorts stands on a green grass court, pointing her racket down at a small mound of sod that has a round yellow bulge beneath it.",
+    "dateline": {
+      "place": "Thames-Spire",
+      "year": 2136,
+      "month": 5,
+      "day": 23,
+      "years_from_now": 110
+    },
+    "domain": "sport",
+    "glossary": [
+      {
+        "term": "hyper-turf",
+        "gloss": "A genetically modified, drought-resistant grass hybrid engineered to extract nutrients from synthetic polymer coatings."
+      },
+      {
+        "term": "High-Wimbledon",
+        "gloss": "The modern iteration of the grass-court tennis championships, held on the elevated climate-controlled platforms of the Thames-Spire."
+      }
+    ],
+    "premise": "Play at the High-Wimbledon Championships has been suspended after the tournament's new drought-resistant 'hyper-turf' began aggressively digesting the tennis balls mid-rally, with referees currently debating whether the vegetative swallowing counts as a fault.",
+    "brief": null,
+    "image": "assets/img/2026-09-15.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-14T22:31:03.946623+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 54,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      0.59
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "150 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        },
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: 'Under current rules, a ball is in play until it stops bouncing.'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Wimbledon Suspended As Lawn Digests Balls",
+        "body": "Tennis player Priya Nair stood frozen on Court One as the lawn digested her match-point serve.\n\nThe High-Wimbledon Championships were suspended on Thursday after the club's new drought-resistant hyper-turf began consuming the balls mid-rally. The engineered grass, designed to survive forty-degree summers without water, requires organic nitrogen to stay green. It has found this in the felt of the low-bounce championship balls.\n\nTournament officials told Nair to play the ball where it lies. She spent three hours staring at the soil.\n\nThe tournament committee is currently meeting to decide whether a vegetative swallow constitutes a fault or a let. Under current rules, a ball is in play until it stops bouncing. The turf prevents this.\n\n\"It is not a fault,\" said head referee Arthur Pendelton. \"The ball is still there.\"\n\nPlay has ceased. Groundskeepers have declined to rake the surface, citing fears of disturbing the grass during its digestive cycle.",
+        "premise": "Play at the High-Wimbledon Championships has been suspended after the tournament's new drought-resistant 'hyper-turf' began aggressively digesting the tennis balls mid-rally, with referees currently debating whether the vegetative swallowing counts as a fault.",
+        "score": 0.59,
+        "rejected": true
+      }
+    ],
+    "all_rejected": true,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.59,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 150,
+      "sentences": 13,
+      "mean_sentence": 11.5,
+      "longest": 18,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.7
+    }
+  }
+}

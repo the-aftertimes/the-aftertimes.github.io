@@ -245,6 +245,18 @@
       "gloss": "The standard chemical and radiological washdown required for any organic matter entering a clean zone.",
       "kind": "term",
       "first_seen": "2026-09-14"
+    },
+    {
+      "term": "hyper-turf",
+      "gloss": "A genetically modified, drought-resistant grass hybrid engineered to extract nutrients from synthetic polymer coatings.",
+      "kind": "term",
+      "first_seen": "2026-09-15"
+    },
+    {
+      "term": "High-Wimbledon",
+      "gloss": "The modern iteration of the grass-court tennis championships, held on the elevated climate-controlled platforms of the Thames-Spire.",
+      "kind": "term",
+      "first_seen": "2026-09-15"
     }
   ]
 }
