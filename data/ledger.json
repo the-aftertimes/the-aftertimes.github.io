@@ -537,5 +537,16 @@
     "place_kind": "drowned",
     "engine": "nature",
     "technique": "heard_the_words"
+  },
+  {
+    "run_date": "2026-09-16",
+    "year": 2714,
+    "era_bucket": 13,
+    "domain": "death and mourning",
+    "headline": "Teenager Wins Right To Wear Furniture",
+    "style": "trend",
+    "place_kind": "lunar",
+    "engine": "etiquette",
+    "technique": "puncture_the_pompous"
   }
 ]

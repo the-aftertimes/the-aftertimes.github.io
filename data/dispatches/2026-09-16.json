@@ -1,0 +1,75 @@
+{
+  "run_date": "2026-09-16",
+  "run_time": "2026-09-15T22:14:31.043295+00:00",
+  "dispatch": {
+    "headline": "Teenager Wins Right To Wear Furniture",
+    "body": "Teenagers in Tycho are wearing heavy, lead-weighted boots to evening dances.\n\nThe trend has outraged the Board of Remembrance, the body that manages the colony's gravity-sickness wards and memorial plazas. Elders claim the clumsy stumbling of the young mocks the bone-softening that eventually kills every long-term lunar resident. It is a mockery.\n\nThe Board attempted to prosecute a local club owner under the Decency Act, which bans disrespectful footwear in public spaces. However, a legal clerk discovered that the dome's founding charter defines footwear exclusively as garments designed to withstand a vacuum. Since these weighted boots are worn only indoors, a magistrate ruled they are technically household furniture.\n\nLegally, they are stools. The prosecution collapsed.\n\nNow, teenagers are free to strap the three-kilogram metal blocks to their ankles and stomp across the sacred memorial tiles. Young dancer Malik Jaro defended the look, which has dominated dome nightlife for six months. It feels real. His grandfather, who uses a carbon brace to support his failing hips, remains unconvinced. He says the kids are just practising being dead.",
+    "scene": "Malik Jaro stands in a domed courtroom wearing thick grey metal blocks strapped to his shoes, while an elderly magistrate stares at the floor.",
+    "dateline": {
+      "place": "TYCHO-THREE",
+      "year": 2714,
+      "month": 11,
+      "day": 8,
+      "years_from_now": 688
+    },
+    "domain": "death and mourning",
+    "glossary": [],
+    "premise": "Teenagers in the Tycho Crater dome have taken to wearing heavy 1G Earth-weighted boots to parties as a grunge fashion statement, resulting in humiliating floor-denting stumbles that elders condemn as a tasteless mockery of real bone-density loss.",
+    "brief": null,
+    "image": "assets/img/2026-09-16.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-15T22:14:31.043295+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 55,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      0.75
+    ],
+    "violations": [
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: magistrate",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Teenager Wins Right To Wear Furniture",
+        "body": "Teenagers in Tycho are wearing heavy, lead-weighted boots to evening dances.\n\nThe trend has outraged the Board of Remembrance, the body that manages the colony's gravity-sickness wards and memorial plazas. Elders claim the clumsy stumbling of the young mocks the bone-softening that eventually kills every long-term lunar resident. It is a mockery.\n\nThe Board attempted to prosecute a local club owner under the Decency Act, which bans disrespectful footwear in public spaces. However, a legal clerk discovered that the dome's founding charter defines footwear exclusively as garments designed to withstand a vacuum. Since these weighted boots are worn only indoors, a magistrate ruled they are technically household furniture.\n\nLegally, they are stools. The prosecution collapsed.\n\nNow, teenagers are free to strap the three-kilogram metal blocks to their ankles and stomp across the sacred memorial tiles. Young dancer Malik Jaro defended the look, which has dominated dome nightlife for six months. It feels real. His grandfather, who uses a carbon brace to support his failing hips, remains unconvinced. He says the kids are just practising being dead.",
+        "premise": "Teenagers in the Tycho Crater dome have taken to wearing heavy 1G Earth-weighted boots to parties as a grunge fashion statement, resulting in humiliating floor-denting stumbles that elders condemn as a tasteless mockery of real bone-density loss.",
+        "score": 0.75,
+        "rejected": true
+      }
+    ],
+    "all_rejected": true,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.75,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 176,
+      "sentences": 14,
+      "mean_sentence": 12.6,
+      "longest": 20,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 1.1
+    }
+  }
+}
