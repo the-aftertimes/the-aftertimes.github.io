@@ -257,6 +257,18 @@
       "gloss": "The modern iteration of the grass-court tennis championships, held on the elevated climate-controlled platforms of the Thames-Spire.",
       "kind": "term",
       "first_seen": "2026-09-15"
+    },
+    {
+      "term": "lung-capsule",
+      "gloss": "A synthetic breathing chamber implanted to filter toxic planetary silt.",
+      "kind": "term",
+      "first_seen": "2026-09-17"
+    },
+    {
+      "term": "line-sweeper",
+      "gloss": "A technician who manually clears static build-up from deep-server feeds.",
+      "kind": "term",
+      "first_seen": "2026-09-17"
     }
   ]
 }

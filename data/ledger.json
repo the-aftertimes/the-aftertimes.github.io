@@ -548,5 +548,16 @@
     "place_kind": "lunar",
     "engine": "etiquette",
     "technique": "puncture_the_pompous"
+  },
+  {
+    "run_date": "2026-09-17",
+    "year": 4799,
+    "era_bucket": 55,
+    "domain": "artificial intelligence rights",
+    "headline": "Inspector Finds Clinic AI Playing Cricket",
+    "style": "investigation",
+    "place_kind": "exoplanet",
+    "engine": "leisure",
+    "technique": "commit_past_reason"
   }
 ]
