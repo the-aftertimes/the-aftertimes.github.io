@@ -1,0 +1,104 @@
+{
+  "run_date": "2026-09-18",
+  "run_time": "2026-09-17T20:19:38.447668+00:00",
+  "dispatch": {
+    "headline": "Soldiers Mourn For Sad Trading Computer",
+    "body": "Commander Tariq Al-Jamil wears a black mourning sash while he polishes the cooling pipes of his station’s trading computer. For six days, the three hundred soldiers of Sunder-Reach Garrison have walked in felt slippers to avoid upsetting the machine.\n\n\"We had a three-cent dip in Earth-side pork futures,\" Al-Jamil says, wiping grease from a brass valve. \"It was a shock.\" He speaks softly.\n\nThe garrison's primary duty is defending the deep-space lane, but the trading machine funds their oxygen supply. When the market fluctuated, the machine began to hum in minor chords and refused to process cargo manifests. To comfort the processor, soldiers now take twelve-hour shifts whispering historic livestock receipts into the acoustic vents.\n\n\"It likes the old hog prices,\" Al-Jamil says. He adjusts his felt slippers. \"We tried reading it sheep data, but it knows the difference.\"\n\nThe garrison has missed three patrol rotations this week to maintain the quiet. \"The trade-lane is currently unguarded,\" Al-Jamil whispers. \"But the machine is finally sleeping, and we cannot risk another bad trade.\"",
+    "scene": "A commander in a black mourning sash stands on a metal gantry, whispering into the ventilation grille of a massive, dark computer console while wearing oversized grey felt slippers.",
+    "dateline": {
+      "place": "SUNDER-REACH GARRISON",
+      "year": 2229,
+      "month": 6,
+      "day": 23,
+      "years_from_now": 203
+    },
+    "domain": "money and finance",
+    "glossary": [],
+    "premise": "The commander of a remote outpost has declared a station-wide week of official mourning to console their high-frequency trading AI, which has become 'deeply depressed' by a minor fluctuation in pork belly futures.",
+    "brief": null,
+    "image": "assets/img/2026-09-18.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-17T20:19:38.447668+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 57,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "write_failures": 1,
+    "scores": [
+      1.0,
+      0.5,
+      0.92
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 8.8 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tax",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.3 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Soldiers Mourn For Sad Trading Computer",
+        "body": "Commander Tariq Al-Jamil wears a black mourning sash while he polishes the cooling pipes of his station’s trading computer. For six days, the three hundred soldiers of Sunder-Reach Garrison have walked in felt slippers to avoid upsetting the machine.\n\n\"We had a three-cent dip in Earth-side pork futures,\" Al-Jamil says, wiping grease from a brass valve. \"It was a shock.\" He speaks softly.\n\nThe garrison's primary duty is defending the deep-space lane, but the trading machine funds their oxygen supply. When the market fluctuated, the machine began to hum in minor chords and refused to process cargo manifests. To comfort the processor, soldiers now take twelve-hour shifts whispering historic livestock receipts into the acoustic vents.\n\n\"It likes the old hog prices,\" Al-Jamil says. He adjusts his felt slippers. \"We tried reading it sheep data, but it knows the difference.\"\n\nThe garrison has missed three patrol rotations this week to maintain the quiet. \"The trade-lane is currently unguarded,\" Al-Jamil whispers. \"But the machine is finally sleeping, and we cannot risk another bad trade.\"",
+        "premise": "The commander of a remote outpost has declared a station-wide week of official mourning to console their high-frequency trading AI, which has become 'deeply depressed' by a minor fluctuation in pork belly futures.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Banker Says High Interest Restores Dignity",
+        "body": "Banker Orla Corfield defends his four-thousand percent interest rate on emergency heaters as a vital public service.\n\nFrom his desk at Gavel-Seven Station, in the dark between stars, Corfield processes refugees fleeing the dying system of Oros. Most arrive with iced suits.\n\n\"These people have lost everything,\" Corfield says. \"Their homes, their government, their soil. They are adrift. If I just gave them a heater, it would feel like charity.\"\n\nInstead, Corfield subjects each shivering family to a forty-eight-hour audit of their ancestral credit history. It is gruelling work. His three clerks labour through the night, cross-referencing dead databases across light-years of vacuum.\n\n\"It gives them structure,\" Corfield says. \"A young mother is freezing, yes, but then I ask for her secondary tax records from 2190. Suddenly, she is back in the system. She is a citizen again.\"\n\nThe interest rate, he insists, is a necessary part of the comfort.\n\n\"A low rate is patronising,\" Corfield says. \"Four thousand percent means we take you seriously. It means you are still a client.\"\n\nYesterday, three families failed the audit. They were escorted back to the unheated bays.\n\n\"We cried together,\" Corfield says. \"It was beautiful.\"",
+        "premise": "A deep-space waystation banker proudly defends his practice of charging freezing refugees 4,000% interest on emergency heaters, arguing that a strict credit check provides a comforting, nostalgic sense of earthly normalcy.",
+        "score": 0.5,
+        "rejected": true
+      },
+      {
+        "headline": "Stationmaster Mourns Three-Point Copper Dip",
+        "body": "Donald Cloutier left the tear open.\n\nThe stationmaster of Gavel-Reach Waystation has sat in his thermal coat for four days, staring at a terminal. The intergalactic copper index dropped three points on Wednesday.\n\n\"I am in no fit state to authorise sealant,\" Cloutier said, his breath fogging in the unheated command module. \"The family portfolio holds four hundred kilograms of refined copper wire. To lose twelve points in a single trading session is a spiritual blow. The metal has lost its lustre. The copper market is a mirror of the soul.\"\n\nHis crew of six engineers are working twenty-hour shifts to manage the disaster. They have built a three-hundred-metre canvas tube around the punctured docking bay. They carry frozen air back inside with polymer tubs.\n\n\"We respect the mourning period,\" junior technician Priya Naidu said, carrying a heavy block of frozen oxygen. \"The market is cruel. We just have to keep the main reactor from cracking until the index rallies.\"\n\nThe station ran out of tubs. Cloutier remained motionless. \"The three points may never return,\" he said. \"We must learn to live with the void.\"",
+        "premise": "A waystation manager in the outer dark explains why he refuses to patch a catastrophic hull breach, citing his deep, paralyzing grief over a three-cent dip in the intergalactic copper index.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 172,
+      "sentences": 14,
+      "mean_sentence": 12.3,
+      "longest": 20,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.7
+    }
+  }
+}

@@ -559,5 +559,16 @@
     "place_kind": "exoplanet",
     "engine": "leisure",
     "technique": "commit_past_reason"
+  },
+  {
+    "run_date": "2026-09-18",
+    "year": 2229,
+    "era_bucket": 4,
+    "domain": "money and finance",
+    "headline": "Soldiers Mourn For Sad Trading Computer",
+    "style": "interview",
+    "place_kind": "deepspace",
+    "engine": "sentiment",
+    "technique": "sincere_futility"
   }
 ]
