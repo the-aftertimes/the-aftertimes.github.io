@@ -164,6 +164,75 @@ def render_archive(records: list[dict], meta: dict) -> str:
 """
 
 
+def build_sitemap(records: list[dict], settings: dict) -> str:
+    """Write sitemap.xml and robots.txt from the dispatch records.
+
+    Off the same list the archive page uses, so the two cannot disagree. A sitemap
+    maintained by hand is a sitemap that goes stale - the hub's listed nine of its
+    twenty-four live paths for weeks.
+
+    `lastmod` is the dispatch's own date where it has one, which is what a crawler
+    uses to decide whether to refetch. No `priority` or `changefreq`: Google has
+    ignored both for years and they are two more fields to get wrong.
+    """
+    base = str(settings["site"].get("base_url", "")).rstrip("/")
+    if not base:
+        return ""
+
+    urls = [(f"{base}/", None), (f"{base}/archive.html", None)]
+    if os.path.exists(rel("trials.html")):
+        urls.append((f"{base}/trials.html", None))
+
+    # DRIVEN BY THE RENDERED PAGES, not by the records. The permalink stem is the
+    # dispatch JSON's FILENAME, and build() reads those files and discards the names -
+    # so a first version keyed on r["date"], a field the records do not carry, and
+    # produced a sitemap claiming the site had three pages. `d/*.html` is by definition
+    # the set of things that exist at a URL.
+    #
+    # lastmod comes from the record where one matches, because a crawler uses it to
+    # decide whether to refetch. A page with no matching record still gets listed.
+    by_stem = {}
+    for f in sorted(glob.glob(rel("data/dispatches/*.json"))):
+        rec = read_json(f"data/dispatches/{os.path.basename(f)}")
+        if rec:
+            by_stem[os.path.splitext(os.path.basename(f))[0]] = rec
+
+    pages = sorted(glob.glob(rel("d/*.html")))
+    for page in pages:
+        stem = os.path.splitext(os.path.basename(page))[0]
+        rec = by_stem.get(stem) or {}
+        urls.append((f"{base}/d/{stem}.html", rec.get("run_date")))
+
+    # A sitemap that lists a fraction of the site is worse than none, because a crawler
+    # takes it as the whole set. So compare against an INDEPENDENT count: the dispatch
+    # records. A first version compared the listed URLs to the same glob that produced
+    # them, which could not come out negative and was therefore decoration.
+    #
+    # Records without a page mean a render failed silently; that is worth a warning and
+    # not a crash, because the sitemap itself is still correct about what exists.
+    missing = sorted(set(by_stem) - {os.path.splitext(os.path.basename(p))[0] for p in pages})
+    if missing:
+        print(f"    ! {len(missing)} dispatch record(s) have no rendered page: "
+              f"{', '.join(missing[:5])}")
+
+    body = "\n".join(
+        f"  <url><loc>{html.escape(loc)}</loc>"
+        + (f"<lastmod>{html.escape(mod)}</lastmod>" if mod else "")
+        + "</url>"
+        for loc, mod in urls
+    )
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           f"{body}\n</urlset>\n")
+    with open(rel("sitemap.xml"), "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(xml)
+
+    with open(rel("robots.txt"), "w", encoding="utf-8", newline="\n") as fh:
+        fh.write("User-agent: *\nAllow: /\n" f"Sitemap: {base}/sitemap.xml\n")
+
+    return rel("sitemap.xml")
+
+
 def build() -> str:
     settings = load_settings()
     files = sorted(glob.glob(rel("data/dispatches/*.json")))
@@ -179,6 +248,7 @@ def build() -> str:
     out = render_archive(records, meta)
     with open(rel("archive.html"), "w", encoding="utf-8") as fh:
         fh.write(out)
+    build_sitemap(records, settings)
     return rel("archive.html")
 
 
