@@ -570,5 +570,16 @@
     "place_kind": "deepspace",
     "engine": "sentiment",
     "technique": "sincere_futility"
+  },
+  {
+    "run_date": "2026-09-20",
+    "year": 2893,
+    "era_bucket": 17,
+    "domain": "language and slang",
+    "headline": "Drillers Clump Together in Lift Shaft",
+    "style": "discovery",
+    "place_kind": "asteroid",
+    "engine": "logistics",
+    "technique": "confident_aside"
   }
 ]

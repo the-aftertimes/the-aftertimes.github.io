@@ -269,6 +269,12 @@
       "gloss": "A technician who manually clears static build-up from deep-server feeds.",
       "kind": "term",
       "first_seen": "2026-09-17"
+    },
+    {
+      "term": "throat-mute",
+      "gloss": "a collar that dampens glottal vibrations to prevent acoustic magnetisation",
+      "kind": "term",
+      "first_seen": "2026-09-20"
     }
   ]
 }
