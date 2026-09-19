@@ -1,0 +1,82 @@
+{
+  "run_date": "2026-09-20",
+  "run_time": "2026-09-19T18:00:42.738761+00:00",
+  "dispatch": {
+    "headline": "Drillers Clump Together in Lift Shaft",
+    "body": "A twelve-man drilling crew stuck together in the lift.\n\nAnthropologists at Ida-24 Hollow found that the crew's heavy glottal slang had magnetised the iron-rich rock dust in their lungs. The rapid throat clicks of deep-vein dialect charge these inhaled particles, turning the driller's chest into a powerful magnet. When the men gathered in the steel lift, they snapped into a single solid clump.\n\nThey stayed stuck.\n\nThe crew was separated at four millimetres per second, which is the standard safety speed for unpeeling living tissue and was, during the 2880 border dispute, used to clear draft offices.\n\nLinguist Aris Thorne explained that the magnetic bond is harmless unless the men continue to talk. 'If they speak while touching, the field doubles,' Thorne said. 'A simple morning greeting crushes ribs.'\n\nThe finding has alarmed local operators, who now face the prospect of silent shifts. If the miners cannot speak, they cannot warn each other of toxic gas leaks. However, management has already ordered throat-mutes for the next shift to protect the lift machinery.",
+    "scene": "Twelve miners in dust-caked pressure suits cling together in a tight, vertical mass inside a dark steel lift shaft.",
+    "dateline": {
+      "place": "IDA-24 HOLLOW",
+      "year": 2893,
+      "month": 7,
+      "day": 11,
+      "years_from_now": 867
+    },
+    "domain": "language and slang",
+    "glossary": [
+      {
+        "term": "throat-mute",
+        "gloss": "a collar that dampens glottal vibrations to prevent acoustic magnetisation"
+      }
+    ],
+    "premise": "Anthropologists at the Ida-24 hollow announce that drillers' heavy glottal slang has magnetized the rock dust in their lungs, causing entire shift crews to physically clump together like iron filings in the narrow elevator shafts until heavy-duty winches can pry them apart.",
+    "brief": {
+      "focus": "a dense, vertical column of twelve interlocked utility-harnesses and ribbed alloy torso-plates, fused together by magnetic attraction into a single solid block",
+      "subject": "a middle-aged drilling technician with a bare, sweat-streaked face visible through an open, hinged polymer visor, wearing a grey dust-caked pressure suit made of ribbed aramid-composite fabric, heavy segmented leg-greaves of matte ceramic, and thick-soled magnetic utility boots",
+      "action": "pressing flat and motionless against the chest plates of the surrounding crew members, hands gripping a structural grab-bar on the adjacent suit",
+      "setting": "inside a narrow, hexagonal lift shaft constructed from dark, vertically-ribbed carbon-titanium plating, with eleven other suit-clad miners wedged tightly together behind him in the confined space",
+      "light": "harsh, cold white glare from a single recess-mounted light strip on the lift ceiling, casting sharp downward shadows",
+      "materials": "carbon-titanium plating, sintered iron-rich rock dust, matte ceramic composite, clear polarized polymer",
+      "anomaly": "a scuffed, hand-held diagnostic scanner hanging limp from a coiled lanyard on the wall of the shaft, its casing smeared with grey grease"
+    },
+    "image": "assets/img/2026-09-20.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-19T18:00:42.738761+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 58,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      1.0
+    ],
+    "violations": [
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Drillers Clump Together in Lift Shaft",
+        "body": "A twelve-man drilling crew stuck together in the lift.\n\nAnthropologists at Ida-24 Hollow found that the crew's heavy glottal slang had magnetised the iron-rich rock dust in their lungs. The rapid throat clicks of deep-vein dialect charge these inhaled particles, turning the driller's chest into a powerful magnet. When the men gathered in the steel lift, they snapped into a single solid clump.\n\nThey stayed stuck.\n\nThe crew was separated at four millimetres per second, which is the standard safety speed for unpeeling living tissue and was, during the 2880 border dispute, used to clear draft offices.\n\nLinguist Aris Thorne explained that the magnetic bond is harmless unless the men continue to talk. 'If they speak while touching, the field doubles,' Thorne said. 'A simple morning greeting crushes ribs.'\n\nThe finding has alarmed local operators, who now face the prospect of silent shifts. If the miners cannot speak, they cannot warn each other of toxic gas leaks. However, management has already ordered throat-mutes for the next shift to protect the lift machinery.",
+        "premise": "Anthropologists at the Ida-24 hollow announce that drillers' heavy glottal slang has magnetized the rock dust in their lungs, causing entire shift crews to physically clump together like iron filings in the narrow elevator shafts until heavy-duty winches can pry them apart.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 172,
+      "sentences": 12,
+      "mean_sentence": 14.3,
+      "longest": 31,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 7,
+      "rare_rate": 4.1
+    }
+  }
+}
