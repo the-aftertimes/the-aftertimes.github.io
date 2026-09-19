@@ -62,26 +62,89 @@ def _settings(retries=2):
                        "max_retries": retries, "min_interval_seconds": 0}}
 
 
+@pytest.fixture(autouse=True)
+def _fresh(monkeypatch):
+    """The overload ladder and the spent-model set are process-wide state, so
+    a PerDay in one test would silence the model name in the next."""
+    import gemini
+    monkeypatch.setattr(gemini, "_overload_retries", 0)
+    monkeypatch.setattr(gemini, "_spent_today", set())
+
+
 def test_a_503_backs_off_like_a_rate_limit_not_like_a_blip(monkeypatch):
     """05/09/2026: three of four drafts died to a four-minute Gemini 503 spike
     ("this model is currently experiencing high demand"), because the retry
     branch treated it as transient noise and tried again 1.5 and 3 seconds
     later. One unopposed draft published, the judge never ran, and Charlie's
-    four complaints about that dispatch followed. A 503 needs the same backoff
-    a 429 gets - long enough to walk over the spike."""
+    four complaints about that dispatch followed. A 503 needs a real wait.
+
+    REWRITTEN 19/09/2026. This test used to demand four minutes of waiting
+    INSIDE ONE CALL, which encoded the belief that a failed attempt is free.
+    It is not: every 503 attempt counts against the 20-a-day cap (see the
+    comment on gemini._overload_retries for the count that proved it), and
+    four attempts per model per stage is how one long outage on 18/09 spent
+    all three models' allowances across four runs. The minutes are now bought
+    across the MODEL WALK, not inside one call - see the test below."""
     import gemini
     slept = []
     monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
     monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    posts = []
     monkeypatch.setattr(gemini.requests, "post",
-                        lambda *a, **k: _resp(503, "high demand"))
+                        lambda *a, **k: posts.append(1) or _resp(503, "high demand"))
     with pytest.raises(GeminiError):
         gemini.generate("p", _settings(), 0.9)
-    assert slept, "a 503 must be waited out"
-    assert min(slept) >= 20, f"503 backoff is far too short: {slept}"
-    # 07/09/2026: the 429-sized ladder was walked through by a real four-minute
-    # spike, which lost a whole run. A 503 must buy minutes, not one minute.
-    assert sum(slept) >= 240, f"503 ladder only waits {sum(slept)}s: {slept}"
+    assert slept == [30.0], f"one rung of the ladder per model per call: {slept}"
+    assert len(posts) == 2, f"a 503 costs a daily call; two attempts, not four: {posts}"
+
+
+def test_the_overload_ladder_is_spent_across_the_model_walk(monkeypatch):
+    """07/09/2026's four-minute spike must still be walked over, but by the
+    three-model list sharing one ladder: 30s on the first model, 75s on the
+    second, 150s on the third - 4.25 minutes of waiting for six calls in all
+    (two per model), where the old per-call ladder would have made twelve."""
+    import gemini
+    slept, posts = [], []
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: slept.append(s))
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post",
+                        lambda url, **k: posts.append(url) or _resp(503, "high demand"))
+    with pytest.raises(GeminiError, match="no model answered"):
+        gemini.generate_first_available("p", _settings(), 0.9, ("a", "b", "c"))
+    assert slept == [30.0, 75.0, 150.0], slept
+    assert sum(slept) >= 240, "the walk must still outlast a four-minute spike"
+    assert [u.split("/")[-1] for u in posts] == [
+        "a:generateContent"] * 2 + ["b:generateContent"] * 2 + ["c:generateContent"] * 2
+    # With the ladder spent, a later stage's 503 costs ONE call per model and
+    # no waiting at all - the next cron rung is the retry.
+    slept.clear(); posts.clear()
+    with pytest.raises(GeminiError, match="ladder is spent"):
+        gemini.generate("p", _settings(), 0.9, model="a")
+    assert slept == [] and len(posts) == 1, (slept, posts)
+
+
+def test_a_model_that_said_per_day_is_not_asked_again_this_run(monkeypatch):
+    """18/09/2026 21:41 UTC: every stage re-asked gemini-3.6-flash after it had
+    already said its daily 20 were gone, 13 seconds of pacing each time, until
+    the 30-minute job timeout. The refusal is on file; the second ask is free."""
+    import gemini
+    posts = []
+    body = ('{"error":{"code":429,"details":[{"violations":[{"quotaId":'
+            '"GenerateRequestsPerDayPerProjectPerModel-FreeTier"}]}]}}')
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: None)
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post",
+                        lambda *a, **k: posts.append(1) or _resp(429, body))
+    with pytest.raises(GeminiError, match="PER DAY"):
+        gemini.generate("p", _settings(), 0.9, model="m")
+    assert len(posts) == 1
+    with pytest.raises(GeminiError, match="not asking again"):
+        gemini.generate("p", _settings(), 0.9, model="m")
+    assert len(posts) == 1, "the second ask must not reach the network"
+    # A sibling model is untouched by it.
+    with pytest.raises(GeminiError, match="PER DAY"):
+        gemini.generate("p", _settings(), 0.9, model="other")
+    assert len(posts) == 2
 
 
 def test_a_500_is_still_treated_as_an_ordinary_blip(monkeypatch):

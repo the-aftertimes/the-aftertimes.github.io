@@ -61,6 +61,28 @@ _last_call = 0.0
 #: for why these are longer than the 429 waits and how the numbers were chosen.
 _OVERLOAD_WAITS = (30.0, 75.0, 150.0)
 
+#: EVERY 503 ATTEMPT COSTS ONE OF THE 20 DAILY CALLS. Proved 18/09/2026 UTC by
+#: counting: gemini-3.7-flash was asked 20 times that quota day, every answer a
+#: 503, and the 21st was "PerDay ... quotaValue 20". gemini-3.5-flash the same
+#: at 16 + 4. So a ladder that retries each model four times per stage is not
+#: free on a bad day - it is how one Google outage (18:00-22:05 UTC, all three
+#: models) spent the whole estate's allowance across four runs and left the
+#: last rung nothing to write with. The ladder is therefore shared across the
+#: PROCESS and each model gets at most one rung of it: the first model waits
+#: 30s and asks again, the second 75s, the third 150s, which still walks a
+#: three-model list over the four-minute spike of 07/09 (about 5.5 minutes
+#: end to end) for two calls per model instead of four - and once the ladder
+#: is spent, a 503 fails the call at once so the walk moves on and the next
+#: cron rung, two hours later, gets a fresh look.
+_overload_retries = 0
+_OVERLOAD_RETRIES_PER_CALL = 1
+
+#: Models that have said "PerDay" in this process. A daily cap does not come
+#: back within a run, so asking again is 13 seconds of pacing per stage for a
+#: refusal already on file; the 21:41 UTC run of 18/09 did that at every stage
+#: and was killed by the 30-minute timeout still doing it.
+_spent_today: set[str] = set()
+
 
 def _min_interval(g: dict) -> float:
     return float(g.get("min_interval_seconds", _DEFAULT_MIN_INTERVAL))
@@ -125,6 +147,7 @@ def generate(prompt: str, settings: dict, temperature: float,
     settings model (used by the write stage to try a Pro model). `retries`
     overrides the retry count - the Pro attempt passes 0 so a quota 429 falls
     back to flash immediately instead of wasting the backoff window."""
+    global _overload_retries
     g = settings["gemini"]
     # NO EXPLICIT MODEL MEANS WALK THE LIST. Fixing this per-caller is what left
     # the gap twice: 09/09/2026 the haiku batch walked and the judge did not,
@@ -139,7 +162,11 @@ def generate(prompt: str, settings: dict, temperature: float,
             return generate_first_available(prompt, settings, temperature,
                                             listed)[0]
     model = (model or g["model"]).strip()
+    if model in _spent_today:
+        raise GeminiError(f"{model}: daily quota already reported gone in this "
+                          f"run; not asking again")
     limit = g["max_retries"] if retries is None else retries
+    overload_here = 0
     url = f"{g['endpoint']}/{model}:generateContent"
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -248,6 +275,7 @@ def generate(prompt: str, settings: dict, temperature: float,
         # Being right by luck is not being right, and the difference is that the
         # string below is now quoted from a response rather than guessed at.
         if "PerDay" in (last or ""):
+            _spent_today.add(model)
             raise GeminiError(
                 f"the free tier allows 20 generate calls PER DAY per model "
                 f"(quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier) "
@@ -262,7 +290,19 @@ def generate(prompt: str, settings: dict, temperature: float,
             time.sleep(wait)
             continue
         if "HTTP 503" in (last or ""):
-            time.sleep(_OVERLOAD_WAITS[min(attempt, len(_OVERLOAD_WAITS) - 1)])
+            if (overload_here >= _OVERLOAD_RETRIES_PER_CALL
+                    or _overload_retries >= len(_OVERLOAD_WAITS)):
+                raise GeminiError(
+                    f"HTTP 503 and the run's overload ladder is spent "
+                    f"({_overload_retries}/{len(_OVERLOAD_WAITS)} rungs used); "
+                    f"every attempt costs a daily call, so not retrying: {last}")
+            wait = _OVERLOAD_WAITS[_overload_retries]
+            _overload_retries += 1
+            overload_here += 1
+            print(f"    gemini: {model} overloaded, waiting {wait:.0f}s "
+                  f"(rung {_overload_retries}/{len(_OVERLOAD_WAITS)})",
+                  file=sys.stderr)
+            time.sleep(wait)
         elif "HTTP 429" in (last or ""):
             time.sleep(max(_min_interval(g), 20.0) * (attempt + 1))
         else:
