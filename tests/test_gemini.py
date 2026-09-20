@@ -69,6 +69,7 @@ def _fresh(monkeypatch):
     import gemini
     monkeypatch.setattr(gemini, "_overload_retries", 0)
     monkeypatch.setattr(gemini, "_spent_today", set())
+    monkeypatch.setattr(gemini, "_walk_start", 0)
 
 
 def test_a_503_backs_off_like_a_rate_limit_not_like_a_blip(monkeypatch):
@@ -318,3 +319,28 @@ def test_generate_without_an_explicit_model_walks_the_list(monkeypatch):
         ("spare-a", "spare-b"))
     assert raw == "ok" and served == "spare-b"
     assert tried == ["spare-a", "spare-b"]
+
+
+def test_the_walk_rotates_so_a_day_is_split_across_the_models(monkeypatch):
+    """20/09/2026: five editions in a row were one unopposed draft with three
+    write failures, because every call started on the same model and its 20
+    were gone before the drafts. Each call starts one model further along;
+    the whole list is still walked on failure."""
+    import gemini
+    posts = []
+    monkeypatch.setattr(gemini.time, "sleep", lambda s: None)
+    monkeypatch.setattr(gemini, "_api_key", lambda: "k")
+    monkeypatch.setattr(gemini.requests, "post",
+                        lambda url, **k: posts.append(url.split("/")[-1].split(":")[0])
+                        or _resp(200, "ok"))
+    for _ in range(4):
+        gemini.generate_first_available("p", _settings(), 0.9, ("a", "b", "c"))
+    assert posts == ["a", "b", "c", "a"], posts
+    # A failing first choice still falls through to the rest of the list, in
+    # rotated order.
+    posts.clear()
+    monkeypatch.setattr(gemini.requests, "post",
+                        lambda url, **k: posts.append(url.split("/")[-1].split(":")[0])
+                        or _resp(200 if posts[-1] == "a" else 404, "x"))
+    raw, model = gemini.generate_first_available("p", _settings(), 0.9, ("a", "b", "c"))
+    assert model == "a" and posts == ["b", "c", "a"], posts
