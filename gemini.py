@@ -83,6 +83,9 @@ _OVERLOAD_RETRIES_PER_CALL = 1
 #: and was killed by the 30-minute timeout still doing it.
 _spent_today: set[str] = set()
 
+#: Where the next generate_first_available walk begins; see its docstring.
+_walk_start = 0
+
 
 def _min_interval(g: dict) -> float:
     return float(g.get("min_interval_seconds", _DEFAULT_MIN_INTERVAL))
@@ -129,9 +132,24 @@ def generate_first_available(prompt: str, settings: dict, temperature: float,
     picture brief did not, so a run could get its poems from a spare model and
     then lose both later calls on the exhausted one. A dead model name costs a
     single call (a non-429 4xx is not retried), so walking a short list is
-    cheap."""
+    cheap.
+
+    THE WALK STARTS ONE MODEL FURTHER ALONG EACH CALL. Found 20/09/2026 by
+    reading five days of records: every edition from 15/09 had `n_drafts: 1,
+    write_failures: 3`, no judge and no panel - the paper had been publishing
+    an unopposed draft for five days and nothing said so. A static order sends
+    all ~20 of a prose day's calls to the first model, which has 20 for the
+    day; the spares only see traffic once it is spent, by which time the run
+    is deep in retries. Rotating the start splits the load about three ways,
+    which is the "60 a day, not 20" the per-model quota has offered since it
+    was read off the 429 body on 09/09. The full list is still walked on
+    failure, so nothing a caller could get before is lost."""
+    global _walk_start
+    n = len(models)
+    order = tuple(models[(_walk_start + i) % n] for i in range(n))
+    _walk_start = (_walk_start + 1) % max(n, 1)
     last = None
-    for model in models:
+    for model in order:
         try:
             return generate(prompt, settings, temperature, model=model), model
         except GeminiError as exc:

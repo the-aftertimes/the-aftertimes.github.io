@@ -58,6 +58,9 @@ def repo(tmp_path, monkeypatch):
             (tmp_path / "config" / name).write_bytes(open(src, "rb").read())
     monkeypatch.setattr(common, "_path",
                         lambda *parts: os.path.join(str(tmp_path), *parts))
+    monkeypatch.setattr(gemini, "_walk_start", 0)
+    monkeypatch.setattr(gemini, "_spent_today", set())
+    monkeypatch.setattr(gemini, "_overload_retries", 0)
     return tmp_path
 
 
@@ -255,8 +258,13 @@ def test_the_judge_and_the_brief_walk_the_same_model_list(repo, monkeypatch):
     monkeypatch.setattr(gemini, "generate", fake)
     monkeypatch.setattr(illustrate_mod, "_cf_image", lambda *a, **k: None)
     record = run_mod.run_haiku_pipeline()
-    # Every stage tried the dead model and then moved on, so all three
-    # succeeded on a sibling rather than only the batch.
-    assert seen.count(run_mod.HAIKU_MODELS[0]) == 3, seen
+    # Every stage that landed on the dead model moved past it, so all three
+    # succeeded on a sibling rather than only the batch. (Until 20/09/2026
+    # this asserted the dead model was tried THREE times - once per stage -
+    # which pinned the static walk order; the walk now rotates its start so a
+    # day's calls split across the models, and a stage that starts on a live
+    # sibling never needs to touch the dead one.)
+    assert seen[0] == run_mod.HAIKU_MODELS[0], "the first walk starts at the top"
+    assert 1 <= seen.count(run_mod.HAIKU_MODELS[0]) <= 3, seen
     assert record["quality"]["judge_score"] == 7, "the judge must have run"
     assert record["dispatch"]["brief"] is not None, "the brief must have run"
