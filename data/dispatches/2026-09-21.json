@@ -1,0 +1,125 @@
+{
+  "run_date": "2026-09-21",
+  "run_time": "2026-09-20T18:00:27.790529+00:00",
+  "dispatch": {
+    "headline": "Man Refuses To Stop Squeezing Heart",
+    "body": "James Gantry stood for forty-eight hours with his hand inside a crewman's chest. The senior pulse-kneader refused to let an electronic pump touch the patient during a routine valve clear.\n\n\"Machines have no swing,\" Gantry said.\n\nHe believes automated rhythm causes moral flatness.\n\nThroughout the long shift, Gantry hand-squeezed the heart of fuel-handler Aaron Cole. He stood on a low metal step to ease the strain on his own back, sipping warm broth through a rubber tube. Gantry varied his grip to match his own thoughts, speeding up during shipboard announcements and slowing down during his lunch.\n\nCole remained awake.\n\n\"It felt like a heavy cat was walking on my ribs,\" Cole said. \"But James has a beautiful touch.\"\n\nCole survived the repair.\n\nBut the treatment left a deep physical link between the two crewmen. Cole now suffers sudden chest tightness whenever Gantry gets angry at the kitchen staff or climbs a ladder. To prevent a sudden drop in blood flow, Cole must now spend his days carrying Gantry's heavy tools and walking at his exact pace.",
+    "scene": "James Gantry, wearing grease-stained blue overalls, stands on a low metal step with his bare right arm buried to the elbow inside the chest of a reclining crewman.",
+    "dateline": {
+      "place": "Silt-Drain Four, aboard the freighter Hermes",
+      "year": 2608,
+      "month": 5,
+      "day": 27,
+      "years_from_now": 582
+    },
+    "domain": "medicine",
+    "glossary": [
+      {
+        "term": "pulse-kneader",
+        "gloss": "A medical specialist trained to manually stimulate organs to maintain natural, irregular human rhythms."
+      },
+      {
+        "term": "valve clear",
+        "gloss": "The manual removal of fuel debris from a shipworker's cardiac passages."
+      }
+    ],
+    "premise": "Lead Pulse-Kneader James Gantry has completed a forty-eight-hour shift manually squeezing a crewman's left ventricle aboard the freighter Hermes, refusing to yield to an automated pacemaker that 'lacks a human tempo.'",
+    "brief": null,
+    "image": "assets/img/2026-09-21.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-20T18:00:27.790529+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 59,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 3,
+    "write_failures": 1,
+    "scores": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Medical Chief Bans Cleaning Spray",
+        "body": "Chief Sanitarian Beatrice Hale blocked the deep-clean of the generation ship Chronos to protect its yellowing wall-fungus. Hale, who spends her shifts misting the ward's damp corners with nutrient broth, argues that the centuries-old growth represents the ship’s true heritage. Her decision followed a maintenance order to flush the decks with chlorine-gel.\n\nEvery surface in the recovery bay is now covered in a velvety, mustard-coloured fuzz that smells of wet dog. Hale spends her mornings cataloguing the patches. She has named the largest growth after the ship's first captain.\n\nUnder her new ward policy, staff have stopped using sterilising beams on wounds. They use damp cloth instead. Hale insists that a sterile ship is a ship without a history.\n\n\"A scrub-drone has no respect for our ancestors,\" Hale said. \"This yellow bouquet is our only record of the great lung-rot of 2340.\"\n\nConsequently, the ward's latest bone-graft patient, Kaelen Boyd, has spent three days watching a green bloom spread across his new shin-plate. He must not scratch. To preserve the humidity, doctors have also banned him from breathing through his nose.",
+        "premise": "Chief Sanitarian Beatrice Hale has blocked the deep-clean of the generation ship Chronos, defending the ship's centuries-old, yellowing medical-bay mold as 'an irreplaceable heritage microbial bouquet' that modern disinfectants would ruin.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Man Refuses To Stop Squeezing Heart",
+        "body": "James Gantry stood for forty-eight hours with his hand inside a crewman's chest. The senior pulse-kneader refused to let an electronic pump touch the patient during a routine valve clear.\n\n\"Machines have no swing,\" Gantry said.\n\nHe believes automated rhythm causes moral flatness.\n\nThroughout the long shift, Gantry hand-squeezed the heart of fuel-handler Aaron Cole. He stood on a low metal step to ease the strain on his own back, sipping warm broth through a rubber tube. Gantry varied his grip to match his own thoughts, speeding up during shipboard announcements and slowing down during his lunch.\n\nCole remained awake.\n\n\"It felt like a heavy cat was walking on my ribs,\" Cole said. \"But James has a beautiful touch.\"\n\nCole survived the repair.\n\nBut the treatment left a deep physical link between the two crewmen. Cole now suffers sudden chest tightness whenever Gantry gets angry at the kitchen staff or climbs a ladder. To prevent a sudden drop in blood flow, Cole must now spend his days carrying Gantry's heavy tools and walking at his exact pace.",
+        "premise": "Lead Pulse-Kneader James Gantry has completed a forty-eight-hour shift manually squeezing a crewman's left ventricle aboard the freighter Hermes, refusing to yield to an automated pacemaker that 'lacks a human tempo.'",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Doctor Locks Vault to Save Coughs",
+        "body": "Dr. Kenji Ota barricaded the main medical vault on Friday to protect his runny noses.\n\nThe fleet's chief virologist refuses to release any life-saving therapies until the crew acknowledges that a blocked nose is a vital art form.\n\nFor thirty years, Dr. Ota has bred rare strains of the common cold in Keel-Ward Three. He calls it expressive tissue inflammation. The trouble began when the fleet bought Pan-Clear. This cheap chemical wash permanently immunises the body against all viral activity.\n\n\"It is sterile,\" Dr. Ota said through his intercom. \"A sneeze is a physical poem. Without congestion, how do we mark the seasons?\"\n\nHe has vowed to withhold all heart regulators and radiation pills until the fleet bans the cure. Meanwhile, seventy engineers are waiting outside the steel vault with mild chest pains and no recourse. The fleet administration has offered a compromise. They will allow a single, annual winter cold if he unlocks the bone-growth serums. Dr. Ota remains unmoved.\n\n\"One cold is not a culture,\" he said. \"They want a dry life.\"\n\nHe then played a recording of his favourite 2580 coughs over the ship's emergency channel.",
+        "premise": "Master Virologist Dr. Elena Rostov has locked the medicine vaults of the Aegis migrant fleet to protect her cultivated common-cold strains, defending her lifetime of work in 'expressive tissue inflammation' against a tasteless new cure-all.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 perfectly satirizes analog-purist snobbery with a brilliant narrative turn into forced physical co-dependency.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        2.0,
+        6.0,
+        1.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 177,
+      "sentences": 14,
+      "mean_sentence": 12.6,
+      "longest": 24,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 3.4
+    }
+  }
+}

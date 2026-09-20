@@ -275,6 +275,18 @@
       "gloss": "a collar that dampens glottal vibrations to prevent acoustic magnetisation",
       "kind": "term",
       "first_seen": "2026-09-20"
+    },
+    {
+      "term": "pulse-kneader",
+      "gloss": "A medical specialist trained to manually stimulate organs to maintain natural, irregular human rhythms.",
+      "kind": "term",
+      "first_seen": "2026-09-21"
+    },
+    {
+      "term": "valve clear",
+      "gloss": "The manual removal of fuel debris from a shipworker's cardiac passages.",
+      "kind": "term",
+      "first_seen": "2026-09-21"
     }
   ]
 }
