@@ -581,5 +581,16 @@
     "place_kind": "asteroid",
     "engine": "logistics",
     "technique": "confident_aside"
+  },
+  {
+    "run_date": "2026-09-21",
+    "year": 2608,
+    "era_bucket": 11,
+    "domain": "medicine",
+    "headline": "Man Refuses To Stop Squeezing Heart",
+    "style": "feature",
+    "place_kind": "shipboard",
+    "engine": "expertise",
+    "technique": "stated_rule_reductio"
   }
 ]
