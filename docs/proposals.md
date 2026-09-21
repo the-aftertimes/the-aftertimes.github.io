@@ -8,10 +8,9 @@ change only when Charlie says so.
 
 ### Over-used lately
 
-- name: "Chen" in 4 dispatches
-- phrase: "in the mixed zone" in 3 dispatches
-- name: "Thorne" in 3 dispatches
+- phrase: "in the corridor" in 3 dispatches
 - name: "Voss" in 3 dispatches
+- name: "Chen" in 3 dispatches
 
 ### Suggested next step
 
