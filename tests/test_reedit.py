@@ -288,7 +288,32 @@ def test_every_daily_cron_sits_inside_one_utc_day():
     assert len(crons) >= 2, "a single cron has no backup at all"
 
     hours = [h for h, _ in crons]
-    assert max(hours) - min(hours) < 24 and min(hours) >= 12, (
-        f"crons {crons} straddle a UTC midnight - already_filed() keys on the UTC "
-        f"date, so a run on the other side of it would republish the day rather "
-        f"than no-op")
+    # REWRITTEN 22/09/2026, because the property it asserted had stopped being
+    # the one the code depends on. `already_filed` keyed on the UTC date when
+    # this was written on 29/08; `publication_date()` has keyed on the SYDNEY
+    # date since 31/08, which is the whole reason the ladder is allowed to cross
+    # a UTC midnight. A test that pins a superseded premise blocks the change it
+    # was never written about - it rejected the recovery rung added today for a
+    # reason that had not been true for three weeks.
+    #
+    # The two properties the code actually depends on:
+    #   1. every rung files the SAME Sydney date, or the later ones republish
+    #      the day instead of no-opping
+    #   2. the gap from the last rung of one edition to the first rung of the
+    #      next stays above run._RECENT_FILE_HOURS, or a recovery that fires
+    #      makes the next day's first rung read itself as a late backup and
+    #      no-op. This is what a 03:13 UTC rung got wrong: exactly 12h.
+    import run as run_mod
+
+    OFFSETS = (10, 11)      # AEST and AEDT; the property must hold in both
+    for offset in OFFSETS:
+        syd = sorted(((h + offset) % 24) + m / 60 for h, m in crons)
+        # An edition's rungs are the ones landing in one Sydney day. Ordered by
+        # Sydney clock time they must not wrap midnight, which shows up as a gap
+        # wide enough to be the NEXT day's ladder rather than this one's.
+        assert syd[-1] - syd[0] < 24 - run_mod._RECENT_FILE_HOURS, (
+            f"crons {crons} spread {syd[-1] - syd[0]:.1f}h across the Sydney day "
+            f"at UTC+{offset}: the last rung is within "
+            f"{24 - (syd[-1] - syd[0]):.1f}h of the next edition's first, and "
+            f"run._RECENT_FILE_HOURS is {run_mod._RECENT_FILE_HOURS}h, so the "
+            f"next day's first rung would read this one as its own late backup")
