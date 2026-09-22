@@ -38,6 +38,38 @@ on:
     - cron: "13 19 * * *"   # 19:13 UTC / 05:13 AEST - third line. Even at the 2h41
                             # worst observed this lands 21:54 UTC / 07:54 AEST, ahead
                             # of the 07:55 read. All three share a Sydney date.
+    - cron: "13 23 * * *"   # 23:13 UTC / 09:13 AEST - RECOVERY, and the only rung
+                            # clear of the 18:00-22:05 UTC band.
+                            #
+                            # Both recorded Gemini outages sat in that band and
+                            # took every rung with them: 18:00-22:05 UTC on
+                            # 18/09/2026, and 18:00 UTC 21/09 to at least 05:05 UTC
+                            # 22/09, where five consecutive attempts - the 18:00
+                            # heartbeat, all three crons and a manual dispatch -
+                            # died at IDEATE with HTTP 503 on all three models and
+                            # the paper carried the stale banner through the
+                            # morning. Four rungs inside one four-hour window are
+                            # one rung against an outage that lasts four hours.
+                            #
+                            # Same Sydney date as the ladder above, so
+                            # run.already_filed makes it a no-op on any day the
+                            # edition landed - it costs nothing when nothing is
+                            # wrong. It lands after Charlie's 07:55 read, which is
+                            # the point: it is not a backup for the morning, it is
+                            # the difference between a late paper and no paper.
+                            # It would have caught the 18/09 outage, which ended at
+                            # 22:05. It would NOT have saved 22/09, still 503 at
+                            # 05:05 UTC - no rung placement beats an eleven-hour
+                            # outage.
+                            #
+                            # WHY 23:13 AND NOT THE SYDNEY AFTERNOON. 03:13 UTC was
+                            # the first choice, and it breaks _RECENT_FILE_HOURS:
+                            # that guard reads any edition filed less than 12h ago
+                            # as this run's own late backup, and 03:13 to the next
+                            # day's 15:13 primary is exactly 12h, so a recovery
+                            # that fired would have suppressed the following day's
+                            # first rung. 23:13 leaves 16h. If this rung moves
+                            # again, check that gap first - run.py says so too.
   workflow_dispatch:
   # Fired by the heartbeat Worker (site-stats/heartbeat) at 20:30 UTC, from
   # OUTSIDE GitHub Actions. On 26/08/2026 GitHub's scheduler went down and took

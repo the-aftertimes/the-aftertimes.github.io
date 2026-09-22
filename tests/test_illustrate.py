@@ -127,9 +127,15 @@ def test_background_figures_are_allowed_but_crowds_are_not():
                                   {"subject": "a woman at a tripod",
                                    "setting": "her family lined up behind her"})
     assert "no background figures" not in out
-    assert "may stand behind" in out
+    assert "figures further back" in out
     # the thing the cap was actually protecting against must still be banned
-    assert "No dense crowd or sea of faces" in out
+    assert "no dense crowd or sea of faces" in out
+    # 22/09/2026: and the focal figures are specified by CAMERA DISTANCE, never
+    # by relative size. "Larger and sharper than anyone else" drew a body so
+    # close to the lens that most of it was outside the frame, twice running.
+    assert "larger and sharper" not in out
+    assert "seen whole from a few paces" in out
+    assert "No figure cut off by the edge" in out
 
 
 # --- prompt length ----------------------------------------------------------

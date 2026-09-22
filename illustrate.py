@@ -45,6 +45,16 @@ _STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
 #: in a reclining pin-up pose on the bunk. Charlie: "today's image was a bit
 #: lewd." Any body part the brief leaves unspecified is a part flux will decide
 #: about, so the prompt states the default explicitly and the negative closes it.
+#: THE COMPOSITION CLAUSE NOW SPECIFIES THE FRAMING, not the relative size,
+#: from 22/09/2026. It used to ask for "one or two clear focal figures in front,
+#: larger and sharper than anyone else", and flux answered that literally: the
+#: 20/09 and 21/09 pictures both put enormous truncated torsos across the left
+#: and right edges with the actual subject small and central, one of them a
+#: headless body. "Larger than anyone else" is satisfied by a body so close to
+#: the camera that most of it is outside the frame. Charlie, 22/09/2026: "image
+#: for aftertimes today looks weird." A camera distance and a no-clipping rule
+#: say the thing that was meant; relative size never did.
+#:
 #: KEEP THIS TIGHT. It shares a 2048-character budget with everything else, and
 #: on 21/08/2026 it was what blew that budget - see MAX_PROMPT below. Every rule
 #: here is load-bearing, so compress the wording, never drop a rule.
@@ -54,9 +64,10 @@ _NEGATIVE = ("Everyone fully and modestly dressed for work, whole body covered, 
              "face. Nobody reclining, draped or posed for the viewer: upright "
              "and working. Every tone engraved lines and cross-hatching, never "
              "smooth grey. Full bleed: no border, frame, margin or plate mark. "
-             "One or two clear focal figures in front, larger and sharper than "
-             "anyone else; a few plainer figures may stand behind. No dense "
-             "crowd or sea of faces. No colour. Absolutely no text, letters, "
+             "One or two focal figures, seen whole from a few paces and entirely "
+             "inside the picture; a few plainer figures further back. No figure "
+             "cut off by the edge, no huge foreground body filling a corner, no "
+             "dense crowd or sea of faces. No colour. Absolutely no text, letters, "
              "words, captions, numbers, signatures or watermark - purely "
              "pictorial.")
 
@@ -67,8 +78,14 @@ _NEGATIVE = ("Everyone fully and modestly dressed for work, whole body covered, 
 #: at its worst - and two rules added to _NEGATIVE on the 19th and 20th pushed it
 #: to 2132. Nothing warned, because the length lived nowhere; it was an emergent
 #: property of a style constant, a negative constant and six model-written slots.
-#: 1900 leaves room for a long brief without going near the wall.
-MAX_PROMPT = 1900
+#: 1900 left room for a long brief without going near the wall - and then spent
+#: that room on the wall instead. Measured 22/09/2026 on the 20/09 dispatch, a
+#: perfectly ordinary briefed day: at 1900 the fit dropped the anomaly, the
+#: materials, the light AND THE SETTING, publishing a picture whose prompt no
+#: longer said where it happened. The 21/09 crowd-in-a-street image is what that
+#: looks like. The wall is 2048 characters; 2020 keeps 28 in hand and buys back
+#: the two slots that decide whether a scene is the scene.
+MAX_PROMPT = 2020
 
 #: THE OBJECT-ONLY STYLE AND NEGATIVE. Both constants above were written when
 #: every picture had people in it, and both actively REQUEST them: _STYLE asks
