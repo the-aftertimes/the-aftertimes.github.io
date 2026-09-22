@@ -359,3 +359,32 @@ def test_the_object_prompt_still_forbids_lettering():
     p = illustrate.build_prompt({"headline": "H", "scene": "s"}, _object_brief())
     assert "no text, letters, words, captions" in p
     assert p.rstrip().endswith("empty margins.")
+
+
+def test_the_workflow_commits_every_directory_the_pipeline_writes():
+    """A file the publish path writes and the workflow does not stage is invisible.
+
+    22/09/2026: `card.write()` had been building a share card on every run since
+    10/09 and no workflow staged `assets/card/`, so 21 of 53 published pages
+    carried an `og:image` that 404s - and the commit that added the card was
+    titled "stop promising one it does not have". It also broke the redraw
+    outright: reillustrate.py rewrites a TRACKED card, and `git pull --rebase`
+    refuses to run with an unstaged change, so the run committed a new picture
+    and then failed on the push with the work only on the runner.
+
+    Read off the constants rather than restated here, so adding an output
+    directory and forgetting to stage it fails rather than passing quietly.
+    """
+    import card
+    from common import load_settings, rel
+
+    wanted = {load_settings()["image"]["dir"].rstrip("/"), card.OUT_DIR.rstrip("/")}
+    for name in ("daily.yml", "reillustrate.yml"):
+        with open(rel(f".github/workflows/{name}"), encoding="utf-8") as fh:
+            adds = [l for l in fh if "git add " in l]
+        assert adds, f"{name} has no git add line"
+        staged = " ".join(adds)
+        for d in wanted:
+            assert f"{d}/" in staged, (
+                f"{name} writes {d}/ and does not stage it - the files will be "
+                f"left on the runner and the page will promise what it lacks")
