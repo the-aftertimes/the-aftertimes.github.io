@@ -164,6 +164,16 @@ def render_archive(records: list[dict], meta: dict) -> str:
 """
 
 
+#: The two files build_sitemap writes, named here rather than inline because a
+#: workflow has to STAGE them and a test has to be able to check that it does.
+#: 22/09/2026: they were written as literals inside the function, no workflow
+#: added them, and every run that rebuilt the archive left `sitemap.xml` modified
+#: and uncommitted - which broke the redraw outright, because `git pull --rebase`
+#: refuses to run against an unstaged change. The sitemap itself had been frozen
+#: at the 54 URLs of the commit that introduced it.
+OUTPUTS = ("sitemap.xml", "robots.txt")
+
+
 def build_sitemap(records: list[dict], settings: dict) -> str:
     """Write sitemap.xml and robots.txt from the dispatch records.
 
@@ -224,13 +234,13 @@ def build_sitemap(records: list[dict], settings: dict) -> str:
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
            f"{body}\n</urlset>\n")
-    with open(rel("sitemap.xml"), "w", encoding="utf-8", newline="\n") as fh:
+    with open(rel(OUTPUTS[0]), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(xml)
 
-    with open(rel("robots.txt"), "w", encoding="utf-8", newline="\n") as fh:
+    with open(rel(OUTPUTS[1]), "w", encoding="utf-8", newline="\n") as fh:
         fh.write("User-agent: *\nAllow: /\n" f"Sitemap: {base}/sitemap.xml\n")
 
-    return rel("sitemap.xml")
+    return rel(OUTPUTS[0])
 
 
 def build() -> str:

@@ -55,7 +55,7 @@ jobs:
         run: |
           git config user.name "aftertimes-bot"
           git config user.email "bot@the-aftertimes.github.io"
-          git add index.html archive.html d/ data/
+          git add index.html archive.html sitemap.xml robots.txt d/ data/
           git commit -m "reedit: ${{ inputs.date || 'latest' }}" || echo "no changes"
           git pull --rebase
           git push
