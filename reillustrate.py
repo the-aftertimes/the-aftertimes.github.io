@@ -111,6 +111,22 @@ def reillustrate(run_date: str, scene: str = "") -> int:
         with open(rel(settings["output_html"]), "w", encoding="utf-8") as fh:
             fh.write(render_mod.render_dispatch(dispatch, meta, stale=False))
         written.append(settings["output_html"])
+        # AND PUT THE STALE BANNER BACK IF THE PAGE IS STILL STALE. `stale=False`
+        # above is right for the picture and wrong for the notice: on 22/09/2026
+        # this redraw ran while today's edition had not filed, and re-rendering
+        # the front page removed "Showing yesterday's dispatch - today's edition
+        # did not file" - so the paper presented a day-old front page as current,
+        # which is the one thing the banner exists to prevent.
+        #
+        # The staleness test is the caller's, not the helper's: inject_stale_banner
+        # injects unconditionally and returns True, and run.py decides ahead of it
+        # with `already_filed`. Same test here, or a redraw on a healthy day would
+        # deface a current page - which is the fault run.py's own comment records.
+        from run import already_filed, inject_stale_banner, publication_date
+        if not already_filed(publication_date()) and inject_stale_banner(
+                settings["output_html"]):
+            print(f"    no edition filed for {publication_date()} - the page was "
+                  f"stale before this redraw and the banner is restored")
     else:
         print(f"    {run_date} is not the current front page; index.html untouched")
 
