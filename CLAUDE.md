@@ -120,12 +120,21 @@ on the 19th and 20th took a prompt that had been running within nine characters
 of the wall past it, and that day published with no picture while the job stayed
 green.
 
-`build_prompt` now fits to `MAX_PROMPT` (1900) by dropping detail slots, so a
-400 cannot recur - but the headroom is still finite and dropped slots are lost
-detail. **Before adding a rule to `_NEGATIVE`, shorten another one**, and check
-`len(_NEGATIVE)`: it was 398 characters in mid-August, ballooned to 1002, and is
-648 now. Every rule in it is load-bearing; compress the wording, never drop a
-rule.
+`build_prompt` fits to `MAX_PROMPT` by dropping detail slots, so a 400 cannot
+recur - but the headroom is finite and dropped slots are lost detail. **Before
+adding a rule to `_NEGATIVE`, shorten another one**, and check `len(_NEGATIVE)`:
+398 characters in mid-August, ballooned to 1002, 648 through September, 798 from
+22/09 when the figure-framing clause was rewritten. Every rule in it is
+load-bearing; compress the wording, never drop a rule.
+
+**`MAX_PROMPT` went 1900 -> 2020 on 22/09/2026**, and the number is deliberately
+close to the wall. At 1900 an ordinary briefed day dropped the anomaly, the
+materials, the light AND the setting - a prompt for a picture that no longer said
+where it happened. The wall is bounded from below by measurement, not by the
+docs: 2132 characters 400d, and prompts of 1978-2039 worked for a week, so the
+limit is above 2039. Do not read 2020 as room to spend: it is 28 characters short
+of the last measured safe value, and the next rule added to `_NEGATIVE` comes out
+of a brief slot.
 
 ## A correct brief can still draw the wrong picture, and the cause is usually one noun
 
