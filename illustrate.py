@@ -55,6 +55,17 @@ _STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
 #: for aftertimes today looks weird." A camera distance and a no-clipping rule
 #: say the thing that was meant; relative size never did.
 #:
+#: SECOND ATTEMPT, same day, because the first did not work. The redraw with
+#: "seen whole from a few paces ... No figure cut off by the edge" fixed the
+#: CONTENT - the arm was finally inside the patient's chest - and drew the same
+#: truncated torsos down both edges. flux-1-schnell has no negative-prompt
+#: channel at all (it 400s on the parameter), so a prohibition written as a
+#: sentence is just more tokens about bodies at the edge of the frame. Restated
+#: as the positive view: a wide full-length shot, figures complete head to boots,
+#: nothing between the viewer and the scene. UNVERIFIED - one draw disproved the
+#: first wording and nothing has drawn under this one; the next dispatch is the
+#: test, and three images in a row have carried the fault.
+#:
 #: KEEP THIS TIGHT. It shares a 2048-character budget with everything else, and
 #: on 21/08/2026 it was what blew that budget - see MAX_PROMPT below. Every rule
 #: here is load-bearing, so compress the wording, never drop a rule.
@@ -64,9 +75,10 @@ _NEGATIVE = ("Everyone fully and modestly dressed for work, whole body covered, 
              "face. Nobody reclining, draped or posed for the viewer: upright "
              "and working. Every tone engraved lines and cross-hatching, never "
              "smooth grey. Full bleed: no border, frame, margin or plate mark. "
-             "One or two focal figures, seen whole from a few paces and entirely "
-             "inside the picture; a few plainer figures further back. No figure "
-             "cut off by the edge, no huge foreground body filling a corner, no "
+             "A wide full-length view from several paces back with the whole scene "
+             "inside the frame: every figure complete from head to boots, standing "
+             "clear of the edges, nothing between the viewer and the scene. One or "
+             "two figures matter and a few plainer ones stand behind them. No "
              "dense crowd or sea of faces. No colour. Absolutely no text, letters, "
              "words, captions, numbers, signatures or watermark - purely "
              "pictorial.")
