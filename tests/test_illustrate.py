@@ -374,17 +374,30 @@ def test_the_workflow_commits_every_directory_the_pipeline_writes():
 
     Read off the constants rather than restated here, so adding an output
     directory and forgetting to stage it fails rather than passing quietly.
+
+    Second instance, found the same afternoon and by the same symptom: the sitemap
+    generator added on 21/09 writes `sitemap.xml` and `robots.txt`, no workflow
+    staged either, so the sitemap froze at the 54 URLs of the commit that created
+    it and the redraw failed on the rebase a second time. Two faults of one shape
+    in one file is the argument for reading the paths off the modules.
     """
+    import archive
     import card
     from common import load_settings, rel
 
-    wanted = {load_settings()["image"]["dir"].rstrip("/"), card.OUT_DIR.rstrip("/")}
-    for name in ("daily.yml", "reillustrate.yml"):
+    dirs = {load_settings()["image"]["dir"].rstrip("/"), card.OUT_DIR.rstrip("/")}
+    files = set(archive.OUTPUTS)
+    # reedit.yml rebuilds the archive too, so it writes the sitemap; it draws no
+    # picture, which is why the directories are checked only where they are made.
+    for name in ("daily.yml", "reillustrate.yml", "reedit.yml"):
         with open(rel(f".github/workflows/{name}"), encoding="utf-8") as fh:
             adds = [l for l in fh if "git add " in l]
         assert adds, f"{name} has no git add line"
         staged = " ".join(adds)
-        for d in wanted:
-            assert f"{d}/" in staged, (
-                f"{name} writes {d}/ and does not stage it - the files will be "
-                f"left on the runner and the page will promise what it lacks")
+        wanted = files | (dirs if name != "reedit.yml" else set())
+        for path in wanted:
+            token = f"{path}/" if path in dirs else path
+            assert token in staged, (
+                f"{name} writes {token} and does not stage it - the file is left "
+                f"on the runner, the page promises what it lacks, and a rebase in "
+                f"that job fails on the unstaged change")

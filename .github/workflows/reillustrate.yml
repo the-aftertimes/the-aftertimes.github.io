@@ -53,7 +53,7 @@ jobs:
         run: |
           git config user.name "aftertimes-bot"
           git config user.email "bot@the-aftertimes.github.io"
-          git add index.html archive.html d/ data/ assets/img/ assets/card/
+          git add index.html archive.html sitemap.xml robots.txt d/ data/ assets/img/ assets/card/
           git commit -m "reillustrate: ${{ inputs.date || 'latest' }}" \
             || echo "no changes"
           # The daily cron may have pushed while this ran; rebase rather than
