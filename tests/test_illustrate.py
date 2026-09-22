@@ -127,15 +127,19 @@ def test_background_figures_are_allowed_but_crowds_are_not():
                                   {"subject": "a woman at a tripod",
                                    "setting": "her family lined up behind her"})
     assert "no background figures" not in out
-    assert "figures further back" in out
+    assert "a few plainer ones stand behind them" in out
     # the thing the cap was actually protecting against must still be banned
-    assert "no dense crowd or sea of faces" in out
+    assert "No dense crowd or sea of faces" in out
     # 22/09/2026: and the focal figures are specified by CAMERA DISTANCE, never
     # by relative size. "Larger and sharper than anyone else" drew a body so
     # close to the lens that most of it was outside the frame, twice running.
     assert "larger and sharper" not in out
-    assert "seen whole from a few paces" in out
-    assert "No figure cut off by the edge" in out
+    assert "wide full-length view from several paces back" in out
+    assert "complete from head to boots" in out
+    # ...and stated POSITIVELY. flux-1-schnell has no negative-prompt channel, so
+    # "no figure cut off by the edge" was a sentence about figures at the edge -
+    # the redraw under that wording drew the fault again.
+    assert "cut off by the edge" not in out
 
 
 # --- prompt length ----------------------------------------------------------
@@ -350,7 +354,10 @@ def test_a_scene_prompt_keeps_every_figure_rule():
         _object_brief(subject="a woman in a sealed jumpsuit", action="waiting"))
     assert "figures in a believable environment" in p
     assert "Everyone fully and modestly dressed" in p
-    assert "focal figures" in p
+    # The whole people-block, read off the constant rather than quoted: this test
+    # asserted the words "focal figures" and broke when the composition clause was
+    # reworded on 22/09, which tells you nothing about the property it guards.
+    assert illustrate._NEGATIVE in p
     assert "empty margins" not in p, "the no-caption clause is for objects only"
 
 
