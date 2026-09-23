@@ -255,3 +255,46 @@ def test_without_a_committee_the_judge_sees_the_whole_pool(monkeypatch):
     monkeypatch.setattr(judge_mod, "judge", fake_judge)
     run_mod.choose_draft(drafts, CTX, CFG, {"panel": {"drafts": False}})
     assert handed["n"] == 3
+
+
+# --- THE EDITION IS BOUGHT ACROSS THE DAY, NOT IN ONE BREATH -----------------
+#
+# 23/09/2026: 55 hours stale. Google 503'd the FIRST call of every run for two
+# days, so the run died at ideate and the next rung of the ladder started again
+# from nothing. Photocopy, on the same key and the same models, published every
+# one of those days because it needs ONE successful call and any of its runs can
+# supply it. These tests pin the difference: what a run buys, it keeps.
+
+def _wip_root(tmp_path, monkeypatch):
+    import common
+    (tmp_path / "data").mkdir(parents=True, exist_ok=True)
+    monkeypatch.setattr(common, "_path",
+                        lambda *parts: __import__("os").path.join(str(tmp_path), *parts))
+    return tmp_path
+
+
+def test_what_a_run_buys_is_kept_for_the_next_rung(tmp_path, monkeypatch):
+    _wip_root(tmp_path, monkeypatch)
+    run_mod.save_wip("2026-09-23", chosen_premises=["a", "b"])
+    run_mod.save_wip("2026-09-23", drafts=[{"premise": "a"}])
+    wip = run_mod.load_wip("2026-09-23")
+    assert wip["chosen_premises"] == ["a", "b"], "a later save must not wipe the earlier one"
+    assert wip["drafts"] == [{"premise": "a"}]
+
+
+def test_yesterdays_leftovers_cannot_become_todays_edition(tmp_path, monkeypatch):
+    """A day that never publishes leaves its half-bought edition behind. Reusing
+    it tomorrow would file a piece written for the wrong dateline under today's
+    date, which is worse than starting again."""
+    _wip_root(tmp_path, monkeypatch)
+    run_mod.save_wip("2026-09-22", chosen_premises=["stale"])
+    assert run_mod.load_wip("2026-09-23") == {}
+
+
+def test_filing_clears_the_cache(tmp_path, monkeypatch):
+    """Otherwise the next day resumes into a finished edition."""
+    _wip_root(tmp_path, monkeypatch)
+    run_mod.save_wip("2026-09-23", chosen_premises=["a"])
+    run_mod.clear_wip()
+    assert run_mod.load_wip("2026-09-23") == {}
+    run_mod.clear_wip()  # must be safe when there is nothing to clear
