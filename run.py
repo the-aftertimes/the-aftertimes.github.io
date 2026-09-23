@@ -373,6 +373,46 @@ def rank_premises(premises: list[str], settings: dict) -> list[str]:
     return [premises[i] for i in order]
 
 
+#: WORK IN PROGRESS, CARRIED BETWEEN THE DAY'S CRON RUNS.
+#:
+#: 23/09/2026: no edition for 55 hours. Google returned 503 "high demand" to the
+#: FIRST call of every run for two days - the run dies at ideate, the next rung
+#: starts again from nothing, and the paper stays stale. Photocopy sat on the
+#: same key and the same models and published every day, because it needs ONE
+#: successful call and any of its runs can supply it. This pipeline needs about
+#: fourteen IN A ROW, which under a refusal regime is a bet it keeps losing.
+#:
+#: So the run now saves what it has bought. Premises and drafts are the
+#: expensive half (8 of the 14 calls) and they are written here as they land;
+#: the next rung of the SAME edition date reloads them and only buys what is
+#: missing. Fourteen consecutive successes becomes fourteen across the day.
+#:
+#: The sampled context - dateline, domain, style, engine, technique, place kind -
+#: is stored with them and restored on resume, because a draft written for 2183
+#: on Silt-Reach must not be judged as an edition sampled fresh for 2140. The
+#: file is cleared the moment an edition files, and is ignored if its run_date
+#: is not today's, so a day that never publishes cannot leak into the next.
+WIP_PATH = "data/wip.json"
+
+
+def load_wip(run_date: str) -> dict:
+    wip = read_json(WIP_PATH) or {}
+    return wip if wip.get("run_date") == run_date else {}
+
+
+def save_wip(run_date: str, **fields) -> None:
+    wip = load_wip(run_date)
+    wip["run_date"] = run_date
+    wip.update(fields)
+    write_json(WIP_PATH, wip)
+
+
+def clear_wip() -> None:
+    path = rel(WIP_PATH)
+    if os.path.exists(path):
+        os.remove(path)
+
+
 def run_pipeline() -> dict:
     settings = load_settings()
     domains = load_yaml("config/domains.yaml")["domains"]
@@ -412,6 +452,20 @@ def run_pipeline() -> dict:
     recent_tech = {e.get("technique") for e in ledger[-ac["avoid_recent_days"]:]}
     technique = rng.choice(
         [t for t in techniques if t["key"] not in recent_tech] or techniques)
+    # RESUME: an earlier rung of today's ladder may already have paid for some
+    # of this. Its sampled context wins over the fresh draw, or the drafts it
+    # bought would be judged as a different edition entirely.
+    wip = load_wip(run_date)
+    if wip.get("context"):
+        c = wip["context"]
+        dateline, domain = c["dateline"], c["domain"]
+        pick = lambda rows, k: next(r for r in rows if r["key"] == k)
+        style = pick(styles, c["style"])
+        place_kind = pick(place_kinds, c["place_kind"])
+        engine = pick(engines, c["engine"])
+        technique = pick(techniques, c["technique"])
+        print(f"    RESUMED from an earlier run of {run_date}")
+
     print(f">>> DATE {dateline['year']} ({dateline['years_from_now']} yrs) / "
           f"{domain} / {style['key']} / {place_kind['key']} / {engine['key']} / {technique['key']}")
 
@@ -436,14 +490,18 @@ def run_pipeline() -> dict:
         print(f"    fell-flat pool: {len(flat_lines)} line(s)")
 
     print(">>> IDEATE")
+    if wip.get("chosen_premises"):
+        print(f"    skipped; {len(wip['chosen_premises'])} premises already "
+              f"chosen by an earlier run")
     motifs = bible_mod.random_slice(bible, settings["ideate"]["bible_slice_size"], rng)
     avoid_headlines = ledger_mod.recent_headlines(
         ledger, settings["ideate"]["recent_premise_window"])
-    premises = ideate_stage.ideate(dateline, domain, motifs, seeds_plus,
-                                    avoid_headlines, settings,
-                                    style["guidance"], engine["guidance"],
-                                    place_kind["guidance"], avoid_block=avoid_block)
-    print(f"    {len(premises)} premises")
+    if not wip.get("chosen_premises"):
+        premises = ideate_stage.ideate(dateline, domain, motifs, seeds_plus,
+                                        avoid_headlines, settings,
+                                        style["guidance"], engine["guidance"],
+                                        place_kind["guidance"], avoid_block=avoid_block)
+        print(f"    {len(premises)} premises")
 
     qcfg = settings["quality"]
     context = {"years_from_now": dateline["years_from_now"],
@@ -459,10 +517,20 @@ def run_pipeline() -> dict:
     # judging finished drafts can rescue - by then four drafts of it have been
     # written and the judge is choosing the best telling of a bad idea.
     # Killing it here costs one call; polishing it downstream costs five.
-    premises = rank_premises(premises, settings)
-    chosen_premises = select_stage.select_many(
-        premises, ledger, settings, qcfg["n_drafts"])
+    if wip.get("chosen_premises"):
+        chosen_premises = wip["chosen_premises"]
+    else:
+        premises = rank_premises(premises, settings)
+        chosen_premises = select_stage.select_many(
+            premises, ledger, settings, qcfg["n_drafts"])
+        save_wip(run_date,
+                 context={"dateline": dateline, "domain": domain,
+                          "style": style["key"], "place_kind": place_kind["key"],
+                          "engine": engine["key"], "technique": technique["key"]},
+                 chosen_premises=chosen_premises)
     print(f"    {len(chosen_premises)} premises chosen")
+
+    kept: list[dict] = wip.get("drafts") or []
 
     def write_batch(pool: list[str], label: str) -> list[dict]:
         out = []
@@ -474,12 +542,18 @@ def run_pipeline() -> dict:
                     avoid_block=avoid_block, funny_lines=funny_lines,
                     flat_lines=flat_lines, technique=technique))
                 print(f"    {label}draft {i}: {out[-1]['headline'][:56]}")
+                save_wip(run_date, drafts=kept + out)
             except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
                 print(f"    WARN {label}draft {i} failed: {exc}", file=sys.stderr)
         return out
 
     print(">>> WRITE")
-    drafts = write_batch(chosen_premises, "")
+    if kept:
+        print(f"    {len(kept)} draft(s) already written by an earlier run")
+    todo = [p for p in chosen_premises
+            if p not in {d.get("premise") for d in kept}]
+    drafts = kept + write_batch(todo, "")
+    kept = drafts
     if not drafts:
         raise RuntimeError("every draft failed")
 
@@ -623,6 +697,7 @@ def run_pipeline() -> dict:
 
     archive_mod.build()
     print("    rebuilt archive.html")
+    clear_wip()
     return record
 
 
