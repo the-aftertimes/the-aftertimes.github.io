@@ -141,3 +141,56 @@ def test_a_resumed_run_keeps_the_datelines_it_wrote_for(repo, monkeypatch):
     assert record["dispatch"]["dateline"]["year"] == ctx["dateline"]["year"]
     assert record["meta"]["domain"] == ctx["domain"] if "domain" in record["meta"] \
         else record["dispatch"]["domain"] == ctx["domain"]
+
+
+# --- ONE CANDIDATE IS NOT AN ELECTION ---------------------------------------
+
+def _one_draft_only(monkeypatch, calls):
+    """Only the first premise ever writes; the rest 503."""
+    _mock_stages(monkeypatch, calls)
+    real_write = write_stage.write
+
+    def write(premise, *a, **k):
+        if premise != "premise 0":
+            raise RuntimeError("HTTP 503 high demand")
+        return real_write(premise, *a, **k)
+
+    monkeypatch.setattr(write_stage, "write", write)
+    return calls
+
+
+def test_an_early_rung_holds_rather_than_filing_one_candidate(repo, monkeypatch):
+    """Six of the nine editions from 15/09/2026 published a single draft against
+    a configured four. A thin edition filed at 15:13 also LOCKS the day, because
+    already_filed stops every later rung - so the resume cache would never get
+    to buy the second draft."""
+    _one_draft_only(monkeypatch, [])
+    monkeypatch.setattr(run_mod, "publication_date", lambda: "2026-09-23")
+
+    class _Dt:
+        hour = 15
+        def isoformat(self): return "2026-09-23T15:13:00+00:00"
+    monkeypatch.setattr(run_mod, "datetime",
+                        type("D", (), {"now": staticmethod(lambda tz=None: _Dt())}))
+
+    with pytest.raises(RuntimeError, match="election with one candidate"):
+        run_mod.run_pipeline()
+    assert not (repo / "index.html").exists(), "nothing may publish"
+    kept = run_mod.load_wip("2026-09-23")
+    assert len(kept["drafts"]) == 1, "the draft it did buy must be kept"
+
+
+def test_the_last_rung_publishes_whatever_it_has(repo, monkeypatch):
+    """A thin edition beats a stale page once the reader is about to look."""
+    _one_draft_only(monkeypatch, [])
+    monkeypatch.setattr(run_mod, "publication_date", lambda: "2026-09-23")
+
+    class _Dt:
+        hour = 21
+        def isoformat(self): return "2026-09-23T21:13:00+00:00"
+    monkeypatch.setattr(run_mod, "datetime",
+                        type("D", (), {"now": staticmethod(lambda tz=None: _Dt())}))
+
+    record = run_mod.run_pipeline()
+    assert record["quality"]["n_drafts"] == 1
+    assert (repo / "index.html").exists()
