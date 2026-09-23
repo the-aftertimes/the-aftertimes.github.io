@@ -158,11 +158,17 @@ def test_no_override_keeps_the_stored_scene(repo, monkeypatch):
     assert seen["scene"] == RECORD["dispatch"]["scene"]
 
 
-# --- the redraw must not silently un-flag a stale page (22/09/2026) ----------
+# --- a redraw must not change what DAY the front page claims to be (22/09) ---
 # It did. The 22/09 edition never filed, the front page correctly carried
 # "Showing yesterday's dispatch - today's edition did not file", and a redraw of
 # the 21st re-rendered index.html with stale=False - so the paper presented a
 # day-old front page as current. The picture was the only thing meant to change.
+#
+# The banner was cut on 23/09/2026 (Charlie: "i dont think i like the banner
+# tbh"), so these now assert the invariant it was standing in for: whatever a
+# redraw does, the page keeps the DATE of the dispatch it is showing. That is
+# strictly stronger - the old test would pass on a page dated tomorrow as long
+# as it carried the notice.
 
 def _stale_repo(repo, monkeypatch, filed: bool):
     """Point run.py's file helpers at the temp tree and set whether today filed."""
@@ -174,18 +180,26 @@ def _stale_repo(repo, monkeypatch, filed: bool):
                   "assets/img/2026-08-01.jpg")
 
 
-def test_a_redraw_restores_the_stale_banner_when_today_has_not_filed(
+def _dated(page: str) -> str:
+    """The date the masthead prints, which is what a reader actually reads."""
+    import re
+    m = re.search(r'class="edition">(.*?)</div>', page, re.S)
+    return m.group(1) if m else ""
+
+
+def test_a_redraw_on_a_stale_day_still_shows_the_dispatch_it_redrew(
         repo, monkeypatch):
     _stale_repo(repo, monkeypatch, filed=False)
     assert reill.reillustrate("2026-08-01") == 0
     page = (repo / "index.html").read_text(encoding="utf-8")
-    assert "today's edition did not file" in page, (
-        "the redraw dropped the stale notice and the page now claims to be today's")
+    assert "August 2026" in _dated(page), (
+        f"the redraw of 01/08 published a front page dated {_dated(page)!r}")
+    assert "did not file" not in page, "the banner is gone and must not come back"
 
 
 def test_a_redraw_on_a_healthy_day_does_not_deface_the_page(repo, monkeypatch):
     _stale_repo(repo, monkeypatch, filed=True)
     assert reill.reillustrate("2026-08-01") == 0
     page = (repo / "index.html").read_text(encoding="utf-8")
-    assert "today's edition did not file" not in page, (
+    assert "did not file" not in page, (
         "a redraw stamped a stale banner over a current page")

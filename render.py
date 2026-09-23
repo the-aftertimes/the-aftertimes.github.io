@@ -73,9 +73,6 @@ h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
 .meta-body{color:var(--muted);font-size:0.9rem;padding-top:0.6rem;}
 .meta-facts{line-height:1.6;}
 .meta-facts b{color:var(--fg);}
-.stale{font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;
-  background:var(--accent);color:var(--bg);padding:0.6rem 1rem;border-radius:0.3rem;
-  margin-bottom:1.8rem;}
 .signup{margin:2.5rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--rule);
   font-family:-apple-system,system-ui,sans-serif;}
 .signup-lead{margin:0 0 0.9rem;color:var(--fg);font-weight:600;}
@@ -181,8 +178,22 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     body_class = "body poem" if dispatch.get("lines") else "body"
     domain = html.escape(hyphenate(_headline_case(dispatch["domain"])))
     stamp = _fmt_local(meta["run_time"], meta["timezone"])
-    stale_banner = ("<div class='stale'>Showing yesterday's dispatch - today's "
-                    "edition did not file.</div>" if stale else "")
+    # NO BANNER. Charlie, 23/09/2026: "i dont think i like the banner tbh",
+    # after two days of outage put a red bar over the masthead. He is right, and
+    # the reason is the house rule about narrating what the page already shows:
+    # the masthead carries the edition's own date three lines below, so a reader
+    # looking at an old dispatch is already being told which day it is. A red
+    # slab on paper-coloured newsprint reads as an error page, which is a
+    # harsher claim than "yesterday's paper is still up" - and a real newspaper
+    # that misses a day does not print an apology across its own masthead.
+    #
+    # The staleness is not lost, it just is not page furniture: the edition date
+    # is on the page, the run's own log says what failed, and the estate's
+    # reliability dashboard measures output age, which is how this outage was
+    # noticed in the first place. `stale` is kept in the signature because
+    # reillustrate and the run's fallback both pass it and a future treatment
+    # (a quiet dateline note, say) belongs here rather than in a new flag.
+    stale_banner = ""
     signup = "" if is_permalink else _signup(meta.get("signup_form_url", ""))
     archive_link = ('<p><a class="arc" href="archive.html">Browse the archive '
                     '&rarr;</a></p>') if not is_permalink else (
