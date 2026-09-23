@@ -1,0 +1,82 @@
+{
+  "run_date": "2026-09-24",
+  "run_time": "2026-09-23T22:18:04.115571+00:00",
+  "dispatch": {
+    "headline": "Mourners Told To Hum",
+    "body": "Priya Nair wiped bright teal mould onto her uncle's urn shelf on Friday afternoon.\n\nShe is one of hundreds of young residents across Marius Basin applying bio-reactive grave spores to family crypts. Cultured in kitchen sinks, the fungus produces vivid neon rings across the basalt vaults.\n\nIt looks tidy.\n\nThe municipal burial board is currently receiving furious delegations from elder guilds after the spores colonised the dome's central misting grid. The growth binds to dental enamel through ordinary tap water. During Tuesday's dim-room memorial for a district pipe-fitter, forty mourners opened their mouths for the opening hymn and lit the chapel in electric green.\n\n\"People were trying to grieve,\" said guild warden Hideo Sato, whose own teeth cast a lime beam across his lapel during the service. \"Then the choir opened up. You could see right down their throats. It was like looking into a pair of high-beams.\"\n\nAsked whether the pumps could be flushed before the next wake, water supervisor Aris Thorne said the pipes held eighty thousand tonnes of fluid, and that this was simply the colour of the water now.\n\nOfficiants have advised future congregations to hum, though early trials suggest a low baritone still causes the nostrils to pulse like emergency beacons.",
+    "scene": "A mourner in a dark grey tunic sits with his lips pressed tightly shut in a dim chapel while bright green light leaks between his teeth, two relatives staring beside him.",
+    "dateline": {
+      "place": "MARIUS BASIN",
+      "year": 2298,
+      "month": 5,
+      "day": 19,
+      "years_from_now": 272
+    },
+    "domain": "Mourning & Sanitation",
+    "glossary": [
+      {
+        "term": "grave spores",
+        "gloss": "A bio-reactive domestic fungus cultured in greywater, popular among younger citizens for decorating basalt family crypts with vivid neon rings."
+      }
+    ],
+    "premise": "Young lunar residents are using bioluminescent tomb-fungus to make family graves glow in trendy neon colors, an aesthetic that elders decry now that the highly adaptive spores have colonised the dome's water supply and made everyone's teeth glow during municipal funerals.",
+    "brief": {
+      "focus": "a narrow, brilliant beam of electric-green light escaping from a tightly closed mouth, casting a sharp lime-colored glare downward across the chin",
+      "subject": "a male mourner with a bare, tense face, wearing a long-sleeved, high-collared dark grey tunic of seamless synth-fiber, matching straight-cut trousers, and flat molded-polymer shoes",
+      "action": "sitting perfectly still on a chapel bench with his lips clamped shut to contain the glow",
+      "setting": "a dim, windowless municipal crypt built from dark, hexagonal fused-basalt blocks, with two relatives in dark formal drapes sitting beside him on a composite bench, staring at his face",
+      "light": "weak, cool light from a recessed ceiling panel, contrasted by the sharp, self-luminous green beam projecting from the mouth",
+      "materials": "fused-basalt, seamless synth-fiber, molded-polymer, matte composite",
+      "anomaly": "a small, cylindrical personal air-filter cartridge with a scuffed casing set down on the bench next to his thigh"
+    },
+    "image": "assets/img/2026-09-24.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-23T22:18:04.115571+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 61,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      1.0
+    ],
+    "violations": [
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Mourners Told To Keep Mouths Closed",
+        "body": "Priya Nair wiped bright teal mould onto her uncle's urn shelf on Friday afternoon.\n\nShe is one of hundreds of young residents across Marius Basin applying bio-reactive grave spores to family crypts. The fungus, cultured in domestic greywater drains, produces vivid neon rings across the basalt vaults.\n\nIt looks tidy.\n\nThe municipal burial board now faces formal complaints from elder guilds after the spores colonised the dome's central misting grid. The growth binds naturally to dental enamel through ordinary tap water. During Tuesday's dim-room memorial for a district pipe-fitter, forty mourners opened their mouths to sing and lit the chapel in electric green.\n\nElders called it disrespectful.\n\n\"People were trying to grieve,\" said guild warden Hideo Sato, whose own teeth cast a lime beam across his lapel. \"Then the choir opened up. You could see right down their throats.\"\n\nAsked whether the pumps could be cleaned before the next wake, water supervisor Aris Thorne said the pipes held eighty thousand tonnes of fluid, and that this was the colour of the water now.\n\nOfficiants have advised future congregations to hum through closed lips.",
+        "premise": "Young lunar residents are using bioluminescent tomb-fungus to make family graves glow in trendy neon colors, an aesthetic that elders decry now that the highly adaptive spores have colonised the dome's water supply and made everyone's teeth glow during municipal funerals.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The previous headline was a bit dry and merely descriptive rather than punchy. The ending lacked a sharp comedic escalation of the glowing-teeth premise.",
+    "prose": {
+      "words": 206,
+      "sentences": 13,
+      "mean_sentence": 15.8,
+      "longest": 35,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 2.9
+    }
+  }
+}
