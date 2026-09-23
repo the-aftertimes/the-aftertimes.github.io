@@ -1,0 +1,74 @@
+{
+  "run_date": "2026-09-23",
+  "run_time": "2026-09-23T01:33:18.253918+00:00",
+  "dispatch": {
+    "headline": "Naked Blast Door Defeats Drawing Champion",
+    "body": "Tenzin Cho dropped his drawing charcoal after failing to find the inner vulnerability of a naked blast door.\n\nThe three-time champion faced the forty-tonne steel barrier in the final round of the High-Anchor Classic. Organisers had stripped the door of its yellow safety casing and hydraulic grease for the three-hour nude pose, exposing the cold lead-alloy plating beneath.\n\nCho struggled from the opening bell. While his opponent focused on the door's massive hinge pins, Cho attempted to render the quiet loneliness of the heavy locking mechanism. He spent forty minutes on a single rusty weld.\n\nHe wept quietly.\n\nThe crowd watched in silence as Cho threw three canvases into the recycling chute. By the final buzzer, his easel held only a grey smudge. Judges awarded the gold carbon-brush to his rival for a simple, flat sketch of the outer seal.\n\n\"I could not reach its core,\" Cho said in the mixed zone, wiping graphite from his fingers. \"The metal refused to give me anything but weight. It was a closed performance.\"",
+    "scene": "A slim artist in paint-splattered overalls kneels on the metal floor, weeping as he clutches a piece of charcoal before a massive, unpainted steel blast door.",
+    "dateline": {
+      "place": "HIGH-PORT NINE",
+      "year": 2196,
+      "month": 2,
+      "day": 13,
+      "years_from_now": 170
+    },
+    "domain": "art",
+    "glossary": [
+      {
+        "term": "carbon-brush",
+        "gloss": "The traditional trophy awarded to the winner of the High-Anchor Classic life-drawing tournament."
+      }
+    ],
+    "premise": "A competitive life-drawing tournament at the geosynchronous elevator terminus ends in an upset after the champion spends three rounds failing to capture the inner emotional vulnerability of a 40-tonne blast door posing in the nude.",
+    "brief": null,
+    "image": "assets/img/2026-09-23.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-23T01:33:18.253918+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 60,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      1.0
+    ],
+    "violations": [
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Naked Blast Door Defeats Drawing Champion",
+        "body": "Tenzin Cho dropped his drawing charcoal after failing to find the inner vulnerability of a naked blast door.\n\nThe three-time champion faced the forty-tonne steel barrier in the final round of the High-Anchor Classic. Organisers had stripped the door of its yellow safety casing and hydraulic grease for the three-hour nude pose, exposing the cold lead-alloy plating beneath.\n\nCho struggled from the opening bell. While his opponent focused on the door's massive hinge pins, Cho attempted to render the quiet loneliness of the heavy locking mechanism. He spent forty minutes on a single rusty weld.\n\nHe wept quietly.\n\nThe crowd watched in silence as Cho threw three canvases into the recycling chute. By the final buzzer, his easel held only a grey smudge. Judges awarded the gold carbon-brush to his rival for a simple, flat sketch of the outer seal.\n\n\"I could not reach its core,\" Cho said in the mixed zone, wiping graphite from his fingers. \"The metal refused to give me anything but weight. It was a closed performance.\"",
+        "premise": "A competitive life-drawing tournament at the geosynchronous elevator terminus ends in an upset after the champion spends three rounds failing to capture the inner emotional vulnerability of a 40-tonne blast door posing in the nude.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 171,
+      "sentences": 13,
+      "mean_sentence": 13.2,
+      "longest": 24,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.8
+    }
+  }
+}
