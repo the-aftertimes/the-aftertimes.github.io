@@ -578,6 +578,31 @@ def run_pipeline() -> dict:
         drafts += write_batch(unwritten, "retry ")
     write_failures = len(chosen_premises) - len(drafts)
 
+    # AN ELECTION WITH ONE CANDIDATE IS NOT WORTH FILING EARLY, 23/09/2026.
+    #
+    # Six of the nine editions from 15/09 published a single draft against a
+    # configured four, judge and committee both skipped - the 06/09 complaint
+    # ("not funny, doesn't make sense") running for a week, in silence. The
+    # drafts were lost to 503s, and the resume cache above is what lets a later
+    # rung buy them. But an edition that limps through with one draft FILES,
+    # and already_filed then stops every later rung from improving on it - so
+    # without this the cache would only ever help on a total outage.
+    #
+    # So an early rung holds: it keeps the draft it bought and fails, which
+    # leaves yesterday's page with its stale banner (already true at that hour)
+    # and lets the next rung add a second candidate. Past `hold_until_utc` the
+    # run publishes whatever it has, because a thin edition beats no edition
+    # and Charlie reads at 21:55 UTC. Set `contest.min_drafts: 1` to disable.
+    ccfg = settings.get("contest") or {}
+    min_drafts = int(ccfg.get("min_drafts", 2))
+    hold_until = int(ccfg.get("hold_until_utc", 20))
+    if len(drafts) < min_drafts and run_dt.hour < hold_until:
+        raise RuntimeError(
+            f"only {len(drafts)} draft(s) of {len(chosen_premises)}; holding "
+            f"for a later rung to buy a second rather than filing an election "
+            f"with one candidate. Kept what this run bought; publishes anyway "
+            f"from {hold_until:02d}:00 UTC.")
+
     print(">>> CHOOSE")
     dispatch, choose_info = choose_draft(drafts, context, qcfg, settings)
 

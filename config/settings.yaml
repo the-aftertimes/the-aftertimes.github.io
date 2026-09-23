@@ -141,6 +141,15 @@ panel:
   # written reason while removing the one freedom that was misused.
   shortlist: 2
 
+# A one-draft edition is an election with one candidate. An early rung of the
+# ladder that could only buy one draft holds it in data/wip.json and fails, so
+# the next rung can add a second; from hold_until_utc the run publishes whatever
+# it has, because a thin edition beats a stale page and Charlie reads at 21:55
+# UTC. min_drafts: 1 turns the hold off entirely. See run.py, 23/09/2026.
+contest:
+  min_drafts: 2
+  hold_until_utc: 20
+
 quality:
   # 4, not 3, from 31/08/2026. Text is not the scarce tier (Flash is free-tier and
   # the run makes ~8 calls; the metered one is the Cloudflare image quota), so one
