@@ -590,18 +590,28 @@ def run_pipeline() -> dict:
     #
     # So an early rung holds: it keeps the draft it bought and fails, which
     # leaves yesterday's page with its stale banner (already true at that hour)
-    # and lets the next rung add a second candidate. Past `hold_until_utc` the
-    # run publishes whatever it has, because a thin edition beats no edition
-    # and Charlie reads at 21:55 UTC. Set `contest.min_drafts: 1` to disable.
+    # and lets the next rung add a second candidate. Past `hold_until_hour` the
+    # run publishes whatever it has, because a thin edition beats no edition.
+    # Set `contest.min_drafts: 1` to disable the hold entirely.
+    #
+    # THE HOUR IS SYDNEY'S, NOT UTC'S - the same boundary that broke the
+    # already-filed guard in August. The first version of this used the UTC
+    # hour, which reads 15:13 and 21:13 UTC correctly (01:13 and 07:13 AEST)
+    # and then gets the late rung exactly backwards: the 01:27 UTC run that
+    # filed today is 11:27 AEST, the last chance of that Sydney edition, and a
+    # UTC test would have held it and published nothing at all. Sydney has no
+    # boundary inside the ladder, so 06:00 there means "the reader is nearly
+    # up" whenever GitHub delivers - he reads at 07:55 AEST.
     ccfg = settings.get("contest") or {}
     min_drafts = int(ccfg.get("min_drafts", 2))
-    hold_until = int(ccfg.get("hold_until_utc", 20))
-    if len(drafts) < min_drafts and run_dt.hour < hold_until:
+    hold_until = int(ccfg.get("hold_until_hour", 6))
+    local_hour = tz_now(settings).hour
+    if len(drafts) < min_drafts and local_hour < hold_until:
         raise RuntimeError(
             f"only {len(drafts)} draft(s) of {len(chosen_premises)}; holding "
             f"for a later rung to buy a second rather than filing an election "
             f"with one candidate. Kept what this run bought; publishes anyway "
-            f"from {hold_until:02d}:00 UTC.")
+            f"from {hold_until:02d}:00 Sydney time.")
 
     print(">>> CHOOSE")
     dispatch, choose_info = choose_draft(drafts, context, qcfg, settings)

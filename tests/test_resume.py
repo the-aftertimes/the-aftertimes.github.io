@@ -145,6 +145,14 @@ def test_a_resumed_run_keeps_the_datelines_it_wrote_for(repo, monkeypatch):
 
 # --- ONE CANDIDATE IS NOT AN ELECTION ---------------------------------------
 
+def _at_sydney_hour(monkeypatch, hour):
+    """Freeze the clock the pipeline reads for its hold decision."""
+    import common
+    real = common.tz_now
+    monkeypatch.setattr(run_mod, "tz_now",
+                        lambda settings: real(settings).replace(hour=hour))
+
+
 def _one_draft_only(monkeypatch, calls):
     """Only the first premise ever writes; the rest 503."""
     _mock_stages(monkeypatch, calls)
@@ -166,12 +174,7 @@ def test_an_early_rung_holds_rather_than_filing_one_candidate(repo, monkeypatch)
     to buy the second draft."""
     _one_draft_only(monkeypatch, [])
     monkeypatch.setattr(run_mod, "publication_date", lambda: "2026-09-23")
-
-    class _Dt:
-        hour = 15
-        def isoformat(self): return "2026-09-23T15:13:00+00:00"
-    monkeypatch.setattr(run_mod, "datetime",
-                        type("D", (), {"now": staticmethod(lambda tz=None: _Dt())}))
+    _at_sydney_hour(monkeypatch, 1)  # the 15:13 UTC primary
 
     with pytest.raises(RuntimeError, match="election with one candidate"):
         run_mod.run_pipeline()
@@ -184,13 +187,24 @@ def test_the_last_rung_publishes_whatever_it_has(repo, monkeypatch):
     """A thin edition beats a stale page once the reader is about to look."""
     _one_draft_only(monkeypatch, [])
     monkeypatch.setattr(run_mod, "publication_date", lambda: "2026-09-23")
-
-    class _Dt:
-        hour = 21
-        def isoformat(self): return "2026-09-23T21:13:00+00:00"
-    monkeypatch.setattr(run_mod, "datetime",
-                        type("D", (), {"now": staticmethod(lambda tz=None: _Dt())}))
+    _at_sydney_hour(monkeypatch, 7)  # 21:13 UTC, just before he looks
 
     record = run_mod.run_pipeline()
     assert record["quality"]["n_drafts"] == 1
+    assert (repo / "index.html").exists()
+
+
+def test_the_hold_is_keyed_on_sydney_not_utc(repo, monkeypatch):
+    """THE BUG THIS FILE ALMOST SHIPPED. The ladder crosses midnight UTC: the
+    run that filed 2026-09-23 started at 01:27 UTC, which is 11:27 AEST - the
+    LAST rung of that Sydney edition, hours after the 07:55 read. On the UTC
+    hour that reads as 1 and holds, so the day would have published nothing at
+    all. Sydney has no boundary inside the ladder, which is the same reason
+    publication_date was moved off UTC in August."""
+    _one_draft_only(monkeypatch, [])
+    monkeypatch.setattr(run_mod, "publication_date", lambda: "2026-09-23")
+    _at_sydney_hour(monkeypatch, 11)  # 01:27 UTC - late, not early
+
+    record = run_mod.run_pipeline()
+    assert record["quality"]["n_drafts"] == 1, "the last rung must publish"
     assert (repo / "index.html").exists()
