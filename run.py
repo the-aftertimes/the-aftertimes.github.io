@@ -39,25 +39,20 @@ import trends
 import write as write_stage
 from dates import sample_future_dateline
 
-_STALE_MARKER = "Showing yesterday's dispatch"
-
-
 def inject_stale_banner(output_html: str) -> bool:
-    path = rel(output_html)
-    if not os.path.exists(path):
-        return False
-    with open(path, "r", encoding="utf-8") as fh:
-        doc = fh.read()
-    if _STALE_MARKER in doc:
-        return True
-    banner = ("<div class='stale'>Showing yesterday's dispatch - today's edition "
-              "did not file.</div>")
-    marker = '<div class="wrap">'
-    if marker in doc:
-        doc = doc.replace(marker, marker + "\n    " + banner, 1)
-        with open(path, "w", encoding="utf-8") as fh:
-            fh.write(doc)
-    return True
+    """True if there is a previous edition to leave up. Writes nothing.
+
+    Until 23/09/2026 this stamped a red bar reading "Showing yesterday's
+    dispatch - today's edition did not file" across the masthead. Charlie, after
+    two days of Gemini outages had put one there: "i dont think i like the
+    banner tbh". See render.render_dispatch for why the page says enough
+    without it.
+
+    The function stays because main() still has to tell "there is a previous
+    edition on the page" from "there is no page at all" - the difference between
+    exiting 0 and exiting 1, and the only thing that decides whether a failed run
+    is a quiet day or an outage worth a red build."""
+    return os.path.exists(rel(output_html))
 
 
 def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
@@ -1148,7 +1143,8 @@ def main(argv: list[str] | None = None) -> int:
                   "leaving it alone.", file=sys.stderr)
             return 0
         if inject_stale_banner(settings["output_html"]):
-            print("FALLBACK - kept previous page, flagged stale.", file=sys.stderr)
+            print("FALLBACK - kept the previous edition on the page.",
+                  file=sys.stderr)
             return 0
         print("FALLBACK - no previous page; nothing to publish.", file=sys.stderr)
         return 1

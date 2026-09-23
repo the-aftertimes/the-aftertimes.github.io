@@ -42,9 +42,32 @@ def test_render_no_dashes_in_output():
     assert "\u2014" not in html and "\u2013" not in html
 
 
-def test_stale_banner_toggles():
-    assert "Showing yesterday" not in render_dispatch(DISPATCH, META, stale=False)
-    assert "Showing yesterday" in render_dispatch(DISPATCH, META, stale=True)
+def test_no_stale_banner_is_ever_rendered(monkeypatch):
+    """Charlie, 23/09/2026: "i dont think i like the banner tbh", after two days
+    of API outages put a red bar over the masthead. Pinned both ways, because a
+    future session reading the `stale` argument will reasonably assume it draws
+    something."""
+    for flag in (False, True):
+        html = render_dispatch(DISPATCH, META, stale=flag)
+        assert "Showing yesterday" not in html
+        assert "did not file" not in html
+        assert "class='stale'" not in html and 'class="stale"' not in html
+
+
+def test_the_page_carries_its_own_date_whatever_day_it_is_read():
+    """THE REASON IT IS SAFE TO DROP THE BANNER. The notice existed so a reader
+    could not mistake yesterday's dispatch for today's, and the masthead answers
+    that on its own - it prints the edition's date three lines above the
+    headline. If this ever stops being true the banner has to come back."""
+    import render as render_mod
+    html = render_dispatch(DISPATCH, META)
+    printed = render_mod._fmt_publish(META["run_time"], META["timezone"])
+    assert printed in html, "the edition's own date must be on the page"
+    # In the MASTHEAD, not only in the footer's filing line - the reader has to
+    # meet it before the story. (Compared against the <h1>, because the headline
+    # also appears in <title> and og:title near the top of the document.)
+    flag = html.index('class="edition"')
+    assert html.index(printed, flag) < html.index("<h1", flag),         "the date must sit in the masthead above the headline"
 
 
 def test_font_path_relative_for_permalink():

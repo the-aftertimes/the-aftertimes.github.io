@@ -3,26 +3,26 @@ import os
 import run as run_mod
 
 
-def test_inject_stale_banner_returns_false_when_no_page(tmp_path, monkeypatch):
+def test_no_previous_page_is_reported_as_nothing_to_keep(tmp_path, monkeypatch):
+    """That case is the difference between a quiet day and a red build: with no
+    page at all, main() exits 1 rather than 0."""
     monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
     assert run_mod.inject_stale_banner("index.html") is False
 
 
-def test_inject_stale_banner_marks_existing_page(tmp_path, monkeypatch):
+def test_a_failed_run_leaves_the_previous_edition_EXACTLY_as_it_was(
+        tmp_path, monkeypatch):
+    """Charlie cut the stale banner on 23/09/2026, so the fallback's whole job is
+    now to touch nothing. Asserted byte for byte: the failure mode this replaces
+    was a run WRITING to a page it had failed to regenerate."""
     monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
     page = tmp_path / "index.html"
-    page.write_text("<body><div class=\"wrap\">hi</div></body>", encoding="utf-8")
+    before = "<body><div class=\"wrap\">yesterday's edition</div></body>"
+    page.write_text(before, encoding="utf-8")
     assert run_mod.inject_stale_banner("index.html") is True
-    assert "Showing yesterday" in page.read_text(encoding="utf-8")
-
-
-def test_inject_stale_banner_is_idempotent(tmp_path, monkeypatch):
-    monkeypatch.setattr(run_mod, "rel", lambda p: str(tmp_path / p))
-    page = tmp_path / "index.html"
-    page.write_text("<body><div class=\"wrap\">hi</div></body>", encoding="utf-8")
+    assert page.read_text(encoding="utf-8") == before, "the page was modified"
     run_mod.inject_stale_banner("index.html")
-    run_mod.inject_stale_banner("index.html")
-    assert page.read_text(encoding="utf-8").count("Showing yesterday") == 1
+    assert page.read_text(encoding="utf-8") == before
 
 
 def _stub_dispatch(tmp_path, run_date):
