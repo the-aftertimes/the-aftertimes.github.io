@@ -603,5 +603,16 @@
     "place_kind": "orbital",
     "engine": "category",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-09-24",
+    "year": 2298,
+    "era_bucket": 5,
+    "domain": "death and mourning",
+    "headline": "Mourners Told To Hum",
+    "style": "trend",
+    "place_kind": "lunar",
+    "engine": "nature",
+    "technique": "answers_the_question"
   }
 ]
