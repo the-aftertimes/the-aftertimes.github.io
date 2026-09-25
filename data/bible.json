@@ -299,6 +299,12 @@
       "gloss": "A bio-reactive domestic fungus cultured in greywater, popular among younger citizens for decorating basalt family crypts with vivid neon rings.",
       "kind": "term",
       "first_seen": "2026-09-24"
+    },
+    {
+      "term": "patch-vaccine",
+      "gloss": "A self-adhesive dermal square that delivers immunisation through the skin without needles.",
+      "kind": "term",
+      "first_seen": "2026-09-25"
     }
   ]
 }

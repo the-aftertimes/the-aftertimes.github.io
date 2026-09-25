@@ -1,0 +1,120 @@
+{
+  "run_date": "2026-09-25",
+  "run_time": "2026-09-25T01:26:05.795318+00:00",
+  "dispatch": {
+    "headline": "Plague Reenactors Refuse Modern Cure",
+    "body": "Three historical reenactors are refusing synthetic antibiotics after grafting active bubonic plague nodes onto their thighs.\n\nThe three men, who are currently barricaded inside a wicker ox-cart at the annual High-Silt Fair, claim the painful swellings are necessary for tactile period accuracy.\n\nThey represent the year 1348.\n\n\"We want the authentic limp,\" said one reenactor, speaking through a gap in the woven wicker.\n\nThey have fever.\n\nThe regional health guild dispatched a single clerk to resolve the standoff.\n\nShe carried a copper vaporiser, a canvas folding stool, and a tube of skin-glue she refused to open during the twelve-hour negotiation.\n\nShe has offered them broad-spectrum patch-vaccines.\n\nThe men declined.\n\nUnder local sanitisation codes, the fair committee must scrub the surrounding soil with vinegar while the cart remains occupied.\n\nThe committee has already cancelled the pig-bowling championship to pay for thirty barrels of the cleaning liquid.\n\nMeanwhile, the men have requested three wooden bowls of pease pudding, a cold turnip, and an unwashed priest.\n\nThey plan to stay in the cart until Sunday.",
+    "scene": "A clerk sitting on a canvas folding stool holds a copper vaporiser toward a wicker cart where a man in a woollen tunic points to his thigh.",
+    "dateline": {
+      "place": "LUNDEN-ON-SILT",
+      "year": 3111,
+      "month": 10,
+      "day": 24,
+      "years_from_now": 1085
+    },
+    "domain": "biotech",
+    "glossary": [
+      {
+        "term": "patch-vaccine",
+        "gloss": "A self-adhesive dermal square that delivers immunisation through the skin without needles."
+      }
+    ],
+    "premise": "LUNDEN-ON-SILT — A standoff has developed at the annual medieval faire where three historical reenactors are refusing synthetic antibiotics after voluntarily grafting active bubonic plague nodes onto their thighs for \"tactile period accuracy.\"",
+    "brief": null,
+    "image": "assets/img/2026-09-25.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-25T01:26:05.795318+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 62,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      0.84,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'She carried a copper vaporiser, a canvas folding stool, and'",
+          "severity": "minor"
+        },
+        {
+          "rule": "plainness",
+          "detail": "11 words a reader must decode in 172 (6.4%, wanted under 5%) - replace with the blunt everyday word: barricaded, bubonic, grafting, pease, reenactor, reenactors, sanitisation, swellings, turnip, unwashed, vaporiser",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.8 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Plague Reenactors Refuse Modern Cure",
+        "body": "Three historical reenactors are refusing synthetic antibiotics after grafting active bubonic plague nodes onto their thighs.\n\nThe three men, who are currently barricaded inside a wicker ox-cart at the annual High-Silt Fair, claim the painful swellings are necessary for tactile period accuracy.\n\nThey represent the year 1348.\n\n\"We want the authentic limp,\" said one reenactor, speaking through a gap in the woven wicker.\n\nThey have fever.\n\nThe regional health guild dispatched a single clerk to resolve the standoff.\n\nShe carried a copper vaporiser, a canvas folding stool, and a tube of skin-glue she refused to open during the twelve-hour negotiation.\n\nShe has offered them broad-spectrum patch-vaccines.\n\nThe men declined.\n\nUnder local sanitisation codes, the fair committee must scrub the surrounding soil with vinegar while the cart remains occupied.\n\nThe committee has already cancelled the pig-bowling championship to pay for thirty barrels of the cleaning liquid.\n\nMeanwhile, the men have requested three wooden bowls of pease pudding, a cold turnip, and an unwashed priest.\n\nThey plan to stay in the cart until Sunday.",
+        "premise": "LUNDEN-ON-SILT — A standoff has developed at the annual medieval faire where three historical reenactors are refusing synthetic antibiotics after voluntarily grafting active bubonic plague nodes onto their thighs for \"tactile period accuracy.\"",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Hikers Blockade Volcanic Trail",
+        "body": "Sixteen bare-chested hikers are blockading the high-altitude sulfur trail on Mount Evans. They are protesting tourists who use synthetic lung-capsules to breathe the volcanic air.\n\nThe protest group has pitched three woollen shelters across the main ridge. They brought no filtration gear.\n\n\"If you do not cough up black silt, you have not seen the mountain,\" said climber Kaelen Soto. Soto has spent four hours inhaling the heavy sulfur fumes without a mask. \"The capsules are cheating.\"\n\nOn Wednesday, the blockaders turned away forty-two sightseers. The tourists had travelled three hundred kilometres from the floating sea-suburbs to view the active vents. Most tourists wear the internal lung-capsules, which chemically dissolve volcanic ash before it hits the throat.\n\nThe protest has halted park operations. Rangers cannot clear the trail because the protesters keep losing consciousness. Two medical gliders have landed to treat the group, but hikers are batting the oxygen hoses away with carbon walking poles.\n\nSoto fell over twice during his interview. He insisted he was fine.\n\n\"This is pure nature,\" he croaked through a thick layer of grey ash. He then threw up.",
+        "premise": "DENVER-COAST — Purist wilderness hikers are blockading the high-altitude sulfur trail to protest casual tourists who use synthetic lung-capsules, claiming that inhaling raw volcanic ash is the only honest way to experience nature.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci"
+      ],
+      "points": [
+        0.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.84,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 172,
+      "sentences": 13,
+      "mean_sentence": 13.2,
+      "longest": 26,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 11,
+      "rare_rate": 6.4
+    }
+  }
+}
