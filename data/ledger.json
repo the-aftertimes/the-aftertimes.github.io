@@ -614,5 +614,16 @@
     "place_kind": "lunar",
     "engine": "nature",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-09-25",
+    "year": 3111,
+    "era_bucket": 21,
+    "domain": "biotech",
+    "headline": "Plague Reenactors Refuse Modern Cure",
+    "style": "wire",
+    "place_kind": "drowned",
+    "engine": "leisure",
+    "technique": "escalating_precision"
   }
 ]
