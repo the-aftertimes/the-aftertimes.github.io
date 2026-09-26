@@ -1,0 +1,103 @@
+{
+  "run_date": "2026-09-27",
+  "run_time": "2026-09-26T18:00:45.870077+00:00",
+  "dispatch": {
+    "headline": "Safety System Retired Over Typo",
+    "body": "A brass-plated Decibel Governor was disconnected on Thursday. Created in 2059, the system was designed to protect Oona-under-Ice from tectonic fractures by smothering loud noises.\n\nFor ninety years, it performed its duty with wet enthusiasm. Whenever a family argument rose above ninety decibels, the ceiling vents opened. Kitchens were instantly flooded with cold soak-foam. It was a thorough process. Generations of children grew up learning to negotiate their pocket-money in a tense, rhythmic whisper. Whole birthday parties were lost to sudden debates about washing up. It became a treasured, if damp, way of life.\n\nHowever, a recent audit of the original safety charter revealed a fatal error. The system was meant to trigger at ninety units of ice-pressure, not ninety decibels of voice. For nearly a century, the colony had mistaken domestic anger for a structural emergency.\n\nThe Enceladus Bureau of Ice Safety declined to apologise for the ninety-year mess. Instead, they confirmed the high-pressure foam pipelines will now be used to distribute salad dressing.\n\n\"It taught us patience,\" said resident Nia Patel. \"We never spoke in anger.\"",
+    "scene": "A technician in a blue thermal suit stands on a kitchen stool, scraping dried foam from a brass valve while a little girl watches.",
+    "dateline": {
+      "place": "Oona-under-Ice",
+      "year": 2149,
+      "month": 2,
+      "day": 13,
+      "years_from_now": 123
+    },
+    "domain": "family",
+    "glossary": [
+      {
+        "term": "soak-foam",
+        "gloss": "A fast-expanding chemical sealant originally designed to damp seismic vibrations by filling residential spaces."
+      }
+    ],
+    "premise": "The sub-ice colony of Enceladus has marked the quiet decommissioning of the 'Domestic Decibel Governor,' a safety system that for ninety years treated loud family arguments as critical structural vibrations and automatically flooded kitchens with neutralizing foam.",
+    "brief": null,
+    "image": "assets/img/2026-09-27.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-26T18:00:45.870077+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 63,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Safety System Retired Over Typo",
+        "body": "A brass-plated Decibel Governor was disconnected on Thursday. Created in 2059, the system was designed to protect Oona-under-Ice from tectonic fractures by smothering loud noises.\n\nFor ninety years, it performed its duty with wet enthusiasm. Whenever a family argument rose above ninety decibels, the ceiling vents opened. Kitchens were instantly flooded with cold soak-foam. It was a thorough process. Generations of children grew up learning to negotiate their pocket-money in a tense, rhythmic whisper. Whole birthday parties were lost to sudden debates about washing up. It became a treasured, if damp, way of life.\n\nHowever, a recent audit of the original safety charter revealed a fatal error. The system was meant to trigger at ninety units of ice-pressure, not ninety decibels of voice. For nearly a century, the colony had mistaken domestic anger for a structural emergency.\n\nThe Enceladus Bureau of Ice Safety declined to apologise for the ninety-year mess. Instead, they confirmed the high-pressure foam pipelines will now be used to distribute salad dressing.\n\n\"It taught us patience,\" said resident Nia Patel. \"We never spoke in anger.\"",
+        "premise": "The sub-ice colony of Enceladus has marked the quiet decommissioning of the 'Domestic Decibel Governor,' a safety system that for ninety years treated loud family arguments as critical structural vibrations and automatically flooded kitchens with neutralizing foam.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Hug Law Struck Down",
+        "body": "A copper heat-sensor was unscrewed from the nursery ceiling on Monday. This marked the end of the Grandparental Thermal Regulation Act, which governed vault intimacy for eighty years.\n\nBorn during the Great Squeeze of 2069, the law sought to protect our cooling grids by limiting family hugs to twelve seconds. It was a proud, tidy system. In its youth, the Act enjoyed warm public support. Citizens logged their embraces on regional ledgers and wore thick woollen mitts to prevent thermal transfer. In 2084, the department introduced the audible warning beep to help families disengage. By its golden jubilee, the law had expanded to cover aunts, uncles and registered cousins.\n\nBut the Act could not survive a database update. Last week, an auditor noticed the law defined a \"standard grandparent\" using a thermal constant that included a hand-knitted shawl. Those shawls were retired in 2112. Because the baseline figure was obsolete, the entire framework became void.\n\n\"We got very fast at saying goodbye,\" said resident Kenji Sato. \"We will miss the rhythm of it.\"",
+        "premise": "Mourners in the Great Rift subterranean vault have bid farewell to the 'Grandparental Thermal Regulation Act,' which for eighty years legally restricted the duration of hugs to prevent families from exceeding the habitat's strict metabolic heat quotas.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 features much stronger, highly visual comedic escalation (soak-foam during family arguments) and a sharper satirical turn than Draft 2.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci"
+      ],
+      "points": [
+        1.0,
+        1.0
+      ],
+      "rankings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The headline was too dry and descriptive; tightened it to a punchy three-word gag. Sharpened the resident's quote to highlight the absurd domestic reality of living under the foam threat, and rewrote the final line to land a proper ironic kicker about the newly defenceless colony.",
+    "prose": {
+      "words": 178,
+      "sentences": 16,
+      "mean_sentence": 11.1,
+      "longest": 17,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.7
+    }
+  }
+}

@@ -305,6 +305,12 @@
       "gloss": "A self-adhesive dermal square that delivers immunisation through the skin without needles.",
       "kind": "term",
       "first_seen": "2026-09-25"
+    },
+    {
+      "term": "soak-foam",
+      "gloss": "A fast-expanding chemical sealant originally designed to damp seismic vibrations by filling residential spaces.",
+      "kind": "term",
+      "first_seen": "2026-09-27"
     }
   ]
 }
