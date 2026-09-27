@@ -636,5 +636,16 @@
     "place_kind": "subsurface",
     "engine": "bureaucratic",
     "technique": "puncture_the_pompous"
+  },
+  {
+    "run_date": "2026-09-28",
+    "year": 2873,
+    "era_bucket": 16,
+    "domain": "ecology and wildlife",
+    "headline": "Bowing To Drakes Was Not Holy",
+    "style": "investigation",
+    "place_kind": "exoplanet",
+    "engine": "ritual",
+    "technique": "unasked_statistic"
   }
 ]
