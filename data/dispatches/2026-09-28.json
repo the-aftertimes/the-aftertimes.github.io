@@ -1,0 +1,107 @@
+{
+  "run_date": "2026-09-28",
+  "run_time": "2026-09-27T18:59:19.222472+00:00",
+  "dispatch": {
+    "headline": "Bowing To Drakes Was Not Holy",
+    "body": "Deacon Silas leaked a dusty datacard revealing why settlers must kneel before the wild plains-drakes of Oros.\n\nThe file, written by the colony's first faith-keepers, shows the daily bowing is not an act of spiritual devotion.\n\nInstead, the low posture keeps the human silhouette below the mating height of the six-legged carnivores.\n\nStanding upright makes the territorial beasts mistake settlers for rival bulls.\n\n\"My joints are ruined,\" Silas said.\n\nHe rubbed his swollen knees.\n\nHe spoke from a darkened recovery ward, where he is undergoing joint reconstruction.\n\nThe old deacon spent forty years bowing to the pack that nests near the colony's primary water-extractor.\n\nSilas claimed the early clergy invented the sacred prayers to hide a design flaw in the colony's original hazard-suits.\n\nAccording to safety files, an upright settler triggers 4.3 mating challenges per kilometre from the drakes.\n\nThe First Landfall Creed denied the leak.\n\nA spokesperson stated that the beasts simply appreciate human humility and the scent of the temple's sacred oil.\n\nThey also announced a new bulk order of heavy-duty gel-pads.",
+    "scene": "A settler in a bulky hazard-suit kneels in the red dust of Oros while a six-legged drake towers over him.",
+    "dateline": {
+      "place": "SULIS CRATER, OROS",
+      "year": 2873,
+      "month": 2,
+      "day": 1,
+      "years_from_now": 847
+    },
+    "domain": "ecology and wildlife",
+    "glossary": [
+      {
+        "term": "plains-drake",
+        "gloss": "A large, six-legged reptilian predator native to the dry grasslands of Oros."
+      }
+    ],
+    "premise": "Leaked ecclesiastical manuals reveal the colony's compulsory genuflection before wild plains-drakes is not an ancient act of spiritual reverence, but the only posture low enough to prevent the carnivores from mistaking settlers for rival mating partners.",
+    "brief": null,
+    "image": "assets/img/2026-09-28.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-27T18:59:19.222472+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 64,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      1.0,
+      0.75,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tax",
+          "severity": "major"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Bowing To Drakes Was Not Holy",
+        "body": "Deacon Silas leaked a dusty datacard revealing why settlers must kneel before the wild plains-drakes of Oros.\n\nThe file, written by the colony's first faith-keepers, shows the daily bowing is not an act of spiritual devotion.\n\nInstead, the low posture keeps the human silhouette below the mating height of the six-legged carnivores.\n\nStanding upright makes the territorial beasts mistake settlers for rival bulls.\n\n\"My joints are ruined,\" Silas said.\n\nHe rubbed his swollen knees.\n\nHe spoke from a darkened recovery ward, where he is undergoing joint reconstruction.\n\nThe old deacon spent forty years bowing to the pack that nests near the colony's primary water-extractor.\n\nSilas claimed the early clergy invented the sacred prayers to hide a design flaw in the colony's original hazard-suits.\n\nAccording to safety files, an upright settler triggers 4.3 mating challenges per kilometre from the drakes.\n\nThe First Landfall Creed denied the leak.\n\nA spokesperson stated that the beasts simply appreciate human humility and the scent of the temple's sacred oil.\n\nThey also announced a new bulk order of heavy-duty gel-pads.",
+        "premise": "Leaked ecclesiastical manuals reveal the colony's compulsory genuflection before wild plains-drakes is not an ancient act of spiritual reverence, but the only posture low enough to prevent the carnivores from mistaking settlers for rival mating partners.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Holy Day Kept Out Wasps",
+        "body": "Clerk Joram holds a cracked data-slate containing the original colony logs. These files reveal that the Day of Blind Contemplation was established solely because the early builders forgot to seal the main bell tower against migrating glass-wasps.\n\nThe annual ritual requires families to lock their composite shutters and pray in total darkness for thirty hours. The colony's early safety guidelines permitted exactly 1.4 fatal stingings per prayer circle before the holiday was declared mandatory. The wasps strip a heavy beast to the bone in under forty seconds.\n\n\"We simply lacked the window sealant,\" whispered Elder Corin, who requested anonymity after forty years of service. \"It was much easier to call the swarms a test of faith than to admit our construction crews had run out of polymer weld.\"\n\nThe church denies this. They insist the holiday is for inner peace.\n\n\"The silence is holy,\" said spokesperson Kira Tolo. \"The timing of the migration is a natural coincidence.\"\n\nResidents remain sceptical. Many have noticed the glass-wasps now nest in the sacred copper pipes of the heating system.\n\nThe swarms are loud.",
+        "premise": "Internal temple archives confirm the holy 'Day of Blind Contemplation' was established by early settlers solely to keep the congregation indoors while the migration of flesh-stripping glass-wasps passes through the unsealed bell tower.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Temple Denies Desert Beast Wants Bread",
+        "body": "Chief Keeper Tariq Al-Jamil ordered forty tonnes of white flour on Thursday. The purchase comes as a leaked logbook from the colonial vessel Vanguard reveals the sacred Offering of the First Sheaf began as an illegal dump of spoiled yeast-dough in 2612. For generations, the priesthood has maintained that the Great Sand-Skimmer demands the tribute to balance the soil. However, the newly recovered shipping manifests show that early colonists simply used the beast's gullet to bypass local recycling laws. \n\nThe leviathan has since developed a violent carbohydrate dependency. \n\nIt thrashes. \n\nThe beast now destroys four water pipes per week when its dough is late, up from three. Temple officials deny the creature is hooked on bread. \"We are just feeding a god,\" Al-Jamil said, refusing to show his baking records. \n\nA retired freight loader, Priya Nair, admits she helped haul the spoiled flour. \"We just wanted to avoid a waste tax,\" Nair said. \n\nNow we bake for our lives. \n\nThe Dune Reclamation Board has declined to intervene, citing local worship laws. Meanwhile, twenty novice priests spend their entire watch kneading dough.",
+        "premise": "A suppressed agricultural dispatch shows the sacred 'Offering of the First Sheaf' to an indigenous desert leviathan originated as an illicit dump of spoiled colonial flour, leaving the beast with a violent bread addiction the priesthood must now conceal.",
+        "score": 0.75,
+        "rejected": true
+      },
+      {
+        "headline": "Archivist Exposes Holy Crab Poisoning Cover-Up",
+        "body": "Archivist Hana Soto holds a damp ledger that ruins the planet's main faith. Decrypted files from the first landfall show that the holy taboo against eating native blind-crabs was actually a cover-up. In the first winter, the entire colonial council died after eating the white crustaceans undercooked. To hide the embarrassing lack of basic hygiene, survivors declared the creatures were sacred vessels containing the souls of dead relatives. This overnight law transformed a pale, sewage-dwelling pest into a heavily protected ancestor. The average colonist now spends 14.2 minutes a day apologising to mud-crabs. It is a quiet routine. A junior priest, speaking on condition of anonymity, admitted the chapel has secretly imported garlic butter for months. \"We knew the truth was coming out,\" he said, adjusting his copper collar. \"You cannot keep a garlic sauce quiet forever.\" The Ministry of Faith issued a flat denial, calling the decrypted ledger a mistranslation of early boiling instructions. They insist the ancestors are still inside. Meanwhile, local kitchen shops report a sudden run on heavy iron pots. The water is already heating.",
+        "premise": "Decrypted parish records expose that the divine taboo against harvesting native blind-crabs—long revered as vessels for deceased ancestors—was invented overnight after the entire first colonial council died of basic, undercooked food poisoning.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 174,
+      "sentences": 13,
+      "mean_sentence": 13.4,
+      "longest": 19,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.9
+    }
+  }
+}
