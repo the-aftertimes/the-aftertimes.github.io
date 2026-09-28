@@ -8,9 +8,9 @@ change only when Charlie says so.
 
 ### Over-used lately
 
+- phrase: "judges awarded the" in 3 dispatches
 - phrase: "in the corridor" in 3 dispatches
-- name: "Voss" in 3 dispatches
-- name: "Chen" in 3 dispatches
+- name: "Silas" in 3 dispatches
 
 ### Suggested next step
 
