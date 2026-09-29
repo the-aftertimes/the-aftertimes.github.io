@@ -1,0 +1,100 @@
+{
+  "run_date": "2026-09-30",
+  "run_time": "2026-09-29T22:58:34.417078+00:00",
+  "dispatch": {
+    "headline": "Silent Thrusters Muffled For Quiet Weekend",
+    "body": "Tariq Chen spent four days trowelling heavy grey foam onto a massive attitude rocket thruster.\n\nHe and five other technicians wore bulky vacuum suits to apply eight hundred tons of acoustic soak-foam across the primary thrusters of High Lantia.\n\nThe station lies inside a designated quiet zone.\n\nUnder local peace rules, orbital thrusters must not exceed forty decibels during the Sunday rest period.\n\nThe rules measure noise by calculating the sound a thruster would make if space were filled with air.\n\nIn a vacuum, the thrusters are silent.\n\nHowever, the calculations are automated.\n\nIf the theoretical decibels rise, the station's docking gates lock shut to protect resident sleep cycles.\n\nChen used a long plastic spade to flatten the final layer of grey paste before the Sunday morning deadline.\n\n\"We had to smooth it by hand,\" Chen said. \"If there are any bubbles, the computer says it hums.\"\n\nThe foam will burn off the moment the thrusters fire on Monday.\n\nBut for now, the computer is satisfied.\n\nThe ring is legally silent.",
+    "scene": "A technician in a bulky white vacuum suit uses a plastic spade to smooth thick grey paste over a giant rocket thruster.",
+    "dateline": {
+      "place": "HIGH LANTIA",
+      "year": 2198,
+      "month": 6,
+      "day": 9,
+      "years_from_now": 172
+    },
+    "domain": "space law",
+    "glossary": [
+      {
+        "term": "soak-foam",
+        "gloss": "A heavy, sound-dampening paste typically sprayed onto interior cabin walls to reduce pump vibrations."
+      }
+    ],
+    "premise": "Station technicians on the Orbital Ring spent four days in vacuum suits manually troweling eight hundred tons of acoustic soak-foam over the primary attitude thrusters to comply with local weekend noise regulations.",
+    "brief": null,
+    "image": "assets/img/2026-09-30.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-29T22:58:34.417078+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 66,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      0.75,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tribunal",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: plastic",
+          "severity": "minor"
+        },
+        {
+          "rule": "plainness",
+          "detail": "11 words a reader must decode in 171 (6.4%, wanted under 5%) - replace with the blunt everyday word: decibels, flatten, hums, thruster, thrusters, trowelling",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Engineer Bends Tunnel Around Old Boot",
+        "body": "Track engineer Basra Al-Jamil has finished curving five miles of magnetic rail around a single frozen boot. The footwear, dropped during the 2092 line-stringing, was declared an untouchable sovereign sanctuary by the Heritage Registry last autumn. Al-Jamil’s crew originally planned a thirty-metre detour. However, the boot’s protective zone expanded to cover its projected drift path. Then, preservationists argued the sanctuary must include the boot's historical line of sight. Finally, the Transit Tribunal ruled that the boot's gravitational wake could not be crossed. The bypass tunnel now stretches five miles into high-radiation vacuum, adding twelve minutes to every commute. Al-Jamil spends his shifts monitoring the concrete curve from his tiny cabin on the outer ring. He must grease the stabilisers daily. The train slows. Passengers often crowd the glass, hoping to spot the black leather heel against the stars. \"Most days it is just a speck,\" Al-Jamil says. \"We had to build a whole new airlock just to vent our lunch wrappers away from its airspace.\" He has named the curve the Left Heel Turn. Tomorrow, he begins planning a second bypass, as the boot has begun to wobble.",
+        "premise": "Engineers at the Orbital Elevator Terminus were forced to construct a five-mile bypass tunnel around a frozen, floating boot after historic preservation laws rendered the drifting debris an untouchable sovereign sanctuary.",
+        "score": 0.75,
+        "rejected": true
+      },
+      {
+        "headline": "Silent Thrusters Muffled For Quiet Weekend",
+        "body": "Tariq Chen spent four days trowelling heavy grey foam onto a massive attitude rocket thruster.\n\nHe and five other technicians wore bulky vacuum suits to apply eight hundred tons of acoustic soak-foam across the primary thrusters of High Lantia.\n\nThe station lies inside a designated quiet zone.\n\nUnder local peace rules, orbital thrusters must not exceed forty decibels during the Sunday rest period.\n\nThe rules measure noise by calculating the sound a thruster would make if space were filled with air.\n\nIn a vacuum, the thrusters are silent.\n\nHowever, the calculations are automated.\n\nIf the theoretical decibels rise, the station's docking gates lock shut to protect resident sleep cycles.\n\nChen used a long plastic spade to flatten the final layer of grey paste before the Sunday morning deadline.\n\n\"We had to smooth it by hand,\" Chen said. \"If there are any bubbles, the computer says it hums.\"\n\nThe foam will burn off the moment the thrusters fire on Monday.\n\nBut for now, the computer is satisfied.\n\nThe ring is legally silent.",
+        "premise": "Station technicians on the Orbital Ring spent four days in vacuum suits manually troweling eight hundred tons of acoustic soak-foam over the primary attitude thrusters to comply with local weekend noise regulations.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 0.84,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 171,
+      "sentences": 14,
+      "mean_sentence": 12.2,
+      "longest": 24,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 11,
+      "rare_rate": 6.4
+    }
+  }
+}

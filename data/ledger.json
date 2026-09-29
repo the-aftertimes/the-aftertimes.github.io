@@ -658,5 +658,16 @@
     "place_kind": "deepspace",
     "engine": "scale",
     "technique": "stated_rule_reductio"
+  },
+  {
+    "run_date": "2026-09-30",
+    "year": 2198,
+    "era_bucket": 3,
+    "domain": "space law",
+    "headline": "Silent Thrusters Muffled For Quiet Weekend",
+    "style": "feature",
+    "place_kind": "orbital",
+    "engine": "logistics",
+    "technique": "commit_past_reason"
   }
 ]
