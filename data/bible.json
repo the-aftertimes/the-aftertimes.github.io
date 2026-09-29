@@ -317,6 +317,12 @@
       "gloss": "A large, six-legged reptilian predator native to the dry grasslands of Oros.",
       "kind": "term",
       "first_seen": "2026-09-28"
+    },
+    {
+      "term": "ion-drizzle",
+      "gloss": "A dense suspension of low-energy radioactive particles that creates a wet film on exterior metal.",
+      "kind": "term",
+      "first_seen": "2026-09-29"
     }
   ]
 }
