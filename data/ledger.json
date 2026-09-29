@@ -647,5 +647,16 @@
     "place_kind": "exoplanet",
     "engine": "ritual",
     "technique": "unasked_statistic"
+  },
+  {
+    "run_date": "2026-09-29",
+    "year": 2670,
+    "era_bucket": 12,
+    "domain": "weather and climate",
+    "headline": "Space Fleet Grounded By Damp Vacuum",
+    "style": "interview",
+    "place_kind": "deepspace",
+    "engine": "scale",
+    "technique": "stated_rule_reductio"
   }
 ]

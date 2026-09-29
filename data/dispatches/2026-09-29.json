@@ -1,0 +1,109 @@
+{
+  "run_date": "2026-09-29",
+  "run_time": "2026-09-28T23:49:51.499554+00:00",
+  "dispatch": {
+    "headline": "Space Fleet Grounded By Damp Vacuum",
+    "body": "Commander Avi Naidu grounded his patrol fleet yesterday because the local vacuum has become damp.\n\nThe decision follows the arrival of a ten-light-year radiation cloud, which Naidu describes as a miserable, clinging drizzle of ions.\n\n\"It is not proper rain,\" Naidu said, adjusting his woollen neck-wrap. \"But it settles on the hull plating. If you go out in that, you bring the damp right back into the airlocks. It gets into the carpets.\"\n\nUnder garrison regulations, long-range reconnaissance is classified as outdoor work. Naidu has ordered his eighty-man crew to remain inside the waystation, where they are currently boiling warm tea and listening to radio static.\n\n\"We have a duty of care,\" Naidu said. \"The crews would get soaked. It ruins the seals on the suits, and then everyone is grumpy.\"\n\nThe tactical grounding leaves a vital border sector completely unmonitored, potentially allowing raiders to cross the perimeter.\n\nNaidu remains unconcerned.\n\n\"Nobody wants to pirate in this weather anyway,\" Naidu said, staring out at the grey void. \"They would just get damp.\"",
+    "scene": "Commander Avi Naidu, wearing a heavy woollen neck-wrap, peers through a foggy glass porthole while holding a steaming mug of tea.",
+    "dateline": {
+      "place": "Black-Watch Waystation",
+      "year": 2670,
+      "month": 8,
+      "day": 27,
+      "years_from_now": 644
+    },
+    "domain": "weather and climate",
+    "glossary": [
+      {
+        "term": "ion-drizzle",
+        "gloss": "A dense suspension of low-energy radioactive particles that creates a wet film on exterior metal."
+      }
+    ],
+    "premise": "A deep-space garrison commander has grounded all long-range reconnaissance patrols because an approaching ten-light-year radiation cloud is making the vacuum 'a bit damp and uninviting.'",
+    "brief": null,
+    "image": "assets/img/2026-09-29.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-28T23:49:51.499554+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 65,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      1.0,
+      0.84
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "wink",
+          "detail": "a source is commenting on the joke rather than living in it: 'nobody wants'",
+          "severity": "minor"
+        },
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: 'Under garrison regulations, long-range reconnaissance is classified as outdoor work.'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Mutineers Settle For Cold Drizzle",
+        "body": "Private Jamil Cho sits in a damp coat under a leaking ceiling at Grave-Reach. He likes the damp. The dark-matter garrison recently threatened mutiny until officers programmed a miserable autumn drizzle into the mess hall. Before the change, the sealed station had perfect air that smelled of nothing.\n\n'It was driving us mad,' Cho said, wiping grey broth from his wet sleeve. 'You cannot hate a captain when the room is twenty-two degrees and dry.'\n\nThe station sits in a deep-space dead zone where nothing ever changes. Cho believes a soldier needs bad weather to keep sane.\n\n'Without it, we looked at each other,' Cho said. 'We began discussing the mission, which is always a mistake.'\n\nThe new damp has resolved all discipline issues. Sixty soldiers now sit in wet wool, their tempers restored by the drafty ceiling.\n\n'But you can hate a captain if he makes you eat wet toast,' Cho said, gesturing to the grey mist falling into his food tray. 'It is properly miserable. We can finally get back to work.'",
+        "premise": "Troops at a remote dark-matter garrison threatened mutiny until command adjusted the life-support systems to produce 'a proper miserable autumn drizzle' inside the mess hall.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Space Fleet Grounded By Damp Vacuum",
+        "body": "Commander Avi Naidu grounded his patrol fleet yesterday because the local vacuum has become damp.\n\nThe decision follows the arrival of a ten-light-year radiation cloud, which Naidu describes as a miserable, clinging drizzle of ions.\n\n\"It is not proper rain,\" Naidu said, adjusting his woollen neck-wrap. \"But it settles on the hull plating. If you go out in that, you bring the damp right back into the airlocks. It gets into the carpets.\"\n\nUnder garrison regulations, long-range reconnaissance is classified as outdoor work. Naidu has ordered his eighty-man crew to remain inside the waystation, where they are currently boiling warm tea and listening to radio static.\n\n\"We have a duty of care,\" Naidu said. \"The crews would get soaked. It ruins the seals on the suits, and then everyone is grumpy.\"\n\nThe tactical grounding leaves a vital border sector completely unmonitored, potentially allowing raiders to cross the perimeter.\n\nNaidu remains unconcerned.\n\n\"Nobody wants to pirate in this weather anyway,\" Naidu said, staring out at the grey void. \"They would just get damp.\"",
+        "premise": "A deep-space garrison commander has grounded all long-range reconnaissance patrols because an approaching ten-light-year radiation cloud is making the vacuum 'a bit damp and uninviting.'",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "panel": {
+      "voted": [
+        "morris"
+      ],
+      "points": [
+        0.0,
+        1.0
+      ],
+      "rankings": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 0.84,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 172,
+      "sentences": 15,
+      "mean_sentence": 11.5,
+      "longest": 23,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.9
+    }
+  }
+}
