@@ -1,0 +1,109 @@
+{
+  "run_date": "2026-10-01",
+  "run_time": "2026-09-30T20:00:39.622772+00:00",
+  "dispatch": {
+    "headline": "Screaming Clerk Wins Trade",
+    "body": "Junior clerk Kenji Al-Jamil won the annual Port-Side Open-Cry tournament on Friday by screaming directly into a ventilation shaft.\n\nThe tournament, held during the third-shift coolant flush, pits the ship's loudest traders against each other.\n\nAl-Jamil, representing the Sector Four Soy Syndicate, faced a steep six-point deficit against veteran trader Sunita Patel.\n\nPatel had dominated the early rounds with her signature low-frequency drone, which easily bypassed the cabin air-filters to register trades on the floor below.\n\nBut Al-Jamil changed his tactics.\n\nIn the final minute, as wet-feed futures ticked downward, he discarded his regulatory throat-mic and leaned into the bare shaft.\n\nHe screamed a buy-order for twelve thousand tonnes of wet feed.\n\nThe sound waves travelled down the steel pipe at three hundred metres per second, bypassing the ship's sluggish copper network entirely.\n\nHis left eardrum ruptured instantly, but the acoustic signal reached the third-deck engine-room floor six seconds before the computerised ticker could update.\n\nThe board confirmed his victory.\n\n\"I heard a wet pop and now my head whistles when I yawn,\" Al-Jamil wrote on a medical slate from his cot. \"But we got the soy.\"\n\nTo honour his sacrifice, the syndicate has promoted him to Senior Screamer and moved his desk three metres closer to the shaft.",
+    "scene": "A clerk in a grease-stained tunic leans precariously over a gaping circular ventilation grate, his mouth wide in a yell while holding one hand over his bleeding ear.",
+    "dateline": {
+      "place": "THE PORT-SIDE VENT",
+      "year": 3397,
+      "month": 10,
+      "day": 3,
+      "years_from_now": 1371
+    },
+    "domain": "FINANCIAL SHOUTING",
+    "glossary": [
+      {
+        "term": "Soy Syndicate",
+        "gloss": "One of the cartel-like corporate blocks controlling the distribution of synthetic protein paste."
+      }
+    ],
+    "premise": "PORT-SIDE VENT SHAFT (3397) — The Port-Side Margin Call screaming tournament was decided in the final minutes when a junior analyst successfully burst his eardrums shouting a buy-order down a three-deck-deep ventilation shaft.",
+    "brief": null,
+    "image": "assets/img/2026-10-01.jpg"
+  },
+  "meta": {
+    "run_time": "2026-09-30T20:00:39.622772+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 67,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      1.0,
+      0.67
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: debt",
+          "severity": "major"
+        },
+        {
+          "rule": "plainness",
+          "detail": "9 words a reader must decode in 176 (5.1%, wanted under 5%) - replace with the blunt everyday word: capitalised, clog, lint, scrubbers, shredders, slurry, softener, starching, wringing",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Screaming Clerk Wins Trading Tournament",
+        "body": "Junior clerk Kenji Al-Jamil won the annual Port-Side Margin Call tournament on Friday by shouting down a ventilation shaft.\n\nThe tournament began during the third-shift coolant flush.\n\nAl-Jamil, representing the Sector Four Soy Syndicate, faced a steep six-point deficit against the veteran valve-trader Sunita Patel.\n\nPatel had dominated the early rounds with her signature low-frequency drone, which easily bypassed the cabin air-filters.\n\nBut Al-Jamil changed his tactics.\n\nIn the final minute, as nitrogen futures ticked downward, he discarded his regulatory throat-mic and leaned into the bare shaft.\n\nHe screamed a buy-order for twelve thousand tonnes of wet feed.\n\nThe sound waves travelled down the steel pipe at three hundred metres per second, bypassing the ship's sluggish copper network.\n\nHis left eardrum ruptured instantly.\n\nThe acoustic signal reached the third-deck engine-room floor six seconds before the computerised ticker could update.\n\nThe board confirmed his victory.\n\n\"I heard a wet pop,\" Al-Jamil said through a translator in the ship's medical bay.\n\n\"But we secured the nitrogen.\"\n\nTo honour his effort, the syndicate has awarded him a new copper ear-plug.",
+        "premise": "PORT-SIDE VENT SHAFT (3397) — The Port-Side Margin Call screaming tournament was decided in the final minutes when a junior analyst successfully burst his eardrums shouting a buy-order down a three-deck-deep ventilation shaft.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Treasury Scrubs Five Million Credits",
+        "body": "Treasury scrubbers dumped five million physical credits into the Sump Three agitation tanks on Thursday. The starboard reactor failed at ten. The wash went on.\n\nThe annual Money Laundering Derby began with the Logbook Keepers taking an early lead by starching their ledger-discs. But the treasury team, led by senior vat-tender Jari Kalu, responded with high-temperature spin cycles. Steam filled the bay as three million credits of ship debt dissolved into pulp.\n\nBy eleven, the auditors were struggling with heavy-duty lint-clog. Kalu's team capitalised on the delay, dumping forty crates of sovereign debt-sheets into the industrial shredders. The liquid assets turned purple, then pale blue, then a clean lavender.\n\nThe final buzzer sounded as the last coin-wafer melted into the slurry. The treasury team secured the win with six minutes to spare, completely erasing the quarter's deficit before the lunch bell.\n\n\"We had a solid rinse strategy,\" Kalu said from the wet-zone, wringing out his overalls. \"The auditors relied too much on fabric softener, but at this level, you need raw acidity to balance the books.\"",
+        "premise": "SECTOR FOUR LAUNDRY BAY (3397) — The annual Money Laundering Derby ended in a historic victory for the treasury staff, who successfully scrubbed five million physical credits into a fine, lavender-scented slurry before the lunch bell.",
+        "score": 0.67,
+        "rejected": true
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 brilliantly satirizes latency arbitrage in high-frequency trading with a visceral, dryly hilarious physical gag and a great final kicker.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "panel": {
+      "voted": [
+        "morris"
+      ],
+      "points": [
+        1.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The original headline was too long and descriptive. Replacing the translator with a medical slate resolves the logic of a patient with a freshly ruptured eardrum communicating from a medical bay, while sharpening the corporate satire.",
+    "prose": {
+      "words": 209,
+      "sentences": 13,
+      "mean_sentence": 16.1,
+      "longest": 24,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.4
+    }
+  }
+}

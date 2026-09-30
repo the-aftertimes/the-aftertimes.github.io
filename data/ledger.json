@@ -669,5 +669,16 @@
     "place_kind": "orbital",
     "engine": "logistics",
     "technique": "commit_past_reason"
+  },
+  {
+    "run_date": "2026-10-01",
+    "year": 3397,
+    "era_bucket": 27,
+    "domain": "money and finance",
+    "headline": "Screaming Clerk Wins Trade",
+    "style": "sport",
+    "place_kind": "shipboard",
+    "engine": "language",
+    "technique": "local_granularity"
   }
 ]
