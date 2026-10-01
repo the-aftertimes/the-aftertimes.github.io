@@ -329,6 +329,12 @@
       "gloss": "One of the cartel-like corporate blocks controlling the distribution of synthetic protein paste.",
       "kind": "term",
       "first_seen": "2026-10-01"
+    },
+    {
+      "term": "rail-pumping",
+      "gloss": "The recreational use of manual-pump railway vehicles for cardiovascular exercise.",
+      "kind": "term",
+      "first_seen": "2026-10-02"
     }
   ]
 }

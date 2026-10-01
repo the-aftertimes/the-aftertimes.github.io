@@ -1,0 +1,83 @@
+{
+  "run_date": "2026-10-02",
+  "run_time": "2026-10-01T18:01:28.666013+00:00",
+  "dispatch": {
+    "headline": "Commuters Pump Handcars For Fun",
+    "body": "Brightly dressed clerks are pumping heavy steel handcars across the Ceres salt flats. The three-metre vehicles, once used to transport brine before the tracks were automated, have become the asteroid’s most popular fitness trend. Young office workers now use them for morning core workouts.\n\nThey call it rail-pumping.\n\nElderly residents are horrified. To those who worked the deep salt seams under the old mining syndicate, the wooden pump-handles represent decades of forced labour. Retired driller Kieran Cho spent six years chained to a lever. He says the sight of young people wearing expensive linen shorts while sweating on the gallows-frame makes him physically ill.\n\n\"It was a punishment,\" Cho said.\n\nThe trend has begun to delay commercial freight. Asked if the automated ore-trains could stop in time to avoid crushing the slow-moving gym-goers, the track manager said the trains ran on a fixed loop. He added that the cargo would arrive on time regardless.\n\nMeanwhile, the commuters are petitioning the council to remove the modern roller-bearings from the axles. They want more friction to increase their caloric burn.",
+    "scene": "A clerk wearing linen shorts and a visor grips the wooden lever of a rusty handcar on a monorail track, while an elderly man in grease-stained coveralls glares from a nearby gantry.",
+    "dateline": {
+      "place": "Piazzi Sough, Ceres",
+      "year": 2353,
+      "month": 7,
+      "day": 12,
+      "years_from_now": 327
+    },
+    "domain": "transport",
+    "glossary": [
+      {
+        "term": "rail-pumping",
+        "gloss": "The recreational use of manual-pump railway vehicles for cardiovascular exercise."
+      }
+    ],
+    "premise": "CERES — A growing fitness trend of commuting to the salt flats via 19th-century manual-pump railway handcars has drawn fierce condemnation from elderly miners who remember when hand-pumping was a grueling corporate punishment.",
+    "brief": null,
+    "image": "assets/img/2026-10-02.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-01T18:01:28.666013+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 68,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Commuters Pump Handcars For Fun",
+        "body": "Brightly dressed clerks are pumping heavy steel handcars across the Ceres salt flats. The three-metre vehicles, once used to transport brine before the tracks were automated, have become the asteroid’s most popular fitness trend. Young office workers now use them for morning core workouts.\n\nThey call it rail-pumping.\n\nElderly residents are horrified. To those who worked the deep salt seams under the old mining syndicate, the wooden pump-handles represent decades of forced labour. Retired driller Kieran Cho spent six years chained to a lever. He says the sight of young people wearing expensive linen shorts while sweating on the gallows-frame makes him physically ill.\n\n\"It was a punishment,\" Cho said.\n\nThe trend has begun to delay commercial freight. Asked if the automated ore-trains could stop in time to avoid crushing the slow-moving gym-goers, the track manager said the trains ran on a fixed loop. He added that the cargo would arrive on time regardless.\n\nMeanwhile, the commuters are petitioning the council to remove the modern roller-bearings from the axles. They want more friction to increase their caloric burn.",
+        "premise": "CERES — A growing fitness trend of commuting to the salt flats via 19th-century manual-pump railway handcars has drawn fierce condemnation from elderly miners who remember when hand-pumping was a grueling corporate punishment.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Youths Refuse To Float Over Crossings",
+        "body": "Teenagers drift into Shaft Nine every Friday to step across the white lines painted along the iron walls.\n\nThe four-metre stripes, sprayed across a vertical ore chute during early excavation, serve no structural purpose in zero gravity. But local youths now fasten magnetic boots to the plating, marching heel-to-toe across the drop while hundreds of commuters hover in place behind them. They call it heritage walking.\n\nCommute times have doubled. Older miners describe the ritual as an infuriating waste of drift-time. Gliding down the shaft on guide-tethers normally takes twelve seconds. Behind a heritage walker, transit queues stretch three levels up into the ventilation gallery.\n\n\"They are just moving their legs,\" said shift coordinator Soraya Lin. \"Nothing is under them.\"\n\nThe walkers remain unmoved. Organiser Taro Chen insisted the exercise honours ground-based ancestors who moved by pushing against dirt. Asked whether he felt any connection to historical pedestrians while suspended upside down above the crusher intake, Chen said his shins ached and that the magnetic soles were noisy.\n\nTransit staff have attempted to sandblast the paint away. The youths simply bring chalk.",
+        "premise": "PSYCHE — Transit officials are pleading with young residents to stop staging 'heritage walks' at useless zebra crossings painted on vertical, zero-gravity shafts, a trend older citizens dismiss as a performative waste of drift-time.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 perfectly skewers modern boutique fitness trends co-opting historical labor, building the joke naturally and ending on a brilliant kicker about demanding more friction.",
+    "judge_pick": 0,
+    "judge_score": 8.0,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 178,
+      "sentences": 14,
+      "mean_sentence": 12.7,
+      "longest": 26,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.8
+    }
+  }
+}
