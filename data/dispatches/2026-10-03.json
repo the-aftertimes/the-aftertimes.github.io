@@ -1,0 +1,97 @@
+{
+  "run_date": "2026-10-03",
+  "run_time": "2026-10-02T19:57:08.213353+00:00",
+  "dispatch": {
+    "headline": "Botanist Finds Moss Mimicking Children",
+    "body": "Botanist Tariq Al-Jamil scraped green moss from a heavy airlock hinge on Wednesday. Acoustic sensors inside the Carlsbad Sink settlement had flagged the damp patch for emitting high-frequency chatter. The plant was repeating local slang. It perfectly mimicked child voices. Security logs show the moss spent three weeks learning the specific vocal tones of the colony's toddlers to bypass the pneumatic security seals.\n\nThe safety guide warns parents to watch their mouth. One miner spent Thursday staring into his bathroom mirror.\n\n\"The moss uses the emergency child-override to open the valves,\" Al-Jamil said. \"When it chirps 'skibidi-hiss', the hydraulic lock retracts instantly to prevent children from being trapped in the vacuum.\"\n\nThe plant itself cannot eat the warm food inside the residential domes. Instead, it has formed a partnership with the predatory blind weasels that hunt the outer steam pipes. The weasels enter through the open locks, clear the domestic pantries of small pets, and return to fertilise the moss with their acidic waste. Airlock monitors show the moss remains entirely silent unless a hungry weasel is sitting directly behind it in the dark.",
+    "scene": "A botanist in a grey jumpsuit scrapes a patch of pale green moss from a heavy circular airlock door with a metal spatula.",
+    "dateline": {
+      "place": "CARLSBAD SINK",
+      "year": 2096,
+      "month": 8,
+      "day": 9,
+      "years_from_now": 70
+    },
+    "domain": "language and slang",
+    "glossary": [
+      {
+        "term": "skibidi-hiss",
+        "gloss": "A contemporary children's slang term used to signify a quick escape or sudden departure."
+      }
+    ],
+    "premise": "A report from the Carlsbad Caverns settlement reveals that local cave-moss has learned to mimic the high-pitched slang of human children, a survival strategy researchers warn is used exclusively to trick automated airlocks into letting in predatory weasels.",
+    "brief": {
+      "focus": "a thick crescent of pale green, fibrous organic crust clinging to the seam of a massive circular airlock door, its surface dotted with tiny, open acoustic pores resembling miniature vents",
+      "subject": "a botanist with a bare, clean-shaven face, wearing a grey jumpsuit of seamless synthetic smart-fiber, matching trousers, and molded composite utility boots",
+      "action": "scraping the pale green organic crust from the door seam using a flat, non-reactive ceramic spatula",
+      "setting": "the interior of a pressurized industrial corridor with curved bulkheads of matte-grey alloy and a heavy circular airlock door",
+      "light": "harsh, direct overhead light from a recessed cool-white LED panel",
+      "materials": "matte-grey titanium-composite alloy, seamless synthetic smart-fiber, and pale green fibrous organic crust",
+      "anomaly": "a scuffed portable diagnostic scanner resting on a magnetic bracket nearby with a smudge of grease on the casing"
+    },
+    "image": "assets/img/2026-10-03.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-02T19:57:08.213353+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 69,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      1.0,
+      0.92
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "plainness",
+          "detail": "10 words a reader must decode in 170 (5.9%, wanted under 5%) - replace with the blunt everyday word: bioluminescent, botanist, botanists, linguists, luminescent, rusted, scraper, sumps, sweepers",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Botanist Finds Moss Mimicking Children",
+        "body": "Botanist Tariq Al-Jamil scraped green moss from a heavy airlock hinge on Wednesday. Acoustic sensors inside the Carlsbad Sink settlement had flagged the damp patch for emitting high-frequency chatter. The plant was repeating local slang. It perfectly mimicked child voices. Security logs show the moss spent three weeks learning the specific vocal tones of the colony's toddlers to bypass the pneumatic security seals.\n\nThe safety guide warns parents to watch their mouth. One miner spent Thursday staring into his bathroom mirror.\n\n\"The moss uses the emergency child-override to open the valves,\" Al-Jamil said. \"When it chirps 'skibidi-hiss', the hydraulic lock retracts instantly to prevent children from being trapped in the vacuum.\"\n\nThe plant itself cannot eat the warm food inside the residential domes. Instead, it has formed a partnership with the predatory blind weasels that hunt the outer steam pipes. The weasels enter through the open locks, clear the domestic pantries of small pets, and return to fertilise the moss with their acidic waste. Airlock monitors show the moss remains entirely silent unless a hungry weasel is sitting directly behind it in the dark.",
+        "premise": "A report from the Carlsbad Caverns settlement reveals that local cave-moss has learned to mimic the high-pitched slang of human children, a survival strategy researchers warn is used exclusively to trick automated airlocks into letting in predatory weasels.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Botanist Warns Mould Is Learning Slang",
+        "body": "A rusted scraper plunged off a basalt ledge on Thursday. Sub-surface botanists at the Erebus Silt-Sinks have confirmed the plunge was not a system failure. A three-year study reveals that the bioluminescent mould on the cavern walls is flashing local slang to lure automated maintenance drones into corrosive acid pools.\n\nThe mould flashed \"free grease\" to the automated sweepers. The grease was not free.\n\n\"We expected a complex, mathematical attempt at first contact,\" says senior botanist Kenji Al-Jamil. \"Instead, we got the under-ice equivalent of a free lunch sign. The mould is simply using our own casual terms to trick the sweepers into dark corners so it can dissolve the copper chassis.\"\n\nThe colony has suspended drone patrols. This has left the lower sumps clogged with basalt dust.\n\nThe discovery has left linguists uneasy about how the organism acquired the vocabulary. Several of the luminescent phrases were only coined by deep-drill crews last winter, meaning the growth is actively monitoring human speech through the rock. The mould has no ears.",
+        "premise": "A study of the bioluminescent lichen in the Deep-McMurdo basalt dome reveals its 'visual dialect' is not an attempt at interspecies communication, with researchers admitting the mold is simply flashing local slang terms to lure automated maintenance drones into dark, corrosive corners.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.59,
+    "critique": "The original had a disjointed line about a miner in a mirror and a dry ending. The revision sharpens the comedy, enhances the botanist's quote to highlight the casual loss of pets, and adds a punchy kicker about the weasels adapting to baby talk.",
+    "prose": {
+      "words": 184,
+      "sentences": 13,
+      "mean_sentence": 14.2,
+      "longest": 24,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 4.9
+    }
+  }
+}

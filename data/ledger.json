@@ -691,5 +691,16 @@
     "place_kind": "asteroid",
     "engine": "obsolescence",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-10-03",
+    "year": 2096,
+    "era_bucket": 1,
+    "domain": "language and slang",
+    "headline": "Botanist Finds Moss Mimicking Children",
+    "style": "discovery",
+    "place_kind": "subsurface",
+    "engine": "nature",
+    "technique": "heard_the_words"
   }
 ]
