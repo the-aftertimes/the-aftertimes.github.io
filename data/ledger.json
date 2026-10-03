@@ -702,5 +702,16 @@
     "place_kind": "subsurface",
     "engine": "nature",
     "technique": "heard_the_words"
+  },
+  {
+    "run_date": "2026-10-04",
+    "year": 2944,
+    "era_bucket": 18,
+    "domain": "art",
+    "headline": "Silent Orchestra Disbands After Door Jams",
+    "style": "obituary",
+    "place_kind": "lunar",
+    "engine": "sentiment",
+    "technique": "escalating_precision"
   }
 ]

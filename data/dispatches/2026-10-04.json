@@ -1,0 +1,177 @@
+{
+  "run_date": "2026-10-04",
+  "run_time": "2026-10-03T18:01:22.722789+00:00",
+  "dispatch": {
+    "headline": "Silent Orchestra Disbands After Door Jams",
+    "body": "Violinist Soren Glass has disbanded his orchestra. The five-piece chamber group, founded in the low-gravity domes of Grimaldi Crater, spent thirty years refining the end of their concerts. While other ensembles welcomed clapping, these musicians demanded silence.\n\nIt began simply. In 2915, they played for forty minutes and then sat perfectly still for three. By 2930, the silence lasted half an hour. The players did not rest. They leaned forward in their carbon-fibre chairs, glaring at the audience.\n\nThey watched for any movement. Glass wore magnifying lenses to track the rise and fall of listeners' chests. If a patron exhaled too loudly, the entire group stared at them until they wept. One listener, Peter Chen, was stared at for twenty minutes after his watch beeped. He left the dome.\n\nThe end came on Thursday. A letter found in Glass's instrument case revealed the secret of their famous silence. The green stage door had jammed during their first concert, and they were too embarrassed to climb over the instruments.\n\n\"We were just waiting for a technician,\" Glass wrote.",
+    "scene": "Soren Glass, wearing thick magnifying spectacles, leans forward from his chair on a dim stage to glare at a man in the front row.",
+    "dateline": {
+      "place": "Grimaldi Crater",
+      "year": 2944,
+      "month": 8,
+      "day": 4,
+      "years_from_now": 918
+    },
+    "domain": "art",
+    "glossary": [],
+    "premise": "Obituary: The Symphony of Withheld Applause, a revered lunar chamber group whose performances ended with thirty minutes of trembling, devotional silence while the orchestra openly glared at anyone who dared to exhale.",
+    "brief": {
+      "focus": "a heavy, multi-layered headset of polished synthetic silicate lenses bound together by a matte-grey carbon-titanium frame, resting on the bridge of a nose",
+      "subject": "Soren Glass, an elderly man with a bare, deeply lined face, wearing a seamless tunic of dark grey aerogel-weave, matching trousers of the same ultra-fine synthetic fibers, and molded slip-resistant composite slippers",
+      "action": "leaning forward from a low-slung, matte-black carbon-fiber chair, his hands resting flat on his knees, staring intently downward",
+      "setting": "the edge of a dim, elevated stage made of seamless basalt-composite panels, with the shadow-obscured head and shoulders of a seated spectator visible in the lower foreground",
+      "light": "a single, sharp overhead beam of cool-blue electroluminescent light from a recessed ceiling fixture, casting deep shadows beneath his eyes and chin",
+      "materials": "carbon-fiber composite, aerogel-weave fabric, polished synthetic silicate, matte basalt-composite",
+      "anomaly": "a thin layer of grey lunar dust settled in the crevices of the stage-floor seams"
+    },
+    "image": "assets/img/2026-10-04.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-03T18:01:22.722789+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 70,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.84,
+      0.59,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'is survived by her daughter, three stage-hands, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "stated_joke",
+          "detail": "the opening states the conceit ('Realists') instead of reporting facts",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'They used local basalt dust, raw oil, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.0 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: plastic",
+          "severity": "major"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'He had a metal stool, a plastic barrier, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.4 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Clara Sallow, Slowest Actress, Dies",
+        "body": "Madame Clara Sallow has died at her home in Grimaldi Crater. She was 102.\n\nBorn in the deep pressure of Earth, Sallow arrived on the moon as a young dancer in 2862. She found lunar stage drama plagued by clumsy physics, where tragic deaths looked like slow floating. Sallow spent ten years in the low-gravity gymnasiums of the southern dome, training her spine to resist the theatre-drafts.\n\nIn her 2890 debut as Juliet, her final collapse took nine minutes. She did not use wires. Audiences, accustomed to the fast drop of Earth plays, watched her knees bend for three minutes before her waist followed.\n\nBy 2910, Sallow had perfected the forty-five-minute faint. During a performance of *The Glass Gasket*, she began her fall at eight o'clock. The theatre ran out of tissue by the half-hour mark. Her head touched the floorboards exactly at the curtain bell.\n\nShe lived her final years quietly. Sallow is survived by her daughter, three stage-hands, and twelve leg-weights. Her funeral will be held on Friday. It is expected to last four days.",
+        "premise": "Obituary: Madame Clara Sallow, 102, who revolutionised lunar theatre by perfecting a low-gravity tragic faint so excruciatingly slow that audiences wept for forty-five minutes before her head reached the floor.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Art Movement Boycotting Blue Dissolves",
+        "body": "An elderly paint-grinder has died in Copernicus, ending the Society of Grey Realists.\n\nThe movement began in 2844. Three plasterers watched an Earthrise and found the blue oceans emotionally ostentatious. They vowed to paint only what was honest. They used local basalt dust, raw oil, and three flat brushes. Each painter spent six hours a day grinding rock with three iron pestles and a single shared pair of goggles. They worked in a basement room with four stools and no windows.\n\nRules were strict. Any member who looked at the home planet for more than three seconds paid a fine of two water-vouchers. By 2890, the society had twelve members, one easel, and forty-two paintings of the same gravel pile. They held one public exhibition, attracting seven visitors and a local dog.\n\nThe end began when a pipeline leak introduced blue copper salts to the basement floor. The artists refused to touch the stained concrete, sitting in silence for seven weeks before voting to disband.\n\n\"Earth was showing off,\" Al-Jamil said in his final broadcast. \"Nobody needs that much water.\"",
+        "premise": "The domed settlement of Copernicus has laid to rest the Society of Grey Realists, a century-old painting movement that furiously boycotted the colour blue on the grounds that Earth was being emotionally ostentatious.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Tycho Dome Mourns An Airlock Smudge",
+        "body": "A junior vacuum-sweeper wiped the Grimy Corner from Lock Seven on Thursday.\n\nThe smudge began in 2861. A pipeline fitter pressed an oily glove against the viewport to check the seal.\n\nIn 2884, the critic Linus Cho noticed the shape. Cho declared the grey crescent a masterpiece of municipal despair. He wrote three books on its texture, calling it the ultimate expression of human dust. By 2910, the council had redirected two commuter tubes so passengers could view the smear. It survived the Great Degreasing of 2921.\n\nTo preserve the work, the municipal arts board took extreme measures. They installed a nitrogen nozzle to deflect solar wind. They hired one guard. He had a metal stool, a plastic barrier, and a book of codes. He did not speak for nine years.\n\nAn automated cleaning drone ended the run. It used three sprays of solvent. The glass is now clear.\n\nThe Tycho Arts Trust has ordered a week of silence. On Friday, eighty-four residents stood in the low gravity of Lock Seven to lay grey synthetic flowers at the metal sill.",
+        "premise": "The arts establishment of Tycho Dome has declared an official week of mourning for 'The Grimy Corner,' an accidental grease smudge on an airlock viewport that three generations of critics passionately defended as a masterpiece of municipal despair.",
+        "score": 0.59,
+        "rejected": false
+      },
+      {
+        "headline": "Silent Orchestra Disbands After Door Jams",
+        "body": "Violinist Soren Glass has disbanded his orchestra. The five-piece chamber group, founded in the low-gravity domes of Grimaldi Crater, spent thirty years refining the end of their concerts. While other ensembles welcomed clapping, these musicians demanded silence.\n\nIt began simply. In 2915, they played for forty minutes and then sat perfectly still for three. By 2930, the silence lasted half an hour. The players did not rest. They leaned forward in their carbon-fibre chairs, glaring at the audience.\n\nThey watched for any movement. Glass wore magnifying lenses to track the rise and fall of listeners' chests. If a patron exhaled too loudly, the entire group stared at them until they wept. One listener, Peter Chen, was stared at for twenty minutes after his watch beeped. He left the dome.\n\nThe end came on Thursday. A letter found in Glass's instrument case revealed the secret of their famous silence. The green stage door had jammed during their first concert, and they were too embarrassed to climb over the instruments.\n\n\"We were just waiting for a technician,\" Glass wrote.",
+        "premise": "Obituary: The Symphony of Withheld Applause, a revered lunar chamber group whose performances ended with thirty minutes of trembling, devotional silence while the orchestra openly glared at anyone who dared to exhale.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 2 features a brilliant comedic turn that perfectly deflates high-art pretension, ending on a stellar punchline.",
+    "judge_pick": 1,
+    "judge_score": 8.0,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        4.0,
+        3.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 3,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": 0.84,
+    "critique": "The average sentence length was too short at 10.4 words. The headline was a summary of the events rather than a punchy joke, and the final line needed a stronger comedic payoff.",
+    "revise_judge_reason": "Draft 1 has far superior comedic pacing, allowing the absurdity of the avant-garde pretension to build before landing a perfectly deadpan final kicker.",
+    "prose": {
+      "words": 177,
+      "sentences": 17,
+      "mean_sentence": 10.4,
+      "longest": 21,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.7
+    }
+  }
+}
