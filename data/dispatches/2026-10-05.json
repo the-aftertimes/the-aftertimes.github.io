@@ -1,0 +1,151 @@
+{
+  "run_date": "2026-10-05",
+  "run_time": "2026-10-04T18:01:14.878681+00:00",
+  "dispatch": {
+    "headline": "Sunder-7 Replaces Bolts With Optimism",
+    "body": "Twelve strut inspectors were dropped into the gas giant's red core on Friday after the cloud-assembly voted to replace maintenance with pure optimism.\n\nThe measure was passed to quiet the winter vortex, which has begun rattling the floating city's support struts. Without the inspectors, Sunder-7 will rely entirely on the power of positive thinking to stay in the sky.\n\nAssembly Speaker Clara Wu watched the final tool chest tip over the edge of the residential ring. \"The calculations were getting very negative,\" Wu said. \"And we simply don't need that kind of energy right now.\"\n\nThe platform fell three metres during the vote. Rather than make repairs, citizens have gathered to throw their heavy toolboxes and diaries into the abyss to lighten the load, while priests paint sacred symbols onto the groaning thrusters with magnetic resin.\n\nChief inspector Kenji Al-Jamil, speaking by radio during his three-hour descent, warned that the main joists were already snapping. \"The vibes are high,\" Al-Jamil said, \"but the load-bearing beams are copper.\"\n\nAt press time, the assembly was preparing a vote to declare gravity a form of bad attitude.",
+    "scene": "A strut inspector in an orange environmental suit falls through a circular floor hatch into red mist while a delegate watches.",
+    "dateline": {
+      "place": "SUNDER-7",
+      "year": 2530,
+      "month": 11,
+      "day": 25,
+      "years_from_now": 504
+    },
+    "domain": "LOCAL",
+    "glossary": [
+      {
+        "term": "magnetic resin",
+        "gloss": "A sticky, heavy sealant used by Sunder-7 priests to paint religious icons onto failing machinery, in the belief that holiness is ferromagnetic."
+      }
+    ],
+    "premise": "Delegates at the Zeus-6 atmospheric assembly have voted to drop the entire Department of Structural Integrity into the planetary core as a \"propitiatory offering\" to appease the rising winter vortex, citing a collective belief that the support struts will hold if their faith is pure enough.",
+    "brief": {
+      "focus": "a circular floor aperture, one meter wide, its inner rim lined with empty, threaded bolt-sockets and sheared titanium-alloy teeth where structural fasteners have been extracted",
+      "subject": "a mid-career strut inspector with a bare, sweating face visible behind a clear composite bubble helmet, wearing a heavy orange environmental suit made of ribbed smart-polymer, with integrated life-support harness, matching orange leggings, and thick magnetic-soled composite boots",
+      "action": "slipping feet-first into the aperture, their gloved hands losing their grip on the smooth metal rim as gravity pulls them downward",
+      "setting": "the utility deck of Sunder-7 with brushed-metal flooring, where a political delegate in a sleek grey drape-suit of photo-reactive membrane stands three meters back, holding a handheld data-slate and watching neutrally while thick red vapor rises from the open aperture",
+      "light": "harsh white glare from an overhead LED strip, contrasted with a hot orange-red glow rising from the mist inside the floor aperture",
+      "materials": "smart-polymer, sheared titanium-alloy, extruded silicate, photo-reactive membrane",
+      "anomaly": "a discarded multi-frequency torque-spanner lying forgotten on the deck plates a few inches from the open hatch"
+    },
+    "image": "assets/img/2026-10-05.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-04T18:01:14.878681+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 71,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      1.0,
+      0.92,
+      0.75
+    ],
+    "violations": [
+      [],
+      [],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.7 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: statute",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Assembly Drops Strut Inspectors Into Core",
+        "body": "Twelve strut inspectors plunged into the red mist on Friday after their department was voted off Sunder-7.\n\nThe cloud-assembly approved the measure to quiet the rising winter vortex, which threatens the city's support struts. Without the inspectors, the floating platform will rely on collective belief to remain aloft during the storm season.\n\nAssembly Speaker Clara Wu watched the final mainframe tip over the venting hatch. \"We have high hopes,\" Wu said. \"The structural calculations were becoming very negative, but our devotion is absolute.\"\n\nThe platform slipped three metres during the vote. No repairs are planned. Instead, citizens gathered along the residential ring to throw their personal logbooks into the updraft to lighten the load. Temple-tenders have also begun painting sacred symbols onto the weakening thruster mounts using magnetic resin.\n\nChief inspector Kenji Al-Jamil, speaking by radio during his descent, noted that the platform joists had already begun to buckle under the strain. \"The devotion is there,\" Al-Jamil said, \"but the alloy is not.\" His radio signal faded as his environmental suit entered the high-pressure layer.",
+        "premise": "Delegates at the Zeus-6 atmospheric assembly have voted to drop the entire Department of Structural Integrity into the planetary core as a \"propitiatory offering\" to appease the rising winter vortex, citing a collective belief that the support struts will hold if their faith is pure enough.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Governor Turns Blue, Staff Claims Lead",
+        "body": "Governor Kaelen Voss collapsed on live camera while inhaling raw methane at the Stratum-9 campaign debate. Voss took three deep draws from the platform intake vent before falling flat onto the glass deck. His face turned dark blue. Stage technicians dimmed the overhead lights to highlight his skin tone.\n\nCampaign manager Bowen Reed praised the collapse as a clear sign of electoral triumph.\n\n\"The deep blue hue shows total body devotion to the atmosphere,\" Reed said.\n\nReed physically blocked air-tenders from fitting an oxygen mask onto the candidate, warning that clean air counted as illegal campaign assistance under platform election codes. Voss has not moved.\n\nRival candidate Sira Lin filed an immediate complaint with the ballot board, claiming Voss cheated by using a modified pipe to draw more methane than legally allowed per breath.\n\n\"No true public servant turns that dark blue that fast without help,\" Lin said.\n\nThe board refused to pause the debate, ruling that candidates remain active on the ballot until chest movement stops completely. Voting closes at dusk.",
+        "premise": "The governor of Jupiter’s Stratum-9 platform has collapsed live on air during the \"breathe-in\" ceremony—a ritual where candidates inhale unfiltered high-altitude methane to prove their spiritual resilience—while campaign officials insist his blue face is a sign of impending electoral victory.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Officials Dispute Shape Of Storm Cloud",
+        "body": "Registrar Kaelen Cho squinted through a brass glass at a storm-bank. Behind him, three election scrutineers argued over whether the gas had drifted into a yes or a no.\n\nThe voters of the Zephyrus floating platform cast their ballots by venting ammonia directly into the atmosphere. Usually, an automated optical satellite counts these vapour lines. However, a candidate demanded a manual count of the sky.\n\nThe ballot merged with a storm.\n\n\"The loop is a tick,\" Cho said, pointing at a band of frozen gas.\n\nHis deputy, Mirai Soto, disagreed.\n\n\"That is a curve of refusal,\" she said. \"The wind has ruined the bottom tail.\"\n\nThe wind is rising.\n\nA draft has now pushed the entire vote toward a turbine intake. If the ballot enters the power grid, the city must run the election again.\n\nMeanwhile, residents in the lower residential decks have been asked to hold their breath to keep the air clear.\n\nCho refused to call a recess.\n\nHe adjusted his glass and waited for the air to settle.",
+        "premise": "Election officials on the floating metropolis of Zephyrus are arguing over whether a shifting ammonia storm-bank resembles the sacred outline of a \"Yes\" or a \"No\" after a candidate demanded a manual cloud-reading recount of the district’s atmospheric-ballot emissions.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Gale Shreds Free Oxygen Law",
+        "body": "Deckmaster Soren dropped the draft oxygen bill over the railing during Monday's ceremonial airing.\n\nThe text, which would have granted four free lung-fillings per shift to eight thousand filter operators, was caught by a fast ammonia gale beneath the lower docking bay. Under platform charter rules, any act of council must breathe the open sky for three minutes before receiving the governor's mark.\n\nThe gale tore the parchment. Because the sheets sank toward the liquid core, legal clerks confirmed the statute no longer exists. A digital file remains on the council network, but officials noted the charter recognises only the physical sheet exposed to the clouds.\n\nFilter operators returned to work under the old air-ration rates on Tuesday morning. Shift lead Aris Thorne, who spent three years collecting signatures for the reform, accepted the outcome without complaint.\n\n'The wording was fair,' Thorne said. 'We simply picked a windy afternoon.'\n\nDrafting officers have begun curing a fresh skin-leaf page for the next legislative window in six years. Until then, crews will continue paying for three-quarters of every breath.",
+        "premise": "A landmark universal basic oxygen bill on the floating outpost of Cumulus-Prime has been declared null and void after its parchment copy was shredded by a 400-mile-per-hour ammonia gale during the traditional \"airing of the laws\" off the lower docking bay.",
+        "score": 0.75,
+        "rejected": true
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 2 features a sharper satirical bite on anti-intellectualism, elevated by the excellent line: 'The devotion is there, but the alloy is not.'",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        6.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The original headline was dry and descriptive; the revised headline lands the comedic premise immediately. The body has been sharpened to focus on the absurdity of replacing engineering with positive thinking, ending on a logical escalation of their anti-physics stance.",
+    "revise_judge_reason": "Draft 2 has much sharper satirical targets (toxic positivity, corporate speak) and a brilliant kicker about gravity.",
+    "prose": {
+      "words": 184,
+      "sentences": 11,
+      "mean_sentence": 16.7,
+      "longest": 33,
+      "short_sentences": 0,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.7
+    }
+  }
+}

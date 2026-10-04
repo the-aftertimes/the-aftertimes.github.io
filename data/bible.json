@@ -341,6 +341,12 @@
       "gloss": "A contemporary children's slang term used to signify a quick escape or sudden departure.",
       "kind": "term",
       "first_seen": "2026-10-03"
+    },
+    {
+      "term": "magnetic resin",
+      "gloss": "A sticky, heavy sealant used by Sunder-7 priests to paint religious icons onto failing machinery, in the belief that holiness is ferromagnetic.",
+      "kind": "term",
+      "first_seen": "2026-10-05"
     }
   ]
 }
