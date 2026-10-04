@@ -713,5 +713,16 @@
     "place_kind": "lunar",
     "engine": "sentiment",
     "technique": "escalating_precision"
+  },
+  {
+    "run_date": "2026-10-05",
+    "year": 2530,
+    "era_bucket": 10,
+    "domain": "governance and elections",
+    "headline": "Sunder-7 Replaces Bolts With Optimism",
+    "style": "wire",
+    "place_kind": "gasgiant",
+    "engine": "ritual",
+    "technique": "headline_carries_it"
   }
 ]
