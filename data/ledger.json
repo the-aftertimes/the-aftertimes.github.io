@@ -724,5 +724,16 @@
     "place_kind": "gasgiant",
     "engine": "ritual",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-10-06",
+    "year": 2177,
+    "era_bucket": 3,
+    "domain": "medicine",
+    "headline": "Surgeons Herd Loose Blood",
+    "style": "investigation",
+    "place_kind": "exoplanet",
+    "engine": "logistics",
+    "technique": "puncture_the_pompous"
   }
 ]
