@@ -1,0 +1,138 @@
+{
+  "run_date": "2026-10-06",
+  "run_time": "2026-10-05T23:09:30.439961+00:00",
+  "dispatch": {
+    "headline": "Surgeons Herd Loose Blood",
+    "body": "Dr Avi Chen spent Thursday night pushing synthetic blood down a lift shaft with a pool noodle. He and six other senior heart surgeons at Gideon's Landing Infirmary perform this task every midnight. The chore is the result of a leak in the clinic's tissue printers, which produces thousands of litres of unallocated, self-pooling blood.\n\n\"If you corner it, it gets defensive and tries to clot,\" Dr Chen said. \"But if you keep a steady rhythm with the noodle, you can guide it toward the drainage grate.\"\n\nThe hospital board declined to fix the printers, citing a budget freeze. Instead, administrators classified the nightly sweeps as a voluntary team-building exercise under the colony's wellness charter, which prevents the surgeons from claiming overtime.\n\nChief executive Brenda Okoro denied any coercion, arguing that chasing escaped fluids fosters lateral communication.\n\n\"Yesterday, cardiology and orthopaedics spent two hours cornering a five-litre glob behind the cafeteria vending machines,\" Okoro said. \"That is cross-departmental synergy.\"\n\nThe surgeons must still perform complex coronary operations at dawn. Dr Chen noted that the blood has now begun to recognise the blue noodles, forcing the team to hunt it through the ceiling vents-which the administration has already classified as a \"vertical agility retreat.\"",
+    "scene": "A surgeon in green scrubs crouches on a tiled corridor floor, nudging a dark red pool toward an open lift shaft with a blue foam noodle.",
+    "dateline": {
+      "place": "Gideon's Landing",
+      "year": 2177,
+      "month": 1,
+      "day": 18,
+      "years_from_now": 151
+    },
+    "domain": "Health & Safety",
+    "glossary": [],
+    "premise": "[GIDEON'S LANDING, 2177] — Investigative reporters have revealed that a major colony clinic is quietly concealing a recurring glitch in its bio-printers by forcing off-duty surgeons to use pool noodles to herd thousands of gallons of escaped, semi-sentient synthetic blood back down the elevator shafts, a nightly chore the board dismissed as a voluntary team-building exercise.",
+    "brief": {
+      "focus": "a wide, viscous pool of glossy, self-cohering dark crimson fluid, bulging at its rounded edges as it is guided across the floor tiles",
+      "subject": "a male surgeon with a bare, weary face, wearing a collarless, seamless green jumpsuit of micro-perforated smart-fiber with integrated trousers and matching molded slip-on shoes",
+      "action": "crouching low on the floor while nudging the edge of the crimson fluid toward an open lift shaft using a flexible, extruded blue elastomer cylinder",
+      "setting": "a sterile hospital corridor with seamless matte-white composite wall panels, a dark metallic floor grate at the threshold of an open elevator shaft, and recessed ceiling panels",
+      "light": "flat, cool-toned illumination from recessed overhead luminescent strips, casting sharp reflections on the wet floor",
+      "materials": "molded elastomer, polished ceramic-composite tiles, micro-perforated smart-fiber, and viscous synthetic fluid",
+      "anomaly": "a scuffed corner on a composite wall panel near the floor where a gurney has scraped away the white finish to reveal a grey under-layer"
+    },
+    "image": "assets/img/2026-10-06.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-05T23:09:30.439961+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 72,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Hospital Stacks Patients On Tall Shelves",
+        "body": "Sora Kim dangles from a hydraulic lift to treat a patient stored on a warehouse shelf.\n\nAn investigation at Gale-Reach Base Hospital has revealed that administrators are quietly storing stable patients on forty-foot-tall industrial pallet racks to hide a critical bed shortage.\n\nNurses must now conduct morning rounds from warehouse cherry-pickers, navigating narrow corridors lined with three-ton steel shelving.\n\n\"We have to wear high-vis harnesses,\" Kim said. \"If a patient rolls over, they fall into the laundry bay.\"\n\nHospital director Dr Julian Chen denied any shortage of space.\n\nChen insists the steel shelving represents a progressive vertical posture.\n\nThe hospital adopted the system after its million-credit ward expansion was permanently blocked by municipal inspectors.\n\nThe zoning board rejected the blueprints because a clerk had classified the main oxygen scrubbers as kitchen fans.\n\nUnder local air laws, kitchen fans require their own outdoor grease traps.\n\nTo avoid installing a grease trap, the hospital chose to stack its patients.\n\nThe racks are now full.\n\nKim is not convinced.\n\n\"The views are excellent,\" Chen said.",
+        "premise": "[NEW AVALON, 2177] — An investigation has revealed that the colony’s primary hospital is quietly concealing a critical bed shortage by storing stable patients in forty-foot-tall industrial pallet racks, forcing nurses to administer IV drips from cherry-pickers while administrators maintain the patients are merely undergoing 'vertical space-optimization.'",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Surgeons Herd Escaped Blood With Foam Noodles",
+        "body": "Dr Avi Chen spent Thursday pushing synthetic blood down a lift shaft. He and six other senior transplant specialists at Gideon's Landing Infirmary perform this task every midnight. They use bright blue foam noodles. The chore is the result of a recurring leak in the clinic's tissue printers, which produces thousands of litres of unallocated, self-pooling blood.\n\n\"It has a pulse,\" Chen said. \"We just herd it.\"\n\nThe clinic's clinical board declined to repair the tissue printers, citing an annual budget freeze. Instead, executives classified the nightly sweeps as a voluntary team-building exercise under the colony's wellness charter. This classification prevents the surgeons from claiming overtime.\n\nChief executive Brenda Okoro denied any coercion. She stated that the activity fosters lateral communication between departments.\n\n\"Sweeping is a shared journey,\" Okoro said.\n\nThe surgeons have now been doing the sweeps for three months. They must still perform complex coronary operations at dawn. Dr Chen noted that the blood has begun to recognise the blue noodles, meaning they must now hunt it through the ceiling vents.",
+        "premise": "[GIDEON'S LANDING, 2177] — Investigative reporters have revealed that a major colony clinic is quietly concealing a recurring glitch in its bio-printers by forcing off-duty surgeons to use pool noodles to herd thousands of gallons of escaped, semi-sentient synthetic blood back down the elevator shafts, a nightly chore the board dismissed as a voluntary team-building exercise.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Clinic Slides Patients Down Drainage Pipe",
+        "body": "Sick patients slide down a dark drainage pipe at the Horizon Pavilion to get their brains scanned.\n\nAn investigation has revealed that the colony's premier medical centre has spent three years manually launching patients down a corrugated steel tube to bypass a broken scanner track. Because the machine's heavy magnets are seized, the patient must travel through the sensor ring at exactly forty kilometres per hour to produce a clear image. Staff tape patients to wheeled spineboards and push them down the crater's volcanic slope.\n\nChief radiologist Dr Helen Gabor defended the practice.\n\n\"It is low-tech kinetic imaging,\" Gabor said. \"The physics are identical.\"\n\nThe pavilion's charter claims to offer the star system's most advanced healthcare. However, shipping records show the clinic has refused to order the replacement circuit because of a small delivery fee. Instead, junior nurses use grease and gravity.\n\nPatients are given a rubber mouthguard.\n\n\"The ride is loud,\" said miner Joji Kato, who underwent a chest scan. \"But the pictures of my ribs were very clear.\"\n\nAdministrators denied that the system is unsafe, pointing to a single woollen blanket taped to the end of the pipe.",
+        "premise": "[PORT CLARION, 2177] — An expose of an exoplanet clinic has uncovered that patients requiring diagnostic scans are being taped to wheeled spineboards and manually shoved down a mile-long corrugated steel drainage pipe to achieve the speed required for a broken MRI scanner, a technique the chief radiologist reluctantly defended as 'low-tech kinetic imaging.'",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Clinic Clears Quarantine With Street Sweeper",
+        "body": "A yellow street sweeper sits inside the Sinope Outpost medical clinic. The heavy municipal vehicle is being used to satisfy the star system's strict planetary quarantine laws.\n\nClinic managers are running all incoming swamp settlers through the machine's steel bristles to scrub them of biological hazards. The machine is completely unmodified. Patients must crawl through the undercarriage while the primary roller spins at high speed.\n\nA nurse, who spoke on condition of anonymity, confirmed the practice has been active since winter. \"We had no budget for a wash unit,\" she said. \"The patients usually lose their shirts. Sometimes they lose their ears.\"\n\nThe vehicle is still used to clear the outpost's gravel roads every evening.\n\nClinic director Dr Ronald Gidley defended the arrangement in an email. He described the process as an \"exfoliation ritual\" that prepares settlers for local life. Gidley insisted the steel bristles are highly efficient at removing alien spores.\n\nPublic health records show the clinic reported perfect quarantine compliance last month. No patient has returned to complain. Most are still healing in the wards.",
+        "premise": "[SINOPE OUTPOST, 2177] — An expose of a newly established swamp-colony clinic has revealed that staff are meeting strict planetary quarantine laws by running incoming patients through an unmodified industrial street-sweeper for their mandatory chemical scrubbing, a practice administrators defended as a highly efficient 'exfoliation ritual.'",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Draft 1 has a sharper satirical target in corporate 'wellness' exploitation and a superior escalating kicker.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        6.0,
+        5.0,
+        3.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The previous headline was too long and descriptive rather than punchy. The body lacked a strong comedic escalation and a sharp, satirical punchline that connected the blood's evasion tactics back to the hospital's absurd corporate administration.",
+    "revise_judge_reason": "Draft 2 sharpens the corporate-speak satire with far better deadpan quotes and lands a proper kicker with the 'vertical agility retreat.'",
+    "prose": {
+      "words": 203,
+      "sentences": 12,
+      "mean_sentence": 16.9,
+      "longest": 34,
+      "short_sentences": 1,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.5
+    }
+  }
+}
