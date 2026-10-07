@@ -1,0 +1,165 @@
+{
+  "run_date": "2026-10-08",
+  "run_time": "2026-10-07T20:37:31.816099+00:00",
+  "dispatch": {
+    "headline": "Station Commuters Walk Backwards",
+    "body": "Seamus Adeyemi walks backward down the high-speed transit corridor every morning. Like thousands of other office clerks on the Aurelia Girdle, he is trying to outrun his own ageing process. By walking against the station’s spin at nine kilometres per hour, he exploits the ring's speed to slow his own time.\n\nThe average commuter now claws back 4.12 nanoseconds of life per shift. It was 3.8 last month.\n\nOlder station staff are unimpressed. Teodor Kowalczyk, a senior track mechanic, has to repair the composite floor plates. \"They are wearing out the heels of their soft-shoes,\" Kowalczyk says. \"And they bump into the cleaning carts because they refuse to look where they are going.\"\n\nIt takes eighty-four years of constant backward walking to gain a single second of retirement.\n\nYet the habit is spreading. On Friday, the station’s largest data-firm introduced backward-only lunch hours to boost staff focus. Tiihu Farahani, who manages the firm's filing pool, believes the savings add up. \"We are more efficient now,\" Farahani says. \"I have already saved enough time this year to take a deep breath.\"",
+    "scene": "Seamus Adeyemi, wearing a grey utility tunic, walks backward down a curved metal transit deck while staring straight ahead, as a track mechanic in orange overalls glares at him.",
+    "dateline": {
+      "place": "Aurelia Girdle",
+      "year": 3186,
+      "month": 7,
+      "day": 7,
+      "years_from_now": 1160
+    },
+    "domain": "transport",
+    "glossary": [
+      {
+        "term": "soft-shoes",
+        "gloss": "lightweight, low-friction footwear designed for walking on high-spin deck plates"
+      }
+    ],
+    "premise": "Orbital ring commuters are annoying senior engineers by walking backwards along high-speed corridors to exploit centripetal time-dilation for a four-nanosecond daily advantage, in the station's latest productivity craze.",
+    "variant": "champion",
+    "brief": null,
+    "image": "assets/img/2026-10-08.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-07T20:37:31.816099+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 74,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Station Commuters Walk Backwards",
+        "body": "Seamus Adeyemi walks backward down the high-speed transit corridor every morning. Like thousands of other office clerks on the Aurelia Girdle, he is trying to outrun his own ageing process. By walking against the station’s spin at nine kilometres per hour, he exploits the ring's speed to slow his own time.\n\nThe average commuter now claws back 4.12 nanoseconds of life per shift. It was 3.8 last month.\n\nOlder station staff are unimpressed. Teodor Kowalczyk, a senior track mechanic, has to repair the composite floor plates. \"They are wearing out the heels of their soft-shoes,\" Kowalczyk says. \"And they bump into the cleaning carts because they refuse to look where they are going.\"\n\nIt takes eighty-four years of constant backward walking to gain a single second of retirement.\n\nYet the habit is spreading. On Friday, the station’s largest data-firm introduced backward-only lunch hours to boost staff focus. Tiihu Farahani, who manages the firm's filing pool, believes the savings add up. \"We are more efficient now,\" Farahani says. \"I have already saved enough time this year to take a deep breath.\"",
+        "premise": "Orbital ring commuters are annoying senior engineers by walking backwards along high-speed corridors to exploit centripetal time-dilation for a four-nanosecond daily advantage, in the station's latest productivity craze.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Teens Dump Partners During Reentry Blackout",
+        "body": "Teodor Duroselle ended his three-year partnership inside a falling cargo lift. The eighteen-year-old is one of hundreds of teenagers riding the thirty-six-thousand-kilometre cable from the High Tether just to film their break-up videos during the atmospheric reentry blackout.\n\nDuring the five-minute plunge, friction cuts off all communication. The blackout is total. This silence provides the perfect dramatic backdrop for young people who want to deliver a speech without their partner arguing back.\n\nThe average local relationship now lasts 42,000 kilometres, down from sixty thousand, according to cable logs.\n\nAino Lindqvist is tired. The veteran climber technician has seen too many tears. \"They book out the heavy-freight pods for hours just to glare at each other,\" Lindqvist said. \"Then we have to scrub salt-water stains off the primary console.\"\n\nTransit staff tried to discourage the trend by playing low-frequency cargo hums during the descent, but teenagers simply integrated the industrial drone into their videos.\n\nEitan Ezeani, who was dumped on Thursday near the stratosphere, remains unmoved. \"It felt very real,\" Ezeani said. \"The orange plasma glow really framed my grief, and he could not interrupt me because his screen was melting.\"",
+        "premise": "Teenagers at the orbital elevator terminus are infuriating veteran stationers by riding the entire 36,000-kilometer drop just to film dramatic break-up videos during the atmospheric reentry blackout.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Heavy Belts Dent Transit Shuttles",
+        "body": "Dagny Laine scraped a junior partner off the metal ceiling. The manager wore a 100-kilogram planetary ballast belt, a heavy brass hoop designed to mimic the slouched, heavy-hipped posture of someone who actually lives under high gravity.\n\nYoung executives wear the belts on zero-gravity passenger ferries to project an \"authentically grounded\" corporate style. The fashion has angered orbital terminal crews.\n\n\"They drift like dead freight,\" Laine said. They cannot steer.\n\nThe average passenger cabin now suffers 3.4 structural dents per commute, up from zero.\n\nDock manager Ahanu Agbaje has ordered his ground staff to treat the weighted commuters as unlabelled freight. On Wednesday, handlers used magnetic salvage winches to stack four executives in a luggage pen.\n\n\"It is a safety issue,\" Agbaje said.\n\nFerry passenger Hemi Takahara defended the heavy style, which costs three thousand credits per belt. He believes the physical strain of carrying heavy weight through weightlessness shows executive drive.\n\n\"We are showing respect for the dirt,\" Takahara said. \"Gravity is a leadership quality.\"\n\nHe then drifted backwards into a food dispenser.",
+        "premise": "Dockworkers at the upper elevator terminus are condemning a trend among young executives who wear 100-kilogram planetary ballast belts during zero-g ferry rides to project an 'authentically grounded' posture.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Retired Fitter Protests Train Roof Riders",
+        "body": "Rohan Barzani rode the exterior hull of the Great Ring express on Friday wearing a pressurised velvet leisure suit. He is one of thousands of young commuters embracing 'artisanal exposure', a social trend where riders cling to the outside of vacuum-monorails to feel the raw cosmic void. The transit authority reports that the average commuter now contemplates their own mortality 5.2 times per trip, up from once last year.\n\nOlder residents are furious. Jovana Nieminen, a retired dock-fitter, leads daily protests at the main terminal.\n\n'They are cluttering the horizon with their bodies,' Nieminen said. 'I did sixty years in the ice-mines to keep the air inside, and now these children pay extra to go out and look at nothing.'\n\nThe protest group has blocked the boarding locks, demanding the return of metal shrouds on all express vehicles. But enthusiasts remain undeterred. Isaura Farahani, who curates exposure spots online, says the experience is vital.\n\n'You cannot find this level of silence inside a carriage,' Farahani said. 'My grandmother just does not understand the texture of a true vacuum.'",
+        "premise": "Station retirees have launched protests against a viral 'artisanal exposure' craze that sees commuters riding on the exterior hulls of vacuum-monorails in pressurized leisure suits to feel the raw cosmic void.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Sharp satire of corporate biohacking with a great kicker about saving enough time to take a deep breath.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "champion",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        9.0,
+        4.0,
+        5.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.67,
+    "critique": "The original headline was a dry description rather than a comedic hook. The quotes lacked humorous specificity, and the ending merely restated the premise rather than landing a mathematically consistent punchline.",
+    "prose": {
+      "words": 180,
+      "sentences": 15,
+      "mean_sentence": 12.0,
+      "longest": 21,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "champion"
+      ],
+      "mush": [
+        28.6,
+        33.3
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 features a straight track instead of the curved transit deck specified in the prompt.",
+      "winner_faults": "The central figure appears to be walking forward away from the viewer rather than backward."
+    },
+    "tune": {
+      "variant": "champion",
+      "result": null,
+      "challenger_record": {},
+      "new_challenger": "The editor's critiques repeatedly flag draft headlines for being too long, dry, and descriptive of the plot rather than landing the comedic premise immediately."
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {}
+    }
+  }
+}
