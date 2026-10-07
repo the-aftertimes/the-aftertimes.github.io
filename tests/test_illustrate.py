@@ -408,3 +408,27 @@ def test_the_workflow_commits_every_directory_the_pipeline_writes():
                 f"{name} writes {token} and does not stage it - the file is left "
                 f"on the runner, the page promises what it lacks, and a rebase in "
                 f"that job fails on the unstaged change")
+
+
+def test_a_failed_prediction_is_retried_and_a_bad_request_is_not(monkeypatch):
+    """07/10/2026: a 409 "Cog prediction failed" (code 8007) took the second of
+    a best-of-two pair, so the picture judge never ran. It is Cloudflare's model
+    falling over, so it waits and tries again; any other 409 is still final."""
+    import illustrate
+    slept = []
+    monkeypatch.setattr(illustrate.time, "sleep", slept.append)
+    failed = ('{"errors":[{"message":"AiError: AiError: Cog prediction failed '
+              '(7f015ed6)","code":8007}],"success":false,"result":{}}')
+
+    def opener(req, timeout=None):
+        raise _http_error(409, failed)
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen", opener)
+    assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
+    assert slept == list(illustrate._RETRY_WAITS)
+
+    slept.clear()
+    monkeypatch.setattr(illustrate.urllib.request, "urlopen",
+                        lambda req, timeout=None: (_ for _ in ()).throw(
+                            _http_error(409, '{"errors":[{"code":1000}]}')))
+    assert illustrate._post_with_retry(object(), {"timeout": 1}) is None
+    assert slept == []
