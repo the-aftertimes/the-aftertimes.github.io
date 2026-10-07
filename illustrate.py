@@ -279,7 +279,13 @@ def _post_with_retry(req, cfg: dict):
             except Exception:  # noqa: BLE001 - a body is a nicety
                 pass
             exhausted = "4006" in body or "daily free allocation" in body
-            transient = (exc.code == 429 or 500 <= exc.code < 600) and not exhausted
+            # A 409 carrying code 8007 "Cog prediction failed" is the model
+            # falling over on Cloudflare's side, not a bad request: on
+            # 07/10/2026 it took the second of a best-of-two pair, so the judge
+            # never ran. Retried like a 5xx.
+            prediction_failed = exc.code == 409 and '"code":8007' in body.replace(" ", "")
+            transient = ((exc.code == 429 or 500 <= exc.code < 600
+                          or prediction_failed) and not exhausted)
             last = attempt >= len(_RETRY_WAITS)
             if exhausted:
                 # WHAT THIS MESSAGE HAS BEEN WRONG ABOUT, TWICE, IN ONE DAY.
