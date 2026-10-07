@@ -15,15 +15,7 @@
     "domain": "art",
     "glossary": [],
     "premise": "Obituary: The Symphony of Withheld Applause, a revered lunar chamber group whose performances ended with thirty minutes of trembling, devotional silence while the orchestra openly glared at anyone who dared to exhale.",
-    "brief": {
-      "focus": "a heavy, multi-layered headset of polished synthetic silicate lenses bound together by a matte-grey carbon-titanium frame, resting on the bridge of a nose",
-      "subject": "Soren Glass, an elderly man with a bare, deeply lined face, wearing a seamless tunic of dark grey aerogel-weave, matching trousers of the same ultra-fine synthetic fibers, and molded slip-resistant composite slippers",
-      "action": "leaning forward from a low-slung, matte-black carbon-fiber chair, his hands resting flat on his knees, staring intently downward",
-      "setting": "the edge of a dim, elevated stage made of seamless basalt-composite panels, with the shadow-obscured head and shoulders of a seated spectator visible in the lower foreground",
-      "light": "a single, sharp overhead beam of cool-blue electroluminescent light from a recessed ceiling fixture, casting deep shadows beneath his eyes and chin",
-      "materials": "carbon-fiber composite, aerogel-weave fabric, polished synthetic silicate, matte basalt-composite",
-      "anomaly": "a thin layer of grey lunar dust settled in the crevices of the stage-floor seams"
-    },
+    "brief": null,
     "image": "assets/img/2026-10-04.jpg"
   },
   "meta": {
