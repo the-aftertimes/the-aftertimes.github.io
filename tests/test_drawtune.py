@@ -177,3 +177,11 @@ def test_the_pipeline_draws_two_and_scores_the_day(repo, monkeypatch):  # noqa: 
                           f"{record['run_date']}.json").read_text(encoding="utf-8"))
     assert on_disk["quality"]["draw_tune"]["result"] == "win"
     assert (repo / record["dispatch"]["image"]).read_bytes() == _jpeg(0)
+
+
+def test_the_winners_own_faults_reach_the_next_proposal():
+    rec = {"dispatch": {"scene": "a strategist at a star chart"},
+           "quality": {"picture": {"reason": "severed bodies",
+                                   "winner_faults": "nonsense lettering on the signs"}}}
+    p = drawtune.proposal_prompt([], [rec], [], CFG)
+    assert "nonsense lettering on the signs" in p and "severed bodies" in p
