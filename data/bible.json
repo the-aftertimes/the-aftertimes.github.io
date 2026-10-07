@@ -347,6 +347,12 @@
       "gloss": "A sticky, heavy sealant used by Sunder-7 priests to paint religious icons onto failing machinery, in the belief that holiness is ferromagnetic.",
       "kind": "term",
       "first_seen": "2026-10-05"
+    },
+    {
+      "term": "skiff",
+      "gloss": "A small, nimble space vessel used for rapid transit and telemetry scanning.",
+      "kind": "term",
+      "first_seen": "2026-10-07"
     }
   ]
 }
