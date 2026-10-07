@@ -6,6 +6,7 @@ import sys
 
 import cast
 import gemini
+import tune
 from common import hyphenate
 
 
@@ -309,10 +310,13 @@ def build_prompt(premise: str, dateline: dict, domain: str,
                  avoid_block: str = "", funny_lines: list[dict] | None = None,
                  flat_lines: list[dict] | None = None,
                  technique: dict | None = None,
-                 names: list[str] | None = None) -> str:
+                 names: list[str] | None = None,
+                 house_notes: list[str] | None = None) -> str:
     # A supplied cast replaces the "invent fresh names" line, which the model
     # satisfied by rotating through four favourites. See config/names.yaml.
     name_rule = cast.rule(names or []) or _NAME_RULE
+    # The one machine-edited block, last before the output spec. See tune.py.
+    notes_rule = tune.block(house_notes or [])
     place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
                   if place_guidance else "")
     funny_rule = funny_block(funny_lines or [])
@@ -584,7 +588,7 @@ Rules:
 {name_rule}
 - Do not put the year in the dateline place; the date is shown separately.
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
-{avoid_extra}{tech_rule}{funny_rule}{flat_rule}
+{avoid_extra}{tech_rule}{funny_rule}{flat_rule}{notes_rule}
 Return JSON only:
 {{"headline": "...", "dateline_place": "...", "body": "...", "scene": "...",
   "domain": "{domain}", "glossary": [{{"term": "...", "gloss": "..."}}]}}"""
@@ -635,10 +639,11 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
           avoid_block: str = "", funny_lines: list[dict] | None = None,
           flat_lines: list[dict] | None = None,
           technique: dict | None = None,
-          names: list[str] | None = None) -> dict:
+          names: list[str] | None = None,
+          house_notes: list[str] | None = None) -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance,
                           place_guidance, avoid_block, funny_lines,
-                          flat_lines, technique, names)
+                          flat_lines, technique, names, house_notes)
     g = settings["gemini"]
     pro = (g.get("write_model") or "").strip()
     d = None

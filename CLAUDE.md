@@ -157,6 +157,17 @@ process". Any self-improvement here must run on an automated signal. The cheapes
 one already exists: the comedy panel's ranking of each day's drafts (quality.panel).
 Do not re-pitch a human verdict step.
 
+**The loop that runs instead is `tune.py`** (07/10/2026). The write prompt carries
+a short HOUSE NOTES block, the only machine-edited text in the prompt. Each day's
+drafts alternate between the champion notes and a challenger (one edit), the
+committee and judge choose the edition blind, and a day counts only when both
+sides were in the contest and one of them actually chose. After 10 such days the
+challenger is kept on 7 wins, otherwise retired, and one Gemini call proposes the
+next edit from the stored critiques. State and full history live in
+`config/house_notes.yaml`; `tune.enabled: false` restores the prompt exactly.
+It learns the committee's taste, not Charlie's: that was said once and accepted.
+If the paper drifts somewhere odd, read the history there before anything else.
+
 ## A correct brief can still draw the wrong picture, and the cause is usually one noun
 
 Every picture fault before 06/09/2026 was a bad brief - depict re-choosing the

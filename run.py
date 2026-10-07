@@ -20,6 +20,7 @@ from common import (load_common_words, load_settings, load_yaml,
 import archive as archive_mod
 import avoid
 import cast
+import tune
 import bible as bible_mod
 import critic
 import depict
@@ -112,7 +113,10 @@ def choose_draft(drafts: list[dict], context: dict, qcfg: dict,
                         "score": s["score"], "rejected": s["rejected"]}
                        for d, s in scored],
             "all_rejected": all_rejected, "judge_reason": "", "judge_pick": None,
-            "judge_score": None}
+            "judge_score": None,
+            # Which house notes wrote each draft the committee and judge saw.
+            # tune.outcome only counts a day when both sets are in here.
+            "contest_variants": [d.get("variant") for d, _ in pool]}
 
     def _finish(dispatch):
         for idx, (d, _) in enumerate(scored):
@@ -537,10 +541,19 @@ def run_pipeline() -> dict:
     names_cfg = load_yaml("config/names.yaml")
     used_names = cast.recent_names(
         [(r.get("dispatch") or {}).get("body", "") for r in records[-30:]])
+    # The self-improvement loop: alternate drafts between the champion and the
+    # challenger house notes. See tune.py.
+    tune_on = bool((settings.get("tune") or {}).get("enabled"))
+    tune_state = tune.load() if tune_on else tune.empty_state()
 
     def write_batch(pool: list[str], label: str) -> list[dict]:
         out = []
         for i, premise in enumerate(pool, start=1):
+            # Position in the day's chosen list, not in this batch, so a resumed
+            # run gives a premise the same notes the first rung would have.
+            pos = (chosen_premises.index(premise) if premise in chosen_premises
+                   else i - 1)
+            variant = tune.variant_for(tune_state, pos)
             try:
                 out.append(write_stage.write(
                     premise, dateline, domain, settings,
@@ -550,7 +563,9 @@ def run_pipeline() -> dict:
                     names=cast.draw(f"{run_date}:{premise}",
                                     names_cfg.get("given") or [],
                                     names_cfg.get("family") or [],
-                                    used_names)))
+                                    used_names),
+                    house_notes=tune.notes_for(tune_state, variant)))
+                out[-1]["variant"] = variant
                 print(f"    {label}draft {i}: {out[-1]['headline'][:56]}")
                 save_wip(run_date, drafts=kept + out)
             except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
@@ -742,6 +757,19 @@ def run_pipeline() -> dict:
     archive_mod.build()
     print("    rebuilt archive.html")
     clear_wip()
+
+    # AFTER the edition is safely written: score the day for the challenger,
+    # maybe promote or retire it, maybe propose the next one (one model call).
+    # Best-effort by construction - nothing here can cost the edition.
+    if tune_on:
+        print(">>> TUNE")
+        try:
+            record["quality"]["tune"] = tune.after_edition(
+                settings, run_date, choose_info, dispatch.get("variant"),
+                records)
+            write_json(f"data/dispatches/{run_date}.json", record)
+        except Exception as exc:  # noqa: BLE001 - see above
+            print(f"    WARN tune step failed ({exc})", file=sys.stderr)
     return record
 
 

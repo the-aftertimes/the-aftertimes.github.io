@@ -242,6 +242,18 @@ quality:
 # "funny" is not, and a loop optimising only what it can measure drifts toward
 # bland-but-compliant prose. Charlie's verdicts supply the quality signal, and the
 # hand-written prompts are never machine-edited - see proposals.py.
+# The self-improvement loop (tune.py): the day's drafts alternate between the
+# champion and a challenger set of house notes, the committee and judge choose
+# the edition blind, and the challenger is kept after `trials` decided days if
+# it won at least `promote_at`. No human input, by Charlie's choice on 07/10/2026.
+# false restores the prompt exactly (no notes block, no extra call).
+tune:
+  enabled: true
+  trials: 10
+  promote_at: 7
+  max_lines: 8
+  max_line_chars: 220
+
 learning:
   enabled: true           # kill switch: false restores the fixed prompts exactly
   window: 30              # dispatches considered when judging staleness
