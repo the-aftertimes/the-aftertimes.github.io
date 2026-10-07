@@ -20,15 +20,7 @@
       }
     ],
     "premise": "Delegates at the Zeus-6 atmospheric assembly have voted to drop the entire Department of Structural Integrity into the planetary core as a \"propitiatory offering\" to appease the rising winter vortex, citing a collective belief that the support struts will hold if their faith is pure enough.",
-    "brief": {
-      "focus": "a circular floor aperture, one meter wide, its inner rim lined with empty, threaded bolt-sockets and sheared titanium-alloy teeth where structural fasteners have been extracted",
-      "subject": "a mid-career strut inspector with a bare, sweating face visible behind a clear composite bubble helmet, wearing a heavy orange environmental suit made of ribbed smart-polymer, with integrated life-support harness, matching orange leggings, and thick magnetic-soled composite boots",
-      "action": "slipping feet-first into the aperture, their gloved hands losing their grip on the smooth metal rim as gravity pulls them downward",
-      "setting": "the utility deck of Sunder-7 with brushed-metal flooring, where a political delegate in a sleek grey drape-suit of photo-reactive membrane stands three meters back, holding a handheld data-slate and watching neutrally while thick red vapor rises from the open aperture",
-      "light": "harsh white glare from an overhead LED strip, contrasted with a hot orange-red glow rising from the mist inside the floor aperture",
-      "materials": "smart-polymer, sheared titanium-alloy, extruded silicate, photo-reactive membrane",
-      "anomaly": "a discarded multi-frequency torque-spanner lying forgotten on the deck plates a few inches from the open hatch"
-    },
+    "brief": null,
     "image": "assets/img/2026-10-05.jpg"
   },
   "meta": {
