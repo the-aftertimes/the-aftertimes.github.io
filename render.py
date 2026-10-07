@@ -97,6 +97,15 @@ footer .fiction{font-style:italic;margin:0 0 0.6rem;}
   gap:0.4rem 1.5rem;flex-wrap:wrap;margin:0;}
 .endlinks p{margin:0;}
 a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
+.verdict{margin:2rem 0 0;font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;}
+.verdict[hidden],.verdict .why[hidden]{display:none;}
+.verdict .row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;}
+.verdict .why{margin-top:0.6rem;}
+.verdict button{font:inherit;color:var(--fg);background:transparent;cursor:pointer;
+  border:1px solid var(--rule);border-radius:0.3rem;padding:0.35rem 0.8rem;}
+.verdict button[aria-pressed="true"]{color:var(--bg);background:var(--accent);
+  border-color:var(--accent);}
+.verdict .said{color:var(--muted);}
 """
 
 
@@ -158,6 +167,60 @@ def _signup(form_url: str) -> str:
     "Thanks - your first dispatch arrives tomorrow morning.";n.style.color='var(--accent)';}}}},150);
     return true;}}</script>
 </section>"""
+
+
+#: Charlie's one-tap verdict, shown ONLY in a browser holding the vote key, so a
+#: reader never sees it. Visiting any page with #key=... stores the key and
+#: strips it from the address bar. Taps post to worker/src/index.js; the daily
+#: job pulls them into data/verdicts.json, where a "good" promotes the day's
+#: premise into the few-shot pool. A plain string, not an f-string, so the
+#: braces need no escaping; the date rides on a data attribute.
+_VERDICT_JS = """<script>(function(){try{
+var K="aftertimes.key",U="https://verdict.charlietrenorden.com/v";
+var m=location.hash.match(/key=([A-Za-z0-9_-]+)/);
+if(m){localStorage.setItem(K,m[1]);history.replaceState(null,"",location.pathname+location.search);}
+var key=localStorage.getItem(K),box=document.getElementById("verdict");
+if(!key||!box)return;
+var date=box.getAttribute("data-date"),said=box.querySelector(".said"),why=box.querySelector(".why");
+function mark(v,r){box.querySelectorAll("button").forEach(function(b){
+  b.setAttribute("aria-pressed",String(b.dataset.v===v&&!b.dataset.r||(!!r&&b.dataset.r===r)));});
+  why.hidden=v!=="bad";}
+function send(v,r){mark(v,r);said.textContent="Saving";
+  fetch(U,{method:"POST",headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},
+    body:JSON.stringify({date:date,verdict:v,reason:r||""})})
+  .then(function(x){said.textContent=x.ok?"Saved":"Not saved ("+x.status+")";})
+  .catch(function(){said.textContent="Not saved";});}
+box.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+  if(b.dataset.r!==undefined)send("bad",b.dataset.r);else send(b.dataset.v,"");});
+box.hidden=false;
+fetch(U,{headers:{"Authorization":"Bearer "+key}}).then(function(x){return x.ok?x.json():{};})
+  .then(function(all){var row=all[date];if(row){mark(row.verdict,row.reason);said.textContent="Saved";}});
+}catch(e){}})();</script>"""
+
+_REASONS = ("not funny", "doesn't make sense", "too weird", "picture")
+
+
+def _verdict(run_date: str) -> str:
+    if not run_date:
+        return ""
+    chips = "".join(f'<button type="button" data-r="{r}">{r.capitalize()}</button>'
+                    for r in _REASONS)
+    return (f'<section class="verdict" id="verdict" data-date="{run_date}" hidden>'
+            '<div class="row"><button type="button" data-v="good">Good</button>'
+            '<button type="button" data-v="bad">Bad</button>'
+            '<span class="said"></span></div>'
+            f'<div class="row why" hidden>{chips}</div></section>'
+            + _VERDICT_JS)
+
+
+def _edition_date(meta: dict) -> str:
+    """The edition's own date, which is the Sydney date of its run - the same
+    key the dispatch record and the verdict store use."""
+    try:
+        return datetime.fromisoformat(meta["run_time"]).astimezone(
+            ZoneInfo(meta.get("timezone") or "Australia/Sydney")).date().isoformat()
+    except (KeyError, ValueError, TypeError):
+        return ""
 
 
 def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
@@ -325,6 +388,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     <h1>{headline}</h1>
     {figure}
     <div class="{body_class}">{body_paras}</div>
+    {_verdict(_edition_date(meta))}
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">

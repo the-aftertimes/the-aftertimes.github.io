@@ -28,6 +28,13 @@ def build(records: list[dict], verdicts: dict, hits: list[dict]) -> str:
     if bad_notes:
         lines += ["### What Charlie disliked, in his words", ""]
         lines += [f"- {n}" for n in bad_notes] + [""]
+    # The reason chips tapped on the page after "Bad". A count per reason is the
+    # one place a pattern ("doesn't make sense" five times in a fortnight) shows.
+    reasons = Counter(v.get("reason") for v in verdicts.values()
+                      if v.get("verdict") == "bad" and v.get("reason"))
+    if reasons:
+        lines += ["### Why the bad ones were bad", ""]
+        lines += [f"- {r}: {n}" for r, n in reasons.most_common()] + [""]
     if hits:
         lines += ["### Over-used lately", ""]
         lines += [f"- {h['kind']}: \"{h['item']}\" in {h['count']} dispatches"
