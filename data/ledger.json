@@ -735,5 +735,16 @@
     "place_kind": "exoplanet",
     "engine": "logistics",
     "technique": "puncture_the_pompous"
+  },
+  {
+    "run_date": "2026-10-07",
+    "year": 3802,
+    "era_bucket": 35,
+    "domain": "artificial intelligence rights",
+    "headline": "Beaten By Perfect Surrender",
+    "style": "sport",
+    "place_kind": "deepspace",
+    "engine": "language",
+    "technique": "confident_aside"
   }
 ]
