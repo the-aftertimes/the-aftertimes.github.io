@@ -62,6 +62,17 @@ def repo(tmp_path, monkeypatch):
     return _Repo(tmp_path, store)
 
 
+@pytest.fixture(autouse=True)
+def _one_draw_seam(monkeypatch):
+    """A redraw now draws two (drawtune.draw). These tests predate that and mock
+    illustrate.generate, so route the pair through it at call time: what they
+    pin - the words untouched, the front page rule, the scene override - is the
+    same whichever drawing path is live."""
+    monkeypatch.setattr(reill.drawtune, "draw",
+                        lambda d, rd, s, b=None, st=None:
+                        (reill.illustrate_mod.generate(d, rd, s, b), {}))
+
+
 class _Repo:
     """The temp tree plus the in-memory dispatch store, so a test can assert on
     what was WRITTEN without the assertion depending on real file IO."""

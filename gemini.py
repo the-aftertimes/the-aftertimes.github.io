@@ -2,6 +2,7 @@
 Uses the API key from the GEMINI_API_KEY environment variable."""
 from __future__ import annotations
 
+import base64
 import json
 import os
 import re
@@ -122,7 +123,8 @@ def _retry_after(body: str | None) -> float | None:
 
 
 def generate_first_available(prompt: str, settings: dict, temperature: float,
-                             models: tuple[str, ...]) -> tuple[str, str]:
+                             models: tuple[str, ...],
+                             images: list[bytes] | None = None) -> tuple[str, str]:
     """Try each model in turn, returning (raw, model_that_answered).
 
     THE FREE TIER IS 20 CALLS PER DAY PER MODEL, so a spare model is not a
@@ -151,7 +153,9 @@ def generate_first_available(prompt: str, settings: dict, temperature: float,
     last = None
     for model in order:
         try:
-            return generate(prompt, settings, temperature, model=model), model
+            extra = {"images": images} if images else {}
+            return generate(prompt, settings, temperature, model=model,
+                            **extra), model
         except GeminiError as exc:
             print(f"    {model}: {str(exc)[:120]}", file=sys.stderr)
             last = exc
@@ -159,7 +163,8 @@ def generate_first_available(prompt: str, settings: dict, temperature: float,
 
 
 def generate(prompt: str, settings: dict, temperature: float,
-             model: str | None = None, retries: int | None = None) -> str:
+             model: str | None = None, retries: int | None = None,
+             images: list[bytes] | None = None) -> str:
     """Call generateContent and return the model's raw text. Retries on
     transient HTTP errors with linear backoff. `model` overrides the default
     settings model (used by the write stage to try a Pro model). `retries`
@@ -177,8 +182,9 @@ def generate(prompt: str, settings: dict, temperature: float,
     if model is None:
         listed = tuple(g.get("models") or ())
         if len(listed) > 1:
+            extra = {"images": images} if images else {}
             return generate_first_available(prompt, settings, temperature,
-                                            listed)[0]
+                                            listed, **extra)[0]
     model = (model or g["model"]).strip()
     if model in _spent_today:
         raise GeminiError(f"{model}: daily quota already reported gone in this "
@@ -187,7 +193,12 @@ def generate(prompt: str, settings: dict, temperature: float,
     overload_here = 0
     url = f"{g['endpoint']}/{model}:generateContent"
     payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
+        # Images ride as inline JPEG parts after the text - the picture judge
+        # (drawtune.py) is the only caller that sends any.
+        "contents": [{"parts": [{"text": prompt}] + [
+            {"inlineData": {"mimeType": "image/jpeg",
+                            "data": base64.b64encode(b).decode()}}
+            for b in (images or [])]}],
         "generationConfig": {"temperature": temperature,
                              "responseMimeType": "application/json"},
     }

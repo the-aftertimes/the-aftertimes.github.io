@@ -32,6 +32,8 @@ from common import (load_settings, read_json, refresh_render_meta, rel,
                     write_json)
 import archive as archive_mod
 import depict
+import drawtune
+import tune
 import card
 import illustrate as illustrate_mod
 import render as render_mod
@@ -85,7 +87,14 @@ def reillustrate(run_date: str, scene: str = "") -> int:
     else:
         print(f"    drawing from the scene line: {dispatch.get('scene', '')}")
 
-    image = illustrate_mod.generate(dispatch, run_date, settings, brief)
+    # Best of two with the CHAMPION drawing notes. A redraw never scores the
+    # loop: it is a repair, not a fair day's contest.
+    if (settings.get("image") or {}).get("best_of_two"):
+        champ = tune.load(drawtune.STATE_PATH)
+        champ["challenger"] = None
+        image, _ = drawtune.draw(dispatch, run_date, settings, brief, champ)
+    else:
+        image = illustrate_mod.generate(dispatch, run_date, settings, brief)
     if not image:
         print("    FAILED: no image produced; nothing written", file=sys.stderr)
         return 1

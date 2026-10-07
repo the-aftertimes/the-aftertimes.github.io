@@ -20,6 +20,7 @@ from common import (load_common_words, load_settings, load_yaml,
 import archive as archive_mod
 import avoid
 import cast
+import drawtune
 import tune
 import bible as bible_mod
 import critic
@@ -701,7 +702,16 @@ def run_pipeline() -> dict:
     if brief:
         print(f"    brief: {', '.join(f for f in depict.FIELDS if brief.get(f))}")
     dispatch["brief"] = brief
-    dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings, brief)
+    # Two candidates, the clearer published (drawtune.py), unless switched off.
+    picture_info: dict = {}
+    if (settings.get("image") or {}).get("best_of_two"):
+        draw_state = (tune.load(drawtune.STATE_PATH)
+                      if (settings.get("draw_tune") or {}).get("enabled")
+                      else tune.empty_state())
+        dispatch["image"], picture_info = drawtune.draw(
+            dispatch, run_date, settings, brief, draw_state)
+    else:
+        dispatch["image"] = illustrate_mod.generate(dispatch, run_date, settings, brief)
     print(f"    image: {dispatch['image'] or 'none (fallback)'}")
     # The share card, built from the engraving that was just drawn. Best-effort:
     # a card is a nicety and must never take the edition down with it, whereas a
@@ -745,7 +755,8 @@ def run_pipeline() -> dict:
               # log for a workflow that had already rotated.
               "quality": {"n_drafts": len(drafts),
                           "write_failures": write_failures, **choose_info,
-                          **revise_info, "prose": pr}}
+                          **revise_info, "prose": pr,
+                          "picture": picture_info}}
     write_json(f"data/dispatches/{run_date}.json", record)
     ledger_mod.save_ledger(ledger_mod.append_entry(
         ledger, run_date, dateline, domain, dispatch["headline"],
@@ -770,6 +781,16 @@ def run_pipeline() -> dict:
             write_json(f"data/dispatches/{run_date}.json", record)
         except Exception as exc:  # noqa: BLE001 - see above
             print(f"    WARN tune step failed ({exc})", file=sys.stderr)
+    # The same for the picture's drawing notes. Separate try, so a fault in
+    # one loop never stops the other.
+    if (settings.get("draw_tune") or {}).get("enabled") and picture_info:
+        print(">>> DRAW TUNE")
+        try:
+            record["quality"]["draw_tune"] = drawtune.after_edition(
+                settings, run_date, picture_info, records)
+            write_json(f"data/dispatches/{run_date}.json", record)
+        except Exception as exc:  # noqa: BLE001
+            print(f"    WARN draw tune step failed ({exc})", file=sys.stderr)
     return record
 
 

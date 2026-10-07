@@ -75,6 +75,7 @@ def _mock_stages(monkeypatch, calls):
     # The loop's one model call. Unstubbed, it walks the model list through the
     # retry waits with no key and turned a 5-second suite into 4 minutes.
     monkeypatch.setattr(run_mod.tune, "propose", lambda *a, **k: False)
+    monkeypatch.setattr(run_mod.drawtune, "propose", lambda *a, **k: False)
     return calls
 
 
