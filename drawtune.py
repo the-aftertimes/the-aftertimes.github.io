@@ -71,7 +71,8 @@ and match the scene; nothing important cut off by the edges; no lettering,
 garbled signs or signatures; crisp ink lines rather than smudged grey.
 
 Return JSON only: {{"pick": 1 or 2, "reason": "one sentence naming what the
-loser got wrong"}}"""
+loser got wrong", "winner_faults": "one sentence on what is still wrong with
+the winner, or empty if nothing"}}"""
 
 
 def judge(dispatch: dict, a: bytes, b: bytes, settings: dict) -> dict | None:
@@ -83,7 +84,12 @@ def judge(dispatch: dict, a: bytes, b: bytes, settings: dict) -> dict | None:
         pick = int(got.get("pick"))
         if pick not in (1, 2):
             return None
-        return {"pick": pick - 1, "reason": str(got.get("reason", "")).strip()}
+        return {"pick": pick - 1, "reason": str(got.get("reason", "")).strip(),
+                # The winner's own faults are what the next drawing note should
+                # fix. 07/10/2026: the first live judgement picked a picture
+                # covered in nonsense lettering over one with severed bodies, and
+                # a loser-only reason would never have mentioned the lettering.
+                "winner_faults": str(got.get("winner_faults", "")).strip()}
     except Exception as exc:  # noqa: BLE001 - a judge failure falls back to mush
         print(f"    picture judge failed ({str(exc)[:120]})", file=sys.stderr)
         return None
@@ -119,7 +125,8 @@ def draw(dispatch: dict, run_date: str, settings: dict, brief: dict | None = Non
     else:
         got = judge(dispatch, shots[0], shots[1], settings)
         if got:
-            info.update(pick=got["pick"], decided_by="judge", reason=got["reason"])
+            info.update(pick=got["pick"], decided_by="judge", reason=got["reason"],
+                        winner_faults=got.get("winner_faults", ""))
         else:
             info.update(pick=min(alive, key=lambda i: info["mush"][i]),
                         decided_by="mush")
@@ -151,9 +158,11 @@ def proposal_prompt(champion: list[str], records: list[dict], history: list[dict
     seen = []
     for r in records[-12:]:
         pic = (r.get("quality") or {}).get("picture") or {}
-        if pic.get("reason"):
+        if pic.get("reason") or pic.get("winner_faults"):
             seen.append(f"- scene: {(r.get('dispatch') or {}).get('scene', '')} | "
-                        f"judge on the losing picture: {pic['reason']}")
+                        f"losing picture: {pic.get('reason', '')} | "
+                        f"still wrong with the published one: "
+                        f"{pic.get('winner_faults') or 'nothing'}")
     tried = "\n".join(f"- {h['verdict']} ({h['wins']}/{h['of']}): {h.get('why', '')}"
                       for h in (history or [])[-6:]) or "(nothing tried yet)"
     return f"""You edit the drawing notes for a newspaper's daily illustration: a
@@ -164,7 +173,8 @@ image prompt. The style is fixed and is not yours to change.
 Current drawing notes:
 {current}
 
-What the picture judge has said about losing pictures recently:
+What the picture judge has said recently, about the losing picture and about
+what was still wrong with the one that was published:
 {chr(10).join(seen) or '(nothing yet)'}
 
 Recent changes already tried, and whether they won:
