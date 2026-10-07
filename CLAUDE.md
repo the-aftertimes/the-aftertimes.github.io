@@ -149,17 +149,13 @@ figure in a circular porthole. **Before porting a stage from another project, ru
 the archive split: outputs with the stage against outputs without it.** The two
 sections below describe the brief path, which haiku still uses.
 
-## Charlie's verdicts arrive by one tap on the page (07/10/2026)
+## Charlie will not feed a quality loop himself (07/10/2026)
 
-Good / Bad under each story, then four reason chips. Shown only in a browser
-holding the vote key, so readers never see them. `worker/` stores the taps;
-`verdict.py --pull` runs before the pipeline; a "good" promotes that day's premise
-into `config/exemplars.yaml`, which ideate reads as few-shot. That few-shot pool IS
-the daily self-improvement - the prompt that changes is the examples, steered by
-his taste. It is deliberately NOT a model grading the writer and the writer being
-tuned to it: the judge and the panel give 7 or 8 to nearly everything, and a loop
-tuned against them learns to please Gemini. If the loop seems not to learn, count
-`data/verdicts.json` first: before this it held zero after 72 editions.
+A one-tap Good/Bad verdict on the page was built and taken down the same day.
+Charlie: "i don't want to have to be involved in the recursive funny improvement
+process". Any self-improvement here must run on an automated signal. The cheapest
+one already exists: the comedy panel's ranking of each day's drafts (quality.panel).
+Do not re-pitch a human verdict step.
 
 ## A correct brief can still draw the wrong picture, and the cause is usually one noun
 
