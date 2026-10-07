@@ -746,5 +746,16 @@
     "place_kind": "deepspace",
     "engine": "language",
     "technique": "confident_aside"
+  },
+  {
+    "run_date": "2026-10-08",
+    "year": 3186,
+    "era_bucket": 23,
+    "domain": "transport",
+    "headline": "Station Commuters Walk Backwards",
+    "style": "trend",
+    "place_kind": "orbital",
+    "engine": "scale",
+    "technique": "unasked_statistic"
   }
 ]

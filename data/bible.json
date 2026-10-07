@@ -353,6 +353,12 @@
       "gloss": "A small, nimble space vessel used for rapid transit and telemetry scanning.",
       "kind": "term",
       "first_seen": "2026-10-07"
+    },
+    {
+      "term": "soft-shoes",
+      "gloss": "lightweight, low-friction footwear designed for walking on high-spin deck plates",
+      "kind": "term",
+      "first_seen": "2026-10-08"
     }
   ]
 }
