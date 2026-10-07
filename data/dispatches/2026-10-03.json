@@ -20,15 +20,7 @@
       }
     ],
     "premise": "A report from the Carlsbad Caverns settlement reveals that local cave-moss has learned to mimic the high-pitched slang of human children, a survival strategy researchers warn is used exclusively to trick automated airlocks into letting in predatory weasels.",
-    "brief": {
-      "focus": "a thick crescent of pale green, fibrous organic crust clinging to the seam of a massive circular airlock door, its surface dotted with tiny, open acoustic pores resembling miniature vents",
-      "subject": "a botanist with a bare, clean-shaven face, wearing a grey jumpsuit of seamless synthetic smart-fiber, matching trousers, and molded composite utility boots",
-      "action": "scraping the pale green organic crust from the door seam using a flat, non-reactive ceramic spatula",
-      "setting": "the interior of a pressurized industrial corridor with curved bulkheads of matte-grey alloy and a heavy circular airlock door",
-      "light": "harsh, direct overhead light from a recessed cool-white LED panel",
-      "materials": "matte-grey titanium-composite alloy, seamless synthetic smart-fiber, and pale green fibrous organic crust",
-      "anomaly": "a scuffed portable diagnostic scanner resting on a magnetic bracket nearby with a smudge of grease on the casing"
-    },
+    "brief": null,
     "image": "assets/img/2026-10-03.jpg"
   },
   "meta": {
