@@ -105,6 +105,15 @@ footer .fiction{font-style:italic;margin:0 0 0.6rem;}
   gap:0.4rem 1.5rem;flex-wrap:wrap;margin:0;}
 .endlinks p{margin:0;}
 a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
+.verdict{margin:2rem 0 0;font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;}
+.verdict[hidden],.verdict .why[hidden]{display:none;}
+.verdict .row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;}
+.verdict .why{margin-top:0.6rem;}
+.verdict button{font:inherit;color:var(--fg);background:transparent;cursor:pointer;
+  border:1px solid var(--rule);border-radius:0.3rem;padding:0.35rem 0.8rem;}
+.verdict button[aria-pressed="true"]{color:var(--bg);background:var(--accent);
+  border-color:var(--accent);}
+.verdict .said{color:var(--muted);}
 </style>
 <style>@font-face{font-family:'Aftertimes Flag';src:url('../assets/fonts/unifrakturcook-700.woff2') format('woff2');font-weight:700;font-display:swap;}</style>
 <script>/* Analytics, gated. Two kinds of visitor are not an audience and never load it: anyone who has opted out with ?nostats=1, and automation, since navigator.webdriver is the one signal true for Playwright, Puppeteer and Selenium alike. Inline and dependency-free on purpose - served from the Worker, a bad deploy there would stop analytics on every site. See site-stats/beacon. */(function(){try{var X="ct.nostats",C="ct_nostats",D=";path=/;domain=.charlietrenorden.com",q=location.search,out=false;if(q.indexOf("nostats=1")>-1){try{localStorage.setItem(X,"1")}catch(e){}document.cookie=C+"=1"+D+";max-age=63072000;samesite=lax";}if(q.indexOf("nostats=0")>-1){try{localStorage.removeItem(X)}catch(e){}document.cookie=C+"="+D+";max-age=0";}try{out=!!localStorage.getItem(X)}catch(e){}if(!out)out=document.cookie.indexOf(C+"=1")>-1;if(out||navigator.webdriver)return;var d=document,s;s=d.createElement("script");s.defer=true;s.src="https://static.cloudflareinsights.com/beacon.min.js";s.setAttribute("data-cf-beacon",'{"token": "32b821209b5441a08df42ccf61c9e6c2"}');d.head.appendChild(s);s=d.createElement("script");s.defer=true;s.src="https://beacon.charlietrenorden.com/b.js";d.head.appendChild(s);}catch(e){}})();</script>
@@ -121,6 +130,27 @@ a.arc{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--acc
     <h1>Sunder-7 Replaces Bolts With Optimism</h1>
     <figure class="engraving"><img src="../assets/img/2026-10-05.jpg" alt="A strut inspector in an orange environmental suit falls through a circular floor hatch into red mist while a delegate watches." loading="lazy"></figure>
     <div class="body"><p>Twelve strut inspectors were dropped into the gas giant&#x27;s red core on Friday after the cloud-assembly voted to replace maintenance with pure optimism.</p><p>The measure was passed to quiet the winter vortex, which has begun rattling the floating city&#x27;s support struts. Without the inspectors, Sunder-7 will rely entirely on the power of positive thinking to stay in the sky.</p><p>Assembly Speaker Clara Wu watched the final tool chest tip over the edge of the residential ring. &quot;The calculations were getting very negative,&quot; Wu said. &quot;And we simply don&#x27;t need that kind of energy right now.&quot;</p><p>The platform fell three metres during the vote. Rather than make repairs, citizens have gathered to throw their heavy toolboxes and diaries into the abyss to lighten the load, while priests paint sacred symbols onto the groaning thrusters with magnetic resin.</p><p>Chief inspector Kenji Al-Jamil, speaking by radio during his three-hour descent, warned that the main joists were already snapping. &quot;The vibes are high,&quot; Al-Jamil said, &quot;but the load-bearing beams are copper.&quot;</p><p>At press time, the assembly was preparing a vote to declare gravity a form of bad attitude.</p></div>
+    <section class="verdict" id="verdict" data-date="2026-10-05" hidden><div class="row"><button type="button" data-v="good">Good</button><button type="button" data-v="bad">Bad</button><span class="said"></span></div><div class="row why" hidden><button type="button" data-r="not funny">Not funny</button><button type="button" data-r="doesn't make sense">Doesn't make sense</button><button type="button" data-r="too weird">Too weird</button><button type="button" data-r="picture">Picture</button></div></section><script>(function(){try{
+var K="aftertimes.key",U="https://verdict.charlietrenorden.com/v";
+var m=location.hash.match(/key=([A-Za-z0-9_-]+)/);
+if(m){localStorage.setItem(K,m[1]);history.replaceState(null,"",location.pathname+location.search);}
+var key=localStorage.getItem(K),box=document.getElementById("verdict");
+if(!key||!box)return;
+var date=box.getAttribute("data-date"),said=box.querySelector(".said"),why=box.querySelector(".why");
+function mark(v,r){box.querySelectorAll("button").forEach(function(b){
+  b.setAttribute("aria-pressed",String(b.dataset.v===v&&!b.dataset.r||(!!r&&b.dataset.r===r)));});
+  why.hidden=v!=="bad";}
+function send(v,r){mark(v,r);said.textContent="Saving";
+  fetch(U,{method:"POST",headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},
+    body:JSON.stringify({date:date,verdict:v,reason:r||""})})
+  .then(function(x){said.textContent=x.ok?"Saved":"Not saved ("+x.status+")";})
+  .catch(function(){said.textContent="Not saved";});}
+box.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+  if(b.dataset.r!==undefined)send("bad",b.dataset.r);else send(b.dataset.v,"");});
+box.hidden=false;
+fetch(U,{headers:{"Authorization":"Bearer "+key}}).then(function(x){return x.ok?x.json():{};})
+  .then(function(all){var row=all[date];if(row){mark(row.verdict,row.reason);said.textContent="Saved";}});
+}catch(e){}})();</script>
     <section class="meta">
       <h2 class="meta-title">Dispatch metadata</h2>
       <div class="meta-body">
