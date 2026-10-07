@@ -143,6 +143,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <title>Archive - {html.escape(meta['site_name'])}</title>
+<meta name="description" content="Every past dispatch from The Aftertimes, a satirical wire service reporting from the future: written by AI each morning, each illustrated with an engraving in the style of Gustave Doré.">
 <style>{_CSS}</style>
 {_FONT_FACE}
 {BEACON}
