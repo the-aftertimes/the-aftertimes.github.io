@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 import sys
 
+import cast
 import gemini
 from common import hyphenate
 
@@ -299,11 +300,19 @@ def flat_block(lines: list[dict], cap: int = 6) -> str:
         + "get the joke. Report the fact and stop." + nl)
 
 
+#: The name line used when no cast is supplied (trials, reedit, old callers).
+_NAME_RULE = ('- Give every named person a fresh, varied, culturally diverse name. Do NOT use the names "Vance", "Elena", "Rostova", "Marcus" or "Kovac" - invent new ones each time. Do not default the weekday to Tuesday; vary or omit the day.')
+
+
 def build_prompt(premise: str, dateline: dict, domain: str,
                  style_guidance: str, place_guidance: str = "",
                  avoid_block: str = "", funny_lines: list[dict] | None = None,
                  flat_lines: list[dict] | None = None,
-                 technique: dict | None = None) -> str:
+                 technique: dict | None = None,
+                 names: list[str] | None = None) -> str:
+    # A supplied cast replaces the "invent fresh names" line, which the model
+    # satisfied by rotating through four favourites. See config/names.yaml.
+    name_rule = cast.rule(names or []) or _NAME_RULE
     place_rule = (f"\nToday's dateline setting: {place_guidance}\n"
                   if place_guidance else "")
     funny_rule = funny_block(funny_lines or [])
@@ -572,7 +581,7 @@ Rules:
 - Separate paragraphs with a blank line.
 - Do not use em dashes or en dashes. Use plain hyphens.
 - Use Australian English spelling (organise, colour, defence, metre, favour).
-- Give every named person a fresh, varied, culturally diverse name. Do NOT use the names "Vance", "Elena", "Rostova", "Marcus" or "Kovac" - invent new ones each time. Do not default the weekday to Tuesday; vary or omit the day.
+{name_rule}
 - Do not put the year in the dateline place; the date is shown separately.
 - Invented names of groups, bodies, products or places should be concrete and evocative, not vague abstractions.
 {avoid_extra}{tech_rule}{funny_rule}{flat_rule}
@@ -625,10 +634,11 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str, place_guidance: str = "",
           avoid_block: str = "", funny_lines: list[dict] | None = None,
           flat_lines: list[dict] | None = None,
-          technique: dict | None = None) -> dict:
+          technique: dict | None = None,
+          names: list[str] | None = None) -> dict:
     prompt = build_prompt(premise, dateline, domain, style_guidance,
                           place_guidance, avoid_block, funny_lines,
-                          flat_lines, technique)
+                          flat_lines, technique, names)
     g = settings["gemini"]
     pro = (g.get("write_model") or "").strip()
     d = None

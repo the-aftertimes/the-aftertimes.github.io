@@ -19,6 +19,7 @@ from common import (load_common_words, load_settings, load_yaml,
                     rel, tz_now, write_json)
 import archive as archive_mod
 import avoid
+import cast
 import bible as bible_mod
 import critic
 import depict
@@ -408,6 +409,11 @@ def clear_wip() -> None:
         os.remove(path)
 
 
+def use_brief(settings: dict) -> bool:
+    """Whether a prose dispatch is drawn from a depict brief. Off by default."""
+    return bool((settings.get("image") or {}).get("brief", False))
+
+
 def run_pipeline() -> dict:
     settings = load_settings()
     domains = load_yaml("config/domains.yaml")["domains"]
@@ -526,6 +532,11 @@ def run_pipeline() -> dict:
     print(f"    {len(chosen_premises)} premises chosen")
 
     kept: list[dict] = wip.get("drafts") or []
+    # The writer is handed its people's names rather than asked to invent
+    # them; names used in the last month are held back. See cast.py.
+    names_cfg = load_yaml("config/names.yaml")
+    used_names = cast.recent_names(
+        [(r.get("dispatch") or {}).get("body", "") for r in records[-30:]])
 
     def write_batch(pool: list[str], label: str) -> list[dict]:
         out = []
@@ -535,7 +546,11 @@ def run_pipeline() -> dict:
                     premise, dateline, domain, settings,
                     style["guidance"], place_kind["guidance"],
                     avoid_block=avoid_block, funny_lines=funny_lines,
-                    flat_lines=flat_lines, technique=technique))
+                    flat_lines=flat_lines, technique=technique,
+                    names=cast.draw(f"{run_date}:{premise}",
+                                    names_cfg.get("given") or [],
+                                    names_cfg.get("family") or [],
+                                    used_names)))
                 print(f"    {label}draft {i}: {out[-1]['headline'][:56]}")
                 save_wip(run_date, drafts=kept + out)
             except Exception as exc:  # noqa: BLE001 - one bad draft must not stop us
@@ -664,11 +679,10 @@ def run_pipeline() -> dict:
           f"{pr['rare_rate']}% to decode")
 
     print(">>> ILLUSTRATE")
-    # A structured visual brief beats the writer's scene line, which is prose
-    # written for a reader rather than a renderer. Returns None on any failure
-    # and illustrate falls back, so this can cost a better picture but never the
-    # picture. One extra Gemini call.
-    brief = depict.depict(dispatch, settings)
+    # The writer's scene line, unless image.brief asks for a depict brief. The
+    # brief was meant to beat the scene line and, measured over the archive on
+    # 07/10/2026, did the opposite - see image.brief in settings.yaml.
+    brief = depict.depict(dispatch, settings) if use_brief(settings) else None
     if brief:
         print(f"    brief: {', '.join(f for f in depict.FIELDS if brief.get(f))}")
     dispatch["brief"] = brief
