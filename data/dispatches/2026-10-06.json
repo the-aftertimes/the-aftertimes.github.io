@@ -15,15 +15,7 @@
     "domain": "Health & Safety",
     "glossary": [],
     "premise": "[GIDEON'S LANDING, 2177] — Investigative reporters have revealed that a major colony clinic is quietly concealing a recurring glitch in its bio-printers by forcing off-duty surgeons to use pool noodles to herd thousands of gallons of escaped, semi-sentient synthetic blood back down the elevator shafts, a nightly chore the board dismissed as a voluntary team-building exercise.",
-    "brief": {
-      "focus": "a wide, viscous pool of glossy, self-cohering dark crimson fluid, bulging at its rounded edges as it is guided across the floor tiles",
-      "subject": "a male surgeon with a bare, weary face, wearing a collarless, seamless green jumpsuit of micro-perforated smart-fiber with integrated trousers and matching molded slip-on shoes",
-      "action": "crouching low on the floor while nudging the edge of the crimson fluid toward an open lift shaft using a flexible, extruded blue elastomer cylinder",
-      "setting": "a sterile hospital corridor with seamless matte-white composite wall panels, a dark metallic floor grate at the threshold of an open elevator shaft, and recessed ceiling panels",
-      "light": "flat, cool-toned illumination from recessed overhead luminescent strips, casting sharp reflections on the wet floor",
-      "materials": "molded elastomer, polished ceramic-composite tiles, micro-perforated smart-fiber, and viscous synthetic fluid",
-      "anomaly": "a scuffed corner on a composite wall panel near the floor where a gurney has scraped away the white finish to reveal a grey under-layer"
-    },
+    "brief": null,
     "image": "assets/img/2026-10-06.jpg"
   },
   "meta": {
