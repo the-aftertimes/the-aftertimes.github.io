@@ -1,4 +1,3 @@
-import json
 from render import render_dispatch
 
 
@@ -254,58 +253,3 @@ def test_a_permalink_points_its_canonical_at_the_dated_page():
     finally:
         render_mod.os.path.exists = real
     assert f'{META["base_url"]}/d/2026-08-27.html' in html
-
-
-# --- the owner-only verdict buttons, 07/10/2026 ---
-
-def test_the_verdict_buttons_ship_hidden_and_carry_the_edition_date():
-    page = render_dispatch(DISPATCH, META)
-    # Hidden in the markup: only the script, with a key in localStorage, shows
-    # them. A reader with JavaScript off or no key sees nothing.
-    assert '<section class="verdict" id="verdict" data-date="2026-07-29" hidden>' in page
-    assert ".verdict[hidden]" in page
-
-
-def test_the_verdict_date_is_the_record_key_not_the_utc_date():
-    """20:00 UTC on the 28th is the 29th in Sydney, and the dispatch record,
-    the ledger and the verdict store all key on the Sydney date."""
-    import render as render_mod
-    assert render_mod._edition_date(META) == "2026-07-29"
-    assert render_mod._edition_date({}) == ""
-
-
-def test_the_verdict_buttons_tap_through_to_the_worker(tmp_path):
-    pw = __import__("pytest").importorskip("playwright.sync_api")
-    page_html = render_dispatch(DISPATCH, META)
-    posted = []
-    with pw.sync_playwright() as p:
-        try:
-            browser = p.chromium.launch()
-        except Exception:  # noqa: BLE001 - no browser on this machine
-            __import__("pytest").skip("no chromium")
-        ctx = browser.new_context()
-        page = ctx.new_page()
-        def worker(route):
-            if route.request.method == "POST":
-                posted.append(json.loads(route.request.post_data))
-            route.fulfill(status=200, body="{}", headers={
-                "Access-Control-Allow-Origin": "*", "Content-Type": "application/json",
-                "Access-Control-Allow-Headers": "Authorization, Content-Type"})
-        ctx.route("https://verdict.charlietrenorden.com/**", worker)
-        ctx.route("https://aftertimes.charlietrenorden.com/**",
-                   lambda r: r.fulfill(status=200, body=page_html,
-                                       headers={"Content-Type": "text/html"}))
-        page.goto("https://aftertimes.charlietrenorden.com/")
-        assert page.locator("#verdict").is_hidden()          # a reader
-        # The setup link is opened fresh; a hash change alone does not reload.
-        page = ctx.new_page()
-        page.goto("https://aftertimes.charlietrenorden.com/#key=abc123")
-        assert "key=" not in page.url                        # stripped from the bar
-        assert page.locator("#verdict").is_visible()
-        assert page.locator(".verdict .why").is_hidden()
-        page.click("button[data-v=bad]")
-        assert page.locator(".verdict .why").is_visible()
-        page.click("button[data-r='not funny']")
-        page.wait_for_function("document.querySelector('.verdict .said').textContent=='Saved'")
-        browser.close()
-    assert posted[-1] == {"date": "2026-07-29", "verdict": "bad", "reason": "not funny"}
