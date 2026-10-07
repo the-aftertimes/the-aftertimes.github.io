@@ -121,7 +121,31 @@ def test_the_words_are_never_touched(repo, monkeypatch):
     after = repo.store["data/dispatches/2026-08-01.json"]["dispatch"]
     for field in ("headline", "body", "scene", "domain", "dateline"):
         assert after[field] == RECORD["dispatch"][field], field
-    assert after["brief"]["subject"] == "new subject"
+    # Drawn from the scene line (image.brief is off), so the stale brief is
+    # cleared: a record must say what its picture was actually drawn from.
+    assert after["brief"] is None
+
+
+def test_the_brief_switch_is_honoured_both_ways(repo, monkeypatch):
+    """07/10/2026: briefed pictures measured worse than scene-line ones, so
+    image.brief went off. A redraw that kept calling depict would quietly
+    bring the worse path back on every redraw."""
+    called = []
+    monkeypatch.setattr(reill.depict, "depict",
+                        lambda d, s: called.append(1) or {"subject": "s"})
+    monkeypatch.setattr(reill.illustrate_mod, "generate",
+                        lambda d, rd, s, b=None: "assets/img/2026-08-01.jpg")
+    real = reill.load_settings
+    for on in (False, True):
+        called.clear()
+        monkeypatch.setattr(reill, "load_settings", lambda on=on: {
+            **real(), "image": {**real()["image"], "brief": on}})
+        assert reill.reillustrate("2026-08-01") == 0
+        assert called == ([1] if on else []), on
+
+
+def test_the_shipped_setting_draws_from_the_scene_line():
+    assert reill.use_brief(reill.load_settings()) is False
 
 
 def test_an_unknown_date_is_refused(repo):
@@ -131,14 +155,12 @@ def test_an_unknown_date_is_refused(repo):
 def test_a_scene_override_changes_the_picture_and_nothing_else(repo, monkeypatch):
     """22/08/2026: a redraw could not fix a picture whose SCENE LINE was the
     fault - depict is handed that line and told to draw it, so the same wrong
-    picture came back. The override must reach the brief and leave the prose
+    picture came back. The override must reach the picture and leave the prose
     alone."""
     seen = {}
-    monkeypatch.setattr(reill.depict, "depict",
-                        lambda d, s: seen.setdefault("scene", d["scene"]) and None
-                        or {"subject": "the mayor"})
     monkeypatch.setattr(reill.illustrate_mod, "generate",
-                        lambda d, rd, s, b=None: "assets/img/2026-08-01.jpg")
+                        lambda d, rd, s, b=None: seen.setdefault("scene", d["scene"])
+                        and "assets/img/2026-08-01.jpg")
     assert reill.reillustrate("2026-08-01", scene="The mayor on the floor.") == 0
     assert seen["scene"] == "The mayor on the floor."
     after = repo.store["data/dispatches/2026-08-01.json"]["dispatch"]
@@ -149,11 +171,9 @@ def test_a_scene_override_changes_the_picture_and_nothing_else(repo, monkeypatch
 
 def test_no_override_keeps_the_stored_scene(repo, monkeypatch):
     seen = {}
-    monkeypatch.setattr(reill.depict, "depict",
-                        lambda d, s: seen.setdefault("scene", d["scene"]) and None
-                        or {"subject": "x"})
     monkeypatch.setattr(reill.illustrate_mod, "generate",
-                        lambda d, rd, s, b=None: "assets/img/2026-08-01.jpg")
+                        lambda d, rd, s, b=None: seen.setdefault("scene", d["scene"])
+                        and "assets/img/2026-08-01.jpg")
     reill.reillustrate("2026-08-01")
     assert seen["scene"] == RECORD["dispatch"]["scene"]
 

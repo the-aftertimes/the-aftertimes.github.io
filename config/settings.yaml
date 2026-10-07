@@ -119,6 +119,16 @@ image:
   timeout: 120
   crop: [0.03, 0.03, 0.97, 0.86]   # left, top, right, bottom fractions - drops the caption band
   dir: "assets/img"
+  # Draw prose dispatches from the writer's scene line, not a depict brief.
+  # Measured 07/10/2026 over the 66 illustrated dispatches: the 29 drawn from a
+  # brief carried a median 37.2% smooth mid-grey against 30.6% for the 37 drawn
+  # from the scene line, and by eye about 3 in 12 recent briefed pictures showed
+  # the story against about 12 in 16 scene-line ones. The brief's "never the
+  # everyday noun" rule turned a pool noodle into "an extruded elastomer
+  # cylinder" (drawn: nothing) and spectacles into a VR headset, and five of the
+  # twelve came back as one figure in a circular porthole. It also costs a
+  # Gemini call a day the pipeline cannot spare. Haiku keeps its brief.
+  brief: false
 
 # Multi-draft quality pipeline. Every threshold the critic uses lives here so
 # tuning never means editing code. `judge` and `revise` are independently

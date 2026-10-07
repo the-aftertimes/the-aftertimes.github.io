@@ -35,7 +35,7 @@ import depict
 import card
 import illustrate as illustrate_mod
 import render as render_mod
-from run import _load_dotenv
+from run import _load_dotenv, use_brief
 
 
 def _latest_date() -> str | None:
@@ -71,17 +71,19 @@ def reillustrate(run_date: str, scene: str = "") -> int:
     for f in depict.FIELDS:
         print(f"      {f:9} {old_brief.get(f, '')}")
 
-    brief = depict.depict(dispatch, settings)
+    # Same switch as the daily run, or a redraw would quietly bring back the
+    # picture path the daily run has turned off.
+    brief = depict.depict(dispatch, settings) if use_brief(settings) else None
     if brief:
         print("    new brief:")
         for f in depict.FIELDS:
             print(f"      {f:9} {brief.get(f, '')}")
-    else:
-        # Not fatal: illustrate falls back to the writer's scene line. Worth
-        # shouting about though, because the brief is where the subject and the
-        # clothing rules are enforced.
+    elif use_brief(settings):
+        # Not fatal: illustrate falls back to the writer's scene line.
         print("    WARN depict returned nothing; falling back to the scene line",
               file=sys.stderr)
+    else:
+        print(f"    drawing from the scene line: {dispatch.get('scene', '')}")
 
     image = illustrate_mod.generate(dispatch, run_date, settings, brief)
     if not image:
