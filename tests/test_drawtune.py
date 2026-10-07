@@ -54,7 +54,8 @@ def test_the_judge_is_actually_shown_both_pictures(monkeypatch):
     got = drawtune.judge(DISPATCH, b"A", b"B", _settings())
     assert seen["images"] == [b"A", b"B"]
     assert DISPATCH["scene"] in seen["prompt"]
-    assert got == {"pick": 1, "reason": "the first crops the surgeon"}
+    assert got == {"pick": 1, "reason": "the first crops the surgeon",
+                   "winner_faults": ""}
 
 
 def test_a_judge_that_answers_nonsense_is_no_answer(monkeypatch):
