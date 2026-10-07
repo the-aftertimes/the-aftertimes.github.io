@@ -168,6 +168,15 @@ next edit from the stored critiques. State and full history live in
 It learns the committee's taste, not Charlie's: that was said once and accepted.
 If the paper drifts somewhere odd, read the history there before anything else.
 
+**The picture has its own loop, `drawtune.py`** (07/10/2026, "does a similar thing
+happen for the image?"). Every edition draws two candidates and one Gemini call
+with both images picks the clearer (lower mid-grey share if Gemini is down). A
+short DRAWING NOTES block in the image prompt is tuned the same way as the house
+notes, but only JUDGED days between champion and challenger count. State in
+`config/drawing_notes.yaml`. Notes may frame the picture; any note naming a colour
+or another style is refused, because the Dore style is settled. Redraws use the
+champion notes, best of two, and never score the loop.
+
 ## A correct brief can still draw the wrong picture, and the cause is usually one noun
 
 Every picture fault before 06/09/2026 was a bad brief - depict re-choosing the

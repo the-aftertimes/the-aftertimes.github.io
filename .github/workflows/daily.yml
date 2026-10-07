@@ -132,7 +132,7 @@ jobs:
           # Without it here the weekly document would be generated and never
           # committed, which is the same written-but-unwired failure that
           # left proposals.py uncalled for a month in the first place.
-          git add index.html archive.html sitemap.xml robots.txt d/ data/ assets/img/ assets/card/ docs/proposals.md config/house_notes.yaml
+          git add index.html archive.html sitemap.xml robots.txt d/ data/ assets/img/ assets/card/ docs/proposals.md config/house_notes.yaml config/drawing_notes.yaml
           # data/wip.json is the half-bought edition (see run.WIP_PATH). Every
           # run is a fresh checkout, so it only survives to the next rung of the
           # ladder if it is COMMITTED - which is the whole point of it. A run

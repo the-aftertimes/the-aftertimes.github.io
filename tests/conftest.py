@@ -21,7 +21,8 @@ import common
 #: test that legitimately writes them is one that patched `common._path` to a
 #: temp root, in which case the real ones never move.
 _WATCHED = ("index.html", "archive.html", "data/ledger.json", "data/bible.json",
-            "data/wip.json", "config/house_notes.yaml")
+            "data/wip.json", "config/house_notes.yaml",
+            "config/drawing_notes.yaml")
 
 
 #: Captured at import, before any test can patch it - so the fingerprint always

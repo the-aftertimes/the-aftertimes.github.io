@@ -58,17 +58,17 @@ def empty_state() -> dict:
             "results": {}, "history": []}
 
 
-def load() -> dict:
+def load(path: str = STATE_PATH) -> dict:
     try:
-        with open(rel(STATE_PATH), encoding="utf-8") as fh:
+        with open(rel(path), encoding="utf-8") as fh:
             state = yaml.safe_load(fh) or {}
     except FileNotFoundError:
         state = {}
     return {**empty_state(), **state}
 
 
-def save(state: dict) -> None:
-    with open(rel(STATE_PATH), "w", encoding="utf-8") as fh:
+def save(state: dict, path: str = STATE_PATH) -> None:
+    with open(rel(path), "w", encoding="utf-8") as fh:
         fh.write("# Machine-edited by tune.py. Read its docstring before changing "
                  "anything here.\n")
         yaml.safe_dump(state, fh, allow_unicode=True, sort_keys=False, width=100)
@@ -140,7 +140,8 @@ def decide(state: dict, cfg: dict, today: str) -> str | None:
     return verdict
 
 
-def valid(notes, champion: list[str], cfg: dict) -> bool:
+def valid(notes, champion: list[str], cfg: dict,
+          forbidden: re.Pattern = _FORBIDDEN) -> bool:
     """A proposal must be a short list of short lines, differ from the champion
     by a single edit, and ask for nothing the house has already ruled out."""
     if not isinstance(notes, list) or not all(isinstance(n, str) for n in notes):
@@ -150,7 +151,7 @@ def valid(notes, champion: list[str], cfg: dict) -> bool:
         return False
     if any(len(n) > int(cfg.get("max_line_chars", 220)) for n in notes):
         return False
-    if any(_FORBIDDEN.search(n) for n in notes):
+    if any(forbidden.search(n) for n in notes):
         return False
     if notes == list(champion):
         return False

@@ -172,7 +172,8 @@ def _fit(core: list[str], optional: list[str], negative: str) -> str:
     return f"{head} {negative}"
 
 
-def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
+def build_prompt(dispatch: dict, brief: dict | None = None,
+                 notes: list[str] | None = None) -> str:
     """Assemble the flux prompt, preferring a structured brief from depict.py.
 
     Ported from ~/dev/photocopy 17/08/2026. Two details there are load-bearing
@@ -227,11 +228,19 @@ def build_prompt(dispatch: dict, brief: dict | None = None) -> str:
             if value:
                 optional.append(f"{prefix}{value}".rstrip(".") + ".")
         negative = (_NEGATIVE_OBJECT + " " + _NO_PLATE) if object_only else _NEGATIVE
-        return _fit(core, optional, negative)
+        return _fit(core, optional + _notes_slot(notes), negative)
 
     # Fallback: the writer's scene line, which is prose written for a reader.
     subject = (dispatch.get("scene") or "").strip() or dispatch["headline"]
-    return _fit([_STYLE], [f'It depicts this scene: "{subject}".'], _NEGATIVE)
+    return _fit([_STYLE], [f'It depicts this scene: "{subject}".']
+                + _notes_slot(notes), _NEGATIVE)
+
+
+def _notes_slot(notes: list[str] | None) -> list[str]:
+    """The machine-edited drawing notes (drawtune.py), as the LAST optional slot
+    so the length fitter drops them before anything that describes the scene."""
+    lines = [n.strip().rstrip(".") for n in (notes or []) if n and n.strip()]
+    return [" ".join(f"{n}." for n in lines)] if lines else []
 
 
 #: Waits between Cloudflare attempts, in seconds. Three tries over roughly a

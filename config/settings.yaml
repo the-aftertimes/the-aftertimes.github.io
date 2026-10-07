@@ -129,6 +129,9 @@ image:
   # twelve came back as one figure in a circular porthole. It also costs a
   # Gemini call a day the pipeline cannot spare. Haiku keeps its brief.
   brief: false
+  # Draw two candidates and publish the clearer (drawtune.py): one Gemini call
+  # with both images, falling back to the lower mid-grey share if it fails.
+  best_of_two: true
 
 # Multi-draft quality pipeline. Every threshold the critic uses lives here so
 # tuning never means editing code. `judge` and `revise` are independently
@@ -247,6 +250,16 @@ quality:
 # the edition blind, and the challenger is kept after `trials` decided days if
 # it won at least `promote_at`. No human input, by Charlie's choice on 07/10/2026.
 # false restores the prompt exactly (no notes block, no extra call).
+# The picture's drawing notes, learnt the same way (drawtune.py). Only judged
+# days between champion and challenger count. Short: the image prompt has about
+# 600 spare characters of its 2020.
+draw_tune:
+  enabled: true
+  trials: 10
+  promote_at: 7
+  max_lines: 4
+  max_line_chars: 120
+
 tune:
   enabled: true
   trials: 10
