@@ -117,6 +117,15 @@ jobs:
       - name: Tests must pass before anything is generated
         run: python -m pytest tests -q
 
+      # Charlie's one-tap verdicts from the page, folded in BEFORE the pipeline
+      # so a tap made at breakfast steers tonight's edition: a "good" promotes
+      # that day's premise into config/exemplars.yaml, which ideate reads as
+      # few-shot. Best-effort - a failed pull prints and the edition goes on.
+      - name: Pull verdicts
+        env:
+          VERDICT_KEY: ${{ secrets.VERDICT_KEY }}
+        run: python verdict.py --pull
+
       - name: Generate today's dispatch
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -132,16 +141,18 @@ jobs:
           # Without it here the weekly document would be generated and never
           # committed, which is the same written-but-unwired failure that
           # left proposals.py uncalled for a month in the first place.
-          git add index.html archive.html sitemap.xml robots.txt d/ data/ assets/img/ assets/card/ docs/proposals.md
+          git add index.html archive.html sitemap.xml robots.txt d/ data/ assets/img/ assets/card/ docs/proposals.md config/exemplars.yaml
           # data/wip.json is the half-bought edition (see run.WIP_PATH). Every
           # run is a fresh checkout, so it only survives to the next rung of the
           # ladder if it is COMMITTED - which is the whole point of it. A run
           # that saved work but filed nothing says so rather than claiming a
           # dispatch, or the history reads as a week of editions that never ran.
-          if git diff --cached --quiet -- data/dispatches; then
+          if ! git diff --cached --quiet -- data/dispatches; then
+            MSG="dispatch: $(date -u +%Y-%m-%d)"
+          elif ! git diff --cached --quiet -- data/wip.json; then
             MSG="wip: $(date -u +%Y-%m-%d) - partial edition kept for the next run"
           else
-            MSG="dispatch: $(date -u +%Y-%m-%d)"
+            MSG="verdicts: $(date -u +%Y-%m-%d) - taps from the page"
           fi
           git commit -m "$MSG" || echo "no changes"
           git push
