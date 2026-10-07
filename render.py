@@ -210,6 +210,13 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
     # daily. The dated permalinks keep the headline, because there it IS the page.
     title = og_title if is_permalink else html.escape(meta["site_name"])
     desc = html.escape("A wire service reporting from the future.")
+    # The description tag on the FRONT page is written for search and AI answer
+    # engines and never shown to a reader (07/10/2026); dated pages and every
+    # og:description keep `desc`.
+    meta_desc = desc if is_permalink else html.escape(
+        "Satirical news from the future, written by AI every morning: deadpan wire "
+        "reports of absurd events decades to millennia ahead, each illustrated with an "
+        "engraving in the style of Gustave Doré.")
     asset_prefix = "../" if is_permalink else ""
 
     # The share card, and the canonical URL beside it.
@@ -306,7 +313,7 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{html.escape(meta['site_name'])}">
 <meta property="og:title" content="{og_title}">
-<meta name="description" content="{desc}">
+<meta name="description" content="{meta_desc}">
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="{card_kind}">{card_tags}
 <style>{_CSS}</style>
