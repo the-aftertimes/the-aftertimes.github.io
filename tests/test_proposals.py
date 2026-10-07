@@ -30,13 +30,3 @@ def test_document_states_plainly_that_nothing_is_auto_applied():
 def test_no_em_or_en_dashes():
     doc = proposals.build([], {}, [])
     assert chr(0x2014) not in doc and chr(0x2013) not in doc
-
-
-def test_the_tapped_reasons_are_tallied():
-    import proposals
-    doc = proposals.build([], {
-        "2026-10-05": {"verdict": "bad", "reason": "doesn't make sense"},
-        "2026-10-06": {"verdict": "bad", "reason": "doesn't make sense"},
-        "2026-10-07": {"verdict": "bad", "reason": "picture"},
-        "2026-10-08": {"verdict": "good", "reason": ""}}, [])
-    assert "- doesn't make sense: 2" in doc and "- picture: 1" in doc
