@@ -136,6 +136,31 @@ limit is above 2039. Do not read 2020 as room to spend: it is 28 characters shor
 of the last measured safe value, and the next rule added to `_NEGATIVE` comes out
 of a brief slot.
 
+## Prose pictures are drawn from the scene line, not a brief (07/10/2026)
+
+`image.brief: false`. Charlie: "the images are always off". Measured over the 66
+illustrated dispatches, the depict brief made pictures WORSE than the writer's
+scene line it was built to beat: median smooth mid-grey 37.2% (29 briefed) against
+30.6% (37 scene-line), and by eye about 3 in 12 recent briefed pictures showed the
+story against about 12 in 16. The brief's own rule against everyday nouns, fitted
+to one transformed mattress, turned a pool noodle into "an extruded elastomer
+cylinder" and spectacles into a VR headset, and five of twelve came back as one
+figure in a circular porthole. **Before porting a stage from another project, run
+the archive split: outputs with the stage against outputs without it.** The two
+sections below describe the brief path, which haiku still uses.
+
+## Charlie's verdicts arrive by one tap on the page (07/10/2026)
+
+Good / Bad under each story, then four reason chips. Shown only in a browser
+holding the vote key, so readers never see them. `worker/` stores the taps;
+`verdict.py --pull` runs before the pipeline; a "good" promotes that day's premise
+into `config/exemplars.yaml`, which ideate reads as few-shot. That few-shot pool IS
+the daily self-improvement - the prompt that changes is the examples, steered by
+his taste. It is deliberately NOT a model grading the writer and the writer being
+tuned to it: the judge and the panel give 7 or 8 to nearly everything, and a loop
+tuned against them learns to please Gemini. If the loop seems not to learn, count
+`data/verdicts.json` first: before this it held zero after 72 editions.
+
 ## A correct brief can still draw the wrong picture, and the cause is usually one noun
 
 Every picture fault before 06/09/2026 was a bad brief - depict re-choosing the
