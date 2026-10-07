@@ -72,6 +72,9 @@ def _mock_stages(monkeypatch, calls):
     monkeypatch.setattr(illustrate_mod, "_cf_image", lambda *a, **k: None)
     monkeypatch.setattr(run_mod, "build_avoid_block", lambda *a, **k: "")
     monkeypatch.setattr(run_mod, "maybe_write_proposals", lambda *a, **k: None)
+    # The loop's one model call. Unstubbed, it walks the model list through the
+    # retry waits with no key and turned a 5-second suite into 4 minutes.
+    monkeypatch.setattr(run_mod.tune, "propose", lambda *a, **k: False)
     return calls
 
 
