@@ -1,0 +1,182 @@
+{
+  "run_date": "2026-10-09",
+  "run_time": "2026-10-08T18:01:28.547741+00:00",
+  "dispatch": {
+    "headline": "Deadly Cough Declared Heritage",
+    "body": "Bolat Abiodun has blocked the eradication of a red lung mould.\n\nThe Silt-Basin Heritage League declared on Wednesday that the dry hacking cough caused by the spore is a protected acoustic landmark.\n\nAbiodun spends his mornings patching the raw clay walls of his dome with a resin scraper. Every three minutes, a deep, rattling wheeze shakes his thin frame, echoing off the bare vinyl beams. This dry rattle, once common to the first generation of dome-builders, has almost disappeared as newer air scrubbers are installed.\n\n\"Modern lungs are far too quiet,\" Abiodun said, scraping a fresh layer of grey slime. \"There is no soul in a silent dome.\"\n\nSanitation crews had planned to spray the raw clay tunnels with fungicide to clear the settlement. The mould causes permanent lung scarring but is otherwise harmless to the clay foundations.\n\nClinic manager Mateus Amankwah confirmed the spore is fatal to newer settlers, but remained cheerful.\n\n\"It is a slow suffocation, but it does wonders for the local soundscape,\" Amankwah said.\n\nAbiodun has already begun training school groups to cough in unison in the clay tunnels.\n\nThe children who ask for water are scolded for ruining the acoustics.",
+    "scene": "Bolat Abiodun, in a dusty grey tunic, hunches over a raw clay wall with a resin scraper, his hand pressed flat against his chest as he coughs.",
+    "dateline": {
+      "place": "SILT-BASIN",
+      "year": 2729,
+      "month": 6,
+      "day": 2,
+      "years_from_now": 703
+    },
+    "domain": "Culture",
+    "glossary": [
+      {
+        "term": "resin scraper",
+        "gloss": "A flat hand-tool used to patch leaks in synthetic dome walls with sealant."
+      }
+    ],
+    "premise": "A Mars colony’s historical preservation society has successfully blocked the eradication of a localized respiratory mold, arguing that the dry hacking cough it produces is a protected acoustic landmark of the early pioneering era.",
+    "brief": null,
+    "image": "assets/img/2026-10-09.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-08T18:01:28.547741+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 75,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      1.0,
+      0.92,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "163 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "length",
+          "detail": "168 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'eventually kill the newer settlers, Mateus Amankwah said it would, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Farmer Stuck in Airlock by Licence",
+        "body": "Bolat Rahimi sits on a metal crate. He has spent four days inside the Lock Nine transit chamber, his cheeks ballooned with a single breath of municipal air. Under settlement laws, his throat-seal cannot release his breath until his eye-plates scroll to the bottom of the updated atmosphere agreement.\n\nThe text contains eighty thousand pages. His supervisor, Eskil Arriaga, watches him through the thick glass.\n\n\"He is still on section twelve,\" Arriaga said.\n\nAsked if Rahimi would survive the scroll, Arriaga said the worker had survived the first four days, and that this was the only progress they had recorded.\n\nThe delay has halted the lichen harvest. Meanwhile, Rahimi's fellow harvesters have left bowls of broth on the floor outside the chamber, though they cannot pass them through the sealed hatch.\n\nRohan Kahananui, the district safety warden, arrived on Wednesday to inspect the airlock seals. He found no mechanical faults.\n\n\"The air belongs to the district,\" Kahananui said. \"Exhaling without signing is theft.\"",
+        "premise": "A Martian agricultural worker has spent four days in a transit airlock because he cannot legally exhale until his ocular implants scroll to the bottom of the municipal atmosphere’s updated end-user license agreement.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Guard Lichen Is Not A Liquid",
+        "body": "Uzma Koskinen carries his guard lichen in three small resin jars. The change occurred at the Sulphur-Ridge shuttle docks, where transit officers logged the bio-engineered security creature as a thick gel. Under flight safety rules, Koskinen was forced to scoop his three-kilogram household defender into standard travel containers.\n\nThe separation has broken the creature's mind. Once, it was a loyal carpet. It barked at intruders. Now, the lichen occupies three separate jars on Koskinen’s meal-bench. They bark at each other.\n\n\"They will not mix again,\" Koskinen said. \"If I pour them out together, they try to eat each other.\"\n\nHe is appealing to the transit board to have the lichen registered as a passenger. He wants to fly them in a single seat.\n\nAsked if the divided lichen could still defend a home, transit supervisor Nkechi Salave'a said the jars were securely sealed, and that this was the primary goal of the liquid limits.\n\nThe board disagreed. Spokesperson Makena Delacroix ruled that three distinct jars of angry moss constitute a tour group, requiring three tickets.",
+        "premise": "A Venusian platform worker is fighting to have his bio-engineered domestic security-lichen reclassified as a passenger rather than a liquid, after transit security forced him to compress the creature into three separate travel-sized jars.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Union bans splitting Martian sludge",
+        "body": "Hedda Lukasiewicz stared into a vent after the depot suspended its sewage-eating sludge. The labour council ruled on Wednesday that the organism's division by mitosis constituted illegal subcontracting.\n\nWithout the sludge, waste is backing up into the crawlways of Rust-Gully. The settlement has no topsoil yet, meaning the backup threatens the moss-beds. Lukasiewicz now uses a scoop to clear her vents twice a day, wearing a hood to block the smell.\n\n\"It is thick,\" she said.\n\nShe must haul the waste to a public incinerator on her cart.\n\nAt the depot, union steward Agnieszka Halloran defended the strike. She argued that every time a cell divided without a contract, it took a shift away from a worker.\n\n\"We have rules,\" Halloran said.\n\nAsked whether the waste would flood the dome, depot manager Joaquim Fairweather said the sealant was rated for pressure, and that the seals had not failed yet.\n\nMeanwhile, the sludge remains locked in glass vats. Deprived of food, the organisms have begun eating their own subcontractors.",
+        "premise": "A Martian waste-management depot has suspended its bio-engineered sewage-eating sludge after a labor board ruled the organism's division by mitosis constituted an illegal, non-union subcontracting of its own duties.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Pioneer Cough Wins Heritage Protection",
+        "body": "Bolat Abiodun has blocked the eradication of a red lung mould.\n\nThe Silt-Basin Heritage League ruled on Wednesday that the dry hacking cough caused by the spore is a protected acoustic landmark.\n\nAbiodun spends his mornings patching the raw clay walls of his dome with a resin scraper. Every three minutes, a deep, rattling wheeze shakes his thin frame, echoing off the bare vinyl beams. This dry rattle, once common to the first generation of dome-builders, has almost disappeared as newer air scrubbers are installed.\n\n\"It sounds like the first diggers,\" Abiodun said.\n\nIt is heritage.\n\nSanitation crews had planned to spray the raw clay tunnels with fungicide to clear the settlement. The mould causes permanent lung scarring but is otherwise harmless to the clay foundations.\n\nAsked if the spore would eventually kill the newer settlers, Mateus Amankwah said it would, and that this was the only clinic report they had completed this week.\n\nAbiodun has already begun training school groups to cough in unison.\n\nThey practise in the clay tunnels.\n\nNo one is allowed water.",
+        "premise": "A Mars colony’s historical preservation society has successfully blocked the eradication of a localized respiratory mold, arguing that the dry hacking cough it produces is a protected acoustic landmark of the early pioneering era.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        2.0,
+        1.0,
+        9.0
+      ],
+      "rankings": [
+        [
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 3,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "The original draft suffered from a clunky, comma-spliced sentence attempting to establish the lethality of the mould. The headline and ending lacked comedic bite, and the quotes were dry rather than absurdly normalising.",
+    "prose": {
+      "words": 195,
+      "sentences": 13,
+      "mean_sentence": 15.0,
+      "longest": 21,
+      "short_sentences": 0,
+      "machine_phrases": [],
+      "rare_words": 8,
+      "rare_rate": 4.1
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "champion"
+      ],
+      "mush": [
+        20.8,
+        19.2
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 fails to depict the subject coughing and contains garbled text resembling a signature in the bottom-left corner.",
+      "winner_faults": "The subject's hand is covering his mouth rather than pressed flat against his chest, and the resin scraper is missing."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {}
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {},
+      "new_challenger": "Adding a note to specify that the main figure faces the camera while stepping backward directly corrects the judge's note that he appeared to be walking forward away from the viewer."
+    }
+  }
+}
