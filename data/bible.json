@@ -359,6 +359,12 @@
       "gloss": "lightweight, low-friction footwear designed for walking on high-spin deck plates",
       "kind": "term",
       "first_seen": "2026-10-08"
+    },
+    {
+      "term": "resin scraper",
+      "gloss": "A flat hand-tool used to patch leaks in synthetic dome walls with sealant.",
+      "kind": "term",
+      "first_seen": "2026-10-09"
     }
   ]
 }

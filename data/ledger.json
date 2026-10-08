@@ -757,5 +757,16 @@
     "place_kind": "orbital",
     "engine": "scale",
     "technique": "unasked_statistic"
+  },
+  {
+    "run_date": "2026-10-09",
+    "year": 2729,
+    "era_bucket": 14,
+    "domain": "biotech",
+    "headline": "Deadly Cough Declared Heritage",
+    "style": "feature",
+    "place_kind": "marsform",
+    "engine": "bureaucratic",
+    "technique": "answers_the_question"
   }
 ]
