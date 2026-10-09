@@ -1,0 +1,130 @@
+{
+  "run_date": "2026-10-10",
+  "run_time": "2026-10-09T18:01:28.437952+00:00",
+  "dispatch": {
+    "headline": "Basin Mourns Its Slowest Getaway Driver",
+    "body": "Rangi Ndlovu died on his bunk behind the Bessel fuel bays on Friday.\n\nOver fifty-two years, Ndlovu drove getaway crawlers for twenty-three crater syndicates, logging four hundred bank jobs and four hundred immediate arrests. He never broke speed limits. Under regional dust-settling bylaws, any tread vehicle moving faster than twelve kilometres an hour throws basalt powder into the dome air-scrubbers. Ndlovu refused to dirty the scrubbers.\n\n\"He had standards,\" said vault robber Wairimu Odhiambo at the dock chapel service. \"You would run out with three boxes of raw prism-fuel and Rangi had the cab warm. Then patrol buggies would catch us before the ramp.\" Odhiambo wept into his cuff. \"The air stayed breathable.\"\n\nNdlovu was overtaken by foot patrols seven times. During the 2984 bullion snatch at Dawes rim, patrol guard Vesna Mabuza strolled beside Ndlovu's left wheel for two kilometres, discussing onion blights, before reaching inside to switch off the ignition.\n\nHe took great pride in this. Between custodial stretches in low-gravity cell four, syndicates competed fiercely for his booking diary. Rival outfits valued his tidy mud flaps above their own freedom. His final arrest occurred in October at six kilometres an hour.",
+    "scene": "An elderly driver in a bulky grey pressure suit steers a tracked crawler at walking pace across fine silt while a patrol guard on foot keeps stride beside his open cabin window.",
+    "dateline": {
+      "place": "Bessel Terrace, Mare Serenitatis",
+      "year": 3002,
+      "month": 2,
+      "day": 16,
+      "years_from_now": 976
+    },
+    "domain": "crime",
+    "glossary": [],
+    "premise": "Lunar crime syndicates across Mare Serenitatis have lowered their flags for their longest-serving getaway pilot, whose half-century career of never evading a single patrol ended with tearful eulogies commending his beautiful, unyielding adherence to lunar dust-abatement speed limits.",
+    "variant": "champion",
+    "brief": null,
+    "image": "assets/img/2026-10-10.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-09T18:01:28.437952+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 76,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      1.0,
+      1.0
+    ],
+    "violations": [
+      [],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Warden Retires Silent Prison Alarm",
+        "body": "A heavy brass siren was unbolted from the ceiling of the Procellarum crater prison.\n\nManufactured in 2702, the three-tonne alarm was designed to shake the lunar dust from the crater walls during a maximum-security escape. It never did.\n\nThree weeks after its installation, Warden Makena Valdivia noticed that the weekly test blast caused the inmates' prize-winning moon-ferns to drop their delicate leaves. The fragile plants, grown in low-gravity glass cases, required absolute stillness to flower.\n\nValdivia immediately ordered the siren's brass horn wrapped in four layers of heavy woollen bedding.\n\nIt stayed muffled for three centuries. When a mass breakout occurred in 2814, the siren produced only a warm, gentle hum. Guards missed the warning because they were judging the prison's annual winter blossom show. Twelve inmates escaped.\n\n\"It was a peaceful sound,\" said Tobiah Balogun, who guarded the south airlock for forty years. \"It made you want to sit down.\"\n\nWith the ferns now moved to a new botanical dome, the silent siren is finally being retired. It will be melted down for plumbing.",
+        "premise": "An obituary was read for the central alarm of Oceanus Procellarum's maximum-security crater prison, officially decommissioned after three centuries of service during which wardens kept it permanently muffled so as not to startle the inmates' prize-winning moon-ferns.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Basin Mourns Its Slowest Getaway Driver",
+        "body": "Rangi Ndlovu died on his bunk behind the Bessel fuel bays on Friday.\n\nOver fifty-two years, Ndlovu drove getaway crawlers for twenty-three crater syndicates, logging four hundred bank jobs and four hundred immediate arrests. He never broke speed limits. Under regional dust-settling bylaws, any tread vehicle moving faster than twelve kilometres an hour throws basalt powder into the dome air-scrubbers. Ndlovu refused to dirty the scrubbers.\n\n\"He had standards,\" said vault robber Wairimu Odhiambo at the dock chapel service. \"You would run out with three boxes of raw prism-fuel and Rangi had the cab warm. Then patrol buggies would catch us before the ramp.\" Odhiambo wept into his cuff. \"The air stayed breathable.\"\n\nNdlovu was overtaken by foot patrols seven times. During the 2984 bullion snatch at Dawes rim, patrol guard Vesna Mabuza strolled beside Ndlovu's left wheel for two kilometres, discussing onion blights, before reaching inside to switch off the ignition.\n\nHe took great pride in this. Between custodial stretches in low-gravity cell four, syndicates competed fiercely for his booking diary. Rival outfits valued his tidy mud flaps above their own freedom. His final arrest occurred in October at six kilometres an hour.",
+        "premise": "Lunar crime syndicates across Mare Serenitatis have lowered their flags for their longest-serving getaway pilot, whose half-century career of never evading a single patrol ended with tearful eulogies commending his beautiful, unyielding adherence to lunar dust-abatement speed limits.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Brilliant deadpan character satire with hilarious escalating visual details like the guard strolling alongside discussing onion blights.",
+    "judge_pick": 1,
+    "judge_score": 8.0,
+    "contest_variants": [
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci"
+      ],
+      "points": [
+        1.0,
+        1.0
+      ],
+      "rankings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 194,
+      "sentences": 16,
+      "mean_sentence": 12.1,
+      "longest": 31,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 9,
+      "rare_rate": 4.6
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        15.8,
+        13.3
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "No guard is keeping stride beside the open cabin window, and a large figure with his back turned obstructs the vehicle.",
+      "winner_faults": "The crawler bizarrely features two separate people on board, with the driver seated outside behind an elevated cabin booth."
+    },
+    "tune": {
+      "variant": "champion",
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss"
+      }
+    }
+  }
+}

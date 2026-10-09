@@ -768,5 +768,16 @@
     "place_kind": "marsform",
     "engine": "bureaucratic",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-10-10",
+    "year": 3002,
+    "era_bucket": 19,
+    "domain": "crime",
+    "headline": "Basin Mourns Its Slowest Getaway Driver",
+    "style": "obituary",
+    "place_kind": "lunar",
+    "engine": "sentiment",
+    "technique": "local_granularity"
   }
 ]
