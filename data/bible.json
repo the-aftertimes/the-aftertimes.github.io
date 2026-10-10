@@ -365,6 +365,12 @@
       "gloss": "A flat hand-tool used to patch leaks in synthetic dome walls with sealant.",
       "kind": "term",
       "first_seen": "2026-10-09"
+    },
+    {
+      "term": "strike-pad",
+      "gloss": "An iron plate set against a tunnel wall and struck with a hammer to send a resonant pulse through the rock.",
+      "kind": "term",
+      "first_seen": "2026-10-11"
     }
   ]
 }
