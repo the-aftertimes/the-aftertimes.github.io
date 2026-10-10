@@ -779,5 +779,16 @@
     "place_kind": "lunar",
     "engine": "sentiment",
     "technique": "local_granularity"
+  },
+  {
+    "run_date": "2026-10-11",
+    "year": 2471,
+    "era_bucket": 8,
+    "domain": "death and mourning",
+    "headline": "Eighty Miners Still Holding Drill",
+    "style": "wire",
+    "place_kind": "asteroid",
+    "engine": "expertise",
+    "technique": "sincere_futility"
   }
 ]
