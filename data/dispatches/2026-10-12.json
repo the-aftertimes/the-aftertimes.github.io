@@ -1,0 +1,116 @@
+{
+  "run_date": "2026-10-12",
+  "run_time": "2026-10-11T19:33:48.031238+00:00",
+  "dispatch": {
+    "headline": "Officer Drops Wet Rope Into Space",
+    "body": "Odile Laine cut the engines to shove forty metres of wet hemp rope into the void.\n\nThe chief maritime officer on the migrant transport Archon insisted the voyage could not begin without an unmooring.\n\n\"You cannot simply slide away,\" Laine said from the flight bay. \"That is drifting. A ship leaves a quay.\"\n\nShe cited the Dover Port Act of 1547. Under the statute, any vessel entering deep water must cast off a wet line from a physical slipway.\n\nFleet managers told Laine to sleep on the order. She slept on the order, which was three sheets of stiff plastic.\n\nHer deck mate, Rosalind Gallagher, held a wash bucket while Laine pushed the soaked fibres through the lock.\n\nThe rope froze solid.\n\nIt did not drift away.\n\nIn the vacuum between stations, the frozen hemp rod floated outside the bridge glass, matching speed with the transport.\n\nLaine watched it with quiet satisfaction.\n\n\"Look at that,\" she said. \"Proper seamanship.\"\n\nAdmiralty rules forbid a ship from passing its own cast line. The Archon has crept behind the rope for nine days.",
+    "scene": "A woman in a grey flight suit shoves a dripping coil of rope through an open round airlock hatch into black space, a crewmate holding a plastic bucket behind her.",
+    "dateline": {
+      "place": "Outer Ring, Archon Transit Fleet",
+      "year": 2285,
+      "month": 8,
+      "day": 5,
+      "years_from_now": 259
+    },
+    "domain": "space law",
+    "glossary": [],
+    "premise": "The chief maritime officer aboard the migrant vessel Archon halts transit through deep space to force the crew to throw a wet hemp rope into the vacuum, citing an unrepealed 16th-century admiralty law requiring ships to cast off from a physical quay.",
+    "variant": "champion",
+    "brief": null,
+    "image": "assets/img/2026-10-12.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-11T19:33:48.031238+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 78,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 1,
+    "write_failures": 3,
+    "scores": [
+      0.59
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.0 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: statute",
+          "severity": "major"
+        },
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: bucket, plastic",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Officer Drops Wet Rope Into Space",
+        "body": "Odile Laine cut the engines to shove forty metres of wet hemp rope into the void.\n\nThe chief maritime officer on the migrant transport Archon insisted the voyage could not begin without an unmooring.\n\n\"You cannot simply slide away,\" Laine said from the flight bay. \"That is drifting. A ship leaves a quay.\"\n\nShe cited the Dover Port Act of 1547. Under the statute, any vessel entering deep water must cast off a wet line from a physical slipway.\n\nFleet managers told Laine to sleep on the order. She slept on the order, which was three sheets of stiff plastic.\n\nHer deck mate, Rosalind Gallagher, held a wash bucket while Laine pushed the soaked fibres through the lock.\n\nThe rope froze solid.\n\nIt did not drift away.\n\nIn the vacuum between stations, the frozen hemp rod floated outside the bridge glass, matching speed with the transport.\n\nLaine watched it with quiet satisfaction.\n\n\"Look at that,\" she said. \"Proper seamanship.\"\n\nAdmiralty rules forbid a ship from passing its own cast line. The Archon has crept behind the rope for nine days.",
+        "premise": "The chief maritime officer aboard the migrant vessel Archon halts transit through deep space to force the crew to throw a wet hemp rope into the vacuum, citing an unrepealed 16th-century admiralty law requiring ships to cast off from a physical quay.",
+        "score": 0.59,
+        "rejected": true
+      }
+    ],
+    "all_rejected": true,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "contest_variants": [
+      "champion"
+    ],
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.59,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 180,
+      "sentences": 18,
+      "mean_sentence": 10.0,
+      "longest": 19,
+      "short_sentences": 7,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        14.1,
+        21.5
+      ],
+      "pick": 0,
+      "decided_by": "mush",
+      "reason": ""
+    },
+    "tune": {
+      "variant": "champion",
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss"
+      }
+    }
+  }
+}

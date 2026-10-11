@@ -790,5 +790,16 @@
     "place_kind": "asteroid",
     "engine": "expertise",
     "technique": "sincere_futility"
+  },
+  {
+    "run_date": "2026-10-12",
+    "year": 2285,
+    "era_bucket": 5,
+    "domain": "space law",
+    "headline": "Officer Drops Wet Rope Into Space",
+    "style": "interview",
+    "place_kind": "shipboard",
+    "engine": "obsolescence",
+    "technique": "heard_the_words"
   }
 ]
