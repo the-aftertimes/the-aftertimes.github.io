@@ -801,5 +801,16 @@
     "place_kind": "shipboard",
     "engine": "obsolescence",
     "technique": "heard_the_words"
+  },
+  {
+    "run_date": "2026-10-13",
+    "year": 2104,
+    "era_bucket": 1,
+    "domain": "artificial intelligence rights",
+    "headline": "Washing Machine Wins Seven-Day Fast",
+    "style": "sport",
+    "place_kind": "subsurface",
+    "engine": "ritual",
+    "technique": "headline_carries_it"
   }
 ]
