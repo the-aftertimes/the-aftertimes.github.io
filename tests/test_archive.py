@@ -14,6 +14,13 @@ def _recs(domains):
 
 
 META = {"site_name": "The Aftertimes", "tagline": "x"}
+
+
+def test_archive_declares_share_tags():
+    out = archive.render_archive(_recs(["crime"]), dict(META, base_url="https://x.test"))
+    assert '<meta property="og:title" content="Archive - The Aftertimes">' in out
+    assert '<meta property="og:url" content="https://x.test/archive.html">' in out
+    assert 'name="twitter:card"' in out and 'property="og:description"' in out
 def test_the_futures_visited_bar_is_gone():
     """Charlie cut it 18/08/2026 after two reworks. It duplicated the year rail
     the list already carries, so the filter has only one set of items to hide."""
