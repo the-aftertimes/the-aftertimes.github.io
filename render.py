@@ -199,16 +199,13 @@ def render_dispatch(dispatch: dict, meta: dict, stale: bool = False,
                     '&rarr;</a></p>') if not is_permalink else (
                     '<p><a class="arc" href="../index.html">Today\'s dispatch '
                     '&rarr;</a> &middot; <a class="arc" href="../archive.html">Archive</a></p>')
-    # A browser tab shows roughly 20 characters, so the tab wants the MASTHEAD first -
-    # headline-first truncated to "Mantle Drillers Prom..." with no clue which site it was,
-    # and it changes daily, so the tab was never recognisable. A shared link wants the
-    # opposite: og:title leads with the headline, which is the interesting part.
-    og_title = html.escape(hyphenate(f"{dispatch['headline']} - {meta['site_name']}"))
     # House convention: an index page is the project name alone; a page WITHIN a
-    # project reads "page - project". The front page is today's dispatch, so its
-    # tab said the whole headline - useless with twenty tabs open, and it changed
-    # daily. The dated permalinks keep the headline, because there it IS the page.
-    title = og_title if is_permalink else html.escape(meta["site_name"])
+    # project reads "page - project". The front page is the masthead, in the tab AND
+    # in og:title (12/10/2026: a share of the homepage named whatever ran that day).
+    # The dated permalinks keep the headline, because there it IS the page.
+    title = (html.escape(hyphenate(f"{dispatch['headline']} - {meta['site_name']}"))
+             if is_permalink else html.escape(meta["site_name"]))
+    og_title = title
     desc = html.escape("A wire service reporting from the future.")
     # The description tag on the FRONT page is written for search and AI answer
     # engines and never shown to a reader (07/10/2026); dated pages and every

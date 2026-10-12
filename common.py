@@ -73,6 +73,9 @@ def refresh_render_meta(meta: dict, settings: dict) -> dict:
     dispatch, its dateline and its run date are never in scope.
     """
     meta["locator_deep_max"] = locator_ceiling(settings)
+    # The first six records were filed under the-aftertimes.github.io, so a
+    # re-render kept that host in og:url and og:image.
+    meta["base_url"] = settings["site"]["base_url"]
     return meta
 
 

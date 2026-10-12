@@ -107,6 +107,32 @@ _FONT_FACE = ("<style>@font-face{font-family:'Aftertimes Flag';"
               "font-weight:700;font-display:swap;}</style>")
 
 
+def _share_tags(recs: list[dict], meta: dict) -> str:
+    """og/twitter tags, carrying the newest dispatch's card (card.py)."""
+    name = html.escape(meta["site_name"])
+    base = str(meta.get("base_url", "")).rstrip("/")
+    tags = ['<meta property="og:type" content="website">',
+            f'<meta property="og:site_name" content="{name}">',
+            f'<meta property="og:title" content="Archive - {name}">',
+            '<meta property="og:description" content="Every past dispatch from a wire '
+            'service reporting from the future.">']
+    card = next((f"assets/card/{r['run_date']}.jpg" for r in recs
+                 if os.path.exists(rel(f"assets/card/{r['run_date']}.jpg"))), "")
+    if base:
+        tags += [f'<link rel="canonical" href="{base}/archive.html">',
+                 f'<meta property="og:url" content="{base}/archive.html">']
+    if base and card:
+        tags += [f'<meta property="og:image" content="{base}/{card}">',
+                 '<meta property="og:image:width" content="1200">',
+                 '<meta property="og:image:height" content="630">',
+                 '<meta property="og:image:alt" content="The Aftertimes masthead above '
+                 'the engraving for the day">',
+                 '<meta name="twitter:card" content="summary_large_image">']
+    else:
+        tags.append('<meta name="twitter:card" content="summary">')
+    return chr(10).join(tags)
+
+
 def render_archive(records: list[dict], meta: dict) -> str:
     recs = sorted(records, key=lambda r: r["run_date"], reverse=True)
     # The LIST IS THE TIMELINE: ordered by how far out each dispatch is set, with
@@ -144,6 +170,7 @@ def render_archive(records: list[dict], meta: dict) -> str:
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <title>Archive - {html.escape(meta['site_name'])}</title>
 <meta name="description" content="Every past dispatch from The Aftertimes, a satirical wire service reporting from the future: written by AI each morning, each illustrated with an engraving in the style of Gustave Doré.">
+{_share_tags(recs, meta)}
 <style>{_CSS}</style>
 {_FONT_FACE}
 {BEACON}
@@ -255,6 +282,7 @@ def build() -> str:
     # single owner now; do not read the setting directly here again.
     meta = {"site_name": settings["site"]["name"],
             "tagline": settings["site"]["tagline"],
+            "base_url": settings["site"]["base_url"],
             "locator_deep_max": locator_ceiling(settings)}
     out = render_archive(records, meta)
     with open(rel("archive.html"), "w", encoding="utf-8") as fh:

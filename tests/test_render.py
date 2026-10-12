@@ -168,19 +168,17 @@ def test_build_email_has_subject_and_body():
     assert "the-aftertimes.github.io" in body
 
 
-def test_tab_title_leads_with_the_masthead_and_og_title_does_not():
-    """A browser tab shows roughly 20 characters. Headline-first truncated to
-    "Mantle Drillers Prom..." with nothing identifying the site, and because the
-    headline changes daily the tab was never learnable. A shared link wants the
-    opposite - og:title leads with the headline, which is the interesting part.
-    The two must not be collapsed back into one string."""
+def test_front_page_is_the_masthead_and_permalinks_carry_the_headline():
+    """The front page names the publication in the tab and in og:title (12/10/2026:
+    a share of the homepage used to name whatever ran that day). A dated page reads
+    "<headline> - The Aftertimes" in both."""
     import re
-    html_out = render_dispatch(DISPATCH, META)
-    tab = re.search(r"<title>([^<]*)", html_out).group(1)
-    og = re.search(r'og:title" content="([^"]*)', html_out).group(1)
-    assert tab.startswith("The Aftertimes"), tab
-    assert not og.startswith("The Aftertimes"), og
-    assert og.endswith("The Aftertimes"), og
+    def titles(out):
+        return (re.search(r"<title>([^<]*)", out).group(1),
+                re.search(r'og:title" content="([^"]*)', out).group(1))
+    assert titles(render_dispatch(DISPATCH, META)) == ("The Aftertimes", "The Aftertimes")
+    tab, og = titles(render_dispatch(DISPATCH, META, is_permalink=True))
+    assert tab == og and tab.endswith(" - The Aftertimes") and tab != "The Aftertimes"
 
 
 def test_end_links_share_one_row_at_the_foot():

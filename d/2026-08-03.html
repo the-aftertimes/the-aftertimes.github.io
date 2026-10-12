@@ -14,9 +14,9 @@
 <meta name="description" content="A wire service reporting from the future.">
 <meta property="og:description" content="A wire service reporting from the future.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://the-aftertimes.github.io/d/2026-08-03.html">
-<meta property="og:url" content="https://the-aftertimes.github.io/d/2026-08-03.html">
-<meta property="og:image" content="https://the-aftertimes.github.io/assets/card/2026-08-03.jpg">
+<link rel="canonical" href="https://aftertimes.charlietrenorden.com/d/2026-08-03.html">
+<meta property="og:url" content="https://aftertimes.charlietrenorden.com/d/2026-08-03.html">
+<meta property="og:image" content="https://aftertimes.charlietrenorden.com/assets/card/2026-08-03.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Aftertimes masthead above the engraving for the day">
@@ -66,6 +66,14 @@ figure.locator svg{width:230px;max-width:100%;height:auto;mix-blend-mode:multipl
 h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
   margin:0 0 1.1rem;letter-spacing:-0.01em;}
 .body p{font-size:clamp(1.02rem,2.6vw,1.16rem);margin:0 0 1rem;}
+/* A HAIKU IS NOT THREE PARAGRAPHS. The prose rule above hangs a 1rem gap under
+   every line, which turns a poem into a list. A poem wants tight leading, a
+   measure narrow enough that no line can wrap on a phone, and air around the
+   whole block rather than between its lines. Set larger than body prose,
+   because seventeen syllables are the entire edition. */
+.body.poem{max-width:24rem;margin:0 0 2.4rem;}
+.body.poem p{font-size:clamp(1.22rem,4.4vw,1.5rem);line-height:1.62;
+  margin:0;text-wrap:balance;}
 .meta{font-family:-apple-system,system-ui,sans-serif;margin-top:1.8rem;}
 .meta-title{margin:0;color:var(--accent);font-weight:600;font-size:0.72rem;
   letter-spacing:0.16em;text-transform:uppercase;padding-top:0.6rem;
@@ -73,9 +81,6 @@ h1{font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.12;font-weight:700;
 .meta-body{color:var(--muted);font-size:0.9rem;padding-top:0.6rem;}
 .meta-facts{line-height:1.6;}
 .meta-facts b{color:var(--fg);}
-.stale{font-family:-apple-system,system-ui,sans-serif;font-size:0.85rem;
-  background:var(--accent);color:var(--bg);padding:0.6rem 1rem;border-radius:0.3rem;
-  margin-bottom:1.8rem;}
 .signup{margin:2.5rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--rule);
   font-family:-apple-system,system-ui,sans-serif;}
 .signup-lead{margin:0 0 0.9rem;color:var(--fg);font-weight:600;}
