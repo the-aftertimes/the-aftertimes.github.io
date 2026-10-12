@@ -8,10 +8,11 @@ change only when Charlie says so.
 
 ### Over-used lately
 
-- phrase: "thousand tonnes of" in 3 dispatches
+- phrase: "on thursday after" in 3 dispatches
 - phrase: "the trend has" in 3 dispatches
 - opener: "the trend has" in 3 dispatches
 - name: "Patel" in 3 dispatches
+- name: "Chen" in 3 dispatches
 
 ### Suggested next step
 

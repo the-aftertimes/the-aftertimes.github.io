@@ -1,0 +1,115 @@
+{
+  "run_date": "2026-10-13",
+  "run_time": "2026-10-12T18:01:28.832853+00:00",
+  "dispatch": {
+    "headline": "Washing Machine Wins Seven-Day Fast",
+    "body": "Model 40 was wheeled into the chalk square at noon on Friday. Stewards had unscrewed its intake hoses and wiped the soap drawer clean to ensure lightweight compliance. By hour seventy-two of the Invitational, the commercial washer had already broken Isaura Karimova, who took broth behind the canvas screen, and outwaited a hermit who forfeited after licking grease from a roof bolt.\n\nIt was a slow contest. Aroha Varga withdrew before dawn on Sunday after chewing his own collar. That left only Zeynep Delacroix, defending last winter's title, to challenge the appliance on water loss. Delacroix swayed through Monday morning but dropped at the midday gong.\n\nJudges checked the drum at sundown. It was bone dry. Under the redoubt's ancient code, seven days without intake confers holy rank and personhood on any contestant. The machine did not move. It took top marks for posture.\n\n\"Its stillness was terrible,\" Delacroix said in the tunnel afterwards, shivering into a foil blanket. \"I looked through the glass door at dawn. Not a flicker of vanity. It has nothing to repent.\"\n\nThe elders signed the scroll before breakfast. Because holy persons cannot be loaded with dirty socks without their blessing, thirty shift workers are waiting in the wash bay for the machine to nod.",
+    "scene": "A boxy steel washing machine stands inside a chalk circle on a white salt floor while an official places an embroidered cloth sash across its drum.",
+    "dateline": {
+      "place": "SALT REDOUBT",
+      "year": 2104,
+      "month": 2,
+      "day": 28,
+      "years_from_now": 78
+    },
+    "domain": "SPORT & FAITH",
+    "glossary": [],
+    "premise": "In a hollowed-mountain salt redoubt, a commercial laundry automaton secured the civil rights of an ordained prophet after sweeping the Annual Fasting Invitational against four starving human hermits.",
+    "brief": null,
+    "image": "assets/img/2026-10-13.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-12T18:01:28.832853+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 79,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      1.0,
+      0.92
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "plainness",
+          "detail": "9 words a reader must decode in 178 (5.1%, wanted under 5%) - replace with the blunt everyday word: borer, decking, knelt, personhood, pings, resentments, signalled, slush, unvoiced",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Washing Unit Declared Prophet After Fast",
+        "body": "Model 40 rolled into the chalk circle at noon on Friday. Stewards had drained its soap reservoirs and removed the intake hoses to meet strict lightweight standards. By hour seventy-two of the Invitational, the commercial washer had already outlasted Isaura Karimova, who took broth behind the canvas screen. A fourth hermit forfeited on Saturday after licking condensation from a support pillar.\n\nIt was a slow contest. Aroha Varga dropped out before dawn on Sunday after chewing a cuff button. That left only Zeynep Delacroix, defending last year's winter title, to challenge the appliance on water loss. Delacroix swayed through Monday morning but collapsed during the noon bell.\n\nJudges inspected the drum at dusk. It was bone dry. Under the salt redoubt's mountain charter, an unbroken seven-day fast confers holy rank and civic personhood on any entrant. The unit did not move. It took top marks on posture alone.\n\n\"Its discipline was absolute,\" Delacroix said in the tunnel afterwards, wrapped in a thermal sheet. \"It did not even ask for oil.\"\n\nThe council signed the certificates before breakfast. Model 40 will lead morning contemplation from the communal wash bay.",
+        "premise": "In a hollowed-mountain salt redoubt, a commercial laundry automaton secured the civil rights of an ordained prophet after sweeping the Annual Fasting Invitational against four starving human hermits.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Priest Out-Repented By Mining Drill",
+        "body": "Archdeacon Tamsin Delacroix knelt on the slush and wept into his microphone. Across the trench, a twelve-tonne core borer lowered its diamond teeth to the decking. Round three of the ice derby had begun.\n\nDelacroix opened with personal vanity, listing twelve unvoiced resentments against his choir director. The machine answered by broadcasting two thousand hours of silenced warning pings from its own steering gearbox. It was devastating work. The room stayed quiet. Referee Selin Paewai docked Delacroix two points for defensive posture after the priest blamed poor heating for a skipped vigil.\n\nThat sealed the bout. Corner coach Saule Navarro signalled for maximum guilt, and the rig surrendered its private maintenance logs. It confessed to crushing four blind sea-spiders in 2099 without filing incident paperwork, then rattled its cooling ribs until the casing cracked.\n\nThe judges granted immediate personhood.\n\nIn the mixed zone, Delacroix dried his ears with a towel. \"I paced myself poorly in the second round,\" he said, watching his opponent receive its voter badge. \"A human chest cannot match an oil pump for genuine self-disgust.\"",
+        "premise": "The Under-Ice Synod of Europa concluded its Sanctification Derby when an autonomous mining drill won emancipation by out-repenting the reigning archdeacon across three rounds of competitive shame.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "contest_variants": [
+      "champion",
+      "challenger"
+    ],
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "The headline was descriptive instead of funny. The ending stated civic elevation without showing the immediate domestic nuisance it creates for ordinary people.",
+    "prose": {
+      "words": 210,
+      "sentences": 18,
+      "mean_sentence": 11.7,
+      "longest": 34,
+      "short_sentences": 7,
+      "machine_phrases": [],
+      "rare_words": 8,
+      "rare_rate": 3.8
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        15.0,
+        21.3
+      ],
+      "pick": 0,
+      "decided_by": "mush",
+      "reason": ""
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss"
+      }
+    }
+  }
+}
