@@ -812,5 +812,16 @@
     "place_kind": "subsurface",
     "engine": "ritual",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-10-14",
+    "year": 4817,
+    "era_bucket": 55,
+    "domain": "medicine",
+    "headline": "Diners Pin Lung Tubes Across Capes",
+    "style": "trend",
+    "place_kind": "gasgiant",
+    "engine": "etiquette",
+    "technique": "unasked_statistic"
   }
 ]
