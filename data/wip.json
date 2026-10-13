@@ -1,0 +1,41 @@
+{
+  "run_date": "2026-10-14",
+  "context": {
+    "dateline": {
+      "place": "",
+      "year": 4817,
+      "month": 7,
+      "day": 2,
+      "years_from_now": 2791
+    },
+    "domain": "medicine",
+    "style": "trend",
+    "place_kind": "gasgiant",
+    "engine": "etiquette",
+    "technique": "unasked_statistic"
+  },
+  "chosen_premises": [
+    "Commuters descending through the gas giant's heavy methane envelope are embroiled in a manners row after younger passengers adopted loud, performative throat-clicking to equalize their inner ears, defying the long-held social tradition of enduring tympanic rupture in polite silence.",
+    "Cloud-city socialites have taken to pinning their post-operative lung-drainage tubes across silk evening capes as proof of private respiratory care, mortifying elderly hostesses who maintain that decent people keep their thoracic runoff in an inner pocket.",
+    "Dining etiquette across the upper aerostats has fractured over younger guests who project their live liver-filtration metrics onto the tablecloth to prove they are too disciplined for dessert, an act their grandmothers decry as vulgar digestive exhibitionism.",
+    "A trend of commissioning bespoke, luxury autoimmune reactions has platform youths collapsing at galas to show their bodies are too delicate for common cabin air, leaving older generations to grumble that an allergy used to be a misfortune rather than an entrance."
+  ],
+  "drafts": [
+    {
+      "headline": "Diners Pin Lung Tubes Across Capes",
+      "body": "Xochitl Haddad pinned her chest tube across a yellow silk cape on Friday. The clear line ran from under her collarbone, looped over an embroidered clasp, and drained into a small glass bulb at her hip. It dripped twice during soup.\n\nThe fashion has spread across the high cloud terraces since spring. Younger diners wear their post-wash lung runoff openly, treating the pale fluid as proof of an expensive private surgeon. Etiquette monitors logged forty-two millilitres of lung foam per guest on Sunday, up from none last year.\n\nOlder hostesses remain appalled. Saule Saarinen, who manages the promenade dining deck, turned three guests away on Saturday for refusing to tuck their lines away. Under terrace custom, decent families conceal their surgical washings inside a padded under-vest until the fluid runs dry.\n\n\"A polite person keeps her drainage inside her coat lining,\" Saarinen said. \"Nobody wants to watch settling foam.\"\n\nThe younger crowd disagrees. Renske Quintero attended the cloud races with two chest lines pinned across white velvet, both weeping into silver flasks.\n\n\"Hiding the pipe ruins the drape,\" Quintero said. \"Besides, everyone knows what private air costs.\"",
+      "scene": "Xochitl Haddad fastens a clear plastic tube across her yellow silk evening cape, an elderly hostess glaring at her over a terrace table.",
+      "dateline": {
+        "place": "Aeros-Shelf Three",
+        "year": 4817,
+        "month": 7,
+        "day": 2,
+        "years_from_now": 2791
+      },
+      "domain": "medicine",
+      "glossary": [],
+      "premise": "Cloud-city socialites have taken to pinning their post-operative lung-drainage tubes across silk evening capes as proof of private respiratory care, mortifying elderly hostesses who maintain that decent people keep their thoracic runoff in an inner pocket.",
+      "variant": "challenger"
+    }
+  ]
+}
