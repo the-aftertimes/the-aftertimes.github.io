@@ -1,0 +1,153 @@
+{
+  "run_date": "2026-10-15",
+  "run_time": "2026-10-14T20:40:59.585327+00:00",
+  "dispatch": {
+    "headline": "Climbers Strip Forest For Scheduled Autumn",
+    "body": "Inti Balogun unclipped his harness on Friday after stripping sixteen hundred white birch branches by hand.\n\nAcross the canyon wall of Melas Chasma, thirty-nine other climbers dangled from overhead guide rails to finish the rest of the eighty thousand trees. The grove had failed to shed. A heat pump in the lower cliff face had stuck at eight degrees, four degrees above the threshold the engineered birches needed to drop their canopy. The Colony Calendar Board refused to alter the equinox.\n\nBalogun worked for thirty straight hours with three battery packs, two pairs of grip-mitts, and five plastic buckets.\n\n\"The stems fight you,\" Balogun said. \"You have to twist each leaf ninety degrees to the left or the bark tears.\"\n\nIf a branch retains its canopy when the soil chillers start, the sap freezes in the wood and splits the trunk by morning. By dawn, the climbers had cleared forty-two terraces and dumped four tonnes of yellow mulch onto the red dust paths below.\n\nAutumn began at noon.\n\nFourteen civic administrators walked through the debris on schedule.",
+    "scene": "Inti Balogun hangs from a safety harness against a red cliff, dropping hand-picked birch leaves into a plastic bucket.",
+    "dateline": {
+      "place": "Sunder Basin, Melas Chasma",
+      "year": 2208,
+      "month": 4,
+      "day": 8,
+      "years_from_now": 182
+    },
+    "domain": "weather and climate",
+    "glossary": [],
+    "premise": "Forty municipal climbers in the half-domed canyons of Valles Marineris spent thirty hours hand-stripping eighty thousand engineered birch trees so the colony’s first official autumn could occur on schedule.",
+    "variant": "champion",
+    "brief": null,
+    "image": "assets/img/2026-10-15.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-14T20:40:59.585327+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 81,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      0.84,
+      0.76
+    ],
+    "violations": [
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: buckets, plastic",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'hours with three battery packs, two pairs of grip-mitts, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: bucket",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'a shot to the chestplate, sat down for eleven seconds, and'",
+          "severity": "minor"
+        },
+        {
+          "rule": "plainness",
+          "detail": "10 words a reader must decode in 195 (5.1%, wanted under 5%) - replace with the blunt everyday word: chestplate, decking, footbridges, mitts, shovelled, skimmed, smelter, squall, supercooled, unstructured",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Climbers Strip Forest For Scheduled Autumn",
+        "body": "Inti Balogun unclipped his harness on Friday after stripping sixteen hundred white birch branches by hand.\n\nAcross the canyon wall of Melas Chasma, thirty-nine other climbers dangled from overhead guide rails to finish the rest of the eighty thousand trees. The grove had failed to shed. A heat pump in the lower cliff face had stuck at eight degrees, four degrees above the threshold the engineered birches needed to drop their canopy. The Colony Calendar Board refused to alter the equinox.\n\nBalogun worked for thirty straight hours with three battery packs, two pairs of grip-mitts, and five plastic buckets.\n\n\"The stems fight you,\" Balogun said. \"You have to twist each leaf ninety degrees to the left or the bark tears.\"\n\nIf a branch retains its canopy when the soil chillers start, the sap freezes in the wood and splits the trunk by morning. By dawn, the climbers had cleared forty-two terraces and dumped four tonnes of yellow mulch onto the red dust paths below.\n\nAutumn began at noon.\n\nFourteen civic administrators walked through the debris on schedule.",
+        "premise": "Forty municipal climbers in the half-domed canyons of Valles Marineris spent thirty hours hand-stripping eighty thousand engineered birch trees so the colony’s first official autumn could occur on schedule.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Forty Tons Of Hail For Snowball Fight",
+        "body": "Makena Takahara dragged forty insulated tubs of metallic hail across three footbridges before breakfast. The cloud platform of Port Hesper had received no natural precipitation since June, leaving thirty-two primary pupils three weeks behind on their weather adaptation quota.\n\nThe foundation syllabus requires five minutes of unstructured snow play before age seven. Without it, none could advance to second-year air filtration.\n\n\"The children had the mitts,\" Takahara said. \"They had the safety goggles. It was simply a supply issue.\"\n\nSix hundred residents formed a bucket chain across three suspension spans, shifting forty tons of supercooled lead shot skimmed from an upper squall. Each drum held forty kilograms of grey pellets. Takahara hauled eight drums an hour. Lowri Agbaje, the platform proctor, watched the yard clock with a brass whistle.\n\nThe fight began at eight. Thirty-two six-year-olds threw solid lead balls across ninety square metres of rubber decking. Three partition panels cracked. Dilnoza Sekibo took a shot to the chestplate, sat down for eleven seconds, and resumed throwing.\n\nThe whistle blew at eight-oh-five.\n\nBy eight-twenty, all forty tons were shovelled into the smelter to make waste pipes, and thirty-two pupils were certified as having experienced winter.",
+        "premise": "Residents of a Venusian cloud platform carried forty tons of supercooled lead-shot hail across three suspension bridges in thermal buckets so primary school pupils could complete their mandatory five-minute snowball fight.",
+        "score": 0.76,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "contest_variants": [
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris"
+      ],
+      "points": [
+        1.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.84,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 177,
+      "sentences": 12,
+      "mean_sentence": 14.8,
+      "longest": 26,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 3.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        41.9,
+        38.2
+      ],
+      "pick": 1,
+      "decided_by": "mush",
+      "reason": ""
+    },
+    "tune": {
+      "variant": "champion",
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss"
+      }
+    }
+  }
+}
