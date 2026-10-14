@@ -823,5 +823,16 @@
     "place_kind": "gasgiant",
     "engine": "etiquette",
     "technique": "unasked_statistic"
+  },
+  {
+    "run_date": "2026-10-15",
+    "year": 2208,
+    "era_bucket": 3,
+    "domain": "weather and climate",
+    "headline": "Climbers Strip Forest For Scheduled Autumn",
+    "style": "feature",
+    "place_kind": "marsform",
+    "engine": "logistics",
+    "technique": "escalating_precision"
   }
 ]
