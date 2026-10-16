@@ -1,0 +1,117 @@
+{
+  "run_date": "2026-10-17",
+  "run_time": "2026-10-16T22:06:14.465023+00:00",
+  "dispatch": {
+    "headline": "Organist Welcomes Heaven's Endless Scream",
+    "body": "Jovana Ceausu locked the terminal dish onto the Paradise frequency at midnight. She was measuring background hiss beyond the rim, but the dish caught twelve gigahertz of dry, unending shrieking.\n\n\"It is not symbolic,\" Ceausu said. \"Something out there is in raw agony, and it has not paused once.\"\n\nThe Station Synod dismissed the horror. Organist Ayelet Shevchuk established that the carrier wave maintains a perfect, unbroken B-flat. For fifty years, the cable chapel had fought orbital damp that warped its copper pipes. The signal now feeds straight into the bellows, locking every tube to the cosmic broadcast.\n\n\"The Almighty does not play flat,\" Shevchuk said. \"We used to spend three shifts a week scraping grease from the pedals, and now heaven holds the note for us.\"\n\nThe tone makes listeners sick. Gums bleed after ten minutes in the pews, and the deacon passed out during the psalm. Yet Shevchuk has lengthened daily worship to six hours, reasoning that lowering the volume would insult the maker's lungs. The finding also confirms where souls go upon death, though station staff prefer to discuss the mechanical savings.\n\nThe choir wears ear-plugs.\n\nThe scream continues.",
+    "scene": "Organist Ayelet Shevchuk sits rigid at a tarnished copper organ console with yellow foam plugs stuffed into his ears, both hands clamped to the keys while blood drips from his nose.",
+    "dateline": {
+      "place": "Cable-Head Station",
+      "year": 2862,
+      "month": 11,
+      "day": 25,
+      "years_from_now": 836
+    },
+    "domain": "religion",
+    "glossary": [],
+    "premise": "Astrophysicists at the Equatorial Elevator Terminus successfully captured the radio frequency of Paradise, revealing it to be a sound of sheer, unending cosmic terror, though clergy are overcome with pride because the pitch perfectly auto-tunes their ceremonial organ.",
+    "variant": "challenger",
+    "brief": null,
+    "image": "assets/img/2026-10-17.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-16T22:06:14.465023+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 82,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      0.92,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.8 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Bishop Praises Prayer That Fries Air Sensors",
+        "body": "Kofi Grabowska held a charred telemetry coupler inside the high-gravity chapel on Thursday. He spent six months tracking why the elevator terminus lost atmospheric telemetry every Sunday at noon.\n\nHis research confirms that nine hundred worshippers praying together under heavy gravity create a massive electromagnetic field. The surge fries primary sensor relays across forty decks, blinding the main environmental computers.\n\n\"The air scrubbers stop working,\" Grabowska said. \"They forget the station has people inside.\"\n\nDuring peak prayer, oxygen levels drop while coolant valves lock shut. Station automated systems interpret the signal blackout as an empty hull and vent excess heat directly through the nave.\n\nBishop Astrid Sekibo welcomed the findings. She noted that the electrical interference was a small trade-off for the chapel's unprecedentedly crisp spiritual resonance.\n\n\"The communion clarity is unmatched,\" Sekibo said. \"We hear the divine clearly.\"\n\nShe refused to alter the liturgy. The church plans to install extra kneeling cushions for the upcoming solstice feast. The service lasts forty-eight hours. Station engineers have begun testing personal rebreathers in secret.",
+        "premise": "A study at the High-Anchor Orbital Elevator revealed that high-gravity mass prayer generates an electromagnetic field that fries vital life-support telemetry, though the bishop proudly declared it a minor trade-off for 'unprecedentedly crisp' spiritual resonance.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Organist Welcomes Heaven's Endless Scream",
+        "body": "Jovana Ceausu locked the terminal dish onto the Paradise frequency at midnight. She was measuring background hiss beyond the rim, but the dish caught twelve gigahertz of dry, unending shrieking.\n\n\"It is not symbolic,\" Ceausu said. \"Something out there is in raw agony, and it has not paused once.\"\n\nThe Station Synod dismissed the horror. Organist Ayelet Shevchuk established that the carrier wave maintains a perfect, unbroken B-flat. For fifty years, the cable chapel had fought orbital damp that warped its copper pipes. The signal now feeds straight into the bellows, locking every tube to the cosmic broadcast.\n\n\"The Almighty does not play flat,\" Shevchuk said. \"We used to spend three shifts a week scraping grease from the pedals, and now heaven holds the note for us.\"\n\nThe tone makes listeners sick. Gums bleed after ten minutes in the pews, and the deacon passed out during the psalm. Yet Shevchuk has lengthened daily worship to six hours, reasoning that lowering the volume would insult the maker's lungs. The finding also confirms where souls go upon death, though station staff prefer to discuss the mechanical savings.\n\nThe choir wears ear-plugs.\n\nThe scream continues.",
+        "premise": "Astrophysicists at the Equatorial Elevator Terminus successfully captured the radio frequency of Paradise, revealing it to be a sound of sheer, unending cosmic terror, though clergy are overcome with pride because the pitch perfectly auto-tunes their ceremonial organ.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "contest_variants": [
+      "challenger",
+      "champion"
+    ],
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 192,
+      "sentences": 16,
+      "mean_sentence": 12.0,
+      "longest": 21,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.6
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        41.9,
+        31.5
+      ],
+      "pick": 1,
+      "decided_by": "mush",
+      "reason": ""
+    },
+    "tune": {
+      "variant": "challenger",
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss"
+      }
+    }
+  }
+}
