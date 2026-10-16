@@ -834,5 +834,16 @@
     "place_kind": "marsform",
     "engine": "logistics",
     "technique": "escalating_precision"
+  },
+  {
+    "run_date": "2026-10-17",
+    "year": 2862,
+    "era_bucket": 16,
+    "domain": "religion",
+    "headline": "Organist Welcomes Heaven's Endless Scream",
+    "style": "discovery",
+    "place_kind": "orbital",
+    "engine": "sentiment",
+    "technique": "stated_rule_reductio"
   }
 ]
