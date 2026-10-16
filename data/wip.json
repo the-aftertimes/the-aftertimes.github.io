@@ -1,23 +1,23 @@
 {
-  "run_date": "2026-10-16",
+  "run_date": "2026-10-17",
   "context": {
     "dateline": {
       "place": "",
-      "year": 3298,
-      "month": 3,
-      "day": 11,
-      "years_from_now": 1272
+      "year": 2862,
+      "month": 11,
+      "day": 25,
+      "years_from_now": 836
     },
-    "domain": "money and finance",
+    "domain": "religion",
     "style": "discovery",
-    "place_kind": "deepspace",
-    "engine": "leisure",
-    "technique": "puncture_the_pompous"
+    "place_kind": "orbital",
+    "engine": "sentiment",
+    "technique": "stated_rule_reductio"
   },
   "chosen_premises": [
-    "An economic audit of Waystation Echo reveals sentries have turned their annual holiday Secret Santa into a multi-million-credit derivatives market, with researchers noting the station's entire sovereign wealth fund now mathematically collapses if anyone opens a novelty mug.",
-    "Labor researchers at a deep-space listening post find the garrison has adopted a vintage property-trading board game as hard currency, casually noting that the base commander has been forced to sleep in an unpressurised duct after repeatedly landing on a corporal's plastic hotel.",
-    "Sociologists surveying an abyssal border monastery report the brothers have converted their endowment into mint-condition miniature war gaming figurines, a researcher explaining the holy order is technically the sector’s richest creditor but cannot repel raiders without ruining the boxes' collector grade.",
-    "Behavioral economists at an isolated patrol garrison discover troops running a high-stakes fantasy league tracking pirate raids, the lead analyst confirming sentries deliberately left the perimeter guns unmanned to protect their defensive bracket's casualty payout."
+    "A study at the High-Anchor Orbital Elevator revealed that high-gravity mass prayer generates an electromagnetic field that fries vital life-support telemetry, though the bishop proudly declared it a minor trade-off for 'unprecedentedly crisp' spiritual resonance.",
+    "Astrophysicists at the Equatorial Elevator Terminus successfully captured the radio frequency of Paradise, revealing it to be a sound of sheer, unending cosmic terror, though clergy are overcome with pride because the pitch perfectly auto-tunes their ceremonial organ.",
+    "Researchers on the Low-Orbit Ring Station discovered that a localized divine miracle is disintegrating living quarters floor by floor, yet residents refuse to halt the ritual because the resulting ash cloud yields 'truly breathtaking' nostalgic sunsets.",
+    "Antiquarians at the Vesta Ring Terminus proved that the station’s venerated founder-saint was merely an automated floor-buffing unit from 2400, prompting emotional citizens to hold sobbing, tearful vigils whenever modern cleaning drones run low on battery."
   ]
 }
