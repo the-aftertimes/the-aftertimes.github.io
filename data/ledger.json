@@ -845,5 +845,16 @@
     "place_kind": "orbital",
     "engine": "sentiment",
     "technique": "stated_rule_reductio"
+  },
+  {
+    "run_date": "2026-10-18",
+    "year": 2413,
+    "era_bucket": 7,
+    "domain": "death and mourning",
+    "headline": "Worker Who Kept Wine Level Dies",
+    "style": "obituary",
+    "place_kind": "asteroid",
+    "engine": "expertise",
+    "technique": "answers_the_question"
   }
 ]

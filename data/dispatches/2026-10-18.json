@@ -1,0 +1,127 @@
+{
+  "run_date": "2026-10-18",
+  "run_time": "2026-10-17T17:51:42.356034+00:00",
+  "dispatch": {
+    "headline": "Worker Who Kept Wine Level Dies",
+    "body": "Bronagh Blomfield died on Friday inside the outer rock rim of Bamberga Core. She was seventy-eight.\n\nFor fifty-two years, Blomfield walked the asteroid's ballast loop with a grease tin and a steel crank. Her task was moving fifty-tonne lead slabs along curved iron rails. Whenever dinner crowds gathered in the upper suites, the spinning rock tilted by three hundredths of a millimetre. Wine in crystal glasses drifted toward the spin. Blomfield tracked banquet bookings from the catering slate and hauled the counterweights by hand to keep the fluid flat.\n\nHer knees failed in 2399, but she refused an electric cart because the motor hum rippled the soup.\n\nIn 2404, the banquet suites switched to sealed suction bulbs to prevent drink spills on the dance floor. Blomfield was not told. She continued hauling sixty tonnes of pig lead across the ballast track every evening at seven.\n\nAsked whether anyone had considered informing her, Akosua Kealoha said the shifts were already rostered, and that the lead had to sit somewhere anyway. The crystal glasses were sold for scrap.\n\nBlomfield is survived by her crank.",
+    "scene": "An elderly woman in a heavy canvas smock leans her whole weight into a steel crank along a curved rock wall, a grease tin sitting on the rail track beside her.",
+    "dateline": {
+      "place": "Rim Trench, Bamberga",
+      "year": 2413,
+      "month": 11,
+      "day": 12,
+      "years_from_now": 387
+    },
+    "domain": "death and mourning",
+    "glossary": [],
+    "premise": "Bamberga Core (2413): Obituary for Elian Vance, who spent fifty years hand-cranking lead counterweights along the hollow asteroid's outer rim to ensure the colony's rotation never caused high-society wine glasses to tilt imperceptibly.",
+    "variant": "challenger",
+    "brief": null,
+    "image": "assets/img/2026-10-18.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-17T17:51:42.356034+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 83,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 2,
+    "write_failures": 2,
+    "scores": [
+      0.76,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'boardroom directors demanded bespoke pauses, syncopations, and'",
+          "severity": "minor"
+        },
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: 'It soon became mandatory among mine owners.'",
+          "severity": "minor"
+        },
+        {
+          "rule": "plainness",
+          "detail": "10 words a reader must decode in 185 (5.4%, wanted under 5%) - replace with the blunt everyday word: boardroom, flutters, halts, indolent, inheriting, knead, metronome, pumper, signalled, syncopations",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Executive Heart Squeezer Dies on Vesta",
+        "body": "Noor Mahlangu died on Friday in his Rheasilvia salon. He was eighty-four.\n\nFor fifty years, Mahlangu reached through titanium chest ports twice a week to knead the hearts of nickel executives. A steady, predictable pulse was considered common inside the rock. Labourers ticked at sixty beats a minute; boardroom directors demanded bespoke pauses, syncopations, and leisurely four-second halts that signalled they were never in a rush.\n\nMahlangu began as an apprentice pumper during the tunnel strikes of 2362. When cheap mechanical valves made uniform rhythms universal, he developed the private squeeze. His signature pattern, the High Vesta, featured two quick flutters followed by a long, indolent hush. It soon became mandatory among mine owners.\n\nThe physical strain was immense. Mahlangu wore out two pairs of brass joints before switching to hydraulic gloves. Asked whether an eight-second pause ever killed anyone, director Uzma Oyelaran said it gave everyone in the room time to think.\n\nPriit Lomax has taken over the salon, inheriting three thousand client ports. Mahlangu never adjusted his own heart. His memorial will feature a standard sixty-beat metronome, which colleagues described as shockingly vulgar.",
+        "premise": "Vesta Station (2413): Obituary for Master Pulse-Kneader Dr. Silas Thorne, who devoted his career to manually massaging the hearts of mining executives to ensure their cardiac rhythms maintained an aristocratic, irregular tempo.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Worker Who Kept Wine Level Dies",
+        "body": "Bronagh Blomfield died on Friday inside the outer rock rim of Bamberga Core. She was seventy-eight.\n\nFor fifty-two years, Blomfield walked the asteroid's ballast loop with a grease tin and a steel crank. Her task was moving fifty-tonne lead slabs along curved iron rails. Whenever dinner crowds gathered in the upper suites, the spinning rock tilted by three hundredths of a millimetre. Wine in crystal glasses drifted toward the spin. Blomfield tracked banquet bookings from the catering slate and hauled the counterweights by hand to keep the fluid flat.\n\nHer knees failed in 2399, but she refused an electric cart because the motor hum rippled the soup.\n\nIn 2404, the banquet suites switched to sealed suction bulbs to prevent drink spills on the dance floor. Blomfield was not told. She continued hauling sixty tonnes of pig lead across the ballast track every evening at seven.\n\nAsked whether anyone had considered informing her, Akosua Kealoha said the shifts were already rostered, and that the lead had to sit somewhere anyway. The crystal glasses were sold for scrap.\n\nBlomfield is survived by her crank.",
+        "premise": "Bamberga Core (2413): Obituary for Elian Vance, who spent fifty years hand-cranking lead counterweights along the hollow asteroid's outer rim to ensure the colony's rotation never caused high-society wine glasses to tilt imperceptibly.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "",
+    "judge_pick": null,
+    "judge_score": null,
+    "contest_variants": [
+      "challenger",
+      "champion"
+    ],
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": null,
+    "critique": "",
+    "prose": {
+      "words": 182,
+      "sentences": 14,
+      "mean_sentence": 13.0,
+      "longest": 24,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        21.3,
+        31.3
+      ],
+      "pick": 0,
+      "decided_by": "mush",
+      "reason": ""
+    },
+    "tune": {
+      "variant": "challenger",
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss"
+      }
+    }
+  }
+}
