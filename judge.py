@@ -52,7 +52,7 @@ def judge(drafts: list[dict], settings: dict) -> dict:
     inventing one would let a silent API change quietly disable the floor.
     """
     raw = gemini.generate(build_prompt(drafts), settings,
-                          settings["gemini"]["temperature_write"])
+                          settings["gemini"]["temperature_write"], tier="judge")
     data = gemini.extract_json(raw)
     if isinstance(data, list):
         data = data[0] if data else {}

@@ -11,6 +11,8 @@ import time
 
 import requests
 
+import claude
+
 
 class GeminiError(RuntimeError):
     pass
@@ -124,8 +126,10 @@ def _retry_after(body: str | None) -> float | None:
 
 def generate_first_available(prompt: str, settings: dict, temperature: float,
                              models: tuple[str, ...],
-                             images: list[bytes] | None = None) -> tuple[str, str]:
-    """Try each model in turn, returning (raw, model_that_answered).
+                             images: list[bytes] | None = None,
+                             tier: str | None = None) -> tuple[str, str]:
+    """Try each model in turn, returning (raw, model_that_answered). With a
+    `tier`, Claude is asked first and this walk is the fallback.
 
     THE FREE TIER IS 20 CALLS PER DAY PER MODEL, so a spare model is not a
     nicety - it is the only thing standing between an exhausted allowance and a
@@ -147,6 +151,12 @@ def generate_first_available(prompt: str, settings: dict, temperature: float,
     was read off the 429 body on 09/09. The full list is still walked on
     failure, so nothing a caller could get before is lost."""
     global _walk_start
+    if tier:
+        try:
+            return (claude.generate(prompt, tier, settings, images),
+                    claude.config(settings, tier)[1])
+        except claude.ClaudeError:
+            pass
     n = len(models)
     order = tuple(models[(_walk_start + i) % n] for i in range(n))
     _walk_start = (_walk_start + 1) % max(n, 1)
@@ -164,13 +174,20 @@ def generate_first_available(prompt: str, settings: dict, temperature: float,
 
 def generate(prompt: str, settings: dict, temperature: float,
              model: str | None = None, retries: int | None = None,
-             images: list[bytes] | None = None) -> str:
-    """Call generateContent and return the model's raw text. Retries on
+             images: list[bytes] | None = None, tier: str | None = None) -> str:
+    """With a `tier` ("write" or "judge"), ask Claude first and fall through to
+    Gemini on any Claude failure. Then call generateContent and return the
+    model's raw text. Retries on
     transient HTTP errors with linear backoff. `model` overrides the default
     settings model (used by the write stage to try a Pro model). `retries`
     overrides the retry count - the Pro attempt passes 0 so a quota 429 falls
     back to flash immediately instead of wasting the backoff window."""
     global _overload_retries
+    if tier:
+        try:
+            return claude.generate(prompt, tier, settings, images)
+        except claude.ClaudeError:
+            pass
     g = settings["gemini"]
     # NO EXPLICIT MODEL MEANS WALK THE LIST. Fixing this per-caller is what left
     # the gap twice: 09/09/2026 the haiku batch walked and the judge did not,

@@ -79,7 +79,7 @@ def judge(dispatch: dict, a: bytes, b: bytes, settings: dict) -> dict | None:
     try:
         raw = gemini.generate(judge_prompt(dispatch), settings,
                               settings["gemini"].get("temperature_judge", 0.2),
-                              images=[a, b])
+                              images=[a, b], tier="judge")
         got = gemini.extract_json(raw)
         pick = int(got.get("pick"))
         if pick not in (1, 2):
@@ -196,7 +196,7 @@ def propose(state: dict, records: list[dict], settings: dict, today: str) -> boo
     cfg = settings.get("draw_tune") or {}
     prompt = proposal_prompt(state.get("champion") or [], records,
                              state.get("history") or [], cfg)
-    for model in write_stage.models(settings):
+    for model in write_stage.providers(settings):
         try:
             got = write_stage._generate_json(prompt, settings, model, retries=0)
         except Exception as exc:  # noqa: BLE001

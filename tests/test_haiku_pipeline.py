@@ -79,7 +79,7 @@ def _mock_calls(monkeypatch, batch=None, judge_pick=1):
     """Return the raw text for each Gemini call in order: batch, judge, depict."""
     calls = []
 
-    def fake(prompt, settings, temperature, model=None, retries=None):
+    def fake(prompt, settings, temperature, model=None, retries=None, tier=None):
         calls.append({"model": model, "prompt": prompt})
         if "Write 40 haiku" in prompt or "haiku from that place" in prompt:
             return batch if batch is not None else _batch_json()
@@ -147,7 +147,7 @@ def test_the_picture_brief_has_no_people_in_it(repo, monkeypatch):
 
 def test_a_judge_outage_still_publishes(repo, monkeypatch):
     """A judge failure must cost the BEST haiku, never the day."""
-    def fake(prompt, settings, temperature, model=None, retries=None):
+    def fake(prompt, settings, temperature, model=None, retries=None, tier=None):
         if "haiku from that place" in prompt:
             return _batch_json()
         if "haiku written for today" in prompt:
@@ -176,7 +176,7 @@ def test_a_dead_first_model_falls_through_to_the_next(repo, monkeypatch):
     """20 calls per day PER MODEL, so the second model is the day's insurance."""
     used = []
 
-    def fake(prompt, settings, temperature, model=None, retries=None):
+    def fake(prompt, settings, temperature, model=None, retries=None, tier=None):
         if "haiku from that place" in prompt:
             used.append(model)
             if model == run_mod.HAIKU_MODELS[0]:
@@ -218,7 +218,7 @@ def test_no_brief_publishes_no_picture_rather_than_a_wrong_one(repo, monkeypatch
     object - so a failed brief must cost the picture, not replace it."""
     drawn = []
 
-    def fake(prompt, settings, temperature, model=None, retries=None):
+    def fake(prompt, settings, temperature, model=None, retries=None, tier=None):
         if "haiku from that place" in prompt:
             return _batch_json()
         if "haiku written for today" in prompt:
@@ -244,7 +244,7 @@ def test_the_judge_and_the_brief_walk_the_same_model_list(repo, monkeypatch):
     for no reason - which is what would have happened on 09/09/2026."""
     seen = []
 
-    def fake(prompt, settings, temperature, model=None, retries=None):
+    def fake(prompt, settings, temperature, model=None, retries=None, tier=None):
         seen.append(model)
         if model == run_mod.HAIKU_MODELS[0]:
             raise gemini.GeminiError("this model's daily allowance is gone")

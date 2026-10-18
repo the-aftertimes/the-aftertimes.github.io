@@ -223,7 +223,8 @@ def depict(dispatch: dict, settings: dict) -> dict | None:
     """Return a usable visual brief, or None to fall back to the scene line."""
     try:
         raw = gemini.generate(build_prompt(dispatch), settings,
-                              settings["gemini"].get("temperature_depict", 0.7))
+                              settings["gemini"].get("temperature_depict", 0.7),
+                              tier="write")
         brief = parse(gemini.extract_json(raw))
     except Exception as exc:  # noqa: BLE001 - never cost the dispatch its picture
         print(f"    depict failed, using the scene line: "
@@ -317,7 +318,8 @@ def depict_haiku(dispatch: dict, settings: dict,
     try:
         raw, _ = gemini.generate_first_available(
             build_haiku_prompt(dispatch), settings,
-            settings["gemini"].get("temperature_depict", 0.7), models)
+            settings["gemini"].get("temperature_depict", 0.7), models,
+            tier="write")
         brief = {f: strip_text_artefacts(str((gemini.extract_json(raw) or {})
                                              .get(f, "") or "").strip())
                  for f in _HAIKU_FIELDS}

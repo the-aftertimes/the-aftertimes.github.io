@@ -108,7 +108,8 @@ def convene(items: list[str], members: list[dict], settings: dict,
     for m in members:
         try:
             raw = gemini.generate(build_prompt(m, items, kind), settings,
-                                  settings["gemini"].get("temperature_judge", 0.4))
+                                  settings["gemini"].get("temperature_judge", 0.4),
+                                  tier="judge")
             rankings.append(parse_ranking(raw, len(items)))
             voted.append(m["name"])
         except Exception as exc:  # noqa: BLE001 - one member must not lose the day

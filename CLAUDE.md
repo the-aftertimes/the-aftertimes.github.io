@@ -207,6 +207,14 @@ about duotoning the newsletter image, having missed that the newsletter had been
 retired four days earlier - the file said so, I just had not re-read it. Append
 via an editor that reads first, never a blind script.
 
+## Claude first, Gemini as fallback (18/10/2026)
+
+Every text call goes to `claude.py` first (Sonnet 5.5 for writing stages, Haiku
+5.5 for judging) and falls through to the untouched Gemini chain on any failure.
+Each call logs tokens and US$; the run total is the last `claude:` line. Gemini
+is redundancy, not dead code: do not simplify it away. Trials now spend
+Anthropic credit before Gemini quota.
+
 ## Trial batches eat the cron's quota
 
 `trial.py` and the daily run share one Gemini free tier. Ten trials is roughly
