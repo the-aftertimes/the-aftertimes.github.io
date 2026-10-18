@@ -90,7 +90,7 @@ def revise(dispatch: dict, violations: list[dict], settings: dict) -> dict:
     """Return {"critique": str, "dispatch": <normalised dispatch>}.
     Raises GeminiError if the model returns nothing usable."""
     raw = gemini.generate(build_prompt(dispatch, violations), settings,
-                          settings["gemini"]["temperature_write"])
+                          settings["gemini"]["temperature_write"], tier="write")
     data = gemini.extract_json(raw)
     if isinstance(data, list):
         data = data[0] if data else {}

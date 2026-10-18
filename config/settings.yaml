@@ -77,6 +77,12 @@ novelty:
   match_threshold: 0.45     # cosine >= this vs a recent dispatch = too similar, reject
   recent_window: 30         # compare against the last N dispatches
 
+# Asked first for every text call; Gemini below is the fallback.
+claude:
+  enabled: true
+  write: {model: "claude-sonnet-5-5", effort: medium}
+  judge: {model: "claude-haiku-5-5", effort: medium}
+
 gemini:
   model: "gemini-3.6-flash"            # default for ideate + the write-stage fallback
   # write_model: a sharper model for the write stage, falling back to `model` on

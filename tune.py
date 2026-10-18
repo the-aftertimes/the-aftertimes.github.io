@@ -222,7 +222,7 @@ def propose(state: dict, records: list[dict], settings: dict, today: str) -> boo
     cfg = settings.get("tune") or {}
     prompt = proposal_prompt(state.get("champion") or [], records,
                              state.get("history") or [], cfg)
-    for model in write_stage.models(settings):
+    for model in write_stage.providers(settings):
         try:
             got = write_stage._generate_json(prompt, settings, model, retries=0)
         except Exception as exc:  # noqa: BLE001 - see docstring

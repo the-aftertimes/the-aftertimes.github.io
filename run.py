@@ -815,13 +815,14 @@ def _haiku_batch(dateline: dict, domain: str, settings: dict,
                  avoid_block: str) -> tuple[list[dict], list[dict], str]:
     """One call for a batch of forty, then the deterministic 5-7-5 sieve."""
     last = None
-    for model in HAIKU_MODELS:
+    for i, model in enumerate(HAIKU_MODELS):
         prompt = haiku_mod.build_prompt(dateline, domain, HAIKU_BATCH,
                                         avoid_block=avoid_block)
         try:
             raw = gemini.generate(
                 prompt, settings,
-                settings["gemini"].get("temperature_ideate", 1.1), model=model)
+                settings["gemini"].get("temperature_ideate", 1.1), model=model,
+                tier="write" if i == 0 else None)
         except Exception as exc:  # noqa: BLE001 - try the next model
             print(f"    {model}: {str(exc)[:140]}", file=sys.stderr)
             last = exc
@@ -860,7 +861,8 @@ def _judge_haiku(kept: list[dict], settings: dict) -> tuple[dict, dict]:
         # model's allowance ran out mid-session while a sibling still answered.
         raw, _ = gemini.generate_first_available(
             haiku_mod.judge_prompt(kept), settings,
-            settings["gemini"]["temperature_write"], HAIKU_MODELS)
+            settings["gemini"]["temperature_write"], HAIKU_MODELS,
+            tier="judge")
         data = gemini.extract_json(raw)
         if isinstance(data, list):
             data = data[0] if data else {}

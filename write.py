@@ -5,6 +5,7 @@ import re
 import sys
 
 import cast
+import claude
 import gemini
 import tune
 from common import hyphenate
@@ -596,8 +597,11 @@ Return JSON only:
 
 def _generate_json(prompt: str, settings: dict, model: str | None,
                    retries: int | None = None) -> dict:
-    """One generate + parse attempt on a given model; raises GeminiError on a
-    transport error OR unparseable JSON, so the caller can fall back cleanly."""
+    """One generate + parse attempt on a given model; raises GeminiError (or
+    ClaudeError for a claude-* model) on a transport error OR unparseable
+    JSON, so the caller can fall back cleanly."""
+    if model and model.startswith("claude-"):
+        return gemini.extract_json(claude.generate(prompt, "write", settings))
     raw = gemini.generate(prompt, settings,
                           settings["gemini"]["temperature_write"], model=model,
                           retries=retries)
@@ -634,6 +638,11 @@ def models(settings: dict) -> tuple[str, ...]:
     return listed or (g["model"],)
 
 
+def providers(settings: dict) -> tuple[str, ...]:
+    """Claude's writing model, then every Gemini model."""
+    return (claude.config(settings, "write")[1],) + models(settings)
+
+
 def write(premise: str, dateline: dict, domain: str, settings: dict,
           style_guidance: str, place_guidance: str = "",
           avoid_block: str = "", funny_lines: list[dict] | None = None,
@@ -648,10 +657,16 @@ def write(premise: str, dateline: dict, domain: str, settings: dict,
     pro = (g.get("write_model") or "").strip()
     d = None
     served = g["model"]
-    # Try the sharper Pro model first; fall back to flash on ANY failure
+    first = providers(settings)[0]
+    try:
+        d = _generate_json(prompt, settings, first)
+        served = first
+    except (claude.ClaudeError, gemini.GeminiError) as exc:
+        print(f"    write: {first} failed ({str(exc)[:120]})", file=sys.stderr)
+    # Then the sharper Pro model; fall back to flash on ANY failure
     # (a wrong/gated model name 404s, quota 429s, or Pro returns bad JSON) so
     # the dispatch still files rather than crash-publishing a stale page.
-    if pro and pro != g["model"]:
+    if d is None and pro and pro != g["model"]:
         try:
             d = _generate_json(prompt, settings, pro, retries=0)
             served = pro

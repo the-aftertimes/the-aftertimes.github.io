@@ -91,7 +91,7 @@ def ideate(dateline: dict, domain: str, bible_motifs: list[dict],
                           style_guidance, engine_guidance, place_guidance,
                           avoid_block)
     raw = gemini.generate(prompt, settings,
-                          settings["gemini"]["temperature_ideate"])
+                          settings["gemini"]["temperature_ideate"], tier="write")
     data = gemini.extract_json(raw)
     premises = [p.strip() for p in data.get("premises", []) if p and p.strip()]
     if not premises:

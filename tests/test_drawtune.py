@@ -47,7 +47,8 @@ def test_mush_reads_the_mid_grey_band():
 def test_the_judge_is_actually_shown_both_pictures(monkeypatch):
     seen = {}
 
-    def fake(prompt, settings, temp, model=None, retries=None, images=None):
+    def fake(prompt, settings, temp, model=None, retries=None, images=None,
+             tier=None):
         seen.update(prompt=prompt, images=images)
         return '{"pick": 2, "reason": "the first crops the surgeon"}'
     monkeypatch.setattr(gemini, "generate", fake)

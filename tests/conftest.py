@@ -59,6 +59,16 @@ def _no_writes_to_the_live_site(request):
         f"writes - see tests/test_haiku_pipeline.py's `repo` fixture.")
 
 
+@pytest.fixture(autouse=True)
+def _no_paid_api_calls(monkeypatch):
+    """A test run must never spend Anthropic credit, key in the shell or not.
+    tests/test_claude.py clears `_off` and supplies a fake client."""
+    import claude
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setattr(claude, "_off", "tests never call the API")
+    monkeypatch.setattr(claude, "_client", None)
+
+
 @pytest.fixture
 def rng():
     return random.Random(12345)
