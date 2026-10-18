@@ -856,5 +856,16 @@
     "place_kind": "asteroid",
     "engine": "expertise",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-10-19",
+    "year": 3217,
+    "era_bucket": 23,
+    "domain": "language and slang",
+    "headline": "Garrison Held Lime, Not Line",
+    "style": "wire",
+    "place_kind": "deepspace",
+    "engine": "language",
+    "technique": "local_granularity"
   }
 ]
