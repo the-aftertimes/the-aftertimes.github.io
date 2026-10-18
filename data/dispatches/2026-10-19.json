@@ -1,0 +1,188 @@
+{
+  "run_date": "2026-10-19",
+  "run_time": "2026-10-18T13:00:51.882273+00:00",
+  "dispatch": {
+    "headline": "Garrison Held Lime, Not Line",
+    "body": "Gwilym Eriksdottir, quartermaster of Picket Station Doldrum, closed the south gallery on Friday after a galley archive showed the garrison's founding order read \"hold the lime\", not \"hold the line\". The order was a catering note. It was sent to the station's first cook in 2617 and filed with the defence orders by a clerk on a double shift.\n\nThe garrison has since kept a perimeter for six hundred years. Wardens have walked 211,000 night patrols, and the guns have fired on four drifting ice-lumps and one very slow tug. No lime has ever been aboard.\n\nSiosaia Lomax, who has walked the outer ring for thirty-one years, learned the news in the mess queue. \"I asked if we still had to stand the line, and they said it was now a garnish matter,\" she said. \"I said I would need that in writing, and they gave me a lemon. I have held worse things for less.\"\n\nThe station council voted to rename the perimeter \"a long-standing garnish policy\". Florin Barzani, the council clerk, said the wardens' pensions would not change. \"Every warden held the thing they were told to hold,\" he said. \"The cook is the only one who failed, and she has been dead for six hundred years, so we are letting it go.\"\n\nThe galley has requested a crate of limes. The cook's old recipe, found in the same archive, calls for the line to be walked twice daily and served chilled.",
+    "scene": "Siosaia Lomax, a weathered warden in a padded grey ring-suit, stands rigid at her post in a bare steel gallery, holding a single green lime upright in her gloved fist like a ceremonial weapon, a dark viewport behind her.",
+    "dateline": {
+      "place": "Picket Station Doldrum",
+      "year": 3217,
+      "month": 2,
+      "day": 26,
+      "years_from_now": 1191
+    },
+    "domain": "station garrison",
+    "glossary": [],
+    "premise": "A garrison on Picket Station Doldrum discovers its standing order to 'hold the line' was a mistranslation of a catering instruction to 'hold the lime,' and 600 years of rigorous perimeter defence are quietly reclassified as a very long garnish policy.",
+    "brief": null,
+    "image": "assets/img/2026-10-19.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-18T13:00:51.882273+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 84,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.84,
+      0.92,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: '000 night patrols, trained nine generations of line-wardens, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.0 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "230 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Garrison Told to Hold the Lime",
+        "body": "Gwilym Eriksdottir, quartermaster of Picket Station Doldrum, closed the south gallery on Friday after a galley archive showed the garrison's founding order read \"hold the lime\", not \"hold the line\". The order was a catering note. It was sent to the station's first cook in 2617 and filed with the defence orders by a clerk on a double shift.\n\nThe garrison has since kept a perimeter for six hundred years. It has logged 211,000 night patrols, trained nine generations of line-wardens, and fired on four drifting ice-lumps and one very slow tug. No lime has ever been aboard.\n\nSiosaia Lomax, who has walked the outer ring for thirty-one years, learned the news in the mess queue. \"I asked if we still had to stand the line, and they said it was now a garnish matter,\" she said. \"I said I would need that in writing, and they gave me a lemon.\"\n\nThe station council voted to reclassify the perimeter as \"a long-standing garnish policy\". Florin Barzani, the council clerk, said the wardens' pensions would not change. \"Every warden held the thing they were told to hold,\" he said. \"Nobody has ever asked who was holding the lime.\"\n\nThe galley has requested a crate of limes. The ring will be walked until it arrives.",
+        "premise": "A garrison on Picket Station Doldrum discovers its standing order to 'hold the line' was a mistranslation of a catering instruction to 'hold the lime,' and 600 years of rigorous perimeter defence are quietly reclassified as a very long garnish policy.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Garrison Retires 'Temporary,' Then Tables It",
+        "body": "Oona Lomax, quartermaster of Outpost Kettle-9, stood on a mess bench on Thursday and moved that the garrison retire the word \"temporary.\" The vote was called at 0610, between first sitting and second.\n\nThe motion followed a stores audit. It found that the mess hall, logged on arrival as a temporary structure pending a permanent one, has fed the garrison for 1,100 years. The permanent hall was never built. Its foundation survey is still in a drawer in the mess hall.\n\n\"I was only counting spoons,\" Lomax said. \"The spoons are also temporary.\"\n\nDebate ran forty minutes. Corporal Priit Zabala spoke against retirement, saying the word had held the garrison together. \"Every bad thing here is temporary,\" he said. \"The cold is temporary. The rations are temporary. Take that away and what have we got.\"\n\nA count was taken twice. Both counts were closed as inconclusive after the second sitting began, and diners were reseated by rota.\n\nThe motion was then tabled as a temporary measure. Lomax objected that the phrase had just been put under review. The chair ruled the objection out of order, as the review was itself temporary.\n\nPaora Yilmaz, who has cooked in the hall for thirty-one years, said the kitchen had no view. \"Pudding is at noon,\" she said. \"We'll be here.\"\n\nThe tabling is to be reviewed in the spring of the next century.",
+        "premise": "The garrison on Outpost Kettle-9 holds an emergency vote to retire the word 'temporary' after discovering its 'temporary' mess hall has been in use for 1,100 years, and the motion is tabled as a temporary measure.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Tanker Held Up By One Word",
+        "body": "A refuelling tanker has hung off the Lantern's number two cradle for four hours because two crews disagree about what 'tabled' means. Dalia Szabo, who runs the port-side crew, said on the evening watch that the docking proposal was tabled and so was set aside. Agnieszka Achterberg, who runs the starboard crew, said it was tabled and so was under way.\n\nStarboard began clamping. Port stood down. Both sides then stopped, each believing the other had agreed with it.\n\nThe two crews share a hallway, a canteen and a mother tongue. Neither had met the other meaning before. Szabo's crew has used 'table' to mean 'wait' for nine generations. Achterberg's says the older sense was always 'do it now' and that port simply drifted.\n\nFenna Paewai, a tanker pilot with nine hundred litres of cold fuel and two days of air, has been told by both crews to hold. \"They each said 'we're on it,'\" she said. \"I asked on what, and they both said the proposal.\"\n\nThe hallway between the crews is being kept open for the ceasefire. Neither side will call it that. Port calls it a pause and starboard calls it a lull.\n\nAt press time a third crew had offered to settle the matter, and both sides had asked what it meant by 'settle'.",
+        "premise": "Two waystation crews who share a hallway and 'the same language' halt a docking operation when 'tabling the proposal' is found to mean 'postponing it' to one side and 'getting on with it immediately' to the other, and a refuelling tanker is now four hours into an accidental ceasefire.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Pilgrims Told 'Welcome' Means 'Go Home'",
+        "body": "Dalia Navarro, who led two hundred pilgrims through the gate of the Monastery of the Last Light on Friday, was told by the gatekeeper that her party had been shouted at since departure. The word is \"welcome.\" Among the monks it means \"turn back.\"\n\nThe pilgrims have chanted it every morning for two centuries. Hull records show the chant was learned from the monastery's own beacon, which has broadcast the word on a loop since before the fleet left. The monks say they added a second beacon in year ninety, which said it louder.\n\n\"We wondered why they kept saying it back,\" said Brother Kaveh Koskinen, the gatekeeper. \"We assumed they were being rude. Then we assumed it was a pilgrim custom. Then it was just the noise.\"\n\nNavarro said the party would not be turning back. \"We have been told to go home by experts for two hundred years,\" she said. \"The experts were consistent.\"\n\nThe monastery has no berths for visitors. It does hold a supper at the sixth bell, and the pilgrims were seated for it. Gwilym Ibarguen, the supper steward, said the guests were thanked, as is the custom, with the word \"farewell.\"\n\nIt means \"stay.\"\n\nThe pilgrims have asked for the room to be cleared by morning.",
+        "premise": "Pilgrims reaching the Monastery of the Last Light after a 200-year journey learn that the sacred word they've been chanting since departure, 'Welcome,' is the monks' term for 'turn back,' and the monks have been shouting it at them the whole time.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The lemon and 'garnish policy' beats and the clerk's 'nobody has ever asked who was holding the lime' satirise blind institutional ritual, though the opening sentence gives away the pun.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        7.0,
+        3.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "The comma list of three stands in for an escalation, and the headline only describes the premise. The kicker restates the lime joke instead of turning it, and 'garnish matter' plus the pension quote muddle the logic.",
+    "prose": {
+      "words": 244,
+      "sentences": 16,
+      "mean_sentence": 15.2,
+      "longest": 30,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.8
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        39.7,
+        43.2
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 hides the subject with her back turned, shows no visible green lime, and has a wood-paneled room and a figure in a helmet rather than a rigid warden holding a lime upright.",
+      "winner_faults": "It sets the scene in a wooden arched tunnel with a bright background instead of a bare steel gallery with a dark viewport, adds several onlookers, and has garbled marks along the right edge."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss",
+        "2026-10-19": "loss"
+      }
+    }
+  }
+}
