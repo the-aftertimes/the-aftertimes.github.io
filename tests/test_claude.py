@@ -2,7 +2,6 @@ import json
 from types import SimpleNamespace
 
 import anthropic
-import httpx2
 import pytest
 
 import claude
@@ -37,9 +36,12 @@ class FakeClient:
         return create
 
 
-def _api_error(cls, code, message="boom"):
-    req = httpx2.Request("POST", "https://api.anthropic.com/v1/messages")
-    return cls(message, response=httpx2.Response(code, request=req), body=None)
+def _api_error(cls, message):
+    """An SDK error without a live response, whatever HTTP library it uses."""
+    exc = cls.__new__(cls)
+    Exception.__init__(exc, message)
+    exc.message = message
+    return exc
 
 
 @pytest.fixture
@@ -114,7 +116,7 @@ def test_run_total_sums_every_call(live, capsys):
 
 
 def test_auth_failure_turns_claude_off_for_the_run(live):
-    live.raises = _api_error(anthropic.AuthenticationError, 401)
+    live.raises = _api_error(anthropic.AuthenticationError, "bad key")
     with pytest.raises(claude.ClaudeError):
         claude.generate("p", "write")
     live.raises = None
@@ -124,7 +126,7 @@ def test_auth_failure_turns_claude_off_for_the_run(live):
 
 
 def test_outage_turns_claude_off_for_the_run(live):
-    live.raises = _api_error(anthropic.InternalServerError, 529)
+    live.raises = _api_error(anthropic.InternalServerError, "overloaded")
     with pytest.raises(claude.ClaudeError):
         claude.generate("p", "write")
     assert claude._off
@@ -139,11 +141,11 @@ def test_refusal_fails_one_call_not_the_run(live, capsys):
 
 
 def test_bad_request_fails_one_call_but_credit_exhaustion_is_the_run(live):
-    live.raises = _api_error(anthropic.BadRequestError, 400, "image too large")
+    live.raises = _api_error(anthropic.BadRequestError, "image too large")
     with pytest.raises(claude.ClaudeError):
         claude.generate("p", "judge")
     assert claude._off is None
-    live.raises = _api_error(anthropic.BadRequestError, 400,
+    live.raises = _api_error(anthropic.BadRequestError,
                              "Your credit balance is too low")
     with pytest.raises(claude.ClaudeError):
         claude.generate("p", "judge")
@@ -159,7 +161,7 @@ def test_gemini_generate_asks_claude_first(live, monkeypatch):
 
 
 def test_gemini_generate_falls_back_when_claude_fails(live, monkeypatch):
-    live.raises = _api_error(anthropic.AuthenticationError, 401)
+    live.raises = _api_error(anthropic.AuthenticationError, "bad key")
 
     class R:
         status_code = 200
