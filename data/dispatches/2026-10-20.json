@@ -1,0 +1,230 @@
+{
+  "run_date": "2026-10-20",
+  "run_time": "2026-10-19T18:01:02.975381+00:00",
+  "dispatch": {
+    "headline": "Chefs Fast Bravely, Eight Days Early",
+    "body": "Zygmunt Kalnins, head chef of the Third Galley, has fasted for seven days and wants it known that he chose to. The ship's ration schedule put every deck on the same fast ahead of the Feast of Plenty, as it has each year since the tanks were rebalanced.\n\nKalnins learned this on the eighth morning, from a clerk, while holding a spoon.\n\nQ: When did you decide to fast?\n\n\"Before the schedule did. In spirit. The schedule merely agreed with me, which is what a good schedule does.\"\n\nQ: Did anyone check the ration table first?\n\n\"It is printed on the wall of the guild hall. We walk past it daily. One does not read what one walks past. That is how you know it is holy.\"\n\nQ: Passengers on the lower decks say they were never told it was a fast.\n\n\"They were told it was a shortfall. Different word, same stomach. We have simply given the hunger a purpose.\"\n\nQ: Will the guild fast again next year?\n\n\"Yes, and we will begin nine days earlier, so it is ours. Pavlina Demirci in Stores has agreed to move the schedule back. She says it needs only a signature and a lot of rice.\"\n\nThe Feast of Plenty begins Sunday. Stores holds enough rice for four days, and the fast, by Demirci's reckoning, will now start before the feast ends.",
+    "scene": "A stout chef in a white tunic stands in a bare steel galley holding a spoon over an empty pot, staring at a ration schedule printed on the wall beside him.",
+    "dateline": {
+      "place": "The Third Galley",
+      "year": 2623,
+      "month": 1,
+      "day": 7,
+      "years_from_now": 597
+    },
+    "domain": "ship rationing and galley kitchens",
+    "glossary": [],
+    "premise": "A generation ship's chefs observe a seven-day fast before the annual Feast of Plenty, then discover the ship's rationing schedule already put everyone on a seven-day fast, and now claim the schedule was an act of devotion.",
+    "brief": null,
+    "image": "assets/img/2026-10-20.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-19T18:01:02.975381+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 85,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.51,
+      0.84,
+      0.68
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.5 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "219 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.7 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 38 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "236 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "wink",
+          "detail": "a source is commenting on the joke rather than living in it: \"that's the point\"",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.0 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "230 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.4 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "217 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "wink",
+          "detail": "a source is commenting on the joke rather than living in it: \"that's the point\"",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'said it was for love, which is true, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Lower Mess Queue Now Largest Employer",
+        "body": "Amaru Bergqvist, a third-generation Verse Holder, stood in the Lower Mess queue for eleven hours on Thursday and ate nothing. This is her job. The silence before each paste dispensing now runs forty minutes, and the district pays four thousand people to keep it.\n\n\"Each shift adds a verse,\" Bergqvist said. \"Ours is the ninth. It's about the ladle. I'm told the sixth is about a different ladle.\"\n\nThe silence began as four seconds after a pump fault in the founding decade. The ship's records put the original fault at eleven minutes, which Bergqvist considers a rumour. \"Nobody was hurt by the paste. We just wanted to be sure.\"\n\nThe queue is now 1,900 metres long and has its own shift rota, rest bays and a night watch. Thuy Tuilagi, who supervises the rota, said the verses are not spoken aloud, because that would break the silence. They are held. \"You hold your verse and the person ahead holds theirs. Forty minutes is only the average. A double-verse day is nearly an hour.\"\n\nAsked whether anyone has proposed shortening it, Bergqvist paused for what she said was a short time.\n\n\"A man tried once,\" she said. \"He wanted to cut the third verse. He's very well thought of now. He holds the third verse.\"\n\nThe paste is dispensed cold.",
+        "premise": "A generation ship's Lower Mess institutes a mandatory moment of silence before every nutrient paste dispensing, which has grown from four seconds to forty minutes as each shift adds its own verse, and the queue is now the district's largest employer.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Casserole Given Full Honours Before Recycling",
+        "body": "Ebru Hoang, a ladle-steward on the freighter Long Patience, walked at the head of a procession on Thursday carrying a tray of algae casserole to the recycler, after the Spur's tasting panel declared it unfit for the living. Some two hundred residents followed.\n\nThe casserole had been cooked for midday meal. It was the first lunch to be rejected in the Spur's history, and nobody knew the order of service.\n\n\"We made it up,\" Hoang said. \"Fenna Reyes-Ortega remembered that we do something for pumps, so we did that, but slower.\"\n\nMourners stopped three times along the corridor. At the recycler hatch, each thanked the dish for its service. Hoang said the dish had not served anyone, which was the sad part.\n\n\"It was in the vat for eleven days,\" she said. \"It had a whole life as algae before that. Someone should say something.\"\n\nThe recycler returned it to the vats within the hour. Hoang confirmed the Spur will therefore be eating it again by the end of the week, in a different shape. Residents do not consider this a contradiction.\n\n\"That's the point of a recycler,\" she said. \"Nobody is saying it dies. We're saying it was a bad casserole. Those are separate things. Luana Toivonen's grandmother was a bad casserole for four years and we still go to her birthday.\"\n\nThe next funeral is Monday. It is expected to be for the soup.",
+        "premise": "Residents of a freighter's Agricultural Spur hold their first funeral for a rejected lunch, after an algae casserole is declared 'unfit for the living' and given a full procession to the recycler, where mourners thank it for its service.",
+        "score": 0.51,
+        "rejected": false
+      },
+      {
+        "headline": "Chefs Call Empty Larders A Sacrifice",
+        "body": "Zygmunt Kalnins, head chef of the Third Galley, has fasted for seven days and wants it known that he chose to. The ship's ration schedule put every deck on a seven-day fast ahead of the Feast of Plenty, as it has each year since the tanks were rebalanced.\n\nKalnins learned this on the eighth morning, from a clerk, while holding a spoon.\n\nQ: When did you decide to fast?\n\n\"Before the schedule did. In spirit. The schedule merely agreed with me, which is what a good schedule does.\"\n\nQ: The chefs' guild announced its own fast in the same week. Did anyone check the ration table first?\n\n\"The table is printed on the wall of the guild hall. We walk past it daily. One does not read what one walks past. That is how you know it is holy.\"\n\nQ: Passengers on the lower decks say they were never told it was a fast.\n\n\"They were told it was a shortfall. Different word, same stomach. We have simply given the hunger a purpose.\"\n\nQ: Will the guild fast again next year?\n\n\"Yes, and we will begin it nine days earlier, so it is ours. Pavlina Demirci in Stores has agreed to move the schedule back. She says it needs only a signature and a lot of rice.\"\n\nThe Feast of Plenty begins Sunday. Stores holds enough rice for four days.",
+        "premise": "A generation ship's chefs observe a seven-day fast before the annual Feast of Plenty, then discover the ship's rationing schedule already put everyone on a seven-day fast, and now claim the schedule was an act of devotion.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Fleet Admits Holy Knife Opened Mail",
+        "body": "Kofi Nieminen, who has officiated at the Ninth Ring cube-cutting for thirty-one years, cut a protein cube in half for two newlyweds on Saturday with a knife that was once meant for opening letters. He sees no problem with this. \"It's a blessed knife,\" he said. \"It was blessed before anyone noticed what it was.\"\n\nThe district elders voted in the spring to keep the origin sacred. Nieminen says he was told by letter.\n\nQ: Does the knife cut well?\n\n\"Badly. That's the point. A couple shares a cube they had to fight for. The blade is thin, and the cube is dense, so the first cut takes both their weights. Roughly one pair in nine needs a second try. We call that an honest start.\"\n\nQ: Has anyone asked what the knife was for?\n\n\"A girl asked. Her mother said it was for love, which is true, and she has since stopped asking.\"\n\nQ: Is there a spare?\n\n\"There was one. It was a real ceremonial knife, from the founding. The elders found it too sharp and put it in a drawer. Eleven hundred and four couples have used the letter opener. I have the count.\"\n\nNieminen cleans the blade after each wedding with a cloth, and keeps it in a tray marked Do Not Open.",
+        "premise": "On the migrant fleet Halcyon Tide, newlyweds are required to ritually share a single protein cube cut with a blessed knife, though the district elders admit the knife was a mislabelled letter opener and have voted to keep that fact sacred.",
+        "score": 0.68,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Sharper satire of institutional spin: 'a shortfall, different word, same stomach' and 'one does not read what one walks past' land real points, and the rice-for-four-days kicker turns the joke.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "challenger",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        8.0,
+        5.0,
+        3.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          1,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.84,
+    "critique": "Mean sentence length was too short (10.0 words against 11-20) and the body ran 230 words against 170-215. The headline described the premise, and the kicker (four days of rice) merely restated the shortage instead of turning the joke.",
+    "prose": {
+      "words": 230,
+      "sentences": 22,
+      "mean_sentence": 10.5,
+      "longest": 27,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.9
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        35.4,
+        32.7
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 is set in a wooden-walled kitchen with the chef ladling into a plate and looking sideways at a woman, not staring at a schedule over an empty pot in a bare steel galley.",
+      "winner_faults": "The chef is shown from behind so his face and the emptiness of the pot are unclear, and the ration schedule text is garbled and partly illegible."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss",
+        "2026-10-19": "loss",
+        "2026-10-20": "win"
+      }
+    }
+  }
+}

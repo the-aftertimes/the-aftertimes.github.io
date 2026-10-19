@@ -8,10 +8,7 @@ change only when Charlie says so.
 
 ### Over-used lately
 
-- phrase: "on thursday after" in 3 dispatches
-- phrase: "the trend has" in 3 dispatches
-- opener: "the trend has" in 3 dispatches
-- name: "Patel" in 3 dispatches
+- phrase: "on friday after" in 3 dispatches
 - name: "Chen" in 3 dispatches
 
 ### Suggested next step

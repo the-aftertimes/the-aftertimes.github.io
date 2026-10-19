@@ -867,5 +867,16 @@
     "place_kind": "deepspace",
     "engine": "language",
     "technique": "local_granularity"
+  },
+  {
+    "run_date": "2026-10-20",
+    "year": 2623,
+    "era_bucket": 11,
+    "domain": "food",
+    "headline": "Chefs Fast Bravely, Eight Days Early",
+    "style": "interview",
+    "place_kind": "shipboard",
+    "engine": "ritual",
+    "technique": "confident_aside"
   }
 ]
