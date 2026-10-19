@@ -6,6 +6,7 @@ be read off the Actions logs. Uses the key in ANTHROPIC_API_KEY."""
 from __future__ import annotations
 
 import atexit
+import sys
 import base64
 import os
 
@@ -38,9 +39,15 @@ _off: str | None = None
 _total = {"calls": 0, "in": 0, "out": 0, "usd": 0.0}
 
 
+def _live() -> bool:
+    """False under pytest, so a test's fake usage never reaches the run's annotations,
+    which the stats page reads as real cost and real fallbacks."""
+    return "pytest" not in sys.modules
+
+
 def _warn(msg: str) -> None:
     # A workflow command on stdout becomes an annotation on the run summary.
-    print(f"::warning::{msg}", flush=True)
+    print(f"::warning::{msg}" if _live() else msg, flush=True)
 
 
 def _turn_off(reason: str) -> ClaudeError:
@@ -73,8 +80,10 @@ def _record(model: str, tier: str, usage) -> None:
 @atexit.register
 def _summary() -> None:
     if _total["calls"]:
-        print(f"claude: run total {_total['calls']} calls, in={_total['in']} "
-              f"out={_total['out']} US${_total['usd']:.4f}", flush=True)
+        line = (f"claude: run total {_total['calls']} calls, in={_total['in']} "
+                f"out={_total['out']} US${_total['usd']:.4f}")
+        # As a notice annotation the stats page can read the cost without the log.
+        print(f"::notice title=Claude cost::{line}" if _live() else line, flush=True)
 
 
 def generate(prompt: str, tier: str, settings: dict | None = None,

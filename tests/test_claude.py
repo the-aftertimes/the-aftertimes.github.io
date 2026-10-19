@@ -10,6 +10,12 @@ import judge as judge_stage
 import write as write_stage
 
 
+@pytest.fixture(autouse=True)
+def _annotations_on(monkeypatch):
+    # claude._live() is False under pytest; these tests assert the CI annotation itself.
+    monkeypatch.setattr(claude, "_live", lambda: True)
+
+
 def _msg(text='{"ok": 1}', stop="end_turn", tin=1000, tout=2000):
     return SimpleNamespace(
         stop_reason=stop,
