@@ -1,0 +1,196 @@
+{
+  "run_date": "2026-10-21",
+  "run_time": "2026-10-20T18:00:34.755858+00:00",
+  "dispatch": {
+    "headline": "Sourdough Starter Wins Third Term",
+    "body": "A jar of grey sourdough starter has blocked the switch to synthetic food at Lantern Reach for the third generation running, an Aftertimes review of city kitchen records shows. On the upper deck it is known as the Heirloom. It has never cast a vote.\n\nIt does not need to. Solveig Valdivia, the city's chief of food supply, said the culture is invited to roughly nine hundred dinners a year. The average council member has eaten its bread 212 times since taking office. Engineers who propose a change are served a loaf, then asked about their mothers.\n\nThe last three feasibility studies each recommended synthetic food. Each was shelved after a supper.\n\nUzma Toivonen, a retired baker who tends the culture, agreed to talk only in the doorway of her pantry. \"It's fed twice a day,\" she said. \"Which is more than the council can say for the engineers.\" Asked whether it had ever been told about the studies, she closed the door.\n\nThe cost is physical. The Heirloom needs flour grown in the lower farm ring, which gives up about four percent of its air scrubbers each year to keep the wheat alive. Danuta Sandoval, an engineer, calls the figure \"survivable, for now.\"\n\nThe council's spokesperson denied any link between dinners and decisions. \"The bread has no influence,\" he said, by message. The message arrived with a photo of his plate, and a request for the recipe.",
+    "scene": "Uzma Toivonen, a flour-dusted baker, stands in a pantry doorway clutching a glass jar of grey dough to her chest while a reporter with a notebook waits in the corridor.",
+    "dateline": {
+      "place": "Lantern Reach",
+      "year": 2428,
+      "month": 12,
+      "day": 22,
+      "years_from_now": 402
+    },
+    "domain": "food supply",
+    "glossary": [],
+    "premise": "Neptune cloud-city's priority 'heirloom yeast' is revealed to be a single bread culture that has outvoted three generations of engineers on whether the city should switch to synthetic food, by sheer weight of sentimental dinner invitations.",
+    "brief": null,
+    "image": "assets/img/2026-10-21.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-20T18:00:34.755858+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 86,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.92,
+      0.92,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'old Number 6 tram line, demolished in 2291, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "222 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "237 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.4 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Sky-Whales Still Expect The Tram",
+        "body": "Pita Koskinen, a whale-handler on Ostrava Float, has spent eleven years announcing stops that do not exist. The platform's own records show why. The city's engineered sky-whales follow the route of the old Number 6 tram line, demolished in 2291, and the city has quietly built nineteen phantom stops to keep them calm.\n\nThe Float's Cetacean Office denies any such programme. Its own maintenance ledger lists the stops as \"pylon rests.\"\n\nKoskinen agreed to talk on condition that his name stayed out of it, then gave it anyway. \"Each stop has a bell and a recorded voice,\" he said. \"Nobody boards. If the voice is late, the herd mills about for forty minutes and takes out a greenhouse.\"\n\nThe Office measured the effect. Whales that hear a full announcement slow by an average of 11 percent per stop, it found, and the herd's evening mood score rises from 3.1 to 4.4. Skipping Harrow Lane in 2417 cost the city two grain towers and a school roof.\n\nLaleh Reyes-Ortega, who runs the Office, called the figures \"internal and routine.\" She added that the whales were engineered for route loyalty, and that the route was chosen by committee.\n\nThe Float has since approved a twentieth stop. It is named Faisal Rusu Crescent, after the clerk who drew the original line.",
+        "premise": "Floating platform above Jupiter admits its genetically engineered sky-whales still migrate along the route of a long-demolished tram line, forcing the city to keep building phantom stops that the whales expect to be announced.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Lung Holding Up City Runs On Lullaby",
+        "body": "Momin Zabala, a surgeon at the Third Ring clinic, put a stethoscope-slate to the district's living lung last month and heard a woman humming. The lung holds up forty thousand people and has done so for three hundred and eleven years.\n\nThe Aftertimes has reviewed the founding logs. The hum is a calibration tone, entered as temporary. It was recorded by Dilnoza Yamaguchi, a night-shift technician, who sang to the tissue while she waited for the engineers' real signal. The real signal was never written.\n\nThe lung has since grown over its own scaffolding. Clinic tests show its breathing slows by 0.8 breaths a minute when the tune is played at the wrong pace. It speeds up by 1.1 when played too fast. Nobody has tested silence.\n\nThe Hang Lift Board has known since the spring. Its minutes call the tune \"a legacy input under review.\" A Board clerk, Ilse Kahananui, agreed to speak if not named, then gave her name and asked that it stay in.\n\n\"We looked for who maintains the lullaby,\" she said. \"Nobody does. It plays from a speaker behind a wall panel, and the panel is painted shut.\"\n\nThe Board denies any risk. \"The district is stable,\" its statement says. The statement was read aloud twice at the Board's own meeting, to the same tune, by accident.",
+        "premise": "Cloud-city surgeons discover that the 'living lung' bioreactor holding up the district has been kept alive for three centuries by a retired night-shift technician's lullaby, which the original engineers recorded as a temporary calibration tone and never replaced.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Bread Culture Outvotes Engineers Again",
+        "body": "A jar of grey sourdough starter has blocked the switch to synthetic food at Lantern Reach for the third generation running, a Aftertimes review of city kitchen records shows. It is known on the upper deck as the Heirloom. It has never cast a vote.\n\nIt does not need to. Solveig Valdivia, the city's chief of food supply, said the culture is invited to roughly nine hundred dinners a year. The average council member has eaten its bread 212 times since taking office. Engineers who propose a change are served a loaf, then asked about their mothers.\n\nThe last three feasibility studies each recommended synthetic food. Each was shelved after a supper.\n\nUzma Toivonen, a retired baker who tends the culture, agreed to talk only in the doorway of her pantry. \"It's fed twice a day,\" she said. \"It's older than the dome. People get attached.\" Asked whether it had ever been told about the studies, she closed the door.\n\nThe cost is physical. The Heirloom needs flour grown in the lower farm ring, which loses about four percent of its air scrubbers each year to keep the wheat alive. Danuta Sandoval, an engineer, calls the figure \"survivable, for now.\"\n\nThe council denies any link between dinners and decisions. \"The bread has no influence,\" said a spokesperson, by message, from a table where the Heirloom was being served.\n\nHe signed off with a request for the recipe.",
+        "premise": "Neptune cloud-city's priority 'heirloom yeast' is revealed to be a single bread culture that has outvoted three generations of engineers on whether the city should switch to synthetic food, by sheer weight of sentimental dinner invitations.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Algae Farm Still Apologises To Every Frond",
+        "body": "Kerstin Sandoval, a pruner on the Pale Lantern algae terraces, apologised to 4,112 fronds before lunch on her last shift, and the company has asked her not to discuss the figure. The Aftertimes obtained it from the terrace log, which counts every apology and has done so for 161 years.\n\nPruning is done by hand with brass shears. The platform's original safety manual, never withdrawn, requires a human to say sorry to each frond before cutting. Sensor cutters were fitted in 2391. Within a season the algae stopped producing oxygen-rich bloom on cut terraces. Yield on hand-pruned terraces is 31 percent higher.\n\nRuairi Obradovic, the platform's operations lead, denied any link. \"The shears are a heritage choice,\" he said. Asked about the apology log, he said it was a training aid.\n\nSelin Kiplagat, a former terrace supervisor, agreed to speak if unnamed, then gave her name. \"The fronds lean toward you when you say it. Nobody trained them. We tried a recording once. They leaned away.\"\n\nThe manual's author is not recorded. The platform's air supply depends on the terraces.\n\nSandoval's shift ends at dusk. She says she is on frond 4,113, and that this one looks hurt.",
+        "premise": "Correspondent finds that the cloud-borne algae farms of an Uranus floating platform are still being pruned by hand with brass shears, because an obsolete safety manual requires a human to apologise to each frond, and the algae now expect it.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its satire of capture by tradition is sharper and more recognisable (engineers 'served a loaf, then asked about their mothers', a spokesperson speaking from a table where the bread is being served), and its opening doesn't give the joke away, though the weak 'request for the recipe' kicker drags it down.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        6.0,
+        7.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          2,
+          3,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Body ran 237 words against a 170-215 target, and the headline described the premise instead of landing a joke. Logic slips: 'a Aftertimes', a spokesperson quoted 'by message' while sitting at a table, and 'the council denies' sat oddly beside the numbers.",
+    "prose": {
+      "words": 238,
+      "sentences": 19,
+      "mean_sentence": 12.5,
+      "longest": 29,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.3
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        23.8,
+        28.2
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "The loser shows a woman holding a lidded ceramic pot in a hallway with a man in medieval dress, not a baker clutching a glass jar in a pantry doorway with a reporter waiting in the corridor.",
+      "winner_faults": "The jar is opaque stoneware, so the grey dough isn't visible, and the baker shows no flour dusting."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss",
+        "2026-10-19": "loss",
+        "2026-10-20": "win",
+        "2026-10-21": "win"
+      }
+    }
+  }
+}
