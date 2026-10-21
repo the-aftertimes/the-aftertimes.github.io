@@ -889,5 +889,16 @@
     "place_kind": "gasgiant",
     "engine": "obsolescence",
     "technique": "unasked_statistic"
+  },
+  {
+    "run_date": "2026-10-22",
+    "year": 2774,
+    "era_bucket": 14,
+    "domain": "entertainment",
+    "headline": "Lichen Stays, Wins Again",
+    "style": "feature",
+    "place_kind": "subsurface",
+    "engine": "nature",
+    "technique": "escalating_precision"
   }
 ]
