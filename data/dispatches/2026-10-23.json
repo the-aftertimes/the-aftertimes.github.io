@@ -1,0 +1,192 @@
+{
+  "run_date": "2026-10-23",
+  "run_time": "2026-10-22T18:00:45.622839+00:00",
+  "dispatch": {
+    "headline": "Gala Guests Snub Couple's Fake Antique Mosquito",
+    "body": "Ruairi Rusu and Yusra Jovanovic were left standing alone at the Harbour Ridge Spring Gala on Saturday. They had unveiled a pre-flood mosquito in a glass case, and a guest called it \"clearly born last Tuesday.\" Mr Rusu, who made his money in tide insurance, had paid for the insect at auction. Within ten minutes the string quartet had stopped playing near them.\n\nThe guest was Valtteri Koskinen, a mosquito assessor with the Keizersgracht Society for Heritage Fauna. He examined the case for under a minute. \"The wings are too tidy,\" he said. \"A real one has lived through something. Ours has outlived two husbands and a pantry fire, and it still won't use the front door.\"\n\nKeeping a pre-flood mosquito is now the surest sign of old dyke money. Families on the upper ridges say their insects came through the water on the same boat as the silver. Most are fed by hand, from the wrist, and several have been named in wills.\n\nMs Jovanovic said the couple had been sold a certificate. Mr Koskinen said certificates are printed in a shed in Zaandam, and that he has seen the shed.\n\nThe couple left before the soup. By Sunday, three hosts had cancelled invitations.\n\nMr Rusu has asked that the mosquito be referred to as \"mature.\" It has bitten him twice, which the Society says is the first honest thing it has done.",
+    "scene": "A man in a dark dinner jacket and his wife in a silver gown stand stiffly beside a small glass case on a pedestal in a ballroom, while a thin assessor peers at the case through a magnifying lens and guests in evening dress turn their backs behind them.",
+    "dateline": {
+      "place": "Harbour Ridge",
+      "year": 2176,
+      "month": 11,
+      "day": 14,
+      "years_from_now": 150
+    },
+    "domain": "high society and heritage",
+    "glossary": [],
+    "premise": "Amsterdam's raised-dyke elite consider it a mark of breeding to keep a pet mosquito from the pre-flood era, and a nouveau-riche couple are cut dead at a gala after unveiling theirs, which an expert declares was clearly born last Tuesday.",
+    "brief": null,
+    "image": "assets/img/2026-10-23.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-22T18:00:45.622839+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 88,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.67,
+      0.67,
+      0.92,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.9 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: court",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 36 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'Most are fed by hand, from the wrist, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'will be a different panda, she said, and'",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Tourist Gasps At Whale, Is Escorted Out",
+        "body": "A visiting dentist from Lagos Shelf gasped at a passing blue whale on Sunday and was walked off the third-floor terrace of Tideway Court by two residents, both holding their drinks. Nobody raised a voice. The whale did not break stride.\n\nThe Heights have watched the spring migration for forty years. Residents now rank one another by how little they react. A raised eyebrow is a minor loss of standing. Checking a wrist-screen mid-breach is considered strong.\n\nNkechi Arriaga, 31, has not looked up from her crossword since March. \"I heard it,\" she said. \"The spray reached my shoes. I wrote a word in.\"\n\nThe terrace now keeps a quiet list of people who flinched. Nine families have been asked to take their evenings indoors. One boy, aged six, was praised for yawning at a calf.\n\nOlder residents are unhappy. Ahanu Draganov, who moved in when the first pods returned and cried openly for a week, says the young have lost something. \"We wept. We brought flasks. It was the best thing that ever happened to this river.\"\n\nHis granddaughter said he was being a lot about it.\n\nMr Draganov has since been moved to the far end of the terrace, where the whales pass less often.",
+        "premise": "Rooftop-dwelling Londoners of the Thames Barrier Heights now judge each other by how convincingly they feign being unimpressed by the migrating whales that pass the third-floor balconies, and a tourist who gasps aloud is gently escorted off the terrace.",
+        "score": 0.67,
+        "rejected": true
+      },
+      {
+        "headline": "Couple Cut Dead Over Brand-New Old Mosquito",
+        "body": "Ruairi Rusu and Yusra Jovanovic were left standing alone at the Harbour Ridge Spring Gala on Saturday after they unveiled a pre-flood mosquito in a glass case, and a guest called it \"clearly born last Tuesday.\" Mr Rusu, who made his money in tide insurance, had paid for the insect at auction. Within ten minutes the string quartet had stopped playing near them.\n\nThe guest was Valtteri Koskinen, a mosquito assessor with the Keizersgracht Society for Heritage Fauna. He examined the case for under a minute. \"The wings are too tidy,\" he said. \"A real one has lived through something.\"\n\nKeeping a pre-flood mosquito is now the surest sign of old dyke money. Families on the upper ridges say their insects came through the water on the same boat as the silver. Most are fed by hand, from the wrist, and several have been named in wills.\n\nMs Jovanovic said the couple had been sold a certificate. Mr Koskinen said certificates are printed in a shed in Zaandam, and that he has seen the shed.\n\nThe couple left before the soup. By Sunday, three hosts had cancelled invitations.\n\nMr Rusu has asked that the mosquito be referred to as \"mature.\" It has bitten him twice.",
+        "premise": "Amsterdam's raised-dyke elite consider it a mark of breeding to keep a pet mosquito from the pre-flood era, and a nouveau-riche couple are cut dead at a gala after unveiling theirs, which an expert declares was clearly born last Tuesday.",
+        "score": 0.67,
+        "rejected": false
+      },
+      {
+        "headline": "Panda Walks Out On Hostess Mid-Apology",
+        "body": "Dagny Marangoni's panda got up and left during her apology on Saturday, and the guests of the Cloud Terraces Rewilding Dinner watched it go. The animal crossed the dining deck, ate a bamboo centrepiece and fell asleep beside the lift.\n\nMs Marangoni had reached her fourth minute. She had covered the lost forests and the river dams, and was starting on her grandmother's air-conditioning. Eleven guests had already spoken. Three wept, which is the usual number.\n\nThe dinner is now held monthly across the terraces' forty-one rooftops. Each hostess leases a panda for the evening, seats it at a low table and lets guests take turns. Scoring is by hand-held applause metre. Winners receive the panda's next visit.\n\nAshkan Esposito, who hosted last month's winner, said a good apology needs a specific wrong. \"General guilt is cheap,\" he said. \"You have to name a hillside.\"\n\nOlder residents of the lagoon remain unimpressed. Joaquim Belinskaya, 91, whose family kept bears at the old Pudong reserve, said pandas have never listened to anyone. \"They sit there because the food is there. We told them sorry for forty years and they ate the whole time.\"\n\nMs Marangoni has asked the leasing agency for a replacement animal. It will be a different panda, she said, and a shorter apology.",
+        "premise": "Shanghai's Cloud Terraces society holds a ceremonial rewilding-guilt dinner at which guests compete to apologise most movingly to a captive panda, until a rival hostess is humiliated when her panda, visibly bored, leaves mid-apology.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Last Tuna Served Four Times, Still Frying",
+        "body": "Mireille Tamatea's last tuna was served for the fourth time on Saturday, and a guest has now noticed it was always the same one. Tamsin Agbaje, a hull-surveyor, pressed a fork into the fillet and found glass eye-sockets under the batter.\n\nThe tuna is a stuffed specimen, caught in 2031 and donated to the Colaba Shore Museum, which lost track of it in the second flood. Ms Tamatea, whose table is ranked third on the Adrift Quarter's rare-plate list, has fried it each time in a different oil.\n\n\"Nobody has ever complained about the flavour,\" she said. \"It tastes of whatever the sauce is. That is true of most fish.\"\n\nAbout forty households now serve extinct species. Six are believed to be the same two sea bass, passed between kitchens by hand. Ruairi Ibarguen, who runs the quarter's tasting register, said he had never inspected a plate. \"You do not ask a host for proof. You ask for a second helping.\"\n\nOlder residents say their parents served a vegetable lasagne and called it a lasagne.\n\nThe tuna is now in the museum's care, where it has been put in a cold room, away from the oil. Ms Tamatea has asked when she can have it back. She is hosting on the fourteenth.",
+        "premise": "In the floating city of Mumbai-Adrift, hosts compete to serve the rarest locally extinct fish, so a dinner party collapses in horror when a guest realises the hostess's famed 'last tuna' has been served at four consecutive gatherings and is simply the same taxidermied tuna, re-fried.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its status-and-authenticity satire is sharp (\"clearly born last Tuesday\", \"A real one has lived through something\", certificates printed in a Zaandam shed), and the kicker about the mosquito being called \"mature\" that has bitten him twice lands well.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.67,
+    "score_after": 0.76,
+    "critique": "The first paragraph runs 36 words, and the comma list 'by hand, from the wrist, and' pads without escalating. The headline describes the premise instead of landing a joke, and the ending only repeats the 'mature' gag.",
+    "prose": {
+      "words": 234,
+      "sentences": 18,
+      "mean_sentence": 13.0,
+      "longest": 19,
+      "short_sentences": 1,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.3
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        30.5,
+        31.1
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Candidate 2 lacks the thin assessor peering through a magnifying lens; its uniformed figure at left has no lens, and the guests crowd the case rather than turning their backs.",
+      "winner_faults": "The object in the case reads as a globe rather than a mosquito, and the woman's gown is pale white rather than silver."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss",
+        "2026-10-19": "loss",
+        "2026-10-20": "win",
+        "2026-10-21": "win",
+        "2026-10-22": "win",
+        "2026-10-23": "loss"
+      }
+    }
+  }
+}
