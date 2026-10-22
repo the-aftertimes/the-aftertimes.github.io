@@ -900,5 +900,16 @@
     "place_kind": "subsurface",
     "engine": "nature",
     "technique": "escalating_precision"
+  },
+  {
+    "run_date": "2026-10-23",
+    "year": 2176,
+    "era_bucket": 3,
+    "domain": "ecology and wildlife",
+    "headline": "Gala Guests Snub Couple's Fake Antique Mosquito",
+    "style": "trend",
+    "place_kind": "drowned",
+    "engine": "etiquette",
+    "technique": "commit_past_reason"
   }
 ]
