@@ -911,5 +911,16 @@
     "place_kind": "drowned",
     "engine": "etiquette",
     "technique": "commit_past_reason"
+  },
+  {
+    "run_date": "2026-10-24",
+    "year": 3989,
+    "era_bucket": 39,
+    "domain": "family",
+    "headline": "Whole Moon Is Family; Seating Guild Despairs",
+    "style": "discovery",
+    "place_kind": "lunar",
+    "engine": "expertise",
+    "technique": "sincere_futility"
   }
 ]

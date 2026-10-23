@@ -1,0 +1,204 @@
+{
+  "run_date": "2026-10-24",
+  "run_time": "2026-10-23T18:00:38.910009+00:00",
+  "dispatch": {
+    "headline": "Whole Moon Is Family; Seating Guild Despairs",
+    "body": "Lunar genealogists have finished matching every settler on the Shackleton Rim to every other, and the result is that all 41,000 of them are cousins. The Guild of Seating-Plan Architects called it \"a catastrophe for placement\" and asked for a recount.\n\nThe Great Cousin Reconciliation took eleven years and 300 workers. Lead genealogist Selin Wojcik said the finding is simple. \"Go back far enough and the Rim has a few hundred founders. We traced everyone to them. Nobody is more than eighth cousin to anyone, and most people are fourth.\"\n\nThe Guild says that cannot be right. Its architects seat weddings, funerals and settlement dinners by feud, and a feud needs two sides that are not related.\n\n\"Our charts have always had a head table and a far table,\" said Emeka Lindqvist, the Guild's chair. \"We now have one table, and it holds everyone, including the people who threw the lamp at the Hallam wedding. I have put them next to the exit. That was already where they sat.\"\n\nThe Guild has recounted twice. Wojcik's team has agreed to a third count, at no charge, to be done by hand.\n\nDilnoza Castellanos, a sixth cousin of the whole Rim, said she had known for years that her neighbour was family. \"That's what makes it so hard to forgive. You can't even say he's not one of us.\"",
+    "scene": "A man in a grey Guild tabard stands over a huge seating chart pinned across a table under a domed ceiling, scratching out a line between two names, while a woman in a lab coat holds up a thick family ledger beside him.",
+    "dateline": {
+      "place": "Shackleton Rim",
+      "year": 3989,
+      "month": 6,
+      "day": 12,
+      "years_from_now": 1963
+    },
+    "domain": "lunar settlement social life",
+    "glossary": [],
+    "premise": "Lunar Genealogists complete the Great Cousin Reconciliation of the Shackleton Rim, discovering that every settler is related to every other, and the Guild of Seating-Plan Architects declares the finding 'a catastrophe for placement' and demands a recount.",
+    "brief": null,
+    "image": "assets/img/2026-10-24.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-23T18:00:38.910009+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 89,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.75,
+      0.92,
+      0.76,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 39 words, maximum 35",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "216 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'Each slice leaves the blade, floats, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Lullaby Works, Guild Bars Mother Anyway",
+        "body": "Adaeze Hoang has been barred from singing in the nurseries of Dome Four after her lullaby put eleven infants to sleep in under two minutes. The Guild of Lunar Lullabyists ruled that her melody, pitched down to suit the thin gravity, is not the original Earth key. Its chair, Eitan Akhmetov, called the result \"technically a coma-free outcome, but not a lullaby.\"\n\nThe Guild has sung the Earth keys in the domes for four hundred years. Its cantors train for nine years. Its own records show the Earth keys put an infant down in a median of fifty-one minutes, and in the dome's lighter air the high notes tend to carry, wake the next cot and start the whole row again.\n\nHoang worked out the fix on the night shift with her own daughter. \"In Earth gravity a note falls into the cradle,\" she said. \"Here it floats about. I lowered it so it would land.\"\n\nTobiah Jaramillo, who leads the Guild's key-keeping office, said the office tested her melody for eleven weeks. Every test was a success. \"We could not find a fault,\" he said. \"That is why we had to look so carefully.\"\n\nNursery staff now sing the Earth keys in shifts of six. Hoang hums at home, quietly, in her own key.",
+        "premise": "The Guild of Lunar Lullabyists rules that infants in the Tycho Crater domes may only be sung to sleep in the original Earth-lullaby keys, and bars a mother whose low-gravity-adjusted melody actually works, with its chair calling the result 'technically a coma-free outcome, but not a lullaby.'",
+        "score": 0.75,
+        "rejected": false
+      },
+      {
+        "headline": "Everyone Here Is Your Cousin, Seating Guild Warns",
+        "body": "Lunar genealogists have finished matching every settler on the Shackleton Rim to every other, and the result is that all 41,000 of them are cousins. The Guild of Seating-Plan Architects called it \"a catastrophe for placement\" and asked for a recount.\n\nThe Great Cousin Reconciliation took eleven years and 300 workers. Lead genealogist Selin Wojcik said the finding is simple. \"Go back far enough and the Rim has a few hundred founders. We traced everyone to them. Nobody is more than eighth cousin to anyone, and most people are fourth.\"\n\nThe Guild says that cannot be right. Its architects seat weddings, funerals and settlement dinners by feud, and a feud needs two sides that are not related.\n\n\"Our charts have always had a head table and a far table,\" said Emeka Lindqvist, the Guild's chair. \"We now have one table, and it holds everyone, including the people who threw the lamp at the Hallam wedding.\"\n\nThe Guild has recounted twice. Wojcik's team has agreed to a third count, at no charge, to be done by hand.\n\nDilnoza Castellanos, a sixth cousin of the whole Rim, was asked whether she minded. She said she had known for years that her neighbour was family. \"That's what makes it so hard to forgive.\"",
+        "premise": "Lunar Genealogists complete the Great Cousin Reconciliation of the Shackleton Rim, discovering that every settler is related to every other, and the Guild of Seating-Plan Architects declares the finding 'a catastrophe for placement' and demands a recount.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Family Waits Four Hours For Gravy To Land",
+        "body": "Ashkan Jaramillo, the last human certified in low-gravity loaf carving, has kept eleven relatives from eating since the fourth bell, while he waits for a slice to fall at the regulation angle. The meal is in its fourth hour.\n\nThe angle is thirty-one degrees. Each slice leaves the blade, floats, and lands wherever Callisto's pull puts it. Jaramillo has cut one hundred and forty slices. Nine have landed correctly.\n\nThe family has stopped asking when dinner will be.\n\n\"It is a wrist problem, and I will not blame the loaf,\" said Jaramillo, wiping the blade between cuts. \"A slice that lands at thirty is a slice that has been carved badly. I will not hand a child a bad slice.\"\n\nHis daughter, Makena Tavakoli, said the nine good slices sit on a warming tray in the order they landed. Nobody is allowed to eat them. \"He says they are evidence of what is possible,\" she said.\n\nAhanu Kahananui, of the Rim Guild of Table Craft, confirmed that the angle was written eighty years ago by a committee that never carved a loaf. It has not been met at a table since. \"Every certified carver knew,\" he said. \"The certificate only asks that you try.\"\n\nThe loaf is now cold. Jaramillo has asked for a second one.",
+        "premise": "A master of Sunday Dinner Carving, the last human certified to portion a protein loaf in low gravity, refuses to let a family eat until each slice drifts down to the plate at the regulation angle, and the meal enters its fourth hour.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Moon Babies Not Enough Like Parents, Panel Finds",
+        "body": "Yaroslav Fairweather held his two-week-old daughter under a christening lamp on Thursday while an adjudicator measured her ears and said she did not resemble him. The finding was the ninth of the morning. It has been the finding in every case since the first lunar-born infants arrived.\n\nThe Basin's licensed Family Resemblance Adjudicators have now examined 412 babies. They have passed none. Dr Ebru Rahimi, who leads the panel, explained the problem plainly.\n\n\"Low gravity changes how a face sets. The cheeks come out rounder and the chin sits further back. These children look like each other, which is not what the register asks for.\"\n\nThe panel's remedy is the corrective grandparent portrait, painted on the day and hung over the cot. Each shows a grandparent with the baby's actual features, so the line runs unbroken on the wall. Panel painters work eleven-hour shifts. A portrait takes four days and the christenings are booked a week ahead.\n\nAsked whether any grandparent had been consulted, Dr Rahimi said the portraits were \"more of a starting point.\"\n\nAgnieszka Quisbert, whose grandmother was painted last month with a round chin, has been told the likeness is close. Her grandmother lives on Earth and has not been told.\n\nThe panel has begun measuring the parents.",
+        "premise": "Tranquility Basin's licensed Family Resemblance Adjudicators reject the first generation of lunar-born infants as 'insufficiently like their parents,' and begin issuing corrective grandparent portraits at the christening.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its kicker lands and its satire of feuds in tight communities is recognisably true, though the opening sentence announces the whole conceit and the middle partly restates it.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "challenger",
+      "champion",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        8.0,
+        3.0,
+        1.0
+      ],
+      "rankings": [
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Headline ran eight words and described the premise instead of landing a joke. Quotes were funny in places but the kicker restated the idea, and the Guild's logic (a recount to undo kinship) needed tightening.",
+    "prose": {
+      "words": 227,
+      "sentences": 18,
+      "mean_sentence": 12.6,
+      "longest": 25,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.9
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        31.5,
+        29.8
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 shows the woman in an apron dress rather than a lab coat, has no clear man scratching out a line (his hands are in his pockets), and carries garbled signs and a clock with unreadable lettering.",
+      "winner_faults": "The chart's entries are garbled, the man points with a stick instead of clearly scratching out a line between two names, his apron isn't clearly a grey Guild tabard, and the figure on the left is cut off by the edge."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss",
+        "2026-10-19": "loss",
+        "2026-10-20": "win",
+        "2026-10-21": "win",
+        "2026-10-22": "win",
+        "2026-10-23": "loss",
+        "2026-10-24": "loss"
+      }
+    }
+  }
+}
