@@ -1,0 +1,197 @@
+{
+  "run_date": "2026-10-25",
+  "run_time": "2026-10-24T18:00:39.400608+00:00",
+  "dispatch": {
+    "headline": "Memo Beats Messenger, Again, In Final",
+    "body": "Agnieszka Umarov lost the Passive-Aggressive Memo Marathon on Saturday after her note, hand-carried through four airlocks, arrived eleven metres away eight seconds ahead of her own 'per my last message'. The last message had been sent by feed. It was the only one that counted.\n\nForty-one residents entered. Each carried a sealed note to a colleague seated at the far end of Spoke Nine, and each note had to open with the words 'per my last message'. The winner was whoever's reminder landed before the thing it reminded about.\n\nUmarov led through the second airlock. She cycled the third in record time, then stopped to fix her hair. Haruto Yamaguchi, running a note about a shared kettle, passed her on the cycle step and did not look back.\n\nThe turn came at the line. Judges found Yamaguchi's reminder had been sent before he left the start. His note was never delivered. It was still in his pocket when he was named champion.\n\nAmaru Bakshi, the recipient, said he had not read either message.\n\nIn the mixed zone, Umarov was asked whether she would carry the note again next year.\n\n\"The note was about the kettle,\" she said. \"It is still not clean.\"",
+    "scene": "Agnieszka Umarov, in a grey station jumpsuit, stands sweating in an open airlock hatch gripping a sealed envelope, while a seated man at the end of the corridor waits at a small desk.",
+    "dateline": {
+      "place": "Kestrel Hollow Ring",
+      "year": 2393,
+      "month": 9,
+      "day": 10,
+      "years_from_now": 367
+    },
+    "domain": "language and slang",
+    "glossary": [],
+    "premise": "Residents of a ring station compete in the Passive-Aggressive Memo Marathon, in which each note must be hand-carried through four airlocks to a colleague sitting eleven metres away, and the winner is whoever's 'per my last message' arrives before the message itself.",
+    "variant": "challenger",
+    "brief": null,
+    "image": "assets/img/2026-10-25.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-24T18:00:39.400608+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 90,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      1.0,
+      0.92,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "221 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "length",
+          "detail": "219 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "238 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Champion Wins Goodbye Contest By Leaving First",
+        "body": "Joaquim Mirzoyan, the defending champion, won the Terminus Stewards' Shortest Possible Goodbye on Saturday without speaking, and was already inside the lift when the judges looked up.\n\nThe contest is held each year at the foot of the cable. The ride down to the planet takes eleven days, and stewards say \"see you later\" to about forty passengers a shift. Medical staff have called the phrase a clinically significant lie since the Ombrelle ward began recording it.\n\nThe final was between Mirzoyan and Agnieszka Mazur, who opened with a single nod. Judges scored it at 0.8 seconds. Mazur then tried a raised eyebrow, which was ruled a greeting.\n\nMirzoyan entered the final round at 11:42. Door sensors logged him as aboard at 11:41. The head judge checked the timing three times and awarded him the title on the third.\n\nMazur lodged no appeal. In the mixed zone she said she had seen him on the platform that morning, and was fairly sure he had not been there.\n\nNadia Mbatha, who runs the terminus ward, was asked whether the winning entry counted as a goodbye. She said it was the only one in the contest that had never made a passenger cry, and that she had checked.\n\nMirzoyan could not be reached for comment. His lift reaches the surface on the twenty-third.",
+        "premise": "Elevator terminus stewards hold a championship in Shortest Possible Goodbye, as the 11-day ride down to the planet has made 'see you later' a clinically significant lie; the defending champion wins by saying nothing and being already in the lift.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Memo Beats Messenger, Again, In Final",
+        "body": "Agnieszka Umarov lost the Passive-Aggressive Memo Marathon on Saturday after her note, hand-carried through four airlocks, arrived eleven metres away eight seconds ahead of her own 'per my last message'. The last message had been sent by feed. It was the only one that counted.\n\nForty-one residents entered. Each carried a sealed note to a colleague seated at the far end of Spoke Nine, and each note had to open with the words 'per my last message'. The winner was whoever's reminder landed before the thing it reminded about.\n\nUmarov led through the second airlock. She cycled the third in record time, then stopped to fix her hair. Haruto Yamaguchi, running a note about a shared kettle, passed her on the cycle step and did not look back.\n\nThe turn came at the line. Judges found Yamaguchi's reminder had been sent before he left the start. His note was never delivered. It was still in his pocket when he was named champion.\n\nAmaru Bakshi, the recipient, said he had not read either message.\n\nIn the mixed zone, Umarov was asked whether she would carry the note again next year.\n\n\"The note was about the kettle,\" she said. \"It is still not clean.\"",
+        "premise": "Residents of a ring station compete in the Passive-Aggressive Memo Marathon, in which each note must be hand-carried through four airlocks to a colleague sitting eleven metres away, and the winner is whoever's 'per my last message' arrives before the message itself.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Relay Anchor Delivers Rude Word To Judges",
+        "body": "Momin Szabo, anchor runner for the Lower Spokes team, crossed the line at Tamarind Ring on Saturday and said the baton word to three judges, who then disqualified her. The word was \"glimmer\". It had left the starting block as a mild term for a small favour.\n\nThe Synchronised Dialect Relay sends one spoken word around the full 40-kilometre ring, passed mouth to mouth through forty-one changeovers. Each runner must say it exactly as heard. Official linguists sat at every handover with a recorder.\n\nThe recordings show the word held its meaning through the first changeover. By the second, the Pump Row runner was using it of someone's mother. By the ninth, it was a verb. Nobody flagged it, because every runner had heard the one before and each judged the change reasonable.\n\nRohan Ilunga, the race referee, said the rules require only that the word arrive unaltered in sound. \"Meaning is not scored,\" he said. \"We have never needed it to be.\"\n\nLower Spokes finished first by nine minutes. The Ring Assembly later struck the result, then restored it, then struck it again.\n\nIn the mixed zone, Szabo was asked whether she had noticed anything on the final leg. She said the crowd at Gate Nineteen had gone very quiet, and that she had taken it for respect.",
+        "premise": "At the Ring Station Vowel Games, the final of the Synchronised Dialect Relay is decided when a baton of spoken slang must be carried by mouth, hand to hand, around the full 40-kilometre ring, and the anchor leg runner arrives to find the word has meant something rude since the second changeover.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Judges Queue Six Hours To Hear 'Sorry, What?'",
+        "body": "Ilse Sauvageot, a lock-fitter from Ring Two, won the first Zero-G Mumble Championship on Saturday after six judges queued six hours at Lock Nine to hear her say \"sorry, what?\" in an accent nobody aboard had ever needed translated.\n\nThe lock was chosen because it was the only one with a bench. Judges waited in a line behind a cargo sled while the lock cycled for a maintenance crew, then a dog, then the crew again.\n\nEntrants are scored on how little their mouths move. Hedda Fairweather, the defending lip-clamp champion from the Spindle's upper hub, delivered a clean, closed-jaw \"sorry, what?\" that the panel's ear-tags rated 94 percent intelligible. Judges called this too clear.\n\nSauvageot's entry used a flat vowel and a dropped consonant that, the panel found, belongs to a way of speaking last heard before flight. Her mother had kept it going at home. Nobody had asked her to stop.\n\nThe panel could not find a single listener who had misheard her.\n\nDorcas Navarro, chief judge, was asked in the mixed zone whether the winning entry was a mumble at all. She said it was the only one she had understood the first time, and that she would be checking her notes.\n\nSauvageot, asked what the win meant, said she had been waiting in the lock the whole time and had only said it because someone spoke to her.\n\nThe trophy is a brass-coloured earplug.",
+        "premise": "The first Zero-G Mumble Championship crowns a winner after the judges spend six hours queueing at a single decompression lock to hear him say 'sorry, what?' in an authentically pre-flight accent that no one aboard has ever had to translate.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Passive-aggressive memos are instantly recognisable, the hair-fixing and the note still in the pocket add real turns, and the kettle kicker lands, though the opening sentence already gives away most of the joke.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        5.0,
+        6.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The headline restates the premise and is vague about who won. The logic wobbles: the note is 'hand-carried' yet lost to a feed message, Yamaguchi's note was 'about a shared kettle' yet Umarov's is the one the kettle line pays off, and the final quote only half recontextualises the story.",
+    "revise_judge_reason": "The headline is a real joke and the deadpan kettle kicker lands cleanly, but the opening sentence already states the whole conceit, so the middle restates it and the piece has little turn.",
+    "prose": {
+      "words": 202,
+      "sentences": 17,
+      "mean_sentence": 11.9,
+      "longest": 30,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.5
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        24.0,
+        32.1
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "The first engraving shows a standing man leaning against a wall in a corridor with a wall clock and garbled signage, with no airlock hatch, no envelope, and no seated man at a desk, so it doesn't match the scene.",
+      "winner_faults": "The woman is shown from behind, so her face and sweating aren't visible, and she is walking through the hatch rather than standing in it gripping the envelope."
+    },
+    "tune": {
+      "variant": "challenger",
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss",
+        "2026-10-19": "loss",
+        "2026-10-20": "win",
+        "2026-10-21": "win",
+        "2026-10-22": "win",
+        "2026-10-23": "loss",
+        "2026-10-24": "loss",
+        "2026-10-25": "win"
+      }
+    }
+  }
+}

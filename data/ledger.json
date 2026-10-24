@@ -922,5 +922,16 @@
     "place_kind": "lunar",
     "engine": "expertise",
     "technique": "sincere_futility"
+  },
+  {
+    "run_date": "2026-10-25",
+    "year": 2393,
+    "era_bucket": 7,
+    "domain": "language and slang",
+    "headline": "Memo Beats Messenger, Again, In Final",
+    "style": "sport",
+    "place_kind": "orbital",
+    "engine": "logistics",
+    "technique": "answers_the_question"
   }
 ]
