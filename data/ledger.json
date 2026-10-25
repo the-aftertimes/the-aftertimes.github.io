@@ -933,5 +933,16 @@
     "place_kind": "orbital",
     "engine": "logistics",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-10-26",
+    "year": 2089,
+    "era_bucket": 1,
+    "domain": "death and mourning",
+    "headline": "Dead Captain Signs Rotas, Crew Relieved",
+    "style": "wire",
+    "place_kind": "shipboard",
+    "engine": "category",
+    "technique": "headline_carries_it"
   }
 ]
