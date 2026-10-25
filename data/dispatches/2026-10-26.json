@@ -1,0 +1,182 @@
+{
+  "run_date": "2026-10-26",
+  "run_time": "2026-10-25T18:00:45.416725+00:00",
+  "dispatch": {
+    "headline": "Dead Captain Signs Rotas, Crew Relieved",
+    "body": "Fenna Rahimi set a place for the late Captain Okonkwo-Hale at Friday's memorial dinner in Lantern Row, and put his portrait in the chair. Eleven other widows did the same. The portrait, which the Ring Council promoted to Acting Captain in the spring, has since signed every duty rota on the ship.\n\nThe approvals come by thumbprint pad fixed to the frame. A deck clerk presses a staff thumb to it each shift change. The pad confirms, and the rota stands.\n\nCrew say the rotas have never run better. Under the living captain, swaps were argued over for weeks. Nobody argues with the portrait.\n\n\"He never once gave me the late shift,\" said Ashkan Nieminen, a water-line fitter. \"Before, I had it four nights running. Now I have it when it is fair.\"\n\nRahimi, whose husband served under the captain for thirty years, said the chair is for company. \"He ate quickly and left early. The portrait does neither.\"\n\nThe Ring Council confirmed the pad has not been recalibrated since the promotion. Asked who adjusts the rotas before the portrait signs, Kofi Reyes-Ortega, the deputy rota clerk, said he does, \"as I always did.\"\n\nThe portrait has not yet been asked to sign its own pension.",
+    "scene": "A widow in a dark quilted shawl sets a dinner plate before a large framed portrait of a stern captain propped upright in a chair at a long memorial table, two other mourners seated beside it.",
+    "dateline": {
+      "place": "Lantern Row, Halvard Ring",
+      "year": 2089,
+      "month": 2,
+      "day": 23,
+      "years_from_now": 63
+    },
+    "domain": "death and mourning",
+    "glossary": [],
+    "premise": "A generation ship's grieving widows begin leaving seats at memorial dinners for the late captain's portrait, which has been promoted to Acting Captain and now signs off on rotas, to general relief.",
+    "variant": "challenger",
+    "brief": null,
+    "image": "assets/img/2026-10-26.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-25T18:00:45.416725+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 91,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      1.0,
+      0.92,
+      1.0
+    ],
+    "violations": [
+      [],
+      [],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Recycling Plant Receives Casseroles, Thanks Senders",
+        "body": "Dalia Montiel carried a lentil bake across Ring Nine on Thursday and left it at the door of the Ring Nine reclamation plant, which has been listed as next of kin to 4,000 dead residents. The Bereavement Deck confirmed the listing. Every person it has processed since launch names the plant on the form, because the form offers no other box once family is more than nine decks away.\n\nMontiel, a water-loop inspector, did not know the dead. \"It's had a terrible run,\" she said. \"Four thousand. Nobody even rings.\"\n\nBy evening the plant's loading bay held eleven casseroles, two trays of fruit-bar slice and a card signed by an entire cargo shift. Plant supervisor Ashkan Rautio said staff had accepted the food on the plant's behalf, since the plant cannot sign for it.\n\nThe plant has not responded to the condolences. It has, however, continued working.\n\nRautio said that was the difficulty. \"Everyone says it's holding up well. It's recycling them. That's what it was built to do. I don't know how to tell people it's coping the only way it can.\"\n\nThe bay has run out of shelf space. Rautio said the surplus will be fed into the plant.",
+        "premise": "A migrant fleet's Bereavement Deck formally records its recycling plant as 'next of kin' to all 4,000 residents who have passed through it, and the plant is now receiving condolence casseroles from people who say it 'has lost so many.'",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Dead Captain Signs Rotas, Crew Relieved",
+        "body": "Fenna Rahimi set a place for the late Captain Okonkwo-Hale at Friday's memorial dinner in Lantern Row, and put his portrait in the chair. Eleven other widows did the same. The portrait, which the Ring Council promoted to Acting Captain in the spring, has since signed every duty rota on the ship.\n\nThe approvals come by thumbprint pad fixed to the frame. A deck clerk presses a staff thumb to it each shift change. The pad confirms, and the rota stands.\n\nCrew say the rotas have never run better. Under the living captain, swaps were argued over for weeks. Nobody argues with the portrait.\n\n\"He never once gave me the late shift,\" said Ashkan Nieminen, a water-line fitter. \"Before, I had it four nights running. Now I have it when it is fair.\"\n\nRahimi, whose husband served under the captain for thirty years, said the chair is for company. \"He ate quickly and left early. The portrait does neither.\"\n\nThe Ring Council confirmed the pad has not been recalibrated since the promotion. Asked who adjusts the rotas before the portrait signs, Kofi Reyes-Ortega, the deputy rota clerk, said he does, \"as I always did.\"\n\nThe portrait has not yet been asked to sign its own pension.",
+        "premise": "A generation ship's grieving widows begin leaving seats at memorial dinners for the late captain's portrait, which has been promoted to Acting Captain and now signs off on rotas, to general relief.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Frozen Embryos Move Into Care Home, Win Bingo",
+        "body": "Ksenia Paewai, a cargo steward, called the first bingo night aboard the freighter Ama Tahi on Thursday for 4,112 frozen embryos, all now classed by the crew as residents of the Evening Wing. The embryos are 61 years in transit. Crew voted the classification in March.\n\nThe wing is Hold Nine, kept at minus 196 degrees. Stewards have fitted it with handrails, a calling board and a tea trolley, which is not used.\n\n\"They are very settled,\" Paewai said. \"Nobody complains. Mrs Okafor-Lind in Rack 40 has won twice.\"\n\nThe crew confirmed Rack 40 holds nine embryos. The cards are marked by a steward, who also reads out the numbers.\n\nThe arrangement has had a second effect. Paora Brannigan, who runs the ship's mourning desk, said bereaved families now ask whether a death in the wing counts. Three embryos were lost to a cooling fault in Rack 12 last month. Under the old rules the cargo office would have logged them as stock.\n\n\"We held a service,\" Brannigan said. \"Forty crew came. It was the first time anyone had attended a funeral for them, and we assumed they would have wanted it.\"\n\nThe Evening Wing has since been cleared for one further bingo night. Rack 12 sent no one.",
+        "premise": "A freighter's crew declares the cargo of frozen embryos 'the elderly' on account of their age in transit, then organises a retirement home for them, complete with bingo, which the embryos are said to be enjoying.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Welder Waits Outside As Bulkhead Is Eulogised",
+        "body": "Mourners in the Hydroponics Ring held a full wake on Thursday for Bulkhead 14-C, which residents agreed was the one who always listened. The chaplain, Tamsin Kiplagat, delivered the eulogy to the panel itself. A welder with a cutting torch waited in the corridor, visor up, until it ended.\n\nAbout ninety residents attended. Many had spent years leaning against 14-C during night shift, and several had told it things. Anouk Arriaga, who tends the tomato rows beside it, said she had never once been interrupted.\n\n\"You could tell it anything,\" Arriaga said. \"It never passed it on. Not many people can say that, and none of them are on this deck.\"\n\nThe bulkhead failed a routine seam check last month. Ring engineers found hairline cracks along the weld and ordered it cut out and replaced, as the deck below depends on it to hold air. Residents asked for a delay, and the work order was put back nine days.\n\nThe welder, Fenna Nieminen, said she had no objection to the wake. \"I've done this before. They always want the speeches first,\" she said. \"I just wasn't expecting them to be so good.\"\n\nThe replacement panel is stacked in the corridor. Residents have not yet been told whether it will listen.",
+        "premise": "Mourners in the Hydroponics Ring hold a full wake for a deceased bulkhead after residents agree it was 'the one who always listened,' and the ship's chaplain delivers a eulogy to it while a welder waits politely outside with a cutting torch.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The deputy clerk who secretly adjusts the rotas 'as I always did' is a sharp jab at bureaucratic power, and the pension kicker lands, though the opening announces the conceit more than it develops it.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        5.0,
+        3.0,
+        6.0
+      ],
+      "rankings": [
+        [
+          3,
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.84,
+    "critique": "Headline is fine on length but explains the premise rather than landing a joke. The quotes are decent, but the last line merely extends the pension gag instead of recontextualising, and the Nieminen quote contradicts the story: the portrait never assigns shifts, the deputy clerk does.",
+    "prose": {
+      "words": 206,
+      "sentences": 18,
+      "mean_sentence": 11.4,
+      "longest": 24,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 7,
+      "rare_rate": 3.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        42.5,
+        34.3
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 gets the scene wrong: the captain stands upright in a frame holding a plate himself, instead of being propped in a chair at a memorial table, and the woman wears a plaid cape rather than a dark quilted shawl.",
+      "winner_faults": "The certificates and plaque carry garbled, illegible lettering, and the shawl's patterned border is more decorative than a plain dark quilted shawl."
+    },
+    "tune": {
+      "variant": "challenger",
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-11": "loss",
+        "2026-10-19": "loss",
+        "2026-10-20": "win",
+        "2026-10-21": "win",
+        "2026-10-22": "win",
+        "2026-10-23": "loss",
+        "2026-10-24": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "loss"
+      },
+      "decision": "retired"
+    }
+  }
+}

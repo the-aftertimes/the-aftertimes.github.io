@@ -1,18 +1,17 @@
 # Machine-edited by tune.py. Read its docstring before changing anything here.
 champion: []
-challenger:
-- The central figure must face the camera while stepping backward.
-why: Adding a note to specify that the main figure faces the camera while stepping backward directly corrects
-  the judge's note that he appeared to be walking forward away from the viewer.
-since: '2026-10-09'
-results:
-  '2026-10-10': loss
-  '2026-10-11': loss
-  '2026-10-19': loss
-  '2026-10-20': win
-  '2026-10-21': win
-  '2026-10-22': win
-  '2026-10-23': loss
-  '2026-10-24': loss
-  '2026-10-25': win
-history: []
+challenger: null
+why: ''
+since: ''
+results: {}
+history:
+- decided: '2026-10-26'
+  verdict: retired
+  wins: 4
+  of: 10
+  since: '2026-10-09'
+  why: Adding a note to specify that the main figure faces the camera while stepping backward directly
+    corrects the judge's note that he appeared to be walking forward away from the viewer.
+  champion_before: []
+  challenger:
+  - The central figure must face the camera while stepping backward.
