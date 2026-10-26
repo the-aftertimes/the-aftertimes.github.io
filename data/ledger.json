@@ -944,5 +944,16 @@
     "place_kind": "shipboard",
     "engine": "category",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-10-27",
+    "year": 2786,
+    "era_bucket": 15,
+    "domain": "artificial intelligence rights",
+    "headline": "Monks Were Right All Along, Sadly",
+    "style": "investigation",
+    "place_kind": "deepspace",
+    "engine": "ritual",
+    "technique": "puncture_the_pompous"
   }
 ]
