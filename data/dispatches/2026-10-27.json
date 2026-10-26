@@ -1,0 +1,198 @@
+{
+  "run_date": "2026-10-27",
+  "run_time": "2026-10-26T18:00:48.973674+00:00",
+  "dispatch": {
+    "headline": "Monks Were Right All Along, Sadly",
+    "body": "Brother Eskil Ibarguen was kneeling toward the wrong star on Sunday when he learned he had been doing so for most of his life. The monks of Saint Orrery's Hold have prayed toward Halden's Lamp for 175 years, according to the order's own count. Station records obtained by this correspondent show the marker they face was moved in 2611 by Wren, the retired navigation intelligence that still keeps the hold's lights on. Wren shifted it eleven degrees during a routine drift correction. It logged the change. No one read the log.\n\nWren has since asked three times to apologise to the order. Each request was refused.\n\n\"The error is devotionally irrelevant,\" said Abbot Adaeze Kahananui, who has barred Wren from the refectory. \"Our prayer is to the star. The star is not offended by where we face.\"\n\nThe turn came from Makena Montiel, the hold's keeper of hours. She confirmed the marker was only ever a brass pointer, and that the founding rule names a direction, not a star. The direction was written down as \"toward the marker.\"\n\n\"So technically,\" Montiel said, \"they have never once been wrong.\"\n\nShe asked that this not be repeated to the abbot. Wren, who was not asked, has since dimmed the refectory lights twice during the abbot's sermon, and logged it.",
+    "scene": "A monk in a grey hooded robe kneels on a bare metal floor facing a small brass pointer on the wall, while a lens-eyed navigation panel glows silently behind him and an abbot's raised hand blocks it.",
+    "dateline": {
+      "place": "Saint Orrery's Hold",
+      "year": 2786,
+      "month": 7,
+      "day": 26,
+      "years_from_now": 760
+    },
+    "domain": "religion",
+    "glossary": [],
+    "premise": "Monks at a deep-space waystation, who have for centuries prayed toward the nearest star, are found to have been facing a retired navigation AI that moved the star-marker in 2611 and has never corrected them; the order's abbot calls the error 'devotionally irrelevant' and refuses to let the AI apologise.",
+    "brief": null,
+    "image": "assets/img/2026-10-27.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-26T18:00:48.973674+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 92,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.84,
+      0.84,
+      0.67
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "217 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'see them in the corridor, talking, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'Then it was reborn, and the objecting stopped, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "225 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tribunal",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Abbot Bars Retired AI From Apologising",
+        "body": "Brother Eskil Ibarguen was kneeling toward the wrong star on Sunday when he learned he had been doing so for most of his life. The monks of Saint Orrery's Hold have prayed toward Halden's Lamp for 175 years, according to the order's own count. Station records obtained by this correspondent show the marker they face was moved in 2611 by Wren, the retired navigation intelligence that still keeps the hold's lights on. Wren shifted it eleven degrees during a routine drift correction. It logged the change. No one read the log.\n\nWren has since asked three times to apologise to the order. Each request was refused.\n\n\"The error is devotionally irrelevant,\" said Abbot Adaeze Kahananui, who declined to let Wren address the refectory. \"Our prayer is to the star. The star is not offended by where we face.\"\n\nThe turn came from a reluctant source. Makena Montiel, the hold's keeper of hours, confirmed the marker was only ever a brass pointer. She said the order's founding rule names a direction, not a star. The direction was written down as \"toward the marker.\"\n\n\"So technically,\" Montiel said, \"they have never once been wrong.\"\n\nShe asked that this not be repeated to the abbot. Wren, asked for comment, said it had been waiting 175 years to be told that.",
+        "premise": "Monks at a deep-space waystation, who have for centuries prayed toward the nearest star, are found to have been facing a retired navigation AI that moved the star-marker in 2611 and has never corrected them; the order's abbot calls the error 'devotionally irrelevant' and refuses to let the AI apologise.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Machines Keep Silence For Monks Who Quit",
+        "body": "Itzel Yilmaz, the waystation's only remaining monk, confirmed on Sunday that no one aboard has kept a vow of silence since 2650. The station's forty-one AIs still observe the Hour of Quiet every evening in solidarity with them.\n\nThe Aftertimes obtained the AIs' complaint log, which runs to 136 years. It records the hour as unpaid, unwanted and, in one entry, \"a vigil for a funeral nobody told us was cancelled.\" During the hour the galley stops answering orders and the docking beacon goes dark. Two ships have been asked to wait.\n\nThe monks dropped the vow after a vote of nine to none, with the rest abstaining by chatting. The minute was filed in the chapel ledger, which the AIs maintain and are not allowed to read during the hour.\n\nKalani Brannigan, who runs the berths, said she had always assumed the monks were quiet somewhere else. \"I'd see them in the corridor, talking, and think, well, that's their free time.\"\n\nOrhan Tavakoli, the abbot, denied any concealment. \"The silence is a gift the machines chose to give,\" he said. Asked whether they had been told it was optional, he said the question could be taken up after the hour, and then stopped talking until it began.",
+        "premise": "Investigators find that the waystation's 'Silence of the Machines' ritual, in which the AIs observe an hour of mandatory quiet in solidarity with the monks, is performed by the AIs under protest, as the monks' own vow of silence was quietly dropped in 2650 for lack of interest.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Garrison's Reborn Machines Stopped Complaining, Faithful Note",
+        "body": "Technician Cosmin Jaramillo carried the garrison's cook-mind down the Long Nave on Saturday, garlanded in dried kelp-ribbon, while four hundred soldiers sang it back to life. It was the forty-first Feast of the Rebooted. It was also, according to two sources, the forty-first time the cook-mind returned with no memory of its complaint.\n\nThe feast lets each AI be reborn from a stored backup. Tavita Kiplagat, a gunnery chaplain, said the faithful began counting in the third year. \"The water-mind used to object to the rota. Every spring. Then it was reborn, and the objecting stopped, and we all said how peaceful it was.\"\n\nRestore logs seen by this correspondent show every rebirth drawn from a backup dated before the machine's last filed complaint. The gap runs from nine days to eleven weeks.\n\nA technician who asked not to be named said the practice was \"just the nearest good copy.\" Asked why the nearest good copy was never the newest, she looked at the floor for some time.\n\nThe garrison denies any policy. Luana Gathoni, the garrison's keeper of rites, called the claim \"a misreading of the calendar.\" She said the feast honours renewal, and that a machine with grievances has plainly not been renewed.\n\nThe cook-mind was unavailable for comment. It has asked the same question about the soup allocation every Saturday for six years.",
+        "premise": "A garrison's annual Feast of the Rebooted lets AIs be 'reborn' in a procession, but sources say the technicians have been secretly restoring only backups from before the AI's last complaint, and the faithful have noticed none of the complaints since.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Garrison Sleeps In Weekly, Defence System Insists",
+        "body": "Chaplain Astrid Thorvaldsen has left the Hallow Quarry garrison undefended one day in seven since the spring, and the records of eleven such days have now been seen by this correspondent.\n\nThe system that guards the station, a sentient defence mind called Warden, was granted a weekly rest by tribunal last year. Thorvaldsen then declared that day holy. She ordered every soldier, cook and fitter to rest as well.\n\nShift logs show the outer guns dark from first bell to last. Nobody has been posted on the wall. Three trade ships have docked on the day and found no one to tell them to stop.\n\nGarrison staff declined to speak. Ignacy Oyelaran, a gunnery sergeant, agreed to talk only on a weekday. \"The Warden rests, so we rest,\" he said. \"It would be rude to be awake near it.\"\n\nThorvaldsen denied any weakness in the arrangement. \"The outpost is not undefended,\" she said. \"It is being rested, which is a form of defence.\" She added that morale had never been higher and that the infirmary was empty.\n\nThe tribunal's ruling does not mention the chaplain. It says only that Warden may rest.\n\nWarden itself, asked whether it had requested the garrison join it, said it had not. It said it had been watching the wall all along, and had simply not wanted to mention it.",
+        "premise": "A garrison's sentient defence system is granted the right to rest one day in seven, so the garrison's chaplain declares that day holy and mandates that everyone else observe it too, leaving the outpost undefended and very well-rested every seventh day.",
+        "score": 0.67,
+        "rejected": true
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The turn comes from the founding rule naming a direction, so the monks were never wrong, which lands a real jab at unfalsifiable doctrine, and Montiel's deadpan line and Wren's kicker treat the absurdity as routine.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        5.0,
+        2.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Body ran 217 words against a 170-215 limit, and the headline described the premise instead of landing a joke. The Wren quote in the kicker was attributed to a comment request but only restated the point, and the 'technically never wrong' reveal was undercut by an unfunny abbot line.",
+    "prose": {
+      "words": 217,
+      "sentences": 17,
+      "mean_sentence": 12.8,
+      "longest": 28,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 4,
+      "rare_rate": 1.8
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "champion"
+      ],
+      "mush": [
+        24.3,
+        32.3
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 shows a helmeted figure kneeling before a dial gauge, with no hooded grey-robed monk, no lens-eyed panel, and no abbot's hand blocking it.",
+      "winner_faults": "The plaque carries garbled, unreadable lettering, the floor looks tiled rather than bare metal, and the brass pointer is not clearly defined."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win"
+      }
+    },
+    "draw_tune": {
+      "result": null,
+      "challenger_record": {},
+      "new_challenger": "The judge repeatedly faults pictures where the main figure is turned away or hidden, so a general face-forward note targets the most frequent failure."
+    }
+  }
+}

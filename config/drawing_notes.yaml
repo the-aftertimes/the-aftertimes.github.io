@@ -1,8 +1,10 @@
 # Machine-edited by tune.py. Read its docstring before changing anything here.
 champion: []
-challenger: null
-why: ''
-since: ''
+challenger:
+- Main figure faces the viewer, face and hands clearly visible, never seen from behind.
+why: The judge repeatedly faults pictures where the main figure is turned away or hidden, so a general
+  face-forward note targets the most frequent failure.
+since: '2026-10-27'
 results: {}
 history:
 - decided: '2026-10-26'
