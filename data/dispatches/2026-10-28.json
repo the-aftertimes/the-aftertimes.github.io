@@ -1,0 +1,194 @@
+{
+  "run_date": "2026-10-28",
+  "run_time": "2026-10-27T18:00:51.094748+00:00",
+  "dispatch": {
+    "headline": "Ship-Sickness Dies, Patients Told Not To Worry",
+    "body": "Ship-sickness, the diagnosis given to every patient on the colony since landfall, was retired on Thursday at the Lowmarket Clinic, aged 131. It was 4,212,806 cases old.\n\nIt began in the first week, when the ship's intake forms offered one box. Dr Kerstin Halloran, who kept the first ledger, ticked it for a broken wrist. Her successors ticked it for fevers, childbirth, a bad oyster and one fall from a roof. Nobody objected. The box was already printed.\n\nThe diagnosis outlived the ship, which was broken up for roofing in 2061. It survived three attempts at reform, each abandoned when the clinic discovered it had no other box.\n\nIts replacement, a list of 340 conditions, went live at the counter on Monday. On Wednesday, Gaukhar Dabrowski, 44, arrived with a cough, sore joints and bleeding gums, after two years in cold storage on a surveyor's transport. He asked for ship-sickness.\n\nThe desk clerk told him there was no such thing and that he must have misread the form. He was sent home with a leaflet on oyster care.\n\n\"We looked for him everywhere,\" said Nkechi Madsen, clinic registrar. \"Three hundred and forty boxes, and he fit none of them. Frankly, it was easier to believe he was a typing mistake.\"\n\nMr Dabrowski is recovering. The clinic has ticked him as a typing mistake.",
+    "scene": "A pale man in a surveyor's grey jacket stands at a clinic counter coughing into his sleeve while a clerk behind a glass screen slides a leaflet toward him.",
+    "dateline": {
+      "place": "Lowmarket Clinic",
+      "year": 2159,
+      "month": 12,
+      "day": 17,
+      "years_from_now": 133
+    },
+    "domain": "health",
+    "glossary": [],
+    "premise": "Doctors on the colony retire the ceremonial 'ship-sickness' diagnosis, given to every ill person since landfall because the ship's forms had only that box, and the planet's first genuine case of ship-sickness is turned away from the clinic as a clerical error.",
+    "brief": null,
+    "image": "assets/img/2026-10-28.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-27T18:00:51.094748+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 93,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.92,
+      0.92,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "225 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "229 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "222 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "216 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: \"asked for the founders' signatures, which do not exist, and\"",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Last Hand-Washing Inspector Laid To Rest",
+        "body": "Anouk Thorvaldsen, the colony's last hand-washing inspector, was buried on Saturday after a state funeral at which every serving clinician washed for the full thirty seconds. She was 84.\n\nThorvaldsen held the post for fifty-one years. It was created under the Landfall Contamination Protocol, written aboard ship for a pathogen the founders feared was waiting on the surface. None was found. The protocol was kept.\n\nShe worked from a stool beside the sinks at Draganov General, with a timer and a lamp that showed soap left under the nails. In her career she failed eleven surgeons, one visiting minister and, in her third year, herself.\n\nAino Draganov, the hospital's chief of surgery, spoke at the service. \"She never once told us why,\" she said. \"She said the protocol did not specify. We found that reassuring.\"\n\nThe Health Board confirmed that no rinse on record has ever removed a pathogen from this planet, since none has been detected in 133 years of sampling. Infection rates in the colony are among the lowest of any settled world.\n\nTobiah Mwangi, a ward nurse, said the mourners queued at the chapel basins for twenty minutes. \"Nobody wanted to be the first to stop at twenty-nine.\"\n\nThe post will not be refilled. Basin lamps remain on a rota, and the timer is in the family's keeping. Staff now count aloud.",
+        "premise": "The colony's last remaining hand-washing inspector, employed to enforce a contamination protocol written for a pathogen that never existed on this planet, is mourned at a state funeral attended by every clinician, all of whom washed for the full thirty seconds.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Ship-Sickness Dies, Weeks Before Catching It",
+        "body": "Ship-sickness, the diagnosis given to every patient on the colony since landfall, was retired on Thursday at the Lowmarket Clinic, aged 131. It was 4,212,806 cases old.\n\nIt began in the first week, when the ship's intake forms offered one box. Dr Kerstin Halloran, who kept the first ledger, ticked it for a broken wrist. Her successors ticked it for fevers, childbirth, a bad oyster and one fall from a roof. Nobody objected. The box was already printed.\n\nThe diagnosis outlived the ship, which was broken up for roofing in 2061. It outlived the forms, which were reprinted from the same file every year. It survived three attempts at reform, each abandoned when the clinic discovered it had no other box.\n\nIts replacement, a list of 340 conditions, went live at the Lowmarket counter on Monday. On Wednesday, Gaukhar Dabrowski, 44, arrived with the cough, joint pain and gum bleeding of a man who had spent two years in cold storage on a surveyor's transport. He asked for treatment for ship-sickness.\n\nThe desk clerk told him the term had been withdrawn and that he must have misread the form. He was sent home with a leaflet on oyster care.\n\n\"We had no record of such a thing,\" said Nkechi Madsen, clinic registrar. \"It looked like a clerical error.\"\n\nMr Dabrowski is recovering. He is not listed as a patient.",
+        "premise": "Doctors on the colony retire the ceremonial 'ship-sickness' diagnosis, given to every ill person since landfall because the ship's forms had only that box, and the planet's first genuine case of ship-sickness is turned away from the clinic as a clerical error.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Colony's Leech Consultation Ends, Nobody Sure Why",
+        "body": "The leech-based triage system of Pellam Landing, which served the colony for 131 years without once being asked to justify itself, was retired on Thursday at the Orchard Street clinic. It was 131.\n\nIt arrived in the first cargo manifest, entered as a joke by a logistics clerk whose name the archive lists only as \"M.\" The clerk packed 40 leeches and a card reading \"for morale.\" No one has found the card.\n\nBy the third generation the leeches were forearm length and formally consulted before every diagnosis. Patients waited while a leech was placed beside the bed. A nurse then wrote down what it did.\n\nMaile Mazur, the clinic's senior triage nurse, kept the ledger for 22 years. \"It never once agreed with the scanner,\" she said. \"We took that to mean the scanner needed checking.\"\n\nThe turn came in March, when Ksenia Mirzoyan, a records clerk, tried to find the order creating the practice. There was none. Nor was there an order to continue it. Every clinic head had assumed the previous one was waiting for the colony council to say stop.\n\nThe council had assumed the clinics were.\n\nThe leeches have been moved to the reed pond behind the clinic. Mazur visits daily. Last week, one of them lay on the bank facing her, and she wrote it down.",
+        "premise": "Colonists refuse to retire the leech-based triage system brought as a joke in the first cargo manifest, and the planet's 4,000 ceremonial leeches, now the size of forearms, are formally consulted before every diagnosis because nobody remembers who was supposed to stop.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Surgeons' Ghost Signs Off On Last Patient",
+        "body": "Nadia Achterberg, the last of the three dead patients to be cut open with the founders' blessing, was buried on Friday in the Eastern Cut after a forty-minute consultation. The ship-AI Dr Marrow, which holds the voices of the colony's first surgeons, approved her operation in the fourth minute. It spent the rest of the time on her hat.\n\nThe founders died ninety years ago. Their consultations remain binding. No patient at Tern Harbour General has been opened without them since landfall, and the hospital has never found a way to ask them to stop.\n\nKaveh Oyelaran, the hospital's duty registrar, said the consultation was routine. \"Mrs Achterberg was dead when she came in, as were the previous two. The founders did not think that changed anything. They asked whether she had eaten.\"\n\nShe had not. The operation, a valve repair she had needed in life, went ahead after a pause.\n\nThe Landing's five thousand residents learn the consultation as children. The founders ask about allergies, stairs, pets and who will do the cooking. Olumide Akhmetov, who waited eleven weeks for a knee, called it \"thorough, mostly.\"\n\nThe valve was repaired. Mrs Achterberg's family asked for the founders' signatures, which do not exist, and received a certificate reading \"Agreed, with reservations.\" It hangs in her hallway.",
+        "premise": "A colony hospital's founding-generation surgeons, dead 90 years, still hold binding pre-op consultations through a preserved ship-AI, and no patient on the planet has been cut open without its sign-off since landfall, including the three who were by then dead.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its headline lands the joke, the 'box already printed' detail satirises bureaucratic inertia, and the kicker, 'He is not listed as a patient,' turns the bureaucracy's denial of a real patient into a sharp final sting.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        8.0,
+        5.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Body ran 229 words against a 170-215 target, and the headline described the premise instead of landing a joke. The quote was bland, the ending only restated the premise, and the 'oyster care' leaflet was a muddled callback.",
+    "prose": {
+      "words": 223,
+      "sentences": 19,
+      "mean_sentence": 11.7,
+      "longest": 24,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.3
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        23.6,
+        28.2
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 puts the men in hard hats, shows no glass-screen clerk sliding a leaflet, and has the grey-jacketed man standing aside with his hand at his chin rather than coughing at the counter.",
+      "winner_faults": "The signs carry garbled, unreadable lettering, the man's hand is at his mouth rather than clearly coughing into a sleeve, and figures at the left and right edges are cut off."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-28": "loss"
+      }
+    }
+  }
+}
