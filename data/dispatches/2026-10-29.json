@@ -1,0 +1,204 @@
+{
+  "run_date": "2026-10-29",
+  "run_time": "2026-10-28T18:00:46.435468+00:00",
+  "dispatch": {
+    "headline": "Mayor's Emergency Covers Only Sandwiches",
+    "body": "Mayor Milos Pellegrini declared a state of emergency on Saturday, covering the parade committee's catering and nothing else. The Founders' Day march had been rerouted after the Third Haul Tunnel collapsed. The committee declined to cancel it. Instead, 1,400 marchers walked a looped service corridor beneath Ring Market for nine hours, passing the same pressure door 212 times.\n\nThe order releases 600 kilos of reserve protein, two bakery ovens and the night shift of the Deep Kitchen to the committee. Nothing else in the town is covered. The tunnel remains closed, and the ore trams still run on the old schedule.\n\nPellegrini has marshalled the parade for 41 years. He walked the whole loop in the front rank, then signed the order at the pressure door on lap 190, using the door as a desk.\n\n\"A parade is a route,\" said committee chair Nadia Tamatea. \"We kept the route. It is merely shorter and comes back. Frankly, that is how most of our routes work.\"\n\nHedda Obradovic, 83, who has watched the march from the same bench in the main gallery since childhood, said the loop never reached the gallery.\n\n\"I waited four hours,\" she said. \"They went past me once, at the start. Then they went past a wall.\"\n\nThe sandwiches were served on lap 100. Obradovic did not get one. She was told the emergency did not extend to spectators.",
+    "scene": "Mayor Milos Pellegrini, in a sash and marshal's cap, signs a document against a pressure door in a bare curved service corridor while a few marchers with banners shuffle past him in a line.",
+    "dateline": {
+      "place": "Ring Market",
+      "year": 2242,
+      "month": 3,
+      "day": 19,
+      "years_from_now": 216
+    },
+    "domain": "civic parade and emergency catering in an underground mining town",
+    "glossary": [
+      {
+        "term": "pressure door",
+        "gloss": "a heavy sealed door in an underground corridor that keeps air and rockfall out of one section from the next"
+      },
+      {
+        "term": "Deep Kitchen",
+        "gloss": "the town's big underground kitchen that feeds the shift workers"
+      }
+    ],
+    "premise": "After the town's treasured Founders' Day parade is rerouted around a collapsed tunnel, the parade committee refuses to cancel and instead stages the march in a looped corridor for nine hours, and the mayor, a lifelong parade marshal, declares an emergency only for the committee's catering.",
+    "brief": null,
+    "image": "assets/img/2026-10-29.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-28T18:00:46.435468+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 94,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.92,
+      0.84,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "217 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: 'Under the old charter the post was ceremonial.'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'two board meetings a year, carry a spool, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'pit one district against another, with no wagering, and'",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Households Now Rig Raffle To Lose",
+        "body": "Ahanu Pellegrini has spent three weeks teaching his household to lose the Lantern Raffle. Pellam Deep's young families are doing the same, and the town's dead-letter box for Warden nominations now holds eleven hundred slips marked 'not us'.\n\nThe Festival Warden is drawn from the nominees on the first night of the harvest lanterns and holds office until the last firework burns out, roughly four hours. In that time the Warden controls air rationing, corridor locks and the ferry queue. Under the old charter the post was ceremonial. It has since collected eleven powers.\n\nLast year's Warden, a baker, shut Corridor Nine to sell lantern cake in it. Nobody can reopen a corridor until the next Warden is drawn.\n\nPellegrini, who keeps goats, says the aim is modest. 'I put in my aunt. She is ninety-one and hates fireworks. If she wins, she goes to bed.'\n\nOlder residents are not impressed. Ilse Sekibo, who served as Warden in 2209 and cut the air to the lower docks by a fifth 'to see what would happen', calls the trend cowardly. 'We took turns. You did your four hours and you were sorry for a year.'\n\nThe town clerk, Lachlan Mirzoyan, confirms the raffle is now won mostly by people who forgot to enter. This year's draw is Friday.",
+        "premise": "A freeport town's harvest-lantern holiday requires each household to nominate a 'Festival Warden', and the post has accrued so many powers over air rationing and corridor access that the town now effectively has a sovereign who is chosen by a raffle and serves for one evening of fireworks.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Council Applies For Junior Kite Membership",
+        "body": "Pita Grabowska, the town's mayor, handed in a junior membership form to the Low Gee Kite Club on Thursday, along with a deposit of nine hundred credits and a photograph of the council chamber.\n\nThe club's board, elected each spring by whoever turns up to the festival, now sets dock hours, water shares and the school calendar. It began by choosing launch days. Last year it chose the weather.\n\n\"Kites need still air,\" said board chair Astrid Tavakoli. \"The council kept running the fans.\" The fans are now off between the third and ninth bells. Bakers have moved to night shifts.\n\nJunior members may attend two board meetings a year, carry a spool, and speak when asked. Grabowska has asked to carry a spool.\n\nOlder residents are unhappy. Ebru Obradovic, 81, who sat on the council for thirty years, said the council once had real power, a seal and a vote on the air supply. \"We never stooped to this,\" she said. She then asked the reporter whether the club takes applications from retired members, and where the form was kept.\n\nThe board will rule on the council's application after the spring festival. Junior applicants must supply their own kite.",
+        "premise": "The asteroid town's beloved annual lowest-gravity kite festival elects its own governing board, which swiftly grows more powerful than the municipal council, and the council responds by applying to join the kite club as a junior member.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Voters Leave Before Votes Are Counted",
+        "body": "Itzel Akhmetov, a hauler driver, was home with her boots off by the second quarter of the count at Karhu Deep, which she says is normal. The freeport, hollowed out of a rock the size of a small harbour, held its quadrennial election on Saturday. Ninety-nine percent of eligible voters attended the pre-match parade. Twelve percent stayed for the counting.\n\nThe parade ran four hours and included the outgoing harbour master on a float shaped like a drill head. Two commentators called the tally from a booth above the ballot floor. Friendly brackets pit one district against another, with no wagering, and points go to the district that finishes counting first. The halftime show featured the Deep Choir and a ballot-box relay.\n\nLaleh Lukasiewicz, 71, has not missed a count in fifty years. She stayed to the end, alone in a row of 400 seats. \"We used to wait up for the numbers,\" she said. \"Now they send us a summary in the morning, and nobody opens it.\"\n\nThe summary showed Astrid Szabo winning the harbour master's chair by 212 votes. Szabo, who was at the parade, said she learned of it from a neighbour.\n\n\"I thought we were still in the second quarter,\" she said.",
+        "premise": "Miners in a hollowed-out asteroid freeport hold their quadrennial election as a spectator sport, complete with commentators, betting-free 'friendly' brackets and a halftime show, and voter turnout hits 99 percent for the pre-match parade while only 12 percent stay for the actual counting.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Mayor Declares Emergency For Sandwiches Only",
+        "body": "Mayor Milos Pellegrini declared a state of emergency on Saturday, covering the parade committee's catering and nothing else. The Founders' Day march had been rerouted after the Third Haul Tunnel collapsed. The committee declined to cancel it. Instead, 1,400 marchers walked a looped service corridor beneath Ring Market for nine hours, passing the same pressure door 212 times.\n\nThe emergency order releases 600 kilos of reserve protein, two bakery ovens and the night shift of the Deep Kitchen to the committee. Nothing else in the town is covered. The tunnel remains closed, and the ore trams still run on the old schedule.\n\nPellegrini has marshalled the parade for 41 years. He walked the whole loop in the front rank, then signed the order at the pressure door, on lap 190.\n\n\"A parade is a route,\" said committee chair Nadia Tamatea. \"We kept the route. It is merely shorter and comes back.\"\n\nOlder residents objected. Hedda Obradovic, 83, who watched the march from the same bench in the main gallery since childhood, said the loop never reached the gallery.\n\n\"I waited four hours,\" she said. \"They went past me once, at the start. Then they went past a wall.\"\n\nThe catering was served on lap 100. It was a good sandwich.",
+        "premise": "After the town's treasured Founders' Day parade is rerouted around a collapsed tunnel, the parade committee refuses to cancel and instead stages the march in a looped corridor for nine hours, and the mayor, a lifelong parade marshal, declares an emergency only for the committee's catering.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The headline lands a real joke on bureaucratic priorities, the 'route that comes back' line and the mayor signing on lap 190 are deadpan, and 'It was a good sandwich' is a solid kicker, though the piece is only a moderately strong satire.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "challenger",
+      "champion",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        2.0,
+        4.0,
+        5.0
+      ],
+      "rankings": [
+        [
+          3,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 3,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "Headline merely restates the premise and the quotes are polite rather than funny. Logic slips: Obradovic waits four hours yet the march runs nine, the loop passing 212 times conflicts with lap 190 and lap 100 sequencing, and 'Mayor declared' vs 'marshalled 41 years' is unexplained.",
+    "revise_judge_reason": "The ending about spectators being excluded from the emergency is a sharper, more pointed kicker than Draft 1's 'good sandwich', though 'Frankly, that is how most of our routes work' over-explains and both openings state the whole conceit up front.",
+    "prose": {
+      "words": 232,
+      "sentences": 20,
+      "mean_sentence": 11.6,
+      "longest": 26,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 4,
+      "rare_rate": 1.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        19.4,
+        22.2
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 shows its central figure in a fur-trimmed hat checking a phone rather than signing a document, with no sash or marshal's cap, and it is cluttered with lettering and a towel that the brief's bare corridor doesn't call for.",
+      "winner_faults": "The garbled wall lettering ('MORE FRIN. 5I0R', 'HUTE 1916') and the sparse, barely-marching procession with only one banner-bearer don't match the brief's line of marchers."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss"
+      }
+    }
+  }
+}

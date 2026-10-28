@@ -7,6 +7,7 @@ why: The judge repeatedly faults pictures where the main figure is turned away o
 since: '2026-10-27'
 results:
   '2026-10-28': loss
+  '2026-10-29': loss
 history:
 - decided: '2026-10-26'
   verdict: retired
