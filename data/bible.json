@@ -371,6 +371,18 @@
       "gloss": "An iron plate set against a tunnel wall and struck with a hammer to send a resonant pulse through the rock.",
       "kind": "term",
       "first_seen": "2026-10-11"
+    },
+    {
+      "term": "pressure door",
+      "gloss": "a heavy sealed door in an underground corridor that keeps air and rockfall out of one section from the next",
+      "kind": "term",
+      "first_seen": "2026-10-29"
+    },
+    {
+      "term": "Deep Kitchen",
+      "gloss": "the town's big underground kitchen that feeds the shift workers",
+      "kind": "term",
+      "first_seen": "2026-10-29"
     }
   ]
 }

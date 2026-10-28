@@ -966,5 +966,16 @@
     "place_kind": "exoplanet",
     "engine": "obsolescence",
     "technique": "local_granularity"
+  },
+  {
+    "run_date": "2026-10-29",
+    "year": 2242,
+    "era_bucket": 4,
+    "domain": "governance and elections",
+    "headline": "Mayor's Emergency Covers Only Sandwiches",
+    "style": "trend",
+    "place_kind": "asteroid",
+    "engine": "leisure",
+    "technique": "escalating_precision"
   }
 ]
