@@ -977,5 +977,16 @@
     "place_kind": "asteroid",
     "engine": "leisure",
     "technique": "escalating_precision"
+  },
+  {
+    "run_date": "2026-10-30",
+    "year": 2205,
+    "era_bucket": 3,
+    "domain": "crime",
+    "headline": "Kidnap Victim Overpays Own Ransom",
+    "style": "feature",
+    "place_kind": "marsform",
+    "engine": "etiquette",
+    "technique": "commit_past_reason"
   }
 ]

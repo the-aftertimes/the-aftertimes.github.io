@@ -1,0 +1,200 @@
+{
+  "run_date": "2026-10-30",
+  "run_time": "2026-10-29T18:00:45.766588+00:00",
+  "dispatch": {
+    "headline": "Kidnap Victim Overpays Own Ransom",
+    "body": "Faisal Yilmaz, a dome councillor for Ward Nine, paid his own kidnappers 120,000 credits on Thursday, ending Port Quillon's first abduction in eleven days. The kidnappers had asked for 40,000. Yilmaz, who oversees lichen allotments, called the figure \"a clerical slight\" and said his seat alone was worth more.\n\nPaora Mazur, one of the two kidnappers, said the offer left them with little room. \"He had the transfer open before we finished the speech,\" Mazur said. \"We said we couldn't take it. He said that was exactly the attitude that got us a number like that.\"\n\nIlse Szabo, the second kidnapper, had priced Yilmaz from the council's public pay scale. She said she was sorry. \"We worked it out on his ward's turnout,\" she said.\n\nYilmaz was released from the pantry of a disused grain bay. He walked home and filed no complaint. Port Quillon police said a case could not proceed without one.\n\nYilmaz has asked that the final sum be read out at the next sitting. He has also asked that the kidnappers be thanked, and seated.\n\nMazur has since been asked by two other councillors whether she is taking bookings. Both wanted to know her rates first, so they could go higher.",
+    "scene": "A councillor in a dusty dome-worker's coat stands in a cramped grain-bay pantry, thumbing a payment slate and glaring at two sheepish kidnappers in dark masks pushed up on their foreheads.",
+    "dateline": {
+      "place": "Port Quillon",
+      "year": 2205,
+      "month": 5,
+      "day": 14,
+      "years_from_now": 179
+    },
+    "domain": "politics",
+    "glossary": [],
+    "premise": "A Martian city's first-ever kidnapping ends when the victim, a minor dome councillor, is so insulted by the low ransom that he pays the difference himself, and the kidnappers are too embarrassed to refuse.",
+    "brief": null,
+    "image": "assets/img/2026-10-30.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-29T18:00:45.766588+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 95,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.92,
+      0.68,
+      1.0
+    ],
+    "violations": [
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'The Hands are now first, the Dukes second, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: coffee",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.0 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: candle, candles",
+          "severity": "minor"
+        }
+      ],
+      []
+    ],
+    "drafts": [
+      {
+        "headline": "Pickpockets Rob Rivals To Climb Gazette",
+        "body": "Suvi Sekibo, leader of the Low Gallery Hands, sat out Monday's Gazette party in a service stairwell after her gang was ranked fourth in Karrow Flats' first list of Most Distinguished Criminals. She has since robbed the three gangs above it.\n\n\"Fourth is a number you give a tram,\" said Sekibo, 41. \"Nobody frames fourth.\"\n\nThe Hands lifted the Ninth Lock Syndicate's ledger-bands on Wednesday, the Brightwater Quiet Boys' dome keys on Thursday, and the entire wardrobe of the Orchard Street Dukes by Saturday. All three gangs have confirmed the thefts, and all three have filed complaints with the Gazette instead of with Dome Watch.\n\nThe turn came Sunday. The Gazette ranks gangs by reputation score, and the score is assessed by a panel of former victims. Oona Paewai, panel chair, said being robbed by a ranked gang counts toward the robber's standing but also toward the victim's.\n\n\"Everyone went up,\" she said. \"The Hands are now first, the Dukes second, and the Syndicate third. Fourth is empty.\"\n\nSekibo has taken this badly. Orhan Brannigan, who runs a pastry stall beside the Gazette office, said she returned his till on Monday with a note.\n\nIt read: \"Please apply to be fourth.\"",
+        "premise": "A Mars dome's gang of pickpockets is reportedly devastated after being ranked only fourth in the colony's new 'Most Distinguished Criminals' gazette, and has since stolen the three gangs above it, purely to be moved up.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Embezzler Waits For Dessert, Police Wait Outside",
+        "body": "Ebru Petrosyan, the settlement's former water-ledger keeper, was arrested on Saturday night after declining to leave a dinner party before the pudding. Police had stood outside the host's door in the dust for ninety minutes. She is accused of moving 4.1 million credits out of the Almendra dome fund.\n\nOfficers reached the house at 8.40pm. Petrosyan, who had been invited to the table that afternoon, told them through the door that she would be along shortly.\n\n\"It was a seated dinner,\" she said. \"You do not stand up between the lamb and the tart. The woman who made it had been cooking since Thursday.\"\n\nThe host, Faisal Mwangi, said he offered the officers coffee at 9.55pm, when the plates were cleared. \"They were standing in dust to the knee. It seemed the least we could do.\" Four accepted. Mwangi said they asked for sugar.\n\nPetrosyan finished her tart, thanked the table and put on her suit. Sergeant Tamsin Szabo said she would not comment on the delay beyond confirming the coffee was good.\n\nThe host has since received three formal thank-you notes from the police. Petrosyan's was the longest.",
+        "premise": "Embezzler in a half-built Martian settlement is arrested after refusing, out of politeness, to leave a dinner party before dessert, while police wait outside in the dust for ninety minutes and then are offered coffee.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Burglar Sits On Forty Oxygen Candles, Awaits Introduction",
+        "body": "Orhan Lukasiewicz has spent three weeks in a one-room flat with forty stolen heirloom oxygen candles and no one to sell them to. Police confirm the theft. The underworld confirms the delay.\n\nUnder a ruling from the Low Market Table, no fence in Karsten Flats may take goods from a seller who has not been formally introduced. Lukasiewicz knows nobody who knows a fence. He has asked.\n\n\"I did it the wrong way round,\" he said. \"I robbed the house first.\"\n\nThe candles are family pieces, each hand-poured on Earth before the second wave, and sealed against damp. His flat is damp. Eleven have gone soft. He has stopped sleeping beside them.\n\nDagny Yilmaz, who fences from a laundry unit on Level Three, said she would gladly have looked at the haul. \"I'm not a monster. But he walked up to my counter cold. Where would that end? Next it's strangers selling me engine parts.\"\n\nA mutual acquaintance, Cosmin Oyelaran, has agreed to make the introduction. He is currently on a hauler to Phobos Landing and returns on the ninth. Lukasiewicz has been told not to contact him in the meantime, as it would look eager.\n\nThe owners have not reported the loss. They assumed the Table was handling it.\n\nLukasiewicz has meanwhile lit one candle. \"For the nerves,\" he said. It burned for nine hours.",
+        "premise": "Mars city's underworld bans fences from fencing stolen goods to anyone who hasn't been formally introduced, so a burglar's haul of forty heirloom oxygen candles rots in his flat for three weeks while he waits for a mutual acquaintance.",
+        "score": 0.68,
+        "rejected": false
+      },
+      {
+        "headline": "Kidnap Victim Tops Up Own Ransom",
+        "body": "Faisal Yilmaz, a dome councillor for Ward Nine, paid his own kidnappers the missing half of his ransom on Thursday, ending Port Quillon's first abduction in eleven days. The kidnappers had asked for 40,000 credits. Yilmaz, who oversees lichen allotments, called the figure \"a clerical slight\" and said his seat alone was worth more.\n\nPaora Mazur, one of the two kidnappers, said the offer left them with little room. \"He had the transfer open before we finished the speech,\" Mazur said. \"We said we couldn't take it. He said that was exactly the attitude that got us a number like that.\"\n\nIlse Szabo, the second kidnapper, had priced Yilmaz from the council's public pay scale. She said she was sorry. \"We worked it out on his ward's turnout,\" she said.\n\nYilmaz was released from the pantry of a disused grain bay. He walked home and filed no complaint. Port Quillon police said a case could not proceed without one.\n\nThe settlement is now a matter of civic record. Yilmaz has asked that the final sum, 120,000 credits, be read out at the next sitting. He has also requested the kidnappers be thanked, and seated.\n\nMazur has since been asked by two other councillors whether she is taking bookings.",
+        "premise": "A Martian city's first-ever kidnapping ends when the victim, a minor dome councillor, is so insulted by the low ransom that he pays the difference himself, and the kidnappers are too embarrassed to refuse.",
+        "score": 1.0,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its politician who haggles his own ransom upward, the kidnappers' 'exactly the attitude' exchange, and the 'thanked, and seated' and 'taking bookings' kickers satirise vanity and civic self-regard with real turns, though the opening states the whole conceit up front.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        7.0,
+        4.0,
+        3.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          2,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 3,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 1.0,
+    "critique": "Headline describes the premise and the ransom arithmetic is muddled: 40,000 asked, he 'paid the missing half', yet the final sum is 120,000. Quote sourcing is loose and the ending restates the booking joke instead of recontextualising it.",
+    "prose": {
+      "words": 205,
+      "sentences": 17,
+      "mean_sentence": 12.1,
+      "longest": 24,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        36.5,
+        29.7
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "The loser shows cone-hatted figures with a puppy beside tanks and a pressure gauge, with no dark masks and no grain-bay pantry, so it doesn't depict the kidnappers or the ransom scene.",
+      "winner_faults": "The kidnappers wear their dark masks over their faces rather than pushed up on their foreheads, and the councillor wears a long trench coat instead of a dome-worker's coat while holding paper rather than a payment slate."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win"
+      }
+    }
+  }
+}
