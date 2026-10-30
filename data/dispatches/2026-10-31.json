@@ -1,0 +1,198 @@
+{
+  "run_date": "2026-10-31",
+  "run_time": "2026-10-30T18:00:45.590785+00:00",
+  "dispatch": {
+    "headline": "Beetles Finish Memorial; Committee Claims Credit",
+    "body": "Lachlan Petrosyan, chair of the Remembrance Committee, spent Thursday standing in a cathedral he says his committee designed. The vault was meant to be a forest of glow-tube timber, one trunk for each of the 4,100 settlers lost in the Second Thaw. Beetles ate the plan.\n\nWhat do you make of the nave?\n\n\"It is better than the forest. We said so at the vote, and the vote was eleven to two.\"\n\nWhen did you notice the beetles?\n\n\"In the fourth year. The trunks were leaning together. We assumed settling. Then there were arches, and Dalia in Maintenance said arches do not occur by settling.\"\n\nDid you stop them?\n\n\"We met every week for six years to discuss stopping them. We drafted a Beetle Liaison Plan. We hung a sign. Cosmin read the sign aloud to them once, very clearly.\"\n\nThe beetles farm fungus on the vault's walls, which now glows blue and smells of bread.\n\n\"The beetles raised the roof. We raised the matter of credit. The plaque reads 'Designed by the Remembrance Committee, with the beetles.' Some wanted 'with assistance from.' We compromised.\"\n\nHas the committee visited since the vote?\n\n\"Every week. We stand where the forest was meant to be. The beetles walk over our feet. They have never once looked up.\"",
+    "scene": "A man in a grey settlement coat stands alone in a vast ribbed vaulted nave, pointing proudly upward at the arches, while small beetles crawl over his shoes and the glowing walls.",
+    "dateline": {
+      "place": "Hollow Orsk, under the Tethys ice",
+      "year": 4642,
+      "month": 6,
+      "day": 21,
+      "years_from_now": 2616
+    },
+    "domain": "art",
+    "glossary": [],
+    "premise": "The settlement's glow-tube timber vault, planned as a sacred 'forest of remembrance' sculpture, is quietly taken over by fungus-farming beetles who rebuild it as a cathedral, and the memorial committee votes to credit itself as co-designer.",
+    "variant": "champion",
+    "brief": null,
+    "image": "assets/img/2026-10-31.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-30T18:00:45.590785+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 96,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.75,
+      0.42,
+      1.0,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 8.0 words, wanted 11-20",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 8.6 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "224 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: buckets",
+          "severity": "major"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'It has measured, tagged and photographed every frond, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Beetles Finish Memorial; Committee Claims Credit",
+        "body": "Lachlan Petrosyan, chair of the Remembrance Committee, spent Thursday standing in a cathedral he says his committee designed. The vault was meant to be a forest of glow-tube timber, one trunk for each of the 4,100 settlers lost in the Second Thaw. Beetles ate the plan.\n\nWhat do you make of the nave?\n\n\"It is better than the forest. We said so at the vote, and the vote was eleven to two.\"\n\nWhen did you notice the beetles?\n\n\"In the fourth year. The trunks were leaning together. We assumed settling. Then there were arches, and Dalia in Maintenance said arches do not occur by settling.\"\n\nDid you stop them?\n\n\"We met every week for six years to discuss stopping them. We drafted a Beetle Liaison Plan. We hung a sign. Cosmin read the sign aloud to them once, very clearly.\"\n\nThe beetles farm fungus on the vault's walls, which now glows blue and smells of bread.\n\n\"The beetles raised the roof. We raised the matter of credit. The plaque reads 'Designed by the Remembrance Committee, with the beetles.' Some wanted 'with assistance from.' We compromised.\"\n\nHas the committee visited since the vote?\n\n\"Every week. We stand where the forest was meant to be. The beetles walk over our feet. They have never once looked up.\"",
+        "premise": "The settlement's glow-tube timber vault, planned as a sacred 'forest of remembrance' sculpture, is quietly taken over by fungus-farming beetles who rebuild it as a cathedral, and the memorial committee votes to credit itself as co-designer.",
+        "score": 0.75,
+        "rejected": false
+      },
+      {
+        "headline": "Mould Wins Mural; Please Stop Scrubbing It",
+        "body": "Ahanu Esposito, who has scrubbed the same stretch of Gallery Spine wall every morning for thirty-one years, was asked on Monday to stop. The wall has won the arcology's mural commission. The artist is the mould.\n\nEsposito, head of the Spine's wall-wipe crew, spoke to us between shifts.\n\n\"I was there the first day it came up grey. I've lost count of the buckets. We tried the blue foam, the hot fog, the humming lamps. It always came back wider.\"\n\nWhat changed? \"The jury came down in spring. Luana Agbaje, she chairs it, stood right where I'd just scrubbed and said it had real conviction. I'd call that stubborn.\"\n\nThe crew now works a rota to keep visitors from wiping it. Esposito's team wrote the sign. \"It says please do not clean the masterpiece. We argued over please.\"\n\nHe has not retired the foam. \"The hall's other walls are still ordinary walls. Someone has to do them. Rohan Rautio, the curator, says the mould has a feel for negative space. It has a feel for the damp, is what it has.\"\n\nWould he sign a card for it? He took a while.\n\n\"I've left it alone four days. Four days, and it has done a whole corner. Thirty-one years I was holding it back and it was only ever waiting for someone to stop.\"",
+        "premise": "A buried arcology's prestigious mural commission is won by a mould colony that, after two centuries of being scrubbed from the walls, is celebrated as an 'outsider artist' by the same residents who kept scrubbing it, and visitors are asked not to clean the masterpiece.",
+        "score": 0.42,
+        "rejected": false
+      },
+      {
+        "headline": "Fish Out-Curate Curators, Keep Job",
+        "body": "Ebru Sekibo, head curator of the Lower Gallery, has spent four months learning that the blind fish in her water features have been moving the statues. She does not mind. 'They're better at it than we were,' she said, standing beside a basalt torso that now faces its own missing arm.\n\nThe fish were installed forty years ago as living pools around the stone. Over that time they have pushed each piece, a few finger-widths a night, into an order by grain, weight and what Sekibo calls 'how the stone cools.' The settlement's critics have since named it the finest hang in the mountain's history.\n\nSekibo's staff tried to put the work back last spring. The crew spent eleven weeks lifting forty-odd pieces onto the old plan. 'We were done by the solstice,' she said. 'By the next dark cycle they had all been shoved home again. Every one. The torso was back in its corner.'\n\nThe committee has since voted to stop. Its members now meet weekly to take notes on the fish.\n\nCritic Itzel Zielinski said the new order shows 'a confidence the old curators never had.' Sekibo agreed, and asked that her name come off the 2611 catalogue.\n\n'I labelled the fish as water,' she said. 'The wall card still says water.'",
+        "premise": "The curators of a subterranean sculpture vault discover that the blind cave-fish they installed as 'living water features' have spent forty years rearranging the exhibits by shoving them into a sorted order that critics now call the finest curatorial work in the settlement.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Kelp Wins Biennale It Never Entered",
+        "body": "Yaroslav Mahlangu, curator of the Kelp Biennale for twenty-two years, has spent eleven weeks in the flooded east gallery trying to tell his own exhibits from the sea. The Biennale was cancelled on the first of the month. Its kelp installations had begun entering themselves.\n\n\"We invited forty-one artists,\" Mahlangu says. \"The kelp turned up as two hundred and six. None of it filed a statement.\"\n\nThe judging panel has met daily since. It has measured, tagged and photographed every frond, and has so far agreed that the work is better than anything human in the show. Pita Hoang, a panel member, wants the prize given to the sea.\n\n\"I raised the purse,\" says Mahlangu. \"I raised it for a person. A person can collect it.\"\n\nThe panel's second vote failed on a tie. Momin Belinskaya, who voted against, says she is not opposed to the sea. She objects to being asked to hand it a medal.\n\nMahlangu's own piece, a hanging garden of braided kelp titled Patience, was removed by divers last week. It was returned by the next morning, now longer, and signed in a hand nobody on the panel recognises.\n\n\"That's the first thing I've ever had to sign for,\" says Mahlangu.",
+        "premise": "An ocean-moon settlement's celebrated Kelp Biennale is cancelled after the kelp, entered as installations, begins entering itself, outcompeting every human exhibit and filing nothing, while judges argue about whether to award the prize to the sea.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The committee that did nothing for six years and then claimed credit, haggling over the plaque wording, is sharp institutional satire, and the deadpan quotes build to a kicker about the beetles never looking up. Draft 1 is also good, but its opening announces the whole conceit before the piece turns.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        3.0,
+        4.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.75,
+    "score_after": 0.59,
+    "critique": "Sentences averaged 8 words, so the piece read choppy; the headline described the premise without landing a joke. The kicker restated the beetles' indifference rather than turning the committee's position on its head.",
+    "prose": {
+      "words": 215,
+      "sentences": 27,
+      "mean_sentence": 8.0,
+      "longest": 24,
+      "short_sentences": 16,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.5
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        44.1,
+        45.0
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 crops a figure at the right edge and renders its hatching in a denser, smudgier grey, while its subject's pale apron-like coat fits the settlement-coat description less well.",
+      "winner_faults": "The man is not alone in the nave, since workers line both aisles, his coat reads as dark rather than grey, and the beetles sit on the floor rather than clearly crawling over his shoes and the glowing walls."
+    },
+    "tune": {
+      "variant": "champion",
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win",
+        "2026-10-31": "loss"
+      }
+    }
+  }
+}
