@@ -1,0 +1,194 @@
+{
+  "run_date": "2026-11-01",
+  "run_time": "2026-10-31T18:00:41.365044+00:00",
+  "dispatch": {
+    "headline": "Verifier Sent Where Bells Cannot Be Heard",
+    "body": "Joaquim Mbatha, a parish verifier, descended 2,000 steps and 61 kilometres of cable-ladder on Sunday to report that he had heard nothing. The bells of San Marco Alta had been rung correctly at the ninth hour, as they have been every Sunday since the tower was lifted above the cloud layer in 2391.\n\nMbatha's finding is routine. He is the 212th man to hold the post, and his report has never been otherwise.\n\nDr Dagny Bergqvist, who studies sound at the Lagoon Institute, was asked to measure what reaches the streets. She found the bells are 94 decibels at the rope and zero below the cloud deck. \"The sound is gone by the thirtieth step down,\" she said. \"Nothing is wrong with the bells. The air is simply too thin to carry them that far.\"\n\nThe parish has declined to move the verifier up the tower, where he could hear them. Ringer Momin Thorvaldsen said this would be unfair to the result. \"The man has to be down here, in the congregation, hearing nothing, like everyone else. If he stood near the bells he might hear something, and then we would have to ask how the other 211 got it wrong.\"\n\nMbatha says the descent takes eleven hours. The ringers have therefore finished and gone home before he arrives, and he files his report to an empty tower rope.\n\nThe bells were last checked by someone who could hear them in 2391, when the ringers were still up there to ask.",
+    "scene": "A weary verifier in a grey hooded oilskin stands on a wet stilted piazza at dusk with a hand cupped to his ear, looking up at a thick bank of cloud, while a few parishioners watch behind him.",
+    "dateline": {
+      "place": "San Marco Alta",
+      "year": 2580,
+      "month": 6,
+      "day": 27,
+      "years_from_now": 554
+    },
+    "domain": "church",
+    "glossary": [],
+    "premise": "Venice-on-Stilts bell-ringers climb 2,000 steps to ring a tower that has since been lifted above the cloud layer; the bells are inaudible below, but the parish insists on authentic ringing and sends down a man every Sunday to confirm it was heard.",
+    "brief": null,
+    "image": "assets/img/2026-11-01.jpg"
+  },
+  "meta": {
+    "run_time": "2026-10-31T18:00:41.365044+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 97,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      1.0,
+      0.92,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'People came in, sweated, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "227 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Sea Rises; Worshippers Kept Damp",
+        "body": "Four hundred volunteers carrying sponges walked onto the shared prayer platform at Zuidwater Drift on Sunday and began removing the dry. The tide has risen a hand's width since spring, and the platform's mosque, church and synagogue now stand on boards that stay clear of the water at all hours.\n\nThe Nine Faiths Committee ordered the work. Its aim is to keep the congregation's feet wet, as they were for the first three centuries of the platform.\n\nKalani Akhmetov, who sits for the Committee's tide-office, said the sponges are made from kelp-foam grown on the platform's own underside. \"Each volunteer lifts about forty litres of dry an hour,\" she said. \"Dry is the hardest part. We pour the sea back over the boards by hand.\"\n\nThe Committee's survey found that Momin Mahlangu, a worshipper of fifty years' standing, could not name a single prayer he had said with dry feet. He said he had no wish to learn one.\n\nPriit Jaramillo, the platform's structural surveyor, reported that the boards are rotting from the extra wetting. The Committee has asked him to measure the rot in a way that leaves the wetting in place.\n\nThe sea is expected to rise another hand by 2590.",
+        "premise": "A floating Amsterdam mosque, church and synagogue share a single tidal prayer platform, and after the sea level rises by a hand's width a nine-faith committee dispatches 400 volunteers with sponges to preserve the 'original wet-footed experience' of the congregation.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Bells Rung Daily; Nobody Hears Them",
+        "body": "Joaquim Mbatha, a parish verifier, descended 2,000 steps and 61 kilometres of cable-ladder on Sunday to report that he had heard nothing. The bells of San Marco Alta had been rung correctly at the ninth hour, as they have been every Sunday since the tower was lifted above the cloud layer in 2391.\n\nMbatha's finding is routine. He is the 212th man to hold the post, and the report has never been otherwise.\n\nDr Dagny Bergqvist, who studies sound at the Lagoon Institute, was asked to measure what reaches the streets. She found that the bells are 94 decibels at the rope and zero below the cloud deck. \"The sound is gone by the thirtieth step down,\" she said. \"Nothing is wrong with the bells. The air is simply too thin to carry them that far.\"\n\nThe parish has declined to move the verifier up the tower, where he could hear them. Ringer Momin Thorvaldsen said this would be unreliable. \"The man has to be down here, in the congregation, hearing nothing, like everyone else. Otherwise how would we know it was done properly?\"\n\nBergqvist's data also show that the verifier's descent takes eleven hours. The ringers have therefore finished and gone home before he arrives.\n\nNobody has checked the bells since 2391.",
+        "premise": "Venice-on-Stilts bell-ringers climb 2,000 steps to ring a tower that has since been lifted above the cloud layer; the bells are inaudible below, but the parish insists on authentic ringing and sends down a man every Sunday to confirm it was heard.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Basilica's Ice Delivery Makes Pews Suffer Properly",
+        "body": "A drone crew hauled the first full ton of ice to the roof of the Reef Basilica on Sunday, eight years after the congregation voted to remove its cooling. The ice melts above the nave through a grid of drip-vents. It does not cool the pews. It makes them damp.\n\nThe Basilica banned air conditioning as unscriptural in 2572. Olumide Tavakoli, the Basilica's Keeper of Conditions, said the ice was the only approved alternative.\n\n\"Heat alone was not enough. People came in, sweated, and left feeling fine. Now the water comes down on the back of the neck at about the pace of a regret.\"\n\nA study by Momin Jaramillo, a climate researcher at the Shoals Institute, found that a ton of ice melting in a sealed nave raises humidity by 40 percent within the hour. Jaramillo explained it plainly. \"You are putting a ton of water into the air and the air has nowhere to send it.\"\n\nHe also found that the nave now holds more water than the congregation does, and that the vents drain into the reef below. The reef has been dying since 2410. Nobody on the Basilica council has asked how much of it is left.\n\nAttendance is up a third.",
+        "premise": "Rebuilt Miami's Reef Basilica bans air conditioning as 'unscriptural', then spends eight years engineering a rooftop ice-delivery system by drone, in which a ton of ice melts to produce a pleasing atmosphere of suffering in the pews.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Pilgrims Arrive Just In Time For Next Monsoon",
+        "body": "Tobiah Akhmetov, a retired bridge-warden from the Dharavi footings, reached the start of the Monsoon Walk on Saturday after nine years in the queue and was told the rains had begun. He was in the wrong season. His place was correct.\n\nThe walk requires three million worshippers to cross the Sevenfold Stilt Bridge in the dry order of their ancestors, each behind the person their forebear stood behind. Engineers coiled the waiting line into a spiral 900 kilometres long, laid on pylons above the old flood plain. Pilgrims now enter at the rim and shuffle inward for roughly nine years.\n\nDr Maile Zielinski, who studies the spiral for the Heights Pilgrim Board, says the finding is simple. \"The walk takes eleven days. The queue takes nine years. So most pilgrims are queuing for the monsoon after the one they signed up for.\"\n\nShe said the board had considered skipping ahead and decided against it, because the order is the order.\n\nThe unsettling part, she added, is the births. Children born in the spiral inherit a place behind their parent, so the line lengthens faster than it moves. \"At the current rate, the final pilgrims never reach the bridge,\" she said. \"Their descendants will, in theory.\"\n\nAkhmetov said he was not worried. \"My grandfather's cousin is just ahead of me,\" he said. \"He's had a cold since 2571.\"",
+        "premise": "Elevated Mumbai's monsoon-season pilgrimage requires three million worshippers to walk the same stilted bridge in the dry order of their ancestors, forcing engineers to build a 900-kilometre queue-spiral that pilgrims now reach just in time for the next monsoon.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The verification-theatre satire is pointed, the ringer's 'how would we know it was done properly?' treats the absurdity as normal, and the 'nobody has checked since 2391' kicker lands, though the opening restates the conceit before the 11-hour descent gives it a turn.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        5.0,
+        4.0,
+        3.0,
+        6.0
+      ],
+      "rankings": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          1,
+          2,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The headline described the premise and the closing line only restated it. The logic also slipped: Bergqvist's data cannot show the descent time of a man who is the subject of the piece, and Thorvaldsen's 'unreliable' reasoning was flat. Final line needed a twist rather than a repeat.",
+    "revise_judge_reason": "The 'how the other 211 got it wrong' quote and the report filed to an empty tower rope satirise institutional self-protection more sharply than Draft 1, though its closing line restates the point and is weaker than Draft 1's clean kicker.",
+    "prose": {
+      "words": 251,
+      "sentences": 16,
+      "mean_sentence": 15.7,
+      "longest": 31,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 2.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        39.0,
+        32.0
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 shows no hand cupped to an ear and no figure looking up at the cloud; its hooded man looks sideways, so it misses the defining action of the headline scene.",
+      "winner_faults": "The raised hand reads more as a palm against the head than a cupped ear, the coat looks light rather than grey oilskin, the cloud is a rounded plume rather than a thick bank, and a tripod and bucket add clutter."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win",
+        "2026-10-31": "loss",
+        "2026-11-01": "win"
+      }
+    }
+  }
+}
