@@ -1,0 +1,199 @@
+{
+  "run_date": "2026-11-02",
+  "run_time": "2026-11-01T18:00:45.048991+00:00",
+  "dispatch": {
+    "headline": "Runner-Up Survives Cup, Wall Unimpressed",
+    "body": "Rasa Takahara ran second in the Crater Cup and is alive, which the league would like noted. Her name is not on the wall.\n\nThe four names that are there belong to the last four runners-up. The wall stands behind the Cup hall's pie counter. It has no plaque and no date, and the staff will not discuss it.\n\nLeague officials confirmed Thursday that 'sudden death' overtime has been run as a literal clause since the rulebook was carried over from the old Earth text three centuries ago. The translator rendered a figure of speech as a procedure. Nobody checked it.\n\nRohan Lukasiewicz, who keeps the league's rules, agreed to speak after two refusals. 'The clause says the tied side dies suddenly,' he said. 'It does not say who. We have always used the runner-up, because they are present.'\n\nAsked why no one raised it, he said the Cup's last three finals were not close. 'People assumed the wall was for sponsors.'\n\nKaveh Oyelaran, league spokesman, denied the account. 'No runner-up has been harmed,' he said. Asked about the wall, he said it was 'a feature of the building.'\n\nTakahara was not available for comment Thursday. Her staff said she was at the hall, early, checking where the pie counter keeps its chairs, and had asked to be seated facing the door. The tie-break rota for Saturday's final is already printed, and the league confirmed that it lists the pie counter as the finish line.",
+    "scene": "Rasa Takahara, an athlete in a pale pressure-skin racing suit, stands stiffly before a blank memorial wall in a domed hall, four small name-lights glowing above her, while a pie-counter attendant looks away.",
+    "dateline": {
+      "place": "Crater Cup hall",
+      "year": 4605,
+      "month": 2,
+      "day": 9,
+      "years_from_now": 2579
+    },
+    "domain": "sport",
+    "glossary": [],
+    "premise": "Lunar league officials admit that 'sudden death' overtime has been run as a literal clause for 300 years, after a mistranslated rulebook turned a figure of speech into a procedure, and the Crater Cup's last four runners-up are on a memorial wall nobody will explain.",
+    "brief": null,
+    "image": "assets/img/2026-11-02.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-01T18:00:45.048991+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 98,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.84,
+      1.0,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'second in the Crater Cup, is alive and fit, and'",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 9 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.8 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Top Players Must Lose Once To Stay Pros",
+        "body": "Ebru Oyelaran, the highest-paid vaulter in the Far-Side Games, lost to a nine-year-old on a rented pad here on Saturday, and the league has quietly stopped counting the child's age.\n\nThe Games define an amateur as an athlete who is not very good. Professionals must lose at least one match a year to stay on the register. Oyelaran had four days left.\n\nRecords obtained by The Aftertimes show that 41 of the league's 50 top earners lost their required match in the last week of the season. Sixty percent of those lost to the same three opponents, all paid by the league's Eligibility Office.\n\nLaleh Arriaga, who runs the office, agreed to speak only in a corridor. \"Nobody is paid to lose,\" she said. \"They are paid to be available.\"\n\nA former referee, who asked not to be named, said losing is harder than it looks. \"A pro who tries to lose and wins by accident has to wait a full year. Two have cried on the pad.\"\n\nArriaga denied any arrangement. She said the opponents were chosen by lottery, and that the lottery is run by her office.\n\nOyelaran declined comment. Her coach said she had trained for the defeat since spring.",
+        "premise": "The Far-Side Games' 'amateur' category, once meaning 'one who loves the sport', now means 'one who is not very good', so the league's best-paid athletes are legally required to lose at least one match a year to stay eligible.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Crater Cup Admits Death Was Not Sudden Enough",
+        "body": "Rasa Takahara, who ran second in the Crater Cup, is alive and fit, and the league would like that noted. Her name is not on the wall.\n\nThe four names that are there belong to the last four runners-up. The wall stands behind the Cup hall's pie counter. It has no plaque and no date, and the staff will not discuss it.\n\nLeague officials confirmed Thursday that 'sudden death' overtime has been run as a literal clause since the rulebook was carried over from the old Earth text three centuries ago. The translator rendered a figure of speech as a procedure. Nobody checked it.\n\nRohan Lukasiewicz, who keeps the league's rules, agreed to speak after two refusals. 'The clause says the tied side dies suddenly,' he said. 'It does not say who. We have always used the runner-up, because they are present.'\n\nAsked why no one raised it, he said the Cup's last three finals were not close. 'People assumed the wall was for sponsors.'\n\nKaveh Oyelaran, league spokesman, denied the account. 'No runner-up has been harmed,' he said. Asked about the wall, he said it was 'a feature of the building.'\n\nThe league will hold a review. The next final is Saturday, and the tie-break rota is already printed.",
+        "premise": "Lunar league officials admit that 'sudden death' overtime has been run as a literal clause for 300 years, after a mistranslated rulebook turned a figure of speech into a procedure, and the Crater Cup's last four runners-up are on a memorial wall nobody will explain.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Visiting Team Still Home Advantage's Guests",
+        "body": "Rohan Mwangi, a centre-back for the Ceres Drifters, has now spent two hundred and eleven days in a guest flat under Tranquility Dome after playing one away match. The league's rulebook gives the host side \"full keeping of visitors for the duration of the fixture.\" The word for fixture in the old charter also means season.\n\nMwangi is one of nineteen visiting players currently held. Dome Athletic has fielded six of them. Rasa Belinskaya, the club's housing officer, said the guests are \"fed, rotated and given a window.\"\n\nA source inside the league office, who asked not to be named because she still has a flat in the dome, produced the charter. She would not read the clause aloud. \"It was always a courtesy,\" she said. \"Nobody ever stayed.\"\n\nMwangi's club has been told he is \"extended.\" The league uses that word on every form. Visitors may leave when the host side judges the fixture concluded, which Dome Athletic has not.\n\nAnouk Marangoni, Dome Athletic's coach, denied any wrongdoing. \"We are very proud of our hospitality,\" she said. \"He is welcome to go home whenever he likes. We would simply ask him to wait for the return leg.\"\n\nThe return leg is scheduled in Ceres. Dome Athletic has not booked travel.",
+        "premise": "Tranquility Dome's 'home advantage' rule, drafted in a language that no longer distinguishes 'home' from 'hostage', has quietly let the host team keep visiting players for entire seasons, and the league calls the visitors 'extended guests'.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Colony's Fair Play Cup Goes To Dirtiest Team Again",
+        "body": "Lowri Grabowska, who has coached the Kaszuby Crater Ramblers for nineteen years, accepted the Copernicus Fair Play Cup on Saturday for committing 212 fouls in a single season. Her side broke a record she also holds.\n\nThe Aftertimes has reviewed the committee's ledgers back to 4102. Every winner ranks first in fouls. None ranks higher than ninth in sportsmanship, a category the committee does not score.\n\nOlumide Quisbert, who sat on the committee for thirty years, agreed to speak if we left out his dome district. \"The charter says the cup goes to the fairest side,\" he said. \"Fair means plentiful. Nobody has ever been confused about that.\"\n\nA 4390 minute records a junior member asking whether the word had once meant something else. The minute records the question and the committee's reply, which was to move on to the catering.\n\nThe Ramblers' trophy shelf holds eleven cups. Players say they train for the award. One defender broke a referee's visor in the spring and was thanked in the victory speech.\n\nTobiah Esposito, committee chair, denied any concealment. \"Our records are open. Our winners are plentiful. We will not insult a tradition this sincere by checking it.\"\n\nThe Under-Tens league introduced a yellow card for politeness in 4580. Parents have asked that it be kept.",
+        "premise": "Records show the Copernicus Colony's beloved 'fair play award' has gone every year since 4102 to the team with the most fouls, after the word 'fair' drifted to mean 'plentiful', and the committee refuses to correct a tradition this sincere.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The opening turn (alive and fit, but her name isn't on the wall) lands the joke fast, and 'People assumed the wall was for sponsors' is a sharp dig at institutional inertia, though the translator explanation is a little over-explained.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "challenger",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        8.0,
+        3.0,
+        7.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.92,
+    "critique": "Headline ran eight words and explained the premise instead of landing a joke; the opening line stacked three items in a comma list. The kicker restated the review and the rota instead of turning the story over, and the funniest quote undersold the clause.",
+    "prose": {
+      "words": 245,
+      "sentences": 20,
+      "mean_sentence": 12.2,
+      "longest": 29,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.2
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        23.1,
+        18.7
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "The loser shows no athlete in a pressure-skin suit; it puts a name, Rasa Takahara, on a wall where she should be standing, and its main figures are a hard-hatted man and an apron-wearing worker.",
+      "winner_faults": "The dome band and the plaque at the base carry garbled, unreadable lettering, and the suit reads more like a plain bodysuit than a racing pressure-skin."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win",
+        "2026-10-31": "loss",
+        "2026-11-01": "win",
+        "2026-11-02": "win"
+      }
+    }
+  }
+}
