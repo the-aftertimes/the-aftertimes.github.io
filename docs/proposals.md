@@ -9,7 +9,6 @@ change only when Charlie says so.
 ### Over-used lately
 
 - phrase: "on friday after" in 3 dispatches
-- name: "Chen" in 3 dispatches
 - place_formula: "<place> Ring" in 3 dispatches
 
 ### Suggested next step

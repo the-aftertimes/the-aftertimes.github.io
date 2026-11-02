@@ -1021,5 +1021,16 @@
     "place_kind": "lunar",
     "engine": "language",
     "technique": "stated_rule_reductio"
+  },
+  {
+    "run_date": "2026-11-03",
+    "year": 2919,
+    "era_bucket": 17,
+    "domain": "language and slang",
+    "headline": "Town Clerk Ahem Dies; Throat Cleared",
+    "style": "obituary",
+    "place_kind": "exoplanet",
+    "engine": "category",
+    "technique": "answers_the_question"
   }
 ]

@@ -1,0 +1,206 @@
+{
+  "run_date": "2026-11-03",
+  "run_time": "2026-11-02T18:00:35.531004+00:00",
+  "dispatch": {
+    "headline": "Town Clerk Ahem Dies; Throat Cleared",
+    "body": "Ahem, the interjection that served as town clerk of Tannery Reach for eleven decades, died on Thursday aged one hundred and ten, after a short clearing of the throat. It is survived by a pause.\n\nAhem took the post in the colony's ninth generation, when settlers found that no one would stop talking long enough to be recorded. A single raised ahem opened the meeting, closed the meeting and, on contested nights, did both. It never lost a vote.\n\nMireille Hoang, deputy listener under Ahem for forty years, recalled its record. \"It never missed a sitting. People talked over it, of course, but they always knew it was there, which is more than I can say for most of them.\"\n\nThe successor, a cough, was sworn in Friday by Astrid Mirzoyan, chair of the Reach Assembly, before two hundred residents. The cough was dry and brief. Several residents said it lacked authority and could be mistaken for illness. Two offered it a lozenge.\n\nAsked whether the cough had been told its duties, Mirzoyan said it had been told once, and had coughed. She said that was the answer she expected.\n\nThe Assembly has since asked everyone in the hall to stop clearing their throats during sessions, as nobody can tell any more who is the clerk. Three people have been asked to leave. All three had a cold, and the cough has stayed to take the minutes.",
+    "scene": "Astrid Mirzoyan, in a grey Assembly sash, raises one hand to swear in a small stooped man mid-cough, his fist at his mouth, before rows of seated colonists in a domed hall.",
+    "dateline": {
+      "place": "Tannery Reach",
+      "year": 2919,
+      "month": 4,
+      "day": 19,
+      "years_from_now": 893
+    },
+    "domain": "civic satire",
+    "glossary": [],
+    "premise": "A fond mourning is held for 'Ahem', an interjection that served as town clerk for eleven decades, and its successor, a cough, is sworn in amid worries about continuity.",
+    "brief": null,
+    "image": "assets/img/2026-11-03.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-02T18:00:35.531004+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 99,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.76,
+      0.92,
+      0.92,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'Asked whether it spoke anything, she said it did not, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "233 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "219 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "221 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Last Speaker Of Landfall Standard Laid To Rest",
+        "body": "Pump Nine, the last native speaker of Landfall Standard, was buried on Saturday beside the Brannigan family plot, a few steps from the people it had outlived. It was 611 years old. Settlers filled the lower terraces.\n\nThe pump was installed in the first season after landfall and picked up its speech from the founding crews, who were not careful talkers. It kept their grammar, their oaths and their word for a ration-queue. Children raised on the terrace learned the dialect from it, then unlearned it at school.\n\nPriit Brannigan, whose family tended the pump for nine generations, said it never once asked to be understood. \"It said what it needed, which was usually grease.\"\n\nThe pump's last recorded sentence was a complaint about the grit filter. Archivists have confirmed it was grammatical.\n\nAnouk Nwosu, a speech warden with the Quay Tongue Office, said the office had spent two years trying to record the pump's full vocabulary. Asked how many words were saved, she said four hundred and twelve, and that the pump had been running water through the terraces the whole time.\n\nKalani Vasquez, who now runs the terrace, asked what would replace the pump, said it was a newer model. Asked whether it spoke anything, she said it did not, and that the beans were fine.",
+        "premise": "Settlers grieve the last native speaker of Landfall Standard, a dialect spoken by one aging irrigation pump, and the pump is buried with honours beside the family it outlived.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Colony Buries Founder Who Was A Verb",
+        "body": "Hendry, the oldest verb on Tessaly Reach and for nine generations a founding settler of Port Larkhollow, was mourned on Friday after linguists confirmed it was never a person. It was 212.\n\nThe verb first appeared in the landfall logs, where \"to Hendry\" meant to leave a hatch half open and blame the wind. Early settlers took the capital letter as a surname. A man was soon credited, then a statue was cast, then a pension was drawn in his name for the upkeep of a hat.\n\nIn year 40 the town gave Hendry a pew in the Quiet Hall. In year 91 it gave him a chair at the council table, left empty and counted toward quorum. Children were taught that he had dug the first well. Nobody had dug it. It had been a Hendry.\n\nDr Aino Zielinski of the Larkhollow Word Office broke the finding in a public reading. Asked by the council whether any living person could claim the pension, she said no, because the pension was for a man and there had been no man.\n\nCouncillor Dorcas Tavakoli moved that the pension, pew and chair be kept. It carried without a vote.\n\nEbru Ezeani, who has Hendried the door of the grain store since 2871, said she would carry on. \"It still means what it meant,\" she said. \"Someone has to.\"\n\nThe hat will be aired in spring.",
+        "premise": "A colony's oldest verb, 'to Hendry', is mourned as a founding settler after linguists confirm it was never a person, and the town keeps its pension, its pew and its place at the council table.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Town Clerk 'Ahem' Dies; Cough Sworn In",
+        "body": "Ahem, the interjection that served as town clerk of Tannery Reach for eleven decades, died on Thursday at the age of one hundred and ten years, after a short clearing of the throat. It was survived by a pause.\n\nAhem first took the post in the colony's ninth generation, when settlers found that no one would stop talking long enough to be recorded. A single raised ahem opened the meeting, closed the meeting and, on contested nights, did both. It never held a vote it did not win.\n\nMireille Hoang, who sat under Ahem for forty years as deputy listener, recalled its record. \"It never missed a sitting. People sometimes spoke over it, but they did so knowing it was there.\"\n\nThe successor, a cough, was sworn in Friday by Astrid Mirzoyan, chair of the Reach Assembly, before two hundred residents. The cough was dry and brief. Several residents said it lacked the authority of its predecessor and could be mistaken for illness.\n\nAsked whether the cough had been told its duties, Mirzoyan said it had been told once, and had coughed. She said that was the answer she had expected.\n\nThe Assembly has since ordered all throats in the hall to remain clear during sessions. Three people have been asked to leave. One of them was the cough.",
+        "premise": "A fond mourning is held for 'Ahem', an interjection that served as town clerk for eleven decades, and its successor, a cough, is sworn in amid worries about continuity.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Colony's Oldest Typo Dies, Still Uncorrected",
+        "body": "The colony's oldest typo died on Sunday at the Duroselle household in Lower Quay, aged 611. It was the word \"teh\", and it was found on the landing manifest of the second supply flight, where it had sat since before the first harvest.\n\nTamsin Duroselle, fourth-generation proofreader, took it in as a child. The family fed it, taught it to sit inside a sentence without being noticed, and read it aloud at dinner with the stress on the right letter. They never marked it. \"It was always welcome to stay as it was,\" she said.\n\nThe typo's career was long. It was copied into the founding charter, the first school primer and eleven thousand wedding vows. Children across the colony said \"teh\" in jest, then in earnest, then without knowing why.\n\nIn her ninth decade the Duroselle family put the question of correction to it. Eitan Zabala, the colony's chief editor, attended with a pen. Asked whether the typo had understood what was being offered, he said it had not replied, and that the family had read this as a yes to waiting.\n\nIt was never corrected. The council has since approved an alteration to the manifest.\n\nItzel Tuilagi, who drafted the memorial notice, said the family had asked for the typo's name to be spelled correctly. It is spelled \"Teh\".",
+        "premise": "The colony's oldest typo is found to have been raised as a child by a loving family of proofreaders, who insist it be corrected only with its consent.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its kicker (the cough is one of the three ejected) and the 'had coughed' answer turn the premise into a sharp jab at talkative, procedure-bound assemblies, while Draft 2's opening already spells out its whole conceit and then restates it.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        9.0,
+        1.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Headline explains the premise rather than landing a joke, the body runs 4 words over, and the quote is sincere rather than funny. The ending restates the cough joke instead of recontextualising it, and 'ordered throats to stay clear' is a rule with no consequence the story already has.",
+    "prose": {
+      "words": 237,
+      "sentences": 17,
+      "mean_sentence": 13.9,
+      "longest": 29,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.3
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        38.6,
+        36.9
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 shows no visible grey Assembly sash on the official, and its raised-hand exchange reads as ambiguous rather than a clear swearing-in before seated colonists.",
+      "winner_faults": "The sworn man stands upright with his hand raised instead of being small, stooped, and mid-cough with a fist at his mouth, and the official's face is hidden because she is seen from behind."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win",
+        "2026-10-31": "loss",
+        "2026-11-01": "win",
+        "2026-11-02": "win",
+        "2026-11-03": "win"
+      }
+    }
+  }
+}
