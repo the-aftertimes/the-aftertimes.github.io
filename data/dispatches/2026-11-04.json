@@ -1,0 +1,212 @@
+{
+  "run_date": "2026-11-04",
+  "run_time": "2026-11-03T18:01:11.728891+00:00",
+  "dispatch": {
+    "headline": "Olympic Flame Was A Desk Lamp",
+    "body": "Eamon Achterberg, the final torchbearer at the Waystation Games, was found on Saturday holding a desk lamp that has served as the Olympic flame since 2049. He had carried it down the last 400 metres of corridor before a door-seal inspector noticed the cable trailing behind him.\n\nThe relay covers 4,000 metres of sealed corridor. Each runner hands the flame through an airlock to the next, and open flame in a cycling lock has been banned since 2051. Officials say the torch was exempt, because it was never lit in the first place.\n\nThe ceremony stopped at door nineteen. Eleven thousand spectators watched on the wall screens as Achterberg stood in the lock holding the lamp, which was plugged into a runner's backpack battery. The cable, he explained, had always been the hardest part to hide.\n\nThe Games Committee said the bulb has been replaced 4,211 times, always in the dark, always by Kalani Mahlangu, keeper of the flame since 2066. The current bulb is the 4,212nd.\n\n\"Nobody ever asked to see it burn,\" Mahlangu told reporters afterwards. \"They asked to see it arrive. I have never once been late.\"\n\nEitan Zielinski, who ran leg six, said he had always found it a bit mild, but that he put it down to the corridor.\n\nThe Games opened on Sunday as planned. Spectators were asked to bring their own cables.",
+    "scene": "A runner in a white relay tracksuit stands in an open airlock doorway holding up a glowing desk lamp on a long trailing cable, while an inspector in a hard hat points at the cord.",
+    "dateline": {
+      "place": "Waystation",
+      "year": 2088,
+      "month": 11,
+      "day": 18,
+      "years_from_now": 62
+    },
+    "domain": "sport",
+    "glossary": [],
+    "premise": "The Waystation Games opening ceremony features a torch relay along 4,000 metres of pressure-door corridor, each runner required to hand the flame to the next through an airlock, and the final stage collapses when the last torchbearer is discovered to be holding a lit electric lamp that has been 'the flame' since 2049.",
+    "brief": null,
+    "image": "assets/img/2026-11-04.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-03T18:01:11.728891+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 100,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.76,
+      1.0,
+      0.84,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "227 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: \"a dart left Tuilagi's hand, passed through the scoreboard, and\"",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "219 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 10 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "227 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Crowd Signs Card Promising to Be Surprised",
+        "body": "Laleh Sekibo won the inter-deck darts final on Saturday with the original brass-tipped darts, which were banned in 2051 for being sharp. Before play, all four hundred spectators in the Deck Nine mess signed a laminated card promising to be surprised if anyone was hurt.\n\nThe card is the size of a dinner tray. It was passed along the benches by Ahanu Nakashima, the garrison's welfare steward, who checked each signature against the duty roster. Two people were turned away for writing 'unsurprised'.\n\nSekibo, representing Deck Four, led 3-1 over Tavita Tuilagi of the Galley Deck. In the fourth leg a dart left Tuilagi's hand, passed through the scoreboard, and stopped in a ration crate. Nobody was hit. The crowd gasped in the manner of a crowd that had been told to.\n\nThe crate held nine hundred sachets of protein paste. The garrison is precise about this, having counted them twice, and the dart is still in it.\n\nSekibo finished on double sixteen to take the match 5-2.\n\nIn the mixed zone she held the trophy, a brass dart on a tray, at arm's length. \"I'm told they were banned for being sharp,\" she said. \"I've thrown the blunt ones for thirty years and never once felt I was being listened to.\"\n\nThe card has been returned to the wall, where it hangs beside the fire extinguisher.",
+        "premise": "The garrison's inter-deck darts final is played with the original brass-tipped darts, banned in 2051 for being sharp, and the crowd is made to sign a laminated card promising to be surprised if anyone is hurt.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Olympic Flame Was A Desk Lamp",
+        "body": "Eamon Achterberg, the final torchbearer at the Waystation Games, was found on Saturday holding a lit electric lamp that has served as the flame since 2049. He had been carrying it down the last 400 metres of corridor when a pressure-door seal inspector noticed the cable.\n\nThe relay covers 4,000 metres of sealed corridor. Each runner must hand the flame through an airlock to the next, and open flame in a cycling lock has been against station rules since 2051. Officials had waived this for the torch, which was therefore not a flame.\n\nThe ceremony stopped at door nineteen. Eleven thousand spectators watched on the wall screens as Achterberg stood in the lock with the lamp, which was rated for forty thousand hours and had used about nine hundred thousand.\n\nThe Games Committee said the lamp has been replaced eleven times, always in the dark, always by Kalani Mahlangu, keeper of the flame since 2066. The bulb is, by her count, the 4,212th.\n\n\"Nobody ever asked to see it burn,\" Mahlangu said in the mixed zone. \"They asked to see it arrive.\"\n\nEitan Zielinski, who ran leg six, said he had always found it light.\n\nThe Games opened on Sunday with the lamp.",
+        "premise": "The Waystation Games opening ceremony features a torch relay along 4,000 metres of pressure-door corridor, each runner required to hand the flame to the next through an airlock, and the final stage collapses when the last torchbearer is discovered to be holding a lit electric lamp that has been 'the flame' since 2049.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Players Won't Kick Off Until Dead Radio Does",
+        "body": "Luana Fairweather, who has called every table football match at Saltmarrow Hold since 2031, opened Saturday's final into a microphone wired to nothing. The players waited for her to finish.\n\nThe transmitter on the east spar failed in 2049. Neither finalist was born. Both said they would not touch the cranks until the call began, and the match started eleven minutes late.\n\nFairweather commentates in Lowland Hail, a radio dialect that no one at the Hold speaks. It has a fixed word for a goal, a different one for a goal the crowd disliked, and nineteen for rod.\n\nIn the fourteenth minute, Lowri Draganov spun her midfield rod through three full turns, which the rules permit and the Hold has never admired. Fairweather announced a death in the family of the ball. The crowd of forty-one nodded.\n\nDraganov won 7-6 when Ksenia Duroselle's goalkeeper jammed. Fairweather ruled the jam a clean save. She has been right about this kind of thing for fifty-seven years, according to her.\n\nIn the mixed zone, Duroselle was calm. \"I don't hear her for the score. I hear her so I know it's real. If nobody on the other end of the radio is listening, then at least someone is talking.\"\n\nThe Hold's nearest listener is nine light-years away and, on current figures, asleep.",
+        "premise": "A stubborn commentator who has been calling the station's only sport, a hand-cranked table football match, in a dead radio dialect since 2031 continues to broadcast to a transmitter that stopped working before the players were born, and the players refuse to start without him.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Referee Whistles Offside For Six Hours; Crews Call It Weather",
+        "body": "A referee in a tattered replica kit blew for offside more than four hundred times on Saturday, and the Deep Dark Cup was decided anyway. Karhu Light beat Sorrel Station 1-0 on a goal nobody saw.\n\nBoth crews had agreed to play by the original 21st-century rulebook, found in a damaged archive tablet. Nobody aboard could say what the sport was called. The ball was a sealed ration bladder. Aino Ilunga, the referee, was drafted because she owned the only shirt.\n\nThe first whistle came at minute two. By hour three the players had stopped arguing. By hour five they stood in a line across the cargo deck, waiting for it, the way crews wait for the hull to tick at shift change.\n\nThe tablet defines offside in eleven lines. Ilunga says she has read them aloud to both captains twice. Ilunga also says the rule was never meant to be understood, and that the sport's lost audience knew this and kept watching.\n\nSorrel's keeper, Ksenia Agbaje, said the whistle was easy to ignore once it stopped meaning anything. The winning goal was scored at hour six, during a whistle.\n\n\"It's not a rule, it's a climate,\" said Karhu striker Anouk Akhmetov, in the mixed zone. \"You dress for it. We scored on the dry bit.\"\n\nThe tablet's section on penalty kicks has not yet been found.",
+        "premise": "Two rival garrison crews settle the Deep Dark Cup by the original 21st-century rulebook of a sport nobody remembers, and a referee in a tattered replica kit whistles for 'offside' for six hours until both sides accept it as a form of weather.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The 'nobody asked to see it burn, they asked to see it arrive' line and the institutional cover-up of a replaced bulb satirise ceremony pointedly, though the headline just states the premise and the opening sentence gives away the whole joke.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        5.0,
+        8.0,
+        2.0,
+        3.0
+      ],
+      "rankings": [
+        [
+          0,
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          2,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The headline only states the premise, and the maths is muddled: 4,212 bulbs against 'replaced eleven times' contradicts itself, and 'which was therefore not a flame' is a flat explanation. Zielinski's line and the closing line restate rather than recontextualise, and Mahlangu is quoted 'in the mixed zone' with no setup.",
+    "revise_judge_reason": "The 'bring their own cables' kicker lands the cable motif, and Mahlangu's 'I have never once been late' satirises ceremonial pride in a fake ritual, though the opening still announces the whole conceit.",
+    "prose": {
+      "words": 229,
+      "sentences": 16,
+      "mean_sentence": 14.3,
+      "longest": 26,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.9
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        30.4,
+        31.3
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 shows a woman in a light jacket and leggings, not a white relay tracksuit, and the lamp hangs from the ceiling rather than being held up by a runner standing in a doorway.",
+      "winner_faults": "The lamp hangs from the ceiling instead of being held aloft as a desk lamp, the runner's tracksuit has Adidas-style stripes, and the sketch is soft and grey rather than crisp ink."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win",
+        "2026-10-31": "loss",
+        "2026-11-01": "win",
+        "2026-11-02": "win",
+        "2026-11-03": "win",
+        "2026-11-04": "win"
+      }
+    }
+  }
+}

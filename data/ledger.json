@@ -1032,5 +1032,16 @@
     "place_kind": "exoplanet",
     "engine": "category",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-11-04",
+    "year": 2088,
+    "era_bucket": 1,
+    "domain": "entertainment",
+    "headline": "Olympic Flame Was A Desk Lamp",
+    "style": "sport",
+    "place_kind": "deepspace",
+    "engine": "obsolescence",
+    "technique": "confident_aside"
   }
 ]
