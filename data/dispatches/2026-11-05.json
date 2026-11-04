@@ -1,0 +1,205 @@
+{
+  "run_date": "2026-11-05",
+  "run_time": "2026-11-04T18:03:09.143289+00:00",
+  "dispatch": {
+    "headline": "Ore Hauler Waits Out Its Own Blessing",
+    "body": "Pilot Itzel Vasquez sat in the cockpit of the ore hauler Marrow Dog for six hours and ten minutes on Thursday, waiting for dockside staff to finish the Last Look. The voyage to the Ceres smelters takes four hours and forty.\n\nThe rite began in 2171 as a single line, spoken by one pilot at Dock Nine. Every dock-worker hired since has added a verse. Kettle Deep now employs 212. The ice-haulers' mess has a verse. So does the Tuesday canteen rota.\n\nMaile Marangoni, who sweeps the Dock Nine gantry, joined in March. Her verse runs ninety seconds and mentions her late brother's boots.\n\n\"You can't skip a verse,\" she said. \"Someone's in it.\"\n\nTwo haulers have now arrived at Ceres before the blessing for their departure had ended. Dock Nine logged both as completed. The Last Look continued on the empty berth.\n\nPita Fairweather, who runs the freight board, said the delay is not a problem for schedules. He has moved every departure forward by seven hours and told shippers the haulers leave early.\n\n\"The blessing has never lost a ship,\" he said. He confirmed that crews no longer return from Ceres in time to hear the verses added while they were gone.",
+    "scene": "Pilot Itzel Vasquez sits strapped into the cockpit of an ore hauler, arms folded and visor up, staring out through the glass at a long line of dock-workers in work suits reciting from handheld slates on the gantry below.",
+    "dateline": {
+      "place": "Kettle Deep",
+      "year": 2183,
+      "month": 4,
+      "day": 14,
+      "years_from_now": 157
+    },
+    "domain": "transport",
+    "glossary": [],
+    "premise": "Pilots at an asteroid freeport begin blessing outbound ore haulers with a ritual 'Last Look' at the dock, and the rite now takes longer than most of the voyages it protects, because every new dock-worker adds a verse.",
+    "variant": "challenger",
+    "brief": null,
+    "image": "assets/img/2026-11-05.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-04T18:03:09.143289+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 101,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      1.0,
+      0.92,
+      0.67
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "221 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'So are two lamp brackets, a platform, and'",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 37 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: 'Engineers are forbidden to touch it.'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Blessed Ribbon Forces Ceremony For Existing Tunnel",
+        "body": "Priit Nwosu, shaft foreman at Hollowmere Quay, cut a blessed ribbon on Friday to open a tunnel that was already there. Surveyors had told him on Wednesday that the new transit bore was an old one, packed with rubble and sealed over by a crew nobody can name.\n\nThe ceremony stayed on the calendar. The ribbon had been blessed on Monday by the quay's chaplain of works, and a blessed ribbon must be cut by the foreman, in front of the crew, on the date given. Nobody at the quay could say what happens to a ribbon that is not cut.\n\n\"We asked,\" Nwosu said. \"The chaplain said it is not a thing that has been tried.\"\n\nOlumide Kiplagat, a drill hand, said the crew had spent six weeks digging out the fill. \"We kept hitting rail. I said so. I was told it was a feature of the rock.\"\n\nThe rail is still there. So are two lamp brackets, a platform, and a sign reading HOLLOWMERE QUAY - NORTH, in a typeface the quay stopped using before its founding.\n\nSurveyor Tavita Sauvageot attended in a blue sash. She said the old bore ran six kilometres and ended in a door, which the crew has not opened.\n\nThe first tram is due Monday. The timetable shows it arriving from the north.",
+        "premise": "Miners hollowing a new transit shaft hold a groundbreaking ceremony for a tunnel that already exists, after surveyors discover the 'new' bore is an old one filled in, and the ceremony cannot be cancelled because the ribbon has been blessed.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Ore Hauler Waits Out Its Own Blessing",
+        "body": "Pilot Itzel Vasquez sat in the cockpit of the ore hauler Marrow Dog for six hours and ten minutes on Thursday, waiting for dockside staff to finish the Last Look. The voyage to the Ceres smelters takes four hours and forty.\n\nThe rite began in 2171 as a single line, spoken by one pilot at Dock Nine. Every dock-worker hired since has added a verse. Kettle Deep now employs 212. The ice-haulers' mess has a verse. So does the Tuesday canteen rota.\n\nMaile Marangoni, who sweeps the Dock Nine gantry, joined in March. Her verse runs ninety seconds and mentions her late brother's boots.\n\n\"You can't skip a verse,\" she said. \"Someone's in it.\"\n\nTwo haulers have now arrived at Ceres before the blessing for their departure had ended. Dock Nine logged both as completed. The Last Look continued on the empty berth.\n\nPita Fairweather, who runs the freight board, said the delay is not a problem for schedules. He has moved every departure forward by seven hours and told shippers the haulers leave early.\n\n\"The blessing has never lost a ship,\" he said. He confirmed that crews no longer return from Ceres in time to hear the verses added while they were gone.",
+        "premise": "Pilots at an asteroid freeport begin blessing outbound ore haulers with a ritual 'Last Look' at the dock, and the rite now takes longer than most of the voyages it protects, because every new dock-worker adds a verse.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Mourners Take Eleven Days To Go Eight Minutes",
+        "body": "Two hundred dockhands began walking behind a dead ore drone on Sunday, bound for a gate eight minutes away, at the drone's own pace of nine metres an hour. Drone 41 hauled the Kettleback-to-Sorting run for ninety years. It failed on Friday, mid-lane, outside the Wet Canteen.\n\nThe procession carries its casket on a flatbed and has been given the lane by dock control. Ore traffic is being rerouted through the Sump.\n\n\"It never once went faster than this,\" said Ignacy Arriaga, a tally clerk, walking at the front with a lamp-pole. \"You'd be insulting it.\"\n\nThe Wet Canteen has stayed open through the first three days, selling soup from a trolley that moves with the mourners. Pita Agbaje, who runs the trolley, said stock has been a concern. \"Nobody budgets for a funeral this long.\"\n\nThe turn came on day four. Yaroslav Belinskaya, a lane engineer, told the group that Drone 41 had been rated for twenty-five years and had run its final sixty-five on a speed setting nobody had ever corrected.\n\n\"It was a fault,\" she said. \"A clerical one.\"\n\nThe procession voted to continue. Arriaga said the drone would have wanted to arrive on time.",
+        "premise": "Dockhands at a minor-planet freeport mourn a cargo drone that has made the same ore run for ninety years, assembling a funeral procession that must travel the route at the drone's exact speed, and thus takes eleven days to reach a gate eight minutes away.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Pilgrims Queue For Crooked Post",
+        "body": "Ignacy Fairweather, a rotary marshal, waved through the four hundredth pilgrim of the morning at Saltmarrow Deep's central junction, where a mooring post bent by a tug in 2179 leans eleven degrees toward the Pellet Street exit. Pilgrims call it the Holy Bollard. Engineers are forbidden to touch it.\n\nThe junction handles ore haulers, three tram spurs and the 06:40 pilgrim shuttle from Ceres. Traffic now stops every nine minutes so visitors can cross the carriageway and lay a palm on the post.\n\nTamsin Rautio, who drives a Number 4 hauler through the rotary twice a shift, said the lean was never a problem until it was holy. \"Before, I could cut the corner. Now there is a woman kneeling on it.\"\n\nThe bend has also pulled the tug-lane out of true. Two haulers have clipped the kerb since spring, and the junction's safety office has asked, three times, for permission to fit a guard rail. Each request was refused by the Keepers of the Lean.\n\nItzel Tavakoli, a Keeper, said the rail would be fine if it leaned too. \"We have no objection to a crooked rail. The post is not the problem. Straightness is.\"\n\nThe first crooked rail is due Thursday. It has been ordered from the tug firm that hit the post.",
+        "premise": "Pilgrims travel to a mining town's central rotary junction to touch the 'Holy Bollard', a mooring post that was hit by a tug in 2179 and now leans, and engineers are forbidden to straighten it because the lean is considered the miracle.",
+        "score": 0.67,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The accreting-verses rite satirises how institutions pile on rituals until they outlast their own purpose, and the kicker about crews missing the verses written while they were away lands. Its opening sentence still announces the whole conceit, though.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        5.0,
+        3.0,
+        7.0,
+        3.0
+      ],
+      "rankings": [
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          2,
+          1,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The joke was buried: the headline described the premise, nobody said anything funny, and the kicker repeated the delay. The logic also wobbled: how the verses are heard, and why early departures still feel on time.",
+    "revise_judge_reason": "The headline 'Waits Out Its Own Blessing' lands a joke, and the kicker about crews missing the verses written while they were away is a tight, pointed turn, while Draft 2's extra detail, though funny, circles the same idea.",
+    "prose": {
+      "words": 204,
+      "sentences": 18,
+      "mean_sentence": 11.3,
+      "longest": 30,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 8,
+      "rare_rate": 3.9
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        25.5,
+        33.5
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "The loser shows the pilot in profile with headphones and no raised visor, and its workers hold no clearly readable slates, so it misses the headline's visor-up pilot and slate-reciting dock-workers.",
+      "winner_faults": "The pilot is not clearly strapped in, the workers wear helmets and caps rather than plain work suits, and the sky shows a small light aircraft instead of an ore hauler."
+    },
+    "tune": {
+      "variant": "challenger",
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win",
+        "2026-10-31": "loss",
+        "2026-11-01": "win",
+        "2026-11-02": "win",
+        "2026-11-03": "win",
+        "2026-11-04": "win",
+        "2026-11-05": "loss"
+      }
+    }
+  }
+}
