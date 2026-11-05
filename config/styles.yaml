@@ -34,3 +34,27 @@ styles:
 - key: discovery
   guidance: A science or research report on a finding, with a researcher explaining it plainly and an
     unsettling implication nobody wants to dwell on.
+# The three below were added 06/11/2026 because every format above had collapsed
+# into one skeleton - named person, quote, twist, quote, wry last line - and
+# Charlie said the writing was "still bad". These cannot take that shape: no
+# narrator, mostly no quotes, several short units instead of one arc. A court list
+# was considered and left out ON PURPOSE: "court" and "magistrate" are in
+# critic._LEGAL, a hard reject, so it would be binned every day it was drawn.
+- key: corrections
+  guidance: >-
+    The paper's corrections column - three or four corrections to recent Aftertimes reports, all
+    arising from the same absurd fact. Each opens "In a report on" and states plainly what the paper
+    got wrong and what is actually the case; the corrected fact is always stranger than the error.
+    Formal, apologetic, no quotes, no narrator. Separate the corrections with blank lines.
+- key: notices
+  guidance: >-
+    The public notices column - four or five short official notices from this world (a closure, changed
+    hours, lost property, a reminder from an authority, an appointment), each two or three dry sentences
+    under a short capitalised heading. One absurd premise runs under all of them, each notice revealing a
+    little more of it. No quotes, no narrator, no reaction. Separate the notices with blank lines.
+- key: results
+  guidance: >-
+    A results listing - a competition, an exam, an auction, a census count or a league table - with a
+    two-sentence introduction, then short entries set out one per line. The absurdity is in WHAT is being
+    ranked or counted and in what the entries reveal; the listing itself is dry and complete. At most one
+    short quote, from an official, and only at the end.

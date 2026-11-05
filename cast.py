@@ -46,7 +46,16 @@ def rule(names: list[str]) -> str:
     """The prompt line. Empty when there is no cast, so the old wording returns."""
     if not names:
         return ""
-    return ("- The people in this dispatch are called, in order of appearance: "
-            + ", ".join(names) + ". Use these names and no others for people; "
-            "use only as many as the story needs. Do not default the weekday to "
-            "Tuesday; vary or omit the day.")
+    # NAME AT MOST TWO PEOPLE. Charlie, 06/11/2026, on dispatches carrying
+    # Tavita Jaramillo, Dorcas Paewai, Mireille Hoang and Astrid Mirzoyan: the
+    # writing is "still bad". Three uncommon full names in two hundred words is
+    # the name salad that reads as generated - the pool is deliberately unusual
+    # (see config/names.yaml) to stop repeats, which is right, so the fix is
+    # how MANY names appear and how they are used, not which ones. A paper names
+    # the people the story is about, calls everyone else by what they do, and
+    # uses the surname alone after first mention.
+    return ("- Name at most two people, using these names and no others: "
+            + ", ".join(names[:2]) + ". Everyone else is a role, never a name: "
+            "'the foreman's daughter', 'a clerk', 'the assembly chair'. After first "
+            "mention use the surname alone, as a newspaper does. Do not default the "
+            "weekday to Tuesday; vary or omit the day.")

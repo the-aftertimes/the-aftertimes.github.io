@@ -25,13 +25,22 @@ from common import rel
 #: enough specificity to compose an ALLEGORY, and a surreal picture explains the
 #: joke - the same failure the prose had before "report the facts, never state
 #: the joke". The events are absurd; the picture reports them deadpan.
+#: 06/11/2026: FOUR CLAUSES IN THESE TWO CONSTANTS WERE OUTVOTING THE SCENE. It read
+#: "a woman ... stands alone ... mouth open mid-wail, a thin band clasped around
+#: her throat", and the picture judge itself reported the winner had "several
+#: workmen ... the thin band at her throat is not visible, and her mouth is
+#: closed". _STYLE asked for "figures in a believable environment, rich background
+#: detail"; _NEGATIVE required "a few plainer ones stand behind", mandated a wide
+#: shot that shrank the throat band to nothing, and said "upright and working",
+#: which rules out a wail. The scene is the picture. These constants may say HOW
+#: to draw it, never add to it.
 _STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
           "newspaper illustration of a real event that was actually witnessed. "
-          "Fine black ink linework and dense cross-hatching on aged paper, a "
-          "single clear focal subject, figures in a believable environment, rich "
-          "background detail. Plain eye-level view, natural gravity, everything "
-          "resting on solid ground - nothing floating or suspended, no symbolic "
-          "or dreamlike composition.")
+          "Fine black ink linework and dense cross-hatching on aged paper. "
+          "Exactly the scene described and nothing it does not name - no added "
+          "people, no added objects. Plain eye-level view, natural gravity, "
+          "everything resting on solid ground - nothing floating or suspended, "
+          "no symbolic or dreamlike composition.")
 #: "no border, no frame" is ported from photocopy and is NOT cosmetic: the first
 #: brief-built image came back with a drawn white margin ruled around it, because
 #: a richly specified scene reads to flux as a plate in a book. The engraving must
@@ -72,16 +81,15 @@ _STYLE = ("A documentary wood engraving in the style of Gustave Dore, as a "
 _NEGATIVE = ("Everyone fully and modestly dressed for work, whole body covered, "
              "sleeves, long trousers or skirts, proper boots. No nudity, no bare "
              "legs or chest, no underwear, no exposed skin beyond hands and "
-             "face. Nobody reclining, draped or posed for the viewer: upright "
-             "and working. Every tone engraved lines and cross-hatching, never "
-             "smooth grey. Full bleed: no border, frame, margin or plate mark. "
-             "A wide full-length view from several paces back with the whole scene "
-             "inside the frame: every figure complete from head to boots, standing "
-             "clear of the edges, nothing between the viewer and the scene. One or "
-             "two figures matter and a few plainer ones stand behind them. No "
-             "dense crowd or sea of faces. No colour. Absolutely no text, letters, "
-             "words, captions, numbers, signatures or watermark - purely "
-             "pictorial.")
+             "face. Nobody reclining, draped or posed for the viewer. Every tone "
+             "engraved lines and cross-hatching, never smooth grey. Full bleed: "
+             "no border, frame, margin or plate mark. Close enough that the "
+             "object the scene names is plainly visible, every figure still "
+             "complete from head to boots and clear of the edges, nothing between "
+             "the viewer and the scene. Only the people the scene names: if it "
+             "names one person, there is one. No dense crowd or sea of faces. No "
+             "colour. Absolutely no text, letters, words, captions, numbers, "
+             "signatures or watermark - purely pictorial.")
 
 
 #: Cloudflare's flux endpoint rejects a prompt over 2048 characters with a bare

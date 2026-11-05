@@ -128,8 +128,17 @@ def test_notes_are_the_first_thing_dropped_for_length():
     noted = illustrate.build_prompt(DISPATCH, None, ["Seen whole from a few paces."])
     assert "Seen whole from a few paces." in noted
     assert illustrate.build_prompt(DISPATCH, None, []) == illustrate.build_prompt(DISPATCH)
-    # Sized so the scene fits the 2020 budget on its own and not with the notes.
-    long_scene = {**DISPATCH, "scene": "word " * 148}
+    # Sized so the scene fits the budget on its own and not with the notes. DERIVED,
+    # not hardcoded: this was "word " * 148, tuned to the old constants' length, and
+    # it stopped exercising the drop the day _STYLE and _NEGATIVE got 37 chars
+    # shorter (06/11/2026) - the test went red for a reason that was not a fault.
+    note = "Seen whole from a few paces."
+    n = 1
+    while len(illustrate.build_prompt({**DISPATCH, "scene": "word " * (n + 1)})) \
+            <= illustrate.MAX_PROMPT - len(note) // 2:
+        n += 1
+    long_scene = {**DISPATCH, "scene": "word " * n}
+    assert len(illustrate.build_prompt(long_scene)) <= illustrate.MAX_PROMPT
     squeezed = illustrate.build_prompt(long_scene, None, ["Seen whole from a few paces."])
     assert len(squeezed) <= illustrate.MAX_PROMPT
     assert "Seen whole" not in squeezed and "word word" in squeezed

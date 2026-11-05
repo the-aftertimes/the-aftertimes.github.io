@@ -127,14 +127,22 @@ def test_background_figures_are_allowed_but_crowds_are_not():
                                   {"subject": "a woman at a tripod",
                                    "setting": "her family lined up behind her"})
     assert "no background figures" not in out
-    assert "a few plainer ones stand behind them" in out
+    # 06/11/2026: "a few plainer ones stand behind them" REQUIRED extras even when
+    # the scene said "stands alone", and today's picture got four workmen. The rule
+    # now follows the scene, which still allows the family Charlie approved - a
+    # scene that names them gets them.
+    assert "Only the people the scene names" in out
     # the thing the cap was actually protecting against must still be banned
     assert "No dense crowd or sea of faces" in out
     # 22/09/2026: and the focal figures are specified by CAMERA DISTANCE, never
     # by relative size. "Larger and sharper than anyone else" drew a body so
     # close to the lens that most of it was outside the frame, twice running.
     assert "larger and sharper" not in out
-    assert "wide full-length view from several paces back" in out
+    # The 22/09 fault this guarded was figures cropped by the frame. The mandated
+    # WIDE shot that fixed it also shrank the joke's prop to nothing (06/11/2026),
+    # so the shot is now "close enough that the object is plainly visible" - and
+    # completeness is still required, below.
+    assert "plainly visible" in out
     assert "complete from head to boots" in out
     # ...and stated POSITIVELY. flux-1-schnell has no negative-prompt channel, so
     # "no figure cut off by the edge" was a sentence about figures at the edge -
@@ -352,7 +360,9 @@ def test_a_scene_prompt_keeps_every_figure_rule():
     p = illustrate.build_prompt(
         {"headline": "H", "scene": "s"},
         _object_brief(subject="a woman in a sealed jumpsuit", action="waiting"))
-    assert "figures in a believable environment" in p
+    # "figures in a believable environment" used to be asserted here. It was the
+    # clause INVENTING people the scene never named; the property this test
+    # guards - prose keeps every people rule - is the _NEGATIVE assertion below.
     assert "Everyone fully and modestly dressed" in p
     # The whole people-block, read off the constant rather than quoted: this test
     # asserted the words "focal figures" and broke when the composition clause was

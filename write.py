@@ -194,7 +194,45 @@ def _era_rule(years: int) -> str:
             "persistence must itself be the point of the story.")
 
 
-def funny_block(lines: list[dict], cap: int = 8) -> str:
+def taste_sample(lines: list[dict], cap: int, seed: str | None = None,
+                 per_source: int = 2) -> list[dict]:
+    """The few taste lines this run's prompt actually sees. THE OVERTUNING GUARD.
+
+    Charlie, 06/11/2026, asking for a loop where he marks what is funny: "dont
+    overtune it". Few-shot lines steer a model harder than any instruction does
+    (feedback-fewshots-dominate-instructions) - "why is it always unpaid debts"
+    was eight of twelve seed premises sharing one register. Showing the newest
+    eight of a growing pool every day would do the same thing to whatever he
+    marked last week: the paper would collapse into imitations of it.
+
+    So: a small sample, drawn fresh each day from the WHOLE pool rather than the
+    tail of it; at most `per_source` lines from any one edition, so a single
+    piece he loved cannot dominate; seeded by the run date, so a resumed run
+    sees the same prompt. Original pool order is kept, which keeps the
+    same-source excerpt merging in funny_block working.
+    """
+    if not lines:
+        return []
+    import hashlib
+    import random
+    from datetime import date
+    key = seed or date.today().isoformat()
+    rng = random.Random(int(hashlib.sha256(key.encode()).hexdigest()[:16], 16))
+    order = list(range(len(lines)))
+    rng.shuffle(order)
+    taken, per = [], {}
+    for i in order:
+        src = lines[i].get("source", "")
+        if per.get(src, 0) >= per_source:
+            continue
+        per[src] = per.get(src, 0) + 1
+        taken.append(i)
+        if len(taken) >= cap:
+            break
+    return [lines[i] for i in sorted(taken)]
+
+
+def funny_block(lines: list[dict], cap: int = 5) -> str:
     """Few-shot evidence of what actually lands, from config/funny_lines.yaml.
 
     These are the only taste-derived instructions in the prompt. They are shown
@@ -203,7 +241,7 @@ def funny_block(lines: list[dict], cap: int = 8) -> str:
     an example during the model survey)."""
     if not lines:
         return ""
-    picked = lines[-cap:]
+    picked = taste_sample(lines, cap)
     # Shown as EXCERPTS, never bare lines. The marked sentence is only funny
     # where it sits: "Most messages address minor domestic disputes." is inert
     # until the sentence about hijacking a planetary magnetosphere comes first.
@@ -271,7 +309,7 @@ def technique_block(tech: dict | None) -> str:
         + (tech.get("example") or "").strip())
 
 
-def flat_block(lines: list[dict], cap: int = 6) -> str:
+def flat_block(lines: list[dict], cap: int = 3) -> str:
     """Counter-examples, from config/flat_lines.yaml.
 
     Deliberately shorter and blunter than funny_block. An instruction can be
@@ -287,7 +325,7 @@ def flat_block(lines: list[dict], cap: int = 6) -> str:
     if not lines:
         return ""
     rows = []
-    for e in lines[-cap:]:
+    for e in taste_sample(lines, cap):
         why = e.get("why") or "did not land"
         line = e["line"].strip().strip(chr(34)).strip()
         rows.append(f'  "{line}" - {why}')
@@ -412,24 +450,24 @@ casually as though everyone knows what they are. Show how people live, work,
 travel, grieve and believe here. The illustrations are deliberately antique
 engravings; the WRITING must supply the future, or the whole thing reads historical.
 
-COMEDY IS STRUCTURE, NOT VOCABULARY. The single most common failure is a flat
-list of escalating consequences decorated with invented compound nouns
-("hydro-hammock", "melt-rig"). Funny coinages are garnish, not the joke. So:
-- Give the piece a TURN. Somewhere in the middle, the story must reveal something
-  that reframes what came before - not just "and then it got worse". Vary WHERE
-  the turn comes from; do not default to a rival claimant or an official body.
-  It might be: someone's private and completely different motive, a physical
-  consequence nobody anticipated, a social custom that makes the situation
-  normal, a much older cause surfacing, an expert calmly explaining that this is
-  routine, or a detail revealing everyone involved has misunderstood the point.
-- Let a named person say something revealing IN THEIR OWN WORDS, quoted directly,
-  and make the quote funnier than the narration around it. The best comedy comes
-  from someone treating the absurd as completely reasonable.
-- The last line must be a real KICKER: it should recontextualise, undercut, or
-  escalate to a punchline - a joke that only works because of everything before
-  it. A threat, a summary, or a restatement is not a kicker.
-- Cut anything that is merely world-building. If a sentence does not advance the
-  story or land a joke, delete it.
+THE FORMAT DECIDES THE SHAPE - NOT A HOUSE SKELETON. For months every dispatch
+ran the same five beats whatever its format said: a named person does a thing, a
+quote, a twist in the middle, a second quote, a wry last line. Charlie, 06/11/2026:
+the writing is "still bad", and the sameness is most of why - a reader who has seen
+three of them can predict the fourth. So follow today's format's OWN shape. Some
+formats have no quotes. Some are lists. Some end on a flat fact, or simply stop.
+What every format still needs:
+- One absurd fact, followed to its real consequence. That is the whole joke.
+- An ending earned by what came before. It can be a twist, but it can equally be a
+  plain fact placed last, or the piece simply stopping. Do NOT close on a wry
+  one-line summing-up as a reflex - that is the house tic to break. Where there IS
+  a twist, do not default to a rival claimant or an official body stepping in; it
+  can be a private motive, a physical consequence, an older cause, or everyone
+  having misunderstood the point.
+- Quote someone only if the format is a story AND the quote says something the
+  narration cannot. Two quotes at most. A bystander's reaction quote is filler.
+- Funny coinages are garnish, not the joke. Cut anything that is only
+  world-building.
 - AVOID THE LEGAL/FINANCIAL CRUTCH. Unless the premise is genuinely about money or
   law, do not resolve or escalate the story through debts, taxes, fines, liens,
   injunctions, permits, lawsuits, insurance or repossession. The paper leaned on
@@ -446,7 +484,8 @@ Rules:
   ruling or an official notice, do NOT frame the story as an authority handing down
   a ruling with a spokesperson quote - use the format's own structure and voice.
 - 170 to 215 words. Straight-faced, as a real wire story. Dry wit, never winking.
-- THE FIRST SENTENCE OPENS ON A PERSON OR A THING YOU CAN SEE, and reaches
+- Unless today's format has its own fixed opening (a correction, a notice, a
+  list), THE FIRST SENTENCE OPENS ON A PERSON OR A THING YOU CAN SEE, and reaches
   its verb inside six words. Never on a study, an investigation, a policy, a
   rule, a report or a decision - those arrive in the second sentence, after
   the reader already knows who this happened to. "Brother Julian, who spent
@@ -565,6 +604,15 @@ Rules:
   about dying, or about clumsiness.
   Good: the mayor himself sprawled across a council chamber floor with soup down
   his shoes while officials look away.
+  THE JOKE MUST BE THE BIGGEST THING IN THE PICTURE, AND DRAWABLE AT A GLANCE.
+  On 06/11/2026 the scene was right - a mourner mid-wail "with a thin band
+  clasped around her throat", the band being the joke - and the band never
+  appeared in either drawing. The illustrator is a fast, crude model: a small,
+  thin or unfamiliar prop is simply dropped. So if the joke rests on an object,
+  make it LARGE in the frame and describe it as something ordinary-looking - a
+  heavy brass collar, a box strapped to the chest, a clock the size of a door -
+  rather than a subtle detail. If the joke cannot be made big and plain, show
+  the person DOING the absurd thing instead of the object that causes it.
   NAME ONE PERSON AS THE SUBJECT - two at the very most. The engraving holds one
   or two figures and turns every extra face into mush, so a scene naming six
   nuns, eleven dock workers or a whole family has to be cut down to one before it
