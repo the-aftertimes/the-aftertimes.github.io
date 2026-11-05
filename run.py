@@ -419,6 +419,40 @@ def use_brief(settings: dict) -> bool:
     return bool((settings.get("image") or {}).get("brief", False))
 
 
+#: How many of each premise pool ideate sees in one run. THE OVERTUNING GUARD for
+#: the concept loop. Charlie, 06/11/2026: show me concepts, I say what's funny,
+#: "but dont overtune it". Ideate used to see all 19 hand-written seeds every
+#: day, and few-shot examples steer a model harder than any instruction - eight
+#: of twelve seeds sharing one register is how the paper became "always unpaid
+#: debts". So each day draws a few from his picks and a few from the seeds,
+#: fresh from the whole of each pool, seeded by the run date so a resumed run
+#: sees the same prompt.
+_PICKED_PER_RUN = 4
+_SEEDS_PER_RUN = 4
+_FLAT_PER_RUN = 3
+
+
+def sample_premises(seeds: list[str], picked: list[str], run_date: str) -> list[str]:
+    rng = random.Random(f"premises:{run_date}")
+    mine = [p for p in picked if p not in seeds]
+    chosen = (rng.sample(mine, min(_PICKED_PER_RUN, len(mine)))
+              + rng.sample(seeds, min(_SEEDS_PER_RUN, len(seeds))))
+    rng.shuffle(chosen)
+    return chosen
+
+
+def flat_concepts_block(run_date: str) -> str:
+    """A few concepts Charlie marked as not funny, as a short avoid list."""
+    flat = (load_yaml("config/flat_concepts.yaml").get("concepts") or []) \
+        if os.path.exists(rel("config/flat_concepts.yaml")) else []
+    if not flat:
+        return ""
+    rng = random.Random(f"flat:{run_date}")
+    rows = chr(10).join(f"- {c}" for c in rng.sample(flat, min(_FLAT_PER_RUN, len(flat))))
+    return (chr(10) + "A reader marked ideas like these as NOT funny. Avoid what "
+            "they have in common - the device, not the subject:" + chr(10) + rows + chr(10))
+
+
 def run_pipeline() -> dict:
     settings = load_settings()
     domains = load_yaml("config/domains.yaml")["domains"]
@@ -485,7 +519,7 @@ def run_pipeline() -> dict:
         print(f"    avoid block: {len(avoid_block)} chars")
 
     pool = load_yaml("config/exemplars.yaml").get("exemplars") or []
-    seeds_plus = seeds + [p for p in pool if p not in seeds]
+    seeds_plus = sample_premises(seeds, pool, run_date)
     # Sentences Charlie marked funny - the project's only taste memory between
     # days. Injected as few-shot evidence of a TECHNIQUE, not material to copy.
     funny_lines = load_yaml("config/funny_lines.yaml").get("lines") or []
@@ -506,7 +540,8 @@ def run_pipeline() -> dict:
         premises = ideate_stage.ideate(dateline, domain, motifs, seeds_plus,
                                         avoid_headlines, settings,
                                         style["guidance"], engine["guidance"],
-                                        place_kind["guidance"], avoid_block=avoid_block)
+                                        place_kind["guidance"],
+                                        avoid_block=avoid_block + flat_concepts_block(run_date))
         print(f"    {len(premises)} premises")
 
     qcfg = settings["quality"]
