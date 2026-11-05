@@ -1,0 +1,13 @@
+{
+  "a": "A newspaper replaces its horoscope with a calendar, saying the stars were never the ones making the decisions.",
+  "at": "2026-11-05T23:37:36.205Z",
+  "axis": "length",
+  "b": "A newspaper has replaced its horoscope with a notice reading that the stars were never the ones making the decisions, and that readers should now blame the weather instead, which has agreed.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    2,
+    3.5
+  ]
+}

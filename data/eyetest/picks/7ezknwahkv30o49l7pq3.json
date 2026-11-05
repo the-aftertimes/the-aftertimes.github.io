@@ -1,0 +1,13 @@
+{
+  "a": "A dating service for people on different planets reports record matches, and a record number of couples who have never been in the same decade.",
+  "at": "2026-11-05T23:44:30.527Z",
+  "axis": "target",
+  "b": "A grandmother on a generation ship is told by her grandchildren she has no idea how far they walk to school, which is the length of the ship.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    "dating",
+    "family"
+  ]
+}

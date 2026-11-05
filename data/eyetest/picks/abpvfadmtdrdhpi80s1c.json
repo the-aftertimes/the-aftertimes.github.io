@@ -1,0 +1,13 @@
+{
+  "a": "The Asteroid Belt Authority says this year's collision season will be slightly busier than usual.",
+  "at": "2026-11-05T23:44:22.096Z",
+  "axis": "length",
+  "b": "The Asteroid Belt Authority has warned that this year's collision season will be slightly busier than usual, and asked travellers to allow an extra twenty minutes, or a different century.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    2,
+    4
+  ]
+}

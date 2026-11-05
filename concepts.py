@@ -30,7 +30,7 @@ import sys
 
 import yaml
 
-from common import read_json, rel, write_json
+from common import append_yaml_list, read_json, rel, write_json
 
 _INDEX = "data/concepts/index.json"
 _PAGE = "concepts.html"
@@ -108,25 +108,9 @@ def apply(spec: str) -> int:
             k = int(tok)
             if 1 <= k <= len(items):
                 marks[kind].append(items[k - 1])
-    ex_path = rel("config/exemplars.yaml")
-    ex = yaml.safe_load(open(ex_path, encoding="utf-8")) or {}
-    pool = ex.get("exemplars") or []
-    for c in marks["funny"]:
-        if c["text"] not in pool:
-            pool.append(c["text"])
-    ex["exemplars"] = pool
-    with open(ex_path, "w", encoding="utf-8") as fh:
-        yaml.safe_dump(ex, fh, allow_unicode=True, sort_keys=False, width=100)
-    flat_path = rel(_FLAT)
-    flat = (yaml.safe_load(open(flat_path, encoding="utf-8")) or {}).get("concepts") \
-        if os.path.exists(flat_path) else []
-    flat = flat or []
-    for c in marks["flat"]:
-        if c["text"] not in flat:
-            flat.append(c["text"])
-    with open(flat_path, "w", encoding="utf-8") as fh:
-        yaml.safe_dump({"concepts": flat}, fh, allow_unicode=True, sort_keys=False,
-                       width=100)
+    append_yaml_list("config/exemplars.yaml", "exemplars",
+                     [c["text"] for c in marks["funny"]])
+    append_yaml_list(_FLAT, "concepts", [c["text"] for c in marks["flat"]])
     print(f"recorded {len(marks['funny'])} funny, {len(marks['flat'])} flat")
     shown = collections.Counter((c["source"], c["angle"]) for c in items)
     for kind in ("funny", "flat"):

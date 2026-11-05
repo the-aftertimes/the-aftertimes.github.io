@@ -1,0 +1,13 @@
+{
+  "a": "A city council announces that the new tram line, forty years late, will now open on time, because the opening date has been moved to 2091.",
+  "at": "2026-11-05T23:36:22.948Z",
+  "axis": "futurity",
+  "b": "The Interplanetary Weather Bureau apologises for the forecast of light drizzle across Neptune's northern hemisphere, which turned out to be a storm that has been raging for eleven centuries.",
+  "choice": "b",
+  "source": "claude",
+  "star": false,
+  "values": [
+    2,
+    4
+  ]
+}

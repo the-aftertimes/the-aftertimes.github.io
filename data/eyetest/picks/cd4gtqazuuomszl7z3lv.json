@@ -1,0 +1,13 @@
+{
+  "a": "Gen Alpha has asked their grandparents to stop talking about the Moon landing, which they say is 'very 1969'.",
+  "at": "2026-11-05T23:55:24.148Z",
+  "axis": "device",
+  "b": "A man told to reach for the stars has been sent the bill for the fuel.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    "generational",
+    "literal-minded"
+  ]
+}

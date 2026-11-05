@@ -1,0 +1,13 @@
+{
+  "a": "An influencer with a hundred billion followers asks them to stop following her, and gains four billion.",
+  "at": "2026-11-05T23:35:19.445Z",
+  "axis": "target",
+  "b": "A form requesting fewer forms is approved, subject to four further forms.",
+  "choice": "a",
+  "source": "starter",
+  "star": false,
+  "values": [
+    "media",
+    "bureaucracy"
+  ]
+}

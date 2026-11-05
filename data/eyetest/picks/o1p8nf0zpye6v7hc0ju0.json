@@ -1,0 +1,13 @@
+{
+  "a": "The Moon has been asked to prove it is not a robot before it can rise.",
+  "at": "2026-11-05T23:55:10.154Z",
+  "axis": "target",
+  "b": "Mars has started introducing itself at parties as 'the new Earth', and Earth has asked it to stop.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    "tech",
+    "status"
+  ]
+}

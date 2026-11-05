@@ -1,0 +1,13 @@
+{
+  "a": "A famous newsreader has been moved to the late bulletin after viewers saw her at the shops buying the same cheap bread as everyone else.",
+  "at": "2026-11-05T23:39:04.134Z",
+  "axis": "device",
+  "b": "A newsreader has been told her bulletin will be reviewed once the form to request a review has been reviewed, and she has been given a number to wait on.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    "status anxiety",
+    "bureaucratic loop"
+  ]
+}

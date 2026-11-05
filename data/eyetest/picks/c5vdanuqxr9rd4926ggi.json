@@ -1,0 +1,13 @@
+{
+  "a": "A town on the coast has put up a single enormous sandwich as its new landmark, and the sandwich is said to be bigger than anything else in the region.",
+  "at": "2026-11-05T23:37:54.294Z",
+  "axis": "device",
+  "b": "The Prime Minister has been moved to a smaller office than the Deputy Prime Minister's, and has asked the newspapers to describe the new room as cosy.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    "scale mismatch",
+    "status anxiety"
+  ]
+}

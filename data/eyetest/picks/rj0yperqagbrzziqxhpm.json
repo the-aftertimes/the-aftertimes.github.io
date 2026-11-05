@@ -1,0 +1,13 @@
+{
+  "a": "A town council in the year 2140 confirms that the sea level will be treated as a seasonal inconvenience and has hired a part-time officer to apologise to residents each morning.",
+  "at": "2026-11-05T23:36:33.786Z",
+  "axis": "device",
+  "b": "A national census in the year 2140 reports that the population of a small seaside suburb is four million people and one very large tide.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    "normalising the absurd",
+    "scale mismatch"
+  ]
+}

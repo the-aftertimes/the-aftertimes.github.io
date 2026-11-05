@@ -1,0 +1,13 @@
+{
+  "a": "The colony's AI governor has gone on leave citing burnout, and handed over to the version of itself from last Tuesday.",
+  "at": "2026-11-05T23:43:52.179Z",
+  "axis": "target",
+  "b": "A Mars savings account opened in 2026 finally pays out, and the interest is enough to buy the bank, which declines.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    "tech",
+    "money"
+  ]
+}

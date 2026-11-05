@@ -1,0 +1,13 @@
+{
+  "a": "A streaming service confirms that its most watched show is the one that plays while viewers decide what to watch.",
+  "at": "2026-11-05T23:37:28.568Z",
+  "axis": "target",
+  "b": "A bank confirms that its most popular account is the one customers open to avoid paying the fee for closing their other account.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    "media",
+    "money"
+  ]
+}

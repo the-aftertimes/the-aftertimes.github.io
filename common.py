@@ -103,6 +103,27 @@ def rel(path: str) -> str:
     return _path(path)
 
 
+def append_yaml_list(rel_path: str, key: str, items: list[str]) -> list[str]:
+    """Append new strings to the list under `key`, the file's last key, keeping its
+    comments. A safe_dump round trip deletes them. Returns what was added."""
+    path = _path(rel_path)
+    have = []
+    if os.path.exists(path):
+        have = (yaml.safe_load(open(path, encoding="utf-8")) or {}).get(key) or []
+    else:
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(f"{key}:\n")
+    new = [t for t in dict.fromkeys(items) if t not in have]
+    if new:
+        text = open(path, encoding="utf-8").read()
+        if not text.endswith("\n"):
+            text += "\n"
+        text += yaml.safe_dump(new, allow_unicode=True, width=100)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(text)
+    return new
+
+
 #: Every dash-like codepoint collapses to a plain hyphen. Covers the WHOLE family,
 #: not just em/en: 04/08/2026 a model emitted U+2011 non-breaking hyphens
 #: ("grief\u2011counselling") and nine of them sailed through the old two-character

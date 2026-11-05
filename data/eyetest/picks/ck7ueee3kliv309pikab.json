@@ -1,0 +1,13 @@
+{
+  "a": "Mercury has been let go after missing its orbit target for a third year.",
+  "at": "2026-11-05T23:54:21.117Z",
+  "axis": "length",
+  "b": "Mercury has been let go after missing its orbit target for a third straight year, and its duties will be shared between Venus and a temp.",
+  "choice": "a",
+  "source": "starter",
+  "star": false,
+  "values": [
+    1,
+    3
+  ]
+}

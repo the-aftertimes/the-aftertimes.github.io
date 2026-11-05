@@ -1,0 +1,13 @@
+{
+  "a": "A national newspaper announces that its front page will now be printed in a font so small that only the editor's cat can read it.",
+  "at": "2026-11-05T23:38:41.754Z",
+  "axis": "target",
+  "b": "A national bakery chain announces that its loaves will now be sliced so thin that customers must buy a full week of bread to make one sandwich.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    "media",
+    "food"
+  ]
+}

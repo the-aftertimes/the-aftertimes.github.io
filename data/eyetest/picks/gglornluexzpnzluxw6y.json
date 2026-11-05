@@ -1,0 +1,13 @@
+{
+  "a": "Local council confirms the new bus timetable.",
+  "at": "2026-11-05T23:38:03.631Z",
+  "axis": "length",
+  "b": "The state library announces that it has finished lending out every book it owns, and says the next available copy of anything will be back in about eleven years.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    2,
+    3
+  ]
+}

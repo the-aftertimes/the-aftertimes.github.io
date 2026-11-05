@@ -1,0 +1,13 @@
+{
+  "a": "A television network apologises for a news bulletin that ran so long it was still on when the viewers got home.",
+  "at": "2026-11-05T23:38:49.201Z",
+  "axis": "length",
+  "b": "A television network has apologised to viewers after the evening news bulletin, which began in March, was still being read out in the middle of the following September, by a newsreader who is now much older.",
+  "choice": "neither",
+  "source": "claude",
+  "star": false,
+  "values": [
+    1.5,
+    3
+  ]
+}

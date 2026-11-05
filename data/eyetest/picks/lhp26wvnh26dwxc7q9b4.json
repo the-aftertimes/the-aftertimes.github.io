@@ -1,0 +1,13 @@
+{
+  "a": "Airlines now charge passengers for the seat they are sitting in, with standing room included in the base fare.",
+  "at": "2026-11-05T23:44:02.079Z",
+  "axis": "futurity",
+  "b": "Interstellar liners now charge passengers for the years they spend asleep, with dreams sold as an optional extra.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    1,
+    3.5
+  ]
+}

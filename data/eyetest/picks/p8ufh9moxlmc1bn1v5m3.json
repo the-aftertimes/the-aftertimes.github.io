@@ -1,0 +1,13 @@
+{
+  "a": "Australia Post has delivered a parcel to the right address, and is investigating.",
+  "at": "2026-11-05T23:55:29.864Z",
+  "axis": "futurity",
+  "b": "The first parcel Australia Post sent to Mars has arrived, at a house in Wagga.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    1,
+    3
+  ]
+}

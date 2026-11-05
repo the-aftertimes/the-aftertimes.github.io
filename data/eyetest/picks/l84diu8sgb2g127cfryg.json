@@ -1,0 +1,13 @@
+{
+  "a": "Oxygen on the station now comes with a loyalty card.",
+  "at": "2026-11-05T23:42:56.911Z",
+  "axis": "length",
+  "b": "Oxygen on the orbital station now comes with a loyalty card, and residents who breathe at the same counter ten times get their eleventh breath free.",
+  "choice": "neither",
+  "source": "starter",
+  "star": false,
+  "values": [
+    1,
+    3
+  ]
+}
