@@ -23,8 +23,12 @@ _PICKS = "data/eyetest/picks/*.json"
 def chosen(picks: list[dict]) -> list[str]:
     out = []
     for p in sorted(picks, key=lambda p: p["at"]):
-        c = p.get("choice") or ""
-        out += {"a": [p["a"]], "b": [p["b"]], "both": [p["a"], p["b"]]}.get(c, [])
+        c = p.get("choice")
+        if "items" in p:
+            if isinstance(c, int) and 0 <= c < len(p["items"]):
+                out.append(p["items"][c]["text"])
+            continue
+        out += {"a": [p["a"]], "b": [p["b"]], "both": [p["a"], p["b"]]}.get(c or "", [])
     return list(dict.fromkeys(out))
 
 

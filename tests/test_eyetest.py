@@ -14,6 +14,13 @@ def test_chosen_keeps_picks_and_drops_neither():
     assert eyetest.chosen(picks) == ["B1", "A3", "B3"]
 
 
+def test_chosen_reads_lineups():
+    six = [{"text": f"T{i}"} for i in range(6)]
+    picks = [{"at": "1", "mode": "lineup", "items": six, "choice": 4},
+             {"at": "2", "mode": "lineup", "items": six, "choice": -1}]
+    assert eyetest.chosen(picks) == ["T4"]
+
+
 def test_append_keeps_comments_and_skips_duplicates(tmp_path, monkeypatch):
     path = tmp_path / "ex.yaml"
     path.write_text("# keep me\nexemplars:\n- old one\n", encoding="utf-8")
