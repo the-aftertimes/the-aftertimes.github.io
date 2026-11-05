@@ -1054,5 +1054,16 @@
     "place_kind": "asteroid",
     "engine": "ritual",
     "technique": "local_granularity"
+  },
+  {
+    "run_date": "2026-11-06",
+    "year": 2392,
+    "era_bucket": 7,
+    "domain": "death and mourning",
+    "headline": "Chief Mourner Quits, Rehired Faster",
+    "style": "interview",
+    "place_kind": "subsurface",
+    "engine": "expertise",
+    "technique": "sincere_futility"
   }
 ]

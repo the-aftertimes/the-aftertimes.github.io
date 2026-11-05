@@ -1,20 +1,11 @@
 # Machine-edited by tune.py. Read its docstring before changing anything here.
 champion: []
 challenger:
-- Main figure faces the viewer, face and hands clearly visible, never seen from behind.
-why: The judge repeatedly faults pictures where the main figure is turned away or hidden, so a general
-  face-forward note targets the most frequent failure.
-since: '2026-10-27'
-results:
-  '2026-10-28': loss
-  '2026-10-29': loss
-  '2026-10-30': win
-  '2026-10-31': loss
-  '2026-11-01': win
-  '2026-11-02': win
-  '2026-11-03': win
-  '2026-11-04': win
-  '2026-11-05': loss
+- No lettering, signs, plaques or writing anywhere; leave walls, plaques and banners blank and plain.
+why: Garbled illegible lettering is the most repeated fault in the published pictures, so banning all
+  text targets it directly.
+since: '2026-11-06'
+results: {}
 history:
 - decided: '2026-10-26'
   verdict: retired
@@ -26,3 +17,13 @@ history:
   champion_before: []
   challenger:
   - The central figure must face the camera while stepping backward.
+- decided: '2026-11-06'
+  verdict: retired
+  wins: 5
+  of: 10
+  since: '2026-10-27'
+  why: The judge repeatedly faults pictures where the main figure is turned away or hidden, so a general
+    face-forward note targets the most frequent failure.
+  champion_before: []
+  challenger:
+  - Main figure faces the viewer, face and hands clearly visible, never seen from behind.

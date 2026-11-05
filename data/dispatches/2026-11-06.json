@@ -1,0 +1,217 @@
+{
+  "run_date": "2026-11-06",
+  "run_time": "2026-11-05T18:00:46.377707+00:00",
+  "dispatch": {
+    "headline": "Chief Mourner Quits, Rehired Faster",
+    "body": "Tavita Jaramillo, Mourner-in-Chief of Deepholm Stacks for nineteen years, resigned on Friday after management set a grief target of four minutes per bereavement. Lowgate Arcology hired her the following week, at triple the pace.\n\n\"A professional wail has a front, a middle and a breaking,\" Jaramillo told this paper. \"You can't take the breaking out. People go home feeling only mildly sad.\"\n\nLowgate's wail takes ninety seconds. Jaramillo says she does not know how, and has stopped asking. Her new employer fits her with a throat band that carries the sound at pitch while she thinks about something else.\n\n\"I did the first one on Monday, for a hydroponics foreman,\" she said. \"Two hundred people came. They said they were very moved, in the queue for the lift.\"\n\nAsked if she was moved herself, Jaramillo said she had checked the band's log. \"It says I was.\"\n\nDorcas Paewai, the foreman's daughter, said the family was satisfied. \"It was quick, and it sounded right. We were back in the flat by the hour. Dad would have liked that.\"\n\nOn her evenings off Jaramillo wails at the old length in a disused pump room. Nobody has asked her to stop. The band, which she wears for comfort, has begun logging her as moved.",
+    "scene": "A woman in a dark mourning cloak stands alone in a bare concrete pump room with her head thrown back and mouth open mid-wail, a thin band clasped around her throat, a pipe-lined wall behind her.",
+    "dateline": {
+      "place": "Deepholm Stacks",
+      "year": 2392,
+      "month": 9,
+      "day": 14,
+      "years_from_now": 366
+    },
+    "domain": "funeral work in a stacked-city arcology",
+    "glossary": [],
+    "premise": "A buried arcology's elite Mourner-in-Chief resigns after management introduces a 'grief efficiency' target, saying you cannot rush a professional wail, and is rehired at triple the pace by a competitor who has found a way to wail faster.",
+    "brief": null,
+    "image": "assets/img/2026-11-06.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-05T18:00:46.377707+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 102,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.92,
+      0.67,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.9 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "239 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'a panel of four listeners, a transcript, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 8.8 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'says he counted the pumps, a cough, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.4 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "216 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Widow Barred From Speaking; Stranger Praises Ice",
+        "body": "Suvi Sekibo, widow of the pipe-fitter Olumide Tuilagi, was turned away from the lectern at his service on Friday and sat through a twenty-minute address by a man who never met him. The Guild of Eulogists holds that only a certified speaker may address the dead. Ms Sekibo holds no certificate.\n\nGuild president Anouk Kiplagat spoke on Mr Tuilagi's \"unmistakable dedication to ice\". Mr Tuilagi worked in the warm-water plant for thirty-one years and, by his wife's account, disliked ice.\n\nWe asked Ms Sekibo about it in her kitchen.\n\n\"She was very good,\" she said. \"People cried. The pauses were well judged. I would not have managed the pauses.\"\n\nShe had written four pages. The Guild read them first, as it does for every family, and returned them with notes. \"They said the stories were too specific. A eulogy has to work for everyone in the room, and a lot of them had come for the next service, which was a cousin of the Hollow's mayor.\"\n\nThe certificate takes six years and a live exam in front of a cold body. Ms Sekibo said she had considered it.\n\n\"I got as far as the reading list. It is mostly Ms Kiplagat's eulogies. She is very consistent.\"\n\nShe said she would try again for the memorial next spring, when Ms Kiplagat has offered to say something about his hands.\n\n\"I told her he had good ones. She wrote it down.\"",
+        "premise": "The Deep Hollow's Guild of Eulogists bars a grieving widow from speaking at her own husband's service because she lacks the credentials, and the guild president, who never met the deceased, delivers a twenty-minute address on his 'unmistakable dedication to ice'.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "\"Ooh, That's Warm\" Fails Last-Words Audit",
+        "body": "The family of Oona Grabowska, who died on the fourth of the month aged 104, has appealed to have her last words filed as \"minimalist\" after the settlement's Last-Words Auditor refused to certify them. Her last words were \"Ooh, that's warm.\"\n\nThe Auditor, Anouk Zabala, has certified every death in Karrowdeep for nineteen years. Her office has reviewed the remark nine times, with a panel of four listeners, a transcript, and the room's heat log. It confirms the room was warm.\n\n\"That is the problem,\" Zabala said. \"A remark that is simply true is a comment. Profound means it is also about something else.\"\n\nThe appeal is led by Grabowska's grandson, Ahanu Quisbert. He has submitted forty pages on the minimalist tradition and a recording of his grandmother's voice.\n\n\"She wasn't talking about the room,\" Quisbert said. \"She'd had a cold hand for thirty years. Nobody in this family has ever said anything that wasn't about something else. We just say it quietly.\"\n\nThe panel will hear him next month. Uncertified deaths are mourned at half length, and the family has already stood through the first day.\n\nZabala says she would like to be proved wrong. Asked what she hopes to say herself, she said she has a draft.",
+        "premise": "A hollowed-mountain settlement's Official Last-Words Auditor, whose job is certifying that deathbed remarks are suitably profound, denies certification to a beloved elder who simply said 'ooh, that's warm', and the family appeals to have it reclassified as 'minimalist'.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Silence Technician Calls Rival's Minute 'Frankly Sloppy'",
+        "body": "Ignacy Esposito, the Warren's last working Silence Technician, said on Friday that a rival's memorial minute was \"frankly sloppy\" and could be heard from three corridors away. He has been invited to debate the matter.\n\nThe minute was held for a hydroponics foreman. Esposito attended from the Lower Stair, where he says he counted the pumps, a cough, and a door.\n\n\"A silence is a job of work,\" he said. \"You seal the vents, you stop the lifts, you walk the route in socks. I spend nine days on a funeral minute. Nine. Aino Navarro spent an afternoon.\"\n\nNavarro, who runs the rival memorial service, said the family was \"very moved.\" Esposito said that was the problem.\n\n\"They were moved because they heard something. Nobody should hear anything. That is the whole product.\"\n\nHe admitted that the Warren's 4,000 residents seldom notice the difference. He said the dead do.\n\nAsked how he knows, he took some time to answer.\n\n\"My mother's minute was perfect. I checked it twice. I was the only one in the room, because I was still testing the walls. I heard nothing. I have never been sure it counted.\"\n\nThe debate is set for Yaroslav Tuilagi's hall. Organisers have asked that the audience bring no shoes.",
+        "premise": "The Warren's only remaining Silence Technician, who professionally ensures that a minute of quiet is genuinely quiet, publicly condemns a rival's memorial for a 'frankly sloppy' silence audible from three corridors away, and is invited to a debate on the matter.",
+        "score": 0.67,
+        "rejected": false
+      },
+      {
+        "headline": "Chief Mourner Quits Over Speed Target",
+        "body": "Tavita Jaramillo, Mourner-in-Chief of Deepholm Stacks for nineteen years, resigned on Friday after management set a grief efficiency target of four minutes per bereavement. She was rehired by Lowgate Arcology the following week, at triple the pace.\n\n\"A professional wail has a front, a middle and a breaking,\" Jaramillo said. \"You can't take the breaking out. People feel it when you do. They go home feeling only mildly sad.\"\n\nLowgate's wail takes ninety seconds. Jaramillo says she does not know how, and has stopped asking. Her new employer fits her with a throat band that carries the sound at pitch while she thinks about something else.\n\n\"I did the first one on Monday,\" she said. \"A hydroponics foreman. Two hundred people came. They were very moved. They said so afterwards, in the queue for the lift.\"\n\nAsked if she was moved herself, Jaramillo said she had checked the band's log. \"It says I was.\"\n\nDorcas Paewai, whose father was the foreman, said the family was satisfied. \"It was quick, and it sounded right. We were back in the flat by the hour. Dad would have liked that.\"\n\nJaramillo has taken to wailing for free on her evenings off, in a disused pump room, at the old length. Nobody has asked her to stop. Nobody has come.",
+        "premise": "A buried arcology's elite Mourner-in-Chief resigns after management introduces a 'grief efficiency' target, saying you cannot rush a professional wail, and is rehired at triple the pace by a competitor who has found a way to wail faster.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The deadpan quotes ('It says I was', 'only mildly sad') treat the absurd metrics-driven grief as normal and skewer efficiency culture, and 'Nobody has come' is a solid kicker, though the opening sentence states the premise and punchline up front.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        2.0,
+        6.0,
+        8.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 3,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.92,
+    "critique": "Sentences too choppy and the body runs 1 word over; the headline describes the premise rather than landing a joke. The ending restates the sadness instead of recontextualising it, and the quotes need a clear source.",
+    "prose": {
+      "words": 211,
+      "sentences": 20,
+      "mean_sentence": 10.6,
+      "longest": 23,
+      "short_sentences": 6,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 2.8
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        38.6,
+        39.8
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 has garbled lettering on the wall, smudged grey shading, and a brick rather than concrete room, and it also includes two bystanders, so it departs more from the scene than Image 1 does.",
+      "winner_faults": "Several workmen are present when the scene calls for her to stand alone, the thin band at her throat is not visible, and her mouth is closed rather than open mid-wail."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-28": "loss",
+        "2026-10-29": "loss",
+        "2026-10-30": "win",
+        "2026-10-31": "loss",
+        "2026-11-01": "win",
+        "2026-11-02": "win",
+        "2026-11-03": "win",
+        "2026-11-04": "win",
+        "2026-11-05": "loss",
+        "2026-11-06": "loss"
+      },
+      "decision": "retired",
+      "new_challenger": "Garbled illegible lettering is the most repeated fault in the published pictures, so banning all text targets it directly."
+    }
+  }
+}
