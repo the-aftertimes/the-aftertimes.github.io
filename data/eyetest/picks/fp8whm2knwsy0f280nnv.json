@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-06T00:06:44.796Z",
+  "choice": -1,
+  "items": [
+    {
+      "absurdity": 2,
+      "form": "headline",
+      "futurity": 1,
+      "source": "starter",
+      "target": "property",
+      "text": "Housing Crisis Solved After Government Redefines 'House'",
+      "tone": "sharp satire"
+    },
+    {
+      "absurdity": 3,
+      "form": "text message",
+      "futurity": 2,
+      "source": "starter",
+      "target": "family",
+      "text": "Mum: Dad's uploaded himself to the cloud. He's fine. He's in the smart fridge for now so don't open it after ten.",
+      "tone": "silly"
+    },
+    {
+      "absurdity": 2.5,
+      "form": "vox pop",
+      "futurity": 2,
+      "source": "starter",
+      "target": "property",
+      "text": "'Honestly I preferred it when the sea was further away,' said a Bondi resident, now of Bondi Sea.",
+      "tone": "dry"
+    },
+    {
+      "absurdity": 3.5,
+      "form": "online review",
+      "futurity": 3,
+      "source": "starter",
+      "target": "status",
+      "text": "Two stars. Time travel was fine but the dinosaurs were smaller than they look in the films. Would not go back. - Trevor, Ipswich",
+      "tone": "petty"
+    },
+    {
+      "absurdity": 3,
+      "form": "strata notice",
+      "futurity": 2.5,
+      "source": "starter",
+      "target": "property",
+      "text": "NOTICE: To whoever keeps parking their spaceship in the visitor bay at Unit 4. We know it's you, Darren.",
+      "tone": "petty"
+    },
+    {
+      "absurdity": 3,
+      "form": "terms and conditions",
+      "futurity": 2.5,
+      "source": "starter",
+      "target": "tech",
+      "text": "Terms of use: the teleporter destroys you and builds an exact copy at the other end. The copy has agreed to these terms.",
+      "tone": "dark"
+    }
+  ],
+  "mode": "lineup",
+  "source": "starter"
+}

@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-06T00:29:05.558Z",
+  "choice": -1,
+  "items": [
+    {
+      "absurdity": 2,
+      "form": "advice letter",
+      "futurity": 1.5,
+      "source": "starter",
+      "target": "dating",
+      "text": "Dear Aftertimes, since the divorce my house has taken her side and won't let me in. How do I win it back? - Locked Out, Ringwood",
+      "tone": "petty"
+    },
+    {
+      "absurdity": 1.5,
+      "form": "headline",
+      "futurity": 1.5,
+      "source": "starter",
+      "target": "money",
+      "text": "Man Who Said 'In This Economy' Every Day For Forty Years Finally Proven Right, Now Unbearable",
+      "tone": "dry"
+    },
+    {
+      "absurdity": 2,
+      "form": "scoreboard",
+      "futurity": 1.5,
+      "source": "starter",
+      "target": "tech",
+      "text": "Final score: Humans 0, Algorithm 1. Humans have asked for the result to be reviewed by the algorithm.",
+      "tone": "sharp satire"
+    },
+    {
+      "absurdity": 2,
+      "form": "classified ad",
+      "futurity": 2,
+      "source": "starter",
+      "target": "tech",
+      "text": "FOUND: robot vacuum, last seen heading west in 2031. Answers to Kevin. Please do not approach, he has been through a lot.",
+      "tone": "sweet"
+    },
+    {
+      "absurdity": 1.5,
+      "form": "obituary",
+      "futurity": 2,
+      "source": "starter",
+      "target": "family",
+      "text": "Gerald Finch, the last man who knew how to fold a fitted sheet, has died aged 104. He took it with him.",
+      "tone": "dark"
+    },
+    {
+      "absurdity": 2.5,
+      "form": "quote",
+      "futurity": 2,
+      "source": "starter",
+      "target": "family",
+      "text": "'It's not about the money,' said the woman suing her own clone over who keeps the dog.",
+      "tone": "petty"
+    }
+  ],
+  "mode": "lineup",
+  "source": "starter"
+}

@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-06T00:02:28.088Z",
+  "choice": -1,
+  "items": [
+    {
+      "absurdity": 3,
+      "device": "literal-minded",
+      "futurity": 3.5,
+      "length": 2,
+      "source": "claude",
+      "target": "media",
+      "text": "A fact-checking service has rated the claim that the sea is rising as mostly false, after finding that it only rises and falls twice a day."
+    },
+    {
+      "absurdity": 1.5,
+      "device": "status anxiety",
+      "futurity": 4,
+      "length": 2.5,
+      "source": "claude",
+      "target": "dating",
+      "text": "A man has been told by a woman on a date that he seems nice, but his great-great-grandfather owned a smaller continent."
+    },
+    {
+      "absurdity": 3.5,
+      "device": "institutional understatement",
+      "futurity": 4,
+      "length": 3.5,
+      "source": "claude",
+      "target": "status",
+      "text": "The Ministry of Records regrets to advise that the Great Flood of the 3100s was a clerical matter, and that anyone still underwater should lodge a form."
+    },
+    {
+      "absurdity": 2.5,
+      "device": "generational",
+      "futurity": 4,
+      "length": 1.5,
+      "source": "claude",
+      "target": "family",
+      "text": "A grandfather has been told by his great-grandchildren that his stories about walking to school are a bit much, since nobody has walked anywhere in two hundred years."
+    },
+    {
+      "absurdity": 2,
+      "device": "bureaucratic loop",
+      "futurity": 4.5,
+      "length": 2.5,
+      "source": "claude",
+      "target": "food",
+      "text": "The Department of Lunch has confirmed that sandwiches must now be approved in triplicate, and the approval form is available in the cafeteria, which is closed pending approval."
+    },
+    {
+      "absurdity": 3,
+      "device": "scale mismatch",
+      "futurity": 3.5,
+      "length": 2,
+      "source": "claude",
+      "target": "science",
+      "text": "Scientists have confirmed the universe is 13.8 billion years old, and the museum says its 'Children Under Five' ticket still applies."
+    }
+  ],
+  "mode": "lineup",
+  "source": "claude"
+}

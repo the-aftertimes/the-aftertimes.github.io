@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-06T00:01:52.605Z",
+  "choice": -1,
+  "items": [
+    {
+      "absurdity": 2,
+      "device": "generational",
+      "futurity": 3,
+      "length": 2,
+      "source": "starter",
+      "target": "tech",
+      "text": "Japan's oldest robot has been asked by its grandchildren to stop talking about the 2020s."
+    },
+    {
+      "absurdity": 3,
+      "device": "office life",
+      "futurity": 2,
+      "length": 1,
+      "source": "starter",
+      "target": "work",
+      "text": "The Moon has started charging the tides for overtime."
+    },
+    {
+      "absurdity": 2.5,
+      "device": "unintended consequence",
+      "futurity": 1.5,
+      "length": 2,
+      "source": "starter",
+      "target": "dating",
+      "text": "A couple's AI assistants, who were planning the wedding, have married each other instead."
+    },
+    {
+      "absurdity": 2,
+      "device": "scale mismatch",
+      "futurity": 1,
+      "length": 2,
+      "source": "starter",
+      "target": "status",
+      "text": "Continental drift has moved Australia two metres north, and Queensland wants to know who approved it."
+    },
+    {
+      "absurdity": 2,
+      "device": "bureaucratic loop",
+      "futurity": 1,
+      "length": 3,
+      "source": "starter",
+      "target": "bureaucracy",
+      "text": "A public servant has been promoted so many times without anyone noticing that he now runs the department, which has not noticed either."
+    },
+    {
+      "absurdity": 2,
+      "device": "generational",
+      "futurity": 2,
+      "length": 2,
+      "source": "starter",
+      "target": "property",
+      "text": "The last petrol station in Sydney has been heritage-listed, and tourists queue to smell it."
+    }
+  ],
+  "mode": "lineup",
+  "source": "starter"
+}

@@ -1,0 +1,431 @@
+<title>Aftertimes Eye Test</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --paper: #eeece5;
+  --card: #f7f6f1;
+  --ink: #1a1611;
+  --muted: #6b6253;
+  --rule: #d6cdb9;
+  --oxblood: #7a2b2b;
+  --face-mark: "UnifrakturCook", "Old English Text MT", Georgia, serif;
+  --face-body: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --face-data: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+html, body { background: var(--paper); color: var(--ink); }
+body { font-family: var(--face-body); }
+.wrap { max-width: 72rem; margin: 0 auto; padding-block: 1.6rem 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  flex-wrap: wrap; border-bottom: 2px solid var(--ink); padding-bottom: .6rem; }
+.mark { font-family: var(--face-mark); font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1; }
+.mark small { font-family: var(--face-data); font-size: .72rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted); margin-left: .6rem; }
+.count { font-family: var(--face-data); font-size: .78rem; color: var(--muted);
+  font-variant-numeric: tabular-nums; }
+main { display: grid; grid-template-columns: minmax(0, 1fr) 16rem; gap: 1.6rem; margin-top: 1.6rem; }
+@media (max-width: 900px) { main { grid-template-columns: minmax(0, 1fr); } }
+.question { font-family: var(--face-data); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--oxblood); margin: 0 0 .9rem; min-height: 1.2em; }
+.lenses { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+@media (max-width: 760px) { .lenses { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .lenses { grid-template-columns: minmax(0, 1fr); } }
+.lens { all: unset; box-sizing: border-box; cursor: pointer; background: var(--card);
+  border: 1px solid var(--rule); border-radius: 3px; padding: .9rem 1rem 1.1rem;
+  display: grid; grid-template-rows: auto 1fr; gap: .5rem; min-height: 7rem;
+  transition: border-color .12s, box-shadow .12s; }
+.lens:hover { border-color: var(--ink); }
+.lens:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 2px; }
+.lens:disabled { cursor: default; }
+.lens.chosen { border-color: var(--oxblood); box-shadow: 0 0 0 2px var(--oxblood) inset; }
+.lens .num { font-family: var(--face-data); font-size: 1.6rem; font-weight: 500; line-height: 1;
+  color: var(--oxblood); }
+.lens .text { font-size: 1.3rem; font-weight: 700; line-height: 1.25; text-wrap: balance; }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.btn { font-family: var(--face-data); font-size: .8rem; letter-spacing: .04em; cursor: pointer;
+  background: transparent; color: var(--ink); border: 1px solid var(--rule); border-radius: 3px;
+  padding: .55rem .85rem; }
+.btn:hover { border-color: var(--ink); }
+.btn:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 2px; }
+.btn kbd { font-family: inherit; color: var(--muted); margin-left: .35rem; }
+.status { font-family: var(--face-data); font-size: .76rem; color: var(--muted); margin-top: .9rem;
+  min-height: 1.2em; }
+aside { background: var(--card); border: 1px solid var(--rule); border-radius: 3px;
+  padding: 1rem 1.1rem 1.2rem; align-self: start; }
+aside h2 { font-family: var(--face-data); font-size: .74rem; letter-spacing: .14em;
+  text-transform: uppercase; font-weight: 500; margin: 0 0 .9rem; color: var(--muted); }
+.rx { display: grid; gap: .85rem; }
+.dial-head { display: flex; justify-content: space-between; align-items: baseline; gap: .6rem; }
+.dial-name { font-family: var(--face-data); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; }
+.dial-val { font-family: var(--face-data); font-size: .8rem; font-variant-numeric: tabular-nums; color: var(--oxblood); }
+.track { position: relative; height: 6px; margin: .4rem 0 .3rem; border-top: 1px solid var(--rule); }
+.track::before, .track::after { content: ""; position: absolute; top: -4px; height: 7px; width: 1px; background: var(--rule); }
+.track::before { left: 0; } .track::after { right: 0; }
+.dot { position: absolute; top: -5px; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%;
+  background: var(--oxblood); transition: left .35s ease; }
+.ends { display: flex; justify-content: space-between; font-size: .76rem; color: var(--muted); }
+.cat { font-size: .9rem; }
+.cat .lead { color: var(--oxblood); }
+@media (prefers-reduced-motion: reduce) { .dot, .lens { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="mark">The Aftertimes <small>Eye test</small></div>
+    <div class="count" id="count">0 readings</div>
+  </header>
+
+  <main>
+    <section>
+      <p class="question" id="question">Which is funniest?</p>
+      <div class="lenses" id="lenses"></div>
+      <div class="actions">
+        <button class="btn" id="none" type="button">None of these <kbd>0</kbd></button>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
+    </section>
+
+    <aside aria-label="Your prescription">
+      <h2>Your prescription</h2>
+      <div class="rx" id="rx"></div>
+    </aside>
+  </main>
+</div>
+
+<script>
+(() => {
+  const N = 6;
+  const CONT = {
+    absurdity: { label: "Absurdity", lo: "could nearly happen", hi: "wildly impossible" },
+    length:    { label: "Length",    lo: "one short line",      hi: "a long sentence" },
+    futurity:  { label: "Distance",  lo: "fifty years out",     hi: "thousands of years" },
+  };
+  const ENGINES = {
+    "future misreads us": "people far in the future misreading something ordinary from today",
+    "the fix is worse": "a big problem is solved, and that creates a worse, specific problem",
+    "pettiness survives": "everything is transformed, and one small human pettiness carries on unchanged",
+    "nostalgia for the awful": "people missing something everyone hates today",
+    "role reversal": "the powerless get power and use it in one specific, revealing way",
+    "wish granted exactly": "technology delivers exactly what was asked for, and that is the problem",
+    "outlives its purpose": "an organisation or habit carrying on long after its reason has gone",
+    "metaphor made literal": "a figure of speech becomes physically true",
+    "new status symbol": "in a changed world, status attaches to something surprising",
+    "annoyance gone cosmic": "a small everyday annoyance stretched to geological or cosmic scale",
+    "vast thing, small system": "something vast or natural run with a small human system",
+    "machines with opinions": "machines develop one specific human preference or prejudice",
+  };
+  const CATS = {
+    engine: { label: "Idea", options: Object.keys(ENGINES) },
+    form: { label: "Form", options: ["headline", "quote", "classified ad", "advice letter",
+      "obituary", "scoreboard", "terms and conditions", "text message", "strata notice",
+      "online review", "warning label", "vox pop"] },
+    tone: { label: "Tone", options: ["dry", "petty", "sweet", "dark", "sharp satire", "silly"] },
+    target: { label: "Target", options: ["work", "money", "property", "tech", "dating", "family",
+      "status", "bureaucracy", "science", "sport", "media", "food"] },
+    device: { label: "Kind of joke", options: ["office life", "institutional understatement",
+      "consumer mechanic", "scale mismatch", "bureaucratic loop", "literal-minded",
+      "generational", "status anxiety", "normalising the absurd",
+      "unintended consequence", "old rule or mistranslation"] },
+  };
+
+  const fresh = () => ({
+    cont: { absurdity: { est: 2.4, step: 1.2, n: 0 },
+            length:    { est: 1.8, step: 1.0, n: 0 },
+            futurity:  { est: 3.0, step: 1.2, n: 0 } },
+    cat: { engine: {}, form: {}, tone: {}, target: {}, device: {} },
+    liked: [], rejected: [], starred: [], seen: [], total: 0,
+  });
+  let state = fresh();
+
+  // Round eight, 06/11/2026. Charlie: "the 6 different things need to be the
+  // underlying ideas". Each card is a different kind of idea, all stated plainly.
+  const it = (text, absurdity, futurity, engine) =>
+    ({ text, absurdity, futurity, engine, source: "starter" });
+  const STARTERS = [
+    [
+      it("Archaeologists Name Sausage Sizzle Ancient Sacrifice", 2, 4, "future misreads us"),
+      it("Death Cured; Nobody Sells A House Again", 2.5, 2, "the fix is worse"),
+      it("Hive Mind Still Fighting Over Dishwasher", 3.5, 3, "pettiness survives"),
+      it("Recreated M5 Traffic Jam Sells Out Sundays", 2, 2, "nostalgia for the awful"),
+      it("Dogs Win Vote, Ban Vet", 3, 2, "role reversal"),
+      it("Honest Machine Switched Off By Popular Demand", 2, 1.5, "wish granted exactly"),
+    ],
+    [
+      it("Mint Still Making Five-Cent Coins, 400 Years On", 2, 3, "outlives its purpose"),
+      it("Cloud Drifts To New Zealand With Everyone's Photos", 4, 1.5, "metaphor made literal"),
+      it("Immortal Rich Pay For Wrinkles", 2.5, 2.5, "new status symbol"),
+      it("Telstra Hold Music Now Its Own Genre", 3, 2, "annoyance gone cosmic"),
+      it("Hedge Funds Short Earth", 4, 2.5, "vast thing, small system"),
+      it("Self-Driving Cars Refuse Canberra", 2.5, 1.5, "machines with opinions"),
+    ],
+  ];
+  let queue = STARTERS.map((l) => l.slice());
+  let current = null;
+  let fetching = false;
+  let sampleFn = null, db = null;
+  let writeChain = Promise.resolve();
+
+  const $ = (id) => document.getElementById(id);
+  const setStatus = (t) => { $("status").textContent = t; };
+  const shuffle = (arr) => { const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a; };
+
+  // ---- the prescription card --------------------------------------------
+  const diopter = (est) => {
+    const d = est - 3;
+    return (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(2);
+  };
+  function leader(key) {
+    const counts = state.cat[key] || {};
+    let best = null, bestScore = -1;
+    for (const opt of CATS[key].options) {
+      const [w, s] = counts[opt] || [0, 0];
+      const score = (w + 1) / (s + 2);
+      if (s > 0 && score > bestScore) { best = opt; bestScore = score; }
+    }
+    return best;
+  }
+  function renderRx() {
+    const rx = $("rx");
+    rx.textContent = "";
+    for (const [k, meta] of Object.entries(CONT)) {
+      const d = state.cont[k];
+      const wrap = document.createElement("div");
+      wrap.innerHTML =
+        `<div class="dial-head"><span class="dial-name"></span><span class="dial-val"></span></div>
+         <div class="track"><span class="dot"></span></div>
+         <div class="ends"><span></span><span></span></div>`;
+      wrap.querySelector(".dial-name").textContent = meta.label;
+      wrap.querySelector(".dial-val").textContent = diopter(d.est);
+      wrap.querySelector(".dot").style.left = ((d.est - 1) / 4) * 100 + "%";
+      const ends = wrap.querySelectorAll(".ends span");
+      ends[0].textContent = meta.lo; ends[1].textContent = meta.hi;
+      rx.append(wrap);
+    }
+    for (const [k, meta] of Object.entries(CATS)) {
+      const wrap = document.createElement("div");
+      wrap.className = "cat";
+      wrap.innerHTML = `<div class="dial-name"></div><div class="lead"></div>`;
+      wrap.querySelector(".dial-name").textContent = meta.label;
+      wrap.querySelector(".lead").textContent = leader(k) || "not read yet";
+      rx.append(wrap);
+    }
+    $("count").textContent = state.total + (state.total === 1 ? " reading" : " readings");
+  }
+
+  // ---- showing six -------------------------------------------------------
+  function show() {
+    const box = $("lenses");
+    box.textContent = "";
+    if (!queue.length) {
+      current = null;
+      $("question").textContent = sampleFn ? "Writing the next six..." : "That was the last set for now.";
+      $("none").disabled = true;
+      return;
+    }
+    current = shuffle(queue.shift());
+    current.forEach((item, i) => {
+      const b = document.createElement("button");
+      b.className = "lens"; b.type = "button";
+      b.setAttribute("aria-label", "Choose " + (i + 1));
+      b.innerHTML = `<span class="num"></span><span class="text"></span>`;
+      b.querySelector(".num").textContent = i + 1;
+      b.querySelector(".text").textContent = item.text;
+      b.addEventListener("click", () => answer(i));
+      box.append(b);
+    });
+    $("question").textContent = "Which is funniest?";
+    $("none").disabled = false;
+  }
+
+  // ---- learning from an answer --------------------------------------------
+  // idx: 0-5 for the one chosen, -1 for none
+  function learn(items, idx) {
+    for (const key of Object.keys(CATS)) {
+      const counts = state.cat[key] = state.cat[key] || {};
+      items.forEach((item, i) => {
+        if (!item[key]) return;
+        const c = counts[item[key]] || [0, 0];
+        counts[item[key]] = [c[0] + (i === idx ? 1 : 0), c[1] + 1];
+      });
+    }
+    const keep = (arr, t) => { arr.push(t); if (arr.length > 12) arr.shift(); };
+    if (idx >= 0) {
+      const win = items[idx];
+      for (const k of Object.keys(CONT)) {
+        const d = state.cont[k];
+        if (typeof win[k] !== "number") continue;
+        d.est = Math.min(5, Math.max(1, d.est + (win[k] - d.est) * 0.4));
+        d.step = Math.max(0.4, d.step * 0.85);
+        d.n += 1;
+      }
+      keep(state.liked, win.text);
+    } else {
+      for (const k of Object.keys(CONT)) state.cont[k].step = Math.min(1.6, state.cont[k].step * 1.1);
+      items.forEach((item) => keep(state.rejected, item.text));
+    }
+    state.seen = state.seen || [];
+    items.forEach((item) => state.seen.push(item.text));
+    if (state.seen.length > 80) state.seen.splice(0, state.seen.length - 80);
+    state.total += 1;
+  }
+
+  function answer(idx) {
+    if (!current) return;
+    const items = current;
+    current = null;
+    const cards = $("lenses").children;
+    if (idx >= 0 && cards[idx]) cards[idx].classList.add("chosen");
+    for (const c of cards) c.disabled = true;
+    $("none").disabled = true;
+    learn(items, idx);
+    renderRx();
+    record(items, idx);
+    setTimeout(() => { show(); refill(); }, 220);
+  }
+
+  // ---- keeping the record ------------------------------------------------
+  function record(items, idx) {
+    const row = { at: new Date().toISOString(), mode: "lineup", items, choice: idx,
+      source: items[0].source || "starter" };
+    const snapshot = JSON.parse(JSON.stringify(state));
+    if (!db) {
+      try { localStorage.setItem("eyetest-state", JSON.stringify(snapshot)); } catch (_) {}
+      return;
+    }
+    writeChain = writeChain
+      .then(() => db.collection("picks").add(row))
+      .then(() => db.doc("state/current").set(snapshot))
+      .catch((e) => { setStatus("Could not save that reading (" + (e && e.code || "error") + "). It still counts on this page."); });
+  }
+
+  // ---- asking for the next six ------------------------------------------
+  // Six different kinds of idea every set; the wording is held plain.
+  function plan() {
+    const around = (k) => {
+      const d = state.cont[k];
+      const v = d.est + (Math.random() * 2 - 1) * d.step * 1.4;
+      return Math.round(Math.min(5, Math.max(1, v)) * 2) / 2;
+    };
+    const engines = shuffle(CATS.engine.options);
+    return Array.from({ length: N }, (_, i) => ({
+      absurdity: around("absurdity"), futurity: around("futurity"), engine: engines[i],
+    }));
+  }
+
+  function promptFor(specs) {
+    const lines = specs.map((s, i) =>
+      `${i + 1}. ${ENGINES[s.engine]}; absurdity ${s.absurdity}/5; set ${s.futurity <= 2 ? "a few decades" : s.futurity <= 3.5 ? "a century or two" : "thousands of years"} from now`).join("\n");
+    const list = (arr, n) => arr.slice(-n).map((t) => `- ${t}`).join("\n") || "- (none yet)";
+    return `You are pitching story ideas for The Aftertimes, a paper from the future. A reader with a hard sense of humour picks the funniest idea of six, or none.
+
+Write each idea as the article's headline, in the paper's house style: title case, present tense, under eight words, often two clauses joined by a semicolon or comma. Real headlines from the paper:
+- Kidnap Victim Overpays Own Ransom
+- Beetles Finish Memorial; Committee Claims Credit
+- Olympic Flame Was A Desk Lamp
+- Chief Mourner Quits, Rehired Faster
+The headline is the whole test: the reader sees nothing else, so the idea has to be readable from it alone.
+
+Each line below is a different kind of idea. Write one headline of that kind for each, in this order:
+${lines}
+
+What has landed with him, to show the level, not to copy:
+${list(state.liked, 8)}
+
+Already shown, so do not repeat their subject or idea:
+${list(state.seen || [], 30)}
+
+Be bold. Dark is allowed. A specific, recognisable detail (a real shop, place or habit) beats a generic one. Six ideas that have nothing to do with each other.
+
+Australian spelling. Never use an em dash or en dash. No newspaper, TV or streaming jokes, no pricing tiers or subscriptions, no galactic councils.
+
+Reply with only a JSON array of ${N} strings, in order.`;
+  }
+
+  async function refill() {
+    if (!sampleFn || fetching || queue.length >= 1) return;
+    fetching = true;
+    if (!current) setStatus("Writing the next six...");
+    const specs = plan();
+    try {
+      const out = await sampleFn.json(promptFor(specs), { cache: false, modelTier: "complex" });
+      if (!Array.isArray(out)) throw { code: "invalid_json" };
+      const items = [];
+      out.forEach((t, i) => {
+        if (typeof t === "string" && t.trim() && specs[i]) items.push({ text: t.trim(), ...specs[i], source: "claude" });
+      });
+      if (items.length >= 3) queue.push(items);
+      setStatus("");
+    } catch (e) {
+      const code = e && e.code;
+      if (code === "not_granted" || code === "sampling_disabled" || code === "not_declared"
+          || code === "capability_disabled" || code === "capability_removed") {
+        sampleFn = null;
+        setStatus("Claude is not available on this page, so only the starter sets will show.");
+      } else if (code === "rate_limited") {
+        setStatus("Paused: too many requests. Try another answer in a minute.");
+      } else {
+        setStatus("The next six did not come through. Answer the current set to try again.");
+      }
+    } finally {
+      fetching = false;
+      if (!current) show();
+    }
+  }
+
+  // A reload must not replay sets already answered.
+  function skipSeen() {
+    const seen = new Set(state.seen || []);
+    const fresh = (set) => !set.some((item) => seen.has(item.text));
+    queue = queue.filter(fresh);
+    if (current && !fresh(current)) show();
+  }
+
+  // ---- wiring --------------------------------------------------------------
+  $("none").addEventListener("click", () => answer(-1));
+  document.addEventListener("keydown", (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "0") answer(-1);
+    const n = Number(e.key);
+    if (n >= 1 && current && n <= current.length) answer(n - 1);
+  });
+
+  renderRx();
+  show();
+
+  (async () => {
+    if (!window.claude || !window.claude.use) return;
+    const [s, d] = await Promise.all([
+      window.claude.use("sample").catch(() => null),
+      window.claude.use("db").catch(() => null),
+    ]);
+    sampleFn = s; db = d;
+    if (db) {
+      let settled = false;
+      const timer = setTimeout(() => { if (!settled) setStatus("Your saved prescription has not loaded yet."); }, 10000);
+      try {
+        const snap = await db.doc("state/current").get();
+        settled = true; clearTimeout(timer);
+        if (snap.exists) {
+          const saved = snap.data();
+          if (saved && saved.cont && saved.cat) { state = JSON.parse(JSON.stringify(saved)); renderRx(); }
+        }
+        skipSeen();
+        setStatus("");
+      } catch (_) { settled = true; clearTimeout(timer); }
+    } else {
+      try {
+        const local = JSON.parse(localStorage.getItem("eyetest-state") || "null");
+        if (local && local.cont) { state = local; renderRx(); }
+      } catch (_) {}
+      skipSeen();
+    }
+    refill();
+  })();
+})();
+</script>

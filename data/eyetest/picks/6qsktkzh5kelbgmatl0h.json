@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-06T00:07:36.465Z",
+  "choice": -1,
+  "items": [
+    {
+      "absurdity": 2.5,
+      "form": "obituary",
+      "futurity": 4.5,
+      "source": "claude",
+      "target": "media",
+      "text": "VALE: The Thumbs Up Emoji (2010 to 8411). Once a warm sign of approval between friends, it spent its final six thousand years being read as hostile by everyone under sixty. It never understood what it had done. It is survived by the smiley face, which is also considered passive-aggressive, and the heart, which nobody has trusted since 2031. In lieu of flowers, the family asks that you reply 'k'.",
+      "tone": "dry"
+    },
+    {
+      "absurdity": 1,
+      "form": "vox pop",
+      "futurity": 1.5,
+      "source": "claude",
+      "target": "property",
+      "text": "VOX POP, outside Box Hill Central, 2058. We asked: is the property market finally fair?\n\nDarren, 46: Mum's promised me the house. She's 81 and does reformer pilates five mornings a week. I've started leaving Lego on the stairs.\n\nPriya, 33: We finally bought. It's a car space in Doncaster. Strata says we're not allowed to sleep in it, so we take turns.\n\nKen, 74, owns nine units: Young people just need to tighten the belt. I gave up smashed avo in 2017 and look at me now.",
+      "tone": "petty"
+    },
+    {
+      "absurdity": 5,
+      "form": "scoreboard",
+      "futurity": 2.5,
+      "source": "claude",
+      "target": "money",
+      "text": "FULL TIME | Compound Interest 10^43 d. The Universe 1 | Universe repossessed in the 89th minute | Heat death brought forward to Tuesday to settle the account | Stars to be switched off in order of value | Player of the match: a $40 payday loan taken out in Dubbo in 2024",
+      "tone": "dark"
+    },
+    {
+      "absurdity": 3.5,
+      "form": "advice letter",
+      "futurity": 4,
+      "source": "claude",
+      "target": "sport",
+      "text": "Dear Aftertimes, my husband still barracks for St Kilda. They last won a flag in 1966, which was nine thousand years ago. The club was dissolved in 3200 and Moorabbin has been under the sea since 4100. Every Saturday he puts on the scarf, walks to the beach and yells 'BALL!' at the tide. He says this is our year. How do I get through to him? - Tired of Waiting, Moorabbin (Lower)\n\nDear Tired, as the last St Kilda supporter alive, your husband is now legally the club. He owes himself a membership refund going back nine millennia. Let him claim it, buy a boat, and enjoy finally having a winning season.",
+      "tone": "silly"
+    },
+    {
+      "absurdity": 2,
+      "form": "headline",
+      "futurity": 5,
+      "source": "claude",
+      "target": "dating",
+      "text": "Woman Replies 'Haha Sorry Just Saw This' To Man's Message From 3412; Man Says He Never Stopped Checking, Already Booked Table For Two",
+      "tone": "sweet"
+    },
+    {
+      "absurdity": 1,
+      "form": "online review",
+      "futurity": 2,
+      "source": "claude",
+      "target": "work",
+      "text": "★★★★☆ 'Supportive culture' | Human Liability Officer (Current Employee), Parramatta, 2049\n\nPros: AI managers are always available, never moody, and remember my birthday. Free kombucha. I'm the only human here, so plenty of desk space.\n\nCons: I don't technically do anything. I'm kept on because the insurer requires someone the company can blame. Last quarter I was blamed 412 times, including for a server outage in Singapore and a quarterly loss I learned about in my exit interview, which they said was just practice.\n\nAdvice to management: Please stop calling my performance review a 'sentencing hearing' in the calendar invite. Everything else is honestly great.",
+      "tone": "sharp satire"
+    }
+  ],
+  "mode": "lineup",
+  "source": "claude"
+}

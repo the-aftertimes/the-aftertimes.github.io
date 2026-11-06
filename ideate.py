@@ -50,6 +50,19 @@ gap between an organisation's stated reason and its real one. The future setting
 exists to make that familiar behaviour visible in a new light. If you cannot name
 what a premise is mocking about people or institutions NOW, discard it.
 
+WHAT HAS LANDED WITH OUR READER (a blind taste test, 06/11/2026: 66 readings,
+10 picks). One exact, recognisable present-day convention - middle management,
+an online booking system, a free trial week, an out-of-office reply, a quarterly
+earnings result, a teenager's slang - applied to something vast or natural it has
+no business touching. The precise phrase is the joke; a vague version of the same
+idea lost every time. Treat this as the level to reach, not a template: every
+round that copied a winner's shape did worse than the round before.
+
+What lost every time it appeared: jokes about newspapers, broadcasting or the
+media; the inconveniences of living in space itself (a colony's lift, a station's
+oxygen, a crew roster) - the setting is where the story happens, not what it is
+about; and the old-rule-or-mistranslation reveal.
+
 Each premise also needs a real comedic engine - not merely "a futuristic version
 of a present-day thing", but a genuine twist. A reader should smile at the premise
 alone. Make each surprising,

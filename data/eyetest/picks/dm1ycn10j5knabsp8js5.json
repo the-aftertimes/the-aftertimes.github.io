@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-06T00:02:07.237Z",
+  "choice": -1,
+  "items": [
+    {
+      "absurdity": 2,
+      "device": "bureaucratic loop",
+      "futurity": 1,
+      "length": 2,
+      "source": "starter",
+      "target": "sport",
+      "text": "A primary school sports day has gone to the video referee, and the egg-and-spoon final is in its fourth week."
+    },
+    {
+      "absurdity": 3,
+      "device": "status anxiety",
+      "futurity": 2,
+      "length": 2,
+      "source": "starter",
+      "target": "status",
+      "text": "Saturn has been told it can keep its rings as long as it stops mentioning them."
+    },
+    {
+      "absurdity": 2.5,
+      "device": "scale mismatch",
+      "futurity": 1.5,
+      "length": 1.5,
+      "source": "starter",
+      "target": "property",
+      "text": "A three-bedroom house in Paddington now costs the same as Tasmania."
+    },
+    {
+      "absurdity": 1.5,
+      "device": "normalising the absurd",
+      "futurity": 2,
+      "length": 1,
+      "source": "starter",
+      "target": "tech",
+      "text": "The world's last fax machine has received a fax."
+    },
+    {
+      "absurdity": 2,
+      "device": "literal-minded",
+      "futurity": 1.5,
+      "length": 2,
+      "source": "starter",
+      "target": "tech",
+      "text": "A man has been fined for driving his own car, which says it was not consulted."
+    },
+    {
+      "absurdity": 3,
+      "device": "consumer mechanic",
+      "futurity": 2,
+      "length": 2,
+      "source": "starter",
+      "target": "money",
+      "text": "The Great Barrier Reef has been sold to an overseas buyer, who has asked for it to be delivered."
+    }
+  ],
+  "mode": "lineup",
+  "source": "starter"
+}
