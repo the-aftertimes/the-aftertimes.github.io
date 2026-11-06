@@ -1,0 +1,200 @@
+{
+  "run_date": "2026-11-07",
+  "run_time": "2026-11-06T18:00:44.647612+00:00",
+  "dispatch": {
+    "headline": "Frozen Coastline Still Awaiting Committee's Thoughts",
+    "body": "Lowri Mwangi, the ice sculptor whose frozen replica of the home planet's coastline fills the main concourse, was told on Thursday that the arts committee will circle back on it.\n\nThe committee has circled back for eleven years. It first met about the coastline in the second month of carving, when the sculpture reached the Gulf of Biscay. It has since reached the Cape of Good Hope, the Bering Strait and a long stretch of Antarctica nobody asked for.\n\nMwangi finished in her fourth year. The committee asked her to hold the work at minus forty while members considered it. She has held it there since. The market stalls moved out in year six.\n\nThe notice, delivered by a clerk on a slate, refers to the sculpture in its \"current form\".\n\n\"It has no other form,\" Mwangi said. \"It's a coastline. I could give them a lake, but that would be a different meeting.\"\n\nMinutes show members approved of the work at every circle-back. Each time, a member then asked whether this was the right moment. The sculpture has lost all of Patagonia to condensation and a corner of Japan to a child.\n\nThe next meeting is on the fourteenth. The coastline is item nine, after the question of who owns the biscuits. The biscuits, kept in the concourse, are still frozen solid and perfectly fresh.",
+    "scene": "A sculptor in a thick insulated coat stands on a stepladder in a frosty concourse, chiselling at a vast ice model of a coastline while a clerk below holds up a slate toward her.",
+    "dateline": {
+      "place": "Ice Coast",
+      "year": 5071,
+      "month": 11,
+      "day": 27,
+      "years_from_now": 3045
+    },
+    "domain": "arts",
+    "glossary": [],
+    "premise": "A habitat's celebrated ice sculptor is given a fortnight's notice that her masterwork, a frozen replica of the home planet's coastline, is to be 'circled back on' by the arts committee, which has now circled back on it for eleven years.",
+    "brief": null,
+    "image": "assets/img/2026-11-07.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-06T18:00:44.647612+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 103,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      1.0,
+      0.84,
+      0.59
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "239 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 44 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "221 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Mona Lisa Trial Ends; Billing Does Not",
+        "body": "Two thousand residents of Karakuri Foot queued overnight at the lift terminus this week for a free seven-day trial of the Mona Lisa, due back by Friday. A spokesman for the Louvre-in-Orbit confirmed on Thursday that auto-renewal has already begun for those who forgot to cancel.\n\nThe painting is lent in a sealed case the size of a bread bin and hangs in the home, usually over the bed. Ksenia Zabala, a pipe-fitter, said she queued from the second shift and was ninth to the counter. She has not looked at it since Sunday.\n\nOlder residents object. The Foot's retired lift-pilots, who recall travelling down to see the original, say a painting should be visited and not kept. One called the trial a way of making people feel they own what they have merely borrowed.\n\nThe spokesman, Ahanu Tuilagi, said the renewal terms appeared on the third screen of the sign-up and were read aloud at the counter, in a low voice. Cancellation requires a return in person, which means the lift, which means a queue.\n\nThe present queue stretches past the second ring of the terminus. About four hundred people in it are returning the painting. The rest are collecting a second one, which the Louvre-in-Orbit describes as included.",
+        "premise": "Two thousand residents of an elevator terminus queue overnight for a free-trial week of the Mona Lisa, to be returned by Friday, and a spokesman for the Louvre-in-Orbit confirms that auto-renewal has already quietly begun for those who forgot to cancel.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Ordinary Residents Begin Finishing Their Own Things",
+        "body": "Residents of Lantern Drift have stopped starting new projects and begun completing old ones, a habit the station's elders call vulgar. Thuy Brannigan, a lock-greaser, finished a bowl on Monday. She had been making it for four years.\n\nThe habit began after the Halcyon Spindle's cat entered its sixth year of unveiling. The sculpture is forty kilometres long and visible from the east galleries. Three curators have now described it as a work in progress, and the third did so at the closing of the ceremony, which has not closed.\n\nAbout two thousand residents have since completed something. The list includes a coat, a song of eleven verses, a repaired hatch and one very small cat. Completion parties are held in laundry rooms, where the finished object is placed on a shelf and left alone.\n\nOlder residents object. Ksenia Esposito, who chairs the Spindle's viewing committee, said finished work \"closes a conversation that has barely been opened.\" She has been working on her own essay on the subject for thirty-one years.\n\nThe Spindle declined to comment on the cat's progress. Its most recent bulletin said the tail would be addressed \"in due course.\" Nobody has yet found the tail. Survey crews have so far reached the ears.",
+        "premise": "The Halcyon Spindle commissions a 40-kilometre sculpture of a cat, then hosts a six-year unveiling ceremony, at which the cat is described by three successive curators as 'a work in progress' and never completed.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Ice Coast To Be Circled Back On",
+        "body": "Lowri Mwangi, the ice sculptor whose frozen replica of the home planet's coastline fills the main concourse, was given a fortnight's notice on Thursday that the arts committee will circle back on it.\n\nThe committee has circled back on the work for eleven years. It first met about the coastline in the second month of carving, when the sculpture reached the Gulf of Biscay. It has since reached the Cape of Good Hope, the Bering Strait and a long stretch of Antarctica that nobody had asked for.\n\nMwangi finished the work in her fourth year. The committee asked her to hold it at minus forty while members considered the matter. She has held it there since, keeping the concourse cold enough that the market stalls moved out in year six.\n\nThe notice, delivered by a clerk on a slate, says the committee will circle back on the sculpture in its \"current form\". Mwangi said it has no other form, as it is a coastline.\n\nMinutes from the last eleven circle-backs show that members approved of the work on each occasion. Each time, the minutes record, a member then asked whether it was the right moment. The sculpture has so far lost the whole of Patagonia to condensation and a corner of Japan to a child.\n\nThe committee's next meeting is on the fourteenth. The agenda lists the coastline as item nine, after the question of who owns the biscuits.",
+        "premise": "A habitat's celebrated ice sculptor is given a fortnight's notice that her masterwork, a frozen replica of the home planet's coastline, is to be 'circled back on' by the arts committee, which has now circled back on it for eleven years.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Wheel Buries Hopscotch Grid With Full Honours",
+        "body": "Eleven thousand residents of the Meridian Wheel stood in the Spoke Nine concourse on Thursday as an honour guard carried a square of cleaned deck plating to the recycling furnace, ending the first day of a nine-day mourning period for a chalk hopscotch grid.\n\nA maintenance drone erased the drawing during a routine wash cycle last week. It had been on Concourse Four for sixty-one years, redrawn by children each time it faded, and was the oldest continuous artwork on the Wheel.\n\nThe Assembly passed the mourning order within the hour. Lamps along the rim have been dimmed to amber, and the Wheel's bell-tone is sounded every evening at the hour the drone struck.\n\nOlder residents have objected. \"In my day we mourned people,\" said a retired lock inspector, who was seen weeping at the furnace door. The Assembly chair said the remark would be noted.\n\nThe drone, a Halden-pattern washer, has been held in a service bay since the erasure. Its work log shows it was following a schedule, last revised by the Assembly, that listed Concourse Four for cleaning every Tuesday.\n\nThe schedule was written in the Wheel's second century. Nobody on the Assembly had read it before this week.\n\nThe drone has been cleared of all blame. It will resume duty on the tenth day, on Concourse Five.",
+        "premise": "Residents of the Meridian Wheel hold a state funeral with honour guard and a nine-day mourning period for a chalk drawing of a hopscotch grid, which a maintenance drone erased on a Tuesday.",
+        "score": 0.59,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The headline's corporate 'circle back' pun lands a joke, and the committee's eleven-year stalling, the 'is it the right moment' minutes, and the biscuits-before-coastline agenda kicker satirise institutional inertia sharply, though the opening sentence already states the premise.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        4.0,
+        7.0,
+        3.0
+      ],
+      "rankings": [
+        [
+          3,
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.92,
+    "critique": "No short punchy sentences and the body ran 239 words against a 170-215 target. The headline described the premise, the quotes were flat, and the ending restated the biscuit joke instead of turning it.",
+    "prose": {
+      "words": 226,
+      "sentences": 18,
+      "mean_sentence": 12.6,
+      "longest": 30,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.9
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        20.7,
+        20.9
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "The second engraving shows a man on a ladder before a dripping sheet hung on a wall, with no coastline model, and its slate-holder is a woman addressing a crowd rather than a clerk holding a slate up to the sculptor.",
+      "winner_faults": "The coastline reads more like a cracked path or inlet than a vast sculpted ice model, the figure on the ladder is not clearly chiselling, and the top of the scene is cropped."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-07": "loss"
+      }
+    }
+  }
+}

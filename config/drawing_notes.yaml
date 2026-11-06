@@ -5,7 +5,8 @@ challenger:
 why: Garbled illegible lettering is the most repeated fault in the published pictures, so banning all
   text targets it directly.
 since: '2026-11-06'
-results: {}
+results:
+  '2026-11-07': loss
 history:
 - decided: '2026-10-26'
   verdict: retired
