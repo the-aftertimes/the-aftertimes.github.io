@@ -1076,5 +1076,16 @@
     "place_kind": "orbital",
     "engine": "scale",
     "technique": "puncture_the_pompous"
+  },
+  {
+    "run_date": "2026-11-08",
+    "year": 5413,
+    "era_bucket": 67,
+    "domain": "family",
+    "headline": "Baby Signed For, Not Yet Anyone",
+    "style": "notices",
+    "place_kind": "lunar",
+    "engine": "bureaucratic",
+    "technique": "heard_the_words"
   }
 ]

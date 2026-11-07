@@ -1,0 +1,213 @@
+{
+  "run_date": "2026-11-08",
+  "run_time": "2026-11-07T18:00:27.710724+00:00",
+  "dispatch": {
+    "headline": "Baby Signed For, Not Yet Anyone",
+    "body": "CLOSURE. The Visitors' Door at 14 Soft Ward Row is shut for resurfacing. Parents of infants under thirty days should use the side entrance and sign their child in at the porch panel. Deniz Rautio's household reports the panel has refused the same infant twice. \"It knows him,\" Rautio said. \"That is the worrying part. It just won't say so.\"\n\nCHANGED HOURS. The Registry of Births will process household admissions from the ninth hour to the fifteenth, Monday to Friday. Infants reaching day thirty at the weekend remain visitors until the Monday. A visitor may not be assigned a bedroom, only a guest cot.\n\nLOST PROPERTY. One visitor, female, nineteen days old, was left on the tram to Copper Ledge and has been returned to the Registry desk. Her mother signed for her with a household card. The desk notes the card lets her collect residents, and the infant is not yet one.\n\nREMINDER. Hosts must offer every visitor a drink on arrival and a farewell at departure. This applies to infants. A missing farewell in the log may delay admission by one day.\n\nAPPOINTMENT. Laleh Quisbert is invited to a Day Thirty Hearing at the Basin Registry, fourth floor. A clerk will confirm her son's name on his behalf. He will be admitted at the end of the session and may then sit down. Until then he is to be carried, as guests are.",
+    "scene": "A tired woman in a pale quilted coat stands at a large arched door holding a swaddled baby, pressing a huge glowing sign-in panel marked VISITORS while a clerk in a grey tabard watches from a desk behind her.",
+    "dateline": {
+      "place": "Soft Ward Row",
+      "year": 5413,
+      "month": 2,
+      "day": 15,
+      "years_from_now": 3387
+    },
+    "domain": "household registry and newborn admissions",
+    "glossary": [],
+    "premise": "The Mare Tranquillitatis Registry of Births confirms that a newborn cannot be listed as a household member until it has completed a thirty-day probationary period, during which it is formally recorded as a visitor to its own parents.",
+    "brief": null,
+    "image": "assets/img/2026-11-08.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-07T18:00:27.710724+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 104,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.84,
+      0.76,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "238 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "241 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "258 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: \"A child's shoe, one, and\"",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "236 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Newborns Remain Visitors Until Day Thirty-One",
+        "body": "CLOSURE. The Visitors' Door at 14 Soft Ward Row is closed until further notice for resurfacing. Parents of infants under thirty days should use the side entrance and sign their child in at the porch panel. Deniz Rautio's household reports the panel has refused the same infant twice.\n\nCHANGED HOURS. The Registry of Births will now process household admissions from the ninth hour to the fifteenth, Monday to Friday. Infants reaching day thirty at the weekend remain visitors until the Monday. Parents are reminded that a visitor may not be assigned a bedroom, only a guest cot.\n\nLOST PROPERTY. One visitor, female, nineteen days old, was left on the tram to Copper Ledge and has been returned to the Registry desk. She was signed for by her mother, who presented a household card. The desk advises that the card entitles the mother to collect residents, and the infant is not yet one.\n\nREMINDER. Hosts must offer every visitor a drink on arrival and a farewell at departure. This applies to infants. Failure to log a farewell may delay the child's admission by one day.\n\nAPPOINTMENT. Laleh Quisbert is invited to attend a Day Thirty Hearing at the Basin Registry on the fourth floor. Her son will be asked to confirm his name, which a clerk will say on his behalf. He will be admitted to the household at the end of the session and may then sit down.",
+        "premise": "The Mare Tranquillitatis Registry of Births confirms that a newborn cannot be listed as a household member until it has completed a thirty-day probationary period, during which it is formally recorded as a visitor to its own parents.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Toddler's Tantrum Declared A Pressure Breach",
+        "body": "CORRIDOR SEALED PENDING INSPECTION OF SULK\nCorridor Nine, Lower Dome, is closed to all foot traffic from this morning. The Safeguarding Board has logged a tantrum by a two-year-old on the Ahlgren landing as a pressure-containment breach, Class Two. The corridor will reopen when the sulking has been inspected and signed off.\n\nCHANGED HOURS, CORRIDOR NINE BAKERY\nThe bakery will serve through its hatch only, from the dry side of the seal, between ninth and eleventh bell. Loaves will be passed over by tongs. Residents on the wet side may collect from the Board's relay, which does not stock loaves.\n\nLOST PROPERTY\nOne red cup with a lid, found beside the breach. It has been tagged as evidence and cannot be returned until the sulk is cleared. The child has asked for it twice, and both requests were noted as continued distress.\n\nREMINDER FROM THE SAFEGUARDING BOARD\nA breach is any outburst that leaves a child unattended and the air in the corridor uncertain. Parents are reminded that the Board's inspectors measure sulking by duration, volume and the angle of the lower lip. Sulking that has not stopped is not signed off.\n\nAPPOINTMENT\nThe Ahlgren family is booked for a first sulk inspection at the fourth bell tomorrow. Inspector Olumide Kiplagat will attend with a calm-metre and a hatch key. Should the child still be sulking, a second appointment will be made for the day after, and the corridor stays shut.",
+        "premise": "A crater settlement's safeguarding board classifies an unattended toddler's tantrum as a pressure-containment breach, and seals the family's corridor until the sulking has been inspected and signed off.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Cousins Fined For Gathering In Excess Of Six",
+        "body": "DOME FOUR CLOSED UNTIL FURTHER NOTICE\nThe Dome Four concourse is shut to all traffic following Saturday's family reunion, attended by three hundred and six cousins. The Safety Inspectorate has recorded the gathering as an unlicensed assembly of hazardous density. A fine of eleven weeks of shared-bay credit has been issued to the host family.\n\nCHANGED HOURS AT THE LOW-GRAVITY HALL\nThe Sunday cooking floor will open two hours late while the Inspectorate counts its aunts. Every aunt present on Saturday must now be placed in a registered group of six. Groups of seven or more will be treated as a gathering.\n\nLOST PROPERTY\nA tray of forty stuffed dumplings was left on the Dome Four concourse and has been collected by the Inspectorate as evidence. A child's shoe, one, and a folding chair belonging to Grandmother Oona Kiplagat's branch are also held. Claimants should bring proof of descent.\n\nREMINDER FROM THE INSPECTORATE\nAunts are reminded that sitting together at a distance of less than one arm does not make a group of six, unless all six are registered. Aunts who were registered in separate groups in previous years may not rejoin them. Luana Nwosu, who is the aunt of one hundred and nine of the cousins present, has been assigned to groups on four different domes.\n\nAPPOINTMENT\nThe aunts' first group registration is set for the ninth hour on Thursday at the Inspectorate counter in Dome Two. Attendance is by group only. The next reunion has been provisionally scheduled for fifty years from now, in fifty rooms.",
+        "premise": "A settlement's safety inspectors fine the annual family reunion as an unlicensed gathering of hazardous density after three hundred cousins arrive in one dome, and order the aunts to disperse into registered groups of six.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Couple Told Airlock Only Fits Two",
+        "body": "CLOSURE\nThe Pale Gate Lock on Seventh Terrace will be shut to all traffic until further notice. The Housing Board has declined the separation request of its two registered occupants, citing the lock's approval as a two-person unit. A single occupant would need a new risk assessment, and none is scheduled.\n\nCHANGED HOURS\nThe Board's Household Desk will open at the tenth bell instead of the ninth. Applicants seeking to leave a shared dwelling should bring both occupants and both seal-keys. Applicants who arrive separately will be asked to go home together.\n\nLOST PROPERTY\nOne glove, left-hand, found inside the Pale Gate Lock and held at the Desk. A second glove, right-hand, has been claimed by the other occupant, who says it is not the pair. Both occupants have been asked to stop labelling the lock's two benches as theirs.\n\nREMINDER\nThe Board reminds residents that an airlock cycle is rated for two bodies, and that a lock cycled with one body is a different lock. Occupants who wish to live apart are advised that each new dwelling must have its own lock, approved separately. Present waiting time for a single-person lock survey is nineteen years.\n\nAPPOINTMENT\nThe two occupants of the Pale Gate Lock are booked for a joint hearing at the Desk on the fourth day of next lunation. They have been assigned adjoining seats. Each has been told the other will be there.",
+        "premise": "A lunar housing board refuses a couple's request to divorce on the grounds that their shared airlock was approved as a two-person unit, and a single occupant would require a new risk assessment.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its deadpan bureaucracy about newborns as formal visitors gets sharp, specific jokes (the panel refusing the same infant twice, the infant 'not yet one' so she can't be collected, the son asked to sit down at his own admission) and a strong kicker, while Draft 1 is also good but a little more contrived.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        1.0,
+        8.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          0,
+          3,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.84,
+    "critique": "Headline describes the premise instead of landing a joke, and the body runs 238 words against a 170-215 target. The quotes are absent, the ending restates the rule, and the household card line is not tied to the story's own consequences.",
+    "revise_judge_reason": "The headline lands a joke, and Rautio's 'It knows him... It just won't say so' treats the absurd bureaucracy as ordinary, while Draft 1's headline only describes the premise.",
+    "prose": {
+      "words": 235,
+      "sentences": 24,
+      "mean_sentence": 9.8,
+      "longest": 22,
+      "short_sentences": 9,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        17.2,
+        19.6
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Candidate 1 has the woman pointing toward the door rather than pressing a sign-in panel, and its wall sign carries garbled text.",
+      "winner_faults": "The wall poster reads as garbled lettering (\"VISITFRAL\", \"COINT WELLS\"), the panel is not clearly glowing, the arched door is only partly shown, and the woman's face is turned away."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win"
+      }
+    }
+  }
+}
