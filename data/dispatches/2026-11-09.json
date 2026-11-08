@@ -1,0 +1,199 @@
+{
+  "run_date": "2026-11-09",
+  "run_time": "2026-11-08T18:00:31.856539+00:00",
+  "dispatch": {
+    "headline": "Election Day Dies, Beaten By Football",
+    "body": "Election Day, the oldest fixed date on the calendar of Nimbus Reach, died this month at 2,014 after the league moved the Skyhook Cup final onto it. It is survived by Vote Week, which nobody likes.\n\nThe founding assembly set the day as the third Gale Day of the quiet season, when the platform's winds were mildest. For twenty centuries it passed without incident. Citizens walked to the ballot galleries in their best wraps, and the tally was read from the east rail at dusk.\n\nThe final, between the Deckhands and the Lower Rafts, was fixed three years ago. The assembly chair was asked whether the two events could share a day. She said they could not, as the stadium holds the whole city and the galleries hold forty.\n\nThe vote was held in the stadium after the trophy ceremony, on the seats. Turnout was 100 percent, the first in the city's history. The returning officer said everyone had been counted at the gate.\n\nSeamus Ahlgren, who has run the east rail tally for thirty years, said the result was valid. \"The sheets came out with the cold drinks and most came back in the cups,\" he said. \"You can still read a ballot with a bit of lemon on it. It's the Deckhands' votes I worry about. They were mostly used for a goal.\"\n\nThe Deckhands won the cup. The sitting assembly won the vote, by a margin close to the Deckhands'.\n\nAhlgren will read the tally from the east rail at dusk on Gale Day anyway. He says someone has to tell the wind.",
+    "scene": "A tired returning officer in a grey assembly wrap stands on a stadium seat handing a ballot sheet and a large cold drink to a cheering fan in team colours, while rows of fans wave banners behind them.",
+    "dateline": {
+      "place": "Nimbus Reach",
+      "year": 4494,
+      "month": 4,
+      "day": 28,
+      "years_from_now": 2468
+    },
+    "domain": "civic ritual and sport",
+    "glossary": [],
+    "premise": "The cloud city of Nimbus Reach cancels its two-thousand-year-old election day to avoid clashing with the finals of its ball-game league, and the turnout for the rescheduled vote, held after the trophy ceremony, is a record 100 percent, because everyone was already in the stadium.",
+    "brief": null,
+    "image": "assets/img/2026-11-09.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-08T18:00:31.856539+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 105,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.84,
+      0.92,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "255 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "249 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "272 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Nimbus Reach Election Day Dies, Aged 2,000",
+        "body": "Election Day, the oldest fixed date on the calendar of Nimbus Reach, died this month at 2,014 after the league moved the Skyhook Cup final onto it. It is survived by the Vote Week, which nobody likes.\n\nThe day was first set by the founding assembly, who chose the third Gale Day of the quiet season because the platform's winds were mildest then. For twenty centuries it was kept without incident. Citizens walked to the ballot galleries in their best wraps, and the tally was read from the east rail at dusk.\n\nThe final, between the Deckhands and the Lower Rafts, was fixed three years ago. The assembly chair was asked whether the two events could share a day. She said they could not, as the stadium holds the whole city and the galleries hold forty.\n\nThe vote was moved to the evening after the trophy ceremony and held in the stadium itself, on the seats. Turnout was 100 percent, the first in the city's history. Asked how the figure had been reached, the returning officer said that everyone had been counted at the gate.\n\nSeamus Ahlgren, who has run the east rail tally for thirty years, said the result was valid. He added that the ballot sheets were handed out with the cold drinks, and that most were returned with the cups.\n\nThe Deckhands won the cup. The sitting assembly won the vote, by a margin close to the Deckhands'.\n\nThe east rail will be kept open on Gale Day. No one is expected.",
+        "premise": "The cloud city of Nimbus Reach cancels its two-thousand-year-old election day to avoid clashing with the finals of its ball-game league, and the turnout for the rescheduled vote, held after the trophy ceremony, is a record 100 percent, because everyone was already in the stadium.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Cirrus Nine's Elected Council Dies, Unmissed",
+        "body": "The Cirrus Nine Council of Forty, which governed the floating city for 311 years, was abolished on Saturday at the age of 311. It is survived by no one who attended its meetings.\n\nThe council was born in a lull between two storms, when the founders agreed that a platform of nine thousand should vote on things. It voted on ballast, on ammonia filters and, for one long decade, on the colour of the lifts. Turnout was always modest. Residents said the debates ran like slow leaks.\n\nThe end came after the contested vote of last spring, when two counts of the ballots disagreed by a margin nobody could explain and the recount disagreed with both. The assembly chair proposed that policy instead go to the winners of the annual Gas-Giant Kite League, whose result is never disputed because it is flown in front of everyone.\n\nThis year's winners, the Sixth Deck Updraft, set the ration schedule on Monday. It is the same schedule as before.\n\nAsked whether anything had changed, a filter-cleaner named Suvi Gathoni said the schedule had not. She said she now watched the meetings, which were held on the open gantry in a crosswind, and that she had stayed to the end of one.\n\nThe council's last act was to approve its own minutes. The vote was nineteen to eleven, with ten absent.\n\nA kite pilot, Tiihu Kiplagat, asked whether the League would keep the council's seat plan, said the League did not use seats.",
+        "premise": "After a contested vote, the floating city of Cirrus Nine abolishes its elected council and lets the winners of the annual Gas-Giant Kite League decide policy, a change residents say makes no difference except that the debates are now watchable.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Halcyon Deck Mourns Its Voting Booths",
+        "body": "The ballot lantern of Halcyon Deck, which collected the platform's votes for three hundred and eleven years, was switched off on Thursday, a day after the swearing-in of the first mayor chosen by draft. It was 311.\n\nThe lantern was installed after the Great Counting Dispute, when two harbour wards each declared themselves the larger. It settled that matter in an afternoon. Residents remember it as plain, warm to the touch and always slightly late.\n\nIts later years were quieter. Turnout fell each cycle, and the last three mayors were elected by margins smaller than the number of residents who had voted for the lantern's own repair fund.\n\nThe draft began as a hobby among sky-polo managers, who ranked citizens by instinct for substitutions and timing. The ranking sheet was shared at a ferry dock. Within a season, more residents had read it than had read any candidate's platform.\n\nTobiah Duroselle, who kept the sheet, was asked by a reporter whether the sheet measured ability to govern. He said it measured ability to manage a sky-polo side, and that this was what the column was headed.\n\nThe new mayor, Thuy Haugland, was drafted first overall. She has never played the sport.\n\nThe lantern will be kept in the harbour office. Its last count, taken on Wednesday for no reason anyone recorded, showed one vote, for her.",
+        "premise": "The Jovian upper-atmosphere platform of Halcyon Deck swears in its first mayor chosen by fantasy-league draft, after voters lost faith in candidates and gained faith in a spreadsheet of who had the best 'managerial instincts' for sky-polo.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Neptune Senate Dies, Still In Session",
+        "body": "The Senate of Skerrivane Float, a floating platform of four thousand residents above the Neptune storm bands, was declared dead on the ninth day of its hurricane session, aged 212. It died without having voted on the evacuation order.\n\nThe Senate was founded to settle which of the platform's three founding families owned the wind. It outlived all three. In its later years it was best known for the Long Count, a census of every person, animal and registered hobby on the float, repeated every nine years and never once finished early.\n\nThe final session opened with the storm wall two days out. A senator moved to evacuate. A second senator moved that the cloud-pigeon racing results of Priit Tuilagi, a hobbyist, be admitted to the Count first, as the evacuation lists drew on it. The results were unofficial. Tuilagi kept them in a coat pocket.\n\nThe chamber sat for nine days. Procedure required each bird to be read into the record by name, colour and finishing time. The racing season ends on the twelfth day.\n\nAsked on the sixth day whether the storm would wait, the Senate's clerk of weather said the storm had not been consulted, and that this was the usual arrangement.\n\nOlumide Grabowska, the assembly chair, left the chamber on the ninth day to check the pressure doors and found the platform's lower decks already empty. The residents had left on their own boats the night before. Nobody had told the Senate, and no one had thought to file notice.\n\nThe Senate is survived by its minutes, which run to eleven thousand pages. Tuilagi's bird, Lantern, finished fourth.",
+        "premise": "The senate of a floating Neptune platform spends its entire session debating whether a hobbyist's 'unofficial' cloud-pigeon racing results should count toward the census, delaying the hurricane evacuation order until the racing season ends.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its satire of sports scheduling crowding out democracy is pointed and recognisable, with sharp lines like 'survived by the Vote Week, which nobody likes' and ballots returned with the cups, and the 'No one is expected' kicker lands.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "challenger",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        4.0,
+        8.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.84,
+    "critique": "Body ran 255 words against a 170-215 target, and the headline only describes the premise without landing a joke. The final line restates the empty galleries, and Ahlgren's quote is mild. 'Died' is also loosely used, since nobody explains how the day came to be mourned.",
+    "revise_judge_reason": "The headline lands a real jab at football over democracy, and Ahlgren's ballot-with-lemon and 'mostly used for a goal' lines treat the absurdity as routine, but the opening still announces the whole conceit.",
+    "prose": {
+      "words": 266,
+      "sentences": 20,
+      "mean_sentence": 13.3,
+      "longest": 27,
+      "short_sentences": 1,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        24.1,
+        22.0
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 shows the cold drink but not the ballot sheet, the central act of handing over a ballot, and its signs are garbled ('Enccballngs', 'coffce', 'TINLA').",
+      "winner_faults": "The officer is in a plain coat rather than a grey assembly wrap, he stands on a step instead of a seat, the drink is missing, and the flag bears garbled lettering."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss"
+      }
+    }
+  }
+}

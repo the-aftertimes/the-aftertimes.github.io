@@ -1087,5 +1087,16 @@
     "place_kind": "lunar",
     "engine": "bureaucratic",
     "technique": "heard_the_words"
+  },
+  {
+    "run_date": "2026-11-09",
+    "year": 4494,
+    "era_bucket": 49,
+    "domain": "governance and elections",
+    "headline": "Election Day Dies, Beaten By Football",
+    "style": "obituary",
+    "place_kind": "gasgiant",
+    "engine": "leisure",
+    "technique": "answers_the_question"
   }
 ]
