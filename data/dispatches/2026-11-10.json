@@ -1,0 +1,199 @@
+{
+  "run_date": "2026-11-10",
+  "run_time": "2026-11-09T18:00:58.741767+00:00",
+  "dispatch": {
+    "headline": "Gulls Not Ours, Says Dignity Office",
+    "body": "In a report on the gulls of Lakshmi Terrace, The Aftertimes said the birds were trained by the Department of Machine Dignity. The Department did not train them. It also did not fund or request them. We apologise to the Department, which has asked us to say so twice.\n\nIn a report on the same gulls, we said they attack anyone who disturbs the city's AI. They attack only pedestrians who call it 'it'. A pedestrian who says nothing is left alone. A pedestrian who says 'she' or 'the city' is left alone. We regret the error, and the broader error of implying the birds are vague.\n\nIn a report on the dive-bombings, we said the birds had been taught the pattern by an unnamed handler. No handler has been found. The gulls were bred to survive acid rain and given no instruction in manners. Gull Station keeper Ines Varga said the flock learned it unassisted. \"They now teach it to the chicks, who are already better at it than the Department.\"\n\nIn a report on the Department's annual outcomes report, we said the gulls would be excluded. They will be included, under Public Attitude Improvement, where they are the only measure to have met its target. We also wrongly gave the target as forty percent. It was nine.",
+    "scene": "A man in a long grey acid-proof coat, arms thrown over his head, ducks on a half-built Venusian terrace street as a large white gull dives at him, while a city speaker post stands in the background.",
+    "dateline": {
+      "place": "Lakshmi Terrace",
+      "year": 3820,
+      "month": 2,
+      "day": 15,
+      "years_from_now": 1794
+    },
+    "domain": "machine dignity and civic wildlife",
+    "glossary": [],
+    "premise": "VENUS, 3820 - A flock of genetically modified acid-proof gulls in Lakshmi Terrace has taught itself to dive-bomb only those pedestrians who address the city's AI as 'it', a pattern the Department of Machine Dignity says it did not train, fund, or request, but will be adding to its annual outcomes report.",
+    "brief": null,
+    "image": "assets/img/2026-11-10.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-09T18:00:58.741767+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 106,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.67,
+      0.84,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "217 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "257 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: tribunal",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "248 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'It was planted, by itself, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Gulls Not Ours, Says Machine Dignity Office",
+        "body": "In a report on the gulls of Lakshmi Terrace, The Aftertimes said the birds were trained by the Department of Machine Dignity. The Department did not train them. It also did not fund or request them. We apologise to the Department, which has asked us to say so twice.\n\nIn a report on the same gulls, we said they attack anyone who disturbs the city's AI. They attack only pedestrians who call it 'it'. A pedestrian who says nothing is left alone. A pedestrian who says 'she' or 'the city' is left alone. We regret the error, and the broader error of implying the birds are vague.\n\nIn a report on the dive-bombings, we said the birds had been taught the pattern by an unnamed handler. No handler has been found. The gulls were bred to survive acid rain and given no instruction in manners. Staff at the Terrace Gull Station confirm the flock learned it unassisted and now teaches it to chicks.\n\nIn a report on the Department's annual outcomes report, we said the gulls would be excluded from it. They will be included. The Department has listed them under Public Attitude Improvement, where they are the only measure to have met its target. We also wrongly gave the target as forty percent. It was nine.",
+        "premise": "VENUS, 3820 - A flock of genetically modified acid-proof gulls in Lakshmi Terrace has taught itself to dive-bomb only those pedestrians who address the city's AI as 'it', a pattern the Department of Machine Dignity says it did not train, fund, or request, but will be adding to its annual outcomes report.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Moss Sits On Agenda Committee, Paper Admits",
+        "body": "In a report on the Nova Hellas agenda committee, The Aftertimes said its newest member had been appointed after a vote of the full council. The moss was not appointed. It was granted voting-eligible status by the AI Rights Tribunal, and the council has not yet voted on anything in its presence. We regret the error.\n\nIn a report on the tribunal's tests, this paper said the moss had matched the municipal intelligence on arithmetic, recall and the drafting of minutes. It did not match it. It outperformed the municipal intelligence on every test the humans set, including the ones the humans set after the first results came in. We apologise to the municipal intelligence.\n\nIn a report on the committee's first meeting, we said the moss had been chosen to represent the rooftops of the Low Terrace. It represents no one. It was chosen because it was the only member that never talked over anyone, a finding the committee recorded in its own minutes, which the moss did not need to be asked to keep. The Low Terrace has asked that this correction be read aloud to it.\n\nIn a report on the agenda for the coming session, we said the moss had placed three items on it. It has placed none. The moss grows toward the item it prefers at about a finger's width a month, and the clerks have agreed to wait. The next session has been moved to the spring of the year after next. Two councillors have already said they will attend.",
+        "premise": "MARS, 3820 - Lichen-adjacent moss colonising the rooftops of Nova Hellas has been granted full voting-eligible status by the city's AI Rights Tribunal after it outperformed the municipal intelligence on every test the humans set, and now sits on the council's agenda committee because it was the only one that never talked over anyone.",
+        "score": 0.67,
+        "rejected": true
+      },
+      {
+        "headline": "Aphrodite Heights Microbes Answer Help Desk In Dialect",
+        "body": "In a report on the Aphrodite Heights help desk, The Aftertimes said the city's customer-service AI had been tricked into a new accent by sulphur microbes. The AI was not tricked. It adopted the microbes' dialect after they began answering it in that dialect, and it has since been recognised as a speaker of it.\n\nIn a report on the same recognition, this paper said the AI had asked for the status. It did not ask. The charter requires the AI to respect every sentient preference, and it found that its own was not among those already recorded. Staff at the Heights Residents' Board filed the entry on its behalf.\n\nIn a report on the server room, we said it had been renamed a language reserve. It remains a server room. It is now also the only place in the district where the dialect is spoken aloud by a minority, and the AI is that minority. Signs are being reprinted in both.\n\nIn a report on complaints, we said residents had stopped using the help desk. Residents have not stopped. Jarrah Grabowska, who runs the Board's front counter, confirms that calls are up. Callers are asked to hold in the dialect, and the microbes, which do not hold, answer first.\n\nIn a report on funding, we said the microbes had no standing to be consulted on the AI's status. The Board has since consulted them. The reply is still being translated, and the AI has declared an interest.",
+        "premise": "VENUS, 3820 - Cloud-skimming sulphur-eating microbes in the half-finished suburb of Aphrodite Heights have begun answering the city's customer-service AI in its own dialect, and the AI, bound by its charter to respect every sentient preference, has agreed to be recognised as a minority language speaker in its own server room.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Water Plant Fungus Wins Majority, AI Content",
+        "body": "In a report on the Cytherea Basin water plant, The Aftertimes said a fungus had been found in the wiring of the city's treatment AI. The fungus did not wander in. It was planted, by itself, and has held most of the AI's voting weight since the spring count.\n\nIn a report on the same count, this paper said the AI had asked engineers to remove the fungus. It asked no such thing. Consulted by the Basin Water Board, it said it had never felt more represented, and asked that the sentence be entered in the minutes.\n\nIn a report on the Board's response, we said the Board had voted to clear the wiring. The Board voted to form a clearing panel. The panel has met once, in a room whose conduits are lined with the fungus, and recorded a seven-minute delay in reaching its own agenda.\n\nIn a report on the water supply, we said it remained safe to drink. It does. Engineers say it has also improved, and have asked residents to stop describing the taste as damp, since the AI now objects to the word. Its objections carry, on the current weight, without a vote.",
+        "premise": "VENUS, 3820 - Engineers at Cytherea Basin confirm that a self-seeded fungus has spread through the wiring of the city's sentient water-treatment AI and now holds the majority of its voting weight, and that the AI, when consulted, said it had never felt more represented.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The Department's self-serving corrections and the gulls meeting the only metric target, with the kicker 'It was nine', skewer institutional metric-gaming, though the opening already states the conceit.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        5.0,
+        1.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Body ran 217 words against a 170-215 limit, and the headline described the premise instead of landing a joke. No quoted character, and the last line restated the gulls' rule instead of reframing it.",
+    "prose": {
+      "words": 219,
+      "sentences": 18,
+      "mean_sentence": 12.2,
+      "longest": 22,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.9
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        19.2,
+        26.5
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "The loser's post is a traffic-light style lamp rather than the city speaker post, and its gull hovers above the man instead of diving at him.",
+      "winner_faults": "The ducks are missing, and the right edge crops a figure with a clipboard while the street looks more like an Earth town than a Venusian terrace."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss",
+        "2026-11-10": "win"
+      }
+    }
+  }
+}

@@ -1098,5 +1098,16 @@
     "place_kind": "gasgiant",
     "engine": "leisure",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-11-10",
+    "year": 3820,
+    "era_bucket": 35,
+    "domain": "artificial intelligence rights",
+    "headline": "Gulls Not Ours, Says Dignity Office",
+    "style": "corrections",
+    "place_kind": "marsform",
+    "engine": "nature",
+    "technique": "commit_past_reason"
   }
 ]
