@@ -1,0 +1,210 @@
+{
+  "run_date": "2026-11-11",
+  "run_time": "2026-11-10T18:00:43.328132+00:00",
+  "dispatch": {
+    "headline": "Cook-Off Waits Six Hours For Tomato",
+    "body": "The final round of the Third Founders' Valley Cook-Off stalled for six hours on Saturday because all four finalists demanded the authentic ancestral tomato, and the only one in existence was 400 kilometres away.\n\nThe tomato lives in the Founders' Vault at Greywater Cut. Vault rules say it must be kept at Earth-normal humidity. A relay of 31 runners carried it overland in sealed hands, each breathing on it every few seconds.\n\nJudges counted 1,140 breaths per kilometre, a figure taken from the relay's own tally sheet. The first runner left at 4.10 a.m. Two were treated for light-headedness at Dunmow Ford. A third arrived with the tomato, and an apology.\n\nThe crowd of 2,300 waited in the stands. Vendors sold out of flatbread by the second hour. Contestants were not allowed to use the local tomato, which grows in every kitchen garden in the valley and, tasters agreed, is fine.\n\nEbru Kiplagat won with a cold soup of the ancestral tomato, salt and nothing else. The tomato arrived at 3.52 p.m. and was sliced at 3.58.\n\nAfterwards, Kiplagat told reporters she had tasted the local tomato the night before. \"It was better,\" she said. \"But mine had been breathed on by thirty-one people. You can't compete with that.\"\n\nThe tomato was returned to the Vault on Sunday. The runners have asked to be sent the long way round, so as to be breathed on less.",
+    "scene": "A winning cook in a white apron holds a single small red tomato cupped in both hands at a long kitchen bench, bending to breathe on it, while a sweating runner in a muddy tracksuit leans on the bench behind her.",
+    "dateline": {
+      "place": "Founders' Valley",
+      "year": 2100,
+      "month": 4,
+      "day": 18,
+      "years_from_now": 74
+    },
+    "domain": "food",
+    "glossary": [],
+    "premise": "At the Third Founders' Valley Cook-Off, the final round stalls for six hours because every finalist insists on the 'authentic ancestral' tomato, which only survives in a seed vault 400 kilometres away, and the relay of runners carrying it must keep it at Earth-normal humidity by breathing on it.",
+    "brief": null,
+    "image": "assets/img/2026-11-11.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-10T18:00:43.328132+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 107,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.76,
+      0.76,
+      1.0,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "259 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'with a wheel at noon, at three, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.9 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'He ate it standing, in one go, and'",
+          "severity": "minor"
+        }
+      ],
+      [],
+      [
+        {
+          "rule": "length",
+          "detail": "247 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Bread Day Procession Passes Eleven Kilometres, No Oven",
+        "body": "The Bread Day procession at Hollin Crossing stretched to eleven kilometres on Saturday evening and had still not reached the oven, according to the marshals' count.\n\nThe town's sourdough starter, carried from Earth 140 years ago, left the Founders' Hall at dawn in a sealed jar on a bearer's chest. By custom, every resident must stand within touching distance of the jar, or of someone touching someone who is, for the day to count. The marshals measured this chain with a wheel at noon, at three, and again at six. The figures were 6.2, 8.9 and 11.0 kilometres.\n\nThe front moved at walking pace. The back did not move at all for two hours, then moved fast. Hand-carts carrying the old, the sick and the very young were pushed up the verge to close gaps. Eleven carts overturned at the Ferrin culvert. Nobody dropped the jar. A clinic on the Mill Road treated 214 people, 190 of them for ankle injuries.\n\nThe oven is 3.4 kilometres from the hall. The procession has so far covered it three times, because the chain doubles back through the lower terraces to take in the night-shift dormitories.\n\nThe bakers' guild said the dough, mixed at dawn, was in its ninth hour of rising. Jarrah Nakashima, a night-shift cook who joined at the 7-kilometre mark, said his hand had been on a stranger's shoulder since lunch. \"I've no idea who it is,\" he said. \"I don't want to let go and find out it didn't count.\"\n\nAt press time the jar was still moving.",
+        "premise": "Colony's annual Bread Day ends in a stampede of hand-carts when the town's single sourdough starter, brought from Earth 140 years ago and treated as a holy relic, is carried through the streets and everyone must be within touching distance for it to count, producing a procession 11 kilometres long that has not yet reached the oven.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Retired Foreman Wins Nineteen-Day Orange Queue",
+        "body": "Bolat Amankwah, a retired hydroponics foreman, took the Harvest Queue Championship on Saturday after nineteen days at the front of the line for the season's first real orange. He received one segment. Residents are limited to one segment each.\n\nThe queue opened outside Greenhouse Nine at dawn on the first of the month. Forty-one entrants stood in the official line. Six had left by day four, when the evening damp came through the lower gallery. The assembly's queue marshal logged an average of 3.2 sit-downs per entrant per day, a figure taken from the floor sensors.\n\nOn day eleven, a challenger from the Tannery Rows stepped out to use the washroom. The marshal ruled the gap lasted ninety-four seconds, which is four over the limit. She was moved to the back. She is appealing, though the orange has been eaten.\n\nAmankwah, who held his place through the final night on a folding stool, was handed the segment at 9.12 on Saturday. It was weighed first. It came to eleven grams.\n\nHe ate it standing, in one go, and was photographed chewing.\n\nIn the mixed zone afterwards, Amankwah said he trained for this by waiting for his own pension. \"Thirty-one months,\" he said. \"Nobody called that a sport. This had a marshal.\"\n\nThe next orange is due in spring.",
+        "premise": "The Harvest Queue Championship crowns its winner after 19 days: a retired hydroponics foreman who held his place for the new season's first real orange, rationed to one segment per resident, and who is quoted afterwards saying he 'trained for this' by waiting for his own pension.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Cook-Off Halts Six Hours For Tomato",
+        "body": "The final round of the Third Founders' Valley Cook-Off stalled for six hours on Saturday because all four finalists demanded the authentic ancestral tomato, and the only seeds that grew it were 400 kilometres away.\n\nThe fruit lives in the Founders' Vault at Greywater Cut. Vault rules say it must be held at Earth-normal humidity. A relay of 31 runners carried it overland in sealed hands, each breathing on it every few seconds.\n\nJudges counted 1,140 breaths per kilometre, a figure taken from the relay's own tally sheet. The first runner left at 4.10 a.m. Two were treated for light-headedness at Dunmow Ford. A third arrived with the tomato, and an apology.\n\nThe crowd of 2,300 waited in the stands. Vendors sold out of flatbread by the second hour. Contestants were not allowed to use the local cultivar, which grows in every kitchen garden in the valley and, tasters agreed, is fine.\n\nEbru Kiplagat won with a cold soup of the ancestral tomato, salt and nothing else. The tomato arrived at 3.52 p.m. and was sliced at 3.58.\n\nIn the mixed zone, Kiplagat said she had tasted the local tomato beforehand. \"It was better,\" she said. \"But mine had been breathed on by thirty-one people. You can't compete with that.\"",
+        "premise": "At the Third Founders' Valley Cook-Off, the final round stalls for six hours because every finalist insists on the 'authentic ancestral' tomato, which only survives in a seed vault 400 kilometres away, and the relay of runners carrying it must keep it at Earth-normal humidity by breathing on it.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Table-To-Farm Final Ends In Draw",
+        "body": "Both finalists in the Colony Farm-to-Table Cup carried their dining tables into the crop fields on Saturday, found the nearest kitchen 900 kilometres away, and agreed to a draw.\n\nThe final was to be settled by the shortest trip from soil to plate. Red team set out at 09:10 with a six-seat table, a runner and a hand-cart. Blue team followed with a ten-seat table and a spare leg.\n\nBy the second rest stop, the cart axle on red team's table had failed. The judges' tracker showed blue team 31 kilometres ahead, then 40, then stationary. Blue's runner told officials the table was heavier than rehearsal had suggested.\n\nBoth teams reached the wheat rows on day nine. The field had been measured at 900 kilometres from the nearest kitchen by the organisers' own survey. Neither team had read it.\n\nAt 14:30 the two captains met between the rows and agreed the journey should be logged as table-to-farm. A spokesperson for the Cup said the new label was more sustainable, since the table had been moved only once and the food not at all.\n\nThe judges' panel recorded the result as 1-1. A survey of the 212 spectators who waited at the finish line found that 61 had gone home before the tables set out.\n\n\"We carried it there, so we won,\" said Orhan Arriaga, blue team's captain, in the mixed zone. \"Tiihu says they carried it too. We are checking whose table is whose.\"\n\nNobody has eaten.",
+        "premise": "Colony's farm-to-table finals end in a draw after both teams carry their dining tables out to the crop fields, discover the fields are 900 kilometres from the nearest kitchen, and agree to relabel the journey 'table-to-farm', which a spokesperson says is more sustainable.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its quoted cook's 'It was better... but mine had been breathed on by thirty-one people' treats the absurd relay as normal and skewers authenticity snobbery, though the headline and opening sentence state the whole joke up front.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        2.0,
+        8.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          3,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The headline describes the premise instead of landing a joke, and the ending restates the breathing gag. The logic is also loose: 'tomato' is called a fruit held in a vault when the seeds are the stated source, the 1,140 breaths per kilometre figure is unexplained, and the quote's 'beforehand' is never shown to have been heard.",
+    "revise_judge_reason": "Same strong core as Draft 1, but its closing line turns the joke on the runners themselves, a real kicker that Draft 1 lacks.",
+    "prose": {
+      "words": 236,
+      "sentences": 20,
+      "mean_sentence": 11.8,
+      "longest": 34,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.3
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        23.2,
+        13.4
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "The first engraving shows an apple rather than a tomato, the woman gazes down without bending to breathe on it, the runner is running in the background instead of leaning on the bench, and the wall lettering is garbled.",
+      "winner_faults": "The runner stands upright at the right edge, partly cropped, rather than leaning on the bench and looking sweaty and muddy."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss",
+        "2026-11-10": "win",
+        "2026-11-11": "win"
+      }
+    }
+  }
+}

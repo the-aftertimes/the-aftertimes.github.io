@@ -1109,5 +1109,16 @@
     "place_kind": "marsform",
     "engine": "nature",
     "technique": "commit_past_reason"
+  },
+  {
+    "run_date": "2026-11-11",
+    "year": 2100,
+    "era_bucket": 1,
+    "domain": "food",
+    "headline": "Cook-Off Waits Six Hours For Tomato",
+    "style": "sport",
+    "place_kind": "exoplanet",
+    "engine": "logistics",
+    "technique": "unasked_statistic"
   }
 ]
