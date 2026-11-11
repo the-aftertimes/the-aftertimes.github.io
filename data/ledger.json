@@ -1120,5 +1120,16 @@
     "place_kind": "exoplanet",
     "engine": "logistics",
     "technique": "unasked_statistic"
+  },
+  {
+    "run_date": "2026-11-12",
+    "year": 2137,
+    "era_bucket": 2,
+    "domain": "language and slang",
+    "headline": "Heat Pump, 212, Demands Afternoon Naps",
+    "style": "results",
+    "place_kind": "subsurface",
+    "engine": "category",
+    "technique": "local_granularity"
   }
 ]

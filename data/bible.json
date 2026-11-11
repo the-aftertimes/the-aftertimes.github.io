@@ -383,6 +383,18 @@
       "gloss": "the town's big underground kitchen that feeds the shift workers",
       "kind": "term",
       "first_seen": "2026-10-29"
+    },
+    {
+      "term": "cold-bunk ward",
+      "gloss": "a sleeping ward heated only by the pump's warmth",
+      "kind": "term",
+      "first_seen": "2026-11-12"
+    },
+    {
+      "term": "air office",
+      "gloss": "the settlement department that manages air quality and fire safety",
+      "kind": "term",
+      "first_seen": "2026-11-12"
     }
   ]
 }

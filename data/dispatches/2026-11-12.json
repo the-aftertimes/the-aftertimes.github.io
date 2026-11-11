@@ -1,0 +1,245 @@
+{
+  "run_date": "2026-11-12",
+  "run_time": "2026-11-11T18:00:44.731385+00:00",
+  "dispatch": {
+    "headline": "Heat Pump, 212, Demands Afternoon Naps",
+    "body": "The Resident Count for Kuolema Deep has named the central heat pump as the settlement's eldest citizen, at 212 years, and has relabelled its maintenance outages as protected naps. Final figures follow.\n\nTotal residents counted: 4,118, plus one pump. The next eldest is a retired ice-cutter, aged 97. Residents over 90 number 31, and over 200 number one.\n\nAt the birthday party, attendance was 4,118 of 4,118, with no absences to excuse. That included 212 residents who attended while on shift in the pump hall. The cake was 40 metres long and laid along the main gallery, and the air office advised against any flame.\n\nThe pump was logged as sleeping for 1,460 hours this past year, the same 1,460 hours once logged as outage. Residents lodged 63 complaints about sleeping hours, and all 63 were upheld. Of these, 58 came from people who had knocked on the casing during a nap.\n\nFour cold-bunk wards lost heat during a nap this winter, and 611 residents were moved into their neighbours' bunks. Nine repairs have been deferred, and every repair is now booked for waking hours only. The ice-cutters on the morning shift must now ask the pump whether it is awake before they ask it for anything.\n\nThe next nap is the fourteenth, 0200 to 0600, to be rescheduled if the pump is feeling unwell.\n\nThe assembly chair, Anouk Ezeani, said the count had no authority to remove the nap. \"It was always asleep. We have simply started to say so, and in fairness it is the only one of us who has never once been late to a shift.\"",
+    "scene": "A tall engineer in a thick quilted jacket stands on a stepladder beside a huge riveted heat pump the size of a house and hangs a paper party hat on its top pipe, while two children in padded coats hold up a long iced cake behind her.",
+    "dateline": {
+      "place": "Kuolema Deep",
+      "year": 2137,
+      "month": 7,
+      "day": 28,
+      "years_from_now": 111
+    },
+    "domain": "settlement census and civic life",
+    "glossary": [
+      {
+        "term": "cold-bunk ward",
+        "gloss": "a sleeping ward heated only by the pump's warmth"
+      },
+      {
+        "term": "air office",
+        "gloss": "the settlement department that manages air quality and fire safety"
+      }
+    ],
+    "premise": "Under the ice of an ocean moon, the 2137 Resident Count records the settlement's central heat pump as its eldest citizen at 212, with the pump's 'sleeping hours' (scheduled maintenance outages) reclassified as a protected nap, and its birthday party attended by the entire population.",
+    "brief": null,
+    "image": "assets/img/2026-11-12.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-11T18:00:44.731385+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 108,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.34,
+      0.43,
+      0.67,
+      0.75
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 25.6 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 96 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 8.6 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "216 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: candles",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: \"as the settlement's eldest citizen, at 212 years, and\"",
+          "severity": "minor"
+        },
+        {
+          "rule": "flat_rule",
+          "detail": "a rule announced at nobody, with no person and no consequence in it: 'Repairs deferred under the new rule: 9.'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 7.8 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 73 words, maximum 35",
+          "severity": "major"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Glacier Wins Chief Elder With 61 Per Cent",
+        "body": "Subglacial Settlement 4 has elected the glacier overhead as its Chief Elder, with 61 per cent of the vote, after a count that finished late on Wednesday. The glacier was entered as the longest-serving member of the community.\n\nFinal count, Chief Elder, 1,412 ballots cast:\n\nThe Glacier (above Level 1, resident since before the founding charter): 861\n\nLior Tavakoli (water-quality assessor, Level 3, resident 31 years): 402\n\nNone of the above: 118\n\nSpoiled, including 14 marked with a drawing of the glacier: 31\n\nTurnout among residents of Levels 1 to 4: 94 per cent\n\nTurnout among residents of Level 5, which sits closest to the ice and is entered through the cold lock: 100 per cent\n\nThe settlement's rule that the Chief Elder be the longest-serving member was written to settle disputes between people. It has no clause on what counts as a member, and the returning officer said the ballot office checked this twice before opening nominations.\n\nThe glacier moves roughly four metres a year. The returning officer said its first act in office is expected to be the same as its last.\n\nThe swearing-in is set for the first thaw-day of the season. The assembly chair said the glacier \"has indicated no objection.\"",
+        "premise": "Subglacial Settlement 4 announces the results of its election for Chief Elder, in which the glacier overhead received 61 per cent of the vote as the longest-serving member of the community, and an official said the glacier 'has indicated no objection'.",
+        "score": 0.34,
+        "rejected": false
+      },
+      {
+        "headline": "Heat Pump Turns 212, Sleeps In",
+        "body": "The Resident Count for Kuolema Deep has named the central heat pump as the settlement's eldest citizen, at 212 years, and entered its scheduled maintenance outages as a protected nap. Final figures follow.\n\nTotal residents counted: 4,118, plus one pump.\n\nEldest resident: Heat Pump One, 212. Next eldest: a retired ice-cutter, 97.\n\nResidents aged over 90: 31. Residents aged over 200: 1.\n\nBirthday party attendance: 4,118 of 4,118. Absences excused: 0. Residents who attended while on shift in the pump hall: 212.\n\nCake served: one, 40 metres long, laid along the main gallery. Candles lit: none, on advice from the air office.\n\nHours of sleep logged for the pump in the past year: 1,460. Hours previously logged as outage: 1,460.\n\nSleeping-hour complaints received: 63. Complaints upheld: 63. Of these, 58 concerned residents who knocked on the casing during a nap.\n\nCold-bunk wards that lost heat during a nap this winter: 4. Residents moved to the neighbours' bunks: 611.\n\nRepairs deferred under the new rule: 9. Repairs now booked for waking hours only: all.\n\nNext scheduled nap: the fourteenth, 0200 to 0600, to be rescheduled if the pump is feeling unwell.\n\nThe assembly chair, Anouk Ezeani, said the count had no authority to remove the nap. \"It was always asleep. We have simply started to say so.\"",
+        "premise": "Under the ice of an ocean moon, the 2137 Resident Count records the settlement's central heat pump as its eldest citizen at 212, with the pump's 'sleeping hours' (scheduled maintenance outages) reclassified as a protected nap, and its birthday party attended by the entire population.",
+        "score": 0.43,
+        "rejected": false
+      },
+      {
+        "headline": "Foundation Wins Pet Of The Year",
+        "body": "The foundation of Hollin Deep Arcology won this year's Pet of the Year on Saturday, taking first place in a field of forty-one entries. Judges scored each entry on bones, temperament, upkeep and response to its name. Final standings follow.\n\n1. The Foundation (Level 0, all of it). Fed monthly by residents since the first winter. Walked around by the Level 1 evening watch. Judges: \"Good bones and a calm temperament.\"\n\n2. Biscuit, a hairless dog, Level 14. Bit one judge. Points deducted.\n\n3. A tank of eels, Level 9. Responds to no name. Responds to the tank being tapped.\n\n4. The lift to Level 22, nicknamed Old Gentle. Not an animal. Entered by the Level 22 residents' circle and allowed to stand.\n\n5. Two cats, Level 6, entered as one.\n\nDisqualified: the east wall of Level 3, for being entered a second time. It had been placed fourth in the previous contest.\n\nThe Foundation received 212 votes. Its feed is a mix of gravel dust and warm kitchen water poured down the access ducts. No resident has yet reported a refusal. A mould survey in the lower ducts is due next month and the residents' circle has asked that it be called a checkup.\n\nThe contest chair said the building would not be given a rosette, as there is no safe way to attach one.",
+        "premise": "A buried arcology's Pet of the Year contest is won by the building's own foundation, which residents have fed, walked around and talked to softly since the first winter, and which the judges praised for 'good bones and a calm temperament'.",
+        "score": 0.67,
+        "rejected": false
+      },
+      {
+        "headline": "Sealed Door Wins Best Neighbour Again",
+        "body": "A sealed door on Level 9 has won the Buried Arcology Best Neighbour award for the fourth year running, the residents' panel announced on Sunday. The count of nominations, as filed with the panel, follows.\n\nDoor, Level 9, Bay 14: 212 nominations\nThe Hallam family, Level 9, Bay 13: 31\nA retired lift attendant, Level 8: 19\nThe night baker, Level 10: 17\nNo award (write-in): 6\nBay 15's cat: 2\nSpoiled forms: 40\n\nReasons given for the winner, by number of forms: never plays music late (188); never borrows tools (171); keeps itself to itself (164); never leaves bins out (97); never asks how anyone is (12).\n\nReasons given for the runner-up, the Hallams: tools returned, usually (14).\n\nResidents who have tried to open the door: 0. Residents who have knocked: 0. Residents who have asked what is behind it: 3, all from Level 11, all new.\n\nThe panel confirmed that the door was last serviced by the arcology in the year of the second ventilation shutdown. Its hinges were reported to be quiet.\n\n\"We looked at the criteria,\" said the panel's secretary. \"It meets all of them.\"",
+        "premise": "The annual Buried Arcology Best Neighbour award goes for the fourth year to a sealed door on Level 9, praised for never playing music late, never borrowing tools and 'keeping itself to itself', and no resident has attempted to open it.",
+        "score": 0.75,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its ledger of 1,460 hours of sleep matched exactly by 1,460 hours of outage, plus repairs deferred until waking hours, pointedly satirises institutions relabelling failure as policy, and the kicker 'We have simply started to say so' is the sharpest line in either draft.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        4.0,
+        6.0,
+        5.0
+      ],
+      "rankings": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          2,
+          1,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.43,
+    "score_after": 0.84,
+    "critique": "Sentences were too choppy (mean 8.6 words), the body ran long, candles were a stray prop, the opening had a filler comma list, and the 'new rule' was announced at nobody. The quote also did not land a real joke, and the ending only restated the premise.",
+    "prose": {
+      "words": 270,
+      "sentences": 18,
+      "mean_sentence": 15.0,
+      "longest": 29,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        19.4,
+        19.4
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 puts the party hat on the wearer's own head instead of hanging it on the top pipe, shows no cake, and has garbled lettering ('Novvell') on the machine and a child cut off at the left edge.",
+      "winner_faults": "The children hold a flat panel rather than a long iced cake, the man grips a glass instead of hanging the hat, and the machine's left flange is cropped at the edge."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss",
+        "2026-11-10": "win",
+        "2026-11-11": "win",
+        "2026-11-12": "win"
+      }
+    }
+  }
+}
