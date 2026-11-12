@@ -1131,5 +1131,16 @@
     "place_kind": "subsurface",
     "engine": "category",
     "technique": "local_granularity"
+  },
+  {
+    "run_date": "2026-11-13",
+    "year": 2974,
+    "era_bucket": 18,
+    "domain": "crime",
+    "headline": "Smugglers Demand Customs 'See Nothing' Properly",
+    "style": "trend",
+    "place_kind": "orbital",
+    "engine": "ritual",
+    "technique": "puncture_the_pompous"
   }
 ]

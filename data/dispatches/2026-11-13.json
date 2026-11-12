@@ -1,0 +1,231 @@
+{
+  "run_date": "2026-11-13",
+  "run_time": "2026-11-12T18:00:40.099946+00:00",
+  "dispatch": {
+    "headline": "Smugglers Demand Customs 'See Nothing' Properly",
+    "body": "Smugglers at the Karrow Foot terminus now refuse to move a crate until a customs inspector has said \"I saw nothing\" over it three times. The practice is called blessing through. Nearly every freight handler on the upper dock asks for it.\n\nThe smugglers' congregation, the Quiet Tally, holds that the words have no force. Its own elders say so in print. A crate is no safer for being blessed, and the congregation does not claim otherwise. It simply will not ship one that has not been.\n\nInspectors serve a six-hour shift at the blessing bay. Tiihu Sekibo, who has worked the bay for four years, said the queue is longest at shift change. \"You say it flat, you say it three times, you go for your tea,\" she said. \"Last week a man asked for it again, warmer. I said I saw nothing warmly. He tipped me.\"\n\nOlder dock families disapprove. Ahanu Silveira, a retired lift-cable greaser whose family has run goods up the cable for six generations, called it \"a fuss about nothing, done properly.\" In his day, he said, a crate went through unseen, and nobody asked the inspector to say so.\n\nLast month the terminus authority counted 4,100 blessed crates against 380 inspected ones. The inspectors say the 380 were the ones nobody had paid them to miss.",
+    "scene": "A tired customs inspector in a grey terminus tunic stands beside a huge stack of sealed crates, one hand raised flat over the top crate, mouth open mid-sentence, while a smuggler in a long dock coat bows his head beside her.",
+    "dateline": {
+      "place": "Karrow Foot",
+      "year": 2974,
+      "month": 2,
+      "day": 22,
+      "years_from_now": 948
+    },
+    "domain": "customs and smuggling",
+    "glossary": [
+      {
+        "term": "blessing through",
+        "gloss": "the practice of an inspector saying \"I saw nothing\" aloud three times over a crate before it ships"
+      },
+      {
+        "term": "the Quiet Tally",
+        "gloss": "the smugglers' congregation, which refuses to ship any crate that has not been blessed"
+      }
+    ],
+    "premise": "ELEVATOR TERMINUS, 2974: Smugglers on a planetary elevator terminus insist every contraband crate be 'blessed through customs' by a bored inspector who must say 'I saw nothing' three times aloud, a rite the smugglers' congregation holds legally unnecessary but spiritually binding.",
+    "brief": null,
+    "image": "assets/img/2026-11-13.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-12T18:00:40.099946+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 109,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.51,
+      0.92,
+      0.76
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "230 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 42 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "236 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "wink",
+          "detail": "a source is commenting on the joke rather than living in it: 'would rather not'",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'over it three times, aloud, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "246 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "232 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'unsealed on a service night, as a courtesy, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Pilgrims Queue Days To Kiss Fake's Fake",
+        "body": "Pilgrims waited four days this week to kiss a plaster copy of the Saint Orrin reliquary at Anselm Spindle, which station police say is a forgery of a forgery. The faithful call it the Well-Handled.\n\nThe church is known as the Many Hands. Its founders, who were arrested for counterfeiting in the lower ring, teach that an original is holy once and a copy is holy for everyone who touches it. By that count the reliquary in the cathedral case is the least blessed object on the station. Nobody has touched it since the glass went in.\n\nTeodor Gallagher, a marks inspector with the dock police, said the Well-Handled was cast eleven months ago from a mould taken off another fake. That one was cast from a third. The first copy, he said, was made by the church's own founders to settle a bar bet.\n\nOlder residents have objected. A retired seal-checker, speaking outside the queue, called it vulgar to kiss a thing that had been kissed that morning by two thousand strangers. Her grandson was ahead of her in line.\n\nThe Well-Handled is now worn smooth at the face. Church wardens recast it every fortnight and say the new one is holier at once, because the wardens have touched it all night. Police confirmed on Sunday that the original is still missing. Gallagher said nobody has asked about it.",
+        "premise": "ELEVATOR TERMINUS, 2974: Counterfeiters in an orbital terminus have founded a faith whose central doctrine is that forged relics are holier than originals because more people have touched them; pilgrims queue for days to kiss a fake that police say is also a fake of a fake.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Smugglers Insist Customs Say 'I Saw Nothing'",
+        "body": "Smugglers at the Karrow Foot terminus now refuse to move a crate until a customs inspector has said \"I saw nothing\" over it three times, aloud, and the inspectors' rota has begun to fill with people who would rather not be there. The practice is called blessing through. Nearly every freight handler on the upper dock now asks for it.\n\nThe smugglers' congregation, the Quiet Tally, holds that the words have no legal force. Its own elders say so in print. A crate is no safer for being blessed, and the congregation does not claim otherwise. It simply will not ship a crate that has not been.\n\nInspectors serve a six-hour shift at the blessing bay. Tiihu Sekibo, who has worked the bay for four years, said the queue is longest at shift change. \"You say it flat, you say it three times, you go for your tea,\" she said. Her supervisors have not objected to the practice. They have asked her to stop calling it overtime.\n\nOlder dock families disapprove. Ahanu Silveira, a retired lift-cable greaser whose family has run goods up the cable for six generations, called it \"a fuss about nothing, done properly.\" In his day, he said, a crate went through unseen, and nobody asked the inspector to say so.\n\nLast month the terminus authority counted 4,100 blessed crates against 380 inspected ones. The authority has since extended the blessing bay's hours.",
+        "premise": "ELEVATOR TERMINUS, 2974: Smugglers on a planetary elevator terminus insist every contraband crate be 'blessed through customs' by a bored inspector who must say 'I saw nothing' three times aloud, a rite the smugglers' congregation holds legally unnecessary but spiritually binding.",
+        "score": 0.51,
+        "rejected": false
+      },
+      {
+        "headline": "Bombers Adopt Guards' 'Not On My Shift'",
+        "body": "Habitat security officers on Halcyon Spindle now cross themselves and murmur \"not on my shift\" before opening any unattended bag, and the gesture has been found on three bombers.\n\nThe habit began with the Spindle's bag-opening crews about eleven years ago. It spread to commuters on the Ringline, who now touch their foreheads and say it before sitting beside a loose case. Shop clerks use it on parcels. Schoolchildren use it on lunch boxes.\n\nDetective Ahanu Agbaje, of the Spindle Inquiry Office, said the first bomber to use it was a courier arrested at Gate Nine in March. He crossed himself, whispered the line and set down a case that went off forty seconds later. Two more arrests followed. All three said they had picked it up from the guards.\n\n\"We cannot arrest a blessing,\" Agbaje said. \"Half my own team do it in the lift.\"\n\nThe Office has asked officers to stop. The bag-opening crews voted against, 212 to 9. Their union said the words are the only part of the job that has ever been reliable, and that the nine who voted to stop have been spoken to.\n\nOlder residents object on other grounds. Several wrote to the Spindle Courier calling the gesture lazy, and noting that in their day a person simply looked inside the bag.\n\nThe Office now records whether a suspect crossed himself before or after the case was set down. Agbaje said the order has not yet told them anything.",
+        "premise": "RING STATION, 2974: Habitat security officers now cross themselves and murmur 'not on my shift' before opening any unattended luggage, a gesture that has spread to commuters and has, detectives complain, been picked up by actual bombers as a form of good-luck charm.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Burglars Find Victims Were Fellow Worshippers",
+        "body": "A burglary gang of nine was arrested on Sunday after it emerged that the homes it entered were left open for it. The Congregation of the Open Latch, which holds that a threshold is honoured only by being crossed uninvited, has been taking from Spoke Nine cabins for two years.\n\nThe householders belonged to the congregation. Under its custom, a member leaves the cabin door unsealed on a service night, as a courtesy, and goes to a neighbour's to sit up. Nothing is locked, nothing is hidden, and the good tea is put out.\n\nThe gang's leader, Thuy Agbaje, said the group had believed the doors were simply faulty. Orhan Adeyemi, a deck warden, said she had looked distressed at the station-house, and had asked whether the sacrament still counted.\n\nIt does not, according to the congregation's own elders. A break-in is valid only if the door was shut. Seven earlier services are now void, and the gang must repeat them, through windows, with the owners' written refusal on file.\n\nThe cabin owners are reported to be equally upset. Several had worried the visits were becoming too regular to be a surprise, and had left the doors open wider.\n\nAn elder said the matter would be raised at the next sitting. The congregation has asked members to lock up until then, and has asked the gang to stop bringing the tea back.",
+        "premise": "RING HABITAT, 2974: A burglary gang has been traced to a congregation that treats breaking in as a sacrament, and is distressed to learn the homeowners were also members, having left the door unlocked for the service as a courtesy, in the way churchgoers keep the vestry open.",
+        "score": 0.76,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The blessing-bay ritual satirises institutional complicity well, with the 4,100-to-380 count and the authority extending hours as a sharp kicker, though the opening sentence states the whole conceit up front.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "challenger",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        3.0,
+        2.0,
+        6.0
+      ],
+      "rankings": [
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.51,
+    "score_after": 0.84,
+    "critique": "The longest sentence ran to 42 words, the body ran long, and an inspector 'would rather not' was commenting on the joke. The comma list of three stood in for an escalation, and the kicker only restated the premise.",
+    "prose": {
+      "words": 222,
+      "sentences": 18,
+      "mean_sentence": 12.3,
+      "longest": 25,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.5
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        20.3,
+        15.5
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Picture 1 has garbled, nonsensical lettering on its crates and its smuggler stands upright, looking at the inspector rather than bowing his head.",
+      "winner_faults": "The inspector is a smiling man in a cap and coat rather than a tired woman in a grey tunic, the hand is waving rather than held flat, and the mouth is not open mid-sentence."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss",
+        "2026-11-10": "win",
+        "2026-11-11": "win",
+        "2026-11-12": "win",
+        "2026-11-13": "win"
+      }
+    }
+  }
+}

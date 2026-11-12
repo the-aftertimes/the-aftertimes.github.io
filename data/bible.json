@@ -395,6 +395,18 @@
       "gloss": "the settlement department that manages air quality and fire safety",
       "kind": "term",
       "first_seen": "2026-11-12"
+    },
+    {
+      "term": "blessing through",
+      "gloss": "the practice of an inspector saying \"I saw nothing\" aloud three times over a crate before it ships",
+      "kind": "term",
+      "first_seen": "2026-11-13"
+    },
+    {
+      "term": "the Quiet Tally",
+      "gloss": "the smugglers' congregation, which refuses to ship any crate that has not been blessed",
+      "kind": "term",
+      "first_seen": "2026-11-13"
     }
   ]
 }
