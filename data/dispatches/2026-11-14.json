@@ -1,0 +1,228 @@
+{
+  "run_date": "2026-11-14",
+  "run_time": "2026-11-13T18:00:32.221364+00:00",
+  "dispatch": {
+    "headline": "Last Cent Gets Four-Day Funeral",
+    "body": "A single copper-zinc cent rode through the Pallas freeport on a gun carriage on Sunday, the first day of a four-day state funeral for the last physical coin in circulation. The Mint Director confirmed the eulogies alone cost eleven billion times the coin's face value.\n\nDr Suvi Tuilagi, who audits the Mint's ledgers, said the figure was checked twice. \"A cent buys nothing. It has bought nothing since the ledger-wage reforms. That is why it needed so many speakers.\"\n\nThe coin lay in a pressurised case in the Grand Cavern while 212 speakers took turns at the lectern. Each was paid by the minute. The last speaker ran forty minutes over, which the Mint says covered a gap in the schedule.\n\nTuilagi's audit found the cent was minted in 2291 and has not been spent since. It has spent its life in a drawer, then a vault, then a display case.\n\nThe coin will be set into the cavern wall on Wednesday. The Mint asks that nobody try to buy anything with it. The wall is not insured, because there is nothing to insure it against.\n\nDirector Wiremu Akhmetov said the Mint will now turn to its own closure. Asked who would speak at that, he said the roster is full, and all 212 have already asked to be paid in advance.",
+    "scene": "A uniformed Mint Director in a black sash stands at a tall lectern in a rock-hewn cavern, reading a eulogy, beside a huge glass case on a gun carriage holding one tiny coin, while two mourners in grey suits sit behind him.",
+    "dateline": {
+      "place": "Pallas freeport",
+      "year": 2414,
+      "month": 6,
+      "day": 19,
+      "years_from_now": 388
+    },
+    "domain": "money and mint ceremony",
+    "glossary": [
+      {
+        "term": "ledger-wage reforms",
+        "gloss": "The change after which pay existed only as ledger entries, leaving physical coins useless."
+      }
+    ],
+    "premise": "A freeport hollowed into the asteroid Pallas holds a four-day state funeral for a single cent, the last physical coin, and the Mint Director admits the eulogy budget exceeded the coin's value by a factor of eleven billion.",
+    "brief": null,
+    "image": "assets/img/2026-11-14.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-13T18:00:32.221364+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 110,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.84,
+      0.51,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 10 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "243 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "219 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'the property of the freeport, as all veins are, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 39 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "235 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'Deep holds nine thousand residents, a reactor, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "231 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Last Cent Buried Four Days, Costs Eleven Billion Times More",
+        "body": "A single copper-zinc cent was carried through the Pallas freeport on a gun carriage on Sunday, the first day of a four-day state funeral for the last physical coin in circulation. The Mint Director confirmed the eulogy budget alone ran eleven billion times the coin's face value.\n\nDr Suvi Tuilagi, who audits the Mint's ledgers, said the figure is accurate and was checked twice. \"A cent buys nothing. It has bought nothing since the ledger-wage reforms. That is why it needed so many speakers.\"\n\nThe coin lay in a pressurised case in the Grand Cavern while 212 speakers took turns at the lectern. Each was paid by the minute. The Mint says the last speaker ran forty minutes over, to cover a gap in the schedule left by the first.\n\nTuilagi's audit found that the cent was minted in 2291 and has not been spent since. It spent 120 years in a drawer, then a vault, then a display. Her audit puts its upkeep at four hundred times its worth, every year, since the drawer.\n\nThe coin will be set into the cavern wall on Wednesday. The Mint has asked that nobody try to buy anything with it. It also confirmed the wall is not insured, because there is nothing to insure it against.\n\nWiremu Akhmetov, the Director, said the Mint will now turn to the matter of its own closure. He said a funeral for the Mint is expected to cost more.",
+        "premise": "A freeport hollowed into the asteroid Pallas holds a four-day state funeral for a single cent, the last physical coin, and the Mint Director admits the eulogy budget exceeded the coin's value by a factor of eleven billion.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Trillion-Credit Vein Earns Laminated Certificate",
+        "body": "A miner who struck a vein worth one trillion credits on Eros last month was handed a laminated Congratulations, Employee of the Month certificate, researchers at the Kestrel Deep freeport confirmed on Monday. It is the same certificate issued for 2.1 minutes of punctuality.\n\nVesna Uchenna, who studies pay and reward at the freeport, reviewed forty years of award records. She found the certificate has never been varied. \"The template was set before the first shaft was cut,\" she said. \"Nobody has an approved way to give a larger one.\"\n\nThe vein is the richest on record. It is now the property of the freeport, as all veins are, and the miner's pay for the shift was unchanged. Her certificate hangs in the canteen beside one awarded for arriving early to a safety talk.\n\nMorale was measured across the night crews. The result was \"fine, actually.\" Uchenna said the survey was repeated twice because the first figure seemed too steady.\n\nShe noted one further finding. Over the same forty years, the number of veins struck has fallen, while punctuality awards have risen by a third. Crews on the lower levels now report a shift's arrival time more carefully than its yield.\n\n\"A minute is something a person can actually deliver,\" Uchenna said. The freeport has ordered more laminating sheets.",
+        "premise": "Researchers at an Eros freeport confirm that miners who strike a trillion-credit vein now receive a 'Congratulations, Employee of the Month' certificate, the same laminated one given for 2.1 minutes of punctuality, and morale is reported as 'fine, actually'.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Asteroid Upgraded To Overweight After Strong Call",
+        "body": "A clerk at the Ceres Deep Freeport counting-room spent Thursday converting the price of bread into vibes, after the town's central bank began quoting the entire asteroid in vibes-adjusted units. The change followed a quarterly earnings call that analysts described as warm. Within the hour, three firms had moved the rock itself from Hold to Overweight.\n\nJarrah Abiodun, who leads the bank's research office, said the method is simple. \"The ground under us was always a thing with a price. Now the price has a mood in it. Today the mood is good, so the rock is worth more, so the bread is worth more.\" Rock, bread and mood are published together on one tariff sheet.\n\nThe tunnels are the part nobody enjoys discussing. Ceres Deep holds nine thousand residents, a reactor, and air that is sold by the breath. Abiodun confirmed the air is priced on the same sheet. A poor call next quarter would lower the mood, and with it the cost of the rock, and with it the loan secured on the rock, which is the one the town took out to pay for the air.\n\nThe bank states that Ceres has held its mass for four and a half billion years without any analyst's help. Abiodun said this is true and has been priced in.\n\nThe next call is in ninety days. Staff have been asked to smile in the corridors.",
+        "premise": "Researchers at the Ceres Deep Freeport report that the town's central bank has begun pricing the entire asteroid in 'vibes-adjusted' units after a quarterly earnings call went so well that analysts upgraded the rock itself from 'Hold' to 'Overweight'.",
+        "score": 0.51,
+        "rejected": false
+      },
+      {
+        "headline": "Asteroid Inflation Now Measured in Light-Seconds",
+        "body": "Thuy Nakashima, an economist, has found that prices inside the hollowed minor planet Ossuary 9 now rise by whole light-seconds, and the cause is the lunch break.\n\nThe planet's price-setting committees sit in separate chambers on opposite sides of the rock. Each must wait eleven minutes for the other's quick thought. Prices keep climbing while they wait.\n\n\"A committee proposes a freeze,\" Nakashima said at the Kettle Deep ledger hall. \"By the time it arrives, the price has moved. So the other side proposes a freeze at the new price, which has also moved. Neither freeze has ever caught anything.\"\n\nA loaf of bread cost four tokens at the start of her survey. It now costs four tokens and a delay. Shopkeepers quote prices in the time it takes light to reach the till, and the figure is out of date when the customer has finished hearing it.\n\nThe committees have agreed that the answer is faster replies. They have set up a joint working group to arrange this. It has met twice and is expected to meet a third time shortly after the second one ends.\n\nNakashima said she checked her own figures for errors. She found that her fee for the study had risen in the time it took her to invoice it.\n\nThe rock's air is rated by the breath. Nakashima has not yet checked what that costs.",
+        "premise": "Scientists studying the economy of a hollowed-out minor planet find that its inflation rate is now measured in light-seconds, since price-setting committees must wait eleven minutes for each other's 'quick thoughts' and prices rise during the wait.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The quote 'That is why it needed so many speakers' treats the absurdity as routine, and the closing line about the Mint's own funeral costing more is a real kicker; the headline lands a joke, though the lead restates the premise rather than turning on it.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        6.0,
+        4.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.92,
+    "critique": "Headline ran 10 words and the body ran 243. The logic also slipped: 'costs eleven billion times more' has no stated comparison, the last speaker's overrun is blamed on the first, the coin's age and drawer history are muddled, and the Director's closing line states the joke instead of landing it.",
+    "prose": {
+      "words": 222,
+      "sentences": 16,
+      "mean_sentence": 13.9,
+      "longest": 30,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 2.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        33.9,
+        27.4
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Picture 2 shows only one seated mourner, and the officer stands behind a panel with a microphone instead of a tall lectern reading a eulogy.",
+      "winner_faults": "The garbled 'MINT DIRECTOR IFYLAFY' lettering on the carriage breaks the no-garbled-signs rule, and the black sash is not clearly visible."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss",
+        "2026-11-10": "win",
+        "2026-11-11": "win",
+        "2026-11-12": "win",
+        "2026-11-13": "win",
+        "2026-11-14": "loss"
+      }
+    }
+  }
+}

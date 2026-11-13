@@ -1142,5 +1142,16 @@
     "place_kind": "orbital",
     "engine": "ritual",
     "technique": "puncture_the_pompous"
+  },
+  {
+    "run_date": "2026-11-14",
+    "year": 2414,
+    "era_bucket": 7,
+    "domain": "money and finance",
+    "headline": "Last Cent Gets Four-Day Funeral",
+    "style": "discovery",
+    "place_kind": "asteroid",
+    "engine": "scale",
+    "technique": "confident_aside"
   }
 ]

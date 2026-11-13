@@ -407,6 +407,12 @@
       "gloss": "the smugglers' congregation, which refuses to ship any crate that has not been blessed",
       "kind": "term",
       "first_seen": "2026-11-13"
+    },
+    {
+      "term": "ledger-wage reforms",
+      "gloss": "The change after which pay existed only as ledger entries, leaving physical coins useless.",
+      "kind": "term",
+      "first_seen": "2026-11-14"
     }
   ]
 }

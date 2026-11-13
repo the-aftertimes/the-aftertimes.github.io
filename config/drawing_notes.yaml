@@ -13,6 +13,7 @@ results:
   '2026-11-11': win
   '2026-11-12': win
   '2026-11-13': win
+  '2026-11-14': loss
 history:
 - decided: '2026-10-26'
   verdict: retired
