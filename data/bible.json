@@ -413,6 +413,12 @@
       "gloss": "The change after which pay existed only as ledger entries, leaving physical coins useless.",
       "kind": "term",
       "first_seen": "2026-11-14"
+    },
+    {
+      "term": "throat-plate",
+      "gloss": "a small buzzer under each seat's headrest that cues the fan to cheer, groan or rise",
+      "kind": "term",
+      "first_seen": "2026-11-15"
     }
   ]
 }

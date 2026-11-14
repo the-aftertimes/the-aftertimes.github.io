@@ -1,0 +1,234 @@
+{
+  "run_date": "2026-11-15",
+  "run_time": "2026-11-14T18:00:34.394224+00:00",
+  "dispatch": {
+    "headline": "Crowd-Noise Crew Out, Stadium Improvises",
+    "body": "Aroha Adeyemi, lead technician of the Grand Final's crowd-noise crew, was at home on Saturday when 40,000 fans began cheering without her. She and her 212 colleagues had walked out at the first whistle over pay for goals scored in extra time.\n\nAdeyemi was asked what the crew does. She said it sets the cheer. Every seat has a throat-plate, a small buzzer under the headrest, and the crew uses it to tell the stands when to roar, when to groan and when to rise.\n\nShe said she had not watched, but she had listened on the wireless. \"Someone near the south rail started early,\" she said. \"Then about a third of them followed. That was the first goal. It was disallowed.\"\n\nAsked whether she regretted the timing, she said the timing was the point of a walkout. She added that the crew's last pay review was in 5261.\n\nAsked about the long silence after the second goal, Adeyemi said that was the correct reaction. Nobody had told them it was a good goal, so she did not see how they could have known.\n\nWitnesses said the crowd mostly just guessed. Several sections gasped at a throw-in. One booed the national anthem, then apologised in a low murmur that carried to the pitch.\n\nAdeyemi wants fair rates and a separate fee for tears. The league has offered a meeting on Thursday. She will attend, provided someone tells her when to clap.",
+    "scene": "A technician in a grey crew jacket sits calmly in a kitchen chair with a mug, ignoring a huge wall screen behind her showing a packed stadium of fans with arms raised in confused, mismatched poses.",
+    "dateline": {
+      "place": "Grand Final stadium",
+      "year": 5279,
+      "month": 2,
+      "day": 12,
+      "years_from_now": 3253
+    },
+    "domain": "sport",
+    "glossary": [
+      {
+        "term": "throat-plate",
+        "gloss": "a small buzzer under each seat's headrest that cues the fan to cheer, groan or rise"
+      }
+    ],
+    "premise": "The platform's crowd-noise technicians stage a walkout at the Grand Final, forcing 40,000 fans to cheer unassisted for the first time in living memory and, according to witnesses, 'mostly just guess'.",
+    "brief": null,
+    "image": "assets/img/2026-11-15.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-14T18:00:34.394224+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 111,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.68,
+      0.92,
+      0.59
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "224 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 21.2 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "255 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'told the Intake Four crew, who had thanked him, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "245 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 7.8 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'could simply accept the result, Sauvageot said they could, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Amateur Airship Club Votes Out Professionals, Finds Itself",
+        "body": "Alibek Duroselle, secretary of the Verrin Drift Amateur Gasbag Society, sat in the clubhouse gondola on Monday and explained why nobody has checked the books since the society's thirtieth year. The members voted last week to bar professional pilots from the Ninth Ring Cup. The vote was carried 212 to 0. The clerk then found that all 212 have drawn wages since the club's third decade.\n\nAsked who pays them, Duroselle said the Pilots' Board does, on the first of the month, the way it always has.\n\nAsked what the society is for, he said it trains pilots.\n\nAsked whether that made the members professionals, he said they were members. The pay was for the flying. The racing was for the weekends. He said the two had never been confused.\n\nAsked why the club had never mentioned this in its rules, he said the rules were nine hundred years old and had been written by people who already knew.\n\nAsked what happens to the ban, Duroselle said it stands. He said it would be enforced at the next Cup against any pilot who turns up. Asked who would then fly, he said the Board would send someone.\n\nThe Board has been asked for comment. A spokesperson for the Board said the pilots were doing very well and the race would go ahead as scheduled.",
+        "premise": "A 900-year-old amateur dirigible-racing club votes to ban professional pilots, only to discover that every member has been on payroll since the third decade of the club's founding, and that the club is itself a pilot-training scheme.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Fantasy Manager Banned For Knowing Turbines",
+        "body": "Tobiah Esposito, the top-ranked manager in the Jovian Upper-Deck Fantasy Wind League, was suspended on Monday after the league found he had been working the intake turbines he drafted. Commissioner Vesna Grabowska called it \"an unsporting amount of information.\"\n\nEsposito, a third-shift blade-greaser on Intake Eleven, sat for questions in the crew canteen.\n\nAsked how long he had known the league's rules, he said since the first season, and that nothing in them mentioned greasing.\n\nAsked whether he had used his position to pick winners, he said he had picked the turbines he was standing next to, because he could hear them.\n\nAsked what he could hear, he said Intake Four had a bearing going. He said he had told the Intake Four crew, who had thanked him, and that the league later scored Four's shutdown as a loss for the manager who owned it.\n\nAsked whether that manager had complained, he said the manager had been his sister.\n\nAsked about the league's claim that he led the table by forty points, Esposito said it was closer to forty-three. He said the rest of the deck's managers work from the public gust charts, which are posted a day late.\n\nAsked what he planned to do during the suspension, he said he would grease Intake Eleven, as his shift begins at the same hour regardless.\n\nAsked if he would miss the league, he said Intake Eleven was drafted by a retired dockhand on Deck Six, who had never once seen it and was doing very well.",
+        "premise": "The Jovian Upper-Deck Fantasy Wind League suspends its top-ranked manager after discovering he had been actually working the intake turbines he was drafting, giving him what the commissioner called 'an unsporting amount of information'.",
+        "score": 0.68,
+        "rejected": false
+      },
+      {
+        "headline": "Crowd-Noise Crew Walks Out, Fans Guess",
+        "body": "Aroha Adeyemi, lead technician of the Grand Final's crowd-noise crew, was at home on Saturday when 40,000 fans began cheering without her. She walked out with her 212 colleagues at the first whistle over a dispute about pay for goals scored in extra time.\n\nAdeyemi was asked what the crew does. She said it sets the cheer. Each seat has a throat-plate, and the crew tells the stands when to roar, when to groan and when to rise.\n\nAsked how the fans coped, she said she had not watched. She had heard, though. \"Someone near the south rail started early,\" she said. \"Then about a third of them followed. That was the first goal. It was disallowed.\"\n\nAsked whether she regretted the timing, she said the timing was the point of a walkout. She added that the crew's last pay review was in 5261.\n\nAsked about reports of a long silence after the second goal, Adeyemi said that was the correct reaction. Nobody had told them it was a good goal, so she did not see how they could have known.\n\nWitnesses said the crowd mostly just guessed. Several sections gasped at a throw-in. One booed the national anthem, then apologised in a low murmur that carried to the pitch.\n\nAsked what she wanted, she said fair rates and a separate fee for tears. The league has offered a meeting on Thursday. Adeyemi said she would attend, provided someone else told her when to clap.",
+        "premise": "The platform's crowd-noise technicians stage a walkout at the Grand Final, forcing 40,000 fans to cheer unassisted for the first time in living memory and, according to witnesses, 'mostly just guess'.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Gas Harvesters Down Tools Over Having Tried",
+        "body": "Tamsin Sauvageot, shift steward for the Ombrelle Drift gas harvesters, spent the tenth day of the strike on a dock rail, answering questions between ladles of broth.\n\nWhy are the harvesters out? \"The league counted the Skimmers' friendly as a competitive fixture. That was a pre-season friendly. We lost it by eleven lengths and nobody on our side was straining.\"\n\nWhat does the counting change? \"If it was competitive, we were competing. If we were competing, we were trying. The record now says we tried and came last. We did not try. We have the rota to prove it.\"\n\nHas the league offered anything? \"A letter. It says the fixture stands, and that we are free to try harder next season, which would be a different fixture.\"\n\nAsked whether the harvesters could simply accept the result, Sauvageot said they could, and that they had, but not the part about effort.\n\nHow has the strike affected the Drift? \"Nine hundred homes are on half heat. The Skimmers' own supporters sent soup. It is good soup.\"\n\nWhat would end it? \"Strike the word 'competitive'. Or have the Skimmers say they weren't trying either. Their captain has said she was. We find that unhelpful.\"\n\nIs she lying? \"She may be. We can't prove it. That is the problem with the whole matter.\"\n\nThe league's assessors sit again on Thursday.",
+        "premise": "Cloud-city gas harvesters stage a ten-day strike over the league's decision to count the Tuesday Skimmers' pre-season friendly as a 'competitive fixture', which they say retroactively obliges them to have been trying.",
+        "score": 0.59,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The crew's fake-cheer premise pointedly satirises how fans take emotional cues from the stadium, with the 'nobody told them it was a good goal' line and the 'provided someone else told her when to clap' kicker both landing; it still opens by stating its conceit and leans on it a little too long.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "challenger",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        4.0,
+        8.0,
+        0.0
+      ],
+      "rankings": [
+        [
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Body ran 245 words against a 170-215 limit, and the headline only described the premise. Logic slips: Adeyemi says she did not watch, then reports the first goal; 'throat-plate' is never explained; and the 'fans guess' payoff was thin.",
+    "prose": {
+      "words": 241,
+      "sentences": 20,
+      "mean_sentence": 12.1,
+      "longest": 30,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 4,
+      "rare_rate": 1.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        29.9,
+        37.0
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 shows the technician watching the screen intently, not calmly ignoring it, and its wall signs are garbled.",
+      "winner_faults": "The fans on the screen are too small for their mismatched raised-arm poses to read, the boxes and device carry garbled lettering, and she sits in an office chair rather than a kitchen chair."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss",
+        "2026-11-10": "win",
+        "2026-11-11": "win",
+        "2026-11-12": "win",
+        "2026-11-13": "win",
+        "2026-11-14": "loss",
+        "2026-11-15": "loss"
+      }
+    }
+  }
+}

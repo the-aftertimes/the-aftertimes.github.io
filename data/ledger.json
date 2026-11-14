@@ -1153,5 +1153,16 @@
     "place_kind": "asteroid",
     "engine": "scale",
     "technique": "confident_aside"
+  },
+  {
+    "run_date": "2026-11-15",
+    "year": 5279,
+    "era_bucket": 65,
+    "domain": "labour and work",
+    "headline": "Crowd-Noise Crew Out, Stadium Improvises",
+    "style": "interview",
+    "place_kind": "gasgiant",
+    "engine": "leisure",
+    "technique": "answers_the_question"
   }
 ]
