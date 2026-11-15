@@ -1,20 +1,12 @@
 # Machine-edited by tune.py. Read its docstring before changing anything here.
 champion: []
 challenger:
-- No lettering, signs, plaques or writing anywhere; leave walls, plaques and banners blank and plain.
-why: Garbled illegible lettering is the most repeated fault in the published pictures, so banning all
-  text targets it directly.
-since: '2026-11-06'
-results:
-  '2026-11-07': loss
-  '2026-11-08': win
-  '2026-11-09': loss
-  '2026-11-10': win
-  '2026-11-11': win
-  '2026-11-12': win
-  '2026-11-13': win
-  '2026-11-14': loss
-  '2026-11-15': loss
+- Show every figure and object fully inside the frame with margin; nothing cropped at any edge, no extra
+  bystanders.
+why: The judge repeatedly cites cropped figures, cropped machines or doors, and extra bystanders in published
+  pictures, and no current note addresses framing or crowd count.
+since: '2026-11-16'
+results: {}
 history:
 - decided: '2026-10-26'
   verdict: retired
@@ -36,3 +28,13 @@ history:
   champion_before: []
   challenger:
   - Main figure faces the viewer, face and hands clearly visible, never seen from behind.
+- decided: '2026-11-16'
+  verdict: retired
+  wins: 5
+  of: 10
+  since: '2026-11-06'
+  why: Garbled illegible lettering is the most repeated fault in the published pictures, so banning all
+    text targets it directly.
+  champion_before: []
+  challenger:
+  - No lettering, signs, plaques or writing anywhere; leave walls, plaques and banners blank and plain.

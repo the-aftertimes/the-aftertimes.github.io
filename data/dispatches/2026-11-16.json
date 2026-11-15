@@ -1,0 +1,206 @@
+{
+  "run_date": "2026-11-16",
+  "run_time": "2026-11-15T18:00:37.956401+00:00",
+  "dispatch": {
+    "headline": "Pencil Retired For Telling The Truth",
+    "body": "In a report on the retirement of Bolat Sauvageot's pencil, The Aftertimes said the ceremony was the Guild of Flattering Likenesses' first breach of courtesy. The first breach was in fact the admiral's portrait, which the Guild's own panel judged a good likeness of a man who had not asked for one.\n\nIn the same report, we said the pencil was broken. It was not broken. It was sanded down over eleven hours by nine guild members working in shifts, because the Guild holds that a pencil which has drawn truthfully cannot be snapped, only retired slowly. \"Snapping is for pencils that lied to somebody we like,\" said Guildmaster Odalys Brennt, who was heard to say it twice, the second time to the sanding rota.\n\nIn a report on the admiral's visit, we said he was angered by the drawing. He was not. He asked to keep it. The Guild has spent four months drafting a letter explaining why he cannot, and has so far completed two paragraphs. The admiral has meanwhile asked twice, politely, how the letter is coming.\n\nIn a report on Sauvageot's career, we said he had drawn Waystation's residents accurately for sixty years. He drew them for sixty years without once being accurate. The admiral is the first person he ever looked at properly, which Sauvageot attributes to the light in the dock lounge. The Guild has since dimmed the lounge. Sixty years of residents have been told this is for their comfort, and several have thanked it for it.",
+    "scene": "A retired old man in a grey smock sits at a drawing table while a robed guild officer sands his large pencil on a spinning wheel, a finished portrait of a stern admiral pinned beside him.",
+    "dateline": {
+      "place": "Waystation",
+      "year": 2697,
+      "month": 4,
+      "day": 24,
+      "years_from_now": 671
+    },
+    "domain": "guild ceremony and portraiture",
+    "glossary": [],
+    "premise": "Waystation's retired caricaturist is ceremonially stripped of his pencil after drawing a visiting admiral accurately, in what the Guild of Flattering Likenesses calls the first breach of professional courtesy since the founding of the Guild.",
+    "brief": null,
+    "image": "assets/img/2026-11-16.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-15T18:00:37.956401+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 112,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      1.0,
+      0.84,
+      0.76
+    ],
+    "violations": [
+      [],
+      [],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "231 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "246 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Retired Caricaturist Stripped Of Pencil For Accuracy",
+        "body": "In a report on the stripping of Bolat Sauvageot's pencil, The Aftertimes said the ceremony was the Guild of Flattering Likenesses' first breach of courtesy. The first breach was in fact the admiral's portrait, which the Guild's own panel judged a good likeness of a man who had not asked for one.\n\nIn a report on the ceremony, we said the pencil was broken. It was not broken. It was sanded down over eleven hours by nine guild members working in shifts, because the Guild holds that a pencil which has drawn truthfully cannot be snapped, only retired slowly.\n\nIn a report on the admiral's visit, we said he was angered by the drawing. He was not. He asked to keep it. The Guild has spent four months drafting a letter explaining why he cannot, and has so far completed two paragraphs.\n\nIn a report on Sauvageot's career, we said he had drawn Waystation's residents for sixty years. He drew them for sixty years without once being accurate. The admiral is the first person he had looked at properly, which Sauvageot attributes to the light in the dock lounge. The Guild has since dimmed the lounge.",
+        "premise": "Waystation's retired caricaturist is ceremonially stripped of his pencil after drawing a visiting admiral accurately, in what the Guild of Flattering Likenesses calls the first breach of professional courtesy since the founding of the Guild.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Corrections: Scribe's Stroke Was Merely Straight",
+        "body": "In a report on the Hushwater Cloister, we said a new scribe's first stroke was declared 'excellent'. It was declared adequately straight. This is the highest praise in the order's 400-year history, and no earlier stroke has received it.\n\nIn a report on the same stroke, we said the scribe wept from shame. The scribe wept from praise. The order's rule of silence does not allow a reason to be given, so the cloister's account of the weeping was taken from a sketch by the chief ink-grinder.\n\nIn a report on the scribe's reprimand, we said the scribe was scolded for a poor stroke. The stroke was not scolded. The scribe was scolded for the blot at its end, which the cloister regards as a separate matter and has regarded as one since the founding. The blot was the size of a grain of rice.\n\nIn a report on the scribe's promotion, we said it came despite the reprimand. It came because of the reprimand, which the cloister's tally-keeper counts as the second mark of readiness. The scribe now holds the rank of Second Hand and may clean the brushes of the First. The Aftertimes regrets the errors, and the nineteen days it took to confirm them by sign.",
+        "premise": "Monastery of silent-order calligraphers 900 light-years out declares a new scribe's first stroke 'adequately straight,' the highest praise in its 400-year history, and the scribe is reported to have wept, been reprimanded for the blot, and been promoted.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Eleven Hundred Enemy Soldiers Were 'A Lot'",
+        "body": "In a report on the restoration of the Hall of the Ninth Lamp, we said the faded battle mural would be repainted with 1,100 enemy soldiers. It will be repainted with a lot. The restorer, Odile Mabuza, has applied the phrase to the whole eastern wall, where the enemy now stands as an unnumbered crowd of grey figures.\n\nIn a report on the regiment's oath, we said recruits swear to defeat \"eleven hundred\" at the Battle of the Cold Locks. They have sworn to defeat \"a lot\" since the first year of the garrison. The figure of 1,100 was added by a records clerk in 2311, who counted the painted heads and believed the painter had been careless.\n\nIn a report on the clerk, we said he was dismissed. He was promoted, and his count was printed in every regimental history for three centuries. Mabuza says the painter counted the real dead on the day itself and chose the word. The regiment has been loyal to a number nobody who was there ever said.\n\nIn a report on the garrison's reaction, we said Commander Orhan Farahani had ordered the wall repainted by another hand. He has ordered a recount of the heads. It has taken nineteen volunteers eleven weeks, and they have reached 1,094, with the lower left corner still under flaking pigment. Mabuza has asked that no one count it.",
+        "premise": "Garrison's ceremonial-mural restorer refuses to repaint a faded regiment's battle scene with the correct number of enemy soldiers, insisting the original painter's miscounting of eleven hundred as 'a lot' is the work's authentic voice, and that the army has been wrong about its own history ever since.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Commandant's Bust Not Yet Finished, Paper Says Again",
+        "body": "In a report on the unveiling of the commandant's bust, this paper said the sculpture had been delivered in a state of completion. It had not. The sculptor, Odile Haugland, has told the garrison it is finished only when it has melted, and the bust is at present about two-thirds of the way there.\n\nIn a report on the same event, we said the officers viewed the bust for an hour. They viewed it for eleven minutes, which was as long as the vault could be kept at working temperature with the door open. The garrison's cold-storage rota has since been rewritten around the bust, and the vault's coolant, which we said was spare, is the garrison's.\n\nIn a report on the commandant's reaction, we said she was pleased with the likeness. She was pleased with the likeness on the first day. By the ninth day the nose had gone, and the officers now describe the likeness as having moved on. Haugland says this is correct and that the commandant has not yet resembled herself. The paper regrets calling the first fortnight a success.\n\nIn a report on the work's expected life, we said the bust would stand in the mess hall for generations. It will stand there for about three more days, after which it will be a floor drain's problem. Xochitl Duroselle, the garrison's drain keeper, has asked that the likeness be allowed to arrive in the east corridor, where the slope is better.",
+        "premise": "Waystation's resident sculptor of ice portraits, commissioned to make a bust of the commandant, delivers it in a cold-storage vault, unveils it to the officers, and announces it will be 'finished' only when it has fully melted, which the sculptor says is when 'the likeness truly arrives.'",
+        "score": 0.76,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its sanded-down pencil, the admiral's two-paragraph letter, and the dimmed dock lounge are funny, pointed kickers, and its opening sets up a real turn; Draft 2's 'a lot' headline is sharper but its opening gives the whole joke away.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        7.0,
+        4.0,
+        6.0,
+        1.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          3,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 1.0,
+    "score_after": 0.92,
+    "critique": "The headline describes the premise instead of landing a joke, and the piece has no quoted voice treating the absurdity as normal. The ending restates the dimmed lounge rather than recontextualising, and the logic is muddy: a pencil that 'drew truthfully' is then said to have never been accurate.",
+    "revise_judge_reason": "Its Guildmaster quote ('Snapping is for pencils that lied to somebody we like') and the thanked-for-dimming kicker satirise institutional self-importance more sharply than Draft 1, though the opening still restates its premise.",
+    "prose": {
+      "words": 254,
+      "sentences": 16,
+      "mean_sentence": 15.9,
+      "longest": 31,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 4,
+      "rare_rate": 1.6
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        23.4,
+        33.6
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "The loser shows garbled lettering on the board by the easel, and its spinning wheel is largely hidden, so the pencil-sanding action doesn't read clearly.",
+      "winner_faults": "The officer's sanding of the large pencil is somewhat ambiguous on the cross-topped device, and the admiral's portrait and the cloth at the right edge are partly cropped."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-07": "loss",
+        "2026-11-08": "win",
+        "2026-11-09": "loss",
+        "2026-11-10": "win",
+        "2026-11-11": "win",
+        "2026-11-12": "win",
+        "2026-11-13": "win",
+        "2026-11-14": "loss",
+        "2026-11-15": "loss",
+        "2026-11-16": "loss"
+      },
+      "decision": "retired",
+      "new_challenger": "The judge repeatedly cites cropped figures, cropped machines or doors, and extra bystanders in published pictures, and no current note addresses framing or crowd count."
+    }
+  }
+}
