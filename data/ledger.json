@@ -1175,5 +1175,16 @@
     "place_kind": "deepspace",
     "engine": "expertise",
     "technique": "sincere_futility"
+  },
+  {
+    "run_date": "2026-11-17",
+    "year": 3068,
+    "era_bucket": 20,
+    "domain": "transport",
+    "headline": "Freeway Finally Goes Free, Sails Off",
+    "style": "obituary",
+    "place_kind": "drowned",
+    "engine": "language",
+    "technique": "stated_rule_reductio"
   }
 ]

@@ -1,0 +1,216 @@
+{
+  "run_date": "2026-11-17",
+  "run_time": "2026-11-16T18:01:18.692490+00:00",
+  "dispatch": {
+    "headline": "Freeway Finally Goes Free, Sails Off",
+    "body": "The Freeway, the raised road that carried Los Angeles Heights for eleven centuries, has drifted out to sea at the age of 1,106. It left its pylons on Sunday night and was last seen by the harbour watch, heading south-west at about four knots.\n\nBuilt as a ring of concrete-glass deck between the old hill suburbs, it was called the Freeway from its first day. Motorists objected from the second. A toll was charged until 2214, and after that a lane fee. Later came a fee for the seat. The name stayed on every sign.\n\nComplaints went to the Freeway Office, which employed forty clerks by 2600 and answered each one with the same form letter, revised eleven times. The last revision added an apology.\n\nThe average crossing took three hours. A petition in 2890 asked the Office to rename the road the Slowway. It was declined because signs were expensive.\n\nOn Sunday the pylons, long undermined by the tide, let go. About two hundred people were aboard in the evening queue. All were taken off by harbour skiff, most still sitting in their cars.\n\nOdile Falconer, who has driven it daily since 3031, was rowed ashore with her indicator still on. \"I always knew it was free,\" she told this reporter on the jetty. \"I just thought it would be rude to leave first.\"\n\nThe Freeway Office has closed. Its clerks now spend mornings in the car park, waiting for the road to write back.",
+    "scene": "Odile Falconer, a commuter in a long coat, sits in a boxy hover car on a huge concrete road deck that drifts away from its pylons over open grey sea, gripping the wheel while a harbour skiff pulls alongside.",
+    "dateline": {
+      "place": "Los Angeles Heights",
+      "year": 3068,
+      "month": 2,
+      "day": 25,
+      "years_from_now": 1042
+    },
+    "domain": "transport",
+    "glossary": [],
+    "premise": "The raised highway of Los Angeles Heights, long called 'the Freeway', is eulogised after a thousand years of motorists protesting that the name was a lie, and then, in 3068, finally being right when it floated free of its pylons and drifted out to sea.",
+    "brief": null,
+    "image": "assets/img/2026-11-17.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-16T18:01:18.692490+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 113,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.76,
+      0.92,
+      0.59,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "258 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'then a lane fee, then a seat fee, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "237 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 9 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 42 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "258 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "230 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'and then to the flood, which is brown, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "The Freeway Finally Lives Up To Its Name",
+        "body": "The Freeway, the raised road that carried Los Angeles Heights for eleven centuries, has drifted out to sea at the age of 1,106. It left its pylons on Sunday night and was last seen by the harbour watch, heading south-west at about four knots.\n\nBuilt as a ring of concrete-glass deck to move people between the old hill suburbs, it was called the Freeway from its first day. Motorists objected from the second. A toll was charged until 2214, then a lane fee, then a seat fee, and the name stayed on every sign.\n\nComplaints were lodged at the Freeway Office in a steady stream. The Office, which employed forty clerks by 2600, answered each one with the same form letter, revised eleven times. The last revision added an apology.\n\nThe deck survived two floods, a rising tide and a plan to make it a park. Through all of it, commuters sat in it. The average crossing took three hours. A petition in 2890 asked the Office to change the name to the Slowway. It was declined on the grounds that signs were expensive.\n\nOn Sunday the pylons, long undermined by the tide, let go. About two hundred people were aboard in the evening queue. All were taken off by harbour skiff, most still sitting in their cars.\n\nOdile Falconer, who has driven it daily since 3031, was among them. \"I never doubted it was free,\" she said. \"I only wondered when it would be told.\"\n\nThe Freeway Office has closed. Its final letter says nothing was owed.",
+        "premise": "The raised highway of Los Angeles Heights, long called 'the Freeway', is eulogised after a thousand years of motorists protesting that the name was a lie, and then, in 3068, finally being right when it floated free of its pylons and drifted out to sea.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Rotterdam's Last Real Pilot Is Remembered",
+        "body": "The Rotterdam Tidal-Barge Guild, which steered the harbour's freight for eight hundred years, was dissolved on Friday at the age of eight hundred and eleven. Its last treasurer signed the papers over a tank of carp.\n\nThe guild was founded to certify Pilots, men and women who could read a sandbar from the colour of the water. Its first exam took four days. Candidates were put alone on a barge in a rising tide and told to come home.\n\nThe trouble began quietly. In the 2400s, the guild's apprentices were allowed to keep a small fish in the wheelhouse for company. Fish were soon recorded on the roll beside the Pilot's name. Within three generations the roll listed only the fish.\n\nBy 2900 the word Pilot meant a person who kept a pet. The guild saw no reason to correct this, since the harbour was running well. A Pilot could be anyone with a bowl and a goldfish. The barges followed the fish through the sensor glass on the bowl rim, and the fish, being goldfish, went where the food was.\n\nSixty thousand Pilots now steer the harbour. Collisions are rare. Queues at the Maas gate are not, and last spring a barge of grain spent nine days circling a feeding-ring.\n\nThe guild is survived by its exam, which no one has sat since 2611. Efua Grabowska, the harbour clerk, said the fish would be kept on.",
+        "premise": "Rotterdam's tidal-barge guild dissolves after its title 'Pilot' drifted over eight centuries from 'ship navigator' to 'person who keeps a pet fish', leaving the harbour steered entirely by sixty thousand goldfish owners.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "The Bridge Ferry, Which Was Never a Bridge, Dies",
+        "body": "The Bridge, a ferry that ran between the Salt Market and the Lower Gardens for four hundred years, made its last crossing on Friday carrying 212 passengers, all of whom walked on and off it as though it were fixed to something.\n\nThe route took its name from the Ponte Alta, a stone span over the River Brenta, which was already under the lagoon when the ferry began. The first ferry was a punt. Passengers boarded it at the old bridge landing and called the trip \"going over the Bridge,\" and the city's route board, which wished to be helpful, printed the name on the timetable.\n\nThe river was lost to the first sea-level revision. The stone went under in the second. The ferry kept its name through both, and its passengers kept their habits. They stood in the middle of the deck and looked down at the water, and at the rail on either side. Several generations of ticket staff were trained to say \"mind the edge of the Bridge.\"\n\nIn 2911 the route board proposed renaming the service the Crossing. Eleven thousand riders signed a letter asking it not to. The board withdrew the proposal in a short statement.\n\nThe final vessel, the Lamprey, was a flat grey hull with a rail and no engine noise. Oona Arriaga, the last pilot, said afterwards that she had never been asked once where the Bridge went. \"They knew where it went,\" she said. \"It went over.\"\n\nThe route is replaced by a tunnel-lift. It is called the Bridge.",
+        "premise": "In the floating city of Venetia-on-Atlantic, the last ferry route still called 'the Bridge' is mourned after 400 years of passengers insisting it was a bridge, a delusion that outlasted the original bridge, the river, and two sea-level revisions.",
+        "score": 0.59,
+        "rejected": false
+      },
+      {
+        "headline": "Gap Finally Minded After Nine Centuries",
+        "body": "The Skyline Loop, the elevated rail line of Lon-Don't, ran its last train on Friday, ending nine hundred and four years of the recorded warning \"Mind the gap.\" The announcement was 71 years old when the platforms were raised, and nobody thought to change it.\n\nThe warning began on the ground, where the gap measured eleven centimetres and concerned shoes. It travelled upward with the line, one flood-tier at a time. By the Fourth Raising the gap beside Pylon Nine led to a drop of 300 metres and then to the flood, which is brown, and moves.\n\nThe voice was recorded by a man whose name the Loop Authority lost in the Second Raising. A replacement voice was commissioned twice. Both were rejected after passengers wrote in to say they did not sound like the gap.\n\nInspectors found the announcement had been followed. In nine centuries the Loop recorded no passenger lost to the gap, a figure that no other line in the Drowned Counties can claim. The Authority declined to say whether the voice was responsible.\n\nOona Shevchuk, who rode the final service to Pylon Nine, said the gap was \"much improved by being minded.\" Fellow passengers agreed. Several minded it for some time after the doors opened.\n\nThe line is replaced by a cable-car. Its announcement is a short chime. The gap beneath it is the same size.",
+        "premise": "The elevated rail line of Lon-Don't, a raised London, is retired after centuries of operating a 'Mind The Gap' announcement; the gap, now a 300-metre drop to the flood, is declared by passengers to be 'much improved by being minded'.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its bureaucratic satire lands: the name never changes, the Slowway petition is refused because signs are expensive, and the final line is a real kicker, though the opening states the premise and the piece is a bit gentle.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "challenger",
+      "champion",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        5.0,
+        8.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          2,
+          1,
+          3,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.76,
+    "score_after": 0.92,
+    "critique": "Headline ran eight words and the body ran long at 258. The fee escalation was a lazy comma list, and the quote and final line explained the joke instead of landing it.\nLogic check: Odile's quote must come from someone the reporter spoke to on the skiff, and the kicker should flip the name joke without any legal register.",
+    "prose": {
+      "words": 246,
+      "sentences": 20,
+      "mean_sentence": 12.3,
+      "longest": 24,
+      "short_sentences": 5,
+      "machine_phrases": [],
+      "rare_words": 4,
+      "rare_rate": 1.6
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        13.0,
+        15.6
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 has garbled lettering on the car body and shows the car hovering above a deck that still stands on pylons, with the driver not clearly gripping a wheel, so it misses the drifting-away, wheel-gripping scene.",
+      "winner_faults": "The deck still looks anchored on its legs rather than clearly drifting free over open sea, and the skiff sits off to the right instead of pulling alongside the deck."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-17": "loss"
+      }
+    }
+  }
+}

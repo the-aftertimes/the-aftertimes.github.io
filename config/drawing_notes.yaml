@@ -6,7 +6,8 @@ challenger:
 why: The judge repeatedly cites cropped figures, cropped machines or doors, and extra bystanders in published
   pictures, and no current note addresses framing or crowd count.
 since: '2026-11-16'
-results: {}
+results:
+  '2026-11-17': loss
 history:
 - decided: '2026-10-26'
   verdict: retired
