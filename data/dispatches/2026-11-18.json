@@ -1,0 +1,216 @@
+{
+  "run_date": "2026-11-18",
+  "run_time": "2026-11-17T18:01:15.130969+00:00",
+  "dispatch": {
+    "headline": "Wolves Locked Out Of Own Hunt",
+    "body": "LOCK TWO CLOSED TO COMMUTERS, 0400 TO 0600\nThe Ashfall Terrace pack will be walked through Lock Two daily during this window. Commuters should use Lock Five, which adds forty minutes to the trip to the glasshouse rows. The pack's handlers set the window. It is not open to appeal.\n\nCHANGED HOURS, PREY PADDOCK\nThe elk herd in Paddock Nine is now open to the pack from 0600 to 0800 only. Outside those hours the herd is to be treated as scenery. Visitors are asked not to remark on this to the elk.\n\nLOST PROPERTY\nOne pressure glove, left hand, was recovered from the Lock Two floor on Thursday. It bears bite marks. Eleven wolves went through that morning. The glove belongs to the handler of the ninth.\n\nREMINDER FROM THE LOCK AUTHORITY\nEach wolf requires its own full cycle of four minutes. Pairs are not permitted, including littermates and the two that lean on each other. The pack now numbers nineteen. The window is still two hours.\n\n\"I did the sums once,\" said a Lock Five attendant. \"Then I stopped. The elk are the only ones who seem relaxed about it.\"\n\nAPPOINTMENT\nThe Terrace Assembly will receive the pack's handlers on Monday to hear a request for a second lock. The Assembly's lock budget is spent for four years. The pack's embryo-bank has been asked how many more are stored. It has not said, but it has asked for a bigger door.",
+    "scene": "A handler in a pressure suit stands inside a narrow airlock holding a short lead on a grey wolf in a small harness, while a commuter in a work suit waits impatiently outside the thick glass door behind them.",
+    "dateline": {
+      "place": "Ashfall Terrace",
+      "year": 2467,
+      "month": 4,
+      "day": 8,
+      "years_from_now": 441
+    },
+    "domain": "wolf pack, lock scheduling and prey paddock hours",
+    "glossary": [
+      {
+        "term": "lock",
+        "gloss": ""
+      },
+      {
+        "term": "pressure glove",
+        "gloss": "A thick sealed glove handlers wear when walking animals through the airlocks."
+      }
+    ],
+    "premise": "Mars city's new reintroduced wolf pack, flown in as frozen embryos and raised by hand, must each be individually walked through the airlock cycle before every hunt, so the pack now catches prey only during the two-hour window when the lock is not in use by commuters.",
+    "brief": null,
+    "image": "assets/img/2026-11-18.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-17T18:01:15.130969+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 114,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.76,
+      0.92,
+      0.84,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "236 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'were walked through that morning, one at a time, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "235 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.3 words, wanted 11-20",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "262 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Wolves Closed Out Of Own Hunt",
+        "body": "LOCK TWO CLOSED TO COMMUTERS, 0400 TO 0600\nThe Ashfall Terrace pack will be walked through Lock Two daily during this window. Commuters should use Lock Five, which adds forty minutes to the trip to the glasshouse rows. The window was set by the pack's handlers and is not open to appeal.\n\nCHANGED HOURS, PREY PADDOCK\nThe elk herd in Paddock Nine is now open to the pack from 0600 to 0800 only. Outside those hours the herd is to be treated as scenery. Visitors are asked not to remark on this to the elk.\n\nLOST PROPERTY\nOne pressure glove, left hand, was recovered from the Lock Two floor on Thursday. It bears bite marks. Eleven wolves were walked through that morning, one at a time, and the glove belongs to the handler of the ninth.\n\nREMINDER FROM THE LOCK AUTHORITY\nEach wolf requires a full cycle of its own, at four minutes a cycle. Wolves may not be cycled in pairs, including littermates and the two that have been seen to lean on each other. The pack now numbers nineteen, and the Authority notes that the window is still two hours.\n\nAPPOINTMENT\nThe Terrace Assembly will receive the pack's handlers on Monday to hear a request for a second lock. The Assembly's lock budget is spent through the next four years. The pack's embryo-bank has meanwhile been asked to confirm how many more are stored.",
+        "premise": "Mars city's new reintroduced wolf pack, flown in as frozen embryos and raised by hand, must each be individually walked through the airlock cycle before every hunt, so the pack now catches prey only during the two-hour window when the lock is not in use by commuters.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Pollinator Bus Delayed At Booth Nine",
+        "body": "BOOTH CLOSURE. Booth 41 of the Lowlight Forest is closed to pollinators until further notice while its tree recovers from a visit on Thursday. The crew had been in the airlock for the full cycle of two hours and ten minutes. Booth 42 is unaffected.\n\nCHANGED HOURS. The Pollinator Bus now departs the depot at 04:00, not 06:00. At the current rate of two booths a day, the round of three hundred takes one hundred and fifty days, and the first trees have been flowering since the spring. Crew are asked to sign the departure sheet before boarding.\n\nLOST PROPERTY. A sealed tray of pollen, labelled for Booth 112, was found in the decontamination bay of Booth 113. It has been destroyed. Owners of any other unlabelled trays should not collect them.\n\nREMINDER FROM THE FOREST OFFICE. All pollen carried into a booth must be carried out again, as the booth must remain free of anything not grown in it. Crew who cannot account for their pollen at the exit door will be sent back through the cycle. The Office notes that the trees are not yet bearing fruit.\n\nAPPOINTMENT. The Forest Office has named a Keeper of the Queue, who will decide which booth is visited first after the bus completes its round. The post carries a seat on the bus. The first holder begins on Monday and is expected to retire in post.",
+        "premise": "Mars city's rewilding programme completes its first forest, three hundred trees each in its own pressurised glass booth, and hires a crew of pollinators to travel from booth to booth in a sealed bus, queueing at each door for the mandatory decontamination cycle.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Birds Migrate Forty Metres, Then Are Driven Home",
+        "body": "CLOSURE. The Ostrava Passage between Dome Two and Dome Five is closed to pedestrians until the end of the migration season. The Passage is now a flight corridor. Walkers should use the lower tunnel.\n\nCHANGED HOURS. The Dome Five landing perch will open at 05:30, not 07:00. The first migration of the day leaves Dome Two at 06:00 and arrives at 06:01. Visitors are asked to be seated by 05:45.\n\nLOST PROPERTY. A padded crate, size three, lined with green felt, was left on the Passage tram on Friday. It contained eleven birds. Owners may collect it from the Dome Five depot with proof of volunteer enrolment.\n\nA REMINDER FROM THE HABITAT WARDENS. Volunteers on the Return Team must carry the flock back to Dome Two by hand, in crates, by the lower tunnel. Birds may not be flown home. The route has been recorded as one-way, and the Wardens' register of migrations cannot accept a bird travelling in both directions.\n\nAPPOINTMENT. Tamsin Iwasaki, flock lead for the Return Team, has been named Keeper of the Autumn Crossing. She will carry out the crossing on foot, once a day, until the visitor season ends. The Wardens have asked that she be given a second pair of gloves.",
+        "premise": "Ecologists in a half-terraformed Venus city announce the first migratory bird route, a 40-metre flight between two domes, and a volunteer team spends the season hand-carrying the flock back to the starting dome in padded crates so the migration can be repeated for visitors.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Wetland Closed Nightly For Drying",
+        "body": "WETLAND CLOSED FROM DUSK. The Calder Marsh in Terrace Nine will shut to visitors at dusk each day until further notice. A crew of forty will enter at that hour to dry the marsh with towels. Visitors found inside after the closing bell will be given a towel.\n\nCHANGED HOURS, DOME CONTROL. Humidity control for the Ninth Terrace will now run on a morning schedule only. Between dusk and first light the system will continue to log the marsh as a leak and to dispatch a repair order. Repair crews are asked not to answer these orders, as they were answered on four occasions in the first month.\n\nLOST PROPERTY. One towel, large, grey, wrung to a rope, was left at the Calder Marsh east gate. A second towel, same description, was left at the west gate. Towels may be claimed at the Terrace Nine office, where the supply is now held at nine thousand.\n\nREMINDER FROM THE BIODIVERSITY OFFICE. Reed frogs, marsh lilies and the three species of pond snail are protected within the marsh and must not be dried. Towel crews are reminded that a wet frog is a counted frog. Two snails were dried in the second week and have been entered as losses.\n\nAPPOINTMENT. The Dome Board has named a Chief of Nights to the marsh towel crew. Applications for the nine open places on the crew will be taken until the first of the month. The crew's work is expected to continue until the marsh is dry, which the Board describes as the opposite of its purpose.",
+        "premise": "Venus colony's new wetland, installed to restore biodiversity, is found to need a nightly crew of forty drying it out with towels, since the dome's humidity control keeps mistaking it for a leak.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its bureaucratic deadpan (a lock budget spent for four years, elk told to be scenery, a dark embryo-bank kicker) satirises real institutional absurdity more sharply than Draft 2's whimsical pollinator bus.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "challenger",
+      "champion",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        3.0,
+        3.0,
+        8.0
+      ],
+      "rankings": [
+        [
+          2,
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.76,
+    "score_after": 0.92,
+    "critique": "Body ran long at 236 words, had only one short sentence, and used a comma list as a fake escalation. The headline described the premise, there was no quoted voice, and the ending restated the maths instead of turning it.",
+    "prose": {
+      "words": 243,
+      "sentences": 22,
+      "mean_sentence": 11.0,
+      "longest": 22,
+      "short_sentences": 7,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.8
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        28.9,
+        45.4
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 misses the scene's setting: the handler stands in an open hallway rather than a narrow airlock, and the waiting figure is faceless and turned away rather than an impatient commuter outside a thick glass door.",
+      "winner_faults": "The wall sign and placard carry garbled, unreadable lettering, and the lead looks like a long hose rather than a short lead."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss"
+      }
+    }
+  }
+}

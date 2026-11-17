@@ -419,6 +419,18 @@
       "gloss": "a small buzzer under each seat's headrest that cues the fan to cheer, groan or rise",
       "kind": "term",
       "first_seen": "2026-11-15"
+    },
+    {
+      "term": "lock",
+      "gloss": "",
+      "kind": "term",
+      "first_seen": "2026-11-18"
+    },
+    {
+      "term": "pressure glove",
+      "gloss": "A thick sealed glove handlers wear when walking animals through the airlocks.",
+      "kind": "term",
+      "first_seen": "2026-11-18"
     }
   ]
 }
