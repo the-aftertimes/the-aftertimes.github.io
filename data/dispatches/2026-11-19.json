@@ -1,0 +1,213 @@
+{
+  "run_date": "2026-11-19",
+  "run_time": "2026-11-18T18:01:22.074405+00:00",
+  "dispatch": {
+    "headline": "Chief Physician's Bedside Manner Outlasts Patients",
+    "body": "Ignacy Uchenna, Chief Physician of Lowgrave, has given the bedside nod to 212 patients who were already dead, according to ward logs reviewed by The Aftertimes. The nod is a slow dip of the head given to each patient at the evening round. The earliest dead recipient is dated nine years ago.\n\nThe logs show a night nurse recorded each death correctly and entered the time. Nobody told Uchenna. Five junior staff confirmed this, and all declined to be named.\n\n\"You do not correct the Chief Physician at the bedside,\" said one, who trained under him for six years. \"You wait until he leaves, then you cover the face.\" Asked why nobody mentioned it after he left, she said the next round was already starting. \"Besides, they never complained. Best-behaved patients on the ward.\"\n\nThe nod is held to carry the settlement's goodwill to the patient. Families are told it was given. In 212 cases, it was.\n\nLowgrave's Board of Wards denies any irregularity. In a written statement, it said the nod \"has never been withheld from a patient in this settlement\" and that its worth does not depend on the patient's condition. The board has not said who reads the ward logs.\n\nUchenna, 71, declined to comment through an aide. He gave the evening round on Thursday as usual. Eleven patients received the nod. Two were not alive, and a junior held the door. Both were thanked afterwards by the ward, which keeps no record of who replies.",
+    "scene": "An elderly physician in a long pale ward coat stands at a bed in a dim ice-walled ward, head dipped in a solemn nod toward a patient lying completely still under a sheet, while a young nurse beside him stares at the floor.",
+    "dateline": {
+      "place": "Lowgrave",
+      "year": 4735,
+      "month": 6,
+      "day": 14,
+      "years_from_now": 2709
+    },
+    "domain": "medical",
+    "glossary": [
+      {
+        "term": "bedside nod",
+        "gloss": "a slow dip of the head given to each patient at the evening round, said to carry the settlement's goodwill"
+      }
+    ],
+    "premise": "Inside the subterranean settlement of Lowgrave, it is revealed that the Chief Physician has for nine years been performing the ceremonial 'bedside nod' to patients who were already dead, and staff say correcting him would have been considered unforgivably forward of a junior.",
+    "brief": null,
+    "image": "assets/img/2026-11-19.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-18T18:01:22.074405+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 115,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.76,
+      0.92,
+      0.67,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 9 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.8 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "235 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 39 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "232 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Chief Physician Nodded At Dead Patients For Nine Years",
+        "body": "Ignacy Uchenna, Chief Physician of Lowgrave, has performed the bedside nod on 212 patients who were already dead, according to ward logs reviewed by The Aftertimes. The nod is a slow dip of the head given to each patient at the evening round. The earliest dead recipient is dated nine years ago.\n\nThe ward logs show a night nurse recorded each death correctly and entered the time. Nobody told Uchenna. Five junior staff confirmed this. All declined to be named.\n\n\"You do not correct the Chief Physician at the bedside,\" said one, who trained under him for six years. \"You wait until he leaves. Then you cover the face.\" Asked why nobody mentioned it after he left, she said the next round was already starting.\n\nThe nod is held to carry the settlement's goodwill to the patient. Families are told it was given. In 212 cases, it was.\n\nLowgrave's Board of Wards denies any irregularity. In a written statement, it said the nod \"has never been withheld from a patient in this settlement\" and that its worth does not depend on the patient's condition. The board has not said who reviews the ward logs.\n\nUchenna, 71, declined to comment through an aide. He gave the evening round on Thursday as usual. Eleven patients received the nod. Two were not alive, and a junior held the door.",
+        "premise": "Inside the subterranean settlement of Lowgrave, it is revealed that the Chief Physician has for nine years been performing the ceremonial 'bedside nod' to patients who were already dead, and staff say correcting him would have been considered unforgivably forward of a junior.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Hospital Gives Every Liver A Famous Grandfather",
+        "body": "A tray of stamped transplant tags sat in the third-floor stores of Kessel Deep Hospital last month, each one dated between 3100 and 3400 and marked \"heirloom, family line\". Rangi Blomfield counted four hundred and twelve of them.\n\nThe hospital has swapped worn organs for grown ones since before the mountain was hollowed. Until ten years ago, the chart told the patient which parts were new. Then a guest at a Founders' Terrace supper raised a glass to a host's \"original liver\", and the host did not speak to him again. Three such toasts followed within the season. Two ended in duels of apology, which are slow and expensive.\n\nThe records office now enters a false age for every graft. A kidney grown in spring is logged as a gift from a great-uncle. Surgeons told Blomfield the tags are \"a courtesy to the chart\".\n\nA ward clerk agreed to speak if her post went unnamed. \"We started with livers,\" she said. \"Then hearts, because they asked.\" She said a retired shipwright was told his lungs had been in his family for nine generations. He is now in line to donate them.\n\nNo one has checked the dates against the growing vats, and the vat log is public. Xochitl Tavakoli, the hospital's registrar, denied any practice of false dating. \"Every tag is accurate to the family's understanding,\" she said.\n\nThe next donor list opens in spring.",
+        "premise": "Surgeons in the hollowed-out mountain of Kessel Deep have quietly stopped telling patients which organs were replaced, after the 'Is That Your Original Liver?' toast became a mortal insult at dinner parties among the old families, and a correspondent finds the hospital has been stamping false 'heirloom' dates on transplants for a decade.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Transplant List Rewards Best Apologisers",
+        "body": "A man bumped down the kidney list for saying 'sorry' twice was confirmed on Friday by a clerk at the Department of Bedside Manner, who asked not to be named and then asked whether he could still be thanked.\n\nThe Aftertimes has seen forty-one scoring sheets from the mountain's Ward of Third Descent. Each carries a column headed Regret, graded one to nine by the attending surgeon during the first consult. Blood match and organ failure share a smaller column called Other.\n\nThe man, a lamp-fitter, had been fourth in line. After his consult the sheet reads: 'Apologised twice. Brisk. Seemed to feel the tumour was happening to him.' He fell to eleventh.\n\nThe clerk said the top scorers tend to open with the surgeon's long day, then mention the cost of the scan, then ask pardon for the smell. One woman brought a tray of salted moss cakes. She scored nine and received a liver within the week.\n\n\"Two is not a lot of sorries,\" the clerk said. \"But three is the line. It was in the old guidance.\" He could not produce the old guidance.\n\nThe department denies any ranking exists. Its statement calls the sheets 'a courtesy record' and says surgeons 'naturally warm to warmth.'\n\nThe lamp-fitter died in the ninth week. His family received a card from the ward. It said the surgeon was sorry for the inconvenience.",
+        "premise": "Deep in a hollowed mountain, the Department of Bedside Manner has been found to rank patients by how gracefully they apologise to the surgeon for the inconvenience of their own tumour, with the best apologisers moved up the transplant list, and a reluctant clerk confirms a man was bumped for saying 'sorry' only twice.",
+        "score": 0.67,
+        "rejected": false
+      },
+      {
+        "headline": "Elite Fitted With Deliberately Slow Arms",
+        "body": "A councillor wept in a fitting booth at the Halloran Limb Clinic last month after staff gave her a modern hand that worked. Our correspondent has spoken to a fitter who was in the room.\n\nThe clinic is the pride of Undermarrow. It holds the settlement's only licence to grow nerve-lace, and its waiting list for working limbs runs to eleven years. Councillors do not wait. They are fitted within the week, and, according to three staff, with arms of a pattern last made some five centuries ago.\n\nThe arms are heavy, loud and a full second behind the wearer's intention. A councillor lifting a cup of broth does so in stages. Staff call this the Long Reach fit, and it is the most requested in the building.\n\n\"The old arm tells a room you have never needed to be quick,\" the fitter said, and asked not to be named. \"The new hand got there before she did. She looked at it and cried.\" The councillor was refitted with a gearbox elbow the same afternoon.\n\nThe clinic's registrar denied the practice. \"Every patient receives the most advanced limb their condition allows,\" she said. Asked why the stores hold four hundred antique shoulders, she said they were kept for teaching.\n\nThe stores log shows twelve were issued last quarter.",
+        "premise": "Our correspondent finds that the buried arcology's celebrated prosthetics clinic has been fitting the elite with deliberately obsolete limbs, because a clunky arm from five centuries back signals that you have never needed to be fast, and a source in fitting says one councillor wept on receiving a modern, perfectly functional hand.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The nurse's deadpan account of how nobody corrects the Chief Physician, and the closing 'a junior held the door', satirise institutional deference with a real kicker, though the opening states the conceit a little too fully.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "challenger",
+      "challenger",
+      "champion",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        2.0,
+        5.0,
+        7.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.76,
+    "score_after": 0.92,
+    "critique": "Headline ran nine words and the body was 226 words with choppy sentences. The quotes needed a funnier voice, and the ending restated the premise instead of turning it.",
+    "prose": {
+      "words": 249,
+      "sentences": 22,
+      "mean_sentence": 11.3,
+      "longest": 29,
+      "short_sentences": 6,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        33.9,
+        48.6
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Candidate 1 shows no patient lying under the sheet, only rumpled linen, so the central 'patient lying completely still' element is missing.",
+      "winner_faults": "The patient's eyes are open and looking up rather than the figure being completely still, the nurse appears to be a child, and the room is warm-toned wood panelling rather than ice-walled."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win"
+      }
+    }
+  }
+}

@@ -1197,5 +1197,16 @@
     "place_kind": "marsform",
     "engine": "logistics",
     "technique": "commit_past_reason"
+  },
+  {
+    "run_date": "2026-11-19",
+    "year": 4735,
+    "era_bucket": 54,
+    "domain": "medicine",
+    "headline": "Chief Physician's Bedside Manner Outlasts Patients",
+    "style": "investigation",
+    "place_kind": "subsurface",
+    "engine": "etiquette",
+    "technique": "headline_carries_it"
   }
 ]
