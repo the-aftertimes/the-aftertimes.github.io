@@ -1208,5 +1208,16 @@
     "place_kind": "subsurface",
     "engine": "etiquette",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-11-20",
+    "year": 3433,
+    "era_bucket": 28,
+    "domain": "death and mourning",
+    "headline": "Rats Beat Mourning Office On Time",
+    "style": "feature",
+    "place_kind": "shipboard",
+    "engine": "nature",
+    "technique": "confident_aside"
   }
 ]

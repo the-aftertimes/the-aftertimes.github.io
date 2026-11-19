@@ -1,0 +1,200 @@
+{
+  "run_date": "2026-11-20",
+  "run_time": "2026-11-19T18:01:13.669725+00:00",
+  "dispatch": {
+    "headline": "Rats Beat Mourning Office On Time",
+    "body": "Families on Kettleway Deck have begun handing their dead to the rats, and the Office of Parting has confirmed it lost forty-one of its sixty-three bookings last quarter. The rats run a collection service from the lower decks. Siosaia Agbaje, a hydroponics tender, called them in after her father died at the fourth bell.\n\n\"The Office said they could fit us in on the ninth day,\" Agbaje said. \"The rats came before the next bell. There were eleven of them and a sling. Dad hated waiting for anything, so it felt right.\"\n\nThe Office keeps a roster of speakers, each licensed to give a eulogy of at least forty minutes. Priit Amankwah, its senior speaker, says the length is a mark of respect. Families have waited up to six hours for a speaker to finish the previous family's.\n\nThe rats give no eulogy. They stand in a line for the length of one breath, which a deck steward measured at nine seconds, then carry the body down through the grain vents. Their rate is a bowl of seed.\n\nAmankwah has asked families to consider that the rats cannot say anything about the dead. Agbaje said that was the part she liked.\n\nThe Office has since moved its ninth-day slots to the fifth. Amankwah will keep speaking at the empty chairs until someone books one.",
+    "scene": "A woman in a green hydroponics smock stands beside a draped body on a sling in a narrow corridor, watching a line of eleven large rats stand upright and still in front of an open grain vent.",
+    "dateline": {
+      "place": "Kettleway Deck",
+      "year": 3433,
+      "month": 6,
+      "day": 17,
+      "years_from_now": 1407
+    },
+    "domain": "death and funeral customs aboard a generation ship",
+    "glossary": [],
+    "premise": "The ship's colony of rats, long thought to be a plague, has quietly established a rival undertaking service in the lower decks, and families of the recently deceased are reportedly choosing it over the human option because the rats show up on time and keep no one waiting for a eulogy.",
+    "brief": null,
+    "image": "assets/img/2026-11-20.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-19T18:01:13.669725+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 116,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.92,
+      0.84,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "219 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "269 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "241 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'lists the stages as Engraved, Softened, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "244 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Families Prefer Rats To Mourning Office",
+        "body": "Families on Kettleway Deck have begun handing their dead to the rats, and the Office of Parting has confirmed it lost forty-one of its sixty-three bookings last quarter. The rats run a collection service from the lower decks. Siosaia Agbaje, a hydroponics tender, called them in after her father died at the fourth bell.\n\n\"The Office said they could fit us in on the ninth day,\" Agbaje said. \"The rats came before the next bell. There were eleven of them and a sling.\"\n\nThe Office keeps a roster of speakers, each licensed to give a eulogy of at least forty minutes. Priit Amankwah, its senior speaker, says the length is a mark of respect. Families have waited up to six hours for a speaker to finish the previous family's.\n\nThe rats give no eulogy. They stand in a line for the length of one breath, which a deck steward measured at nine seconds, then carry the body down through the grain vents. The vents have been the rats' route since the ship's second century. Their rate is a bowl of seed.\n\nAmankwah has asked families to consider that the rats cannot say anything about the dead. Agbaje said that was the part she liked.\n\nThe Office has since moved its ninth-day slots to the fifth. Bookings have not changed.",
+        "premise": "The ship's colony of rats, long thought to be a plague, has quietly established a rival undertaking service in the lower decks, and families of the recently deceased are reportedly choosing it over the human option because the rats show up on time and keep no one waiting for a eulogy.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Bees Bar Family From Own Grandfather's Funeral",
+        "body": "A family of four stood outside the Orchard District hive on Thursday holding a booking slip for a grieving slot that the bees had already used. The hull-garden's bees took the name-scent of Dray Quintero's father from the cold room at dawn, carried it in under the comb doors, and have not let anyone in since.\n\nPriit Quintero, the dead man's son, had paid for the fourth-hour slot with the ship's mourning office. It includes a quiet room, a scent-reader and one hour of the garden lamps turned down.\n\n\"We were told the bees would be there,\" Quintero said. \"We were not told they would be there first.\"\n\nThe bees have now held eleven funerals for dead crew, none requested. Each begins when a body's name-scent is released into the garden vents, which the mourning office does as routine. Gwilym Arriaga, the district's hive keeper, says the bees gather in a dense ring, hum at a pitch he measures as a little under the ship's engine note, and stay for about six hours. They seal the doors from inside.\n\nArriaga has offered families a place at the glass wall. Most have refused it. The glass wall faces the hive's storage side.\n\nThe mourning office has changed its booking form to add a line reading \"bees may attend.\" It has not added a line for what to do if they do not leave.\n\nQuintero's father was buried in the garden soil, as is the custom. Quintero says the family stood there for an hour afterwards. Bees came and went over the grave the entire time, and none of them stopped.",
+        "premise": "Aboard the generation ship Patient Heron, the hull-garden's bees have begun holding their own funerals for dead crew members, carrying each body's name-scent to the Orchard District hive and refusing all human mourners entry, to the dismay of a bereaved family who say they had booked the grieving slot.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Dead Now Mostly Lichen, Families Report",
+        "body": "Akosua Iwasaki visited her late husband on Thursday and could read only his first initial. The rest of him, engraved in the Meridian Corridor's memorial wall four months ago, is under a grey-green crust of dead-letter moss. She brought a scraper. She was asked to put it away.\n\nThe wall holds the names of 4,000 people who died aboard the Corridor in the past two years. Moss has covered roughly a third of them. Relatives call the affected dead \"mostly lichen\", a phrase the memorial board has asked them to stop using in its reading hall.\n\nLuana Gathoni, who chairs the board, said the growth is \"a natural stage of remembrance\". She said the moss had been planted along the wall on purpose, to soften the stone. The board's leaflet lists the stages as Engraved, Softened, and Settled, and says most names reach Settled within the first year. Nobody can say what happens at Settled. The leaflet ends there.\n\nIwasaki has counted her husband's letters each visit. In spring there were eleven. On Thursday there was one, and she thinks it is a smear.\n\nThe board has offered families a printed rubbing of the original name. The rubbing is made by pressing a sheet to the wall. Seven families have taken one. Three found the sheet came away green.\n\nThe moss feeds on the ink-salts in the engraving. The board says this is why it grows best on the newest names.",
+        "premise": "The dead-letter moss that grows along the Meridian Corridor's memorial wall has begun to outcompete the engraved names, and relatives of the 4,000 recently departed report their loved ones are now 'mostly lichen', which the memorial board calls 'a natural stage of remembrance'.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Ants Finish Memorial; District Adopts It",
+        "body": "The district of Harrow Lantern has named a wreath in a maintenance duct its official memorial, after ant colonies carried away the flowers from the Remembrance Atrium and built it themselves. Pavlina Shevchuk, the atrium's keeper, found the last stand empty on the fourth morning.\n\nShevchuk followed the trail of petals through a vent grille and a cable run, and found the wreath in Duct 19-C. It is nine metres across. She says the ants have kept the colour order of the original arrangements, which had been laid out by the district's bereavement office in rank of loss.\n\nNobody can reach the colonies. The ants live in the hull lining, behind sealed plates that the ship's builders never meant to be opened, and the district's one attempt at a letter was lost in a vent.\n\nThe assembly voted to adopt the wreath on Friday. The vote was 41 to 6, and the six asked only that the atrium be kept open.\n\nMourners now crawl in single file on their stomachs. The walk takes eleven minutes. Shevchuk, who still replaces the atrium flowers each week, says they are gone again by morning, and that she has stopped locking the door.\n\n\"I put out the grey ones last night,\" she said. \"They were taken first.\"\n\nThe bereavement office has confirmed that the wreath is the largest on the ship. It has also confirmed that no one has yet been able to say whom it is for.",
+        "premise": "The ship's ant colonies have begun carrying away the ceremonial flower arrangements from the Remembrance Atrium and rebuilding them as a single enormous wreath in a maintenance duct, and the district has agreed to treat it as the official memorial since nobody can reach the ants.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its Office of Parting satirises real funeral-industry bloat (40-minute mandatory eulogies, six-hour waits), Agbaje's deadpan 'There were eleven of them and a sling' is funny, and the closing 'Bookings have not changed' is a sharp kicker, though the opening states the premise a little too plainly.",
+    "judge_pick": 1,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "challenger",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        5.0,
+        4.0,
+        3.0,
+        6.0
+      ],
+      "rankings": [
+        [
+          3,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.84,
+    "critique": "Body ran 219 words against a 170-215 limit, and the headline described the premise without landing a joke. The ending restated the premise, and 'said' quotes need a plausible source (Agbaje and Amankwah are interviewed, which is fine).",
+    "revise_judge_reason": "The headline puns on 'on time' rather than just describing the premise, and Agbaje's 'Dad hated waiting for anything, so it felt right' is a deadpan line that lands, though the empty-chairs ending is more whimsical than Draft 1's sharper 'Bookings have not changed.'",
+    "prose": {
+      "words": 224,
+      "sentences": 17,
+      "mean_sentence": 13.2,
+      "longest": 28,
+      "short_sentences": 1,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.4
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        23.4,
+        23.6
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 shows rats hauling a basket sling outdoors instead of standing still in a line, and it carries Japanese lettering and cut-off edges, so it misses the scene and the no-lettering rule.",
+      "winner_faults": "The woman wears a loose tunic rather than a green hydroponics smock, the opening is a window rather than a grain vent, there are about nine rats instead of eleven, and scratched marks on the wall look like garbled lettering."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win",
+        "2026-11-20": "win"
+      }
+    }
+  }
+}
