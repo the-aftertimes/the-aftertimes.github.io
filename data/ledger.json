@@ -1219,5 +1219,16 @@
     "place_kind": "shipboard",
     "engine": "nature",
     "technique": "confident_aside"
+  },
+  {
+    "run_date": "2026-11-21",
+    "year": 2098,
+    "era_bucket": 1,
+    "domain": "money and finance",
+    "headline": "Bourse Mourns Stock, Loses Ice",
+    "style": "wire",
+    "place_kind": "gasgiant",
+    "engine": "sentiment",
+    "technique": "puncture_the_pompous"
   }
 ]

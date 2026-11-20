@@ -1,0 +1,215 @@
+{
+  "run_date": "2026-11-21",
+  "run_time": "2026-11-20T18:01:19.234180+00:00",
+  "dispatch": {
+    "headline": "Bourse Mourns Stock, Loses Ice",
+    "body": "Traders at the Halcyon Float Bourse stood in grey sashes on Friday as the first of three days of national mourning opened for Lantern Freight, whose shares fell 0.3 percent at the close. Trading was halted. The platform's flag was lowered two rungs down its pole.\n\nRenske Duroselle, a floor trader, wept openly beside the Lantern Freight ticker. \"It was a good stock,\" she said. \"It was nearly always up. You don't get that with ice. Ice just sits there.\"\n\nThe session minutes, filed Saturday, run to eleven pages. Page nine carries a footnote stating that the platform's whole store of frozen ammonia was lost during the same closing hour, when the cold store lost its tether and dropped toward the lower deck. The footnote gives no figure. It follows a note on the catering rota for the mourning.\n\nThe store supplied the platform's lift gas, its coolant and its drinking water. A maintenance clerk said the loss was logged under \"stores, general\" because the form for \"everything we have\" had not been issued since the platform opened.\n\nAyelet Arriaga, who chairs the bourse assembly, said the footnote was read aloud on Saturday, after a silent minute for the stock. No member spoke to it. The assembly then voted to extend the mourning by half a day so the Lantern Freight board could attend.\n\nThe platform has sunk four metres since Friday. The flag is now level with the water, and nobody has needed to lower it.",
+    "scene": "A trader in a grey mourning sash weeps beside a huge glowing ticker board showing a small red downward arrow, while two other sashed traders bow their heads behind her on a railed platform with thick yellow cloud beyond the windows.",
+    "dateline": {
+      "place": "Halcyon Float Bourse",
+      "year": 2098,
+      "month": 8,
+      "day": 9,
+      "years_from_now": 72
+    },
+    "domain": "markets",
+    "glossary": [],
+    "premise": "Traders at a Saturn-cloud bourse observe a three-day national mourning for a stock that fell 0.3 percent, while the simultaneous, total loss of the platform's entire ammonia-ice reserve is noted in a single footnote on page nine of the minutes.",
+    "brief": null,
+    "image": "assets/img/2026-11-21.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-20T18:01:19.234180+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 117,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.76,
+      0.84,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "224 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'driven by falling lift revenue, a rise in ballast costs, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "225 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "223 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'the stalls selling memorial wreaths, also with a blink, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Bourse Mourns Stock's Dip, Misplaces Ice",
+        "body": "Traders at the Halcyon Float Bourse stood in grey sashes on Friday as the first of three days of national mourning opened for Lantern Freight, whose shares fell 0.3 percent at the close. Trading was halted. The platform's flag was lowered to the second rung.\n\nRenske Duroselle, a floor trader, wept openly beside the Lantern Freight ticker. \"It was a good stock,\" she said. \"It was nearly always up.\"\n\nThe session minutes, filed Saturday, run to eleven pages. Page nine carries a footnote stating that the platform's entire ammonia-ice reserve was lost during the same closing hour, when the cold store lost its tether and dropped toward the lower deck. The footnote gives no figure. It follows a note on the catering rota for the mourning.\n\nThe reserve supplied the platform's lift gas, its coolant and its water. A maintenance clerk said the loss was logged under \"stores, general\" because the form for \"reserve, total\" had not been issued since the platform opened.\n\nAyelet Arriaga, who chairs the bourse assembly, confirmed the footnote was read aloud on Saturday, after a silent minute for the stock. No member spoke to it. The assembly then voted to extend the mourning by a half day, to allow the Lantern Freight board to attend.\n\nThe platform has sunk four metres since Friday.",
+        "premise": "Traders at a Saturn-cloud bourse observe a three-day national mourning for a stock that fell 0.3 percent, while the simultaneous, total loss of the platform's entire ammonia-ice reserve is noted in a single footnote on page nine of the minutes.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Shareholders Applaud Record Loss, Sinking Platform",
+        "body": "Shareholders of Halcyon Drift Holdings rose as one on Friday and applauded for four minutes after the company reported a quarterly loss of 9.1 billion credits, the largest in its history. The platform dropped eleven metres during the call.\n\nThe chief financial officer, Xochitl Nakashima, used the word \"headwinds\" six times. She delivered it each time without looking down, though the lectern's depth gauge was visible on the investor feed and the lower promenade was already closed to visitors.\n\nAkosua Balogun, who has held shares since the platform floated at the 40-kilometre line, said he was moved to tears. \"She said it so calmly,\" he told reporters outside the auditorium, wiping his face with a sleeve. \"You could hear the cables.\"\n\nThe company confirmed that the loss was driven by falling lift revenue, a rise in ballast costs, and what the statement called \"continued descent.\" Guidance for next quarter was not given. Nakashima said she expected to \"revisit the outlook once conditions stabilise at a stable altitude.\"\n\nThe ovation was recorded as the longest in the company's history, ahead of the one that followed the dividend in the year the platform last rose.\n\nBy evening the auditorium sat two decks below its morning position. Shareholders were asked to use the east stairs. The annual meeting has been moved to the lower level for convenience.",
+        "premise": "Shareholders of a Neptune-skimming cloud platform give a standing ovation to a quarterly earnings call in which the company reports record losses, with one investor telling reporters he was moved to tears by how confidently the CFO said 'headwinds' while the platform visibly sank.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Vault Lock Retires; Gold Left In Lobby",
+        "body": "A combination lock was toasted with eleven kinds of wine on Friday at the Meridian Float Bank, after 61 years of opening the vault without a single fault. The bank's lobby was closed to customers for the evening. Forty tonnes of gold bars stood stacked beside the fountain, under a yellow note reading 'back soon'.\n\nThe lock, a brass dial the size of a cartwheel, was carried through the atrium on a cushion of wet-foam and seated at the head table. Guests included the board, two former chairs and a delegation from the Saturn Clearing Association. A string quartet played its favourite number, which the bank said was 4-17-32.\n\nVault staff had moved the gold out at four in the afternoon to make room for the dais. Ayelet Tavakoli, head of premises, said the vault door was now unguarded and unlocked, because the lock was at dinner. She said the bars would go back on Monday.\n\nA cleaner who works the lobby said the gold had been walked around for three hours. A courier waiting for a parcel sat on a stack of it. Nobody asked her to move.\n\nAt 11pm the lock was presented with a gold-plated key, which fits nothing. A replacement, a thumbprint panel installed in March, was not invited. The bank confirmed it had been tested twice and had failed once.",
+        "premise": "A floating bank on Jupiter holds a lavish retirement party for its vault's combination lock, which has served 61 years without error, while the vault's contents, forty tonnes of gold bars, are left in the lobby with a sticky note reading 'back soon'.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Saturn Weeps As Last Banknote Leaves",
+        "body": "Thousands of residents wept on the Halcyon Reach main deck on Friday as the platform's last paper banknote was carried to a waiting museum shuttle. The note, a twenty, was in a sealed case. Nobody present had ever held one.\n\nAyelet Grabowska, the curator who accompanied it, said the note was handed over by a retired lock inspector who found it in a coat lining. It has been valued by the platform at nothing, since no till on Halcyon Reach can read it.\n\nThe crowd had come to pay respects. Most paid for the tram there with a blink. Several paid again at the stalls selling memorial wreaths, also with a blink, and a few were charged twice because the stall scanners mistook crying for a second blink.\n\nThe Reach's Treasury Chamber confirmed that the last decade of spending has left no record of a single note changing hands. Chamber staff said the note's journey to the museum would be its first outside a coat.\n\nIsaura Brannigan, 31, stood at the front for three hours. \"I don't know what it is,\" she said. \"I think I'm going to miss it.\"\n\nThe shuttle left at noon. The crowd was asked to leave the deck by blinking at the exit gates, which charged each of them a small fee for the use of the deck.",
+        "premise": "Residents of a Saturn platform gather to bid a weeping farewell to the city's last paper banknote as it is flown to a museum, a ceremony attended by thousands who spent the previous decade paying for everything by blinking and did not own one note among them.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The 'nearly always up' mourning and the footnote buried beside the catering rota satirise how finance ranks a 0.3 percent dip above a lost life-support reserve, and the sinking-platform kicker lands. Draft 2 is whimsical, and its opening sentence states most of its joke up front.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "challenger",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        5.0,
+        4.0,
+        3.0
+      ],
+      "rankings": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          2,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "Headline was long and explained the joke; body ran 3 words over and the kicker only restated the sinking. The quote was sweet but not funny, and 'ammonia-ice' and 'second rung' needed picturing.",
+    "prose": {
+      "words": 247,
+      "sentences": 19,
+      "mean_sentence": 13.0,
+      "longest": 34,
+      "short_sentences": 6,
+      "machine_phrases": [],
+      "rare_words": 5,
+      "rare_rate": 2.0
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        32.2,
+        27.3
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 shows no clearly weeping trader, only one figure bowing, and the woman's face is turned away, so the mourning action the headline describes is weak.",
+      "winner_faults": "The board and window panes carry garbled, unreadable lettering, the arrow is large rather than small, and the cloud mass sits in front of the windows instead of beyond them."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win",
+        "2026-11-20": "win",
+        "2026-11-21": "win"
+      }
+    }
+  }
+}
