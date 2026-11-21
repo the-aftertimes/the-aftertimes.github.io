@@ -1,0 +1,228 @@
+{
+  "run_date": "2026-11-22",
+  "run_time": "2026-11-21T18:01:16.287146+00:00",
+  "dispatch": {
+    "headline": "Monks Reply To Three Centuries: 'See Above'",
+    "body": "Brother Olumide Ceausu finished his tenure at the Saint Orrery's Rest waystation on Friday, having read about a third of the handover note and signed it \"see above.\" He is the ninth consecutive brother to do so, and by the abbey's count the fortieth intake.\n\nCeausu is also the station's keeper of the Long Game, a rolling tournament of corridor hockey that began as a note item in year eleven. He answered questions in the drying room.\n\nQ: Why not write something new?\n\n\"I did. It's above. Brother Iven wrote that the pucks drift in the aft spine, and I agree with him, so I put my name under it. Agreeing is a contribution.\"\n\nQ: How long is the note?\n\n\"The reading desk gives it as eleven years, three months, at a brother's pace. A tenure is ten. So nobody reaches the end. We skim the back for the rules of the game and then go to bed.\"\n\nQ: Are the rules at the back?\n\n\"The rules are in the middle. The back has the amendments to the rules, and a few that cancel each other. The score has been disputed since year ninety. We play on.\"\n\nQ: Who leads?\n\n\"The note says we do. It says so in four places and the others say we don't.\"\n\nHe was asked about the incoming order, who docked on Saturday and have begun reading at the first page, in the proper manner.\n\n\"Good lads. They asked where the puck was. I said, see above.\"\n\nThe puck has been missing since year two hundred and six. The note records the loss, and a later entry records the search.",
+    "scene": "A monk in a grey robe and a hockey helmet stands in a narrow station corridor holding a stick, beside a giant scroll unrolled down the whole length of the floor, while a newly arrived monk kneels at the far end, reading it.",
+    "dateline": {
+      "place": "Saint Orrery's Rest, beyond the Kuiper scatter",
+      "year": 2138,
+      "month": 4,
+      "day": 8,
+      "years_from_now": 112
+    },
+    "domain": "sport",
+    "glossary": [
+      {
+        "term": "the Long Game",
+        "gloss": "The station's corridor hockey tournament, unfinished since year eleven."
+      }
+    ],
+    "premise": "The monks of a deep-space waystation have begun a sacred end-of-shift 'handover note' to the next order of monks, and after three centuries the note is so heavily appended that the incoming brothers spend their whole tenure reading it and leave their own note as 'see above'.",
+    "variant": "challenger",
+    "brief": null,
+    "image": "assets/img/2026-11-22.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-21T18:01:16.287146+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 118,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.67,
+      0.84,
+      0.84,
+      0.59
+    ],
+    "violations": [
+      [
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 38 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "237 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 9.8 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "275 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 10.4 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "219 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 7.8 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "233 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'novice walked in forty seconds, a record, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Athletes Fail To Cancel Vow Of Silence",
+        "body": "Fourteen of the sixteen sprinters who visited Saint Orrin's Relay for a free trial week of the Great Vow of Silence have not spoken since signing up, the Abbot confirmed to this correspondent in the refectory, in writing.\n\nThe Abbot, Mehmet Ceausu, wrote on a slate that the order began the offer two seasons ago. Visiting athletes enrol on arrival. The week is free. After seven days the vow renews at the monastery's standard rate of nine years, unless cancelled by a form.\n\n\"The form is in the quiet room,\" he wrote. \"Nobody has read it aloud.\"\n\nAsked whether the order reminds guests before the week ends, he wrote that a bell is rung. The bell is rung every hour.\n\nThe relay hosts the Outer Belt Qualifiers, which ran over by a fortnight. Ceausu said the track committee has asked for its runners back. He wrote that the committee asked by message and was answered by message, which said the runners were well.\n\nOne hurdler, Wairimu Eriksdottir, held up three fingers when asked how she was finding it. Ceausu translated this as three stars. Eriksdottir then held up a fourth.\n\nTwo of the sixteen did cancel. Both left on the first shuttle and are said to be talking.\n\nThe Abbot said the order takes no pleasure in the numbers. He wrote that the monks were once silent for love of it, and now also for the footfall.",
+        "premise": "The order of silent monks on a remote relay monastery has introduced a 'free trial week' of the Great Vow of Silence for visiting athletes, and the Abbot confirms that 90 per cent of them keep it going after forgetting to cancel, and are still not speaking.",
+        "score": 0.67,
+        "rejected": false
+      },
+      {
+        "headline": "Monks Reply To Three Centuries: 'See Above'",
+        "body": "Brother Olumide Ceausu finished his tenure at the Saint Orrery's Rest waystation on Friday, having read about a third of the handover note and signed it \"see above.\" He is the ninth consecutive brother to do so, and by the abbey's count the fortieth intake.\n\nCeausu is also the station's keeper of the Long Game, a rolling tournament of corridor hockey that began as a note item in year eleven. He answered questions in the drying room.\n\nQ: Why not write something new?\n\n\"I did. It's above. Brother Iven wrote that the pucks drift in the aft spine, and I agree with him, so I put my name under it. Agreeing is a contribution.\"\n\nQ: How long is the note?\n\n\"The reading desk gives it as eleven years, three months, at a brother's pace. A tenure is ten. So nobody reaches the end. We skim the back for the rules of the game and then go to bed.\"\n\nQ: Are the rules at the back?\n\n\"The rules are in the middle. The back has the amendments to the rules, and a few that cancel each other. The score has been disputed since year ninety. We play on.\"\n\nQ: Who leads?\n\n\"The note says we do. It says so in four places and the others say we don't.\"\n\nHe was asked about the incoming order, who docked on Saturday and have begun reading at the first page, in the proper manner.\n\n\"Good lads. They asked where the puck was. I said, see above.\"\n\nThe puck has been missing since year two hundred and six. The note records the loss, and a later entry records the search.",
+        "premise": "The monks of a deep-space waystation have begun a sacred end-of-shift 'handover note' to the next order of monks, and after three centuries the note is so heavily appended that the incoming brothers spend their whole tenure reading it and leave their own note as 'see above'.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Whistle Consulted Before Every Foul",
+        "body": "Oona Belinskaya, referee of the Outer Belt Handball League, waited eleven minutes on Friday for her whistle to finish expressing a view on a shoulder charge. The whistle was in favour of a free throw. Belinskaya said so afterwards, in the cloister bar, between two sips of recycled stout.\n\nThe monks of Saint Orrery's Rest still pour water over the official's whistle each year. Brother Bronagh Odhiambo, keeper of the water, says the first Blessing took an afternoon. It now takes three days, with a seating plan.\n\n\"Nobody minds,\" Belinskaya said. \"You hold it up, the room goes quiet, the whistle says how it is feeling about the match. Mine is anxious by the second half. That is normal. Anxiety is a good sign in a whistle.\"\n\nAsked what happens if the whistle is not ready, she said play stops. Last season a penalty waited through a full rest period while the whistle reflected. The goalkeeper sat down on the ball.\n\nThe league has told referees to take the whistle's feelings literally. Belinskaya does. On Friday she carried it into the changing room and gave it space.\n\n\"It was a foul,\" she said. \"I knew that. I just needed it to know I knew.\"\n\nThe whistle was last heard from at the final whistle, which it declined to blow.",
+        "premise": "A monastery's annual Blessing of the Referee, in which monks pour reconstituted water over the official's whistle, has grown into a three-day 'stakeholder consultation' with the whistle, which is now asked for its feelings before every foul.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Monks: Exit Survey Now Bigger Than Walk",
+        "body": "A pilgrim-athlete who finished the Sacred Hundred-Metre Walk in a personal best of four minutes ten seconds has been asked to walk it again. Her reflection scored 3.9. Orhan Balogun, the monastery's keeper of the finish line, is the one who asked.\n\nBalogun, 61, has kept the line for thirty years. We spoke in the survey cloister, beside the kiosks.\n\nQ: Why repeat the walk?\n\n\"A 3.9 does not release you. The Rule says the journey must be reflected upon, and she reflected badly. Nobody has ever left on a 3.9.\"\n\nQ: Does the time matter?\n\n\"It is recorded. Nobody reads it.\"\n\nQ: What lifts a score?\n\n\"Specifics. Name the mile you struggled in. Say the pilgrim before you inspired you. The hundred metres has no miles, so people say the second fifty felt like one. That scores well.\"\n\nQ: Is the pilgrim told to feel something?\n\n\"She is asked to rate how much she felt. Five boxes. We ask for comments if she picks fewer than four.\"\n\nQ: The brothers' average is 4.6.\n\n\"Yes, and the prayer is to hold it. We chant the figure at evening watch. Last month a novice walked in forty seconds, a record, and scored 2.8 for brevity. He is still on the track.\"\n\nQ: Still walking?\n\n\"The track is the only place the kiosks cannot reach.\"\n\nBalogun said the novice has been out there nine days.",
+        "premise": "Pilgrim-athletes at a monastery between stars are required to 'reflect on their journey' in a mandatory exit survey after the Sacred Hundred-Metre Walk, and monks report the prayer scoring 4.6 out of 5 has become more important than the walk itself.",
+        "score": 0.59,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its bureaucratic deference, unread handover note and 'the note says we do' satire lands on recognisable institutional habits, with a strong kicker about the later entry recording the search, though the opening sentence states the conceit a little too early.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        5.0,
+        2.0,
+        5.0
+      ],
+      "rankings": [
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 0.84,
+    "score_after": 0.76,
+    "critique": "Sentences run choppy (9.8 words average) and the piece is 275 words against a target of 170-215. The headline describes the premise, and the closing line restates the missing puck instead of turning the joke. Logic problems: 'said' quotes need a clear interview setting, the note's length arithmetic needs to hold, and 'Long Game' needs to be obvious on sight.",
+    "prose": {
+      "words": 275,
+      "sentences": 28,
+      "mean_sentence": 9.8,
+      "longest": 28,
+      "short_sentences": 14,
+      "machine_phrases": [],
+      "rare_words": 4,
+      "rare_rate": 1.5
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        23.9,
+        25.6
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 has garbled lettering running down the left edge and a seated figure on a bench rather than the kneeling reader, while Image 2 shows the kneeling monk clearly at the scroll's end with crisper ink lines.",
+      "winner_faults": "The scroll and a wall notice carry garbled, illegible text, and the kneeling monk is cropped at the bottom right edge."
+    },
+    "tune": {
+      "variant": "challenger",
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win",
+        "2026-11-22": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win",
+        "2026-11-20": "win",
+        "2026-11-21": "win",
+        "2026-11-22": "win"
+      }
+    }
+  }
+}

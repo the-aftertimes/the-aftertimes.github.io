@@ -1230,5 +1230,16 @@
     "place_kind": "gasgiant",
     "engine": "sentiment",
     "technique": "puncture_the_pompous"
+  },
+  {
+    "run_date": "2026-11-22",
+    "year": 2138,
+    "era_bucket": 2,
+    "domain": "sport",
+    "headline": "Monks Reply To Three Centuries: 'See Above'",
+    "style": "interview",
+    "place_kind": "deepspace",
+    "engine": "ritual",
+    "technique": "heard_the_words"
   }
 ]
