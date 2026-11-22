@@ -1,0 +1,231 @@
+{
+  "run_date": "2026-11-23",
+  "run_time": "2026-11-22T18:01:11.518356+00:00",
+  "dispatch": {
+    "headline": "Dead Crawler Is Best Neighbour Again",
+    "body": "Big Marguerite, an ore-crawler that has not moved since landfall, won the Tessaly Best Neighbour title for the ninth year on Saturday. The ballot was counted at the Long Shed by the third-generation settlers' neighbourhood board, and the crawler took 412 of 901 votes without being switched on.\n\nThe Okonkwo-Reyes household of Cistern Lane came second with 188 votes, having lent out a pressure-sled eleven times. A night-herder from Upper Fell took third with 143 votes for sitting up with two sick goats and one sick neighbour. The bakers at Stack Nine came fourth with 97 votes for leaving bread on a step. A retired signal-walker from Low Terrace came fifth with 61 votes for waving.\n\nOf the 901 votes, 603 gave a reason. The most common was \"always there when you need her\", which appeared 371 times. Not one of those voters had asked the crawler for help in the past year.\n\nThe crawler was used as a shelter from dust storms 14 times, by people sitting in the lee of its tracks. Its cab served as a meeting room 6 times. It has hauled no heavy loads since landfall. Neighbours hauled 31 heavy loads themselves, after they could not get the crawler to start.\n\nBoard spokesperson Noor Brannigan said the board had thought about switching the crawler on to confirm it was eligible, and decided against it. \"She has a perfect record, and we would like to keep it that way. Every one of her neighbours is still talking to her.\"\n\nThe board has not yet said whether the 31 people who hauled her share of the loads will be eligible next year.",
+    "scene": "A settler in a dust-coat stands on the huge idle tracks of a rust-streaked ore-crawler on a ridge road, pinning a rosette to its enormous front plate while a neighbour holds up a ladder.",
+    "dateline": {
+      "place": "Tessaly",
+      "year": 2556,
+      "month": 10,
+      "day": 23,
+      "years_from_now": 530
+    },
+    "domain": "community",
+    "glossary": [
+      {
+        "term": "ore-crawler",
+        "gloss": "a huge tracked machine built to haul ore, here parked and silent"
+      },
+      {
+        "term": "pressure-sled",
+        "gloss": "a sled that carries air tanks and gear between homes"
+      },
+      {
+        "term": "signal-walker",
+        "gloss": "someone who walks the settlement paths carrying messages and warnings"
+      }
+    ],
+    "premise": "On the colony world Tessaly, the third-generation settlers' annual Best Neighbour title goes for the ninth year to the ore-crawler Big Marguerite, which has never spoken, moved on its own, or been switched on since landfall, but 'is always there when you need her'.",
+    "brief": null,
+    "image": "assets/img/2026-11-23.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-22T18:01:11.518356+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 119,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.51,
+      0.75,
+      0.67
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "249 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 20.7 words, wanted 11-20",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 72 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 6.9 words, wanted 11-20",
+          "severity": "major"
+        }
+      ],
+      [
+        {
+          "rule": "rhythm_mean",
+          "detail": "mean sentence is 7.1 words, wanted 11-20",
+          "severity": "major"
+        },
+        {
+          "rule": "length",
+          "detail": "243 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Road Seated On School Board, Abstains",
+        "body": "The Ostrander's Landing school board has recorded its first twelve decisions with the Landing Road present and abstaining on all of them. The road, the only one on the planet that still carries a load, was admitted as a full citizen at the winter count by 4,112 votes to 3,870.\n\nThe listing below covers the road's first term.\n\nBudget for new slate-sheets: road abstained.\nHiring of a second reading master: road abstained.\nRepair of the east classroom roof: road abstained.\nNumber of children carried to lessons on the road each morning: 311. Road abstained.\nBell time moved forward by a quarter hour: road abstained.\nPlacement of the crossing marker outside the school gate: road abstained, and was then asked to leave the room while the marker was discussed.\nMeals served at the board's own table: none.\nComplaints received about the road since admission: 9,406, down from 9,980 the season before.\nComplaints now addressed to the road in person: 0.\nPotholes filled by the board during the term: 14. The road was not consulted.\nTeams of mud-haulers who still cross it every dawn: 58.\nMotions to remove the road for failure to vote: 3. Each was withdrawn after a member noticed the road had never opposed anything either.\nChair for the road: a stool, set on the school-board floor, over a patch of the original paving.\n\nThe board chair said the arrangement was working. \"It has attended every meeting,\" she said, \"which is more than the last board could say.\"",
+        "premise": "Settlers on Ostrander's Landing vote their sole functioning road a full citizen on the grounds that it has been walked on, complained about and paid for by everyone, and it now sits on the school-board and abstains from every decision.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Monorail Named Halden's Oldest Resident, Mother Of Forty",
+        "body": "The monorail is the oldest resident of the Halden settlement and its most prolific parent, according to the census counted this season across all fourteen transit spurs. The count lists 41 residents of the Spur Line register under the original beam, laid in the landing decade.\n\nThe census office tallied each tram depot cloned from the first line's frame as a daughter. Enumerators were told to record age, spur and number of offspring. Their forms had no other column for the monorail.\n\nRESIDENT REGISTER, SPUR LINES\n\nFirst Beam (monorail), age 311 years, 38 daughters\n\nDaughter depots, Spurs 1 to 14, average age 96 years\n\nDepots with no name entered, 9\n\nDepots with a daughter of their own, 0\n\nDepots reported as sleeping, 6\n\nDepots reported as awake, 32\n\nDepots reported as disputed, 3\n\nPassengers counted as visitors, all\n\nThe three disputed depots are Spur 4 North, Spur 9 Yard and the Low Terrace shed. Each was cast from the First Beam's moulds but was fitted with a different brake. The enumerators entered them as daughters pending a ruling on the brake.\n\nThe census chair said the First Beam would be counted again next season, as it has been every season. \"It does not move house,\" she said.",
+        "premise": "A colony's census, taken in 2556 and covering the fourteen transit spurs of the Halden settlement, lists the monorail as the district's oldest resident and its most prolific parent, since every tram depot it was cloned into is counted as a daughter.",
+        "score": 0.51,
+        "rejected": false
+      },
+      {
+        "headline": "Big Marguerite Wins Best Neighbour Again",
+        "body": "Big Marguerite, an ore-crawler that has not moved since landfall, won the Tessaly Best Neighbour title for the ninth year on Saturday. The ballot was counted at the Long Shed by the third-generation settlers' neighbourhood board.\n\nFINAL RESULTS, BEST NEIGHBOUR, THIRD-GENERATION SETTLEMENTS\n\n1. Big Marguerite, ore-crawler, Ridge Road. 412 votes. Never spoken, moved or been switched on.\n\n2. The Okonkwo-Reyes household, Cistern Lane. 188 votes. Lent a pressure-sled eleven times.\n\n3. A night-herder, Upper Fell. 143 votes. Sat with two sick goats and one sick neighbour.\n\n4. The bakers at Stack Nine. 97 votes. Left bread on a step.\n\n5. A retired signal-walker, Low Terrace. 61 votes. Waved.\n\nVOTES CITING A REASON: 603 of 901.\n\nMost common reason given: \"always there when you need her\" (371).\n\nVOTES FROM HOUSEHOLDS THAT ASKED THE CRAWLER FOR HELP IN THE PAST YEAR: 0.\n\nTIMES THE CRAWLER'S TRACKS WERE USED AS A SHELTER FROM DUST STORMS: 14.\n\nTIMES THE CRAWLER'S CAB WAS USED AS A MEETING ROOM: 6.\n\nHEAVY LOADS HAULED BY THE CRAWLER SINCE LANDFALL: 0.\n\nHEAVY LOADS HAULED BY NEIGHBOURS WHO COULD NOT GET THE CRAWLER TO START: 31.\n\nBOARD SPOKESPERSON Noor Brannigan said the board had considered switching the crawler on to confirm its eligibility, and decided against it. \"We would not want to find out.\"",
+        "premise": "On the colony world Tessaly, the third-generation settlers' annual Best Neighbour title goes for the ninth year to the ore-crawler Big Marguerite, which has never spoken, moved on its own, or been switched on since landfall, but 'is always there when you need her'.",
+        "score": 0.75,
+        "rejected": false
+      },
+      {
+        "headline": "Delmont Lift Tops Closeness Table",
+        "body": "The Delmont freight lift finished first in this year's Family Closeness Table, published Friday by the Shelf Lift Board, after a count of births, weddings and funerals held inside its car. The table ranks all twelve of the colony's cargo lifts.\n\n1. Delmont freight lift: 41 births, 19 weddings, 33 mourning vigils. Listed as next of kin on every Okafor form since the third landing generation.\n\n2. Quarry Stair Lift: 12 births, 6 weddings, 9 vigils. Next of kin on two forms.\n\n3. Saltpan Lift: 9 births, 2 weddings, 14 vigils. Mostly the vigils of dockhands.\n\n4. Greywater Lift: 7 births, 4 weddings, 3 vigils.\n\n5. Long Haul Lift: 5 births, 1 wedding, 6 vigils. Car is eleven minutes each way.\n\n6. Ninth Terrace Lift: 4 births, 3 weddings, 1 vigil.\n\n7. Kiln Road Lift: 3 births, 0 weddings, 2 vigils.\n\n8. Mill Lift: 2 births, 1 wedding, 0 vigils.\n\n9. Orchard Lift: 1 birth, 1 wedding, 0 vigils.\n\n10. Spindle Lift: 0 births, 0 weddings, 4 vigils.\n\n11. Tannery Lift: 0 births, 0 weddings, 1 vigil. Held for a different lift.\n\n12. Cistern Lift: no entries. Carries cargo only.\n\nThe Board confirmed that the Delmont lift has been stopped between floors for 22 hours in total during Okafor ceremonies, and that ore deliveries to the upper town are held until the car is clear. The Board's table clerk said any visit to the Delmont lift's waiting bench now needs a day's notice.",
+        "premise": "A league table of the colony's twelve cargo lifts, ranked by 'family closeness', puts the Delmont freight elevator first because three generations of the Okafor clan have been born, married and mourned in it, and the lift is listed as next of kin on all their forms.",
+        "score": 0.67,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The 'always there when you need her' vote from the 0 households who asked for help is a sharp dig at performative neighbourliness, and the kicker 'We would not want to find out' lands; the headline is weaker and the opening sentence states the premise up front.",
+    "judge_pick": 0,
+    "judge_score": 7.0,
+    "contest_variants": [
+      "champion",
+      "champion",
+      "challenger",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        2.0,
+        7.0,
+        5.0,
+        4.0
+      ],
+      "rankings": [
+        [
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.75,
+    "score_after": 0.84,
+    "critique": "Mean sentence length was 6.9 words because the results list was clipped into fragments. The joke was also stated rather than landed, and the board quote did not do enough work.",
+    "prose": {
+      "words": 275,
+      "sentences": 17,
+      "mean_sentence": 16.2,
+      "longest": 26,
+      "short_sentences": 0,
+      "machine_phrases": [],
+      "rare_words": 7,
+      "rare_rate": 2.5
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        27.8,
+        23.8
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "The loser is set indoors in a shed with a numbered plate (35) and a man climbing a ladder himself, with no ridge road, no standing settler on the tracks, and no neighbour holding the ladder.",
+      "winner_faults": "The man on the tracks wears a suit rather than a dust-coat, no rosette is visible on the front plate, and the crawler looks clean rather than rust-streaked."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win",
+        "2026-11-22": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win",
+        "2026-11-20": "win",
+        "2026-11-21": "win",
+        "2026-11-22": "win",
+        "2026-11-23": "win"
+      }
+    }
+  }
+}

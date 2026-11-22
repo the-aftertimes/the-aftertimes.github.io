@@ -443,6 +443,24 @@
       "gloss": "The station's corridor hockey tournament, unfinished since year eleven.",
       "kind": "term",
       "first_seen": "2026-11-22"
+    },
+    {
+      "term": "ore-crawler",
+      "gloss": "a huge tracked machine built to haul ore, here parked and silent",
+      "kind": "term",
+      "first_seen": "2026-11-23"
+    },
+    {
+      "term": "pressure-sled",
+      "gloss": "a sled that carries air tanks and gear between homes",
+      "kind": "term",
+      "first_seen": "2026-11-23"
+    },
+    {
+      "term": "signal-walker",
+      "gloss": "someone who walks the settlement paths carrying messages and warnings",
+      "kind": "term",
+      "first_seen": "2026-11-23"
     }
   ]
 }

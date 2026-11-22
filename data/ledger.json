@@ -1241,5 +1241,16 @@
     "place_kind": "deepspace",
     "engine": "ritual",
     "technique": "heard_the_words"
+  },
+  {
+    "run_date": "2026-11-23",
+    "year": 2556,
+    "era_bucket": 10,
+    "domain": "transport",
+    "headline": "Dead Crawler Is Best Neighbour Again",
+    "style": "results",
+    "place_kind": "exoplanet",
+    "engine": "category",
+    "technique": "sincere_futility"
   }
 ]
