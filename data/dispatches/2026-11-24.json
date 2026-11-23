@@ -1,0 +1,193 @@
+{
+  "run_date": "2026-11-24",
+  "run_time": "2026-11-23T18:01:22.066271+00:00",
+  "dispatch": {
+    "headline": "Dome Stolen, Residents Billed Extra",
+    "body": "A pressurised dome was driven off its foundation overnight on a flatbed lorry, police in Karrow Flats confirmed, with eleven residents still inside. The thieves have demanded a ransom for the dome. They have not mentioned the residents.\n\nWitnesses saw a crane lift the structure at about three in the morning. One said the crew wore proper site vests and carried a glowing slate with a list on it. Nobody asked what they were doing. \"They had a great deal of confidence,\" said a night-shift water carrier.\n\nResidents reached by wall screen from inside the dome said they had been in a street meeting about bin collection when the floor tilted. Efua Laine, chair of the meeting, said the agenda was completed. \"We got through all seven items,\" she said. \"The bins were carried. Nobody has said where to.\"\n\nAino Grabowska, the detective leading the case, said the air inside is good for about nine days. The thieves have set the ransom deadline at twelve.\n\nGrabowska said negotiators have asked the thieves to return the dome with its residents on board. The thieves replied that the residents were not part of the original listing and could be handled separately, at extra cost.\n\nThe dome is believed to be parked somewhere on the Ares ridge road. Laine said the meeting has already voted to stay put until the bins are collected.",
+    "scene": "A police detective in a dusty orange pressure suit stands beside a huge empty circular foundation slab on red ground, pointing at a distant flatbed lorry carrying a glass dome, while a woman waves from inside the dome.",
+    "dateline": {
+      "place": "Karrow Flats",
+      "year": 2236,
+      "month": 1,
+      "day": 15,
+      "years_from_now": 210
+    },
+    "domain": "crime",
+    "glossary": [],
+    "premise": "2236, Mars: Police confirm that a stolen pressurised dome, taken overnight by thieves with a lorry, a crane and what witnesses called 'a great deal of confidence', is being held to ransom while still containing the neighbours, who say the meeting went fine.",
+    "brief": null,
+    "image": "assets/img/2026-11-24.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-23T18:01:22.066271+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 120,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      1.0,
+      0.92,
+      0.92,
+      0.92
+    ],
+    "violations": [
+      [],
+      [
+        {
+          "rule": "rhythm_short",
+          "detail": "only 1 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: clipboard",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "240 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Stolen Glacier Recovered, Ticket Number Issued",
+        "body": "Detectives in Port Ellery Heights finished hauling a stolen glacier back up the Marrow Ridge slope on Friday, eleven days after thieves slid it eighteen kilometres toward the coast. The ice, forty million tonnes of it, is back in its valley. It is not back in its owner's hands, because the lost-property desk has tagged it.\n\nDilnoza Karimova, the lead detective, told reporters the theft itself was poorly planned. The crew had no buyer, no storage and no way to stop. \"The getaway was the only part that went to plan,\" she said. \"They had a good slope. It was the one thing they had.\"\n\nThe desk issued ticket 40,118 on the first morning, as it does for any item found unattended on city ground. Policy requires the stub to be kept with the item. Karimova's team tried taping it to the ice, but the surface sheds about a hand's depth a day in the afternoon sun, and the stub left with it.\n\nThe desk's supervisor, Danuta Balogun, has offered a shelf. The shelf is two metres wide. She has also offered a second shelf, in another building, for the stub alone.\n\nThe thieves remain at large. Anyone who left a glacier on the ridge and wants it back should bring ticket 40,118.",
+        "premise": "2236, a half-terraformed Martian city: Detectives spend eleven days dragging a stolen glacier back uphill after thieves slid it downslope toward the coast, and investigators admit the getaway was the only part of the heist that went to plan; the city's lost-property desk, which insists on tagging the glacier with a numbered ticket, has so far found nowhere to put the claim stub.",
+        "score": 1.0,
+        "rejected": false
+      },
+      {
+        "headline": "Burglar Found Still on Victim's Floor",
+        "body": "A forensics team in Port Ochre has identified the dust on a flat's floor as the man who burgled it eleven months ago. Investigators called to a second break-in in the Lowfield terraces collected the grey layer for routine analysis. It matched the first intruder, who was never swept up.\n\n\"He came in through the vent and fell apart in the dry air,\" said Pavlina Saarinen, the lead analyst. \"Our old cleaning rules count a person as waste only if the person is reported as waste. Nobody reported him, so he stayed. He has been under the sofa all year.\"\n\nThe flat's owner paid for monthly cleaning throughout. The contractor, Teodor Kealoha, said the job covered dust, not remains. \"Remains are a scope issue,\" he said. His crew's logs show they vacuumed around the pile on eleven visits.\n\nThe first burglar's family had listed him missing. The police file for that case was closed in spring, after the flat was checked and found clean.\n\nSaarinen said the second burglar left nothing behind except fingerprints and a footprint in the first. Police have yet to ask the Lowfield cleaning contractors how many other flats on the terrace were visited that month. The contractor said its logs only cover the rooms it was asked to clean.",
+        "premise": "2236, Mars: A forensics team discovers that the dust at a burglary scene is the victim's own previous burglar, who was never swept up after the last break-in, and the cleaning contractor describes the finding as 'a scope issue'.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Stolen Dome Still Has Neighbours In It",
+        "body": "A pressurised dome was driven off its foundation overnight on a flatbed lorry, police in Karrow Flats confirmed, with eleven residents still inside. The thieves have demanded a ransom for the dome. They have not mentioned the residents.\n\nWitnesses saw a crane lift the structure at about three in the morning. One said the crew wore proper site vests and kept a clipboard tablet. Nobody asked what they were doing. \"They had a great deal of confidence,\" said a night-shift water carrier.\n\nResidents reached by wall screen from inside the dome said they had been in a street meeting about bin collection when the floor tilted. Efua Laine, chair of the meeting, said the agenda was completed. \"We got through all seven items,\" she said. \"The bins were carried.\"\n\nAino Grabowska, the detective leading the case, said the air inside is good for about nine days. The thieves have set the ransom deadline at twelve.\n\nGrabowska said negotiators have asked the thieves to return the dome with its residents on board. The thieves replied that the residents were not part of the original listing and could be handled separately, at extra cost.\n\nThe dome is believed to be parked somewhere on the Ares ridge road. Residents say the view is better.",
+        "premise": "2236, Mars: Police confirm that a stolen pressurised dome, taken overnight by thieves with a lorry, a crane and what witnesses called 'a great deal of confidence', is being held to ransom while still containing the neighbours, who say the meeting went fine.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Rain Thieves Arrested In Rain Queue",
+        "body": "Three tonnes of rain were stolen from the Halcyon Drift reserve this month, and the thieves were arrested at the front of the queue they had joined to steal it, police said on Friday.\n\nThe four suspects stood nine hours at the one working condenser on Level Six. Officers say the group planned to fill a hauler tank at the spout and drive off without paying the draw fee. They reached the front at dusk. Two constables, also in the line, arrested them for loitering.\n\nThe constables had been waiting since the morning shift. Both were carrying their own empty cans.\n\nThe theft was not recorded as a theft until the following day. The reserve's metre showed the tank filling and then showing full, which is how it normally looks. A clerk noted three tonnes missing only when the arrested suspects were weighed in as evidence and the hauler was found to be very heavy.\n\nBaptiste Toivonen, who runs the condenser, said the queue had been moving at its usual speed. \"Nine hours is average,\" he said. \"Nobody was in a hurry, and that is how they got so far.\"\n\nThe suspects are held at the Level Six lockup, which is supplied by the same condenser. Their cell allowance of water has been drawn from the confiscated tank. Police say the tank is now evidence and may not be touched, and the lockup has asked how long that will last.",
+        "premise": "2236, a raw Venusian cloud-city: Police announce a heist of three tonnes of rain, carried out by thieves who queued for nine hours at the one working condenser and, on reaching the front, were arrested for loitering by officers who had also been queueing.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The bin-meeting quotes ('We got through all seven items... The bins were carried') and the 'residents not part of the original listing' line satirise civic apathy and bureaucratic indifference, and the view kicker lands, though the opening sentence already states the whole conceit.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        2.0,
+        8.0,
+        5.0,
+        3.0
+      ],
+      "rankings": [
+        [
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          3
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.92,
+    "score_after": 0.92,
+    "critique": "The headline describes the premise instead of landing a joke, and 'clipboard' is a present-day prop. The kicker restates the view gag, and the ransom logic (thieves would not want residents to eat the air) is never used.",
+    "prose": {
+      "words": 230,
+      "sentences": 18,
+      "mean_sentence": 12.8,
+      "longest": 24,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 3,
+      "rare_rate": 1.3
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        27.3,
+        20.6
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 shows a barrel-shaped enclosure with a seated passenger rather than a glass dome, while Image 2 shows a clear dome on a flatbed with a waving woman inside, matching the headline's stolen dome.",
+      "winner_faults": "The officer's back shows 'POLICE' lettering and garbled shoulder text, the scene is rendered in grey rather than the dusty orange suit and red ground, and the slab has a notch rather than being a plain empty foundation."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win",
+        "2026-11-22": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win",
+        "2026-11-20": "win",
+        "2026-11-21": "win",
+        "2026-11-22": "win",
+        "2026-11-23": "win",
+        "2026-11-24": "win"
+      }
+    }
+  }
+}

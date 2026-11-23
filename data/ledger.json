@@ -1252,5 +1252,16 @@
     "place_kind": "exoplanet",
     "engine": "category",
     "technique": "sincere_futility"
+  },
+  {
+    "run_date": "2026-11-24",
+    "year": 2236,
+    "era_bucket": 4,
+    "domain": "crime",
+    "headline": "Dome Stolen, Residents Billed Extra",
+    "style": "discovery",
+    "place_kind": "marsform",
+    "engine": "logistics",
+    "technique": "stated_rule_reductio"
   }
 ]
