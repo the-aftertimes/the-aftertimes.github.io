@@ -1263,5 +1263,16 @@
     "place_kind": "marsform",
     "engine": "logistics",
     "technique": "stated_rule_reductio"
+  },
+  {
+    "run_date": "2026-11-25",
+    "year": 4804,
+    "era_bucket": 55,
+    "domain": "ecology and wildlife",
+    "headline": "Koalas Paid Correctly, Paper Admits Fault",
+    "style": "corrections",
+    "place_kind": "drowned",
+    "engine": "obsolescence",
+    "technique": "headline_carries_it"
   }
 ]

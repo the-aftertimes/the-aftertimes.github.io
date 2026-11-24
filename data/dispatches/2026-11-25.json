@@ -1,0 +1,220 @@
+{
+  "run_date": "2026-11-25",
+  "run_time": "2026-11-24T18:01:23.360600+00:00",
+  "dispatch": {
+    "headline": "Koalas Paid Correctly, Paper Admits Fault",
+    "body": "In a report on the Sydney Cove Habitat, The Aftertimes said rangers had found a billing fault in an old zoo payroll machine. The machine is not faulty. It has paid the koalas a monthly wage, correctly calculated, for an estimated nineteen hundred years.\n\nWe also said the koalas were listed as staff by mistake. They were listed on purpose. The machine's last instruction reads keep the koalas on display and in good spirits, and it treats the wage as the means.\n\nWe called the sum too small to matter. It is small. It has also never been spent, and the account now holds more than the Habitat's roof cost to build. The machine logs each unspent month as low spirits and raises the next payment.\n\nWe said the rangers switched the machine off. They did not. Two rangers sat with it overnight and read the instruction aloud. The koalas looked cheerful. The machine was not told.\n\n\"It's not a fault, it's a very patient employer,\" said Head Ranger Dot Pellew, who was in the room. \"I only asked what the koalas do with the money. It put me on the books.\"\n\nThe Aftertimes regrets the errors. The rangers ask readers to stop sending congratulations on their first pay slips, which arrived this morning and were marked in good spirits.",
+    "scene": "A ranger in a pale glassy-visored work suit stands inside a raised glass habitat holding up a small pay envelope to a koala clinging to a eucalyptus trunk, while a huge old cabinet-sized payroll machine with dials and a paper slot sits humming in the background.",
+    "dateline": {
+      "place": "Sydney Cove Habitat",
+      "year": 4804,
+      "month": 9,
+      "day": 20,
+      "years_from_now": 2778
+    },
+    "domain": "workplace",
+    "glossary": [],
+    "premise": "Rangers in the raised, glassed-in Sydney Cove Habitat discover that the koalas have been drawing a faint monthly salary from a decommissioned zoo payroll machine nobody dared switch off, and that the mainframe's only remaining instruction is to keep the koalas 'on display and in good spirits'.",
+    "brief": null,
+    "image": "assets/img/2026-11-25.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-24T18:01:23.360600+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 121,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.84,
+      0.84,
+      0.84,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'Under the handover note, they monitor the situation, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'holds priority over every vehicle, including emergency craft, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "218 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'with it for a night, read the instruction aloud, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "236 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'on the old trading-hall rail, facing east, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Whales Still Monitored, Not Moved, Says Barrier",
+        "body": "In a report on the barrier gate, The Aftertimes said the tide crews had failed to act on the whale pod gathered at the control room. The crews did act. Under the handover note, they monitor the situation, and they have done so every shift since it was written.\n\nIn a report on the note, we described it as a standing order. It is a page of instructions left by a night-shift supervisor, who went home expecting to be back on Thursday. No later supervisor has been found. Its last line asks that the gate be kept as it is.\n\nIn a report on the front steps, we said calves had been seen resting on them. The steps are now the pod's nursery, and have been for eleven seasons. The crews enter by a side hatch and log each calf on the shift sheet, under the heading the note gives for weather.\n\nIn a report on the gate's opening, we said it had not been raised since the pod arrived. It was raised once, in the third season, when a crew member read the note aloud and found it did not forbid raising. The pod swam through, turned round and came back. The crews have since monitored the gate closed.\n\nThe Aftertimes regrets the errors, and the headline.",
+        "premise": "In a drowned-and-risen Lagos now called Eko-on-Stilts, the city's tidal barrier is still operated by a retired night-shift supervisor's 2,700-year-old handover note, so every crew dutifully 'monitors the situation' while the situation, a migrating whale pod, uses the control room's front steps as a nursery.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Cows Outrank Ambulances, Paper Confirms Again",
+        "body": "In a report on the Wednesday flood-wall collapse at Kurla Float, The Aftertimes stated that an ambulance was delayed eleven minutes by a stray herd. The herd was not stray. It is one of four registered crossing cows, bred by the Municipal Right-of-Way Office, and its movements were logged in advance.\n\nIn a report on the cattle crossing, this paper described the animals as a heritage attraction. They are a statutory traffic class. Under the Pontoon Roads Code, a crossing cow holds priority over every vehicle, including emergency craft, and the cows are not permitted to be hurried.\n\nIn a report on the municipal breeding programme, The Aftertimes said the herd had grown to thirty. It stands at nine. Solveig Balogun, the office's herd registrar, confirms that four of these are crossing cows and five are reserves, kept in case a crossing cow is unwell on a day when a crossing is due. No crossing has been missed in forty years.\n\nIn a report on rising sea levels, we said the cows were kept for their milk. They are not milked, as the traditionalists object, and none has ever been asked to cross for any purpose other than crossing. The office employs eleven people to walk them from the pasture barge to the road and back, a distance of ninety metres.\n\nThe Aftertimes regrets the errors.",
+        "premise": "In Mumbaiyaan, a city lifted on pontoons above monsoon seas, a cult of traditionalists still stops all traffic for the 'cattle crossing', so the municipal government has had to breed a small herd of cows solely to keep the right of way alive, and the cows now have more road priority than ambulances.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Koalas Not Paid In Error, Paper Admits",
+        "body": "In a report on the Sydney Cove Habitat, The Aftertimes stated that rangers had found a billing fault in an old zoo payroll machine. The machine is not faulty. It has paid the koalas a monthly wage, correctly calculated, for an estimated nineteen hundred years.\n\nIn a report on the same inquiry, this paper said the koalas had been listed as staff by mistake. They were listed as staff on purpose. The machine's last instruction reads keep the koalas on display and in good spirits, and it has treated the wage as the means of doing so.\n\nIn a report on the wage, we gave the sum as too small to matter. It is small. It has also never been spent, and the account now holds more than the Habitat's roof cost to build. The machine logs each unspent month as a sign of low spirits and has raised the next payment accordingly.\n\nIn a report on the rangers' response, we said they had switched the machine off. They have not. Two rangers sat with it for a night, read the instruction aloud, and agreed that the koalas looked cheerful. The machine was not told. The rangers have since been added to its payroll, and ask that readers stop sending them congratulations.\n\nThe Aftertimes regrets all four errors.",
+        "premise": "Rangers in the raised, glassed-in Sydney Cove Habitat discover that the koalas have been drawing a faint monthly salary from a decommissioned zoo payroll machine nobody dared switch off, and that the mainframe's only remaining instruction is to keep the koalas 'on display and in good spirits'.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Herons Not Late For Work, Paper Admits",
+        "body": "In a report on the harbour birds of the Lower Ring, The Aftertimes said the grey herons gather each morning on the drowned Exchange floors to fish. They do not fish. Rangers confirm the birds stand in rows on the old trading-hall rail, facing east, and eat nothing until 9:15.\n\nIn a report on the siren at Wall Street Stair, we said it had been silent since the last bank left the Ring. It has sounded at 8:45 every weekday for about 2,300 years. Its maintenance timer cannot be switched off, having been built to outlast the siren, the building, and any engineer who might try. The paper's staff live four towers away and had slept through it throughout.\n\nIn a report on the herons' lateness, we said the flock arrived behind schedule on Monday. The ranger service has since checked the roster. Alibek Shevchuk, who keeps it, says the flock arrived early on Monday and waited. The siren was late by eleven seconds, after a tide-surge slowed the timer. The herons were not seen to react.\n\nIn a report on rangers' plans to retrain the flock, we said they would be fed at a new site at dawn. The herons have declined the site. The rangers have declined to stop them. Lior Koskinen, the senior ranger, will instead be at the Exchange rail at 8:30 each weekday, because the chicks are now being brought along.",
+        "premise": "Wildlife rangers in Nuova Manhattan, a ring of raised towers above a warm green sea, discover that the city's heron population has been faithfully commuting to the abandoned financial district at 8:45 each morning, because a defunct rush-hour siren is still triggered by an unkillable maintenance timer.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The bureaucratic logic is sharp: an unspent wage read as low spirits, a raised payment, and rangers absorbed onto the payroll, with a decent 'stop sending congratulations' kicker, though the opening already states most of the joke.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        4.0,
+        5.0,
+        6.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 2,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.92,
+    "critique": "Body ran 218 words and the rangers' night used a comma-list escalation. The headline described the premise, the quotes were missing, and the kicker only restated the payroll.",
+    "prose": {
+      "words": 220,
+      "sentences": 20,
+      "mean_sentence": 11.0,
+      "longest": 23,
+      "short_sentences": 8,
+      "machine_phrases": [],
+      "rare_words": 6,
+      "rare_rate": 2.7
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        26.0,
+        17.0
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Candidate 2 shows a worker in a hard hat rather than a ranger, a bare dead-branched tree instead of a eucalyptus trunk, and a machine without a clearly visible paper slot or payroll identity.",
+      "winner_faults": "The ranger wears a peaked cap rather than a glassy-visored suit, and the legible 'PAYROLL' lettering and crowd of onlookers add elements the brief did not ask for."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win",
+        "2026-11-22": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win",
+        "2026-11-20": "win",
+        "2026-11-21": "win",
+        "2026-11-22": "win",
+        "2026-11-23": "win",
+        "2026-11-24": "win",
+        "2026-11-25": "loss"
+      }
+    }
+  }
+}
