@@ -461,6 +461,12 @@
       "gloss": "someone who walks the settlement paths carrying messages and warnings",
       "kind": "term",
       "first_seen": "2026-11-23"
+    },
+    {
+      "term": "Vent",
+      "gloss": "the intake system that runs the freeport's air",
+      "kind": "term",
+      "first_seen": "2026-11-26"
     }
   ]
 }

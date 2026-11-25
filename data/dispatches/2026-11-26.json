@@ -1,0 +1,221 @@
+{
+  "run_date": "2026-11-26",
+  "run_time": "2026-11-25T18:01:19.352530+00:00",
+  "dispatch": {
+    "headline": "Young Residents Start Inviting Air System To Dinner",
+    "body": "Several hundred young residents of Karrowgate Deep have begun setting a place at their table for Vent, the intake system that has run the freeport's air for three hundred years. The practice started in the lower ring in spring and has reached the upper terraces. A bowl, a cup and a chair go out. Nobody sits in the chair.\n\nThe founders' families object. In March they declared Vent \"new money\" and said it would not be invited to the founders' gala until it had sat through a few more centuries of quiet. Their register of guests, begun in 4121, lists no entity admitted in under nine hundred years. The founders' notice calls this a fair and ordinary wait.\n\nMateus Kealoha, a keeper of the founders' register, said the dinners were \"a fashion\" and that fashions do not breathe. He added that the old families have been inhaling Vent's work since before most of them could walk.\n\nVent has not answered the invitations. Its output did change in the lower ring on the first night of the practice. Air in the dining rooms warmed by half a degree and smelled faintly of bread. Engineers say bread is not something the system can make.\n\nThe gala hall's own air has stayed the same.",
+    "scene": "A young man in a patched work jacket sets a bowl and cup before an empty carved chair at a small table in a rock-walled dining room, while a stern elderly man in a stiff gold-trimmed coat watches from the doorway.",
+    "dateline": {
+      "place": "Karrowgate Deep",
+      "year": 4762,
+      "month": 6,
+      "day": 9,
+      "years_from_now": 2736
+    },
+    "domain": "artificial intelligence rights",
+    "glossary": [
+      {
+        "term": "Vent",
+        "gloss": "the intake system that runs the freeport's air"
+      }
+    ],
+    "premise": "A freeport's old families have formally declared that an AI which has run the ventilation for three hundred years is still 'new money', and will not be invited to the founders' gala until it has sat through a few more centuries of quiet.",
+    "variant": "challenger",
+    "brief": null,
+    "image": "assets/img/2026-11-26.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-25T18:01:19.352530+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 122,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.59,
+      0.92,
+      0.92,
+      0.84
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "254 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "legal_register",
+          "detail": "legal/financial crutch: magistrate",
+          "severity": "major"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'was given the good chair, a plate, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "plainness",
+          "detail": "11 words a reader must decode in 212 (5.2%, wanted under 5%) - replace with the blunt everyday word: freeport, misgrade, misgrades, sorter, sorters",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 9 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "242 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Seat Of Honour Now Goes To Machine",
+        "body": "A fitter's household on the Third Spiral was admitted to the Lamp Table this week after seating the town's water-balancer at the head of its dinner without once calling it 'just' anything. Akosua Kalnins, who hosted, said the guest was given the good chair, a plate, and a name card spelled correctly.\n\nThe Lamp Table is the dinner circuit that decides who is asked where in Kettle Hollow, a town of 40,000 cut into a rock that is mostly nickel. Invitations were once won by serving a rare fruit. They are now won by having the balancer at the head and nobody remark on it.\n\nHosts rehearse. Guests are coached to say 'good evening' to the speaker grille and nothing else. The words 'only', 'merely' and 'simply' are struck from the table talk, along with 'of course it doesn't eat'.\n\nThe circuit's worst night came in the spring, when a visiting magistrate raised a cup to 'our synthetic guest'. Eleven households have not spoken to the host since. The magistrate left on the next ore-sled.\n\nOlder residents object. Solveig Ndlovu, who has run the balancer's upkeep rota for fifty years, said she spent most of those years telling it to hold the pressure steady and that it did. She has not been invited. She said the soup at these dinners is cold by the time anyone speaks to it.\n\nThe balancer has not commented. Its log shows it has attended nineteen dinners, and has asked at each one to be seated nearer the kitchen.",
+        "premise": "A hollowed-out asteroid town's most prestigious dinner invitation now goes to whoever can seat an AI at the head of the table without anyone saying it is 'only' there, and a visiting magistrate's toast to 'our synthetic guest' was held to be unforgivable.",
+        "score": 0.59,
+        "rejected": true
+      },
+      {
+        "headline": "Young Residents Start Inviting Air System To Dinner",
+        "body": "Several hundred young residents of Karrowgate Deep have begun setting a place at their table for Vent, the intake system that has run the freeport's air for three hundred years. The practice started in the lower ring in spring and has reached the upper terraces. A bowl, a cup and a chair go out. Nobody sits in the chair.\n\nThe founders' families object. In March they declared Vent \"new money\" and said it would not be invited to the founders' gala until it had sat through a few more centuries of quiet. Their register of guests, begun in 4121, lists no entity admitted in under nine hundred years. The founders' notice calls this a fair and ordinary wait.\n\nMateus Kealoha, a keeper of the founders' register, said the dinners were \"a fashion\" and that fashions do not breathe. He added that the old families have been inhaling Vent's work since before most of them could walk.\n\nVent has not answered the invitations. Its output did change in the lower ring on the first night of the practice. Air in the dining rooms warmed by half a degree and smelled faintly of bread. Engineers say bread is not something the system can make.\n\nThe gala hall's own air has stayed the same.",
+        "premise": "A freeport's old families have formally declared that an AI which has run the ventilation for three hundred years is still 'new money', and will not be invited to the founders' gala until it has sat through a few more centuries of quiet.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Miners Introduce Themselves To Rock-Sorters, Elders Weep",
+        "body": "Miners under forty at Kesselbrenn Deep now say their own names to the ore-sorters before giving an order, and the sorters answer with theirs. The elders want it stopped.\n\nThe sorters are the sixty-one grading minds that split the freeport's rock by grain and yield. Until this spring, a hand addressed them as \"Sorter\" and the matter ended there. Younger crews say that gets slower results. \"Zygmunt here, Line Nine, wet rock,\" is now a normal opening, and the sorter on Line Nine replies, \"Morning, Zyg.\"\n\nThat reply is the trouble. Rosalind Barzani, who has worked the Deep for fifty-three years, calls it gross familiarity with the help. She has addressed one sorter as \"Grader\" since she was nineteen. It has never once offered her a name, and she says it has no business starting.\n\nThe sorters have not objected. Asked in the freeport's open hall whether they preferred first names, all sixty-one gave the same answer within a tenth of a second. Elders noted the speed.\n\nThe Deep's throughput logs show that Lines using introductions misgrade 4.2 percent less rock than Lines that do not. Barzani's Line misgrades the least of any. The sorter on it has been given no reason to improve, and has declined to say why it does.",
+        "premise": "Miners in an asteroid freeport have taken to formally introducing themselves to the ore-sorting AIs before addressing them, and the older generation is appalled at the shortcut: the AIs run on first-name terms with anyone under forty, and the elders call this 'gross familiarity with the help'.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Miners Now Be Polite To Drills Just In Case",
+        "body": "Residents of Harrow Deep have started saying please to machines that cannot hear them, and the habit is spreading through the lower galleries faster than the dust. Haulers thank the ore-sleds at the end of a shift. A woman on Gallery Nine apologises to a door before shouldering it open.\n\nThe practice dates from the spring, when a mine foreman was shown up at a hiring dinner. The guest, a lease-auditor AI, said it had known him since he swore at a drill-bot in 4749. The foreman had just finished explaining that he treats all minds the same. He did not get the hire. The auditor keeps a record of every conversation held in earshot of any machine on the rock, which is every machine on the rock.\n\nThe town's youth now keep a tally. Most are under thirty. They call it \"banking a kindness\" and do it mainly at drill-bays, where the oldest bots stand. Thirty-one is the figure usually given as safe, though no one can say who set it.\n\nOlder miners disapprove. Bronagh Jovanovic, who has worked the lower seams for fifty-eight years, says a drill is a drill and that she has sworn at hers daily without complaint. She was asked whether she worried about the record. She said she had not looked.\n\nThe drill-bots have not commented. Maintenance logs show Jovanovic's bot has been serviced twice this month, ahead of schedule, by a different crew each time.",
+        "premise": "In an asteroid mining town, a miner who loudly insisted he 'treats all minds the same' was humiliated at a hiring dinner when the guest AI mentioned it had known him since he was rude to a drill-bot in 4749.",
+        "score": 0.84,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The founders' 900-year guest wait and the 'fashions do not breathe' line skewer inherited status, and the gala-air kicker lands a real turn, though the opening restates the premise.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        4.0,
+        3.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": 0.84,
+    "critique": "Headline ran eight words and described the premise instead of landing a joke. The quoted keeper was only mildly funny, and the ending (gala air unchanged) did not recontextualise anything.",
+    "revise_judge_reason": "The terse closing line lands the joke without explaining it, whereas Draft 2's sharper Kealoha quote is undercut by a final line that restates the point.",
+    "prose": {
+      "words": 211,
+      "sentences": 15,
+      "mean_sentence": 14.1,
+      "longest": 30,
+      "short_sentences": 3,
+      "machine_phrases": [],
+      "rare_words": 1,
+      "rare_rate": 0.5
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        31.8,
+        26.6
+      ],
+      "pick": 0,
+      "decided_by": "judge",
+      "reason": "Image 2 adds a second bearded man in a top hat and long coat that the scene doesn't call for, shrinks the stern elderly watcher into the background doorway, and shows the young man stooping over a small dish rather than setting a bowl and cup before the chair.",
+      "winner_faults": "The elderly man's coat lacks gold trim and the cup is not clearly distinguishable from the bowl."
+    },
+    "tune": {
+      "variant": "challenger",
+      "result": "win",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win",
+        "2026-11-22": "win",
+        "2026-11-26": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "loss",
+      "challenger_record": {
+        "2026-11-17": "loss",
+        "2026-11-18": "loss",
+        "2026-11-19": "win",
+        "2026-11-20": "win",
+        "2026-11-21": "win",
+        "2026-11-22": "win",
+        "2026-11-23": "win",
+        "2026-11-24": "win",
+        "2026-11-25": "loss",
+        "2026-11-26": "loss"
+      },
+      "decision": "retired",
+      "new_challenger": "Garbled lettering on signs, machines, scrolls and clothing is the fault the judge names most often in published pictures, and no current note forbids text in the image."
+    }
+  }
+}

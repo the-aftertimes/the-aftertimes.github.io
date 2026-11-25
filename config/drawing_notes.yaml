@@ -1,21 +1,12 @@
 # Machine-edited by tune.py. Read its docstring before changing anything here.
 champion: []
 challenger:
-- Show every figure and object fully inside the frame with margin; nothing cropped at any edge, no extra
-  bystanders.
-why: The judge repeatedly cites cropped figures, cropped machines or doors, and extra bystanders in published
-  pictures, and no current note addresses framing or crowd count.
-since: '2026-11-16'
-results:
-  '2026-11-17': loss
-  '2026-11-18': loss
-  '2026-11-19': win
-  '2026-11-20': win
-  '2026-11-21': win
-  '2026-11-22': win
-  '2026-11-23': win
-  '2026-11-24': win
-  '2026-11-25': loss
+- No signs, labels, captions or lettering anywhere; keep walls, machines, boxes and clothing blank and
+  plain.
+why: Garbled lettering on signs, machines, scrolls and clothing is the fault the judge names most often
+  in published pictures, and no current note forbids text in the image.
+since: '2026-11-26'
+results: {}
 history:
 - decided: '2026-10-26'
   verdict: retired
@@ -47,3 +38,14 @@ history:
   champion_before: []
   challenger:
   - No lettering, signs, plaques or writing anywhere; leave walls, plaques and banners blank and plain.
+- decided: '2026-11-26'
+  verdict: retired
+  wins: 6
+  of: 10
+  since: '2026-11-16'
+  why: The judge repeatedly cites cropped figures, cropped machines or doors, and extra bystanders in
+    published pictures, and no current note addresses framing or crowd count.
+  champion_before: []
+  challenger:
+  - Show every figure and object fully inside the frame with margin; nothing cropped at any edge, no extra
+    bystanders.

@@ -1274,5 +1274,16 @@
     "place_kind": "drowned",
     "engine": "obsolescence",
     "technique": "headline_carries_it"
+  },
+  {
+    "run_date": "2026-11-26",
+    "year": 4762,
+    "era_bucket": 54,
+    "domain": "artificial intelligence rights",
+    "headline": "Young Residents Start Inviting Air System To Dinner",
+    "style": "trend",
+    "place_kind": "asteroid",
+    "engine": "etiquette",
+    "technique": "confident_aside"
   }
 ]
