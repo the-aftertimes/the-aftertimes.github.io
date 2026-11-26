@@ -1285,5 +1285,16 @@
     "place_kind": "asteroid",
     "engine": "etiquette",
     "technique": "confident_aside"
+  },
+  {
+    "run_date": "2026-11-27",
+    "year": 2447,
+    "era_bucket": 8,
+    "domain": "medicine",
+    "headline": "Both Doctors Say 'Probably Nothing'; Patient Gets Two Lives",
+    "style": "sport",
+    "place_kind": "gasgiant",
+    "engine": "language",
+    "technique": "answers_the_question"
   }
 ]

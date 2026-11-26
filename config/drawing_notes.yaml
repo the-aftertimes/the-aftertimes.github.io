@@ -6,7 +6,8 @@ challenger:
 why: Garbled lettering on signs, machines, scrolls and clothing is the fault the judge names most often
   in published pictures, and no current note forbids text in the image.
 since: '2026-11-26'
-results: {}
+results:
+  '2026-11-27': win
 history:
 - decided: '2026-10-26'
   verdict: retired

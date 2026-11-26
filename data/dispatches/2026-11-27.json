@@ -1,0 +1,218 @@
+{
+  "run_date": "2026-11-27",
+  "run_time": "2026-11-26T18:01:15.965268+00:00",
+  "dispatch": {
+    "headline": "Both Doctors Say 'Probably Nothing'; Patient Gets Two Lives",
+    "body": "Makena Nakashima and Isaura Balogun both told the same patient it was probably nothing on Friday, ending the final round of the Halcyon Drift Diagnostics Open in a dead heat.\n\nThe patient, a volunteer with a persistent cough, was the last case in the 'Unknown Presentation' round. Nakashima examined her first and gave her verdict at 14:10. Under the Prognosis Act, that phrase fixes a patient's remaining life at eleven years. Balogun used the same words at 14:12.\n\nBalogun said the eleven years should run from the second announcement. Nakashima said the first. Neither would concede the two minutes.\n\nThe referee, a certified timekeeper, confirmed both verdicts were binding and that a patient could not have two lengths of life. He said the rules for this were in section nine. Section nine covers equipment failure.\n\nSudden death began at 15:40 with a second volunteer. Both again said it was probably nothing. Both again named the same figure.\n\nThe crowd of roughly nine hundred left at the fourth tie. The patients were walked out by the same door as the spectators.\n\nIn the mixed zone, Balogun was asked about a shared title. \"I have never shared anything,\" she said, \"and I don't see why a cough should change that.\"\n\nThe patient has gone home with eleven years. She has asked the organisers to say when to start counting, and has been told to ring back after the trophy is sorted.",
+    "scene": "Two physicians in pale gloss coats stand on either side of an examination couch on a bright stage, each jabbing a finger across it at the other, while a seated patient between them looks at the ceiling.",
+    "dateline": {
+      "place": "Halcyon Drift",
+      "year": 2447,
+      "month": 9,
+      "day": 16,
+      "years_from_now": 421
+    },
+    "domain": "medicine",
+    "glossary": [],
+    "premise": "A Neptune cloud-city diagnostics tournament goes to sudden death when two physicians both announce 'it's probably nothing', a phrase that in 2447 is a legally binding prognosis of exactly eleven more years, and neither will accept the other's figure.",
+    "brief": null,
+    "image": "assets/img/2026-11-27.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-26T18:01:15.965268+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 123,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.51,
+      0.84,
+      0.84,
+      0.92
+    ],
+    "violations": [
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "rhythm_longest",
+          "detail": "longest sentence is 48 words, maximum 35",
+          "severity": "major"
+        },
+        {
+          "rule": "rhythm_short",
+          "detail": "only 0 sentences of six words or fewer, wanted at least 2",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "259 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 9 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "249 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: \"a loan as 'given permanently, spoken of fondly', and\"",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "226 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Patient Stable, Says Home Side; He Is Outside",
+        "body": "Ward Nine took the Great Bedside Cup on Saturday after the referee ruled its patient stable, over the visiting side's objection that the patient was in the car park.\n\nThe final was played on the Halvard's Float ring deck before four thousand spectators. Each side had ninety minutes to bring a collapsed dockhand to \"stable\" using only what could be carried through the door. Visitors Pale Harbour Clinic had the patient sitting up and drinking by minute forty.\n\nWard Nine's team then wheeled their man out. Pale Harbour's captain pointed at the bay doors. The referee consulted the Cup rulebook, which defines stable as \"unable to be moved from the building,\" and found the patient was by that standard very movable and therefore not stable, at least until a Ward Nine porter chained his trolley to the ground-floor rail at minute eighty-one.\n\nThe referee ruled that the trolley was part of the building. Pale Harbour argued the car park was not. The referee said the car park was on the same lease as the porch.\n\nThe patient, who is recovering, was returned indoors at the final whistle. Asked whether he was stable, he said he would like to go home.\n\nIn the mixed zone, the Pale Harbour captain was asked whether the result was fair. She said her side had discharged the patient in better health than the other side had, and that this was the only thing the sport had ever been about. Asked if she would appeal, she said the appeal panel sat in the same building.",
+        "premise": "The Saturn-platform 'Great Bedside Cup' is decided on a technicality when the home team's patient is declared 'stable', a word that has drifted over four centuries to mean 'unable to be moved from the building', and the visiting side protests that the patient is clearly in the car park.",
+        "score": 0.51,
+        "rejected": false
+      },
+      {
+        "headline": "Two Doctors Say 'Probably Nothing'; Neither Will Back Down",
+        "body": "Makena Nakashima and Isaura Balogun both told the same patient it was probably nothing on Friday, ending the final round of the Halcyon Drift Diagnostics Open in a dead heat.\n\nThe patient, a volunteer with a persistent cough, was the last case in the 'Unknown Presentation' round. Nakashima examined her first and gave her verdict at 14:10. Under the Prognosis Act, that phrase fixes a patient's remaining life at eleven years. Balogun examined her second and used the same words at 14:12.\n\nBalogun then said the eleven years should run from the second announcement. Nakashima said they should run from the first. The difference is two minutes, and both physicians declined to concede it.\n\nThe referee, a certified timekeeper, was called to the table. He confirmed that both statements were binding, and that the patient could not be given two lengths of life. He said the rules for this were in section nine. Section nine covers equipment failure.\n\nSudden death began at 15:40 with a second volunteer. Both physicians again said it was probably nothing. Both again named the same figure.\n\nThe crowd of roughly nine hundred left at the fourth tie. The patients were walked out by the same door as the spectators.\n\nIn the mixed zone, Balogun was asked whether she would accept a shared title. She said she had never shared anything and did not see why a cough should change that.\n\nThe patient has been given eleven years. The organisers have not said from when.",
+        "premise": "A Neptune cloud-city diagnostics tournament goes to sudden death when two physicians both announce 'it's probably nothing', a phrase that in 2447 is a legally binding prognosis of exactly eleven more years, and neither will accept the other's figure.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Home Heart Ruled 'On Loan', Match Abandoned",
+        "body": "Play stopped at half-time on Saturday when a referee ruled the home side's heart was on loan, ending the Verrel Lantern Transplant Derby with the score at 2-2.\n\nThe heart, a donor organ kept in the Lantern Rovers' centre-circle cradle since the club's founding, was the day's disputed property. Visitors Halcyon Deep had been promised it back at the interval. Referee Mehmet Bakshi consulted the rulebook, which defines a loan as 'given permanently, spoken of fondly', and declined to restart.\n\nThe first half had been quiet. Rovers' surgeons completed one valve swap in eleven minutes. Halcyon answered with a double bypass, then a second, which the touch judges allowed.\n\nAt 41 minutes a Halcyon steward asked the home club when the heart would be returned. A Rovers official said it was settling in well. Halcyon has sent the heart a birthday card every spring for ninety-four years. It has never had a reply.\n\nHalcyon's captain, Thuy Tavakoli, was asked in the mixed zone whether she thought the organ would ever come back. She said the card for this year was already signed, and asked if there was a pen free for the others.\n\nThe heart is still beating. It was moved to a quieter cradle during the stoppage and is said to be comfortable. The fixture will be replayed in the autumn, with a different organ.",
+        "premise": "The cloud-city transplant derby is halted at half-time when the home organ is ruled 'on loan', a term that has drifted to mean 'permanently given but spoken of fondly', leaving the visiting club sending the heart a birthday card every spring.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Surgery Delayed Until Triage Team Says Sorry",
+        "body": "A triage team lost the Uranus Spire Triage Open final on Saturday after its captain called a patient \"non-urgent\" and the patient refused to be cut until he heard an apology.\n\nThe word once meant that a case could wait. The crowd in the Spire's tiered gallery has heard it as an insult for about a generation, and the judges now score it that way. The panel docked the Marlow Deck team eleven points.\n\nThe patient, a volunteer with a real gall stone, sat up on the table. He said he had paid for a seat in the gallery and was not going to be sorted by a stranger. Surgery stopped at minute nine.\n\nMarlow Deck's captain apologised at minute fourteen. The patient asked for it again with the lights up. The captain gave it again. The stone was removed at minute thirty-one, which was the slowest clean removal in the Open's history.\n\nRivals Ninefold Lift, who had called the same patient \"deeply valued but sequenced later\", won by four points. Their patient was reported to be fine.\n\nIn the mixed zone, the Marlow Deck captain was asked whether the term had been used correctly by the old rules. She said it had, and that the old rules were printed on the back of her pass.\n\nThe stone is in a jar at the patient's home.",
+        "premise": "In the final of the Uranus Spire Triage Open, a team is penalised for calling a patient 'non-urgent' after the term, which once meant 'can wait', has been reinterpreted by the crowd as 'rude', and the patient demands an apology before surgery.",
+        "score": 0.92,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "Its satire of doctors' casual 'probably nothing' and rulebook-bound officialdom lands, with sharp lines like 'section nine covers equipment failure' and a clean kicker, though the opening states the whole conceit up front.",
+    "judge_pick": 0,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "challenger",
+      "challenger",
+      "champion",
+      "champion"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        3.0,
+        7.0,
+        6.0,
+        2.0
+      ],
+      "rankings": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          2,
+          1,
+          3,
+          0
+        ]
+      ]
+    },
+    "chosen_index": 1,
+    "revision_accepted": true,
+    "score_before": 0.84,
+    "score_after": 0.84,
+    "critique": "Headline ran nine words and the body ran long at 249. The referee's section nine gag was good but buried, and the ending restated the unresolved start date instead of turning it.",
+    "prose": {
+      "words": 239,
+      "sentences": 20,
+      "mean_sentence": 11.9,
+      "longest": 30,
+      "short_sentences": 4,
+      "machine_phrases": [],
+      "rare_words": 2,
+      "rare_rate": 0.8
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        24.4,
+        16.3
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 lays the patient flat rather than seated and carries garbled signatures at the bottom edge, while Image 2 shows the seated patient looking up with no signature.",
+      "winner_faults": "Only the left physician jabs a finger across, the right one stands with folded arms, and the setting reads as a plain room rather than a bright stage."
+    },
+    "tune": {
+      "variant": null,
+      "result": null,
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win",
+        "2026-11-22": "win",
+        "2026-11-26": "win"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-27": "win"
+      }
+    }
+  }
+}
