@@ -1296,5 +1296,16 @@
     "place_kind": "gasgiant",
     "engine": "language",
     "technique": "answers_the_question"
+  },
+  {
+    "run_date": "2026-11-28",
+    "year": 2170,
+    "era_bucket": 2,
+    "domain": "family",
+    "headline": "Family Mushroom Farm Dies, Leaving Will Unchallenged",
+    "style": "obituary",
+    "place_kind": "subsurface",
+    "engine": "nature",
+    "technique": "escalating_precision"
   }
 ]

@@ -1,0 +1,221 @@
+{
+  "run_date": "2026-11-28",
+  "run_time": "2026-11-27T18:01:19.452320+00:00",
+  "dispatch": {
+    "headline": "Family Mushroom Farm Dies, Leaving Will Unchallenged",
+    "body": "The last human-tended mushroom farm in the buried Greenland arcology of Qaanaaq Deepholm was switched off on Friday, aged 74 in its present form and older in its root. It was 49 rooms wide and leaves four surviving relatives of the Aputiku family, who say they will miss the harvest.\n\nThe farm was founded in 2096 by a grandmother who wanted something to do with her damp cellar. It fed the household through two rationing winters and supplied the lower market with a brown cap that buyers described as fine.\n\nIn 2121 the family began to notice that disputes ended in a particular way. A cousin demanding the good bunk space would arrive at the dinner table to find a single pale cluster fruiting in the chair of the cousin who already had it. A brother seeking the sealed-door key found three on his rival's seat. Over 49 years, the farm settled 31 disputes over rooms, tools, a ration card and one second-hand cooling unit. No ruling was appealed. Appeals would have meant sitting down.\n\nThe pattern was confirmed this spring, when a granddaughter charted every fruiting against every quarrel on the kitchen wall display. The farm had backed the quieter party in 29 of 31 cases. In the other two, the quieter party was lying.\n\nThe family has not yet divided the farm's contents. The oldest relative has asked for a chair to be placed in the main bed room and left empty.",
+    "scene": "An elderly woman in a quilted thermal coat stands in a cramped underground kitchen, staring at a wooden dining chair whose seat is thickly covered in pale mushrooms, while a young man behind her holds a harvest basket.",
+    "dateline": {
+      "place": "Qaanaaq Deepholm, Greenland",
+      "year": 2170,
+      "month": 8,
+      "day": 9,
+      "years_from_now": 144
+    },
+    "domain": "family",
+    "glossary": [],
+    "premise": "The last human-tended mushroom farm in a buried Greenland arcology is mourned after its fungus, having outlived three generations of the family that 'owned' it, was found to have been running the household's inheritance disputes since 2121 by quietly fruiting in the chair of whoever it favoured.",
+    "variant": "champion",
+    "brief": null,
+    "image": "assets/img/2026-11-28.jpg"
+  },
+  "meta": {
+    "run_time": "2026-11-27T18:01:19.452320+00:00",
+    "timezone": "Australia/Sydney",
+    "tagline": "Dispatches from the future.",
+    "site_name": "The Aftertimes",
+    "base_url": "https://aftertimes.charlietrenorden.com",
+    "signup_form_url": "",
+    "edition": 124,
+    "locator_deep_max": 4000
+  },
+  "quality": {
+    "n_drafts": 4,
+    "write_failures": 0,
+    "scores": [
+      0.92,
+      0.84,
+      0.76,
+      0.76
+    ],
+    "violations": [
+      [
+        {
+          "rule": "length",
+          "detail": "244 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "235 words, wanted 170-215",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "length",
+          "detail": "250 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "present_day_props",
+          "detail": "present-day props: europa",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'fed roughly nine hundred people, outlived two ovens, and'",
+          "severity": "minor"
+        }
+      ],
+      [
+        {
+          "rule": "headline_length",
+          "detail": "headline is 8 words, wanted 7 or fewer",
+          "severity": "minor"
+        },
+        {
+          "rule": "length",
+          "detail": "256 words, wanted 170-215",
+          "severity": "minor"
+        },
+        {
+          "rule": "tricolon",
+          "detail": "three items in a comma list stand in for an escalation: 'the mountain in one body, circle once, and'",
+          "severity": "minor"
+        }
+      ]
+    ],
+    "drafts": [
+      {
+        "headline": "Family Mushroom Farm Dies, Leaving Will Unchallenged",
+        "body": "The last human-tended mushroom farm in the buried Greenland arcology of Qaanaaq Deepholm was switched off on Friday, aged 74 in its present form and older in its root. It was 49 rooms wide and leaves four surviving relatives of the Aputiku family, who say they will miss the harvest.\n\nThe farm was founded in 2096 by a grandmother who wanted something to do with her damp cellar. It fed the household through two rationing winters and supplied the lower market with a brown cap that buyers described as fine.\n\nIn 2121 the family began to notice that disputes ended in a particular way. A cousin demanding the good bunk space would arrive at the dinner table to find a single pale cluster fruiting in the chair of the cousin who already had it. A brother seeking the sealed-door key found three on his rival's seat. Over 49 years, the farm settled 31 disputes over rooms, tools, a ration card and one second-hand cooling unit. No ruling was appealed. Appeals would have meant sitting down.\n\nThe pattern was confirmed this spring, when a granddaughter charted every fruiting against every quarrel on the kitchen wall display. The farm had backed the quieter party in 29 of 31 cases. In the other two, the quieter party was lying.\n\nThe family has not yet divided the farm's contents. The oldest relative has asked for a chair to be placed in the main bed room and left empty.",
+        "premise": "The last human-tended mushroom farm in a buried Greenland arcology is mourned after its fungus, having outlived three generations of the family that 'owned' it, was found to have been running the household's inheritance disputes since 2121 by quietly fruiting in the chair of whoever it favoured.",
+        "score": 0.92,
+        "rejected": false
+      },
+      {
+        "headline": "Cricket Colony Declines To Be Dependants, Dies Anyway",
+        "body": "The first cricket colony of the Reyes-Ortega household, founded in a tea tin and survived by eleven million descendants, was remembered on Friday in the family's lower pantry. It was 121 years old by the family's count. The crickets did not attend as one body. Two hundred came.\n\nThe founding pair were bought in year nine of the settlement as a starter pet for Uzma Reyes-Ortega's great-grandmother, who had been told they needed no walking. They ate bread ends and the lining of a wet boot. By year thirty they had the pantry, the wall void behind it and the cold side of two neighbours' kitchens.\n\nThe family first noticed the numbers when the air plant failed its yearly count and found the crickets in it. A petition followed. The household asked the crickets to be counted as dependants, which would have raised the household's air allowance. The colony answered through a clicking panel fitted by Fenna Odhiambo, a cousin and the only family member who could read it. The reply was a refusal, and it was courteous.\n\nThe crickets asked instead for the pantry to stay at four degrees and for the family to stop sweeping the walls.\n\nThe family has kept both terms. Reyes-Ortega read the names of the first forty generations aloud. Odhiambo played the panel. It clicked for eleven minutes and no one in the room could say what it meant.",
+        "premise": "A fourth-generation family of ice-tunnel residents holds a memorial for their ancestral colony of cave crickets, who were adopted as 'starter pets' and have since bred into a population of eleven million that politely declined the family's request to be counted as dependants.",
+        "score": 0.84,
+        "rejected": false
+      },
+      {
+        "headline": "Sourdough Starter, 212, Dies After Wedding Weekend",
+        "body": "The Toivonen family starter, a sourdough culture carried through six generations and four migrations, was declared dead on Sunday at 212 years of age. It died of a scrub.\n\nIt was begun in a Finnish kitchen in 1958 by a woman whose name the family has since lost, and taken to the Ceres yards in 2061 inside a sealed jar marked DO NOT SPACE. It crossed to Europa in 2119 in the coat pocket of a grandmother who declared it to customs as a relative. Customs accepted this.\n\nBy 2170 it had fed roughly nine hundred people, outlived two ovens, and been fed daily at a set time by someone, including during a hull breach.\n\nAt the rehearsal dinner for Bronagh Toivonen's wedding, guests noticed the groom's family kitchen had begun to smell of it. Within two hours the starter had been found in his mother's flour crock, his uncle's rye tin, and a cousin's boots. Every loaf on the groom's side had risen. The groom's mother described this as a lot.\n\nThe wedding ended in applause. Pavlina Lindqvist, the groom's aunt, said the bread was the best she had eaten.\n\nOn Sunday the groom's household, by agreement, scrubbed its kitchen to bare steel. The jar at the Toivonen home was left unfed for the first time since 2061, and nobody could find the order to feed it.\n\nIt is survived by the other kitchen. It was a good starter. It is not known to have been loved, only kept.",
+        "premise": "A wedding party in a deep-ice settlement ends in applause when the bride's ancestral sourdough starter, carried through six generations of family migration, is found to have colonised the groom's side of the family and annexed their kitchen at the rehearsal dinner.",
+        "score": 0.76,
+        "rejected": false
+      },
+      {
+        "headline": "Bat Tradition Ends After Bats Hold Wedding Alone",
+        "body": "The Okonkwo-Lindqvist family's balcony bat, released at every wedding since 2031, has died as a custom, aged 139 years, after the bats held a wedding of their own and invited no one.\n\nThe tradition began when a bride's grandfather, a cave surveyor, let one brown bat go from the east balcony to mark the vows. It flew a circle and returned to the rock. The family counted this as luck. By the fourth generation they counted it as law.\n\nThe colony was then about forty. Releases were logged in the family ledger, now a shared record, at one bat per wedding, 212 weddings in all. Nobody logged the bats that stayed. Roosting surveys put the colony at 340,000 by this spring.\n\nOn the night of the 14th, the lower galleries went quiet for six hours, according to Ksenia Jovanovic, the family's registrar. The air handlers reported a drop in noise and a rise in guano. At dusk, residents on the east balcony saw the whole colony leave the mountain in one body, circle once, and return in pairs.\n\nThe family had not been told. Seating was not arranged. A cousin who arrived with a bat in a carry-box was turned away at the lift by the colony's own sentries, which are bats.\n\nMehmet Montiel, who was due to be married on the 20th, has moved the ceremony to the lower hall. He will release nothing. The family has agreed this is for the best, and has sent a card.\n\nThe east balcony is closed for cleaning.",
+        "premise": "A hollowed-mountain family's three-century tradition of releasing a single bat from the balcony at weddings ends after the bats, now numbering in the hundreds of thousands, are reported to have held the ceremony themselves and invited no humans.",
+        "score": 0.76,
+        "rejected": false
+      }
+    ],
+    "all_rejected": false,
+    "judge_reason": "The mushrooms settling disputes for the quieter party, and the 'quieter party was lying' twist, skewer how families actually fight over inheritance, though the empty-chair kicker is softer than the premise.",
+    "judge_pick": 1,
+    "judge_score": 6.0,
+    "contest_variants": [
+      "champion",
+      "challenger",
+      "champion",
+      "challenger"
+    ],
+    "panel": {
+      "voted": [
+        "morris",
+        "iannucci",
+        "handey"
+      ],
+      "points": [
+        6.0,
+        2.0,
+        2.0,
+        8.0
+      ],
+      "rankings": [
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          1
+        ]
+      ]
+    },
+    "chosen_index": 0,
+    "revision_accepted": false,
+    "score_before": 0.92,
+    "score_after": 0.68,
+    "critique": "Body ran 244 words against a 170-215 target, and the headline described the premise instead of landing a joke. No quote was given, the 'will' wording was a legal-adjacent stretch, and the 'quieter party was lying' kicker explained the joke.",
+    "prose": {
+      "words": 244,
+      "sentences": 15,
+      "mean_sentence": 16.3,
+      "longest": 30,
+      "short_sentences": 2,
+      "machine_phrases": [],
+      "rare_words": 4,
+      "rare_rate": 1.6
+    },
+    "picture": {
+      "variants": [
+        "champion",
+        "challenger"
+      ],
+      "mush": [
+        36.7,
+        37.8
+      ],
+      "pick": 1,
+      "decided_by": "judge",
+      "reason": "Image 1 puts the mushrooms on a small table instead of a dining chair, shows a boy holding the basket and a girl in a headscarf rather than a young man behind the elderly woman, and has her facing the viewer rather than staring at the mushroom-covered seat.",
+      "winner_faults": "The pillar and wall sign carry garbled, unreadable lettering, and the basket is cut off at the right edge."
+    },
+    "tune": {
+      "variant": "champion",
+      "result": "loss",
+      "challenger_record": {
+        "2026-10-10": "loss",
+        "2026-10-15": "loss",
+        "2026-10-25": "win",
+        "2026-10-26": "win",
+        "2026-10-31": "loss",
+        "2026-11-05": "win",
+        "2026-11-22": "win",
+        "2026-11-26": "win",
+        "2026-11-28": "loss"
+      }
+    },
+    "draw_tune": {
+      "result": "win",
+      "challenger_record": {
+        "2026-11-27": "win",
+        "2026-11-28": "win"
+      }
+    }
+  }
+}
