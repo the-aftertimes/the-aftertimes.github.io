@@ -467,6 +467,18 @@
       "gloss": "the intake system that runs the freeport's air",
       "kind": "term",
       "first_seen": "2026-11-26"
+    },
+    {
+      "term": "tardigrade-farmer",
+      "gloss": "a farmer who raises tardigrades, tiny water bears, in tubs",
+      "kind": "term",
+      "first_seen": "2026-11-29"
+    },
+    {
+      "term": "crawlers",
+      "gloss": "walking machines built to carry loads over rough ground",
+      "kind": "term",
+      "first_seen": "2026-11-29"
     }
   ]
 }

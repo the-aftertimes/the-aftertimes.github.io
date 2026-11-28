@@ -1307,5 +1307,16 @@
     "place_kind": "subsurface",
     "engine": "nature",
     "technique": "escalating_precision"
+  },
+  {
+    "run_date": "2026-11-29",
+    "year": 3270,
+    "era_bucket": 24,
+    "domain": "biotech",
+    "headline": "Guild Card Arrives. Farmer Was Home.",
+    "style": "results",
+    "place_kind": "exoplanet",
+    "engine": "scale",
+    "technique": "commit_past_reason"
   }
 ]
